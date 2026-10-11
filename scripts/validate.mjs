@@ -5,8 +5,9 @@ import { RANKS, TOPICS } from "../data/meta.js";
 import { DAYS } from "../data/roadmap.js";
 
 const PREFIX = { fresher: "fre", junior: "jun", middle: "mid", senior: "sen" };
-const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code"]);
-const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "options", "answer", "explain"]);
+const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code", "by", "issue"]);
+const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "options", "answer", "explain", "by", "issue"]);
+const GITHUB_LOGIN = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/;
 // Đáp án tham chiếu đáp án khác sẽ sai nghĩa khi app xáo trộn thứ tự.
 const CROSS_REF = /(tất cả (các )?(đáp án|phương án|ý) trên|cả [A-D] và [A-D]|\b[A-D] và [A-D]\b|không (có )?(đáp án|phương án) nào|all of the above|none of the above|cả hai (đáp án|phương án))/i;
 
@@ -39,6 +40,9 @@ function checkCommon(item, where, keys, prefix) {
   if (!(item.topic in TOPICS)) errors.push(`${where}: invalid topic "${item.topic}"`);
   if (!isStr(item.q)) errors.push(`${where}: missing q`);
   if (item.code !== undefined && !isStr(item.code)) errors.push(`${where}: code must be a non-empty string`);
+  if (item.by !== undefined && !(typeof item.by === "string" && GITHUB_LOGIN.test(item.by))) errors.push(`${where}: by must be a GitHub username`);
+  if (item.issue !== undefined && !(Number.isInteger(item.issue) && item.issue > 0)) errors.push(`${where}: issue must be a positive integer`);
+  if (item.issue !== undefined && item.by === undefined) errors.push(`${where}: issue requires by`);
   if (isStr(item.q)) {
     const t = norm(item.q);
     if (seenText.has(t)) warnings.push(`${where}: question duplicates ${seenText.get(t)}`);
@@ -103,6 +107,43 @@ for (const rank of RANKS) {
   if (quiz.length >= 10 && longestIsCorrect / quiz.length > 0.4) {
     warnings.push(`quiz/${rank.id}.js: correct answer is the longest option in ${longestIsCorrect}/${quiz.length} questions (aim < 40%)`);
   }
+}
+
+// ---- Toàn site (bỏ qua khi chỉ kiểm tra một rank) ----
+if (!only) {
+  const fs = await import("node:fs");
+  const path = await import("node:path");
+  const { fileURLToPath } = await import("node:url");
+  const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const walk = (dir) =>
+    fs.readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap((e) =>
+      e.isDirectory() ? walk(`${dir}/${e.name}`) : [`${dir}/${e.name}`],
+    );
+
+  // sw.js phải precache đủ code + dữ liệu để học offline, và mọi file trong danh sách phải tồn tại.
+  const sw = fs.readFileSync(path.join(root, "sw.js"), "utf8");
+  const precache = JSON.parse(
+    sw
+      .match(/const PRECACHE = (\[[\s\S]*?\]);/)[1]
+      .replace(/,\s*\]/, "]"),
+  );
+  const needed = [...walk("js"), ...walk("data"), "css/styles.css", "index.html", "manifest.webmanifest"].filter((f) => /\.(js|css|html|webmanifest)$/.test(f));
+  for (const f of needed) if (!precache.includes(f)) errors.push(`sw.js: PRECACHE is missing "${f}" (offline would break)`);
+  for (const f of precache) if (f !== "./" && !fs.existsSync(path.join(root, f))) errors.push(`sw.js: PRECACHE lists missing file "${f}"`);
+
+  // Trang chia sẻ s/<id>.html phải khớp dữ liệu hiện tại.
+  const { allSharePages } = await import("./share-pages.mjs");
+  const pages = allSharePages();
+  let stale = 0;
+  for (const p of pages) {
+    const file = path.join(root, "s", `${p.id}.html`);
+    if (!fs.existsSync(file) || fs.readFileSync(file, "utf8") !== p.html) stale++;
+  }
+  const extra = fs.existsSync(path.join(root, "s"))
+    ? fs.readdirSync(path.join(root, "s")).filter((f) => !pages.some((p) => `${p.id}.html` === f)).length
+    : 0;
+  if (stale || extra) errors.push(`s/: ${stale} trang chia sẻ cũ/thiếu, ${extra} trang thừa — chạy: node scripts/build-share-pages.mjs`);
+  else console.log(`Share pages: ${pages.length} OK · sw.js precache: ${precache.length} files OK`);
 }
 
 for (const w of warnings) console.log("WARN  " + w);

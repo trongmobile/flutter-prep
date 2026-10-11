@@ -53,3 +53,19 @@ export function quizFor(rankId) {
 
 export const ALL_QUESTIONS = RANKS.flatMap((r) => questionsByRank[r.id]);
 export const ALL_QUIZ = RANKS.flatMap((r) => quizByRank[r.id]);
+
+const byId = new Map([...ALL_QUESTIONS, ...ALL_QUIZ].map((q) => [q.id, q]));
+const quizIds = new Set(ALL_QUIZ.map((q) => q.id));
+
+// Tìm câu hỏi phỏng vấn hoặc câu quiz theo id. kind: "question" | "quiz".
+export function findItem(id) {
+  const item = byId.get(id);
+  return item ? { item, kind: quizIds.has(id) ? "quiz" : "question" } : null;
+}
+
+// Người đóng góp (trường `by` trong dữ liệu), nhiều câu nhất đứng trước.
+export function contributors() {
+  const count = new Map();
+  for (const q of [...ALL_QUESTIONS, ...ALL_QUIZ]) if (q.by) count.set(q.by, (count.get(q.by) || 0) + 1);
+  return [...count].map(([login, n]) => ({ login, count: n })).sort((a, b) => b.count - a.count || a.login.localeCompare(b.login));
+}

@@ -1,5 +1,5 @@
 import { RANKS, TOPICS, DAYS, ALL_QUESTIONS, ALL_QUIZ, getRank, questionsFor } from "../../data/index.js";
-import { study, quiz, roadmap, activity, exportAll, importAll, resetAll, todayKey } from "../store.js";
+import { study, quiz, roadmap, activity, srs, interview, SRS_INTERVALS, exportAll, importAll, resetAll, todayKey } from "../store.js";
 import { escapeHtml, percent, stackedBar, formatDate, formatDuration, confirmClick } from "../utils.js";
 
 const HEATMAP_WEEKS = 15;
@@ -80,6 +80,16 @@ export function mount(el) {
       </section>
 
       <section>
+        <div class="section-head"><h2>Lịch ôn tập</h2><a class="link-btn" href="#/review">Ôn hôm nay →</a></div>
+        ${srsHtml()}
+      </section>
+
+      <section>
+        <div class="section-head"><h2>Phỏng vấn thử</h2><a class="link-btn" href="#/interview">Phỏng vấn ngay →</a></div>
+        ${interviewHtml()}
+      </section>
+
+      <section>
         <div class="section-head">
           <h2>Chủ đề cần cải thiện</h2>
           <span class="section-sub">Dựa trên toàn bộ câu quiz đã làm (chủ đề có ≥ 3 lượt trả lời)</span>
@@ -137,11 +147,52 @@ export function mount(el) {
           <div class="btn-row danger-row">
             <button type="button" class="btn btn-danger" data-action="reset-study">Xoá đánh dấu ôn luyện</button>
             <button type="button" class="btn btn-danger" data-action="reset-quiz">Xoá lịch sử quiz</button>
+            <button type="button" class="btn btn-danger" data-action="reset-interview">Xoá lịch sử phỏng vấn thử</button>
             <button type="button" class="btn btn-danger" data-action="reset-all">Xoá toàn bộ tiến độ</button>
           </div>
         </div>
       </section>
     `;
+  }
+
+  function srsHtml() {
+    const cards = Object.values(srs.cards());
+    if (!cards.length) {
+      return `<div class="empty"><p>Chưa có câu nào trong lịch ôn. Đánh dấu câu hỏi hoặc bắt đầu <a href="#/review">Ôn hôm nay</a>.</p></div>`;
+    }
+    const due = srs.dueIds(todayKey()).length;
+    const week = srs.forecast(7).reduce((sum, f) => sum + f.count, 0);
+    const longTerm = cards.filter((c) => c.box >= 4).length;
+    return `
+      <div class="card srs-summary">
+        <div class="srs-stats">
+          <span><strong>${cards.length}</strong> câu trong lịch ôn</span>
+          <span><strong>${due}</strong> đến hạn hôm nay</span>
+          <span><strong>${week}</strong> trong 7 ngày tới</span>
+          <span><strong>${longTerm}</strong> đã nhớ dài hạn (hộp 4+)</span>
+        </div>
+        <div class="box-grid compact">
+          ${SRS_INTERVALS.map((d, i) => {
+            const n = cards.filter((c) => c.box === i + 1).length;
+            return `<div class="box-cell"><span class="box-name">Hộp ${i + 1}</span><span class="box-count">${n}</span><span class="box-days">${d} ngày</span></div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  function interviewHtml() {
+    const list = interview.history().slice(-10).reverse();
+    if (!list.length) return `<div class="empty"><p>Chưa có buổi phỏng vấn thử nào.</p><a class="btn btn-primary" href="#/interview">Phỏng vấn thử</a></div>`;
+    return `<div class="table-wrap"><table class="history">
+      <thead><tr><th>Thời gian</th><th>Rank</th><th>Số câu</th><th>Điểm tự chấm</th><th>Thời lượng</th></tr></thead>
+      <tbody>${list
+        .map((h) => {
+          const p = percent(h.score, h.max);
+          return `<tr><td>${formatDate(h.ts)}</td><td>${escapeHtml(getRank(h.rank)?.name || h.rank)}</td><td>${h.total}</td>
+            <td><span class="score-pill ${p >= 70 ? "good" : p >= 50 ? "mid" : "low"}">${h.score}/${h.max} · ${p}%</span></td><td>${formatDuration(h.duration)}</td></tr>`;
+        })
+        .join("")}</tbody>
+    </table></div>`;
   }
 
   function heatmap() {
@@ -188,6 +239,13 @@ export function mount(el) {
       case "reset-study":
         confirmClick(t, "Xoá đánh dấu ôn luyện", () => {
           study.reset();
+          srs.reset();
+          render();
+        });
+        break;
+      case "reset-interview":
+        confirmClick(t, "Xoá lịch sử phỏng vấn thử", () => {
+          interview.reset();
           render();
         });
         break;

@@ -4,9 +4,13 @@ Website ôn phỏng vấn Flutter theo rank (Fresher → Junior → Middle → S
 
 - **Ôn luyện**: câu hỏi phỏng vấn kèm đáp án mẫu, lọc theo chủ đề/trạng thái, tìm kiếm, đánh dấu _Đã thuộc_ / _Cần ôn lại_, chế độ **Flashcard**.
 - **Quiz**: trắc nghiệm 4 đáp án theo rank hoặc tổng hợp, chọn chủ đề và số câu. Chế độ _Luyện tập_ (giải thích ngay) và _Thi thử_ (đếm giờ). Có màn xem lại bài và nút làm lại câu sai.
+- **Ôn hôm nay**: ôn tập ngắt quãng (hộp Leitner 1 → 3 → 7 → 14 → 30 → 60 ngày). Mỗi ngày gồm các câu đến hạn + vài câu mới; tự chấm _Quên / Khó / Nhớ_. Số câu cần ôn hiện trên menu.
+- **Phỏng vấn thử**: bốc câu ngẫu nhiên theo rank (xen kẽ chủ đề), đếm giờ, ghi âm câu trả lời ngay trên trình duyệt để nghe lại, tự chấm; câu chưa tốt tự vào lịch ôn.
 - **Lộ trình 35 ngày**: lộ trình ~5 phút/ngày từ phiên bản đầu tiên. Tiến độ cũ vẫn được giữ.
 - **Tiến độ**: chuỗi ngày học, mức độ thuộc bài theo rank, chủ đề hay sai, lịch sử quiz, sao lưu/khôi phục JSON.
-- **Cộng đồng**: người dùng đóng góp câu hỏi, đề xuất tính năng, góp ý nội dung, báo lỗi, hỏi đáp; có Roadmap và trạng thái xử lý từng yêu cầu (dữ liệu lấy từ GitHub Issues).
+- **Cộng đồng**: người dùng đóng góp câu hỏi, đề xuất tính năng, góp ý nội dung, báo lỗi, hỏi đáp; có Roadmap và trạng thái xử lý từng yêu cầu (dữ liệu lấy từ GitHub Issues). Câu hỏi được duyệt hiển thị tên người đóng góp.
+- **Chia sẻ**: mỗi câu có trang riêng `#/q/<id>` và link chia sẻ `s/<id>.html` với ảnh/tiêu đề preview riêng khi đăng lên Facebook, Zalo.
+- **Cài như app (PWA)**: cài lên màn hình chính điện thoại, học được cả khi offline.
 
 Đây là site tĩnh thuần HTML/CSS/JS (ES modules): không cần build, không có dependency. Tiến độ được lưu trong `localStorage` của trình duyệt.
 
@@ -31,7 +35,12 @@ css/styles.css          giao diện (dark/light)
 js/main.js              router dạng hash (#/study/junior, #/quiz, ...)
 js/store.js             lưu tiến độ trong localStorage
 js/utils.js             escape HTML, tô màu code Dart, helpers
-js/views/               home, study, quiz, roadmap, progress, community
+js/views/               home, study, review (Ôn hôm nay), quiz, interview (Phỏng vấn thử),
+                        roadmap, progress, community, question (#/q/<id>)
+js/pwa.js, sw.js        đăng ký service worker, cài app, cache offline (network-first)
+manifest.webmanifest    thông tin PWA (tên, icon, shortcut)
+assets/                 icon app + og.png (ảnh preview khi chia sẻ)
+s/<id>.html             trang chia sẻ từng câu (sinh bởi scripts/build-share-pages.mjs)
 js/config.js            repo GitHub dùng cho trang Cộng đồng
 js/community.js         đọc GitHub Issues (cache + ETag), map label → trạng thái
 .github/ISSUE_TEMPLATE/ form đóng góp (5 loại) trên GitHub
@@ -40,7 +49,7 @@ data/meta.js            danh sách rank + chủ đề
 data/roadmap.js         lộ trình 35 ngày (mỗi câu có rank + topic)
 data/questions/<rank>.js  câu hỏi phỏng vấn bổ sung theo rank
 data/quiz/<rank>.js       câu quiz trắc nghiệm theo rank
-scripts/validate.mjs    kiểm tra schema dữ liệu
+scripts/validate.mjs    kiểm tra schema dữ liệu, danh sách cache offline, trang chia sẻ
 ```
 
 Ngân hàng câu hỏi của mỗi rank = `data/questions/<rank>.js` + các câu trong lộ trình có `rank` tương ứng.
@@ -69,7 +78,7 @@ Mỗi đóng góp là một **GitHub Issue** trong repo này. Trang Cộng đồ
 - **Loại đóng góp** do issue template tự gắn: `type: question`, `type: feature`, `type: content`, `type: bug`, `type: discussion`.
 - **Bình chọn** = số reaction 👍 trên issue. **Phản hồi** = comment; comment của owner/collaborator có nhãn "Quản trị".
 - Các label được workflow `.github/workflows/labels.yml` tự tạo khi push. Muốn đổi màu hay mô tả thì sửa `.github/labels.json`.
-- Câu hỏi được duyệt thì thêm vào `data/questions/<rank>.js` hoặc `data/quiz/<rank>.js`, rồi close issue với **Close as completed**.
+- Câu hỏi được duyệt thì thêm vào `data/questions/<rank>.js` hoặc `data/quiz/<rank>.js` kèm `by: "<github-username>", issue: <số issue>` để ghi công người đóng góp, rồi close issue với **Close as completed**.
 - GitHub giới hạn 60 request/giờ cho mỗi IP khi không đăng nhập. Trang cache 1 phút và dùng ETag (request không đổi trả 304, không bị tính vào giới hạn). Nếu vẫn bị giới hạn, trang hiển thị dữ liệu đã lưu kèm thông báo.
 
 ## Thêm câu hỏi
@@ -82,7 +91,9 @@ Câu hỏi phỏng vấn (`data/questions/<rank>.js`):
   topic: "state",         // key trong data/meta.js → TOPICS
   q: "Câu hỏi, dùng `backtick` cho code inline",
   a: "Đáp án mẫu",
-  code: "optional: đoạn Dart nhiều dòng",
+  code: "optional: đoạn Dart nhiều dòng (hiển thị cùng đáp án)",
+  by: "octocat",          // optional: GitHub username người đóng góp
+  issue: 12,              // optional: số issue trên trang Cộng đồng (cần có `by`)
 }
 ```
 
@@ -102,9 +113,12 @@ Câu quiz (`data/quiz/<rank>.js`):
 
 App tự xáo trộn thứ tự đáp án, nên **không** viết đáp án kiểu "Cả A và B" hay "Tất cả các đáp án trên".
 
-Sau khi sửa dữ liệu, chạy kiểm tra (cần Node 18+):
+Sau khi thêm/sửa câu hỏi, tạo lại trang chia sẻ rồi chạy kiểm tra (cần Node 18+):
 
 ```bash
-node scripts/validate.mjs          # tất cả rank
-node scripts/validate.mjs junior   # một rank
+node scripts/build-share-pages.mjs # cập nhật thư mục s/
+node scripts/validate.mjs          # tất cả rank + cache offline + trang chia sẻ
+node scripts/validate.mjs junior   # chỉ kiểm tra dữ liệu một rank
 ```
+
+Thêm file JS/CSS mới thì nhớ thêm vào danh sách `PRECACHE` trong `sw.js` (validator sẽ báo nếu thiếu), và tăng `CACHE` (`interview-v1` → `interview-v2`) nếu muốn xoá cache cũ trên máy người dùng.

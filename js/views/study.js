@@ -1,6 +1,6 @@
 import { RANKS, TOPICS, getRank, questionsFor } from "../../data/index.js";
 import { study, prefs } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, shuffle, percent, stackedBar } from "../utils.js";
+import { escapeHtml, fmt, codeBlock, topicTag, shuffle, percent, stackedBar, creditHtml, shareItem } from "../utils.js";
 
 const STATUS_FILTERS = [
   { id: "all", label: "Tất cả" },
@@ -140,10 +140,12 @@ export function mount(el, params) {
         <div class="q-answer"><div class="q-answer-clip"><div class="q-answer-inner">
           <div class="answer-text">${fmt(q.a)}</div>
           ${codeBlock(q.code)}
+          ${creditHtml(q)}
           ${q.day ? `<a class="q-source" href="#/roadmap/${q.day}">Trong lộ trình: ngày ${q.day}</a>` : ""}
           <div class="mark-row">
             <button type="button" class="mark-btn mark-known${status === "known" ? " active" : ""}" data-action="mark" data-value="known">✓ Đã thuộc</button>
             <button type="button" class="mark-btn mark-review${status === "review" ? " active" : ""}" data-action="mark" data-value="review">↻ Cần ôn lại</button>
+            <button type="button" class="feedback-link share-link" data-action="share">↗ Chia sẻ</button>
             <a class="feedback-link" href="#/community/new?type=content&ref=${encodeURIComponent(q.id)}">Góp ý câu này</a>
           </div>
         </div></div></div>
@@ -222,7 +224,7 @@ export function mount(el, params) {
           <div class="flash-q">${fmt(q.q)}</div>
           ${
             deck.flipped
-              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeBlock(q.code)}</div>`
+              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeBlock(q.code)}${creditHtml(q)}</div>`
               : `<div class="flash-hint">Tự trả lời trong đầu, rồi bấm để lật thẻ</div>`
           }
         </div>
@@ -295,6 +297,9 @@ export function mount(el, params) {
 
     const card = t.closest(".q-card");
     switch (t.dataset.action) {
+      case "share":
+        shareItem(all.find((q) => q.id === card.dataset.id));
+        break;
       case "toggle": {
         const id = card.dataset.id;
         if (opened.has(id)) opened.delete(id);

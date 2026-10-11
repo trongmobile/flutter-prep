@@ -1,4 +1,4 @@
-import { RANKS, TOPICS, ALL_QUESTIONS, ALL_QUIZ, getRank } from "../../data/index.js";
+import { RANKS, TOPICS, ALL_QUESTIONS, ALL_QUIZ, getRank, contributors } from "../../data/index.js";
 import { GITHUB_URL } from "../config.js";
 import {
   TYPES,
@@ -69,6 +69,24 @@ function errorText(err) {
     return `GitHub tạm giới hạn số lượt tải (60 lượt/giờ cho mỗi mạng).${when}`;
   }
   return err && err.message ? err.message : "Không tải được dữ liệu từ GitHub.";
+}
+
+// Những người có câu hỏi được thêm vào ngân hàng (trường `by` trong dữ liệu).
+function contributorsBlock() {
+  const list = contributors();
+  if (!list.length) return "";
+  return `
+    <div class="side-block">
+      <h2 class="side-title">Người đóng góp câu hỏi</h2>
+      <ul class="contributor-list">
+        ${list
+          .slice(0, 10)
+          .map(
+            (c) => `<li><a href="https://github.com/${escapeHtml(c.login)}" target="_blank" rel="noopener">${avatar(`https://avatars.githubusercontent.com/${encodeURIComponent(c.login)}?v=4`, c.login)}<span>@${escapeHtml(c.login)}</span></a><span class="count">${c.count} câu</span></li>`,
+          )
+          .join("")}
+      </ul>
+    </div>`;
 }
 
 // ---------- Bảng cộng đồng ----------
@@ -208,6 +226,7 @@ function mountBoard(el, tab) {
             </ol>
             <p class="muted small">Bình chọn 👍 trên GitHub để ưu tiên yêu cầu bạn quan tâm.</p>
           </div>
+          ${contributorsBlock()}
           <div class="side-block side-links">
             <button type="button" class="link-btn" data-action="refresh">↻ Làm mới</button>
             <a class="link-btn" href="${GITHUB_URL}/issues" target="_blank" rel="noopener">Mở trên GitHub ↗</a>

@@ -117,3 +117,52 @@ export function confirmClick(button, label, onConfirm, confirmLabel = "Bấm l�
     }
   }, 3000);
 }
+
+// Thông báo ngắn ở cuối màn hình.
+export function toast(message) {
+  let el = document.querySelector(".toast");
+  if (!el) {
+    el = document.createElement("div");
+    el.className = "toast";
+    el.setAttribute("role", "status");
+    document.body.append(el);
+  }
+  el.textContent = message;
+  el.classList.add("show");
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => el.classList.remove("show"), 2600);
+}
+
+// Link chia sẻ trỏ tới trang s/<id>.html (có thẻ preview riêng cho từng câu),
+// trang đó tự chuyển về #/q/<id>.
+export function shareUrl(id) {
+  return new URL(`s/${encodeURIComponent(id)}.html`, location.href.split("#")[0]).href;
+}
+
+export async function shareItem(item) {
+  const url = shareUrl(item.id);
+  const text = String(item.q).replace(/`/g, "");
+  const data = { title: "Câu hỏi phỏng vấn Flutter", text: text.length > 140 ? text.slice(0, 140) + "…" : text, url };
+  if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+    try {
+      await navigator.share(data);
+      return;
+    } catch (err) {
+      if (err && err.name === "AbortError") return; // người dùng đóng bảng chia sẻ
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    toast("Đã copy link câu hỏi");
+  } catch (err) {
+    window.prompt("Copy link câu hỏi:", url);
+  }
+}
+
+// "Đóng góp bởi @user · #12" cho câu hỏi đến từ cộng đồng (trường by / issue).
+export function creditHtml(item) {
+  if (!item || !item.by) return "";
+  const login = escapeHtml(item.by);
+  const issue = Number.isInteger(item.issue) ? ` · <a href="#/community/${item.issue}">#${item.issue}</a>` : "";
+  return `<p class="credit">Đóng góp bởi <a href="https://github.com/${login}" target="_blank" rel="noopener">@${login}</a>${issue}</p>`;
+}

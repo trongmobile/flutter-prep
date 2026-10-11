@@ -9,6 +9,23 @@
       content="Ôn câu hỏi phỏng vấn Flutter theo rank Fresher, Junior, Middle, Senior kèm đáp án mẫu, flashcard, quiz trắc nghiệm và lộ trình 35 ngày."
     />
     <meta name="theme-color" content="#0b1220" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Interview" />
+    <!-- Thẻ preview khi chia sẻ link lên Facebook, Zalo... -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Flutter Interview" />
+    <meta property="og:title" content="Flutter Interview — Ôn phỏng vấn Flutter theo rank" />
+    <meta
+      property="og:description"
+      content="Câu hỏi phỏng vấn có đáp án mẫu, quiz, phỏng vấn thử và ôn tập ngắt quãng — từ Fresher đến Senior. Miễn phí."
+    />
+    <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/" />
+    <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
@@ -59,10 +76,12 @@
         <nav class="nav" id="nav" aria-label="Điều hướng chính">
           <a href="#/" data-nav="home">Trang chủ</a>
           <a href="#/study" data-nav="study">Ôn luyện</a>
+          <a href="#/review" data-nav="review"
+            >Ôn hôm nay<span class="nav-badge" id="review-badge" hidden></span
+          ></a>
           <a href="#/quiz" data-nav="quiz">Quiz</a>
-          <a href="#/roadmap" data-nav="roadmap"
-            >Lộ trình<span class="nav-long"> 35 ngày</span></a
-          >
+          <a href="#/interview" data-nav="interview">Phỏng vấn thử</a>
+          <a href="#/roadmap" data-nav="roadmap">Lộ trình</a>
           <a href="#/progress" data-nav="progress">Tiến độ</a>
           <a href="#/community" data-nav="community">Cộng đồng</a>
         </nav>
@@ -88,6 +107,7 @@
       </div>
     </header>
 
+    <div class="offline-bar" role="status">Bạn đang offline — vẫn ôn được với dữ liệu đã lưu trên máy.</div>
     <main class="page" id="app" tabindex="-1">
       <p class="loading">Đang tải...</p>
       <noscript><p>Trang này cần bật JavaScript.</p></noscript>

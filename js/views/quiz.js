@@ -1,6 +1,6 @@
 import { RANKS, TOPICS, ALL_QUIZ, getRank, quizFor } from "../../data/index.js";
 import { quiz as quizStore, prefs } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, rankTag, shuffle, percent, formatDuration } from "../utils.js";
+import { escapeHtml, fmt, codeBlock, topicTag, rankTag, shuffle, percent, formatDuration, creditHtml, shareItem } from "../utils.js";
 
 const COUNTS = [10, 20, 30, 0]; // 0 = tất cả
 const SECONDS_PER_QUESTION = 45;
@@ -337,6 +337,7 @@ export function mount(el, _params, query) {
                       <span class="review-num">Câu ${num}</span>
                       ${topicTag(q.topic)}
                       <span class="review-verdict">${correct ? "✓ Đúng" : chosen === null ? "— Bỏ trống" : "✕ Sai"}</span>
+                      <button type="button" class="feedback-link share-link" data-share="${escapeHtml(q.id)}">↗ Chia sẻ</button>
                       <a class="feedback-link" href="#/community/new?type=content&ref=${encodeURIComponent(q.id)}" target="_blank" rel="noopener">Báo sai / góp ý ↗</a>
                     </div>
                     <div class="quiz-q small">${fmt(q.q)}</div>
@@ -354,6 +355,7 @@ export function mount(el, _params, query) {
                         .join("")}
                     </ul>
                     <div class="explain neutral">${fmt(q.explain)}</div>
+                    ${creditHtml(q)}
                   </article>`;
                 })
                 .join("")
@@ -391,6 +393,10 @@ export function mount(el, _params, query) {
     if (t.dataset.review) {
       reviewFilter = t.dataset.review;
       return renderResult();
+    }
+    if (t.dataset.share) {
+      const item = result && result.items.find((x) => x.q.id === t.dataset.share);
+      return item && shareItem(item.q);
     }
     switch (t.dataset.action) {
       case "start":

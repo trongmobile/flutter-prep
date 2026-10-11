@@ -5,13 +5,20 @@ import * as quiz from "./views/quiz.js";
 import * as roadmap from "./views/roadmap.js";
 import * as progress from "./views/progress.js";
 import * as community from "./views/community.js";
+import * as review from "./views/review.js";
+import * as interview from "./views/interview.js";
+import * as question from "./views/question.js";
 import { prefs } from "./store.js";
 import { trackPageview } from "./analytics.js";
+import { initPwa } from "./pwa.js";
 
-const VIEWS = { home, study, quiz, roadmap, progress, community };
+const VIEWS = { home, study, review, quiz, interview, roadmap, progress, community, q: question };
 const TITLES = {
   home: "Flutter Interview — Ôn phỏng vấn & Quiz theo rank",
   study: "Ôn luyện — Flutter Interview",
+  review: "Ôn hôm nay — Flutter Interview",
+  interview: "Phỏng vấn thử — Flutter Interview",
+  q: "Câu hỏi — Flutter Interview",
   quiz: "Quiz — Flutter Interview",
   roadmap: "Lộ trình 35 ngày — Flutter Interview",
   progress: "Tiến độ — Flutter Interview",
@@ -53,11 +60,17 @@ function route() {
   currentHash = location.hash;
 
   document.title = TITLES[name];
-  for (const a of document.querySelectorAll("[data-nav]")) {
-    a.classList.toggle("active", a.dataset.nav === name);
-    if (a.dataset.nav === name) a.setAttribute("aria-current", "page");
-    else a.removeAttribute("aria-current");
+  const nav = document.getElementById("nav");
+  for (const a of nav.querySelectorAll("[data-nav]")) {
+    const active = a.dataset.nav === name;
+    a.classList.toggle("active", active);
+    if (active) {
+      a.setAttribute("aria-current", "page");
+      // Menu cuộn ngang trên mobile: đưa mục đang mở vào giữa.
+      if (nav.scrollWidth > nav.clientWidth) nav.scrollLeft = a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2;
+    } else a.removeAttribute("aria-current");
   }
+  updateReviewBadge();
   window.scrollTo(0, 0);
   // View có thể chuyển hướng ngay khi mount (vd. #/study -> #/study/fresher): chỉ đếm trang đích.
   if (location.hash === hashAtStart) trackPageview(document.title);
@@ -84,5 +97,25 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   prefs.set("theme", next);
 });
 
+// ---- Số câu cần ôn hôm nay trên menu ----
+function updateReviewBadge() {
+  const badge = document.getElementById("review-badge");
+  if (!badge) return;
+  const { due, fresh } = review.reviewQueue();
+  const n = due.length + fresh.length;
+  badge.textContent = n > 99 ? "99+" : String(n);
+  badge.hidden = n === 0;
+}
+window.addEventListener("srs-change", updateReviewBadge);
+
+// ---- Báo khi mất mạng (site vẫn chạy offline nhờ service worker) ----
+function updateOnline() {
+  document.body.classList.toggle("is-offline", !navigator.onLine);
+}
+window.addEventListener("online", updateOnline);
+window.addEventListener("offline", updateOnline);
+updateOnline();
+
 window.addEventListener("hashchange", route);
 route();
+initPwa();

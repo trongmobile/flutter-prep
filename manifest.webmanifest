@@ -1,0 +1,21 @@
+{
+  "name": "Flutter Interview — Ôn phỏng vấn Flutter theo rank",
+  "short_name": "Interview",
+  "description": "Ôn câu hỏi phỏng vấn Flutter theo rank, quiz, phỏng vấn thử và ôn tập ngắt quãng.",
+  "lang": "vi",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Ôn hôm nay", "url": "./#/review", "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Phỏng vấn thử", "url": "./#/interview", "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Quiz nhanh 10 câu", "url": "./#/quiz?rank=all&start=1", "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
