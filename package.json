@@ -1,0 +1,10 @@
+{
+  "name": "flutter-prep",
+  "private": true,
+  "type": "module",
+  "description": "Ôn phỏng vấn Flutter theo rank: câu hỏi, flashcard, quiz, lộ trình 35 ngày.",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "serve": "python3 -m http.server 8000"
+  }
+}
