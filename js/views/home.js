@@ -47,7 +47,7 @@ export function mount(el) {
 
   el.innerHTML = `
     <header class="hero">
-      <div class="eyebrow">~/flutter-prep</div>
+      <div class="eyebrow">~/interview</div>
       <h1>Ôn phỏng vấn Flutter theo rank</h1>
       <p class="subtitle">
         ${ALL_QUESTIONS.length} câu hỏi phỏng vấn có đáp án mẫu · ${ALL_QUIZ.length} câu quiz trắc nghiệm ·

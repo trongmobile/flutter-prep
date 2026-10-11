@@ -180,7 +180,7 @@ export function exportAll() {
 
 export function importAll(payload) {
   if (!payload || payload.app !== "flutter-prep" || typeof payload.data !== "object") {
-    throw new Error("File không đúng định dạng sao lưu của flutter-prep.");
+    throw new Error("File không đúng định dạng sao lưu của interview.");
   }
   const allowed = new Set(Object.values(KEYS));
   for (const [key, value] of Object.entries(payload.data)) {

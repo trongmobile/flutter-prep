@@ -19,7 +19,7 @@ export function mount(el, params) {
 
   el.innerHTML = `
     <header class="hero">
-      <div class="eyebrow">~/flutter-prep/roadmap</div>
+      <div class="eyebrow">~/interview/roadmap</div>
       <h1>Lộ trình 35 ngày lên Senior</h1>
       <p class="subtitle" data-slot="subtitle"></p>
       <div class="stats-row">

@@ -179,7 +179,7 @@ export function mount(el) {
         const blob = new Blob([JSON.stringify(exportAll(), null, 2)], { type: "application/json" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = `flutter-prep-backup-${todayKey()}.json`;
+        a.download = `interview-backup-${todayKey()}.json`;
         a.click();
         setTimeout(() => URL.revokeObjectURL(a.href), 1000);
         message("Đã tải file sao lưu.");
