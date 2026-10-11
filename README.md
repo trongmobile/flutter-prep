@@ -6,6 +6,7 @@ Website ôn phỏng vấn Flutter theo rank (Fresher → Junior → Middle → S
 - **Quiz**: trắc nghiệm 4 đáp án theo rank hoặc tổng hợp, chọn chủ đề và số câu. Chế độ _Luyện tập_ (giải thích ngay) và _Thi thử_ (đếm giờ). Có màn xem lại bài và nút làm lại câu sai.
 - **Lộ trình 35 ngày**: lộ trình ~5 phút/ngày từ phiên bản đầu tiên. Tiến độ cũ vẫn được giữ.
 - **Tiến độ**: chuỗi ngày học, mức độ thuộc bài theo rank, chủ đề hay sai, lịch sử quiz, sao lưu/khôi phục JSON.
+- **Cộng đồng**: người dùng đóng góp câu hỏi, đề xuất tính năng, góp ý nội dung, báo lỗi, hỏi đáp; có Roadmap và trạng thái xử lý từng yêu cầu (dữ liệu lấy từ GitHub Issues).
 
 Đây là site tĩnh thuần HTML/CSS/JS (ES modules): không cần build, không có dependency. Tiến độ được lưu trong `localStorage` của trình duyệt.
 
@@ -30,7 +31,11 @@ css/styles.css          giao diện (dark/light)
 js/main.js              router dạng hash (#/study/junior, #/quiz, ...)
 js/store.js             lưu tiến độ trong localStorage
 js/utils.js             escape HTML, tô màu code Dart, helpers
-js/views/               home, study, quiz, roadmap, progress
+js/views/               home, study, quiz, roadmap, progress, community
+js/config.js            repo GitHub dùng cho trang Cộng đồng
+js/community.js         đọc GitHub Issues (cache + ETag), map label → trạng thái
+.github/ISSUE_TEMPLATE/ form đóng góp (5 loại) trên GitHub
+.github/labels.json     label loại + trạng thái, được workflow labels.yml tự tạo
 data/meta.js            danh sách rank + chủ đề
 data/roadmap.js         lộ trình 35 ngày (mỗi câu có rank + topic)
 data/questions/<rank>.js  câu hỏi phỏng vấn bổ sung theo rank
@@ -39,6 +44,25 @@ scripts/validate.mjs    kiểm tra schema dữ liệu
 ```
 
 Ngân hàng câu hỏi của mỗi rank = `data/questions/<rank>.js` + các câu trong lộ trình có `rank` tương ứng.
+
+## Quản lý trang Cộng đồng
+
+Mỗi đóng góp là một **GitHub Issue** trong repo này. Trang Cộng đồng đọc issues qua GitHub API công khai (không cần token), nên bạn chỉ cần thao tác trên GitHub:
+
+| Trạng thái trên web | Cách đặt trên GitHub |
+| --- | --- |
+| Mới | Issue đang mở, chưa có label `status: ...` |
+| Đang xem xét | Gắn label `status: reviewing` |
+| Đã lên kế hoạch | Gắn label `status: planned` (hiện ở cột Roadmap) |
+| Đang thực hiện | Gắn label `status: in progress` |
+| Đã hoàn thành | Close issue → **Close as completed** |
+| Không thực hiện | Close issue → **Close as not planned** (nên để lại comment giải thích) |
+
+- **Loại đóng góp** do issue template tự gắn: `type: question`, `type: feature`, `type: content`, `type: bug`, `type: discussion`.
+- **Bình chọn** = số reaction 👍 trên issue. **Phản hồi** = comment; comment của owner/collaborator có nhãn "Quản trị".
+- Các label được workflow `.github/workflows/labels.yml` tự tạo khi push. Muốn đổi màu hay mô tả thì sửa `.github/labels.json`.
+- Câu hỏi được duyệt thì thêm vào `data/questions/<rank>.js` hoặc `data/quiz/<rank>.js`, rồi close issue với **Close as completed**.
+- GitHub giới hạn 60 request/giờ cho mỗi IP khi không đăng nhập. Trang cache 1 phút và dùng ETag (request không đổi trả 304, không bị tính vào giới hạn). Nếu vẫn bị giới hạn, trang hiển thị dữ liệu đã lưu kèm thông báo.
 
 ## Thêm câu hỏi
 

@@ -4,15 +4,17 @@ import * as study from "./views/study.js";
 import * as quiz from "./views/quiz.js";
 import * as roadmap from "./views/roadmap.js";
 import * as progress from "./views/progress.js";
+import * as community from "./views/community.js";
 import { prefs } from "./store.js";
 
-const VIEWS = { home, study, quiz, roadmap, progress };
+const VIEWS = { home, study, quiz, roadmap, progress, community };
 const TITLES = {
   home: "Flutter Interview Prep — Ôn phỏng vấn & Quiz theo rank",
   study: "Ôn luyện — Flutter Interview Prep",
   quiz: "Quiz — Flutter Interview Prep",
   roadmap: "Lộ trình 35 ngày — Flutter Interview Prep",
   progress: "Tiến độ — Flutter Interview Prep",
+  community: "Cộng đồng — Flutter Interview Prep",
 };
 
 const app = document.getElementById("app");

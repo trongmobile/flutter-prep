@@ -1,0 +1,10 @@
+name: Hỏi đáp & thảo luận
+description: Hỏi kinh nghiệm phỏng vấn, chia sẻ đề phỏng vấn thực tế.
+labels: ["type: discussion"]
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Nội dung
+    validations:
+      required: true

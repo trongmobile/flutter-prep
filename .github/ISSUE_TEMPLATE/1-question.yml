@@ -1,0 +1,38 @@
+name: Câu hỏi phỏng vấn
+description: Đóng góp câu hỏi phỏng vấn hoặc câu quiz mới cho ngân hàng câu hỏi.
+labels: ["type: question"]
+body:
+  - type: markdown
+    attributes:
+      value: Cảm ơn bạn đã đóng góp! Câu hỏi được duyệt sẽ được thêm vào website, trạng thái xử lý hiển thị ở trang Cộng đồng.
+  - type: input
+    id: rank
+    attributes:
+      label: Rank
+      description: Fresher, Junior, Middle hoặc Senior
+      placeholder: Junior
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: Chủ đề
+      placeholder: "VD: State Management, Async & Isolate, Performance..."
+  - type: input
+    id: kind
+    attributes:
+      label: Loại
+      description: Câu hỏi phỏng vấn (tự luận) hoặc câu quiz trắc nghiệm
+      placeholder: Câu hỏi phỏng vấn
+  - type: textarea
+    id: question
+    attributes:
+      label: Câu hỏi
+      description: Với câu quiz, ghi kèm 4 đáp án A–D.
+    validations:
+      required: true
+  - type: textarea
+    id: answer
+    attributes:
+      label: Đáp án gợi ý
+      description: Đáp án mẫu hoặc đáp án đúng kèm giải thích (nếu có).

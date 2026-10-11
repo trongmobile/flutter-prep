@@ -337,6 +337,7 @@ export function mount(el, _params, query) {
                       <span class="review-num">Câu ${num}</span>
                       ${topicTag(q.topic)}
                       <span class="review-verdict">${correct ? "✓ Đúng" : chosen === null ? "— Bỏ trống" : "✕ Sai"}</span>
+                      <a class="feedback-link" href="#/community/new?type=content&ref=${encodeURIComponent(q.id)}" target="_blank" rel="noopener">Báo sai / góp ý ↗</a>
                     </div>
                     <div class="quiz-q small">${fmt(q.q)}</div>
                     ${codeBlock(q.code)}

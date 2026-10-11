@@ -1,0 +1,19 @@
+name: Góp ý nội dung
+description: Báo đáp án sai, câu hỏi lỗi thời hoặc gợi ý viết lại cho rõ hơn.
+labels: ["type: content"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Vị trí nội dung
+      description: Link tới câu hỏi, hoặc rank + nội dung câu hỏi.
+      placeholder: "https://trongmobile.github.io/flutter-prep/#/study/junior"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Nội dung góp ý
+      description: Điểm nào chưa đúng / chưa rõ, và nên sửa thành gì? Có nguồn tham khảo thì càng tốt.
+    validations:
+      required: true

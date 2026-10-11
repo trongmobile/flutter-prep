@@ -1,0 +1,23 @@
+name: Báo lỗi
+description: Website hiển thị sai, không bấm được, mất tiến độ...
+labels: ["type: bug"]
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Mô tả lỗi
+      description: Chuyện gì xảy ra, và bạn mong đợi điều gì?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Các bước tái hiện
+      placeholder: |
+        1. Vào trang ...
+        2. Bấm ...
+  - type: input
+    id: env
+    attributes:
+      label: Thiết bị / trình duyệt
+      placeholder: "VD: iPhone 15, Safari"

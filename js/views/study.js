@@ -144,6 +144,7 @@ export function mount(el, params) {
           <div class="mark-row">
             <button type="button" class="mark-btn mark-known${status === "known" ? " active" : ""}" data-action="mark" data-value="known">✓ Đã thuộc</button>
             <button type="button" class="mark-btn mark-review${status === "review" ? " active" : ""}" data-action="mark" data-value="review">↻ Cần ôn lại</button>
+            <a class="feedback-link" href="#/community/new?type=content&ref=${encodeURIComponent(q.id)}">Góp ý câu này</a>
           </div>
         </div></div></div>
       </article>`;

@@ -93,6 +93,18 @@ export function mount(el) {
       <a class="btn btn-primary" href="#/roadmap">${doneDays.size ? "Tiếp tục lộ trình" : "Bắt đầu lộ trình"}</a>
     </section>
 
+    <section class="card roadmap-teaser community-teaser">
+      <div>
+        <div class="eyebrow">cộng đồng · đóng góp</div>
+        <h2>Cùng xây ngân hàng câu hỏi</h2>
+        <p class="muted">Đóng góp câu hỏi phỏng vấn bạn từng gặp, đề xuất tính năng, báo đáp án sai — và theo dõi trạng thái xử lý trên Roadmap.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-ghost" href="#/community">Xem cộng đồng</a>
+        <a class="btn btn-primary" href="#/community/new">+ Tạo đóng góp</a>
+      </div>
+    </section>
+
     <section class="how">
       <div class="section-head"><h2>Cách dùng hiệu quả</h2></div>
       <ol class="how-list">
