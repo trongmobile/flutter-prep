@@ -45,6 +45,14 @@ scripts/validate.mjs    kiểm tra schema dữ liệu
 
 Ngân hàng câu hỏi của mỗi rank = `data/questions/<rank>.js` + các câu trong lộ trình có `rank` tương ứng.
 
+## Thống kê truy cập
+
+Site dùng [GoatCounter](https://www.goatcounter.com) (miễn phí, không dùng cookie nên không cần banner xin đồng ý). Xem số liệu tại https://interview.goatcounter.com.
+
+- Site dùng hash route (`#/quiz`, `#/study/junior`) nên `index.html` tắt đếm tự động (`no_onload`), còn `js/analytics.js` đếm mỗi lần đổi trang. Đường dẫn được gửi dạng `/flutter-prep/#/quiz` (bỏ phần `?query`).
+- Lượt xem từ `localhost` không được tính.
+- Muốn bỏ qua lượt truy cập của chính bạn: vào Settings của GoatCounter và thêm IP của bạn vào mục bỏ qua.
+
 ## Quản lý trang Cộng đồng
 
 Mỗi đóng góp là một **GitHub Issue** trong repo này. Trang Cộng đồng đọc issues qua GitHub API công khai (không cần token), nên bạn chỉ cần thao tác trên GitHub:

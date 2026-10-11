@@ -6,15 +6,16 @@ import * as roadmap from "./views/roadmap.js";
 import * as progress from "./views/progress.js";
 import * as community from "./views/community.js";
 import { prefs } from "./store.js";
+import { trackPageview } from "./analytics.js";
 
 const VIEWS = { home, study, quiz, roadmap, progress, community };
 const TITLES = {
-  home: "Flutter Interview Prep — Ôn phỏng vấn & Quiz theo rank",
-  study: "Ôn luyện — Flutter Interview Prep",
-  quiz: "Quiz — Flutter Interview Prep",
-  roadmap: "Lộ trình 35 ngày — Flutter Interview Prep",
-  progress: "Tiến độ — Flutter Interview Prep",
-  community: "Cộng đồng — Flutter Interview Prep",
+  home: "Flutter Interview — Ôn phỏng vấn & Quiz theo rank",
+  study: "Ôn luyện — Flutter Interview",
+  quiz: "Quiz — Flutter Interview",
+  roadmap: "Lộ trình 35 ngày — Flutter Interview",
+  progress: "Tiến độ — Flutter Interview",
+  community: "Cộng đồng — Flutter Interview",
 };
 
 const app = document.getElementById("app");
@@ -44,6 +45,7 @@ function route() {
   }
   if (current && current.destroy) current.destroy();
 
+  const hashAtStart = location.hash;
   const el = document.createElement("div");
   el.className = "view";
   app.replaceChildren(el);
@@ -57,6 +59,8 @@ function route() {
     else a.removeAttribute("aria-current");
   }
   window.scrollTo(0, 0);
+  // View có thể chuyển hướng ngay khi mount (vd. #/study -> #/study/fresher): chỉ đếm trang đích.
+  if (location.hash === hashAtStart) trackPageview(document.title);
 }
 
 // Bấm lại link của trang hiện tại -> mở lại trang từ đầu (vd. về màn chọn quiz).

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flutter Interview Prep — Ôn phỏng vấn & Quiz theo rank</title>
+    <title>Flutter Interview — Ôn phỏng vấn & Quiz theo rank</title>
     <meta
       name="description"
       content="Ôn câu hỏi phỏng vấn Flutter theo rank Fresher, Junior, Middle, Senior kèm đáp án mẫu, flashcard, quiz trắc nghiệm và lộ trình 35 ngày."
@@ -28,6 +28,16 @@
           document.documentElement.dataset.theme = p.theme;
       } catch (e) {}
     </script>
+    <script>
+      // GoatCounter: site dùng hash route nên tắt đếm tự động,
+      // js/analytics.js đếm theo từng trang mỗi lần đổi route.
+      window.goatcounter = { no_onload: true };
+    </script>
+    <script
+      data-goatcounter="https://interview.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
@@ -40,14 +50,19 @@
               class="brand-mark-bubble"
               d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"
             />
-            <path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4" /></svg
+            <path
+              class="brand-mark-prompt"
+              d="M7.5 8l3 2.5-3 2.5M12.5 13h4"
+            /></svg
           >Interview</a
         >
         <nav class="nav" id="nav" aria-label="Điều hướng chính">
           <a href="#/" data-nav="home">Trang chủ</a>
           <a href="#/study" data-nav="study">Ôn luyện</a>
           <a href="#/quiz" data-nav="quiz">Quiz</a>
-          <a href="#/roadmap" data-nav="roadmap">Lộ trình<span class="nav-long"> 35 ngày</span></a>
+          <a href="#/roadmap" data-nav="roadmap"
+            >Lộ trình<span class="nav-long"> 35 ngày</span></a
+          >
           <a href="#/progress" data-nav="progress">Tiến độ</a>
           <a href="#/community" data-nav="community">Cộng đồng</a>
         </nav>
