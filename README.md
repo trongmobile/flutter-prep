@@ -9,6 +9,7 @@ Website **Mobile Interview**: ôn phỏng vấn mobile theo nền tảng (**Flut
 - **Lộ trình 35 ngày** (chỉ Flutter): lộ trình ~5 phút/ngày từ phiên bản đầu tiên. Tiến độ cũ vẫn được giữ.
 - **Tiến độ**: chuỗi ngày học, mức độ thuộc bài theo rank, chủ đề hay sai, lịch sử quiz, sao lưu/khôi phục JSON.
 - **Cộng đồng**: người dùng đóng góp câu hỏi, đề xuất tính năng, góp ý nội dung, báo lỗi, hỏi đáp; có Roadmap và trạng thái xử lý từng yêu cầu (dữ liệu lấy từ GitHub Issues). Câu hỏi được duyệt hiển thị tên người đóng góp.
+- **Việc làm**: theo từng nền tảng, có lối tắt sang trang tìm kiếm đã lọc sẵn trên ITviec, TopCV, VietnamWorks, CareerViet, LinkedIn, kèm tin tuyển dụng do cộng đồng đăng (GitHub Issues).
 - **Chia sẻ**: mỗi câu có trang riêng `#/q/<id>` và link chia sẻ `s/<id>.html` với ảnh/tiêu đề preview riêng khi đăng lên Facebook, Zalo.
 - **Cài như app (PWA)**: cài lên màn hình chính điện thoại, học được cả khi offline.
 
@@ -37,14 +38,15 @@ js/main.js              router dạng hash theo track (#/android/study/junior, #
 js/store.js             lưu tiến độ trong localStorage
 js/utils.js             escape HTML, tô màu code (Dart, Kotlin, Java, Swift, TS/JSX, XML), helpers
 js/views/               home, study, review (Ôn hôm nay), quiz, interview (Phỏng vấn thử),
-                        roadmap, progress, community, question (#/q/<id>)
+                        roadmap, progress, jobs (Việc làm), community, question (#/q/<id>)
 js/pwa.js, sw.js        đăng ký service worker, cài app, cache offline (network-first)
 manifest.webmanifest    thông tin PWA (tên, icon, shortcut)
 assets/                 icon app, og.png (preview trang chủ), og-<track>.png (preview trang chia sẻ)
 s/<id>.html             trang chia sẻ từng câu (sinh bởi scripts/build-share-pages.mjs)
 js/config.js            repo GitHub dùng cho trang Cộng đồng
 js/community.js         đọc GitHub Issues (cache + ETag), map label → trạng thái
-.github/ISSUE_TEMPLATE/ form đóng góp (5 loại) trên GitHub
+js/jobs.js              trang tuyển dụng ngoài theo track, đọc tin tuyển dụng (label `type: job`)
+.github/ISSUE_TEMPLATE/ form đóng góp (6 loại, gồm tin tuyển dụng) trên GitHub
 .github/labels.json     label loại + trạng thái, được workflow labels.yml tự tạo
 data/meta.js            danh sách rank (dùng chung)
 data/tracks.js          danh sách track: tên, tiền tố id, ngôn ngữ code mặc định, mô tả rank, chủ đề
@@ -81,7 +83,8 @@ Mỗi đóng góp là một **GitHub Issue** trong repo này. Trang Cộng đồ
 | Đã hoàn thành | Close issue → **Close as completed** |
 | Không thực hiện | Close issue → **Close as not planned** (nên để lại comment giải thích) |
 
-- **Loại đóng góp** do issue template tự gắn: `type: question`, `type: feature`, `type: content`, `type: bug`, `type: discussion`.
+- **Loại đóng góp** do issue template tự gắn: `type: question`, `type: feature`, `type: content`, `type: bug`, `type: discussion`, `type: job`.
+- **Tin tuyển dụng** (`type: job`) không hiện ở trang Cộng đồng mà ở trang **Việc làm**, lọc theo trường "Nền tảng". Tin tự ẩn sau 60 ngày; gỡ tin sớm (tuyển xong, spam) bằng cách close issue.
 - **Bình chọn** = số reaction 👍 trên issue. **Phản hồi** = comment; comment của owner/collaborator có nhãn "Quản trị".
 - Các label được workflow `.github/workflows/labels.yml` tự tạo khi push. Muốn đổi màu hay mô tả thì sửa `.github/labels.json`.
 - Câu hỏi được duyệt thì thêm vào `data/<track>/questions/<rank>.js` hoặc `data/<track>/quiz/<rank>.js` kèm `by: "<github-username>", issue: <số issue>` để ghi công người đóng góp, rồi close issue với **Close as completed**.

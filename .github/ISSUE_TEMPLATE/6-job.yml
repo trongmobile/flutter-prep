@@ -1,0 +1,69 @@
+name: Tin tuyển dụng
+description: Đăng tin tuyển Flutter, Android, iOS hoặc React Native — hiển thị ở trang Việc làm.
+labels: ["type: job"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tin hiển thị ở trang **Việc làm** theo nền tảng, miễn phí.
+        - Tin tự ẩn sau 60 ngày. Tuyển xong, hãy **Close issue** để gỡ tin sớm hơn.
+        - Tin không rõ công ty, không có cách ứng tuyển hoặc mang tính quảng cáo sẽ bị gỡ.
+  - type: input
+    id: track
+    attributes:
+      label: Nền tảng
+      description: Flutter, Android, iOS hoặc React Native. Nhiều nền tảng thì cách nhau bằng dấu phẩy.
+      placeholder: Flutter
+    validations:
+      required: true
+  - type: input
+    id: company
+    attributes:
+      label: Công ty
+      placeholder: Tên công ty
+    validations:
+      required: true
+  - type: input
+    id: rank
+    attributes:
+      label: Cấp độ
+      description: Fresher, Junior, Middle hoặc Senior
+      placeholder: Middle
+  - type: input
+    id: location
+    attributes:
+      label: Địa điểm
+      placeholder: "VD: Hà Nội, TP.HCM, Remote"
+    validations:
+      required: true
+  - type: input
+    id: mode
+    attributes:
+      label: Hình thức
+      placeholder: "VD: Full-time · Hybrid"
+  - type: input
+    id: salary
+    attributes:
+      label: Mức lương
+      placeholder: "VD: 25–40 triệu, Thoả thuận"
+  - type: input
+    id: apply
+    attributes:
+      label: Link ứng tuyển hoặc email
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Mô tả công việc
+      description: Yêu cầu, quyền lợi, quy trình phỏng vấn...
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Xác nhận
+      options:
+        - label: Đây là vị trí đang tuyển thật và tôi được phép đăng tin này.
+          required: true

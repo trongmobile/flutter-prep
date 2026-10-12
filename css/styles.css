@@ -754,6 +754,7 @@ section { margin-top: 32px; }
 .type-content { --tt: var(--accent-amber); --tt-dim: var(--accent-amber-dim); }
 .type-bug { --tt: var(--accent-red); --tt-dim: var(--accent-red-dim); }
 .type-discussion { --tt: var(--accent-purple); --tt-dim: var(--accent-purple-dim); }
+.type-job { --tt: var(--accent-green); --tt-dim: var(--accent-green-dim); }
 
 .community-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
 .community-head h1 { font-size: clamp(26px, 5vw, 36px); font-weight: 700; margin: 6px 0 8px; }
@@ -1151,4 +1152,38 @@ audio { width: 100%; max-width: 480px; height: 40px; }
 @media (max-width: 720px) {
   .track-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .track-tab { padding: 9px 12px; }
+}
+
+/* ============ Việc làm ============ */
+.job-sites-section { margin-top: 8px; }
+.job-sites { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); gap: 10px; }
+.job-site {
+  display: grid; gap: 3px; padding: 12px 14px; border-radius: var(--radius);
+  border: 1px solid var(--border-soft); background: var(--bg-elevated);
+  color: var(--text); text-decoration: none; transition: border-color 0.15s;
+}
+.job-site:hover { border-color: var(--accent-blue); }
+.job-site strong { font-size: 15px; }
+.job-site strong span { color: var(--text-faint); font-weight: 400; }
+.job-site > span { color: var(--text-muted); font-size: 12.5px; }
+.job-list { display: grid; gap: 10px; }
+.job {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px 18px; flex-wrap: wrap;
+  background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 16px 18px;
+}
+.job-main { display: grid; gap: 6px; min-width: 0; flex: 1 1 320px; }
+.job-title { font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--text); text-decoration: none; }
+.job-title:hover { color: var(--accent-blue); }
+.job-company { font-size: 14px; font-weight: 500; }
+.job-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.job-tag {
+  font-family: var(--font-mono); font-size: 11.5px; border-radius: 5px; padding: 2px 8px;
+  color: var(--text-muted); background: var(--surface-2);
+}
+.job-tag.job-salary { color: var(--accent-green); background: var(--accent-green-dim); }
+.job-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .job { padding: 14px; }
+  .job-actions { width: 100%; }
+  .job-actions .btn { flex: 1; }
 }

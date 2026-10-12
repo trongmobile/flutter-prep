@@ -7,6 +7,7 @@ import * as quiz from "./views/quiz.js";
 import * as roadmap from "./views/roadmap.js";
 import * as progress from "./views/progress.js";
 import * as community from "./views/community.js";
+import * as jobs from "./views/jobs.js";
 import * as review from "./views/review.js";
 import * as interview from "./views/interview.js";
 import * as question from "./views/question.js";
@@ -15,7 +16,7 @@ import { TRACKS, DEFAULT_TRACK, getTrack, trackOfId, loadTrack, setActiveTrack }
 import { trackPageview } from "./analytics.js";
 import { initPwa } from "./pwa.js";
 
-const VIEWS = { home, study, review, quiz, interview, roadmap, progress, community, q: question };
+const VIEWS = { home, study, review, quiz, interview, roadmap, progress, jobs, community, q: question };
 const TITLES = {
   home: "Trang chủ",
   study: "Ôn luyện",
@@ -25,10 +26,11 @@ const TITLES = {
   quiz: "Quiz",
   roadmap: "Lộ trình 35 ngày",
   progress: "Tiến độ",
+  jobs: "Việc làm",
   community: "Cộng đồng",
 };
 // View gắn với một track (URL có tiền tố track); các view còn lại dùng chung.
-const TRACK_VIEWS = new Set(["home", "study", "review", "quiz", "interview", "roadmap", "progress"]);
+const TRACK_VIEWS = new Set(["home", "study", "review", "quiz", "interview", "roadmap", "progress", "jobs"]);
 
 const app = document.getElementById("app");
 let current = null; // { destroy?, canLeave? } do view trả về
@@ -130,7 +132,7 @@ trackSelect.addEventListener("change", () => {
   const { name, params } = parseHash();
   let target = `#/${next.id}`;
   if (name === "study" || name === "quiz") target += `/${name}${name === "study" && params[0] ? "/" + params[0] : ""}`;
-  else if (["review", "interview", "progress"].includes(name) || (name === "roadmap" && next.hasRoadmap)) target += `/${name}`;
+  else if (["review", "interview", "progress", "jobs"].includes(name) || (name === "roadmap" && next.hasRoadmap)) target += `/${name}`;
   else if (name === "community") {
     prefs.set("track", next.id);
     return route();

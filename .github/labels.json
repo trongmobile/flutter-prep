@@ -4,6 +4,7 @@
   { "name": "type: content", "color": "fbca04", "description": "Góp ý nội dung câu hỏi / đáp án" },
   { "name": "type: bug", "color": "d73a4a", "description": "Báo lỗi website" },
   { "name": "type: discussion", "color": "c5def5", "description": "Hỏi đáp & thảo luận" },
+  { "name": "type: job", "color": "bfd4f2", "description": "Tin tuyển dụng (trang Việc làm)" },
   { "name": "status: reviewing", "color": "e99695", "description": "Trạng thái: Đang xem xét" },
   { "name": "status: planned", "color": "0052cc", "description": "Trạng thái: Đã lên kế hoạch" },
   { "name": "status: in progress", "color": "5319e7", "description": "Trạng thái: Đang thực hiện" }

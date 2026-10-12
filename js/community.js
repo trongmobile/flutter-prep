@@ -45,6 +45,14 @@ export const TYPES = [
     desc: "Hỏi kinh nghiệm phỏng vấn, chia sẻ đề phỏng vấn thực tế.",
     template: "5-discussion.yml",
   },
+  {
+    id: "job",
+    label: "type: job",
+    name: "Tin tuyển dụng",
+    short: "Tuyển dụng",
+    desc: "Đăng tin tuyển Flutter, Android, iOS, React Native — hiển thị ở trang Việc làm.",
+    template: "6-job.yml",
+  },
 ];
 const OTHER_TYPE = { id: "other", name: "Khác", short: "Khác" };
 
@@ -132,15 +140,23 @@ function normalize(issue) {
     excerpt: plainText(main ? main.text : "").slice(0, 280),
     meta,
     bodyHtml: issue.body_html || "",
+    // Tin tuyển dụng cần từng trường (công ty, địa điểm...) để hiển thị ở trang Việc làm.
+    fields: type && type.id === "job" ? Object.fromEntries(sections.map((s) => [s.title, s.text])) : undefined,
   };
 }
 
 // ---------- Gọi API có cache ----------
 // GitHub cho phép 60 request/giờ/IP khi không đăng nhập. Request có ETag mà dữ liệu
 // không đổi trả về 304 và không bị tính vào giới hạn, nên lưu ETag theo từng trang.
-const CACHE_KEY = "fip.community.v1";
+const CACHE_KEY = "fip.community.v2";
 const FRESH_MS = 60 * 1000;
 const MAX_PAGES = 5;
+
+try {
+  localStorage.removeItem("fip.community.v1"); // cache cũ chưa có trường tin tuyển dụng
+} catch (e) {
+  /* bị chặn: bỏ qua */
+}
 
 function readCache() {
   try {

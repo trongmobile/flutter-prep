@@ -15,6 +15,7 @@ import {
   RateLimitError,
 } from "../community.js";
 import { escapeHtml } from "../utils.js";
+import { jobOf } from "../jobs.js";
 
 const SORTS = [
   { id: "new", label: "Mới nhất", fn: (a, b) => b.created.localeCompare(a.created) },
@@ -53,6 +54,9 @@ function avatar(url, login, size = 22) {
     : `<span class="avatar avatar-empty" style="width:${size}px;height:${size}px">${escapeHtml((login || "?")[0].toUpperCase())}</span>`;
 }
 function statusPill(id, typeId) {
+  if (typeId === "job") {
+    return id === "done" || id === "declined" ? `<span class="status-pill st-gray">Đã đóng tuyển</span>` : `<span class="status-pill st-green">Đang tuyển</span>`;
+  }
   const s = getStatus(id);
   const name = id === "done" && typeId === "discussion" ? "Đã giải quyết" : s.name;
   return `<span class="status-pill st-${s.color}">${name}</span>`;
@@ -129,7 +133,7 @@ function mountBoard(el, tab) {
     try {
       const res = await loadIssues({ force });
       if (!el.isConnected) return;
-      items = res.items;
+      items = res.items.filter((i) => i.type !== "job"); // tin tuyển dụng nằm ở trang Việc làm
       notice = res.stale
         ? `${errorText(res.error)} Đang hiển thị dữ liệu đã lưu lúc ${new Date(res.fetchedAt).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}.`
         : "";
@@ -207,7 +211,7 @@ function mountBoard(el, tab) {
             <h2 class="side-title">Danh mục</h2>
             <div class="chips">
               <button type="button" class="chip${ui.type === "all" ? " active" : ""}" data-type="all">Tất cả <span class="count">${typeCount("all")}</span></button>
-              ${TYPES.map(
+              ${TYPES.filter((t) => t.id !== "job").map(
                 (t) =>
                   `<button type="button" class="chip${ui.type === t.id ? " active" : ""}" data-type="${t.id}">${t.name} <span class="count">${typeCount(t.id)}</span></button>`,
               ).join("")}
@@ -370,7 +374,7 @@ function mountBoard(el, tab) {
 // ---------- Chi tiết một đóng góp ----------
 function mountDetail(el, number) {
   el.innerHTML = `
-    <a class="back-link" href="#/community">← Cộng đồng</a>
+    <a class="back-link" href="#/community" data-slot="back">← Cộng đồng</a>
     <div data-slot="detail"><div class="skeleton tall"></div></div>
     <div data-slot="comments"></div>`;
   const slot = (n) => el.querySelector(`[data-slot="${n}"]`);
@@ -399,7 +403,8 @@ function mountDetail(el, number) {
       return;
     }
     if (!el.isConnected) return;
-    document.title = `${item.title} — Cộng đồng`;
+    document.title = `${item.title} — ${item.type === "job" ? "Việc làm" : "Cộng đồng"}`;
+    if (item.type === "job") Object.assign(slot("back"), { href: "#/jobs", textContent: "← Việc làm" });
     slot("detail").innerHTML = `
       <article class="card post-detail">
         <div class="post-meta">
@@ -410,10 +415,16 @@ function mountDetail(el, number) {
         </div>
         <h1 class="detail-h1">${escapeHtml(item.title)}</h1>
         <div class="detail-status">${statusPill(item.status, item.type)}</div>
-        ${item.type !== "discussion" ? tracker(item.status) : ""}
+        ${item.type !== "discussion" && item.type !== "job" ? tracker(item.status) : ""}
         <div class="md">${sanitizeHtml(item.bodyHtml) || '<p class="muted">Không có nội dung.</p>'}</div>
         <div class="btn-row detail-actions">
-          <a class="btn btn-ghost" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">▲ Bình chọn (${item.votes}) trên GitHub</a>
+          ${
+            item.type === "job"
+              ? jobOf(item).applyUrl
+                ? `<a class="btn btn-ghost" href="${escapeHtml(jobOf(item).applyUrl)}" target="_blank" rel="noopener noreferrer nofollow">Ứng tuyển ↗</a>`
+                : ""
+              : `<a class="btn btn-ghost" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">▲ Bình chọn (${item.votes}) trên GitHub</a>`
+          }
           <a class="btn btn-primary" href="${escapeHtml(item.url)}#new_comment_field" target="_blank" rel="noopener">Phản hồi trên GitHub ↗</a>
         </div>
       </article>`;
@@ -477,6 +488,17 @@ function fieldsFor(typeId, trackName) {
         { id: "location", label: "Vị trí nội dung", kind: "input", required: true, hint: "Link hoặc nội dung câu hỏi cần góp ý." },
         { id: "details", label: "Nội dung góp ý", kind: "textarea", required: true, hint: "Điểm nào chưa đúng / chưa rõ và nên sửa thành gì?" },
       ];
+    case "job":
+      return [
+        { id: "track", label: "Nền tảng", kind: "input", required: true, hint: "Nhiều nền tảng thì cách nhau bằng dấu phẩy, vd. Flutter, React Native." },
+        { id: "company", label: "Công ty", kind: "input", required: true },
+        { id: "rank", label: "Cấp độ", kind: "select", options: rankOptions },
+        { id: "location", label: "Địa điểm", kind: "input", required: true, hint: "VD: Hà Nội, TP.HCM, Remote." },
+        { id: "mode", label: "Hình thức", kind: "input", hint: "VD: Full-time · Hybrid." },
+        { id: "salary", label: "Mức lương", kind: "input", hint: "VD: 25–40 triệu, Thoả thuận." },
+        { id: "apply", label: "Link ứng tuyển hoặc email", kind: "input", required: true },
+        { id: "details", label: "Mô tả công việc", kind: "textarea", required: true, hint: "Yêu cầu, quyền lợi, quy trình phỏng vấn..." },
+      ];
     case "bug":
       return [
         { id: "details", label: "Mô tả lỗi", kind: "textarea", required: true },
@@ -521,16 +543,18 @@ function mountCompose(el, query) {
   }
 
   function render() {
+    const isJob = state.type === "job";
+    const back = isJob ? `<a class="back-link" href="#/jobs">← Việc làm</a>` : `<a class="back-link" href="#/community">← Cộng đồng</a>`;
     if (state.sent) {
       el.innerHTML = `
-        <a class="back-link" href="#/community">← Cộng đồng</a>
+        ${back}
         <div class="card sent-card">
           <h1>Đã mở GitHub ở tab mới ✓</h1>
-          <p class="muted">Kiểm tra lại nội dung rồi bấm <strong>Create</strong> trên GitHub. Đóng góp sẽ xuất hiện ở trang Cộng đồng sau khoảng 1 phút, và bạn nhận thông báo qua GitHub khi có phản hồi hoặc khi trạng thái thay đổi.</p>
+          <p class="muted">Kiểm tra lại nội dung rồi bấm <strong>Create</strong> trên GitHub. ${isJob ? "Tin sẽ xuất hiện ở trang Việc làm" : "Đóng góp sẽ xuất hiện ở trang Cộng đồng"} sau khoảng 1 phút, và bạn nhận thông báo qua GitHub khi có phản hồi hoặc khi trạng thái thay đổi.</p>
           <p class="muted small">GitHub chưa mở? <a href="${escapeHtml(state.url)}" target="_blank" rel="noopener">Bấm vào đây để mở</a>.</p>
           ${state.copied ? `<p class="notice">Nội dung khá dài nên đã được <strong>copy vào clipboard</strong> — hãy dán vào các ô tương ứng trên GitHub.</p>` : ""}
           <div class="btn-row">
-            <a class="btn btn-primary" href="#/community">Về trang Cộng đồng</a>
+            <a class="btn btn-primary" href="${isJob ? "#/jobs" : "#/community"}">Về trang ${isJob ? "Việc làm" : "Cộng đồng"}</a>
             <button type="button" class="btn btn-ghost" data-action="again">Tạo đóng góp khác</button>
           </div>
         </div>`;
@@ -539,7 +563,7 @@ function mountCompose(el, query) {
     const fields = state.type ? fieldsFor(state.type, state.values.track) : [];
     if (state.type === "bug" && !state.values.env) state.values.env = describeEnv();
     el.innerHTML = `
-      <a class="back-link" href="#/community">← Cộng đồng</a>
+      ${back}
       <header class="view-head">
         <div class="eyebrow">cộng đồng · đóng góp</div>
         <h1>Tạo đóng góp</h1>
@@ -558,7 +582,7 @@ function mountCompose(el, query) {
           ? `<form class="card compose-form" novalidate>
               <div class="field">
                 <label for="f-title">Tiêu đề <span class="req">*</span></label>
-                <input id="f-title" name="title" class="input" maxlength="140" required value="${escapeHtml(state.values.title || "")}" placeholder="Tóm tắt ngắn gọn trong một câu" />
+                <input id="f-title" name="title" class="input" maxlength="140" required value="${escapeHtml(state.values.title || "")}" placeholder="${isJob ? "Vị trí tuyển, vd. Senior Flutter Developer" : "Tóm tắt ngắn gọn trong một câu"}" />
               </div>
               ${fields
                 .map((f) => {
@@ -595,7 +619,7 @@ function mountCompose(el, query) {
 
   // Đổi nền tảng -> vẽ lại form để danh sách chủ đề khớp nền tảng mới.
   el.addEventListener("change", (e) => {
-    if (e.target.name !== "track") return;
+    if (e.target.name !== "track" || e.target.tagName !== "SELECT") return;
     collect(e.target.form);
     const topics = Object.values((TRACKS.find((t) => t.name === state.values.track) || currentTrack()).topics);
     if (!topics.includes(state.values.topic)) state.values.topic = "";
