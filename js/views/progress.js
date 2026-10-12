@@ -1,15 +1,18 @@
-import { RANKS, TOPICS, DAYS, ALL_QUESTIONS, ALL_QUIZ, getRank, questionsFor } from "../../data/index.js";
+import { RANKS, getRank, questionsFor, allQuestions, allQuiz, topics, roadmap as roadmapData, currentTrack } from "../../data/index.js";
 import { study, quiz, roadmap, activity, srs, interview, SRS_INTERVALS, exportAll, importAll, resetAll, todayKey } from "../store.js";
 import { escapeHtml, percent, stackedBar, formatDate, formatDuration, confirmClick } from "../utils.js";
 
 const HEATMAP_WEEKS = 15;
 
 export function mount(el) {
+  const track = currentTrack();
+  const trackIds = () => new Set(allQuestions().map((q) => q.id));
+
   function render() {
     const marks = study.all();
-    const { history, stats } = quiz.data();
-    const quizById = new Map(ALL_QUIZ.map((q) => [q.id, q]));
-    const known = ALL_QUESTIONS.filter((q) => marks[q.id] === "known").length;
+    const { history, stats } = quiz.data(track.id);
+    const quizById = new Map(allQuiz().map((q) => [q.id, q]));
+    const known = allQuestions().filter((q) => marks[q.id] === "known").length;
 
     let attempts = 0;
     let correct = 0;
@@ -32,7 +35,7 @@ export function mount(el) {
       const qs = questionsFor(r.id);
       const k = qs.filter((q) => marks[q.id] === "known").length;
       const rv = qs.filter((q) => marks[q.id] === "review").length;
-      const best = quiz.best(r.id);
+      const best = quiz.best(r.id, track.id);
       return `
         <div class="rank-row rank-${r.color}">
           <a class="rank-row-name" href="#/study/${r.id}">${escapeHtml(r.name)}</a>
@@ -52,21 +55,22 @@ export function mount(el) {
     }).join("");
 
     const recent = history.slice(-15).reverse();
-    const doneDays = roadmap.completed(DAYS.length).size;
+    const plan = roadmapData();
+    const doneDays = plan ? roadmap.completed(plan.DAYS.length).size : 0;
 
     el.innerHTML = `
       <header class="view-head">
-        <div class="eyebrow">tiến độ</div>
-        <h1>Tiến độ của bạn</h1>
-        <p class="subtitle">Dữ liệu chỉ lưu trên trình duyệt này. Dùng "Sao lưu" để chuyển sang máy khác.</p>
+        <div class="eyebrow">tiến độ · ${escapeHtml(track.name)}</div>
+        <h1>Tiến độ ${escapeHtml(track.name)} của bạn</h1>
+        <p class="subtitle">Số liệu bên dưới tính riêng cho ${escapeHtml(track.name)}; đổi nền tảng ở menu để xem track khác. Dữ liệu chỉ lưu trên trình duyệt này, dùng "Sao lưu" để chuyển sang máy khác.</p>
       </header>
 
       <div class="tile-grid">
         <div class="tile"><span class="tile-value">${activity.streak()}</span><span class="tile-label">ngày học liên tiếp</span></div>
-        <div class="tile"><span class="tile-value">${known}<small>/${ALL_QUESTIONS.length}</small></span><span class="tile-label">câu hỏi đã thuộc</span></div>
+        <div class="tile"><span class="tile-value">${known}<small>/${allQuestions().length}</small></span><span class="tile-label">câu hỏi đã thuộc</span></div>
         <div class="tile"><span class="tile-value">${history.length}</span><span class="tile-label">lượt quiz</span></div>
         <div class="tile"><span class="tile-value">${attempts ? percent(correct, attempts) + "%" : "—"}</span><span class="tile-label">độ chính xác quiz</span></div>
-        <div class="tile"><span class="tile-value">${doneDays}<small>/${DAYS.length}</small></span><span class="tile-label">ngày lộ trình</span></div>
+        ${plan ? `<div class="tile"><span class="tile-value">${doneDays}<small>/${plan.DAYS.length}</small></span><span class="tile-label">ngày lộ trình</span></div>` : ""}
       </div>
 
       <section>
@@ -101,7 +105,7 @@ export function mount(el) {
                   const p = percent(v.c, v.n);
                   return `
                   <div class="topic-row">
-                    <span class="topic-name">${escapeHtml(TOPICS[t])}</span>
+                    <span class="topic-name">${escapeHtml(topics()[t])}</span>
                     <div class="progress-track slim"><div class="progress-fill ${p < 50 ? "low" : ""}" style="width:${p}%"></div></div>
                     <span class="topic-score">${p}%</span>
                     <a class="link-btn" href="#/quiz?topic=${t}">Luyện</a>
@@ -144,6 +148,7 @@ export function mount(el) {
             <label class="btn btn-ghost file-btn">Khôi phục từ file<input type="file" accept="application/json,.json" data-action="import" /></label>
           </div>
           <p class="muted small" data-slot="data-msg" role="status"></p>
+          <p class="muted small">Sao lưu, khôi phục và các nút xoá bên dưới áp dụng cho mọi nền tảng.</p>
           <div class="btn-row danger-row">
             <button type="button" class="btn btn-danger" data-action="reset-study">Xoá đánh dấu ôn luyện</button>
             <button type="button" class="btn btn-danger" data-action="reset-quiz">Xoá lịch sử quiz</button>
@@ -156,12 +161,13 @@ export function mount(el) {
   }
 
   function srsHtml() {
-    const cards = Object.values(srs.cards());
+    const ids = trackIds();
+    const cards = Object.values(srs.cards(ids));
     if (!cards.length) {
       return `<div class="empty"><p>Chưa có câu nào trong lịch ôn. Đánh dấu câu hỏi hoặc bắt đầu <a href="#/review">Ôn hôm nay</a>.</p></div>`;
     }
-    const due = srs.dueIds(todayKey()).length;
-    const week = srs.forecast(7).reduce((sum, f) => sum + f.count, 0);
+    const due = srs.dueIds(todayKey(), ids).length;
+    const week = srs.forecast(7, ids).reduce((sum, f) => sum + f.count, 0);
     const longTerm = cards.filter((c) => c.box >= 4).length;
     return `
       <div class="card srs-summary">
@@ -181,7 +187,7 @@ export function mount(el) {
   }
 
   function interviewHtml() {
-    const list = interview.history().slice(-10).reverse();
+    const list = interview.history(track.id).slice(-10).reverse();
     if (!list.length) return `<div class="empty"><p>Chưa có buổi phỏng vấn thử nào.</p><a class="btn btn-primary" href="#/interview">Phỏng vấn thử</a></div>`;
     return `<div class="table-wrap"><table class="history">
       <thead><tr><th>Thời gian</th><th>Rank</th><th>Số câu</th><th>Điểm tự chấm</th><th>Thời lượng</th></tr></thead>

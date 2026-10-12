@@ -6,7 +6,7 @@ body:
     id: location
     attributes:
       label: Vị trí nội dung
-      description: Link tới câu hỏi, hoặc rank + nội dung câu hỏi.
+      description: Link tới câu hỏi, hoặc nền tảng + rank + nội dung câu hỏi.
       placeholder: "https://trongmobile.github.io/flutter-prep/#/study/junior"
     validations:
       required: true

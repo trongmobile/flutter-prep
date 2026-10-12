@@ -3,7 +3,7 @@
 // - Google Fonts: cache-first.
 // - GitHub API, GoatCounter...: để trình duyệt tự xử lý (không cache ở đây).
 // Danh sách PRECACHE được scripts/validate.mjs kiểm tra khớp với file thật.
-const CACHE = "interview-v1";
+const CACHE = "interview-v2";
 const FONT_CACHE = "interview-fonts-v1";
 const NETWORK_TIMEOUT = 4000;
 
@@ -32,15 +32,44 @@ const PRECACHE = [
   "js/views/study.js",
   "data/index.js",
   "data/meta.js",
-  "data/roadmap.js",
-  "data/questions/fresher.js",
-  "data/questions/junior.js",
-  "data/questions/middle.js",
-  "data/questions/senior.js",
-  "data/quiz/fresher.js",
-  "data/quiz/junior.js",
-  "data/quiz/middle.js",
-  "data/quiz/senior.js",
+  "data/tracks.js",
+  "data/flutter/index.js",
+  "data/flutter/roadmap.js",
+  "data/flutter/questions/fresher.js",
+  "data/flutter/questions/junior.js",
+  "data/flutter/questions/middle.js",
+  "data/flutter/questions/senior.js",
+  "data/flutter/quiz/fresher.js",
+  "data/flutter/quiz/junior.js",
+  "data/flutter/quiz/middle.js",
+  "data/flutter/quiz/senior.js",
+  "data/android/index.js",
+  "data/android/questions/fresher.js",
+  "data/android/questions/junior.js",
+  "data/android/questions/middle.js",
+  "data/android/questions/senior.js",
+  "data/android/quiz/fresher.js",
+  "data/android/quiz/junior.js",
+  "data/android/quiz/middle.js",
+  "data/android/quiz/senior.js",
+  "data/ios/index.js",
+  "data/ios/questions/fresher.js",
+  "data/ios/questions/junior.js",
+  "data/ios/questions/middle.js",
+  "data/ios/questions/senior.js",
+  "data/ios/quiz/fresher.js",
+  "data/ios/quiz/junior.js",
+  "data/ios/quiz/middle.js",
+  "data/ios/quiz/senior.js",
+  "data/react-native/index.js",
+  "data/react-native/questions/fresher.js",
+  "data/react-native/questions/junior.js",
+  "data/react-native/questions/middle.js",
+  "data/react-native/questions/senior.js",
+  "data/react-native/quiz/fresher.js",
+  "data/react-native/quiz/junior.js",
+  "data/react-native/quiz/middle.js",
+  "data/react-native/quiz/senior.js",
 ];
 
 self.addEventListener("install", (event) => {

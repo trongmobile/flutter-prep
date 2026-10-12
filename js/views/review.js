@@ -1,6 +1,6 @@
-import { RANKS, ALL_QUESTIONS, getRank, findItem } from "../../data/index.js";
+import { RANKS, allQuestions, getRank, findItem, currentTrack } from "../../data/index.js";
 import { srs, study, prefs, todayKey, srsSchedule, SRS_INTERVALS } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, rankTag, creditHtml } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, creditHtml } from "../utils.js";
 
 const NEW_PER_DAY = [0, 5, 10, 20];
 const GRADE_LABELS = { again: "Quên", hard: "Khó", good: "Nhớ" };
@@ -18,17 +18,22 @@ function newPerDay() {
   return NEW_PER_DAY.includes(n) ? n : 10;
 }
 
-// Hàng đợi hôm nay: thẻ đến hạn + câu mới (giới hạn mỗi ngày). Dùng cả cho badge trên menu.
+// Id câu hỏi của track đang chọn: lịch ôn, câu mới mỗi ngày… tính riêng từng track.
+function trackIds() {
+  return new Set(allQuestions().map((q) => q.id));
+}
+
+// Hàng đợi hôm nay của track đang chọn: thẻ đến hạn + câu mới (giới hạn mỗi ngày). Dùng cả cho badge trên menu.
 export function reviewQueue() {
   srs.migrate();
-  const valid = new Set(ALL_QUESTIONS.map((q) => q.id));
-  const due = srs.dueIds(todayKey()).filter((id) => valid.has(id));
-  const remaining = Math.max(0, newPerDay() - srs.newToday().length);
+  const ids = trackIds();
+  const due = srs.dueIds(todayKey(), ids);
+  const remaining = Math.max(0, newPerDay() - srs.newToday(ids).length);
   const ranks = reviewRanks();
   const cards = srs.cards();
   const marks = study.all();
   const fresh = remaining
-    ? ALL_QUESTIONS.filter((q) => ranks.includes(q.rank) && !cards[q.id] && !marks[q.id])
+    ? allQuestions().filter((q) => ranks.includes(q.rank) && !cards[q.id] && !marks[q.id])
         .slice(0, remaining)
         .map((q) => q.id)
     : [];
@@ -48,16 +53,17 @@ export function mount(el) {
   function renderOverview() {
     const { due, fresh } = reviewQueue();
     const total = due.length + fresh.length;
-    const forecast = srs.forecast(7);
+    const ids = trackIds();
+    const forecast = srs.forecast(7, ids);
     const maxF = Math.max(1, ...forecast.map((f) => f.count));
-    const cards = Object.values(srs.cards());
+    const cards = Object.values(srs.cards(ids));
     const boxes = SRS_INTERVALS.map((d, i) => ({ box: i + 1, days: d, count: cards.filter((c) => c.box === i + 1).length }));
     const ranks = reviewRanks();
     const next = forecast.slice(1).find((f) => f.count > 0);
 
     el.innerHTML = `
       <header class="view-head">
-        <div class="eyebrow">ôn tập ngắt quãng</div>
+        <div class="eyebrow">ôn tập ngắt quãng · ${escapeHtml(currentTrack().name)}</div>
         <h1>Ôn hôm nay</h1>
         <p class="subtitle">Câu sắp quên sẽ được nhắc lại đúng lúc: nhớ tốt thì giãn dần 1 → 3 → 7 → 14 → 30 → 60 ngày, quên thì ôn lại từ đầu.</p>
       </header>
@@ -65,7 +71,7 @@ export function mount(el) {
       <div class="tile-grid">
         <div class="tile"><span class="tile-value">${due.length}</span><span class="tile-label">câu đến hạn</span></div>
         <div class="tile"><span class="tile-value">${fresh.length}</span><span class="tile-label">câu mới hôm nay</span></div>
-        <div class="tile"><span class="tile-value">${srs.reviewedToday()}</span><span class="tile-label">đã ôn hôm nay</span></div>
+        <div class="tile"><span class="tile-value">${srs.reviewedToday(ids)}</span><span class="tile-label">đã ôn hôm nay</span></div>
       </div>
 
       <section class="card review-start">
@@ -179,7 +185,7 @@ export function mount(el) {
           <div class="flash-q">${fmt(q.q)}</div>
           ${
             s.revealed
-              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeBlock(q.code)}${creditHtml(q)}</div>`
+              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeOf(q)}${creditHtml(q)}</div>`
               : `<div class="flash-hint">Nhớ lại câu trả lời trong đầu, rồi bấm để xem đáp án</div>`
           }
         </div>
@@ -218,7 +224,7 @@ export function mount(el) {
 
   function renderDone() {
     const s = session;
-    const tomorrow = srs.forecast(2)[1].count;
+    const tomorrow = srs.forecast(2, trackIds())[1].count;
     el.innerHTML = `
       <section class="card review-done">
         <h1>Xong buổi ôn hôm nay 🎉</h1>

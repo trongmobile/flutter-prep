@@ -1,6 +1,6 @@
-import { findItem, getRank } from "../../data/index.js";
+import { findItem, getRank, getTrack } from "../../data/index.js";
 import { study } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, rankTag, shuffle, creditHtml, shareItem } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, creditHtml, shareItem, link } from "../utils.js";
 
 const LETTERS = ["A", "B", "C", "D"];
 
@@ -17,6 +17,7 @@ export function mount(el, params) {
   }
   const { item: q, kind } = found;
   const rank = getRank(q.rank);
+  const track = getTrack(q.track);
   const state = { revealed: false, chosen: null, opts: null };
   if (kind === "quiz") {
     const order = shuffle([0, 1, 2, 3]);
@@ -24,7 +25,7 @@ export function mount(el, params) {
     state.correct = order.indexOf(q.answer);
   }
   const plain = q.q.replace(/`/g, "");
-  requestAnimationFrame(() => (document.title = `${plain.length > 70 ? plain.slice(0, 70) + "…" : plain} — Flutter Interview`));
+  requestAnimationFrame(() => (document.title = `${plain.length > 70 ? plain.slice(0, 70) + "…" : plain} — ${track.name} Interview`));
 
   function render() {
     const mark = study.get(q.id) || "";
@@ -32,7 +33,7 @@ export function mount(el, params) {
     if (kind === "quiz") {
       const answered = state.chosen !== null;
       body = `
-        ${codeBlock(q.code)}
+        ${codeOf(q)}
         <div class="options" role="group" aria-label="Các đáp án">
           ${state.opts
             .map((text, i) => {
@@ -56,7 +57,7 @@ export function mount(el, params) {
         ? `<div class="model-answer">
             <div class="setup-label">Đáp án mẫu</div>
             <div class="answer-text">${fmt(q.a)}</div>
-            ${codeBlock(q.code)}
+            ${codeOf(q)}
             ${creditHtml(q)}
           </div>
           <div class="mark-row">
@@ -68,9 +69,9 @@ export function mount(el, params) {
     }
 
     el.innerHTML = `
-      <a class="back-link" href="#/study/${q.rank}">← Câu hỏi ${escapeHtml(rank.name)}</a>
+      <a class="back-link" href="${link(`study/${q.rank}`)}">← Câu hỏi ${escapeHtml(track.name)} ${escapeHtml(rank.name)}</a>
       <article class="card question-page rank-${rank.color}">
-        <div class="quiz-tags">${rankTag(q.rank)}${topicTag(q.topic)}<span class="tag">${kind === "quiz" ? "Quiz trắc nghiệm" : "Câu hỏi phỏng vấn"}</span></div>
+        <div class="quiz-tags"><span class="tag">${escapeHtml(track.name)}</span>${rankTag(q.rank)}${topicTag(q.topic)}<span class="tag">${kind === "quiz" ? "Quiz trắc nghiệm" : "Câu hỏi phỏng vấn"}</span></div>
         <h1 class="question-title">${fmt(q.q)}</h1>
         ${body}
         <div class="btn-row question-actions">
@@ -81,9 +82,9 @@ export function mount(el, params) {
       <section class="card next-steps">
         <h2>Ôn tiếp</h2>
         <div class="btn-row">
-          <a class="btn btn-rank rank-${rank.color}" href="#/study/${q.rank}">Câu hỏi ${escapeHtml(rank.name)}</a>
-          <a class="btn btn-ghost" href="#/quiz?rank=${q.rank}&start=1">Quiz ${escapeHtml(rank.name)} 10 câu</a>
-          <a class="btn btn-ghost" href="#/interview">Phỏng vấn thử</a>
+          <a class="btn btn-rank rank-${rank.color}" href="${link(`study/${q.rank}`)}">Câu hỏi ${escapeHtml(track.name)} ${escapeHtml(rank.name)}</a>
+          <a class="btn btn-ghost" href="${link(`quiz?rank=${q.rank}&start=1`)}">Quiz ${escapeHtml(rank.name)} 10 câu</a>
+          <a class="btn btn-ghost" href="${link("interview")}">Phỏng vấn thử</a>
         </div>
       </section>`;
   }

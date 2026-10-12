@@ -8,7 +8,7 @@ import { allSharePages } from "./share-pages.mjs";
 const dir = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "s");
 fs.mkdirSync(dir, { recursive: true });
 
-const pages = allSharePages();
+const pages = await allSharePages();
 const wanted = new Set(pages.map((p) => `${p.id}.html`));
 let written = 0;
 for (const p of pages) {

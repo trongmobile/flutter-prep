@@ -1,10 +1,12 @@
-import { WEEKS, DAYS } from "../../data/index.js";
+import { roadmap as roadmapData } from "../../data/index.js";
 import { roadmap } from "../store.js";
 import { escapeHtml, fmt, codeBlock, rankTag, percent, formatDuration, confirmClick } from "../utils.js";
 
 const DAY_SECONDS = 300;
 
+// Router chỉ mở trang này cho track có lộ trình (Flutter).
 export function mount(el, params) {
+  const { WEEKS, DAYS } = roadmapData();
   const total = DAYS.length;
   const getDay = (n) => DAYS.find((d) => d.day === n);
   const getWeek = (id) => WEEKS.find((w) => w.id === id);

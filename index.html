@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flutter Interview — Ôn phỏng vấn & Quiz theo rank</title>
+    <title>Mobile Interview — Ôn phỏng vấn Flutter, Android, iOS, React Native</title>
     <meta
       name="description"
-      content="Ôn câu hỏi phỏng vấn Flutter theo rank Fresher, Junior, Middle, Senior kèm đáp án mẫu, flashcard, quiz trắc nghiệm và lộ trình 35 ngày."
+      content="Ôn câu hỏi phỏng vấn Flutter, Android (Kotlin/Java), iOS (Swift) và React Native theo rank Fresher, Junior, Middle, Senior kèm đáp án mẫu, flashcard, quiz trắc nghiệm và phỏng vấn thử."
     />
     <meta name="theme-color" content="#0b1220" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -14,11 +14,11 @@
     <meta name="apple-mobile-web-app-title" content="Interview" />
     <!-- Thẻ preview khi chia sẻ link lên Facebook, Zalo... -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Flutter Interview" />
-    <meta property="og:title" content="Flutter Interview — Ôn phỏng vấn Flutter theo rank" />
+    <meta property="og:site_name" content="Mobile Interview" />
+    <meta property="og:title" content="Mobile Interview — Ôn phỏng vấn Flutter, Android, iOS, React Native" />
     <meta
       property="og:description"
-      content="Câu hỏi phỏng vấn có đáp án mẫu, quiz, phỏng vấn thử và ôn tập ngắt quãng — từ Fresher đến Senior. Miễn phí."
+      content="Câu hỏi phỏng vấn có đáp án mẫu, quiz, phỏng vấn thử và ôn tập ngắt quãng cho dev mobile — từ Fresher đến Senior. Miễn phí."
     />
     <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/" />
     <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og.png" />
@@ -85,6 +85,11 @@
           <a href="#/progress" data-nav="progress">Tiến độ</a>
           <a href="#/community" data-nav="community">Cộng đồng</a>
         </nav>
+        <div class="topbar-actions">
+        <label class="track-picker">
+          <span class="sr-only">Nền tảng</span>
+          <select id="track-select" aria-label="Chọn nền tảng"></select>
+        </label>
         <button
           class="icon-btn"
           id="theme-toggle"
@@ -104,6 +109,7 @@
             />
           </svg>
         </button>
+        </div>
       </div>
     </header>
 
@@ -115,8 +121,8 @@
 
     <footer class="footer">
       <p>
-        Fresher → Junior → Middle → Senior · câu hỏi phỏng vấn, flashcard, quiz
-        &amp; lộ trình 35 ngày
+        Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard,
+        quiz &amp; phỏng vấn thử theo rank
       </p>
       <p>
         Tiến độ lưu trên trình duyệt (localStorage) ·

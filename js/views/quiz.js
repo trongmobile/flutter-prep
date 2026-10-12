@@ -1,6 +1,6 @@
-import { RANKS, TOPICS, ALL_QUIZ, getRank, quizFor } from "../../data/index.js";
+import { RANKS, getRank, quizFor, allQuiz, topics, currentTrack } from "../../data/index.js";
 import { quiz as quizStore, prefs } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, rankTag, shuffle, percent, formatDuration, creditHtml, shareItem } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, percent, formatDuration, creditHtml, shareItem } from "../utils.js";
 
 const COUNTS = [10, 20, 30, 0]; // 0 = tất cả
 const SECONDS_PER_QUESTION = 45;
@@ -10,7 +10,7 @@ export function mount(el, _params, query) {
   const validRank = (r) => r === "all" || !!getRank(r);
   const setup = {
     rank: validRank(query.rank) ? query.rank : validRank(prefs.get("quizRank")) ? prefs.get("quizRank") : "all",
-    topics: new Set(query.topic && TOPICS[query.topic] ? [query.topic] : []),
+    topics: new Set(query.topic && topics()[query.topic] ? [query.topic] : []),
     count: Number(prefs.get("quizCount", 10)),
     mode: prefs.get("quizMode") === "exam" ? "exam" : "practice",
   };
@@ -28,12 +28,12 @@ export function mount(el, _params, query) {
   }
   function wrongPool() {
     const ids = new Set(quizStore.wrongIds());
-    return ALL_QUIZ.filter((q) => ids.has(q.id));
+    return allQuiz().filter((q) => ids.has(q.id));
   }
 
   function renderSetup() {
     const base = quizFor(setup.rank);
-    const topicsAvailable = Object.keys(TOPICS).filter((t) => base.some((q) => q.topic === t));
+    const topicsAvailable = Object.keys(topics()).filter((t) => base.some((q) => q.topic === t));
     for (const t of [...setup.topics]) if (!topicsAvailable.includes(t)) setup.topics.delete(t);
     const available = pool().length;
     const wrong = wrongPool().length;
@@ -42,7 +42,7 @@ export function mount(el, _params, query) {
     el.innerHTML = `
       <header class="view-head">
         <div class="eyebrow">quiz · trắc nghiệm</div>
-        <h1>Làm quiz Flutter</h1>
+        <h1>Làm quiz ${escapeHtml(currentTrack().name)}</h1>
         <p class="subtitle">Chọn rank, chủ đề và số câu. Thứ tự câu hỏi và đáp án được xáo trộn mỗi lần làm.</p>
       </header>
 
@@ -50,7 +50,7 @@ export function mount(el, _params, query) {
         <div class="setup-row">
           <div class="setup-label">Rank</div>
           <div class="chips">
-            <button type="button" class="chip${setup.rank === "all" ? " active" : ""}" data-rank="all" aria-pressed="${setup.rank === "all"}">Tổng hợp <span class="count">${ALL_QUIZ.length}</span></button>
+            <button type="button" class="chip${setup.rank === "all" ? " active" : ""}" data-rank="all" aria-pressed="${setup.rank === "all"}">Tổng hợp <span class="count">${allQuiz().length}</span></button>
             ${RANKS.map(
               (r) =>
                 `<button type="button" class="chip rank-${r.color}${setup.rank === r.id ? " active" : ""}" data-rank="${r.id}" aria-pressed="${setup.rank === r.id}">${escapeHtml(r.name)} <span class="count">${quizFor(r.id).length}</span></button>`,
@@ -65,7 +65,7 @@ export function mount(el, _params, query) {
               .map((t) => {
                 const n = base.filter((q) => q.topic === t).length;
                 const on = setup.topics.has(t);
-                return `<button type="button" class="chip${on ? " active" : ""}" data-topic="${t}" aria-pressed="${on}">${escapeHtml(TOPICS[t])} <span class="count">${n}</span></button>`;
+                return `<button type="button" class="chip${on ? " active" : ""}" data-topic="${t}" aria-pressed="${on}">${escapeHtml(topics()[t])} <span class="count">${n}</span></button>`;
               })
               .join("")}
           </div>
@@ -195,7 +195,7 @@ export function mount(el, _params, query) {
       <article class="quiz-card">
         <div class="quiz-tags">${rankTag(q.rank)}${topicTag(q.topic)}</div>
         <h2 class="quiz-q">${fmt(q.q)}</h2>
-        ${codeBlock(q.code)}
+        ${codeOf(q)}
         <div class="options" role="group" aria-label="Các đáp án">${options}</div>
         ${
           revealed
@@ -253,7 +253,7 @@ export function mount(el, _params, query) {
     const duration = Math.round((Date.now() - s.startedAt) / 1000);
     result = { ...s, items, correct, duration };
     quizStore.record(
-      { ts: Date.now(), rank: s.rank, mode: s.mode, kind: s.kind, total: items.length, correct, duration },
+      { ts: Date.now(), track: currentTrack().id, rank: s.rank, mode: s.mode, kind: s.kind, total: items.length, correct, duration },
       items.map((x) => ({ id: x.q.id, correct: x.correct })),
     );
     session = null;
@@ -309,7 +309,7 @@ export function mount(el, _params, query) {
             .map(
               ([t, v]) => `
               <div class="topic-row">
-                <span class="topic-name">${escapeHtml(TOPICS[t])}</span>
+                <span class="topic-name">${escapeHtml(topics()[t])}</span>
                 <div class="progress-track slim"><div class="progress-fill ${v.c / v.n < 0.5 ? "low" : ""}" style="width:${percent(v.c, v.n)}%"></div></div>
                 <span class="topic-score">${v.c}/${v.n}</span>
               </div>`,
@@ -341,7 +341,7 @@ export function mount(el, _params, query) {
                       <a class="feedback-link" href="#/community/new?type=content&ref=${encodeURIComponent(q.id)}" target="_blank" rel="noopener">Báo sai / góp ý ↗</a>
                     </div>
                     <div class="quiz-q small">${fmt(q.q)}</div>
-                    ${codeBlock(q.code)}
+                    ${codeOf(q)}
                     <ul class="review-opts">
                       ${q.opts
                         .map((text, i) => {

@@ -1,33 +1,35 @@
-import { RANKS, DAYS, ALL_QUESTIONS, ALL_QUIZ, questionsFor, quizFor } from "../../data/index.js";
+import { RANKS, TRACKS, allQuestions, allQuiz, questionsFor, quizFor, roadmap as roadmapData, currentTrack, rankDesc } from "../../data/index.js";
 import { study, quiz, roadmap, activity, prefs } from "../store.js";
 import { escapeHtml, percent, stackedBar } from "../utils.js";
 import { reviewQueue } from "./review.js";
 import { isStandalone, isIos, canPromptInstall, promptInstall } from "../pwa.js";
 
 export function mount(el) {
+  const track = currentTrack();
   const { due, fresh } = reviewQueue();
   const todayTotal = due.length + fresh.length;
   const marks = study.all();
-  const quizIds = new Set(ALL_QUIZ.map((q) => q.id));
+  const quizIds = new Set(allQuiz().map((q) => q.id));
   const wrongCount = quiz.wrongIds().filter((id) => quizIds.has(id)).length;
-  const knownTotal = ALL_QUESTIONS.filter((q) => marks[q.id] === "known").length;
-  const quizCount = quiz.data().history.length;
+  const knownTotal = allQuestions().filter((q) => marks[q.id] === "known").length;
+  const quizCount = quiz.data(track.id).history.length;
   const streak = activity.streak();
-  const doneDays = roadmap.completed(DAYS.length);
-  const nextDay = DAYS.find((d) => !doneDays.has(d.day));
+  const plan = roadmapData();
+  const doneDays = plan ? roadmap.completed(plan.DAYS.length) : new Set();
+  const nextDay = plan && plan.DAYS.find((d) => !doneDays.has(d.day));
 
   const rankCards = RANKS.map((r) => {
     const qs = questionsFor(r.id);
     const known = qs.filter((q) => marks[q.id] === "known").length;
     const review = qs.filter((q) => marks[q.id] === "review").length;
-    const best = quiz.best(r.id);
+    const best = quiz.best(r.id, track.id);
     return `
       <article class="rank-card rank-${r.color}">
         <div class="rank-card-head">
           <span class="rank-name">${escapeHtml(r.name)}</span>
           <span class="rank-years">${escapeHtml(r.years)}</span>
         </div>
-        <p class="rank-desc">${escapeHtml(r.desc)}</p>
+        <p class="rank-desc">${escapeHtml(rankDesc(r.id))}</p>
         <div class="rank-stats">
           <span><strong>${qs.length}</strong> câu phỏng vấn</span>
           <span><strong>${quizFor(r.id).length}</strong> câu quiz</span>
@@ -51,10 +53,18 @@ export function mount(el) {
 
   el.innerHTML = `
     <header class="hero">
-      <div class="eyebrow">~/interview</div>
-      <h1>Ôn phỏng vấn Flutter theo rank</h1>
+      <nav class="track-tabs" aria-label="Chọn nền tảng">
+        ${TRACKS.map(
+          (t) =>
+            `<a href="#/${t.id}" class="track-tab${t.id === track.id ? " active" : ""}"${t.id === track.id ? ' aria-current="page"' : ""}>
+              <strong>${escapeHtml(t.name)}</strong><span>${escapeHtml(t.tagline)}</span>
+            </a>`,
+        ).join("")}
+      </nav>
+      <div class="eyebrow">~/interview/${track.id}</div>
+      <h1>Ôn phỏng vấn ${escapeHtml(track.name)} theo rank</h1>
       <p class="subtitle">
-        ${ALL_QUESTIONS.length} câu hỏi phỏng vấn có đáp án mẫu · ${ALL_QUIZ.length} câu quiz trắc nghiệm ·
+        ${allQuestions().length} câu hỏi phỏng vấn có đáp án mẫu · ${allQuiz().length} câu quiz trắc nghiệm ·
         từ Fresher đến Senior. Tiến độ được lưu ngay trên trình duyệt của bạn.
       </p>
       <div class="stat-row">
@@ -99,7 +109,9 @@ export function mount(el) {
       <div class="rank-grid">${rankCards}</div>
     </section>
 
-    <section class="card roadmap-teaser">
+    ${
+      plan
+        ? `<section class="card roadmap-teaser">
       <div>
         <div class="eyebrow">roadmap · ~5 phút/ngày</div>
         <h2>Lộ trình 35 ngày lên Senior</h2>
@@ -110,11 +122,13 @@ export function mount(el) {
               : "Bạn đã hoàn thành toàn bộ 35 ngày. Sẵn sàng phỏng vấn!"
           }
         </p>
-        <div class="progress-track"><div class="progress-fill" style="width:${percent(doneDays.size, DAYS.length)}%"></div></div>
-        <div class="bar-label"><span>${doneDays.size}/${DAYS.length} ngày</span><span>${percent(doneDays.size, DAYS.length)}%</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:${percent(doneDays.size, plan.DAYS.length)}%"></div></div>
+        <div class="bar-label"><span>${doneDays.size}/${plan.DAYS.length} ngày</span><span>${percent(doneDays.size, plan.DAYS.length)}%</span></div>
       </div>
       <a class="btn btn-primary" href="#/roadmap">${doneDays.size ? "Tiếp tục lộ trình" : "Bắt đầu lộ trình"}</a>
-    </section>
+    </section>`
+        : ""
+    }
 
     <section class="card roadmap-teaser community-teaser">
       <div>
@@ -157,7 +171,7 @@ export function mount(el) {
     slot.innerHTML = `
       <section class="card install-card">
         <div>
-          <strong>📲 Cài Flutter Interview lên điện thoại</strong>
+          <strong>📲 Cài Mobile Interview lên điện thoại</strong>
           <p class="muted small">${
             canPrompt
               ? "Mở nhanh từ màn hình chính và ôn được cả khi không có mạng."

@@ -1,6 +1,6 @@
-import { RANKS, getRank, questionsFor } from "../../data/index.js";
+import { RANKS, getRank, questionsFor, currentTrack } from "../../data/index.js";
 import { srs, interview as interviewStore, prefs } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, rankTag, shuffle, formatDuration, formatDate, creditHtml, percent } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, formatDuration, formatDate, creditHtml, percent } from "../utils.js";
 
 const COUNTS = [5, 8, 10];
 const TIMES = [60, 120, 180];
@@ -42,12 +42,12 @@ export function mount(el) {
 
   // ---------- Thiết lập ----------
   function renderSetup(note = "") {
-    const history = interviewStore.history().slice(-5).reverse();
+    const history = interviewStore.history(currentTrack().id).slice(-5).reverse();
     const minutes = Math.round((setup.count * (setup.time + 45)) / 60);
     el.innerHTML = `
       <header class="view-head">
-        <div class="eyebrow">phỏng vấn thử</div>
-        <h1>Phỏng vấn thử</h1>
+        <div class="eyebrow">phỏng vấn thử · ${escapeHtml(currentTrack().name)}</div>
+        <h1>Phỏng vấn thử ${escapeHtml(currentTrack().name)}</h1>
         <p class="subtitle">Câu hỏi được bốc ngẫu nhiên theo rank. Bạn trả lời thành tiếng trong thời gian giới hạn, rồi so với đáp án mẫu và tự chấm điểm.</p>
       </header>
       ${note ? `<div class="notice">${escapeHtml(note)}</div>` : ""}
@@ -189,7 +189,7 @@ export function mount(el) {
           <div class="model-answer">
             <div class="setup-label">Đáp án mẫu</div>
             <div class="answer-text">${fmt(q.a)}</div>
-            ${codeBlock(q.code)}
+            ${codeOf(q)}
             ${creditHtml(q)}
           </div>
           <div class="setup-label">Bạn tự chấm câu trả lời của mình</div>
@@ -278,7 +278,7 @@ export function mount(el) {
     const score = s.answers.reduce((sum, a) => sum + (a.rating || 0), 0);
     const max = s.questions.length * 2;
     const duration = Math.round((Date.now() - s.startedAt) / 1000);
-    interviewStore.record({ ts: Date.now(), rank: setup.rank, total: s.questions.length, score, max, duration });
+    interviewStore.record({ ts: Date.now(), track: currentTrack().id, rank: setup.rank, total: s.questions.length, score, max, duration });
     s.phase = "summary";
     s.result = { score, max, duration };
     stopStream();

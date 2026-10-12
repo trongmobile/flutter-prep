@@ -1,71 +1,121 @@
-// Gom toàn bộ dữ liệu: câu hỏi phỏng vấn (lộ trình + bổ sung) và câu quiz theo rank.
-import { RANKS, TOPICS, getRank } from "./meta.js";
-import { WEEKS, DAYS } from "./roadmap.js";
+// Gom dữ liệu theo track. Mỗi track được tải riêng (dynamic import) khi cần để trang
+// không phải tải ngân hàng câu hỏi của mọi nền tảng ngay từ đầu.
+// Router gọi loadTrack() + setActiveTrack() trước khi mở view; các hàm đồng bộ bên dưới
+// (questionsFor, quizFor…) đọc dữ liệu của track đang chọn.
+import { RANKS, getRank } from "./meta.js";
+import { TRACKS, DEFAULT_TRACK, LANGS, getTrack, trackOfId } from "./tracks.js";
 
-import fresherQuestions from "./questions/fresher.js";
-import juniorQuestions from "./questions/junior.js";
-import middleQuestions from "./questions/middle.js";
-import seniorQuestions from "./questions/senior.js";
+export { RANKS, getRank, TRACKS, DEFAULT_TRACK, LANGS, getTrack, trackOfId };
 
-import fresherQuiz from "./quiz/fresher.js";
-import juniorQuiz from "./quiz/junior.js";
-import middleQuiz from "./quiz/middle.js";
-import seniorQuiz from "./quiz/senior.js";
+const loaded = new Map(); // trackId -> dữ liệu đã dựng
+const pending = new Map(); // trackId -> Promise đang tải
+let active = null;
 
-const EXTRA_QUESTIONS = {
-  fresher: fresherQuestions,
-  junior: juniorQuestions,
-  middle: middleQuestions,
-  senior: seniorQuestions,
-};
-
-const QUIZ = {
-  fresher: fresherQuiz,
-  junior: juniorQuiz,
-  middle: middleQuiz,
-  senior: seniorQuiz,
-};
-
-const roadmapQuestions = DAYS.flatMap((d) =>
-  d.questions.map((q) => ({ ...q, day: d.day })),
-);
-
-const questionsByRank = {};
-const quizByRank = {};
-for (const r of RANKS) {
-  questionsByRank[r.id] = [
-    ...EXTRA_QUESTIONS[r.id].map((q) => ({ ...q, rank: r.id })),
-    ...roadmapQuestions.filter((q) => q.rank === r.id),
-  ];
-  quizByRank[r.id] = QUIZ[r.id].map((q) => ({ ...q, rank: r.id }));
+function build(track, mod) {
+  const roadmapQuestions = mod.DAYS ? mod.DAYS.flatMap((d) => d.questions.map((q) => ({ ...q, day: d.day }))) : [];
+  const questionsByRank = {};
+  const quizByRank = {};
+  for (const r of RANKS) {
+    questionsByRank[r.id] = [
+      ...mod.questions[r.id].map((q) => ({ ...q, rank: r.id, track: track.id })),
+      ...roadmapQuestions.filter((q) => q.rank === r.id).map((q) => ({ ...q, track: track.id })),
+    ];
+    quizByRank[r.id] = mod.quiz[r.id].map((q) => ({ ...q, rank: r.id, track: track.id }));
+  }
+  const allQuestions = RANKS.flatMap((r) => questionsByRank[r.id]);
+  const allQuiz = RANKS.flatMap((r) => quizByRank[r.id]);
+  return {
+    track,
+    questionsByRank,
+    quizByRank,
+    allQuestions,
+    allQuiz,
+    quizIds: new Set(allQuiz.map((q) => q.id)),
+    byId: new Map([...allQuestions, ...allQuiz].map((q) => [q.id, q])),
+    roadmap: mod.DAYS ? { WEEKS: mod.WEEKS, DAYS: mod.DAYS } : null,
+  };
 }
 
-export { RANKS, TOPICS, WEEKS, DAYS, getRank };
+export function loadTrack(id) {
+  const track = getTrack(id) || getTrack(DEFAULT_TRACK);
+  if (loaded.has(track.id)) return Promise.resolve(loaded.get(track.id));
+  if (!pending.has(track.id)) {
+    pending.set(
+      track.id,
+      import(`./${track.id}/index.js`).then((mod) => {
+        const data = build(track, mod);
+        loaded.set(track.id, data);
+        pending.delete(track.id);
+        return data;
+      }),
+    );
+  }
+  return pending.get(track.id);
+}
+
+export function loadAllTracks() {
+  return Promise.all(TRACKS.map((t) => loadTrack(t.id)));
+}
+
+export function setActiveTrack(id) {
+  active = loaded.get(id) || null;
+}
+
+// Track đang chọn (object trong TRACKS).
+export function currentTrack() {
+  return active ? active.track : getTrack(DEFAULT_TRACK);
+}
 
 export function questionsFor(rankId) {
-  return questionsByRank[rankId] || [];
+  return (active && active.questionsByRank[rankId]) || [];
 }
 
 export function quizFor(rankId) {
-  if (rankId === "all") return RANKS.flatMap((r) => quizByRank[r.id]);
-  return quizByRank[rankId] || [];
+  if (!active) return [];
+  if (rankId === "all") return active.allQuiz;
+  return active.quizByRank[rankId] || [];
 }
 
-export const ALL_QUESTIONS = RANKS.flatMap((r) => questionsByRank[r.id]);
-export const ALL_QUIZ = RANKS.flatMap((r) => quizByRank[r.id]);
+export function allQuestions() {
+  return active ? active.allQuestions : [];
+}
 
-const byId = new Map([...ALL_QUESTIONS, ...ALL_QUIZ].map((q) => [q.id, q]));
-const quizIds = new Set(ALL_QUIZ.map((q) => q.id));
+export function allQuiz() {
+  return active ? active.allQuiz : [];
+}
 
-// Tìm câu hỏi phỏng vấn hoặc câu quiz theo id. kind: "question" | "quiz".
+// Lộ trình { WEEKS, DAYS } của track đang chọn, null nếu track chưa có lộ trình.
+export function roadmap() {
+  return active ? active.roadmap : null;
+}
+
+export function topics() {
+  return currentTrack().topics;
+}
+
+export function topicName(topic, trackId) {
+  const track = trackId ? getTrack(trackId) : currentTrack();
+  return (track && track.topics[topic]) || topic;
+}
+
+// Mô tả rank theo track: "Cú pháp Kotlin, OOP với Java…".
+export function rankDesc(rankId, trackId) {
+  const track = trackId ? getTrack(trackId) : currentTrack();
+  return (track && track.ranks[rankId]) || "";
+}
+
+// Tìm câu hỏi phỏng vấn hoặc câu quiz theo id trong các track đã tải. kind: "question" | "quiz".
 export function findItem(id) {
-  const item = byId.get(id);
-  return item ? { item, kind: quizIds.has(id) ? "quiz" : "question" } : null;
+  const data = loaded.get(trackOfId(id).id);
+  const item = data && data.byId.get(id);
+  return item ? { item, kind: data.quizIds.has(id) ? "quiz" : "question" } : null;
 }
 
-// Người đóng góp (trường `by` trong dữ liệu), nhiều câu nhất đứng trước.
+// Người đóng góp (trường `by` trong dữ liệu) của các track đã tải, nhiều câu nhất đứng trước.
 export function contributors() {
   const count = new Map();
-  for (const q of [...ALL_QUESTIONS, ...ALL_QUIZ]) if (q.by) count.set(q.by, (count.get(q.by) || 0) + 1);
+  for (const data of loaded.values()) {
+    for (const q of [...data.allQuestions, ...data.allQuiz]) if (q.by) count.set(q.by, (count.get(q.by) || 0) + 1);
+  }
   return [...count].map(([login, n]) => ({ login, count: n })).sort((a, b) => b.count - a.count || a.login.localeCompare(b.login));
 }

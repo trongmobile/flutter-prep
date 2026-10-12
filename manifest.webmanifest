@@ -1,7 +1,7 @@
 {
-  "name": "Flutter Interview — Ôn phỏng vấn Flutter theo rank",
+  "name": "Mobile Interview — Ôn phỏng vấn Flutter, Android, iOS, React Native",
   "short_name": "Interview",
-  "description": "Ôn câu hỏi phỏng vấn Flutter theo rank, quiz, phỏng vấn thử và ôn tập ngắt quãng.",
+  "description": "Ôn câu hỏi phỏng vấn Flutter, Android, iOS và React Native theo rank, quiz, phỏng vấn thử và ôn tập ngắt quãng.",
   "lang": "vi",
   "start_url": "./#/",
   "scope": "./",

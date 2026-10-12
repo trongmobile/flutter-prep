@@ -1,6 +1,6 @@
-import { RANKS, TOPICS, getRank, questionsFor } from "../../data/index.js";
+import { RANKS, getRank, questionsFor, topics, rankDesc, currentTrack } from "../../data/index.js";
 import { study, prefs } from "../store.js";
-import { escapeHtml, fmt, codeBlock, topicTag, shuffle, percent, stackedBar, creditHtml, shareItem } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, shuffle, percent, stackedBar, creditHtml, shareItem, link } from "../utils.js";
 
 const STATUS_FILTERS = [
   { id: "all", label: "Tất cả" },
@@ -16,11 +16,12 @@ export function mount(el, params) {
   const lastRank = getRank(prefs.get("lastRank")) ? prefs.get("lastRank") : "fresher";
   const rankId = params[0] && getRank(params[0]) ? params[0] : lastRank;
   if (params[0] !== rankId) {
-    location.replace(`#/study/${rankId}`);
+    location.replace(link(`study/${rankId}`));
     return;
   }
   prefs.set("lastRank", rankId);
   const rank = getRank(rankId);
+  const track = currentTrack();
   const all = questionsFor(rankId);
   const indexOf = new Map(all.map((q, i) => [q.id, i + 1]));
   if (ui.topic !== "all" && !all.some((q) => q.topic === ui.topic)) ui.topic = "all";
@@ -32,13 +33,13 @@ export function mount(el, params) {
     <nav class="rank-tabs" aria-label="Chọn rank">
       ${RANKS.map(
         (r) =>
-          `<a class="rank-tab rank-${r.color}${r.id === rankId ? " active" : ""}" href="#/study/${r.id}">${escapeHtml(r.name)}</a>`,
+          `<a class="rank-tab rank-${r.color}${r.id === rankId ? " active" : ""}" href="${link(`study/${r.id}`)}">${escapeHtml(r.name)}</a>`,
       ).join("")}
     </nav>
     <header class="view-head rank-${rank.color}">
-      <div class="eyebrow">ôn luyện · ${escapeHtml(rank.years)}</div>
-      <h1>Câu hỏi phỏng vấn ${escapeHtml(rank.name)}</h1>
-      <p class="subtitle">${escapeHtml(rank.desc)}</p>
+      <div class="eyebrow">ôn luyện · ${escapeHtml(track.name)} · ${escapeHtml(rank.years)}</div>
+      <h1>Câu hỏi phỏng vấn ${escapeHtml(track.name)} ${escapeHtml(rank.name)}</h1>
+      <p class="subtitle">${escapeHtml(rankDesc(rankId))}</p>
       <div data-slot="mastery"></div>
     </header>
     <div class="toolbar">
@@ -99,7 +100,7 @@ export function mount(el, params) {
     const topicCounts = {};
     for (const q of pool.filter((q) => matchesStatus(q, m))) topicCounts[q.topic] = (topicCounts[q.topic] || 0) + 1;
     const topicTotal = Object.values(topicCounts).reduce((a, b) => a + b, 0);
-    const topicsInRank = Object.keys(TOPICS).filter((t) => all.some((q) => q.topic === t));
+    const topicsInRank = Object.keys(topics()).filter((t) => all.some((q) => q.topic === t));
 
     slot("filters").innerHTML = `
       <div class="seg seg-wrap" role="group" aria-label="Lọc theo trạng thái">
@@ -113,7 +114,7 @@ export function mount(el, params) {
         ${topicsInRank
           .map(
             (t) =>
-              `<button type="button" class="chip${ui.topic === t ? " active" : ""}" data-topic="${t}" aria-pressed="${ui.topic === t}">${escapeHtml(TOPICS[t])} <span class="count">${topicCounts[t] || 0}</span></button>`,
+              `<button type="button" class="chip${ui.topic === t ? " active" : ""}" data-topic="${t}" aria-pressed="${ui.topic === t}">${escapeHtml(topics()[t])} <span class="count">${topicCounts[t] || 0}</span></button>`,
           )
           .join("")}
       </div>`;
@@ -139,7 +140,7 @@ export function mount(el, params) {
         </button>
         <div class="q-answer"><div class="q-answer-clip"><div class="q-answer-inner">
           <div class="answer-text">${fmt(q.a)}</div>
-          ${codeBlock(q.code)}
+          ${codeOf(q)}
           ${creditHtml(q)}
           ${q.day ? `<a class="q-source" href="#/roadmap/${q.day}">Trong lộ trình: ngày ${q.day}</a>` : ""}
           <div class="mark-row">
@@ -224,7 +225,7 @@ export function mount(el, params) {
           <div class="flash-q">${fmt(q.q)}</div>
           ${
             deck.flipped
-              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeBlock(q.code)}${creditHtml(q)}</div>`
+              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeOf(q)}${creditHtml(q)}</div>`
               : `<div class="flash-hint">Tự trả lời trong đầu, rồi bấm để lật thẻ</div>`
           }
         </div>

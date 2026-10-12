@@ -6,6 +6,14 @@ body:
     attributes:
       value: Cảm ơn bạn đã đóng góp! Câu hỏi được duyệt sẽ được thêm vào website, trạng thái xử lý hiển thị ở trang Cộng đồng.
   - type: input
+    id: track
+    attributes:
+      label: Nền tảng
+      description: Flutter, Android, iOS hoặc React Native
+      placeholder: Flutter
+    validations:
+      required: true
+  - type: input
     id: rank
     attributes:
       label: Rank
@@ -17,7 +25,7 @@ body:
     id: topic
     attributes:
       label: Chủ đề
-      placeholder: "VD: State Management, Async & Isolate, Performance..."
+      placeholder: "VD: State Management, Coroutines & Flow, SwiftUI, React & Hooks..."
   - type: input
     id: kind
     attributes:

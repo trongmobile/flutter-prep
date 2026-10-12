@@ -156,9 +156,13 @@ function spread(id, max) {
   return (h % max) + 1;
 }
 
+// only: Set id câu hỏi để chỉ tính trong một track (bỏ trống = mọi track).
+const inScope = (only) => (id) => !only || only.has(id);
+
 export const srs = {
-  cards() {
-    return srsData().cards;
+  cards(only) {
+    const cards = srsData().cards;
+    return only ? Object.fromEntries(Object.entries(cards).filter(([id]) => only.has(id))) : cards;
   },
   card(id) {
     return srsData().cards[id] || null;
@@ -205,26 +209,26 @@ export const srs = {
     delete cards[id];
     srsWrite({ ...data, cards });
   },
-  dueIds(day = todayKey()) {
+  dueIds(day = todayKey(), only) {
     const cards = srsData().cards;
     return Object.keys(cards)
-      .filter((id) => cards[id].due <= day)
+      .filter((id) => cards[id].due <= day && inScope(only)(id))
       .sort((a, b) => cards[a].due.localeCompare(cards[b].due) || cards[a].box - cards[b].box);
   },
   // Số thẻ đến hạn trong `days` ngày tới (ngày 0 gồm cả thẻ quá hạn).
-  forecast(days = 7) {
-    const cards = Object.values(srsData().cards);
+  forecast(days = 7, only) {
+    const cards = Object.values(srs.cards(only));
     const keys = Array.from({ length: days }, (_, i) => addDays(i));
     return keys.map((k, i) => ({ day: k, count: cards.filter((c) => (i === 0 ? c.due <= k : c.due === k)).length }));
   },
-  reviewedToday() {
+  reviewedToday(only) {
     const today = todayKey();
-    return Object.values(srsData().cards).filter((c) => c.last === today && c.reps > 0).length;
+    return Object.values(srs.cards(only)).filter((c) => c.last === today && c.reps > 0).length;
   },
   // Câu mới đã đưa vào ôn hôm nay (giới hạn số câu mới mỗi ngày).
-  newToday() {
+  newToday(only) {
     const log = srsData().newLog;
-    return log.date === todayKey() ? log.ids : [];
+    return log.date === todayKey() ? log.ids.filter(inScope(only)) : [];
   },
   noteNew(id) {
     const data = srsData();
@@ -250,10 +254,14 @@ export const srs = {
 };
 
 // ---- Phỏng vấn thử: lịch sử các buổi ----
+// Lịch sử quiz/phỏng vấn ghi kèm track; bản ghi cũ (trước khi có nhiều track) là Flutter.
+const entryTrack = (h) => h.track || "flutter";
+
 export const interview = {
-  history() {
+  history(trackId) {
     const list = read(KEYS.interview, []);
-    return Array.isArray(list) ? list : [];
+    if (!Array.isArray(list)) return [];
+    return trackId ? list.filter((h) => entryTrack(h) === trackId) : list;
   },
   record(entry) {
     write(KEYS.interview, [...interview.history(), entry].slice(-100));
@@ -285,10 +293,12 @@ export const roadmap = {
 // ---- Quiz: lịch sử làm bài + thống kê đúng/sai từng câu ----
 // stats[id] = { c: số lần đúng, w: số lần sai, last: 1 nếu lần gần nhất đúng }
 export const quiz = {
-  data() {
+  // trackId: chỉ lấy lịch sử của track đó (stats theo id câu nên dùng chung).
+  data(trackId) {
     const d = read(KEYS.quiz, null);
+    const history = Array.isArray(d && d.history) ? d.history : [];
     return {
-      history: Array.isArray(d && d.history) ? d.history : [],
+      history: trackId ? history.filter((h) => entryTrack(h) === trackId) : history,
       stats: d && d.stats && typeof d.stats === "object" ? d.stats : {},
     };
   },
@@ -311,9 +321,9 @@ export const quiz = {
     const { stats } = quiz.data();
     return Object.keys(stats).filter((id) => stats[id].last === 0);
   },
-  best(rank) {
+  best(rank, trackId) {
     const scores = quiz
-      .data()
+      .data(trackId)
       .history.filter((h) => h.rank === rank && h.kind !== "retry" && h.total >= 5)
       .map((h) => h.correct / h.total);
     return scores.length ? Math.max(...scores) : null;

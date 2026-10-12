@@ -1,4 +1,4 @@
-import { RANKS, TOPICS, ALL_QUESTIONS, ALL_QUIZ, getRank, contributors } from "../../data/index.js";
+import { RANKS, TRACKS, getRank, getTrack, trackOfId, currentTrack, findItem, loadTrack, loadAllTracks, contributors } from "../../data/index.js";
 import { GITHUB_URL } from "../config.js";
 import {
   TYPES,
@@ -115,6 +115,11 @@ function mountBoard(el, tab) {
     <div data-slot="body">${skeleton()}</div>
   `;
   const slot = (n) => el.querySelector(`[data-slot="${n}"]`);
+  // Người đóng góp tính trên mọi track: tải dữ liệu các track còn lại rồi vẽ lại khối này.
+  loadAllTracks().then(() => {
+    const s = slot("contributors");
+    if (s) s.innerHTML = contributorsBlock();
+  });
 
   function skeleton() {
     return `<div class="skeleton-list">${'<div class="skeleton"></div>'.repeat(4)}</div>`;
@@ -226,7 +231,7 @@ function mountBoard(el, tab) {
             </ol>
             <p class="muted small">Bình chọn 👍 trên GitHub để ưu tiên yêu cầu bạn quan tâm.</p>
           </div>
-          ${contributorsBlock()}
+          <div class="side-slot" data-slot="contributors">${contributorsBlock()}</div>
           <div class="side-block side-links">
             <button type="button" class="link-btn" data-action="refresh">↻ Làm mới</button>
             <a class="link-btn" href="${GITHUB_URL}/issues" target="_blank" rel="noopener">Mở trên GitHub ↗</a>
@@ -447,12 +452,15 @@ function mountDetail(el, number) {
 // ---------- Tạo đóng góp ----------
 const MAX_URL = 7000; // GitHub trả 414 khi URL quá dài
 
-function fieldsFor(typeId) {
+// trackName: nền tảng đang chọn trong form -> danh sách chủ đề tương ứng.
+function fieldsFor(typeId, trackName) {
   const rankOptions = RANKS.map((r) => r.name);
-  const topicOptions = Object.values(TOPICS);
+  const track = TRACKS.find((t) => t.name === trackName) || currentTrack();
+  const topicOptions = Object.values(track.topics);
   switch (typeId) {
     case "question":
       return [
+        { id: "track", label: "Nền tảng", kind: "select", options: TRACKS.map((t) => t.name), required: true },
         { id: "rank", label: "Rank", kind: "select", options: rankOptions, required: true },
         { id: "topic", label: "Chủ đề", kind: "select", options: topicOptions },
         { id: "kind", label: "Loại", kind: "select", options: ["Câu hỏi phỏng vấn", "Câu quiz trắc nghiệm"] },
@@ -487,13 +495,13 @@ function describeEnv() {
   return `${browser}${os ? " · " + os : ""} · ${window.innerWidth}×${window.innerHeight}`;
 }
 
-// ?type=content&ref=<id câu hỏi> -> điền sẵn vị trí nội dung.
+// ?type=content&ref=<id câu hỏi> -> điền sẵn vị trí nội dung (track của câu phải được tải trước).
 function refLocation(ref) {
-  const q = ALL_QUESTIONS.find((x) => x.id === ref) || ALL_QUIZ.find((x) => x.id === ref);
-  if (!q) return "";
-  const kind = ALL_QUIZ.includes(q) ? "quiz" : "câu hỏi";
+  const found = findItem(ref);
+  if (!found) return "";
+  const { item: q, kind } = found;
   const text = q.q.length > 90 ? q.q.slice(0, 90) + "…" : q.q;
-  return `[${q.id}] ${kind} ${getRank(q.rank)?.name || q.rank}: ${text}`;
+  return `[${q.id}] ${kind === "quiz" ? "quiz" : "câu hỏi"} ${getTrack(q.track).name} ${getRank(q.rank)?.name || q.rank}: ${text}`;
 }
 
 function mountCompose(el, query) {
@@ -502,7 +510,15 @@ function mountCompose(el, query) {
     values: {},
     sent: false,
   };
-  if (query.ref) state.values.location = refLocation(query.ref);
+  state.values.track = currentTrack().name;
+  if (query.ref) {
+    loadTrack(trackOfId(query.ref).id).then(() => {
+      if (state.values.location || !el.isConnected) return;
+      state.values.location = refLocation(query.ref);
+      const input = el.querySelector("#f-location");
+      if (input && !input.value) input.value = state.values.location;
+    });
+  }
 
   function render() {
     if (state.sent) {
@@ -520,7 +536,7 @@ function mountCompose(el, query) {
         </div>`;
       return;
     }
-    const fields = state.type ? fieldsFor(state.type) : [];
+    const fields = state.type ? fieldsFor(state.type, state.values.track) : [];
     if (state.type === "bug" && !state.values.env) state.values.env = describeEnv();
     el.innerHTML = `
       <a class="back-link" href="#/community">← Cộng đồng</a>
@@ -577,6 +593,16 @@ function mountCompose(el, query) {
     for (const [k, v] of new FormData(form)) state.values[k] = String(v).trim();
   }
 
+  // Đổi nền tảng -> vẽ lại form để danh sách chủ đề khớp nền tảng mới.
+  el.addEventListener("change", (e) => {
+    if (e.target.name !== "track") return;
+    collect(e.target.form);
+    const topics = Object.values((TRACKS.find((t) => t.name === state.values.track) || currentTrack()).topics);
+    if (!topics.includes(state.values.topic)) state.values.topic = "";
+    render();
+    el.querySelector("#f-track")?.focus();
+  });
+
   el.addEventListener("click", (e) => {
     const t = e.target.closest("button");
     if (!t || !el.contains(t)) return;
@@ -588,7 +614,7 @@ function mountCompose(el, query) {
       el.querySelector("#f-title")?.focus();
     } else if (t.dataset.action === "again") {
       state.sent = false;
-      state.values = {};
+      state.values = { track: currentTrack().name };
       state.type = null;
       render();
     }
@@ -598,7 +624,7 @@ function mountCompose(el, query) {
     e.preventDefault();
     const form = e.target;
     collect(form);
-    const fields = fieldsFor(state.type);
+    const fields = fieldsFor(state.type, state.values.track);
     const missing = [{ id: "title", label: "Tiêu đề" }, ...fields.filter((f) => f.required)].filter((f) => !state.values[f.id]);
     const error = el.querySelector("[data-slot=error]");
     if (missing.length) {

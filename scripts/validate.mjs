@@ -1,33 +1,35 @@
 // Kiểm tra schema của toàn bộ dữ liệu câu hỏi/quiz.
-// Chạy: node scripts/validate.mjs            (tất cả rank)
-//       node scripts/validate.mjs junior     (chỉ một rank)
-import { RANKS, TOPICS } from "../data/meta.js";
-import { DAYS } from "../data/roadmap.js";
+// Chạy: node scripts/validate.mjs                  (mọi track + kiểm tra toàn site)
+//       node scripts/validate.mjs android          (một track)
+//       node scripts/validate.mjs android junior   (một rank của một track)
+//       node scripts/validate.mjs junior           (một rank của Flutter)
+import { RANKS } from "../data/meta.js";
+import { TRACKS, LANGS, getTrack } from "../data/tracks.js";
 
 const PREFIX = { fresher: "fre", junior: "jun", middle: "mid", senior: "sen" };
-const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code", "by", "issue"]);
-const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "options", "answer", "explain", "by", "issue"]);
+const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code", "lang", "by", "issue"]);
+const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "lang", "options", "answer", "explain", "by", "issue"]);
 const GITHUB_LOGIN = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/;
 // Đáp án tham chiếu đáp án khác sẽ sai nghĩa khi app xáo trộn thứ tự.
 const CROSS_REF = /(tất cả (các )?(đáp án|phương án|ý) trên|cả [A-D] và [A-D]|\b[A-D] và [A-D]\b|không (có )?(đáp án|phương án) nào|all of the above|none of the above|cả hai (đáp án|phương án))/i;
 
-const only = process.argv[2];
+const args = process.argv.slice(2);
+const onlyTrack = getTrack(args[0]) ? args[0] : RANKS.some((r) => r.id === args[0]) ? "flutter" : null;
+const onlyRank = getTrack(args[0]) ? args[1] : args[0];
+if (args[0] && !onlyTrack) {
+  console.log(`Không có track/rank "${args[0]}". Track: ${TRACKS.map((t) => t.id).join(", ")}`);
+  process.exit(1);
+}
 const errors = [];
 const warnings = [];
 const seenIds = new Set();
 
 const norm = (s) => s.toLowerCase().replace(/[`'"?.,:;!()\-–—]/g, "").replace(/\s+/g, " ").trim();
-const seenText = new Map();
-for (const d of DAYS) {
-  for (const q of d.questions) {
-    seenIds.add(q.id);
-    seenText.set(norm(q.q), `roadmap ${q.id}`);
-  }
-}
+let seenText = new Map();
 
 const isStr = (v) => typeof v === "string" && v.trim().length > 0;
 
-function checkCommon(item, where, keys, prefix) {
+function checkCommon(item, where, keys, prefix, track, kind) {
   for (const k of Object.keys(item)) {
     if (!keys.has(k)) errors.push(`${where}: unknown key "${k}"`);
   }
@@ -36,8 +38,12 @@ function checkCommon(item, where, keys, prefix) {
     if (seenIds.has(item.id)) errors.push(`${where}: duplicate id ${item.id}`);
     seenIds.add(item.id);
     if (!item.id.startsWith(prefix + "-")) errors.push(`${where}: id must start with "${prefix}-"`);
+    else if (track.idPrefix && !new RegExp(`^${prefix}-${kind}\\d{2}$`).test(item.id)) errors.push(`${where}: id must look like "${prefix}-${kind}01"`);
   }
-  if (!(item.topic in TOPICS)) errors.push(`${where}: invalid topic "${item.topic}"`);
+  if (!(item.topic in track.topics)) errors.push(`${where}: invalid topic "${item.topic}" (track ${track.id}: ${Object.keys(track.topics).join(", ")})`);
+  if (item.lang !== undefined && !LANGS.includes(item.lang)) errors.push(`${where}: lang must be one of ${LANGS.join(", ")}`);
+  if (item.lang !== undefined && item.code === undefined) errors.push(`${where}: lang without code`);
+  if (item.lang === track.lang) warnings.push(`${where}: lang "${item.lang}" is the track default, remove it`);
   if (!isStr(item.q)) errors.push(`${where}: missing q`);
   if (item.code !== undefined && !isStr(item.code)) errors.push(`${where}: code must be a non-empty string`);
   if (item.by !== undefined && !(typeof item.by === "string" && GITHUB_LOGIN.test(item.by))) errors.push(`${where}: by must be a GitHub username`);
@@ -50,67 +56,83 @@ function checkCommon(item, where, keys, prefix) {
   }
 }
 
-for (const rank of RANKS) {
-  if (only && only !== rank.id) continue;
-  const prefix = PREFIX[rank.id];
-
-  const questions = (await import(`../data/questions/${rank.id}.js`)).default;
-  if (!Array.isArray(questions)) {
-    errors.push(`questions/${rank.id}.js: default export must be an array`);
-  } else {
-    questions.forEach((item, i) => {
-      const where = `questions/${rank.id}.js[${i}]${item && item.id ? " " + item.id : ""}`;
-      checkCommon(item, where, QUESTION_KEYS, prefix);
-      if (!isStr(item.a)) errors.push(`${where}: missing a`);
-    });
+for (const track of TRACKS) {
+  if (onlyTrack && onlyTrack !== track.id) continue;
+  console.log(`== ${track.name}`);
+  seenText = new Map();
+  const roadmapDays = track.id === "flutter" ? (await import("../data/flutter/roadmap.js")).DAYS : [];
+  for (const d of roadmapDays) {
+    for (const q of d.questions) {
+      seenIds.add(q.id);
+      seenText.set(norm(q.q), `roadmap ${q.id}`);
+    }
   }
+  for (const rank of RANKS) {
+    if (onlyRank && onlyRank !== rank.id) continue;
+    const prefix = (track.idPrefix ? track.idPrefix + "-" : "") + PREFIX[rank.id];
+    const dir = `data/${track.id}`;
 
-  const quiz = (await import(`../data/quiz/${rank.id}.js`)).default;
-  if (!Array.isArray(quiz)) {
-    errors.push(`quiz/${rank.id}.js: default export must be an array`);
-    continue;
-  }
-  const answerDist = [0, 0, 0, 0];
-  let longestIsCorrect = 0;
-  quiz.forEach((item, i) => {
-    const where = `quiz/${rank.id}.js[${i}]${item && item.id ? " " + item.id : ""}`;
-    checkCommon(item, where, QUIZ_KEYS, prefix);
-    if (!Array.isArray(item.options) || item.options.length !== 4 || !item.options.every(isStr)) {
-      errors.push(`${where}: options must be 4 non-empty strings`);
-      return;
+    const questions = (await import(`../${dir}/questions/${rank.id}.js`)).default;
+    if (!Array.isArray(questions)) {
+      errors.push(`${dir}/questions/${rank.id}.js: default export must be an array`);
+    } else {
+      questions.forEach((item, i) => {
+        const where = `${dir}/questions/${rank.id}.js[${i}]${item && item.id ? " " + item.id : ""}`;
+        checkCommon(item, where, QUESTION_KEYS, prefix, track, "q");
+        if (!isStr(item.a)) errors.push(`${where}: missing a`);
+      });
     }
-    if (new Set(item.options.map(norm)).size !== 4) errors.push(`${where}: duplicate options`);
-    if (!Number.isInteger(item.answer) || item.answer < 0 || item.answer > 3) {
-      errors.push(`${where}: answer must be an integer 0-3`);
-      return;
+
+    const quiz = (await import(`../${dir}/quiz/${rank.id}.js`)).default;
+    if (!Array.isArray(quiz)) {
+      errors.push(`${dir}/quiz/${rank.id}.js: default export must be an array`);
+      continue;
     }
-    if (!isStr(item.explain)) errors.push(`${where}: missing explain`);
-    item.options.forEach((o) => {
-      if (CROSS_REF.test(o)) errors.push(`${where}: option references other options (breaks shuffling): "${o}"`);
+    const answerDist = [0, 0, 0, 0];
+    let longestIsCorrect = 0;
+    quiz.forEach((item, i) => {
+      const where = `${dir}/quiz/${rank.id}.js[${i}]${item && item.id ? " " + item.id : ""}`;
+      checkCommon(item, where, QUIZ_KEYS, prefix, track, "m");
+      if (!Array.isArray(item.options) || item.options.length !== 4 || !item.options.every(isStr)) {
+        errors.push(`${where}: options must be 4 non-empty strings`);
+        return;
+      }
+      if (new Set(item.options.map(norm)).size !== 4) errors.push(`${where}: duplicate options`);
+      if (!Number.isInteger(item.answer) || item.answer < 0 || item.answer > 3) {
+        errors.push(`${where}: answer must be an integer 0-3`);
+        return;
+      }
+      if (!isStr(item.explain)) errors.push(`${where}: missing explain`);
+      item.options.forEach((o) => {
+        if (CROSS_REF.test(o)) errors.push(`${where}: option references other options (breaks shuffling): "${o}"`);
+      });
+      answerDist[item.answer]++;
+      const lens = item.options.map((o) => o.length);
+      if (lens[item.answer] === Math.max(...lens) && lens.filter((l) => l === lens[item.answer]).length === 1) {
+        longestIsCorrect++;
+      }
     });
-    answerDist[item.answer]++;
-    const lens = item.options.map((o) => o.length);
-    if (lens[item.answer] === Math.max(...lens) && lens.filter((l) => l === lens[item.answer]).length === 1) {
-      longestIsCorrect++;
-    }
-  });
 
-  const topicCount = {};
-  [...questions, ...quiz].forEach((x) => (topicCount[x.topic] = (topicCount[x.topic] || 0) + 1));
-  const roadmapCount = DAYS.flatMap((d) => d.questions).filter((q) => q.rank === rank.id).length;
-  console.log(
-    `${rank.name.padEnd(8)} questions: ${questions.length} (+${roadmapCount} từ lộ trình) · quiz: ${quiz.length}` +
-      ` · answer index dist: ${answerDist.join("/")}` +
-      ` · longest option is correct: ${quiz.length ? Math.round((longestIsCorrect / quiz.length) * 100) : 0}%`,
-  );
-  console.log(`         topics: ${Object.entries(topicCount).map(([k, v]) => `${k}=${v}`).join(", ")}`);
-  if (quiz.length >= 10 && longestIsCorrect / quiz.length > 0.4) {
-    warnings.push(`quiz/${rank.id}.js: correct answer is the longest option in ${longestIsCorrect}/${quiz.length} questions (aim < 40%)`);
+    const topicCount = {};
+    [...questions, ...quiz].forEach((x) => (topicCount[x.topic] = (topicCount[x.topic] || 0) + 1));
+    const roadmapCount = roadmapDays.flatMap((d) => d.questions).filter((q) => q.rank === rank.id).length;
+    console.log(
+      `${rank.name.padEnd(8)} questions: ${questions.length}${roadmapCount ? ` (+${roadmapCount} từ lộ trình)` : ""} · quiz: ${quiz.length}` +
+        ` · answer index dist: ${answerDist.join("/")}` +
+        ` · longest option is correct: ${quiz.length ? Math.round((longestIsCorrect / quiz.length) * 100) : 0}%`,
+    );
+    console.log(`         topics: ${Object.entries(topicCount).map(([k, v]) => `${k}=${v}`).join(", ")}`);
+    if (quiz.length >= 10 && longestIsCorrect / quiz.length > 0.4) {
+      warnings.push(`${dir}/quiz/${rank.id}.js: correct answer is the longest option in ${longestIsCorrect}/${quiz.length} questions (aim < 40%)`);
+    }
+    if (quiz.length >= 8 && Math.max(...answerDist) - Math.min(...answerDist) > 2) {
+      warnings.push(`${dir}/quiz/${rank.id}.js: answer index distribution ${answerDist.join("/")} is uneven (aim for equal counts)`);
+    }
   }
 }
 
 // ---- Toàn site (bỏ qua khi chỉ kiểm tra một rank) ----
-if (!only) {
+if (!args.length) {
   const fs = await import("node:fs");
   const path = await import("node:path");
   const { fileURLToPath } = await import("node:url");
@@ -133,7 +155,7 @@ if (!only) {
 
   // Trang chia sẻ s/<id>.html phải khớp dữ liệu hiện tại.
   const { allSharePages } = await import("./share-pages.mjs");
-  const pages = allSharePages();
+  const pages = await allSharePages();
   let stale = 0;
   for (const p of pages) {
     const file = path.join(root, "s", `${p.id}.html`);
@@ -142,6 +164,9 @@ if (!only) {
   const extra = fs.existsSync(path.join(root, "s"))
     ? fs.readdirSync(path.join(root, "s")).filter((f) => !pages.some((p) => `${p.id}.html` === f)).length
     : 0;
+  for (const t of TRACKS) {
+    if (!fs.existsSync(path.join(root, "assets", `og-${t.id}.png`))) errors.push(`assets/og-${t.id}.png: thiếu ảnh preview cho trang chia sẻ của track ${t.name}`);
+  }
   if (stale || extra) errors.push(`s/: ${stale} trang chia sẻ cũ/thiếu, ${extra} trang thừa — chạy: node scripts/build-share-pages.mjs`);
   else console.log(`Share pages: ${pages.length} OK · sw.js precache: ${precache.length} files OK`);
 }
