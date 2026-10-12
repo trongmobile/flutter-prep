@@ -1122,7 +1122,9 @@ audio { width: 100%; max-width: 480px; height: 40px; }
   background: var(--accent-blue-dim); border: 1px solid color-mix(in srgb, var(--accent-blue) 35%, transparent);
   border-radius: 999px; padding: 4px 26px 4px 11px; min-height: 30px; cursor: pointer;
 }
-.track-picker select:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
+.track-picker:focus-within { outline: none; }
+.track-picker select:focus { outline: none; }
+.track-picker select:focus-visible { border-color: var(--accent-blue); }
 .track-picker select option { color: var(--text); background: var(--surface); }
 .track-picker::after {
   content: ""; position: absolute; right: 11px; top: 50%; margin-top: -2px; pointer-events: none;
