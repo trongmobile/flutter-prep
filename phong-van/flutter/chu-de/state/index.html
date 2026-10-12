@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter: State Management — Mobile Interview</title>
+<meta name="description" content="32 câu hỏi phỏng vấn Flutter về State Management từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/state/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter: State Management — Mobile Interview">
+<meta property="og:description" content="32 câu hỏi phỏng vấn Flutter về State Management từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/state/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"State Management","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/state/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../../../../phong-van/android/">Android</a>
+      <a href="../../../../phong-van/ios/">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <span aria-current="page">State Management</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn Flutter: State Management</h1>
+  <p class="subtitle">32 câu hỏi kèm đáp án mẫu và 14 câu quiz về State Management, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/fre-q32.html">setState làm gì? Nếu đổi giá trị biến mà không gọi setState thì chuyện gì xảy ra?</a></li>
+    <li><a href="../../../../s/fre-q33.html">Hot reload, hot restart và chạy lại app (full restart) khác nhau thế nào?</a></li>
+    <li><a href="../../../../s/fre-m37.html">Bấm nút dưới đây 3 lần (không có gì khác khiến widget rebuild). Chữ trên nút hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/fre-m38.html">Bạn sửa giá trị khởi tạo trong initState() (ví dụ count = 10 thay vì 0) rồi hot reload, nhưng màn hình không đổi. Vì sao?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> Flutter Junior</h2><a class="section-sub" href="../../../../phong-van/flutter/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/jun-q19.html">ChangeNotifierProvider(create: ...) và ChangeNotifierProvider.value(...) khác nhau thế nào? Dùng sai gây hậu quả gì?</a></li>
+    <li><a href="../../../../s/jun-q20.html">Làm sao quyết định một state nên để cục bộ bằng setState hay đưa lên Provider?</a></li>
+    <li><a href="../../../../s/jun-q21.html">Trong một ChangeNotifier, vì sao nên expose danh sách qua getter trả về UnmodifiableListView thay vì để public List?</a></li>
+    <li><a href="../../../../s/d08-1.html">Gọi setState() ngay bên trong build() gây vấn đề gì?</a></li>
+    <li><a href="../../../../s/d08-3.html">Vì sao setState chỉ rebuild widget đó và con của nó chứ không toàn bộ app?</a></li>
+    <li><a href="../../../../s/d09-1.html">Consumer và context.watch() khác nhau ở phạm vi rebuild?</a></li>
+    <li><a href="../../../../s/d09-3.html">Vì sao không nên gọi context.watch() bên trong callback như onPressed?</a></li>
+    <li><a href="../../../../s/jun-m26.html">Widget dùng context.watch&lt;CartModel&gt;() nhưng không cập nhật sau khi gọi add. Nguyên nhân chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/jun-m27.html">ChangeNotifierProvider&lt;CartModel&gt; được đặt bọc body của HomePage (bên dưới MaterialApp). Từ Home, Navigator.push sang CartPage rồi gọi context.watch&lt;CartModel&gt;() thì gặp ProviderNotFoundException. Cách sửa hợp lý là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/jun-m28.html">Phát biểu nào SAI về ChangeNotifierProvider (package provider)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/jun-m29.html">Trong một State, nút bấm gọi _increment. UI có hiển thị giá trị _count mới không?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> Flutter Middle</h2><a class="section-sub" href="../../../../phong-van/flutter/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/mid-q13.html">Trong Riverpod hiện đại, Notifier/AsyncNotifier khác gì StateNotifier/StateProvider cũ? Viết một AsyncNotifier có load và thêm item.</a></li>
+    <li><a href="../../../../s/mid-q14.html">Màn hình dùng BlocBuilder rebuild quá nhiều dù chỉ hiển thị một field của state. Bạn tối ưu thế nào?</a></li>
+    <li><a href="../../../../s/mid-q15.html">Phân biệt ephemeral state và app state. Khi nào setState là đủ, khi nào nên đưa state vào Riverpod/Bloc?</a></li>
+    <li><a href="../../../../s/d08-2.html">InheritedWidget thông báo thay đổi cho widget con dựa trên cơ chế nào?</a></li>
+    <li><a href="../../../../s/d08-5.html">Vì sao package Provider được xây trên nền InheritedWidget?</a></li>
+    <li><a href="../../../../s/d09-2.html">Selector giải quyết vấn đề gì mà Consumer không làm được?</a></li>
+    <li><a href="../../../../s/d09-4.html">ProxyProvider dùng để làm gì?</a></li>
+    <li><a href="../../../../s/d09-5.html">ChangeNotifier có nhược điểm gì so với các giải pháp khác?</a></li>
+    <li><a href="../../../../s/d10-1.html">Riverpod giải quyết vấn đề gì mà Provider gặp phải?</a></li>
+    <li><a href="../../../../s/d10-2.html">ref.watch, ref.read, ref.listen khác nhau thế nào?</a></li>
+    <li><a href="../../../../s/d10-3.html">autoDispose modifier dùng khi nào?</a></li>
+    <li><a href="../../../../s/d10-4.html">family modifier giải quyết vấn đề gì?</a></li>
+    <li><a href="../../../../s/d10-5.html">AsyncValue giúp gì khi xử lý trạng thái gọi network?</a></li>
+    <li><a href="../../../../s/d11-1.html">Cubit khác Bloc ở điểm cơ bản nào?</a></li>
+    <li><a href="../../../../s/d11-3.html">BlocListener và BlocBuilder khác nhau thế nào?</a></li>
+    <li><a href="../../../../s/d11-5.html">HydratedBloc giải quyết vấn đề gì?</a></li>
+    <li><a href="../../../../s/d14-4.html">Review: gọi notifyListeners() sau khi ChangeNotifier đã dispose, hoặc setState() sau khi widget đã dispose thì sao?</a></li>
+    <li><a href="../../../../s/d29-3.html">Khi nào bạn chọn Riverpod thay vì Provider cho một dự án mới bắt đầu?</a></li>
+    <li><a href="../../../../s/d29-5.html">Tại sao BLoC tách Event và State thành hai khái niệm riêng thay vì gộp như Cubit?</a></li>
+    <li><a href="../../../../s/mid-m21.html">Khi counterProvider thay đổi giá trị, Text trong widget sau hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m22.html">UI dùng ref.watch(cartProvider) nhưng không cập nhật khi gọi add. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m23.html">Provider autoDispose gọi lại API mỗi lần user quay lại màn hình. Bạn muốn giữ cache sau khi tải thành công nhưng vẫn để provider tự hủy nếu request lỗi. Dùng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m24.html">Màn hình liên tục hiển thị loading và gọi API lặp đi lặp lại. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m25.html">Trong một provider khác, bạn cần await dữ liệu của userProvider (một AsyncNotifierProvider). Cách đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m26.html">Listener in ra những gì khi gọi cubit..set(1)..set(1)..set(2)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m27.html">Bạn muốn hiện SnackBar đúng một lần mỗi khi status chuyển sang failure, không hiện lại khi các field khác của state thay đổi. Dùng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m28.html">Một Cubit await API rồi emit kết quả, nhưng user đã rời màn hình khiến BlocProvider gọi close() trước khi API trả về. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> Flutter Senior</h2><a class="section-sub" href="../../../../phong-van/flutter/senior/">Mọi chủ đề Senior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/d08-4.html">InheritedModel khác InheritedWidget ở điểm gì?</a></li>
+    <li><a href="../../../../s/d11-2.html">EventTransformer trong Bloc dùng để làm gì? Ví dụ thực tế?</a></li>
+    <li><a href="../../../../s/d11-4.html">Vì sao Bloc phù hợp với dự án lớn, nhiều dev ở MNC?</a></li>
+    <li><a href="../../../../s/d35-2.html">Trade-off giữa Riverpod code-gen (@riverpod) và khai báo provider thủ công (NotifierProvider)?</a></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/dart/">Dart</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/async/">Async &amp; Isolate</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/widget/">Widget &amp; Lifecycle</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/layout/">Layout &amp; Rendering</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/native/">Native &amp; Platform</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/flutter/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

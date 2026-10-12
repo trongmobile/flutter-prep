@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz iOS Middle: So sánh @StateObject private var vm = FeedViewModel() (ObservableObject) với @State private…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="@StateObject nhận biểu thức qua @autoclosure nên chỉ đánh giá khi tạo storage lần đầu. @State nhận giá trị trực tiếp, nên FeedModel() được tạo mỗi lần struct…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-m26.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz iOS Middle: So sánh @StateObject private var vm = FeedViewModel() (ObservableObject) với @State private…">
@@ -16,10 +17,78 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-mid-m26");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"So sánh @StateObject private var vm = FeedViewM…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-m26.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>So sánh @StateObject private var vm = FeedViewModel() (ObservableObject) với @State private var model = FeedModel() (@Observable). Điểm nào đúng?</p>
-<p><a href="../#/q/ios-mid-m26">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">So sánh @StateObject private var vm = FeedViewM…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swiftui/">SwiftUI</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">So sánh <code>@StateObject private var vm = FeedViewModel()</code> (<code>ObservableObject</code>) với <code>@State private var model = FeedModel()</code> (<code>@Observable</code>). Điểm nào đúng?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>FeedModel()</code> chạy mỗi lần view init, nhưng SwiftUI chỉ giữ instance đầu</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Cả hai biểu thức khởi tạo chỉ chạy đúng một lần trong vòng đời view</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>@State</code> thay instance <code>FeedModel</code> bằng bản mới mỗi lần cha render</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>@StateObject</code> chạy <code>FeedViewModel()</code> mỗi lần view init, <code>@State</code> thì không</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div><code>@StateObject</code> nhận biểu thức qua <code>@autoclosure</code> nên chỉ đánh giá khi tạo storage lần đầu. <code>@State</code> nhận giá trị trực tiếp, nên <code>FeedModel()</code> được tạo mỗi lần struct view init rồi bị bỏ đi; vì vậy tránh việc nặng hay side effect trong <code>init</code> của model.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-m26">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-m25.html"><span class="muted small">← Câu trước</span><span>Trong một PreferenceKey, hàm static func reduce(value: inout Value, nextValue:…</span></a>
+  <a class="pager-next" href="../s/ios-mid-m27.html"><span class="muted small">Câu sau →</span><span>Bạn gán heightConstraint.constant = 300 rồi viết UIView.animate(withDuration: 0…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề SwiftUI</h2><a class="section-sub" href="../phong-van/ios/chu-de/swiftui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q09.html">Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù text nằm trong @State của view con. Nguyên nhân liên quan tới identity của view là gì, và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q10.html">Team chuyển ViewModel từ ObservableObject + @Published sang macro @Observable. Cơ chế cập nhật view khác gì, và @StateObject, @ObservedObject, @EnvironmentObject được thay bằng gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q11.html">View cha cần biết chiều cao thực tế của một view con (để làm header co giãn hoặc căn các cột bằng nhau). GeometryReader và PreferenceKey phối hợp thế nào, và vì sao không nên bọc cả màn hình trong GeometryReader?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m20.html">CounterView(start: 0) đang hiển thị, sau đó view cha render lại với start bằng 10 (identity không đổi). Text hiển thị gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m21.html">Mỗi lần bấm Toggle layout, giá trị đếm mà CounterView lưu trong @State của nó sẽ thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m22.html">Code khác gán profile.followers += 1. body của NameLabel có được tính lại không?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

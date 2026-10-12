@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS: Memory &amp; ARC — Mobile Interview</title>
+<meta name="description" content="8 câu hỏi phỏng vấn iOS về Memory &amp; ARC từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/memory/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS: Memory &amp; ARC — Mobile Interview">
+<meta property="og:description" content="8 câu hỏi phỏng vấn iOS về Memory &amp; ARC từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/memory/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Memory & ARC","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/memory/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../../phong-van/android/">Android</a>
+      <a href="../../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">Memory &amp; ARC</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn iOS: Memory &amp; ARC</h1>
+  <p class="subtitle">8 câu hỏi kèm đáp án mẫu và 14 câu quiz về Memory &amp; ARC, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-fre-q08.html">ARC là gì? Khi nào một object bị giải phóng khỏi bộ nhớ?</a></li>
+    <li><a href="../../../../s/ios-fre-q09.html">Strong reference và weak reference khác nhau thế nào? Vì sao biến weak luôn phải có kiểu Optional?</a></li>
+    <li><a href="../../../../s/ios-fre-m30.html">Hai biến cùng giữ một instance Player; thứ tự in ra của đoạn code sau là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m31.html">Hàm test() sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m32.html">ARC đếm tham chiếu và tự giải phóng bộ nhớ cho loại giá trị nào trong Swift?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m33.html">Hai class giữ strong reference tới nhau như sau; console in ra gì sau khi gán cả p và apt về nil?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-jun-q04.html">Bạn pop màn hình chi tiết ra nhưng deinit của DetailViewController không bao giờ chạy. Trong code có đoạn gán callback cho ViewModel như dưới. Nguyên nhân và cách sửa?</a></li>
+    <li><a href="../../../../s/ios-jun-q05.html">Vì sao property delegate thường được khai báo weak? Viết weak var delegate: PickerDelegate? mà compiler báo lỗi thì sửa thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q06.html">weak và unowned khác nhau thế nào? Có phải closure nào dùng self cũng phải viết [weak self] không?</a></li>
+    <li><a href="../../../../s/ios-jun-m07.html">Person giữ strong Phone, còn Phone giữ weak tới Person. Sau khi lần lượt gán hai biến về nil, các dòng nào được in ra theo thứ tự?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m08.html">Closure capture unowned một object, sau đó object bị giải phóng trước khi closure được gọi. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m09.html">Class có một lazy var chứa closure dùng self.name. Sau khi gọi closure rồi gán biến về nil, chương trình in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m10.html">DownloadManager tự tạo URLSession với delegate: self và lưu vào property. Sau khi màn hình dùng nó bị đóng và biến giữ manager về nil, deinit không chạy. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m11.html">VC đăng ký NotificationCenter.default.addObserver(forName: .cartChanged, object: nil, queue: .main) { _ in self.reload() } và bỏ qua giá trị trả về. Hậu quả là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> iOS Middle</h2><a class="section-sub" href="../../../../phong-van/ios/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-mid-q08.html">ViewModel lắng nghe một AsyncStream bằng Task { for await event in stream { ... } }. Màn hình đã đóng nhưng deinit của ViewModel không bao giờ chạy. Vì sao, và thêm [weak self] có đủ không?</a></li>
+    <li><a href="../../../../s/ios-mid-m11.html">ViewModel sau không bao giờ được giải phóng sau khi màn hình đóng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-sen-q08.html">Mỗi lần mở rồi đóng màn hình chi tiết, memory tăng thêm vài MB nhưng Memory Graph Debugger không báo leak nào. Bạn truy nguyên nhân thế nào?</a></li>
+    <li><a href="../../../../s/ios-sen-q09.html">Store kiểu Redux giữ AppState là struct chứa mảng vài nghìn tin nhắn. Time Profiler cho thấy mỗi lần nhận tin mới, reducer lại copy toàn bộ mảng dù Array có copy-on-write. Vì sao, và sửa thế nào?</a></li>
+    <li><a href="../../../../s/ios-sen-m14.html">Hàm xuất thumbnail sau chạy trên background thread; memory tăng liên tục suốt vòng lặp và chỉ giảm khi hàm kết thúc. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m15.html">Dashboard Crashlytics không ghi nhận crash nào, nhưng nhiều user phàn nàn app &#39;tự thoát&#39; khi đang xem video dài. Giải thích hợp lý nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m16.html">Closure ngoài đã có [weak self]. Sau khi connect gọi callback và user đóng màn hình, deinit của ChatViewController có chạy không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m17.html">Reviewer yêu cầu thêm [weak self] vào Task dưới đây để tránh retain cycle. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swift/">Swift</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/concurrency/">Concurrency</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swiftui/">SwiftUI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/platform/">App lifecycle &amp; Platform</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

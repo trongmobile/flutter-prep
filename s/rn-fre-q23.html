@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Fresher: AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="AsyncStorage là kho key–value bất đồng bộ, lưu bền trên máy, hợp với dữ liệu nhỏ như cài đặt, theme hay cờ đã xem onboarding. Bản nằm trong core React Native…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q23.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ…">
@@ -16,10 +17,85 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-fre-q23");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"AsyncStorage là gì, lưu một object vào đó thế n…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q23.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ vào AsyncStorage không?</p>
-<p><a href="../#/q/rn-fre-q23">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">AsyncStorage là gì, lưu một object vào đó thế n…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ vào AsyncStorage không?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">AsyncStorage là kho key–value bất đồng bộ, lưu bền trên máy, hợp với dữ liệu nhỏ như cài đặt, theme hay cờ đã xem onboarding. Bản nằm trong core React Native đã bị tách ra, nay dùng package cộng đồng <code>@react-native-async-storage/async-storage</code>. Cả key và value đều là string và mọi hàm đều trả về Promise, nên object phải <code>JSON.stringify</code> khi ghi, <code>JSON.parse</code> khi đọc, và <code>getItem</code> trả về <code>null</code> khi key chưa tồn tại. Dữ liệu không được mã hoá nên không dùng cho token hay mật khẩu, và nó cũng không thay được database khi dữ liệu lớn hoặc cần truy vấn.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-type">AsyncStorage</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;@react-native-async-storage/async-storage&#39;</span>;
+
+<span class="tk-kw">type</span> <span class="tk-type">Settings</span> = { darkMode: <span class="tk-kw">boolean</span> };
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> saveSettings(settings: <span class="tk-type">Settings</span>) {
+  <span class="tk-kw">await</span> <span class="tk-type">AsyncStorage</span>.setItem(<span class="tk-str">&#39;settings&#39;</span>, <span class="tk-type">JSON</span>.stringify(settings));
+}
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> loadSettings(): <span class="tk-type">Promise</span>&lt;<span class="tk-type">Settings</span>&gt; {
+  <span class="tk-kw">const</span> raw = <span class="tk-kw">await</span> <span class="tk-type">AsyncStorage</span>.getItem(<span class="tk-str">&#39;settings&#39;</span>); <span class="tk-com">// string | null</span>
+  <span class="tk-kw">return</span> raw ? <span class="tk-type">JSON</span>.parse(raw) : { darkMode: <span class="tk-kw">false</span> };
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q23">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q22.html"><span class="muted small">← Câu trước</span><span>Gọi API bằng fetch thế nào? Vì sao server trả 404 hoặc 500 mà code không nhảy v…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q24.html"><span class="muted small">Câu sau →</span><span>Expo và React Native CLI khác nhau thế nào? Dự án mới bạn sẽ chọn cái nào?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/react-native/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q22.html">Gọi API bằng fetch thế nào? Vì sao server trả 404 hoặc 500 mà code không nhảy vào catch?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-m35.html">Server trả về HTTP 404 cho request dưới đây. Màn hình console in ra gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-m36.html">Cách đúng để lưu rồi đọc lại object user bằng AsyncStorage là gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-m37.html">await AsyncStorage.getItem(&#39;token&#39;) trả về gì khi key token chưa từng được lưu?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-q18.html">Màn hình chi tiết sản phẩm gọi API theo id trong useEffect. Bạn tổ chức trạng thái loading/error thế nào, và cần xử lý gì khi người dùng thoát màn hình hoặc đổi id trước khi request xong?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q19.html">Team định dùng AsyncStorage để lưu danh sách vài nghìn sản phẩm cho chế độ offline cùng với cài đặt người dùng. Bạn góp ý gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

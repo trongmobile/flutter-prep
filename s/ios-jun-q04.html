@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Junior: Bạn pop màn hình chi tiết ra nhưng deinit của DetailViewController không bao gi…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="VC giữ strong viewModel, viewModel giữ strong closure onUpdate, còn closure lại capture strong self là chính VC, tạo thành retain cycle nên reference count k…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q04.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: Bạn pop màn hình chi tiết ra nhưng deinit của DetailViewController không bao gi…">
@@ -16,10 +17,87 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-jun-q04");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Bạn pop màn hình chi tiết ra nhưng deinit của D…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q04.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Bạn pop màn hình chi tiết ra nhưng deinit của DetailViewController không bao giờ chạy. Trong code có đoạn gán callback cho ViewModel như dưới. Nguyên nhân và cách sửa?</p>
-<p><a href="../#/q/ios-jun-q04">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn pop màn hình chi tiết ra nhưng deinit của D…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/memory/">Memory &amp; ARC</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn pop màn hình chi tiết ra nhưng <code>deinit</code> của <code>DetailViewController</code> không bao giờ chạy. Trong code có đoạn gán callback cho ViewModel như dưới. Nguyên nhân và cách sửa?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">VC giữ strong <code>viewModel</code>, <code>viewModel</code> giữ strong closure <code>onUpdate</code>, còn closure lại capture strong <code>self</code> là chính VC, tạo thành retain cycle nên reference count không bao giờ về 0 và cả VC lẫn ViewModel bị leak. Sửa bằng capture list <code>[weak self]</code> rồi <code>guard let self else { return }</code> trong closure; khi VC bị pop, không còn ai giữ VC nên nó được giải phóng và chu trình bị phá. Cách kiểm tra nhanh là đặt <code>print</code> hoặc breakpoint trong <code>deinit</code>, hoặc mở Memory Graph trong Xcode để xem object nào còn sống sau khi rời màn hình.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">DetailViewController</span>: <span class="tk-type">UIViewController</span> {
+  <span class="tk-kw">let</span> viewModel = <span class="tk-type">DetailViewModel</span>()
+
+  <span class="tk-kw">override</span> <span class="tk-kw">func</span> viewDidLoad() {
+    <span class="tk-kw">super</span>.viewDidLoad()
+    <span class="tk-com">// Gây leak: viewModel.onUpdate = { state in self.render(state) }</span>
+    viewModel.onUpdate = { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] state <span class="tk-kw">in</span>
+      <span class="tk-kw">guard</span> <span class="tk-kw">let</span> <span class="tk-kw">self</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+      <span class="tk-kw">self</span>.render(state)
+    }
+  }
+
+  <span class="tk-kw">deinit</span> { print(<span class="tk-str">&quot;DetailViewController deinit&quot;</span>) }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q04">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q03.html"><span class="muted small">← Câu trước</span><span>Dự án có hàng chục loại cell, chỗ nào cũng viết dequeueReusableCell(withIdentif…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q05.html"><span class="muted small">Câu sau →</span><span>Vì sao property delegate thường được khai báo weak? Viết weak var delegate: Pic…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Memory &amp; ARC</h2><a class="section-sub" href="../phong-van/ios/chu-de/memory/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q05.html">Vì sao property delegate thường được khai báo weak? Viết weak var delegate: PickerDelegate? mà compiler báo lỗi thì sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q06.html">weak và unowned khác nhau thế nào? Có phải closure nào dùng self cũng phải viết [weak self] không?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-m07.html">Person giữ strong Phone, còn Phone giữ weak tới Person. Sau khi lần lượt gán hai biến về nil, các dòng nào được in ra theo thứ tự?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m08.html">Closure capture unowned một object, sau đó object bị giải phóng trước khi closure được gọi. Điều gì xảy ra?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m09.html">Class có một lazy var chứa closure dùng self.name. Sau khi gọi closure rồi gán biến về nil, chương trình in ra gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m10.html">DownloadManager tự tạo URLSession với delegate: self và lưu vào property. Sau khi màn hình dùng nó bị đóng và biến giữ manager về nil, deinit không chạy. Vì sao?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

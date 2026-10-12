@@ -1189,3 +1189,69 @@ audio { width: 100%; max-width: 480px; height: 40px; }
   .job-actions { width: 100%; }
   .job-actions .btn { flex: 1; }
 }
+
+/* ============ Trang tĩnh (s/, phong-van/ — sinh bởi scripts/pages.mjs) ============ */
+.static-cta { min-height: 36px; padding: 7px 14px; font-size: 13.5px; white-space: nowrap; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; font-size: 13px; color: var(--text-faint); margin-bottom: 18px; }
+.crumbs a { color: var(--text-muted); text-decoration: none; }
+.crumbs a:hover { color: var(--accent-blue); text-decoration: underline; }
+.crumbs [aria-current] { color: var(--text-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+.static-page .view-head .btn-row { margin-top: 4px; }
+.static-page a.tag { text-decoration: none; }
+.static-page a.tag:hover { color: var(--accent-blue); }
+.static-page a.chip { text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.static-page > .chips { margin-bottom: 18px; }
+.reveal > summary {
+  cursor: pointer; font-weight: 600; color: var(--accent-blue); padding: 6px 0; width: fit-content;
+  list-style: none;
+}
+.reveal > summary::-webkit-details-marker { display: none; }
+.reveal > summary::before { content: "▸"; display: inline-block; margin-right: 6px; transition: transform 0.15s; }
+.reveal[open] > summary::before { transform: rotate(90deg); }
+.reveal[open] > summary { margin-bottom: 8px; }
+.reveal > .explain { margin-top: 0; }
+.static-options { list-style: none; padding: 0; margin: 0; }
+.static-options .opt { cursor: default; }
+.static-options .opt:hover { border-color: var(--border); }
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.pager a {
+  display: grid; gap: 3px; padding: 12px 14px; border-radius: var(--radius); text-decoration: none;
+  border: 1px solid var(--border-soft); background: var(--bg-elevated); color: var(--text); font-size: 14px;
+}
+.pager a:hover { border-color: var(--accent-blue); }
+.pager-next { text-align: right; grid-column: 2; }
+.link-list { display: grid; gap: 2px; padding-left: 20px; margin: 0; }
+.link-list li { padding: 5px 0; line-height: 1.5; }
+.link-list a { color: var(--text); text-decoration: none; }
+.link-list a:hover { color: var(--accent-blue); text-decoration: underline; }
+.toc { margin-top: 4px; }
+.toc ul { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; padding: 0; margin: 0; font-size: 14px; }
+.qa-list { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; counter-reset: qa; }
+.qa-item {
+  background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px 18px;
+  counter-increment: qa;
+}
+.qa-q { font-family: var(--font-body); font-size: 15.5px; font-weight: 600; line-height: 1.5; margin-bottom: 4px; }
+.qa-q::before { content: counter(qa) ". "; color: var(--text-faint); }
+.qa-q a { color: var(--text); text-decoration: none; }
+.qa-q a:hover { color: var(--accent-blue); }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 12px; }
+.hub-card {
+  display: grid; gap: 6px; align-content: start; padding: 16px 18px; border-radius: var(--radius);
+  border: 1px solid var(--border-soft); background: var(--bg-elevated); color: var(--text); text-decoration: none;
+}
+a.hub-card { border-top: 3px solid var(--rank, var(--border-soft)); }
+a.hub-card:hover { border-color: var(--rank, var(--accent-blue)); }
+.hub-card strong, .hub-title { font-family: var(--font-display); font-size: 17px; font-weight: 600; }
+.hub-title { color: var(--text); text-decoration: none; }
+.hub-title:hover { color: var(--accent-blue); }
+.hub-card > span { color: var(--text-muted); font-size: 13.5px; line-height: 1.5; }
+.hub-card > .hub-count { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); }
+.hub-ranks { display: flex; flex-wrap: wrap; gap: 6px; }
+.hub-ranks a { text-decoration: none; }
+@media (max-width: 640px) {
+  .static-cta { display: none; }
+  .pager { grid-template-columns: minmax(0, 1fr); }
+  .pager-next { grid-column: auto; }
+  .qa-item { padding: 12px 14px; }
+}

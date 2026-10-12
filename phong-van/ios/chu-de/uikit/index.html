@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle — Mobile Interview</title>
+<meta name="description" content="10 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle — Mobile Interview">
+<meta property="og:description" content="10 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"UIKit & Lifecycle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../../phong-van/android/">Android</a>
+      <a href="../../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">UIKit &amp; Lifecycle</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle</h1>
+  <p class="subtitle">10 câu hỏi kèm đáp án mẫu và 18 câu quiz về UIKit &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a></li>
+    <li><a href="../../../../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a></li>
+    <li><a href="../../../../s/ios-fre-q12.html">UITableViewDataSource và UITableViewDelegate khác nhau thế nào? Để hiển thị một danh sách đơn giản cần cài đặt những method nào?</a></li>
+    <li><a href="../../../../s/ios-fre-q13.html">@IBOutlet và @IBAction là gì? Vì sao đổi tên một biến outlet xong thì app crash với lỗi &quot;this class is not key value coding-compliant for the key…&quot;?</a></li>
+    <li><a href="../../../../s/ios-fre-q14.html">Dựng UI bằng storyboard, xib hay viết code khác nhau thế nào? Dự án nhiều người cùng làm thì bạn chọn cách nào?</a></li>
+    <li><a href="../../../../s/ios-fre-m12.html">Màn hình A push sang màn hình B, sau đó người dùng bấm Back quay về A. Lúc quay về, A được gọi những method vòng đời nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m13.html">Trong viewDidLoad, bạn đọc view.bounds.width để tính kích thước một subview, nhưng trên một số máy giá trị không khớp màn hình thật. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m14.html">Bạn tạo UILabel bằng code, addSubview rồi activate đủ constraint, nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot; và label nằm sai chỗ. Nguyên nhân hay gặp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m15.html">frame và bounds của một UIView khác nhau thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m16.html">Để UITableView hiển thị dữ liệu, hai method nào của UITableViewDataSource là bắt buộc?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m17.html">Bảng hiển thị dữ liệu bình thường, nhưng chạm vào row thì tableView(_:didSelectRowAt:) không bao giờ được gọi. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m18.html">Sau khi đổi tên một @IBOutlet trong code (không sửa storyboard), app crash khi mở màn hình với lỗi this class is not key value coding-compliant for the key titleLabel. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m19.html">Bạn neo topAnchor của một label vào view.topAnchor, và trên iPhone có notch/Dynamic Island thì phần trên của chữ bị che. Nên sửa thế nào?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-jun-q14.html">Màn đăng ký có form dài đặt trong UIScrollView; khi bàn phím hiện lên thì che mất các ô nhập phía dưới và người dùng không cuộn tới được. Bạn xử lý thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q15.html">Cell có label mô tả nhiều dòng nhưng chiều cao cell vẫn cố định, chữ bị cắt. Cần làm gì để self-sizing cell hoạt động?</a></li>
+    <li><a href="../../../../s/ios-jun-q16.html">App thỉnh thoảng crash với lỗi Invalid update: invalid number of rows in section 0 khi thêm, xoá item rồi gọi insertRows/deleteRows. Diffable data source giúp gì, dùng thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-m24.html">Gọi tableView.dequeueReusableCell(withIdentifier: &quot;ProductCell&quot;, for: indexPath) nhưng chưa register class/nib nào và storyboard cũng không có prototype cell tương ứng. Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m25.html">Bạn viết collectionView(_:layout:sizeForItemAt:) trong VC dùng flow layout nhưng kích thước item không đổi, breakpoint trong hàm không bao giờ dừng. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m26.html">Hàm thêm item dưới đây làm app crash với Invalid update: invalid number of rows in section 0. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m27.html">ListViewController present AddItemViewController với modalPresentationStyle mặc định (dạng sheet từ iOS 13). Khi màn hình thêm mới bị dismiss, code reload trong viewWillAppear của màn hình danh sách không chạy. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m28.html">Mỗi cell có một UISwitch. Bật switch ở hàng đầu rồi cuộn xuống, thấy vài hàng phía dưới cũng đang bật dù chưa ai chạm vào. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> iOS Middle</h2><a class="section-sub" href="../../../../phong-van/ios/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-mid-q21.html">Bạn đổi constant của một constraint rồi gọi UIView.animate, nhưng view nhảy ngay sang vị trí mới mà không có animation. Giải thích layout cycle và cách sửa; setNeedsLayout khác layoutIfNeeded thế nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q22.html">Nút &quot;đóng&quot; được đặt lệch một nửa ra ngoài bounds của view cha (cha đã tắt clipsToBounds), phần lòi ra ngoài bấm không ăn. Vì sao, và hit-testing với responder chain hoạt động thế nào?</a></li>
+    <li><a href="../../../../s/ios-mid-m27.html">Bạn gán heightConstraint.constant = 300 rồi viết UIView.animate(withDuration: 0.3) { self.view.setNeedsLayout() }. Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m28.html">Đồng hồ đếm ngược tạo bằng Timer.scheduledTimer(withTimeInterval:repeats:block:) đứng yên mỗi khi user kéo UIScrollView, thả tay mới chạy tiếp. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m29.html">Một UIButton nằm lệch một nửa ra ngoài bounds của view cha, cha đặt clipsToBounds = false. Chạm vào phần nút nằm ngoài cha thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m30.html">Gọi UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) có tác dụng gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swift/">Swift</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/memory/">Memory &amp; ARC</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/concurrency/">Concurrency</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swiftui/">SwiftUI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/platform/">App lifecycle &amp; Platform</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

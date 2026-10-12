@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <span aria-current="page">Senior</span>
+</nav>
+
+<header class="view-head rank-purple">
+  <div class="eyebrow">phỏng vấn · android · senior (4+ năm)</div>
+  <h1>Câu hỏi phỏng vấn Android Senior</h1>
+  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../../../#/android/study/senior">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/android/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/android/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/android/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/android/middle/">Middle</a>
+  <a class="chip active" href="../../../phong-van/android/senior/" aria-current="page">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#java">Java &amp; JVM</a> <span class="count">4</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">1</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
+    <li><a href="#build">Gradle &amp; Build</a> <span class="count">3</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">4</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#security">Security</a> <span class="count">3</span></li>
+    <li><a href="#design">System Design</a> <span class="count">3</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="java">
+  <div class="section-head"><h2>Java &amp; JVM</h2><a class="section-sub" href="../../../phong-van/android/chu-de/java/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q05.html">Giải thích cách ART thực thi code của app hiện nay (interpreter, JIT, AOT). Vì sao vài lần mở đầu sau khi cài hoặc cập nhật thường chậm hơn, và Baseline Profile giải quyết việc đó ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dalvik chủ yếu thông dịch bytecode, từ Android 2.2 có thêm JIT. ART ở Android 5–6 AOT-compile toàn bộ app bằng <code>dex2oat</code> lúc cài, nên cài lâu và tốn dung lượng. Từ Android 7, ART dùng mô hình lai: mới cài thì code chạy bằng interpreter + JIT, JIT ghi các method nóng vào profile, rồi khi máy rảnh và đang sạc, hệ thống AOT-compile những method đó (profile-guided compilation). Vì vậy những lần mở đầu sau khi cài hoặc update chưa có code AOT nên chậm hơn và dễ jank. Baseline Profile là danh sách class/method quan trọng ship sẵn trong APK/AAB; khi cài qua Play, ART dùng nó để AOT-compile các đường code đó ngay, không phải đợi JIT tích luỹ profile. Cloud Profile của Play có tác dụng tương tự nhưng chỉ có sau khi bản phát hành đã có đủ người dùng, còn Baseline Profile phủ ngay từ ngày đầu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q06.html">Đoạn double-checked locking sau có lỗi gì theo Java Memory Model? Sửa thế nào, và trong Kotlin bạn viết ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lần đọc <code>instance</code> đầu tiên nằm ngoài <code>synchronized</code>, nên giữa thread khởi tạo và thread đọc không có quan hệ happens-before. Compiler và CPU được phép sắp xếp lại lệnh: việc gán reference vào <code>instance</code> có thể được thread khác nhìn thấy trước các lệnh ghi field trong constructor, nên thread đó thấy <code>instance != null</code> nhưng đọc phải object khởi tạo dở (với các field không <code>final</code>). Sửa bằng cách khai báo <code>private static volatile Config instance;</code>: lần ghi volatile happens-before mọi lần đọc volatile sau đó, nên mọi ghi trong constructor đều được nhìn thấy đầy đủ. Cách khác là holder idiom, dựa vào việc khởi tạo class của JVM vốn đã thread-safe. Trong Kotlin không cần tự viết: <code>object</code> hoặc <code>by lazy</code> (mặc định <code>LazyThreadSafetyMode.SYNCHRONIZED</code>) đã xử lý đúng.</div>
+        <pre class="code-block" data-lang="Java"><code><span class="tk-kw">public</span> <span class="tk-kw">class</span> <span class="tk-type">Config</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">static</span> <span class="tk-type">Config</span> instance; <span class="tk-com">// thiếu volatile</span>
+
+    <span class="tk-kw">public</span> <span class="tk-kw">static</span> <span class="tk-type">Config</span> get() {
+        <span class="tk-kw">if</span> (instance == <span class="tk-kw">null</span>) {                 <span class="tk-com">// đọc không có lock</span>
+            <span class="tk-kw">synchronized</span> (<span class="tk-type">Config</span>.<span class="tk-kw">class</span>) {
+                <span class="tk-kw">if</span> (instance == <span class="tk-kw">null</span>) {
+                    instance = <span class="tk-kw">new</span> <span class="tk-type">Config</span>();
+                }
+            }
+        }
+        <span class="tk-kw">return</span> instance;
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q07.html">Main thread của Android vận hành thế nào với <code>Looper</code>, <code>MessageQueue</code> và <code>Handler</code>? Vì sao <code>postDelayed</code> với anonymous class hoặc lambda dễ gây leak Activity?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi thread có tối đa một <code>Looper</code>; <code>Looper.loop()</code> lặp liên tục lấy <code>Message</code> từ <code>MessageQueue</code> (sắp theo thời điểm <code>when</code>) rồi giao cho <code>Handler</code> của message đó xử lý. <code>ActivityThread</code> chuẩn bị sẵn Looper cho main thread, và callback lifecycle, sự kiện input hay frame của <code>Choreographer</code> đều là message trên cùng queue này, nên một message chạy lâu sẽ chặn tất cả: nhẹ thì jank, nặng thì ANR. Khi queue rỗng, thread ngủ ở tầng native (epoll) nên không tốn CPU. Về leak: message giữ <code>target</code> (Handler) và <code>callback</code> (Runnable); anonymous class hay lambda dùng member của Activity sẽ giữ tham chiếu tới Activity, nên chuỗi queue → message → Runnable → Activity tồn tại tới khi message chạy. Cách sửa: <code>removeCallbacksAndMessages(null)</code> khi màn hình dừng, hoặc thay bằng coroutine trong <code>lifecycleScope</code> với <code>delay</code>. Lưu ý constructor <code>Handler()</code> không tham số đã deprecated, phải truyền <code>Looper</code> rõ ràng.</div>
+        <pre class="code-block" data-lang="Java"><code><span class="tk-kw">public</span> <span class="tk-kw">class</span> <span class="tk-type">PromoActivity</span> <span class="tk-kw">extends</span> <span class="tk-type">AppCompatActivity</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">final</span> <span class="tk-type">Handler</span> handler = <span class="tk-kw">new</span> <span class="tk-type">Handler</span>(<span class="tk-type">Looper</span>.getMainLooper());
+    <span class="tk-ann">@Override</span>
+    <span class="tk-kw">protected</span> <span class="tk-kw">void</span> onStart() {
+        <span class="tk-kw">super</span>.onStart();
+        <span class="tk-com">// Lambda gọi showPromo() nên giữ tham chiếu tới Activity</span>
+        handler.postDelayed(() -&gt; showPromo(), <span class="tk-num">10</span> * <span class="tk-num">60</span> * 1000L);
+    }
+
+    <span class="tk-ann">@Override</span>
+    <span class="tk-kw">protected</span> <span class="tk-kw">void</span> onStop() {
+        handler.removeCallbacksAndMessages(<span class="tk-kw">null</span>); <span class="tk-com">// gỡ mọi message đang chờ</span>
+        <span class="tk-kw">super</span>.onStop();
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q08.html">GC của ART đã chạy concurrent, vậy vì sao vẫn nên tránh tạo object trong <code>onDraw()</code>, <code>onBindViewHolder</code> hay vòng lặp animation? Bạn phát hiện allocation churn bằng cách nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">GC concurrent (concurrent copying, có từ Android 8) giảm mạnh thời gian dừng app nhưng không miễn phí: cấp phát dày khiến GC chạy thường xuyên, tốn CPU và băng thông bộ nhớ, tranh tài nguyên với main thread và RenderThread, và vẫn có những pause ngắn. Trên máy yếu, chừng đó đủ làm lỡ deadline frame (khoảng 16ms ở 60Hz, 8ms ở 120Hz). <code>onDraw</code> có thể chạy mỗi frame, nên tạo <code>Paint</code>, <code>Path</code>, <code>Rect</code> mới mỗi lần nghĩa là hàng nghìn object mỗi giây. Cách làm đúng: khởi tạo trước thành field rồi tái sử dụng, tránh autoboxing, iterator và nối chuỗi trong code nóng. Để phát hiện: Memory Profiler của Android Studio (ghi lại allocation, xem biểu đồ răng cưa và call stack), Perfetto để thấy GC trùng với frame chậm, và lint <code>DrawAllocation</code> cảnh báo sẵn khi cấp phát trong <code>onDraw</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ChartView</span>(context: <span class="tk-type">Context</span>) : <span class="tk-type">View</span>(context) {
+  <span class="tk-kw">var</span> points: <span class="tk-type">List</span>&lt;<span class="tk-type">PointF</span>&gt; = emptyList()
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> paint = <span class="tk-type">Paint</span>(<span class="tk-type">Paint</span>.<span class="tk-type">ANTI_ALIAS_FLAG</span>) <span class="tk-com">// tạo một lần, dùng lại mỗi frame</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> path = <span class="tk-type">Path</span>()
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onDraw(canvas: <span class="tk-type">Canvas</span>) {
+    <span class="tk-kw">super</span>.onDraw(canvas)
+    path.reset() <span class="tk-com">// thay vì Path() mới mỗi frame</span>
+    <span class="tk-kw">for</span> (i <span class="tk-kw">in</span> points.indices) {
+      <span class="tk-kw">val</span> p = points[i]
+      <span class="tk-kw">if</span> (i == <span class="tk-num">0</span>) path.moveTo(p.x, p.y) <span class="tk-kw">else</span> path.lineTo(p.x, p.y)
+    }
+    canvas.drawPath(path, paint)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="components">
+  <div class="section-head"><h2>Activity, Fragment &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/android/chu-de/components/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q13.html">Làm sao tái hiện và xử lý process death một cách có hệ thống trong app lớn? Sau khi process bị kill, state nào mất và state nào được khôi phục?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi app ở background, hệ thống có thể kill process để lấy bộ nhớ. Lúc user quay lại, Android tạo process mới, khôi phục back stack Activity/Fragment (kể cả back stack của Navigation) cùng các <code>Bundle</code> đã lưu, nhưng mọi thứ chỉ nằm trong memory đều mất: singleton, cache, biến static, instance ViewModel cũ. Tái hiện: đưa app xuống background rồi chạy <code>adb shell am kill &lt;package&gt;</code>; khác với tuỳ chọn &#39;Don&#39;t keep activities&#39; chỉ destroy Activity còn process vẫn sống. Xử lý: state UI tối thiểu (id, query, tab đang chọn, input của form) lưu bằng <code>SavedStateHandle</code>/<code>rememberSaveable</code>; dữ liệu lớn để trong DB rồi load lại theo id; không giả định singleton đã được màn hình trước khởi tạo, vì màn hình sâu có thể là màn hình đầu tiên chạy trong process mới. Đừng nhét list lớn vào Bundle vì giới hạn Binder transaction (khoảng 1MB) dễ gây <code>TransactionTooLargeException</code>.</div>
+        <pre class="code-block"><code><span class="tk-ann">@HiltViewModel</span>
+<span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> savedState: <span class="tk-type">SavedStateHandle</span>,
+  orderRepo: <span class="tk-type">OrderRepository</span>,
+) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-com">// Chỉ lưu id và input nhỏ; dữ liệu lớn load lại từ DB theo id</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> orderId: <span class="tk-type">String</span> = checkNotNull(savedState[<span class="tk-str">&quot;orderId&quot;</span>])
+  <span class="tk-kw">val</span> note = savedState.getStateFlow(<span class="tk-str">&quot;note&quot;</span>, <span class="tk-str">&quot;&quot;</span>)
+  <span class="tk-kw">val</span> order = orderRepo.observeOrder(orderId)
+    .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-kw">null</span>)
+
+  <span class="tk-kw">fun</span> onNoteChange(<span class="tk-kw">value</span>: <span class="tk-type">String</span>) { savedState[<span class="tk-str">&quot;note&quot;</span>] = <span class="tk-kw">value</span> }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="ui">
+  <div class="section-head"><h2>Jetpack Compose &amp; View</h2><a class="section-sub" href="../../../phong-van/android/chu-de/ui/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q15.html">Bạn xây design system bằng Compose cho 5 team cùng dùng thế nào để UI nhất quán mà không làm chậm tốc độ phát triển?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi đặt design system trong module <code>:core:designsystem</code> gồm hai lớp. Lớp token: màu, typography, spacing, shape được cung cấp qua <code>CompositionLocal</code> trong một <code>AppTheme</code> (bọc hoặc thay <code>MaterialTheme</code>), dùng <code>staticCompositionLocalOf</code> cho giá trị hiếm khi đổi vì đọc rẻ, đổi thì recompose cả subtree. Lớp component: <code>AppButton</code>, <code>AppTextField</code>… với API hẹp, nhận tham số ngữ nghĩa như <code>variant = Primary</code> thay vì màu tuỳ ý, để thiết kế có thể thay đổi tập trung. Mỗi component có <code>@Preview</code> và screenshot test cho light/dark, font scale lớn, RTL để chặn regression. Về quy trình: designer và dev dùng chung tên token, có owner và cách đóng góp component mới, lint cấm hard-code màu hoặc dùng thẳng <code>MaterialTheme.colorScheme</code> trong feature module. Màn hình View cũ thì ánh xạ cùng bộ token sang theme XML trong thời gian chuyển đổi.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Immutable</span>
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">AppColors</span>(<span class="tk-kw">val</span> primary: <span class="tk-type">Color</span>, <span class="tk-kw">val</span> surface: <span class="tk-type">Color</span>, <span class="tk-kw">val</span> danger: <span class="tk-type">Color</span>)
+<span class="tk-kw">val</span> <span class="tk-type">LocalAppColors</span> = staticCompositionLocalOf&lt;<span class="tk-type">AppColors</span>&gt; { error(<span class="tk-str">&quot;Chưa bọc trong AppTheme&quot;</span>) }
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">AppTheme</span>(dark: <span class="tk-type">Boolean</span> = isSystemInDarkTheme(), content: <span class="tk-ann">@Composable</span> () -&gt; <span class="tk-type">Unit</span>) {
+  <span class="tk-kw">val</span> colors = <span class="tk-kw">if</span> (dark) <span class="tk-type">DarkColors</span> <span class="tk-kw">else</span> <span class="tk-type">LightColors</span>
+  <span class="tk-type">CompositionLocalProvider</span>(<span class="tk-type">LocalAppColors</span> provides colors, content = content)
+}
+
+<span class="tk-com">// Feature module đọc token qua AppTheme.colors.primary</span>
+<span class="tk-kw">object</span> <span class="tk-type">AppTheme</span> {
+  <span class="tk-kw">val</span> colors: <span class="tk-type">AppColors</span>
+    <span class="tk-ann">@Composable</span> <span class="tk-kw">get</span>() = <span class="tk-type">LocalAppColors</span>.current
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/android/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q12.html">App có khoảng 20 feature module. Bạn đặt quy tắc phụ thuộc giữa các module thế nào? Feature A cần mở màn hình của feature B thì làm sao để A không phụ thuộc B?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Quy tắc tôi đặt: <code>:app</code> phụ thuộc mọi feature; feature chỉ phụ thuộc các module <code>:core:*</code> (designsystem, data, domain, network…), tuyệt đối không phụ thuộc feature khác; <code>:core</code> không biết gì về feature. Nhờ vậy các feature build song song, sửa feature A không làm recompile B, và không bao giờ có vòng phụ thuộc. Để điều hướng chéo, feature A chỉ expose callback như <code>onOpenProfile</code>, còn <code>:app</code> — nơi duy nhất biết mọi feature — nối callback đó tới route của B. Nếu cần chia sẻ contract (route, interface service), tách feature thành <code>:feature:b:api</code> nhẹ và <code>:feature:b:impl</code>; A chỉ được phụ thuộc <code>b:api</code>, còn implementation được nối qua DI ở <code>:app</code>. Quy tắc này phải được kiểm tra tự động trong CI (plugin kiểm tra module graph hoặc custom Gradle task), không chỉ dựa vào review.</div>
+        <pre class="code-block"><code><span class="tk-com">// :feature:feed — không biết gì về feature profile</span>
+<span class="tk-kw">fun</span> <span class="tk-type">NavGraphBuilder</span>.feedScreen(onOpenProfile: (userId: <span class="tk-type">String</span>) -&gt; <span class="tk-type">Unit</span>) {
+  composable&lt;<span class="tk-type">FeedRoute</span>&gt; { <span class="tk-type">FeedScreen</span>(onUserClick = onOpenProfile) }
+}
+
+<span class="tk-com">// :app — nơi duy nhất ghép các feature với nhau</span>
+<span class="tk-type">NavHost</span>(navController, startDestination = <span class="tk-type">FeedRoute</span>) {
+  feedScreen(onOpenProfile = { id -&gt; navController.navigate(<span class="tk-type">ProfileRoute</span>(id)) })
+  profileScreen(onBack = { navController.popBackStack() })
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q14.html">Team chuyển sang trunk-based development và muốn mọi tính năng lớn đều nằm sau feature flag. Bạn thiết kế hệ thống flag phía Android thế nào để không biến thành nợ kỹ thuật?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi định nghĩa flag tập trung và có kiểu (enum hoặc sealed class gồm key và giá trị mặc định), ẩn provider (Firebase Remote Config, LaunchDarkly hay backend riêng) sau interface <code>FeatureFlags</code> để test dùng fake và đổi vendor không ảnh hưởng feature. Giá trị fetch bất đồng bộ, cache local, chỉ áp dụng ở thời điểm an toàn như lần mở app hoặc mở luồng kế tiếp; khi offline luôn có default. Phân loại rõ release toggle (ngắn hạn, phải xoá), experiment và kill switch (dài hạn). Kiểm tra flag ở biên, như entry điều hướng hoặc chỗ DI chọn implementation, thay vì rải <code>if</code> khắp nơi. Chống nợ: mỗi flag có owner, hạn xoá và ticket dọn sau khi rollout 100%, CI cảnh báo flag quá hạn, kèm màn hình debug cho QA override. Lưu ý code sau flag vẫn nằm trong APK, nên quyền truy cập tính năng nhạy cảm phải do backend kiểm soát.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-kw">class</span> <span class="tk-type">Flag</span>(<span class="tk-kw">val</span> key: <span class="tk-type">String</span>, <span class="tk-kw">val</span> default: <span class="tk-type">Boolean</span>) {
+  <span class="tk-type">NEW_CHECKOUT</span>(<span class="tk-str">&quot;new_checkout_enabled&quot;</span>, <span class="tk-kw">false</span>),
+  <span class="tk-type">CHAT_KILL_SWITCH</span>(<span class="tk-str">&quot;chat_enabled&quot;</span>, <span class="tk-kw">true</span>),
+}
+
+<span class="tk-kw">interface</span> <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-kw">fun</span> isEnabled(flag: <span class="tk-type">Flag</span>): <span class="tk-type">Boolean</span>
+}
+
+<span class="tk-com">// Test chỉ cần fake, không phụ thuộc Remote Config</span>
+<span class="tk-kw">class</span> <span class="tk-type">FakeFeatureFlags</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> overrides: <span class="tk-type">Map</span>&lt;<span class="tk-type">Flag</span>, <span class="tk-type">Boolean</span>&gt;) : <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> isEnabled(flag: <span class="tk-type">Flag</span>) = overrides[flag] ?: flag.default
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="build">
+  <div class="section-head"><h2>Gradle &amp; Build</h2><a class="section-sub" href="../../../phong-van/android/chu-de/build/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q09.html">Trong dự án multi-module, <code>api</code> và <code>implementation</code> khác nhau thế nào? Vì sao lạm dụng <code>api</code> vừa làm build chậm vừa làm kiến trúc lỏng lẻo?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>implementation</code> chỉ đưa dependency vào compile classpath của chính module đó; module phụ thuộc vào nó không thấy được (dù lúc runtime vẫn được đóng gói). <code>api</code> thì lộ dependency ra compile classpath của mọi module phía trên. Về build: khi ABI của một dependency khai báo <code>api</code> thay đổi, mọi module tiêu thụ phải recompile; với <code>implementation</code>, Gradle chỉ recompile module trực tiếp, các module phía trên được bỏ qua nếu ABI của module ở giữa không đổi (compile avoidance). Về kiến trúc: <code>api</code> cho phép feature module dùng thẳng class của Retrofit hay Room đi qua <code>:core</code>, làm rò rỉ chi tiết implementation. Quy tắc: chỉ dùng <code>api</code> khi kiểu của dependency xuất hiện trong public API của module (tham số, kiểu trả về, superclass). Dependency Analysis Gradle Plugin giúp phát hiện khai báo thừa hoặc sai.</div>
+        <pre class="code-block"><code><span class="tk-com">// :core:network/build.gradle.kts</span>
+dependencies {
+  <span class="tk-com">// Public API của module trả về OkHttpClient nên module dùng nó cần thấy kiểu này</span>
+  api(libs.okhttp)
+  <span class="tk-com">// Chỉ dùng bên trong, không lộ ra ngoài</span>
+  implementation(libs.kotlinx.serialization.json)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q10.html">CI build mất 15 phút, build incremental trên máy dev cũng chậm. Với codebase khoảng 50 module, bạn tối ưu Gradle theo hướng nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đo trước khi sửa: Build Scan (<code>--scan</code>) hoặc Build Analyzer cho biết thời gian nằm ở phase configuration hay execution, task nào không cacheable, annotation processor nào chậm. Các đòn bẩy chính: bật configuration cache để bỏ qua cả phase configuration khi build script và input không đổi; bật build cache, CI đẩy lên remote cache còn máy dev kéo về; chuyển kapt sang KSP vì kapt phải sinh Java stub cho code Kotlin; bỏ logic nặng ở top-level build script (đọc file, gọi <code>git</code>) khỏi phase configuration. Gom cấu hình chung vào convention plugin trong <code>build-logic</code> thay vì <code>subprojects {}</code>/<code>allprojects {}</code> vốn tạo coupling giữa các project, quản lý version bằng version catalog. Về cấu trúc: module nhỏ, đồ thị phụ thuộc nông, dùng <code>implementation</code> để thay đổi ở một module không lan rộng, nhờ vậy Gradle chạy song song tốt hơn. Trên CI thì chỉ build và test các module bị ảnh hưởng bởi thay đổi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q11.html">Bản release parse JSON ra object toàn field <code>null</code> rồi crash, trong khi bản debug chạy bình thường. Bạn nghi R8 — điều tra và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">R8 vừa shrink (xoá code không reachable), vừa obfuscate (đổi tên), vừa optimize, và nó chỉ nhìn thấy những gì được tham chiếu tĩnh. Thư viện dựa vào reflection như Gson đọc field theo tên, nên khi field bị đổi tên thì JSON không map được; R8 còn có thể thấy field không bao giờ được gán trong code và coi nó luôn mang giá trị mặc định. Điều tra: tái hiện bằng bản build có <code>isMinifyEnabled = true</code>, retrace stack trace bằng <code>mapping.txt</code>, xem <code>usage.txt</code> để biết R8 đã xoá gì. Xử lý: thêm keep rule hẹp nhất có thể cho model hoặc dùng <code>@Keep</code>; tốt hơn là chuyển sang thư viện sinh code như kotlinx.serialization hay Moshi codegen để không phụ thuộc reflection. Tránh keep cả package hay <code>-dontobfuscate</code>; và nhớ R8 full mode (mặc định từ AGP 8.0) tối ưu mạnh hơn, nên rule từng đủ với ProGuard có thể không còn đủ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/android/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q01.html">App có cold start khoảng 2,5 giây trên máy tầm trung, trong <code>Application.onCreate</code> đang khởi tạo cả chục SDK. Bạn đo và tối ưu thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết phải đo đúng: dùng Macrobenchmark với <code>StartupTimingMetric</code> trên máy thật, bản release (R8 bật, không debuggable), và gọi <code>reportFullyDrawn()</code> để có cả TTFD chứ không chỉ TTID; mở Perfetto/System Trace để xem main thread bận gì trong <code>bindApplication</code> và <code>activityStart</code>. Tối ưu theo thứ tự: SDK nào chưa cần cho frame đầu thì init lazy hoặc dời ra sau first frame; gom các <code>ContentProvider</code> tự khởi tạo của thư viện bằng App Startup (có thể tắt auto-init rồi gọi khi cần); đưa I/O ra khỏi main thread và tránh khởi tạo eager các object nặng trong DI graph. Sau đó thêm Baseline Profile để ART AOT-compile sẵn đường code startup ngay khi cài, cùng Startup Profile để R8 xếp các class startup vào DEX chính. Cuối cùng đưa benchmark vào CI để bắt regression thay vì đo một lần rồi thôi.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">LoggerInitializer</span> : <span class="tk-type">Initializer</span>&lt;<span class="tk-type">Logger</span>&gt; {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> create(context: <span class="tk-type">Context</span>): <span class="tk-type">Logger</span> =
+    <span class="tk-type">Logger</span>.<span class="tk-kw">init</span>(context.applicationContext)
+
+  <span class="tk-com">// Khai báo phụ thuộc thay vì tự sắp thứ tự trong Application</span>
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> dependencies(): <span class="tk-type">List</span>&lt;<span class="tk-type">Class</span>&lt;<span class="tk-kw">out</span> <span class="tk-type">Initializer</span>&lt;*&gt;&gt;&gt; = emptyList()
+}
+
+<span class="tk-com">// Đã tắt auto-init trong Manifest, chỉ init khi thật sự cần:</span>
+<span class="tk-type">AppInitializer</span>.getInstance(context)
+  .initializeComponent(<span class="tk-type">LoggerInitializer</span>::<span class="tk-kw">class</span>.java)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q02.html">QA báo màn hình feed giật khi cuộn nhanh trên máy tầm thấp, còn trên máy dev thì mượt. Bạn đo và khoanh vùng jank thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi tái hiện trên đúng loại máy yếu với bản release, vì bản debug chậm hơn nhiều (đặc biệt với Compose) nên số đo không có ý nghĩa. Để định lượng, viết Macrobenchmark với <code>FrameTimingMetric</code> cho kịch bản cuộn, còn ở production thì gắn JankStats kèm state (tên màn hình, loại item) để biết jank xảy ra ở đâu trên máy người dùng thật. Để tìm nguyên nhân, chụp Perfetto/System Trace: xem frame nào vượt deadline, main thread hay RenderThread bận, các slice như <code>RV OnBindView</code>, <code>inflate</code>, GC hay lock contention; thêm custom section bằng <code>trace(&quot;…&quot;) { }</code> của androidx.tracing quanh đoạn code nghi ngờ. Thủ phạm hay gặp: bind nặng (format ngày, parse HTML), layout lồng sâu, decode ảnh trên main thread, cấp phát nhiều gây GC. Sửa xong phải đo lại bằng cùng benchmark để chứng minh cải thiện.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q03.html">LeakCanary báo <code>MapActivity</code> bị leak, retaining path đi qua một listener đăng ký vào singleton <code>LocationRepository</code>. Bạn phân tích và sửa thế nào? Còn những nguồn leak Context phổ biến nào khác?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Activity đã <code>onDestroy</code> nhưng vẫn reachable từ GC root: singleton sống suốt process giữ listener, mà lambda đó capture <code>this</code> của Activity, kéo theo cả view hierarchy và bitmap không được thu hồi. Cách sửa là unregister đối xứng với register theo lifecycle (<code>onStart</code>/<code>onStop</code> hoặc <code>DefaultLifecycleObserver</code>), và singleton chỉ được giữ <code>applicationContext</code>. Các nguồn leak hay gặp khác: <code>Handler.postDelayed</code> với Runnable giữ Activity, coroutine hay thread tự tạo chạy lâu thay vì dùng <code>lifecycleScope</code>, Fragment giữ binding sau <code>onDestroyView</code>, ViewModel giữ View hoặc Activity Context, callback của SDK bên thứ ba không được gỡ. LeakCanary chỉ nên thêm bằng <code>debugImplementation</code>; nó theo dõi các object đã destroy, object nào sau 5 giây và một lần GC vẫn còn thì bị coi là retained; khi số object retained đạt ngưỡng, nó dump heap và chỉ ra chuỗi tham chiếu mạnh ngắn nhất tới GC root.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">MapActivity</span> : <span class="tk-type">AppCompatActivity</span>() {
+  <span class="tk-com">// Lambda gọi updateMarker() nên capture MapActivity</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> listener: (<span class="tk-type">Location</span>) -&gt; <span class="tk-type">Unit</span> = { updateMarker(it) }
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStart() {
+    <span class="tk-kw">super</span>.onStart()
+    <span class="tk-type">LocationRepository</span>.addListener(listener) <span class="tk-com">// singleton sống cả process</span>
+  }
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStop() {
+    <span class="tk-type">LocationRepository</span>.removeListener(listener) <span class="tk-com">// thiếu dòng này là leak</span>
+    <span class="tk-kw">super</span>.onStop()
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q04.html">Team vừa chuyển feed từ RecyclerView sang <code>LazyColumn</code> và thấy cuộn kém mượt hơn bản cũ trên máy tầm thấp. Bạn kiểm tra những nguyên nhân đặc thù của Compose nào và tối ưu ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết đo trên bản release có R8 và Baseline Profile: Compose là thư viện đi kèm app chứ không nằm sẵn trong hệ điều hành như framework View, nên bản debug hay bản chưa được AOT-compile chậm hơn đáng kể. Sau đó xem item: mỗi item cần <code>key</code> ổn định và <code>contentType</code> theo loại, vì Compose chỉ tái sử dụng composition giữa các item cùng <code>contentType</code>, tương tự view type của RecyclerView. Đưa việc nặng ra khỏi composition của item: format ngày, parse, lọc hay sắp xếp nên làm sẵn trong ViewModel thành UI model; tránh <code>BoxWithConstraints</code>/<code>SubcomposeLayout</code> trong từng item vì subcomposition tốn kém. Ảnh nên tải đúng kích thước hiển thị và giữ chỗ bằng kích thước cố định để item không phải đo lại khi ảnh về. Bật composition tracing để thấy tên composable trong Perfetto, và đo lại bằng Macrobenchmark <code>FrameTimingMetric</code> sau mỗi thay đổi.</div>
+        <pre class="code-block"><code><span class="tk-type">LazyColumn</span> {
+  items(
+    items = feed, <span class="tk-com">// List&lt;FeedItemUi&gt; đã format sẵn trong ViewModel</span>
+    key = { it.id },
+    contentType = { it::<span class="tk-kw">class</span> }, <span class="tk-com">// Post, Ad, Carousel tái sử dụng riêng</span>
+  ) { item -&gt;
+    <span class="tk-kw">when</span> (item) {
+      <span class="tk-kw">is</span> <span class="tk-type">FeedItemUi</span>.<span class="tk-type">Post</span> -&gt; <span class="tk-type">PostRow</span>(item)
+      <span class="tk-kw">is</span> <span class="tk-type">FeedItemUi</span>.<span class="tk-type">Ad</span> -&gt; <span class="tk-type">AdRow</span>(item)
+      <span class="tk-kw">is</span> <span class="tk-type">FeedItemUi</span>.<span class="tk-type">Carousel</span> -&gt; <span class="tk-type">CarouselRow</span>(item)
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/android/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q19.html">App có 30 dev cùng làm, CI chạy chậm và test UI hay flaky. Bạn đề xuất chiến lược test thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi theo hình kim tự tháp và ưu tiên tốc độ phản hồi. Đáy là unit test JVM cho ViewModel, UseCase, Repository với fake thay vì mock tràn lan, coroutine test bằng <code>runTest</code>; thêm integration test cho Room (in-memory) và tầng network (MockWebServer). Phần UI chuyển phần lớn sang screenshot test chạy trên JVM (Paparazzi, hoặc Roborazzi với Robolectric) cho component và màn hình ở nhiều state, nhanh và không cần emulator; Compose UI test cho các tương tác quan trọng. E2E trên emulator hay thiết bị thật (Gradle Managed Devices, Firebase Test Lab) chỉ dành cho vài luồng sống còn như đăng nhập, thanh toán, chạy nightly hoặc trước release. Chống flaky: không <code>Thread.sleep</code>, chờ theo điều kiện, tắt animation, dữ liệu test cố định; đo tỉ lệ flaky và cách ly test flaky kèm owner chịu trách nhiệm sửa. CI chỉ chạy test của module bị ảnh hưởng và shard test song song.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">PrimaryButtonScreenshotTest</span> {
+  <span class="tk-ann">@get</span>:<span class="tk-type">Rule</span>
+  <span class="tk-kw">val</span> paparazzi = <span class="tk-type">Paparazzi</span>(deviceConfig = <span class="tk-type">DeviceConfig</span>.<span class="tk-type">PIXEL_5</span>)
+
+  <span class="tk-ann">@Test</span>
+  <span class="tk-kw">fun</span> disabled_darkTheme() {
+    paparazzi.snapshot {
+      <span class="tk-type">AppTheme</span>(dark = <span class="tk-kw">true</span>) {
+        <span class="tk-type">PrimaryButton</span>(text = <span class="tk-str">&quot;Thanh toán&quot;</span>, enabled = <span class="tk-kw">false</span>, onClick = {})
+      }
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q20.html">Mô tả quy trình release bạn muốn có cho một app Android vài triệu người dùng, từ lúc merge code tới khi 100% user nhận bản mới.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi dùng release train cố định, ví dụ hai tuần: cắt branch release, sau đó chỉ nhận bug fix. CI build AAB, ký bằng upload key (Play App Signing giữ app signing key), tự tăng <code>versionCode</code>, upload mapping file và native symbols để crash được deobfuscate. Bản build đi qua internal testing, rồi closed testing cho QA và dogfood nội bộ, sau đó lên production với staged rollout tăng dần (1% → 5% → 20% → 50% → 100%). Mỗi bước có tiêu chí qua cửa rõ ràng: crash-free users trên Crashlytics, crash rate và ANR rate trên Android vitals, cùng các metric nghiệp vụ chính. Vượt ngưỡng thì halt rollout ngay; user đã cài không thể bị hạ phiên bản, nên phải sửa bằng hotfix có <code>versionCode</code> cao hơn hoặc tắt tính năng bằng feature flag. Việc upload và tăng rollout được tự động hoá qua Play Developer API (Gradle Play Publisher hoặc fastlane), nhưng quyết định tăng % vẫn dựa trên số liệu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/android/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q16.html">Bạn lưu access token và refresh token trên Android thế nào cho an toàn? <code>EncryptedSharedPreferences</code> còn là lựa chọn tốt không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>androidx.security:security-crypto</code> (gồm <code>EncryptedSharedPreferences</code>, <code>MasterKey</code>) đã deprecated, nên với code mới tôi tự mã hoá: tạo AES key trong Android Keystore (key không export được, có thể nằm trong TEE/StrongBox), mã hoá token bằng AES-GCM rồi lưu IV cùng ciphertext vào DataStore hoặc file trong internal storage. Keystore không ngăn kẻ đã root máy gọi key thông qua chính process của app, nhưng ngăn việc copy key ra khỏi thiết bị. Access token ngắn hạn có thể chỉ giữ trong memory, refresh token mới cần lưu bền và nên được backend rotate. Không log token, loại file chứa token khỏi backup (<code>dataExtractionRules</code>, với Android 11 trở xuống là <code>fullBackupContent</code>), vì key Keystore không đi theo bản backup nên dữ liệu restore sang máy mới không giải mã được. Cuối cùng phải xử lý <code>KeyPermanentlyInvalidatedException</code> (key yêu cầu xác thực người dùng bị vô hiệu khi user tắt khoá màn hình hoặc thêm vân tay) bằng cách xoá key và cho đăng nhập lại.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> encrypt(plain: <span class="tk-type">ByteArray</span>): <span class="tk-type">Pair</span>&lt;<span class="tk-type">ByteArray</span>, <span class="tk-type">ByteArray</span>&gt; {
+  <span class="tk-kw">val</span> ks = <span class="tk-type">KeyStore</span>.getInstance(<span class="tk-str">&quot;AndroidKeyStore&quot;</span>).apply { load(<span class="tk-kw">null</span>) }
+  <span class="tk-kw">val</span> key = ks.getKey(<span class="tk-type">ALIAS</span>, <span class="tk-kw">null</span>) <span class="tk-kw">as</span>? <span class="tk-type">SecretKey</span> ?: <span class="tk-type">KeyGenerator</span>
+    .getInstance(<span class="tk-type">KeyProperties</span>.<span class="tk-type">KEY_ALGORITHM_AES</span>, <span class="tk-str">&quot;AndroidKeyStore&quot;</span>)
+    .apply {
+      <span class="tk-kw">init</span>(<span class="tk-type">KeyGenParameterSpec</span>.<span class="tk-type">Builder</span>(<span class="tk-type">ALIAS</span>, <span class="tk-type">KeyProperties</span>.<span class="tk-type">PURPOSE_ENCRYPT</span> or <span class="tk-type">KeyProperties</span>.<span class="tk-type">PURPOSE_DECRYPT</span>)
+        .setBlockModes(<span class="tk-type">KeyProperties</span>.<span class="tk-type">BLOCK_MODE_GCM</span>)
+        .setEncryptionPaddings(<span class="tk-type">KeyProperties</span>.<span class="tk-type">ENCRYPTION_PADDING_NONE</span>)
+        .build())
+    }.generateKey()
+  <span class="tk-kw">val</span> cipher = <span class="tk-type">Cipher</span>.getInstance(<span class="tk-str">&quot;AES/GCM/NoPadding&quot;</span>)
+  cipher.<span class="tk-kw">init</span>(<span class="tk-type">Cipher</span>.<span class="tk-type">ENCRYPT_MODE</span>, key) <span class="tk-com">// Keystore tự sinh IV ngẫu nhiên</span>
+  <span class="tk-kw">return</span> cipher.iv to cipher.doFinal(plain) <span class="tk-com">// lưu cả IV và ciphertext</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q17.html">Bạn triển khai certificate pinning cho app ngân hàng thế nào? Rủi ro lớn nhất của pinning là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi pin public key (hash SPKI) thay vì cả certificate, để server renew certificate với cùng key không làm hỏng app, và luôn có ít nhất một backup pin cho key dự phòng chưa dùng. Có hai cách: Network Security Config với <code>&lt;pin-set&gt;</code> (khai báo qua <code>android:networkSecurityConfig</code> trong Manifest, có <code>expiration</code>, áp dụng ở tầng TrustManager của nền tảng), hoặc <code>CertificatePinner</code> của OkHttp nếu cần logic động. Rủi ro lớn nhất là tự khoá app: nếu server đổi key mà bản app đang chạy không có pin tương ứng, mọi request đều fail và chỉ sửa được bằng cách cập nhật app, còn user không cập nhật thì app chết hẳn. Vì vậy cần quy trình rotate key phối hợp với backend, đặt <code>expiration</code> và theo dõi lỗi pinning. Cũng phải hiểu đúng phạm vi: pinning chống MITM trên đường truyền (kể cả khi có CA lạ được cài thêm), nhưng không chống được người kiểm soát thiết bị dùng root và Frida để bypass.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-com">&lt;!-- res/xml/network_security_config.xml --&gt;</span>
+<span class="tk-kw">&lt;network-security-config</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;domain-config</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;domain</span> <span class="tk-type">includeSubdomains</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>api.example.com<span class="tk-kw">&lt;/domain</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;pin-set</span> <span class="tk-type">expiration</span>=<span class="tk-str">&quot;2027-06-30&quot;</span><span class="tk-kw">&gt;</span>
+      <span class="tk-kw">&lt;pin</span> <span class="tk-type">digest</span>=<span class="tk-str">&quot;SHA-256&quot;</span><span class="tk-kw">&gt;</span><span class="tk-type">7HIpactkIAq2Y49orFOOQKurWxmmSFZhBCoQYcRhJ3Y</span>=<span class="tk-kw">&lt;/pin</span><span class="tk-kw">&gt;</span>
+      <span class="tk-com">&lt;!-- backup pin: key dự phòng chưa đưa vào dùng --&gt;</span>
+      <span class="tk-kw">&lt;pin</span> <span class="tk-type">digest</span>=<span class="tk-str">&quot;SHA-256&quot;</span><span class="tk-kw">&gt;</span>fwza0LRMXouZHRC8Ei+4PyuldPDcf3UKgO/<span class="tk-type">04cDM1oE</span>=<span class="tk-kw">&lt;/pin</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;/pin-set</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;/domain-config</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/network-security-config</span><span class="tk-kw">&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q18.html">Backend muốn chặn request đến từ app bị sửa đổi, emulator hoặc bot. Bạn tích hợp Play Integrity API thế nào cho đúng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SafetyNet Attestation đã bị thay bằng Play Integrity API. Luồng đúng: app xin integrity token (standard request: gọi <code>prepareIntegrityToken</code> trước để warm up, khi cần thì request kèm <code>requestHash</code> băm từ nội dung hành động; classic request thì dùng nonce do server sinh), rồi gửi token lên backend. Backend gọi server của Google để giải mã rồi mới đọc verdict: <code>appIntegrity</code> (đúng package, chứng chỉ ký, được Play nhận diện), <code>deviceIntegrity</code> (ví dụ <code>MEETS_DEVICE_INTEGRITY</code>) và <code>accountDetails</code> (licensing). Backend phải đối chiếu requestHash/nonce và thời điểm để chống replay; tuyệt đối không ra quyết định trên client vì client có thể bị hook. Chính sách nên theo mức rủi ro: chặn cứng ở hành động nhạy cảm như thanh toán, còn lại có thể chỉ ghi nhận hoặc yêu cầu xác thực thêm, vì có user hợp lệ dùng ROM tuỳ biến. API có quota nên không gọi cho mọi request, và Integrity chỉ là một lớp, cần kết hợp rate limiting và kiểm tra phía server.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/android/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q21.html">Thiết kế phía client Android cho một app chat 1-1 và nhóm: nhận tin realtime, gửi được khi mạng chập chờn, xem lại lịch sử khi offline.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Room là single source of truth: UI chỉ observe Flow từ DB, còn mọi nguồn dữ liệu (WebSocket, push, API sync) đều ghi vào DB. Realtime dùng WebSocket (OkHttp) khi app ở foreground; khi ở background thì dựa vào FCM high-priority để báo tin mới, không cố giữ socket vì Doze và giới hạn chạy nền. Gửi tin: tạo bản ghi với <code>clientId</code> (UUID) trạng thái <code>PENDING</code>, hiển thị ngay, rồi WorkManager với constraint mạng gửi lên; server idempotent theo <code>clientId</code> và trả về <code>serverSeq</code> để chuyển sang <code>SENT</code>, lỗi vĩnh viễn thì chuyển <code>FAILED</code> cho user gửi lại. Thứ tự hiển thị dựa trên sequence server cấp cho từng hội thoại, không dựa vào giờ máy client. Khi reconnect, gọi API lấy delta từ <code>serverSeq</code> lớn nhất đã có để lấp khoảng trống; lịch sử cũ tải bằng Paging 3 với <code>RemoteMediator</code>. Typing indicator và trạng thái online đi qua socket, không cần lưu bền.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Entity</span>(
+  tableName = <span class="tk-str">&quot;messages&quot;</span>,
+  indices = [<span class="tk-type">Index</span>(<span class="tk-str">&quot;conversationId&quot;</span>, <span class="tk-str">&quot;serverSeq&quot;</span>)],
+)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">MessageEntity</span>(
+  <span class="tk-ann">@PrimaryKey</span> <span class="tk-kw">val</span> clientId: <span class="tk-type">String</span>, <span class="tk-com">// UUID sinh ở client, dùng để chống trùng</span>
+  <span class="tk-kw">val</span> conversationId: <span class="tk-type">String</span>,
+  <span class="tk-kw">val</span> serverSeq: <span class="tk-type">Long</span>?,             <span class="tk-com">// null khi server chưa xác nhận</span>
+  <span class="tk-kw">val</span> senderId: <span class="tk-type">String</span>,
+  <span class="tk-kw">val</span> body: <span class="tk-type">String</span>,
+  <span class="tk-kw">val</span> status: <span class="tk-type">SendStatus</span>,           <span class="tk-com">// PENDING, SENT, FAILED</span>
+  <span class="tk-kw">val</span> createdAt: <span class="tk-type">Long</span>,              <span class="tk-com">// giờ local, chỉ để hiển thị tạm</span>
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q22.html">Nếu phải tự thiết kế một thư viện tải ảnh kiểu Coil/Glide, bạn sẽ có những thành phần nào và xử lý bộ nhớ, hiệu năng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Pipeline gồm: request (url, kích thước đích, transformation) → memory cache (<code>LruCache</code> bitmap với key gồm url + size + transformation, giới hạn theo một phần heap) → disk cache (DiskLruCache) → network (OkHttp) → decode → transform → hiển thị. Quan trọng nhất là decode có downsample theo kích thước view (<code>inSampleSize</code> hoặc <code>ImageDecoder.setTargetSize</code>), vì một ảnh 4000×3000 ở <code>ARGB_8888</code> đã chiếm khoảng 48MB; cân nhắc <code>RGB_565</code> hoặc hardware bitmap khi phù hợp. Về concurrency: decode trên dispatcher giới hạn song song, gộp các request trùng key đang chạy, huỷ request khi view bị recycle hoặc lifecycle bị destroy, và gắn request với view để không hiển thị nhầm ảnh khi view được tái sử dụng. Thư viện lắng nghe <code>onTrimMemory</code> để thu nhỏ cache khi hệ thống thiếu bộ nhớ. API nên có builder bất biến, extension kiểu <code>ImageView.load(url)</code>, placeholder/error và prefetch cho list.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q23.html">Thiết kế sync engine cho app ghi chú offline-first: user sửa trên nhiều thiết bị, kể cả khi offline. Bạn đồng bộ và xử lý xung đột thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi bản ghi có id do client sinh (UUID), <code>version</code> do server cấp, cờ <code>dirty</code> và xoá mềm (tombstone) để đồng bộ được cả thao tác xoá. Mọi thay đổi ghi vào DB local trước (UI chỉ đọc từ DB), đồng thời thêm vào outbox; một unique work của WorkManager với constraint mạng đẩy outbox lên (push), rồi kéo thay đổi về (pull) theo cursor thay vì tải lại toàn bộ. Xung đột được phát hiện khi server so <code>baseVersion</code> client gửi lên với version hiện tại; khi lệch phải chọn chiến lược: last-write-wins (đơn giản nhưng có thể mất dữ liệu), merge theo từng field, hoặc giữ cả hai bản cho user chọn; văn bản cộng tác thời gian thực mới cần đến CRDT/OT. Đừng lấy giờ máy client làm căn cứ vì có thể lệch. Mọi thao tác phải idempotent để retry an toàn. Sync được kích hoạt khi mở app, khi nhận push báo có thay đổi, và periodic work làm lưới an toàn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/android/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q24.html">Hai senior trong team tranh luận gay gắt trên PR về việc chuyển từ MVVM sang MVI, PR bị treo một tuần. Với vai trò tech lead, bạn xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết tôi tách tranh luận kiến trúc ra khỏi PR: PR được đánh giá theo chuẩn hiện hành của team, đúng chuẩn và không có lỗi thì merge, không để một quyết định lớn chặn việc nhỏ. Sau đó mời hai người viết đề xuất ngắn dạng ADR: vấn đề cụ thể đang gặp (bug state, khó test, khó debug), phương án, trade-off, chi phí chuyển đổi, và bàn bằng ví dụ trong chính codebase thay vì sở thích cá nhân. Nếu chưa ngã ngũ thì làm thử có time-box trên một feature và đánh giá theo tiêu chí đã thống nhất từ trước. Người ra quyết định cuối phải rõ ràng; khi đã quyết, cả team &#39;disagree and commit&#39; và ADR được lưu lại. Song song, tôi nói chuyện riêng với từng người để giữ quan hệ, và chốt quy tắc review: góp ý vào code chứ không vào người, phân biệt rõ comment blocking với nit.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q25.html">Bạn muốn đề xuất migrate dần app từ XML View sang Jetpack Compose nhưng PM lo ảnh hưởng roadmap. Bạn thuyết phục và lên kế hoạch thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi nói bằng ngôn ngữ của business thay vì &#39;công nghệ mới hay hơn&#39;: thời gian làm một màn hình mới hiện nay, số bug UI lặp lại, khó tuyển người, và rủi ro nếu tiếp tục giữ nguyên. Đề xuất là migrate tăng dần chứ không viết lại toàn bộ: màn hình mới viết bằng Compose, màn hình cũ chỉ chuyển khi đằng nào cũng phải sửa lớn, hai bên chung sống qua <code>ComposeView</code> và <code>AndroidView</code>. Bắt đầu bằng pilot có time-box trên một màn hình ít rủi ro, đo trước và sau (thời gian phát triển, kích thước app, startup, jank), nhớ thêm Baseline Profile vì Compose là thư viện đi kèm app, không được hệ thống compile sẵn như framework View. Chuẩn bị nền: design system bằng Compose, guideline và reviewer có kinh nghiệm. Cuối cùng thống nhất với PM tỉ lệ capacity mỗi sprint và mốc đánh giá lại, để có thể dừng nếu không hiệu quả.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm Android Senior</h2><a class="section-sub" href="../../../#/android/quiz?rank=senior&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/and-sen-m01.html">Biến result không có @Volatile hay lock. Theo Java Memory Model, main thread in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m02.html">Perfetto cho thấy main thread thỉnh thoảng bị block vài trăm ms ngay trong current(). Nguyên nhân và cách sửa hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m03.html">Đoạn code dùng HandlerThread sau được gọi từ main thread. Điều gì xảy ra với khối post?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m04.html">Đoạn code sau chạy trên main thread. Thứ tự log của các Runnable gửi vào MessageQueue là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m05.html">Baseline Profile giúp app chạy nhanh hơn ngay từ lần mở đầu tiên sau khi cài nhờ cơ chế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m06.html">Từ Android 7 trở đi, ART biên dịch code của app theo cách nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m07.html">Một dev tự viết cache ảnh như sau với ý định &#39;GC sẽ tự dọn khi thiếu bộ nhớ&#39;. Vì sao tài liệu Android khuyên không làm vậy?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m08.html">Khối addIdleHandler dưới đây được đăng ký trong onCreate của Activity, trên main thread. Nó chạy khi nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m09.html">Project dùng Kotlin 2.0.20+ (strong skipping bật mặc định). Screen recompose vì query đổi, còn items giữ nguyên. FeedList(items: List&lt;Item&gt;) có được skip không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m10.html">Header parallax cần dịch theo scrollState.value. Cách viết nào vừa cho header di chuyển đúng vừa không làm recompose mỗi frame khi cuộn?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m11.html">Initializer sau được App Startup chạy tự động qua InitializationProvider khai báo trong Manifest. Nhận định nào đúng về chi phí startup?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m12.html">Thư viện ảnh decode avatar với Bitmap.Config.HARDWARE để tiết kiệm RAM. Một màn hình lấy chính bitmap đó rồi gọi bitmap.getPixel(0, 0) để tính màu nền. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m13.html">Ảnh chụp 4000×3000 được decode như sau để hiện trong thumbnail 400×300. Bitmap chiếm khoảng bao nhiêu bộ nhớ và nên sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m14.html">Bạn muốn biết tỉ lệ frame bị jank của màn hình Checkout trên thiết bị người dùng thật ở production. Công cụ nào phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m15.html">Với cấu hình StrictMode sau trong bản debug, điều gì xảy ra khi một Activity gọi File(path).readText() trên main thread?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m16.html">Màn hình đầu tiên hiện skeleton rất nhanh rồi mới tải dữ liệu thật. Muốn đo thời gian tới khi nội dung thật sự dùng được, bạn cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m17.html">Với khai báo dependency sau, trong :feature:home có code import okhttp3.OkHttpClient. Kết quả build thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m18.html">Vì sao chuyển Room và Hilt từ kapt sang KSP thường giúp build nhanh hơn rõ rệt?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m19.html">Configuration cache của Gradle lưu lại gì và giúp ích khi nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m20.html">Bạn phát hành một thư viện Android có đọc class theo tên bằng reflection. Làm sao để app dùng thư viện và bật R8 không bị lỗi?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m21.html">Bản release bật isShrinkResources = true và bị mất drawable khi tên icon lấy từ API như sau. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m22.html">Dự án 40 module đang copy cấu hình chung (compileSdk, minSdk, Kotlin options, lint) vào từng build.gradle.kts. Cách tái sử dụng được khuyến nghị hiện nay là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m23.html">Bạn viết AppButton cho design system mà 5 team dùng chung. Theo Compose API guidelines, component nên nhận Modifier thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m24.html">ViewModel sửa trực tiếp items rồi gán lại chính instance cũ vào MutableStateFlow. Điều gì có thể xảy ra trên UI Compose?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m25.html">Feed có nhiều RecyclerView ngang lồng trong một RecyclerView dọc; profiler cho thấy liên tục inflate ViewHolder mới khi cuộn. Cách cải thiện hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m26.html">:feature:cart cần mở màn hình chi tiết của :feature:product. Cách nào giữ đúng quy tắc phụ thuộc giữa các module?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m27.html">Giá trị mới của flag new_checkout từ Remote Config được fetch xong khi user đang ở giữa luồng thanh toán cũ. Cách áp dụng nào an toàn nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m28.html">Trong Clean Architecture nhiều module, :core:domain chứa use case và interface UserRepository. Quan hệ phụ thuộc nào hợp lệ?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m29.html">Luồng bình thường không lỗi, nhưng Crashlytics báo UninitializedPropertyAccessException ở CheckoutActivity khi user quay lại app sau thời gian dài ở background. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m30.html">Cách nào thực sự mô phỏng process death để kiểm tra việc khôi phục state?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m31.html">Lợi ích chính của việc tạo AES key trong Android Keystore thay vì tự sinh key rồi lưu vào SharedPreferences là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m32.html">Với Network Security Config sau, chuyện gì xảy ra khi app kết nối tới api.example.com sau ngày 2026-01-01?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m33.html">App vừa nhận integrity token từ Play Integrity API. Cách dùng token nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m34.html">API key bí mật được đưa vào BuildConfig và bản release đã bật R8. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m35.html">Bản 5.2.0 đang staged rollout 20% trên Play Console thì crash rate tăng vọt. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m36.html">Lợi ích chính của screenshot test chạy trên JVM (Paparazzi, Roborazzi) so với chụp màn hình bằng instrumented test trên emulator là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m37.html">Để đo lợi ích của Baseline Profile lên startup bằng Macrobenchmark, bạn nên so sánh hai cấu hình nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m38.html">Trong app chat nhóm, tin nhắn của một cuộc hội thoại nên được sắp xếp dựa vào đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m39.html">Request gửi tin nhắn bị timeout nhưng thực ra server đã lưu; worker retry gửi lại. Cách nào tránh tin bị nhân đôi?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m40.html">Một junior mở PR 2.000 dòng gồm cả refactor lẫn tính năng mới, deadline là cuối tuần. Cách xử lý nào hiệu quả nhất?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

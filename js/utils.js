@@ -189,8 +189,8 @@ export function toast(message) {
   toast.timer = setTimeout(() => el.classList.remove("show"), 2600);
 }
 
-// Link chia sẻ trỏ tới trang s/<id>.html (có thẻ preview riêng cho từng câu),
-// trang đó tự chuyển về #/q/<id>.
+// Link chia sẻ trỏ tới trang tĩnh s/<id>.html (thẻ preview riêng cho từng câu, Google đọc được),
+// trang đó có nút mở câu trong app (#/q/<id>).
 export function shareUrl(id) {
   return new URL(`s/${encodeURIComponent(id)}.html`, location.href.split("#")[0]).href;
 }

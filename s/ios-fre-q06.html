@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Fresher: Protocol và extension trong Swift dùng để làm gì? Extension có thêm được store…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Protocol định nghĩa một hợp đồng gồm các method/property mà kiểu tuân theo (struct, class, enum) phải cài đặt, giúp code làm việc được với bất kỳ kiểu nào th…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-q06.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher: Protocol và extension trong Swift dùng để làm gì? Extension có thêm được store…">
@@ -16,10 +17,87 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-fre-q06");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Protocol và extension trong Swift dùng để làm g…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-q06.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Protocol và extension trong Swift dùng để làm gì? Extension có thêm được stored property không?</p>
-<p><a href="../#/q/ios-fre-q06">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Protocol và extension trong Swift dùng để làm g…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Protocol và extension trong Swift dùng để làm gì? Extension có thêm được stored property không?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Protocol định nghĩa một hợp đồng gồm các method/property mà kiểu tuân theo (struct, class, enum) phải cài đặt, giúp code làm việc được với bất kỳ kiểu nào thoả protocol; <code>UITableViewDataSource</code> là ví dụ quen thuộc. Extension thêm method, computed property, initializer hoặc conformance protocol cho kiểu có sẵn, kể cả kiểu bạn không có source như <code>String</code>, <code>Int</code>. Extension không thêm được stored property cho instance và không override được method đã có. Cách dùng phổ biến là tách mỗi protocol conformance ra một extension riêng cho gọn, như <code>extension ProfileViewController: UITableViewDataSource</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">protocol</span> <span class="tk-type">Describable</span> {
+    <span class="tk-kw">var</span> summary: <span class="tk-type">String</span> { <span class="tk-kw">get</span> }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">Product</span>: <span class="tk-type">Describable</span> {
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">let</span> price: <span class="tk-type">Int</span>
+    <span class="tk-kw">var</span> summary: <span class="tk-type">String</span> { <span class="tk-str">&quot;\(name) - \(price)đ&quot;</span> }
+}
+
+<span class="tk-kw">extension</span> <span class="tk-type">Int</span> {
+    <span class="tk-kw">var</span> isEven: <span class="tk-type">Bool</span> { <span class="tk-kw">self</span> % <span class="tk-num">2</span> == <span class="tk-num">0</span> } <span class="tk-com">// computed property: OK</span>
+    <span class="tk-com">// var cache = 0                   // lỗi: không thêm được stored property</span>
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-q06">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-q05.html"><span class="muted small">← Câu trước</span><span>Closure trong Swift là gì? Giải thích cú pháp trailing closure và $0 qua ví dụ…</span></a>
+  <a class="pager-next" href="../s/ios-fre-q07.html"><span class="muted small">Câu sau →</span><span>Swift xử lý lỗi bằng throws, do/catch, try? và try! như thế nào? Khi nào dùng t…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q01.html">Optional trong Swift là gì? Có những cách nào để lấy giá trị ra khỏi một Optional, và vì sao nên hạn chế force unwrap !?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q02.html">if let và guard let khác nhau thế nào? Khi nào bạn chọn guard let?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q03.html">Struct và class trong Swift khác nhau thế nào? Vì sao khai báo let với một instance struct thì không sửa được property, còn với class thì vẫn sửa được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q04.html">Enum có associated value là gì? Cho ví dụ dùng switch để hiển thị trạng thái tải dữ liệu của một màn hình.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q05.html">Closure trong Swift là gì? Giải thích cú pháp trailing closure và $0 qua ví dụ filter, map, reduce.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q07.html">Swift xử lý lỗi bằng throws, do/catch, try? và try! như thế nào? Khi nào dùng try??</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

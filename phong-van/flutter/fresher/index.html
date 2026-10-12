@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Fresher (37 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="37 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher (37 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="37 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <span aria-current="page">Fresher</span>
+</nav>
+
+<header class="view-head rank-green">
+  <div class="eyebrow">phỏng vấn · flutter · fresher (0–1 năm)</div>
+  <h1>Câu hỏi phỏng vấn Flutter Fresher</h1>
+  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../../../#/flutter/study/fresher">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip active" href="../../../phong-van/flutter/fresher/" aria-current="page">Fresher</a>
+  <a class="chip" href="../../../phong-van/flutter/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/flutter/middle/">Middle</a>
+  <a class="chip" href="../../../phong-van/flutter/senior/">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#dart">Dart</a> <span class="count">12</span></li>
+    <li><a href="#async">Async &amp; Isolate</a> <span class="count">2</span></li>
+    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">8</span></li>
+    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">6</span></li>
+    <li><a href="#state">State Management</a> <span class="count">2</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
+    <li><a href="#native">Native &amp; Platform</a> <span class="count">1</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">1</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="dart">
+  <div class="section-head"><h2>Dart</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/dart/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q01.html"><code>var</code>, <code>dynamic</code> và <code>Object</code> khác nhau thế nào khi khai báo biến?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>var</code> để compiler tự suy ra kiểu từ giá trị khởi tạo và kiểu đó cố định: <code>var name = &#39;An&#39;;</code> thì <code>name</code> là <code>String</code>, gán số vào sẽ lỗi compile. <code>dynamic</code> tắt kiểm tra kiểu tĩnh, gọi method nào cũng compile được nhưng sai thì crash lúc runtime; <code>Object</code> nhận mọi giá trị non-null nhưng vẫn được kiểm tra kiểu, muốn dùng method riêng phải kiểm tra <code>is</code> hoặc cast. Pitfall: <code>var x;</code> không có giá trị khởi tạo thì <code>x</code> thành <code>dynamic</code>, nên hạn chế <code>dynamic</code> và chỉ dùng khi thật cần (ví dụ dữ liệu JSON chưa parse).</div>
+        <pre class="code-block"><code><span class="tk-kw">var</span> name = <span class="tk-str">&#39;An&#39;</span>;    <span class="tk-com">// name có kiểu String</span>
+<span class="tk-com">// name = 10;       // lỗi compile</span>
+
+<span class="tk-kw">dynamic</span> d = <span class="tk-str">&#39;An&#39;</span>;
+d = <span class="tk-num">10</span>;             <span class="tk-com">// OK, không kiểm tra kiểu</span>
+<span class="tk-com">// d.foo();         // compile OK, crash lúc runtime</span>
+
+<span class="tk-type">Object</span> o = <span class="tk-str">&#39;An&#39;</span>;
+<span class="tk-kw">if</span> (o <span class="tk-kw">is</span> <span class="tk-type">String</span>) print(o.length); <span class="tk-com">// phải kiểm tra kiểu trước</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q02.html"><code>List</code>, <code>Set</code> và <code>Map</code> khác nhau thế nào? Cho ví dụ khi nào dùng mỗi loại.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>List</code> là danh sách có thứ tự, cho phép phần tử trùng và truy cập theo index, ví dụ danh sách tin nhắn. <code>Set</code> không chứa phần tử trùng và kiểm tra <code>contains</code> nhanh, hợp để lưu tập id đã chọn hoặc loại bỏ trùng lặp. <code>Map</code> lưu cặp key–value để tra cứu theo key, ví dụ số lượng theo mã sản phẩm hay dữ liệu JSON sau khi decode; lưu ý <code>map[key]</code> trả về <code>null</code> khi không có key, và literal <code>{}</code> rỗng là <code>Map</code> chứ không phải <code>Set</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> tags = &lt;<span class="tk-type">String</span>&gt;[<span class="tk-str">&#39;a&#39;</span>, <span class="tk-str">&#39;b&#39;</span>, <span class="tk-str">&#39;a&#39;</span>];   <span class="tk-com">// List: giữ phần tử trùng</span>
+<span class="tk-kw">final</span> ids = [<span class="tk-num">1</span>, <span class="tk-num">2</span>, <span class="tk-num">2</span>].toSet();          <span class="tk-com">// Set: {1, 2}</span>
+<span class="tk-kw">final</span> stock = &lt;<span class="tk-type">String</span>, int&gt;{<span class="tk-str">&#39;A01&#39;</span>: <span class="tk-num">5</span>};  <span class="tk-com">// Map</span>
+
+print(stock[<span class="tk-str">&#39;A01&#39;</span>]); <span class="tk-com">// 5</span>
+print(stock[<span class="tk-str">&#39;X&#39;</span>]);   <span class="tk-com">// null vì không có key</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q03.html">Named parameter và optional positional parameter khác nhau thế nào? Từ khóa <code>required</code> dùng khi nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Optional positional parameter đặt trong <code>[]</code> và truyền theo vị trí, còn named parameter đặt trong <code>{}</code> và truyền theo tên nên lời gọi dễ đọc, không phụ thuộc thứ tự. Named parameter mặc định là tùy chọn, vì vậy tham số kiểu non-nullable phải có giá trị mặc định hoặc đánh dấu <code>required</code>, còn kiểu nullable như <code>String?</code> thì mặc định là <code>null</code>. Flutter dùng named parameter gần như khắp nơi, ví dụ <code>Text(&#39;Hi&#39;, maxLines: 1)</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">void</span> greet(<span class="tk-type">String</span> name, [<span class="tk-type">String</span> greeting = <span class="tk-str">&#39;Xin chào&#39;</span>]) {
+  print(<span class="tk-str">&#39;$greeting $name&#39;</span>);
+}
+
+<span class="tk-kw">void</span> createUser({<span class="tk-kw">required</span> <span class="tk-type">String</span> email, int age = <span class="tk-num">18</span>, <span class="tk-type">String</span>? nickname}) {}
+
+greet(<span class="tk-str">&#39;An&#39;</span>);                  <span class="tk-com">// Xin chào An</span>
+greet(<span class="tk-str">&#39;An&#39;</span>, <span class="tk-str">&#39;Hello&#39;</span>);         <span class="tk-com">// Hello An</span>
+createUser(email: <span class="tk-str">&#39;a@b.com&#39;</span>); <span class="tk-com">// age = 18, nickname = null</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q04.html">Nói hàm trong Dart là first-class object nghĩa là gì? Arrow function <code>=&gt;</code> dùng khi nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hàm có thể gán vào biến, truyền làm tham số và trả về từ hàm khác như mọi giá trị khác; Flutter dùng điều này liên tục qua các callback như <code>onPressed</code>, <code>onChanged</code>. Cú pháp <code>=&gt;</code> là cách viết tắt cho hàm chỉ có một biểu thức: <code>=&gt; expr</code> tương đương <code>{ return expr; }</code>. Lưu ý <code>=&gt;</code> chỉ chứa được một expression, cần nhiều câu lệnh thì phải dùng thân hàm <code>{}</code>.</div>
+        <pre class="code-block"><code>int square(int x) =&gt; x * x;
+
+<span class="tk-kw">void</span> applyAll(<span class="tk-type">List</span>&lt;int&gt; nums, int <span class="tk-kw">Function</span>(int) f) {
+  print(nums.map(f).toList());
+}
+
+applyAll([<span class="tk-num">1</span>, <span class="tk-num">2</span>, <span class="tk-num">3</span>], square);       <span class="tk-com">// [1, 4, 9]</span>
+applyAll([<span class="tk-num">1</span>, <span class="tk-num">2</span>, <span class="tk-num">3</span>], (x) =&gt; x + <span class="tk-num">1</span>); <span class="tk-com">// [2, 3, 4]</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q05.html">Named constructor là gì? Viết gọn constructor bằng <code>this.</code> và initializer list thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dart không hỗ trợ overload constructor, nên muốn có nhiều cách khởi tạo thì dùng named constructor như <code>Point.origin()</code> hay <code>User.guest()</code>. Cú pháp <code>this.x</code> trong danh sách tham số tự gán giá trị vào field, còn initializer list (sau dấu <code>:</code>) dùng để gán các field <code>final</code> trước khi thân constructor chạy. Ví dụ quen thuộc trong Flutter là <code>EdgeInsets.all(8)</code> và <code>EdgeInsets.symmetric(horizontal: 16)</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">Point</span> {
+  <span class="tk-kw">final</span> double x;
+  <span class="tk-kw">final</span> double y;
+
+  <span class="tk-type">Point</span>(<span class="tk-kw">this</span>.x, <span class="tk-kw">this</span>.y);
+  <span class="tk-type">Point</span>.origin() : x = <span class="tk-num">0</span>, y = <span class="tk-num">0</span>;
+  <span class="tk-type">Point</span>.fromList(<span class="tk-type">List</span>&lt;double&gt; v) : x = v[<span class="tk-num">0</span>], y = v[<span class="tk-num">1</span>];
+}
+
+<span class="tk-kw">final</span> p = <span class="tk-type">Point</span>.origin();</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q06.html">Toán tử <code>!</code> (null assertion) làm gì? Vì sao nên hạn chế dùng nó?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>!</code> khẳng định với compiler rằng một giá trị nullable chắc chắn không null, ép <code>String?</code> thành <code>String</code>. Nếu lúc chạy giá trị thực sự là null thì app crash với lỗi &#39;Null check operator used on a null value&#39;, một lỗi rất hay gặp ở người mới. Nên ưu tiên kiểm tra <code>if (x != null)</code> để Dart tự promote kiểu cho biến local, hoặc dùng <code>??</code> để có giá trị mặc định, chỉ dùng <code>!</code> khi thật sự chắc chắn.</div>
+        <pre class="code-block"><code><span class="tk-type">String</span>? name = getName();
+
+print(name!.length);       <span class="tk-com">// crash nếu name == null</span>
+
+<span class="tk-kw">if</span> (name != <span class="tk-kw">null</span>) {
+  print(name.length);      <span class="tk-com">// đã được promote thành String</span>
+}
+
+print(name?.length ?? <span class="tk-num">0</span>);  <span class="tk-com">// an toàn</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q07.html"><code>extends</code>, <code>implements</code> và <code>with</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>extends</code> là kế thừa: lớp con nhận lại code của lớp cha và mỗi class chỉ <code>extends</code> được một lớp. <code>implements</code> coi lớp kia như một interface (mỗi class đều ngầm định một interface), lớp mới phải tự override toàn bộ thành viên và có thể implement nhiều lớp cùng lúc. <code>with</code> dùng để trộn mixin, giúp tái sử dụng code giữa các lớp không cùng cây kế thừa, ví dụ <code>with SingleTickerProviderStateMixin</code> trong State khi làm animation.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q08.html">Collection <code>if</code>, collection <code>for</code> và spread operator <code>...</code> giúp gì khi viết UI Flutter?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chúng cho phép xây dựng List ngay trong literal: <code>if</code> để thêm phần tử có điều kiện, <code>for</code> để sinh nhiều phần tử, <code>...</code> để trải các phần tử của một list khác vào. Nhờ vậy <code>children</code> của <code>Column</code>/<code>Row</code> viết gọn mà không cần biến tạm hay toán tử ba ngôi trả về widget rỗng. Khi list có thể null thì dùng <code>...?</code> để bỏ qua nếu nó là <code>null</code>.</div>
+        <pre class="code-block"><code><span class="tk-type">Column</span>(
+  children: [
+    <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Tiêu đề&#39;</span>),
+    <span class="tk-kw">if</span> (isLoggedIn) <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Xin chào!&#39;</span>),
+    <span class="tk-kw">for</span> (<span class="tk-kw">final</span> item <span class="tk-kw">in</span> items) <span class="tk-type">Text</span>(item),
+    ...extraWidgets,
+  ],
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q09.html">Dấu gạch dưới <code>_</code> ở đầu tên biến, hàm hay class có ý nghĩa gì trong Dart?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dart không có từ khóa <code>private</code>; tên bắt đầu bằng <code>_</code> là private ở mức library (thường là một file), không phải ở mức class. Nghĩa là hai class trong cùng một file vẫn truy cập được thành viên <code>_</code> của nhau, còn file khác import vào thì không thấy. Đó là lý do class State của StatefulWidget thường đặt tên kiểu <code>_CounterState</code>: nó chỉ được dùng nội bộ trong file đó.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q10.html">File <code>pubspec.yaml</code> dùng để làm gì? Ký hiệu <code>^2.1.0</code> trong phần <code>dependencies</code> nghĩa là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>pubspec.yaml</code> mô tả project: tên, version, ràng buộc SDK, các package phụ thuộc (<code>dependencies</code>, <code>dev_dependencies</code>) và khai báo assets, fonts. <code>^2.1.0</code> (caret syntax) nghĩa là chấp nhận từ <code>2.1.0</code> đến dưới <code>3.0.0</code>, tức các bản không phá vỡ API theo semantic versioning; riêng bản <code>0.x</code> như <code>^0.13.0</code> chỉ cho phép tới dưới <code>0.14.0</code>. Sau khi sửa file thì chạy <code>flutter pub get</code> (hoặc dùng <code>flutter pub add tên_package</code>), phiên bản thực tế được khóa lại trong <code>pubspec.lock</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d01-1.html">Sự khác biệt giữa <code>final</code> và <code>const</code>? Khi nào nên dùng cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>const</code> là compile-time constant (giá trị phải biết được lúc compile), <code>final</code> là runtime constant (gán một lần nhưng có thể tính lúc chạy). Ưu tiên <code>const</code> cho giá trị bất biến tuyệt đối để Flutter tái sử dụng widget, dùng <code>final</code> khi giá trị phụ thuộc runtime.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d01-4.html">Toán tử <code>??</code>, <code>??=</code> và <code>?.</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>??</code> trả về giá trị bên phải nếu bên trái null; <code>??=</code> chỉ gán giá trị mới nếu biến đang null; <code>?.</code> gọi method/property an toàn, trả null thay vì crash nếu object là null.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="async">
+  <div class="section-head"><h2>Async &amp; Isolate</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/async/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q11.html"><code>async</code>/<code>await</code> hoạt động thế nào? <code>await</code> có làm đứng (block) UI không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hàm đánh dấu <code>async</code> luôn trả về <code>Future</code>; tại mỗi <code>await</code>, hàm tạm dừng và trả quyền điều khiển cho event loop, khi Future hoàn thành thì chạy tiếp từ chỗ đã dừng. Vì vậy chờ gọi API hay đọc file bằng <code>await</code> không làm đứng UI, các frame và sự kiện chạm vẫn được xử lý. Tuy nhiên <code>async</code> không biến code thành chạy song song: một vòng lặp tính toán nặng bên trong hàm async vẫn chạy trên main isolate và vẫn gây giật.</div>
+        <pre class="code-block"><code><span class="tk-type">Future</span>&lt;<span class="tk-type">String</span>&gt; fetchName() <span class="tk-kw">async</span> {
+  <span class="tk-kw">await</span> <span class="tk-type">Future</span>.delayed(<span class="tk-kw">const</span> <span class="tk-type">Duration</span>(seconds: <span class="tk-num">1</span>));
+  <span class="tk-kw">return</span> <span class="tk-str">&#39;An&#39;</span>;
+}
+
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; main() <span class="tk-kw">async</span> {
+  print(<span class="tk-str">&#39;Bắt đầu&#39;</span>);
+  <span class="tk-kw">final</span> name = <span class="tk-kw">await</span> fetchName(); <span class="tk-com">// tạm dừng, không block</span>
+  print(<span class="tk-str">&#39;Tên: $name&#39;</span>);
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q12.html">Làm sao bắt lỗi khi gọi một hàm async, ví dụ gọi API thất bại?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đặt lời gọi <code>await</code> bên trong <code>try</code>/<code>catch</code> giống code đồng bộ, và dùng <code>finally</code> cho việc luôn phải làm như tắt loading. Nếu không dùng <code>await</code> thì có thể nối <code>.then(...).catchError(...)</code>, nhưng <code>try</code>/<code>catch</code> dễ đọc hơn. Lỗi thường gặp là gọi hàm async mà quên <code>await</code>, khi đó lỗi xảy ra sau khi đã ra khỏi khối <code>try</code> nên <code>catch</code> không bắt được.</div>
+        <pre class="code-block"><code><span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; loadUser() <span class="tk-kw">async</span> {
+  isLoading = <span class="tk-kw">true</span>;
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">final</span> user = <span class="tk-kw">await</span> api.getUser();
+    print(user.name);
+  } <span class="tk-kw">catch</span> (e) {
+    print(<span class="tk-str">&#39;Lỗi: $e&#39;</span>);
+  } <span class="tk-kw">finally</span> {
+    isLoading = <span class="tk-kw">false</span>;
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="widget">
+  <div class="section-head"><h2>Widget &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/widget/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q13.html">Câu &#39;Trong Flutter, mọi thứ đều là widget&#39; nghĩa là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Widget là bản mô tả (cấu hình) của một phần UI, và Flutter xây giao diện bằng cách lồng các widget vào nhau thành cây widget. Không chỉ nút bấm hay chữ, mà cả khoảng đệm (<code>Padding</code>), căn chỉnh (<code>Center</code>, <code>Align</code>), theme hay bắt gesture (<code>GestureDetector</code>) cũng là widget. Thay vì sửa trực tiếp một view như cách làm native truyền thống, ta mô tả UI theo state hiện tại, khi state đổi thì Flutter gọi lại <code>build</code> để tạo cấu hình mới.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q14.html"><code>StatelessWidget</code> và <code>StatefulWidget</code> khác nhau thế nào? Khi nào chọn loại nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>StatelessWidget</code> chỉ hiển thị dựa trên tham số nhận từ widget cha, bản thân nó không giữ dữ liệu thay đổi theo thời gian. <code>StatefulWidget</code> đi kèm một object <code>State</code> được giữ lại qua các lần rebuild, chứa dữ liệu có thể thay đổi và gọi <code>setState</code> để cập nhật UI. Chọn Stateless khi UI chỉ phụ thuộc input (ví dụ card hiển thị sản phẩm), chọn Stateful khi widget tự quản lý dữ liệu như bộ đếm, checkbox, form, hoặc cần <code>initState</code>/<code>dispose</code> để tạo và giải phóng controller.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q15.html">Vai trò của <code>MaterialApp</code> và <code>Scaffold</code> là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>MaterialApp</code> thường là widget gốc của app: cấu hình theme, <code>Navigator</code>/routes, localization, title và cung cấp các thiết lập Material cho toàn bộ cây bên dưới. <code>Scaffold</code> là khung bố cục của một màn hình Material với các slot như <code>appBar</code>, <code>body</code>, <code>floatingActionButton</code>, <code>drawer</code>, <code>bottomNavigationBar</code>. Thường cả app chỉ có một <code>MaterialApp</code> còn mỗi màn hình có một <code>Scaffold</code>; lồng thêm <code>MaterialApp</code> trong từng màn hình là lỗi hay gặp, vì nó tạo <code>Navigator</code> và theme riêng tách khỏi phần còn lại của app.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q16.html">Làm sao lấy nội dung người dùng nhập trong <code>TextField</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cách phổ biến là tạo một <code>TextEditingController</code> trong <code>State</code>, gán vào <code>controller</code> của <code>TextField</code> và đọc <code>controller.text</code> khi cần, ví dụ lúc bấm nút Gửi. Controller phải được <code>dispose()</code> trong <code>dispose()</code> của State để tránh rò rỉ bộ nhớ. Nếu chỉ cần phản ứng theo từng ký tự thì dùng callback <code>onChanged</code>; với form nhiều trường cần validate thì dùng <code>Form</code> kết hợp <code>TextFormField</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _LoginState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">Login</span>&gt; {
+  <span class="tk-kw">final</span> _emailCtrl = <span class="tk-type">TextEditingController</span>();
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _emailCtrl.dispose();
+    <span class="tk-kw">super</span>.dispose();
+  }
+
+  <span class="tk-kw">void</span> _submit() =&gt; print(_emailCtrl.text);
+  <span class="tk-com">// trong build: TextField(controller: _emailCtrl)</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q17.html">Flutter 3 có những loại button Material nào? Làm sao để disable một button?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Các button chính hiện nay là <code>ElevatedButton</code>, <code>FilledButton</code>, <code>OutlinedButton</code>, <code>TextButton</code> và <code>IconButton</code>; các widget cũ <code>RaisedButton</code>, <code>FlatButton</code> đã bị xóa khỏi framework. Để disable chỉ cần truyền <code>onPressed: null</code>, button tự chuyển sang style disabled. Muốn tùy biến màu hay bo góc thì truyền <code>style:</code> bằng <code>ElevatedButton.styleFrom(...)</code> hoặc cấu hình chung cho cả app qua theme.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q18.html">Cách hiển thị ảnh từ assets và từ internet trong Flutter?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ảnh local đặt trong thư mục của project (ví dụ <code>assets/images/</code>), khai báo trong <code>pubspec.yaml</code> dưới mục <code>flutter: assets:</code> rồi dùng <code>Image.asset(&#39;assets/images/logo.png&#39;)</code>. Ảnh từ mạng dùng <code>Image.network(url)</code>, nên thêm <code>loadingBuilder</code>/<code>errorBuilder</code> để xử lý lúc đang tải và lúc lỗi. Lỗi hay gặp là quên khai báo asset hoặc sai đường dẫn; khi khai báo cả thư mục (kết thúc bằng <code>/</code>) thì chỉ file nằm trực tiếp trong đó được đóng gói, thư mục con phải khai báo riêng.</div>
+        <pre class="code-block"><code><span class="tk-com">// pubspec.yaml:</span>
+<span class="tk-com">// flutter:</span>
+<span class="tk-com">//   assets:</span>
+<span class="tk-com">//     - assets/images/</span>
+
+<span class="tk-type">Image</span>.asset(<span class="tk-str">&#39;assets/images/logo.png&#39;</span>, width: <span class="tk-num">120</span>)
+
+<span class="tk-type">Image</span>.network(
+  <span class="tk-str">&#39;https://example.com/avatar.png&#39;</span>,
+  errorBuilder: (context, error, stack) =&gt; <span class="tk-kw">const</span> <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.broken_image),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q19.html">Làm sao cấu hình theme chung cho toàn app và lấy màu từ theme bên trong widget?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Truyền <code>ThemeData</code> vào <code>theme:</code> (và <code>darkTheme:</code> cho dark mode) của <code>MaterialApp</code>, thường tạo bảng màu bằng <code>ColorScheme.fromSeed(seedColor: ...)</code>; từ Flutter 3.16, Material 3 đã là mặc định. Trong widget, đọc giá trị qua <code>Theme.of(context)</code>, ví dụ <code>Theme.of(context).colorScheme.primary</code> hay <code>Theme.of(context).textTheme.titleLarge</code>. Dùng theme thay vì hard-code màu giúp đổi giao diện hoặc hỗ trợ dark mode chỉ ở một chỗ.</div>
+        <pre class="code-block"><code><span class="tk-type">MaterialApp</span>(
+  theme: <span class="tk-type">ThemeData</span>(
+    colorScheme: <span class="tk-type">ColorScheme</span>.fromSeed(seedColor: <span class="tk-type">Colors</span>.teal),
+  ),
+  darkTheme: <span class="tk-type">ThemeData</span>(
+    colorScheme: <span class="tk-type">ColorScheme</span>.fromSeed(
+      seedColor: <span class="tk-type">Colors</span>.teal,
+      brightness: <span class="tk-type">Brightness</span>.dark,
+    ),
+  ),
+  home: <span class="tk-kw">const</span> <span class="tk-type">HomePage</span>(),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q20.html"><code>GestureDetector</code> và <code>InkWell</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai đều bắt sự kiện chạm như <code>onTap</code>, <code>onLongPress</code>. <code>InkWell</code> là widget Material, vẽ hiệu ứng ripple khi chạm nên cần một widget <code>Material</code> phía trên (có sẵn trong <code>Scaffold</code>, <code>Card</code>...), và ripple sẽ bị che nếu child có màu nền đục. <code>GestureDetector</code> không có hiệu ứng hình ảnh nào nhưng hỗ trợ nhiều loại gesture hơn như kéo (drag), pan, scale.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="layout">
+  <div class="section-head"><h2>Layout &amp; Rendering</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/layout/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q21.html"><code>mainAxisAlignment</code> và <code>crossAxisAlignment</code> trong <code>Row</code>/<code>Column</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Main axis là trục mà widget xếp các con: với <code>Row</code> là chiều ngang, với <code>Column</code> là chiều dọc; cross axis là trục vuông góc với nó. <code>mainAxisAlignment</code> (như <code>start</code>, <code>center</code>, <code>spaceBetween</code>) phân bố các con dọc theo trục chính, còn <code>crossAxisAlignment</code> (như <code>start</code>, <code>center</code>, <code>stretch</code>) căn các con theo trục phụ. Pitfall: <code>Column</code> mặc định <code>mainAxisSize: MainAxisSize.max</code> nên chiếm hết chiều cao được phép, muốn nó chỉ cao vừa nội dung thì đặt <code>MainAxisSize.min</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q22.html"><code>Expanded</code> và <code>Flexible</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai dùng trong <code>Row</code>/<code>Column</code>/<code>Flex</code> để chia phần không gian còn trống cho các con theo tỉ lệ <code>flex</code>. <code>Expanded</code> ép con phải lấp đầy phần được chia (<code>FlexFit.tight</code>), còn <code>Flexible</code> mặc định <code>FlexFit.loose</code> nên con được phép nhỏ hơn phần đó. Thực tế <code>Expanded</code> chính là <code>Flexible</code> với <code>fit: FlexFit.tight</code>; dùng <code>Expanded</code> khi muốn chia đều không gian, dùng <code>Flexible</code> khi muốn con co lại lúc thiếu chỗ nhưng không bị kéo giãn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q23.html">Lỗi vạch vàng đen &#39;A RenderFlex overflowed by ... pixels&#39; là gì và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lỗi xảy ra khi tổng kích thước các con của <code>Row</code>/<code>Column</code> vượt quá không gian mà widget cha cho phép, thường gặp với <code>Text</code> dài trong <code>Row</code> hoặc màn hình bị bàn phím thu nhỏ. Tùy trường hợp: bọc con bằng <code>Expanded</code>/<code>Flexible</code> để nó co theo chỗ trống, cho <code>Text</code> dùng <code>overflow: TextOverflow.ellipsis</code>, dùng <code>Wrap</code> để tự xuống dòng, hoặc bọc nội dung bằng <code>SingleChildScrollView</code> nếu cần cuộn. Dải vàng đen chỉ được vẽ ở debug mode; ở release không có cảnh báo nhưng layout vẫn hỏng, nên phải sửa tận gốc.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q24.html">Vì sao đặt <code>ListView</code> trực tiếp trong <code>Column</code> thường bị lỗi, và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Column</code> cho các con không bị giới hạn chiều cao (unbounded), trong khi <code>ListView</code> là vùng cuộn nên muốn chiếm hết chiều cao được cho, dẫn tới lỗi &#39;Vertical viewport was given unbounded height&#39;. Cách sửa phổ biến là bọc <code>ListView</code> bằng <code>Expanded</code> để nó nhận đúng phần chiều cao còn lại, hoặc đặt trong <code>SizedBox</code> có chiều cao cố định. <code>shrinkWrap: true</code> cũng hết lỗi nhưng list phải tính kích thước theo toàn bộ nội dung nên tốn chi phí hơn, chỉ hợp với list ngắn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q25.html"><code>Stack</code> và <code>Positioned</code> dùng để làm gì? Cho ví dụ thực tế.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Stack</code> xếp các con chồng lên nhau, con khai báo sau được vẽ đè lên con trước. <code>Positioned</code> (chỉ dùng làm con trực tiếp của <code>Stack</code>) đặt widget theo khoảng cách <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> so với cạnh của Stack, còn con không có <code>Positioned</code> được căn theo <code>alignment</code> của Stack. Ví dụ thường gặp: chấm online ở góc avatar, badge số lượng trên icon giỏ hàng, hay chữ đè lên ảnh banner.</div>
+        <pre class="code-block"><code><span class="tk-type">Stack</span>(
+  children: [
+    <span class="tk-kw">const</span> <span class="tk-type">CircleAvatar</span>(radius: <span class="tk-num">24</span>, child: <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.person)),
+    <span class="tk-kw">const</span> <span class="tk-type">Positioned</span>(
+      right: <span class="tk-num">0</span>,
+      bottom: <span class="tk-num">0</span>,
+      child: <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.circle, size: <span class="tk-num">12</span>, color: <span class="tk-type">Colors</span>.green),
+    ),
+  ],
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q26.html"><code>Container</code>, <code>SizedBox</code> và <code>Padding</code> khác nhau thế nào? Khi nào nên dùng cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Container</code> là widget đa năng gộp padding, margin, màu nền, <code>decoration</code> (bo góc, viền, shadow), kích thước và căn chỉnh. <code>SizedBox</code> chỉ để đặt kích thước cố định hoặc tạo khoảng trống (ví dụ <code>SizedBox(height: 16)</code> giữa hai widget), còn <code>Padding</code> chỉ thêm khoảng đệm quanh con. Khi chỉ cần một chức năng thì nên dùng widget chuyên biệt vì gọn hơn và dùng được <code>const</code>; lưu ý <code>Container</code> không cho truyền đồng thời <code>color</code> và <code>decoration</code>, phải đặt màu bên trong <code>BoxDecoration</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="state">
+  <div class="section-head"><h2>State Management</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/state/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q32.html"><code>setState</code> làm gì? Nếu đổi giá trị biến mà không gọi <code>setState</code> thì chuyện gì xảy ra?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>setState</code> chạy callback để cập nhật dữ liệu rồi đánh dấu State cần rebuild, framework sẽ gọi lại <code>build</code> ở frame kế tiếp để vẽ UI mới. Nếu đổi biến mà không gọi <code>setState</code>, dữ liệu trong bộ nhớ đã đổi nhưng UI vẫn hiển thị giá trị cũ cho tới khi có lý do khác khiến widget rebuild. Callback của <code>setState</code> phải đồng bộ: hãy <code>await</code> lấy dữ liệu xong rồi mới gọi <code>setState</code> để gán kết quả, không truyền hàm <code>async</code> vào <code>setState</code>.</div>
+        <pre class="code-block"><code>int count = <span class="tk-num">0</span>;
+
+<span class="tk-kw">void</span> _increment() {
+  setState(() {
+    count++; <span class="tk-com">// UI sẽ hiển thị giá trị mới</span>
+  });
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q33.html">Hot reload, hot restart và chạy lại app (full restart) khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hot reload nạp code Dart mới vào app đang chạy và rebuild cây widget nhưng giữ nguyên state, rất nhanh khi chỉnh UI. Hot restart chạy lại app từ <code>main()</code> nên mất toàn bộ state, nhưng không phải build lại phần native. Các thay đổi trong <code>main()</code>, <code>initState()</code> hay giá trị khởi tạo của biến global/static không được áp dụng khi hot reload, cần hot restart; còn sửa code native, thêm plugin có code native hoặc sửa cấu hình Android/iOS thì phải dừng app và chạy lại từ đầu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q27.html"><code>Navigator.push</code> và <code>Navigator.pop</code> hoạt động thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Navigator</code> quản lý các màn hình (route) theo dạng stack: <code>push</code> đẩy một route mới lên đỉnh để hiển thị, <code>pop</code> gỡ route trên cùng để quay về màn hình trước. Cách dùng thường gặp là <code>Navigator.push(context, MaterialPageRoute(builder: (_) =&gt; const DetailPage()))</code> và <code>Navigator.pop(context)</code>; nút back Android hay thao tác vuốt back trên iOS cũng dẫn tới pop. Lưu ý <code>context</code> phải nằm bên dưới <code>MaterialApp</code> (nơi tạo <code>Navigator</code>), nếu không sẽ gặp lỗi không tìm thấy Navigator.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q28.html">Làm sao truyền dữ liệu sang màn hình mới và nhận kết quả trả về khi quay lại?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cách đơn giản nhất là truyền qua constructor của màn hình đích, ví dụ <code>DetailPage(productId: 42)</code>. Để nhận kết quả, <code>await</code> lời gọi <code>Navigator.push</code> (nó trả về một <code>Future</code>), còn màn hình đích gọi <code>Navigator.pop(context, value)</code> để trả giá trị về. Nếu người dùng bấm back mà không chọn gì thì kết quả là <code>null</code>, nên phải xử lý trường hợp này.</div>
+        <pre class="code-block"><code><span class="tk-com">// Màn hình A</span>
+<span class="tk-kw">final</span> color = <span class="tk-kw">await</span> <span class="tk-type">Navigator</span>.push&lt;<span class="tk-type">String</span>&gt;(
+  context,
+  <span class="tk-type">MaterialPageRoute</span>(builder: (_) =&gt; <span class="tk-kw">const</span> <span class="tk-type">PickColorPage</span>()),
+);
+<span class="tk-kw">if</span> (color != <span class="tk-kw">null</span>) print(<span class="tk-str">&#39;Đã chọn $color&#39;</span>);
+
+<span class="tk-com">// Trong PickColorPage</span>
+onPressed: () =&gt; <span class="tk-type">Navigator</span>.pop(context, <span class="tk-str">&#39;red&#39;</span>),</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q29.html">Sau khi đăng nhập thành công, chuyển sang Home thế nào để người dùng không bấm back quay lại màn Login được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>Navigator.pushReplacement</code> để thay route Login hiện tại bằng Home, hoặc <code>Navigator.pushAndRemoveUntil(..., (route) =&gt; false)</code> để xóa toàn bộ stack cũ và chỉ còn Home. Nếu chỉ dùng <code>push</code> thì Login vẫn nằm bên dưới trong stack và nút back sẽ đưa người dùng về đó. Tương tự, khi đăng xuất cũng nên xóa stack để không quay lại được các màn hình cần đăng nhập.</div>
+        <pre class="code-block"><code><span class="tk-type">Navigator</span>.pushAndRemoveUntil(
+  context,
+  <span class="tk-type">MaterialPageRoute</span>(builder: (_) =&gt; <span class="tk-kw">const</span> <span class="tk-type">HomePage</span>()),
+  (route) =&gt; <span class="tk-kw">false</span>,
+);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q30.html">Làm sao chuyển một chuỗi JSON thành object Dart?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>jsonDecode</code> trong <code>dart:convert</code> để chuyển chuỗi thành <code>Map&lt;String, dynamic&gt;</code> (hoặc <code>List&lt;dynamic&gt;</code> nếu JSON là mảng), rồi viết factory constructor <code>fromJson</code> để map từng key sang field có kiểu rõ ràng. Nhờ vậy phần còn lại của app làm việc với object type-safe thay vì <code>map[&#39;name&#39;]</code> rải rác khắp nơi. Pitfall: số trong JSON có thể là <code>int</code> hoặc <code>double</code>, nên với giá tiền hay dùng <code>(json[&#39;price&#39;] as num).toDouble()</code>; dự án lớn thường dùng <code>json_serializable</code> để sinh code.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-str">&#39;dart:convert&#39;</span>;
+
+<span class="tk-kw">class</span> <span class="tk-type">User</span> {
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> name;
+  <span class="tk-kw">final</span> int age;
+  <span class="tk-type">User</span>({<span class="tk-kw">required</span> <span class="tk-kw">this</span>.name, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.age});
+
+  <span class="tk-kw">factory</span> <span class="tk-type">User</span>.fromJson(<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt; json) =&gt;
+      <span class="tk-type">User</span>(name: json[<span class="tk-str">&#39;name&#39;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>, age: json[<span class="tk-str">&#39;age&#39;</span>] <span class="tk-kw">as</span> int);
+}
+
+<span class="tk-kw">final</span> user = <span class="tk-type">User</span>.fromJson(jsonDecode(<span class="tk-str">&#39;{&quot;name&quot;:&quot;An&quot;,&quot;age&quot;:20}&#39;</span>));</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q31.html">Gọi một REST API đơn giản trong Flutter thế nào? Cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thêm package <code>http</code> (hoặc <code>dio</code>), gọi <code>await http.get(Uri.parse(url))</code>, kiểm tra <code>statusCode</code> rồi <code>jsonDecode(response.body)</code> và chuyển sang model. Cần bọc trong <code>try</code>/<code>catch</code> để xử lý mất mạng, timeout, và hiển thị trạng thái loading/lỗi trên UI. Trên Android, bản release phải khai báo quyền <code>INTERNET</code> trong <code>AndroidManifest.xml</code> của <code>src/main</code>; template chỉ thêm sẵn quyền này cho debug/profile nên hay gặp cảnh &#39;debug gọi được, release thì không&#39;.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-str">&#39;dart:convert&#39;</span>;
+<span class="tk-kw">import</span> <span class="tk-str">&#39;package:http/http.dart&#39;</span> <span class="tk-kw">as</span> http;
+
+<span class="tk-type">Future</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-kw">dynamic</span>&gt;&gt; fetchPosts() <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> res = <span class="tk-kw">await</span> http.<span class="tk-kw">get</span>(
+    <span class="tk-type">Uri</span>.parse(<span class="tk-str">&#39;https://jsonplaceholder.typicode.com/posts&#39;</span>),
+  );
+  <span class="tk-kw">if</span> (res.statusCode != <span class="tk-num">200</span>) {
+    <span class="tk-kw">throw</span> <span class="tk-type">Exception</span>(<span class="tk-str">&#39;Lỗi ${res.statusCode}&#39;</span>);
+  }
+  <span class="tk-kw">return</span> jsonDecode(res.body) <span class="tk-kw">as</span> <span class="tk-type">List</span>&lt;<span class="tk-kw">dynamic</span>&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="native">
+  <div class="section-head"><h2>Native &amp; Platform</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/native/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q35.html">Ở mức tổng quan, Flutter khác gì so với phát triển native (Kotlin/Swift) và React Native?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flutter dùng một codebase Dart cho nhiều nền tảng và tự vẽ toàn bộ UI bằng engine riêng (Impeller/Skia) thay vì dùng component có sẵn của hệ điều hành, nên giao diện đồng nhất giữa Android và iOS. React Native viết bằng JavaScript/TypeScript và hiển thị bằng component native của từng nền tảng; còn native thuần phải viết riêng Kotlin cho Android và Swift cho iOS nhưng truy cập API nền tảng trực tiếp nhất. Trên mobile, bản release của Flutter được compile AOT ra mã máy nên hiệu năng tốt, và khi cần tính năng nền tảng chưa có package thì gọi code native qua platform channel.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q34.html">Flutter có những build mode nào (debug, profile, release)? Dùng mỗi mode khi nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Debug mode (trên mobile dùng JIT) hỗ trợ hot reload, bật assertion và công cụ debug, nên chạy chậm hơn và không phản ánh hiệu năng thật. Profile mode compile AOT gần giống release nhưng vẫn giữ khả năng đo hiệu năng bằng DevTools, dùng khi cần kiểm tra giật lag, và nên chạy trên máy thật vì emulator/simulator không phản ánh đúng hiệu năng. Release mode compile AOT, tối ưu tối đa, tắt assertion và công cụ debug, dùng để phát hành (<code>flutter build apk</code>, <code>flutter build ipa</code>) hoặc chạy thử bằng <code>flutter run --release</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm Flutter Fresher</h2><a class="section-sub" href="../../../#/flutter/quiz?rank=fresher&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/fre-m01.html">Đoạn code khai báo biến bằng var dưới đây cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m02.html">Biến list được khai báo final rồi gọi add. Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m03.html">Đoạn code dùng string interpolation sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m04.html">Đoạn code sau in ra hai dòng nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m05.html">Biến data được gán literal {} rỗng. Đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m06.html">Với hàm dưới đây, lời gọi nào biên dịch thành công?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m07.html">Đoạn code dùng toán tử ! sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m08.html">Người dùng nhập tuổi vào TextField dưới dạng chuỗi text. Cần chuyển sang số nguyên mà không làm crash app khi người dùng gõ chữ. Nên dùng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m09.html">Đoạn code sau báo lỗi kiểu dữ liệu ở children. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m10.html">Trong pubspec.yaml khai báo http: ^1.2.0. Phiên bản nào sau đây được phép dùng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m11.html">Phát biểu nào về extends, implements, with trong Dart là SAI?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m12.html">Đoạn code sau in ra các số theo thứ tự nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m13.html">Hàm async dưới đây phải khai báo kiểu trả về (chỗ ???) là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m14.html">Vì sao đoạn code sau báo lỗi compile?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m15.html">Cách đúng để disable một ElevatedButton (hiển thị màu xám, không bấm được) là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m16.html">Widget nào KHÔNG còn tồn tại trong Flutter 3 hiện nay?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m17.html">Trong State của một màn hình có TextField, nên gọi _controller.dispose() cho TextEditingController ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m18.html">Bạn dùng Image.asset(&#39;assets/images/logo.png&#39;) nhưng app báo lỗi &#39;Unable to load asset&#39;, dù file đã nằm đúng thư mục. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m19.html">Cách hiển thị một SnackBar (biến bar) đúng với Flutter hiện nay là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m20.html">Trong build, cách lấy màu chính (primary) của theme hiện tại là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m21.html">Tình huống: muốn cả một hàng trong danh sách bấm được và có hiệu ứng gợn sóng (ripple) Material khi chạm. Nên bọc hàng đó bằng widget nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m22.html">Muốn tên sản phẩm dài chỉ hiển thị trên 1 dòng và kết thúc bằng dấu …, cấu hình Text thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m23.html">Trong class State _ProfilePageState, làm sao đọc tham số title được truyền vào widget?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m24.html">Một Row có 3 nút: muốn nút đầu sát mép trái, nút cuối sát mép phải, nút giữa cách đều hai bên. Dùng giá trị nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m25.html">Row dưới đây rộng 300 logical pixel. Hai Container rộng lần lượt bao nhiêu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m26.html">Đặt Expanded làm con trực tiếp của một Container (không nằm trong Row/Column) thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m27.html">Màn hình có tiêu đề cố định phía trên và danh sách cuộn bên dưới. Đặt ListView.builder trực tiếp trong Column thì báo lỗi &#39;Vertical viewport was given unbounded height&#39;. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m28.html">Trong Container, padding và margin khác nhau thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m29.html">Một Row gồm Icon và một Text rất dài bị lỗi overflow. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m30.html">Màn hình không có AppBar, nội dung ở mép trên bị tai thỏ (notch) và status bar che mất. Widget nào giúp tránh vùng này?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m31.html">Cách được khuyến nghị để lấy chiều rộng màn hình (logical pixel) bên trong build ở Flutter 3.x?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m32.html">Màn hình B trả kết quả về cho A bằng Navigator.pop(context, &#39;ok&#39;). Ở màn hình A, nhận giá trị này thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m33.html">Muốn chặn người dùng bấm back khi đang điền dở form để hiện dialog xác nhận, Flutter 3.x hiện tại khuyến nghị dùng widget nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m34.html">Gọi Navigator.pushNamed(context, &#39;/detail&#39;, arguments: 42). Màn hình đích đọc giá trị 42 thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m35.html">Với chuỗi JSON là một object ({&quot;name&quot;: &quot;An&quot;, &quot;age&quot;: 20}), jsonDecode trả về giá trị có kiểu runtime nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m36.html">App gọi API bình thường khi chạy debug trên Android, nhưng bản build release cài cho khách hàng thì không gọi được mạng. Nguyên nhân thường gặp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m37.html">Bấm nút dưới đây 3 lần (không có gì khác khiến widget rebuild). Chữ trên nút hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m38.html">Bạn sửa giá trị khởi tạo trong initState() (ví dụ count = 10 thay vì 0) rồi hot reload, nhưng màn hình không đổi. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m39.html">Muốn đo FPS và tìm nguyên nhân giật lag sát với trải nghiệm thật của người dùng, nên chạy app thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m40.html">Mới cài Flutter, muốn kiểm tra Android SDK, Xcode, thiết bị kết nối... đã sẵn sàng chưa thì chạy lệnh nào?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

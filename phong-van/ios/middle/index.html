@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">Middle</span>
+</nav>
+
+<header class="view-head rank-amber">
+  <div class="eyebrow">phỏng vấn · ios · middle (2–4 năm)</div>
+  <h1>Câu hỏi phỏng vấn iOS Middle</h1>
+  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../../../#/ios/study/middle">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/ios/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/ios/junior/">Junior</a>
+  <a class="chip active" href="../../../phong-van/ios/middle/" aria-current="page">Middle</a>
+  <a class="chip" href="../../../phong-van/ios/senior/">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#swift">Swift</a> <span class="count">3</span></li>
+    <li><a href="#memory">Memory &amp; ARC</a> <span class="count">1</span></li>
+    <li><a href="#concurrency">Concurrency</a> <span class="count">7</span></li>
+    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">2</span></li>
+    <li><a href="#swiftui">SwiftUI</a> <span class="count">3</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="swift">
+  <div class="section-head"><h2>Swift</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/swift/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q12.html">Trong code review bạn thấy <code>func makeRepository() -&gt; any UserRepository</code> ở chỗ này và <code>func render(_ shape: some Shape)</code> ở chỗ khác. <code>some</code> và <code>any</code> khác nhau thế nào, khi nào chọn cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>some P</code> là opaque type: luôn là một kiểu cụ thể duy nhất mà compiler biết lúc compile, chỉ bị che với người gọi; vì vậy hàm <code>-&gt; some View</code> phải trả về cùng một kiểu ở mọi nhánh, và compiler tối ưu được bằng static dispatch, specialization. Ở vị trí tham số, <code>some P</code> là cách viết gọn của generic <code>&lt;T: P&gt;</code>. <code>any P</code> là existential: một cái hộp chứa được bất kỳ kiểu nào conform <code>P</code>, kiểu thật có thể khác nhau lúc runtime; đổi lại tốn chi phí box (có thể cấp phát heap nếu giá trị lớn), dynamic dispatch, và các API dính tới <code>associatedtype</code>/<code>Self</code> bị hạn chế. Thực tế nên mặc định dùng <code>some</code>/generic, chỉ dùng <code>any</code> khi cần tập hợp dị chủng như <code>[any Shape]</code>, hoặc khi kiểu cụ thể chỉ được chọn lúc runtime như factory trả về mock hay bản thật.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q13.html">Array, Dictionary của Swift là value type nhưng gán qua lại rất rẻ nhờ copy-on-write. Nếu bạn tự viết một struct bọc storage là class (vd. một buffer lớn), làm sao để nó cũng có copy-on-write?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Copy-on-write nghĩa là khi gán sang biến khác, hai bản chỉ chia sẻ chung một buffer; việc copy thật chỉ xảy ra khi một bản muốn ghi trong lúc buffer đang được chia sẻ. Struct tự viết chứa class thì mặc định không có COW: copy struct chỉ copy tham chiếu, sửa qua bản này thì bản kia cũng đổi theo, phá vỡ value semantics. Cách làm: trước mọi thao tác ghi, gọi <code>isKnownUniquelyReferenced(&amp;storage)</code>; nếu storage đang được chia sẻ thì clone ra bản mới rồi mới ghi. Lưu ý COW không tự có cho mọi struct, chỉ có ở các collection chuẩn và những kiểu tự cài đặt như trên; struct thường nhiều field thì về nguyên tắc vẫn được copy toàn bộ khi gán.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Storage</span> {
+  <span class="tk-kw">var</span> values: [<span class="tk-type">Int</span>]
+  <span class="tk-kw">init</span>(_ values: [<span class="tk-type">Int</span>]) { <span class="tk-kw">self</span>.values = values }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">Buffer</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> storage = <span class="tk-type">Storage</span>([])
+
+  <span class="tk-kw">mutating</span> <span class="tk-kw">func</span> append(_ x: <span class="tk-type">Int</span>) {
+    <span class="tk-kw">if</span> !isKnownUniquelyReferenced(&amp;storage) {
+      storage = <span class="tk-type">Storage</span>(storage.values) <span class="tk-com">// đang bị chia sẻ: clone trước khi ghi</span>
+    }
+    storage.values.append(x)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q14.html">Bạn muốn các property như <code>volume</code>, <code>progress</code> luôn bị giới hạn trong một khoảng giá trị mà không phải lặp code ở từng setter. Viết property wrapper thế nào, và <code>projectedValue</code> (truy cập qua <code>$</code>) dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Property wrapper là type đánh dấu <code>@propertyWrapper</code> có <code>wrappedValue</code>; khi viết <code>@Clamped(0...1) var volume = 0.5</code>, compiler sinh ra backing storage <code>_volume</code> kiểu <code>Clamped&lt;Double&gt;</code> và chuyển mọi lần đọc/ghi <code>volume</code> sang <code>_volume.wrappedValue</code>, nên logic giới hạn nằm ở một chỗ. <code>projectedValue</code> là giá trị phụ truy cập qua <code>$volume</code>, dùng để lộ thêm thông tin hoặc API, giống <code>@State</code> có <code>$</code> trả về <code>Binding</code>, <code>@Published</code> có <code>$</code> trả về publisher. Hạn chế cần biết: không khai báo được property wrapper trong protocol requirement, và vì logic chạy trong getter/setter ở mỗi lần truy cập nên đừng đặt việc nặng vào đó.</div>
+        <pre class="code-block"><code><span class="tk-ann">@propertyWrapper</span>
+<span class="tk-kw">struct</span> <span class="tk-type">Clamped</span>&lt;<span class="tk-type">Value</span>: <span class="tk-type">Comparable</span>&gt; {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> value: <span class="tk-type">Value</span>
+  <span class="tk-kw">let</span> range: <span class="tk-type">ClosedRange</span>&lt;<span class="tk-type">Value</span>&gt;
+  <span class="tk-kw">init</span>(wrappedValue: <span class="tk-type">Value</span>, _ range: <span class="tk-type">ClosedRange</span>&lt;<span class="tk-type">Value</span>&gt;) {
+    <span class="tk-kw">self</span>.range = range
+    <span class="tk-kw">self</span>.value = min(max(wrappedValue, range.lowerBound), range.upperBound)
+  }
+  <span class="tk-kw">var</span> wrappedValue: <span class="tk-type">Value</span> {
+    <span class="tk-kw">get</span> { value }
+    <span class="tk-kw">set</span> { value = min(max(newValue, range.lowerBound), range.upperBound) }
+  }
+  <span class="tk-kw">var</span> projectedValue: <span class="tk-type">ClosedRange</span>&lt;<span class="tk-type">Value</span>&gt; { range } <span class="tk-com">// đọc qua $volume</span>
+}
+<span class="tk-com">// Dùng: @Clamped(0...1) var volume = 0.5  -&gt; gán volume = 2 sẽ thành 1</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="memory">
+  <div class="section-head"><h2>Memory &amp; ARC</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/memory/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q08.html">ViewModel lắng nghe một <code>AsyncStream</code> bằng <code>Task { for await event in stream { ... } }</code>. Màn hình đã đóng nhưng <code>deinit</code> của ViewModel không bao giờ chạy. Vì sao, và thêm <code>[weak self]</code> có đủ không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Closure của <code>Task</code> giữ <code>self</code> mạnh suốt thời gian task chạy, mà vòng <code>for await</code> trên một stream không kết thúc thì task chạy mãi, nên ViewModel không bao giờ được giải phóng. Chỉ thêm <code>[weak self]</code> là chưa đủ nếu ngay đầu task viết <code>guard let self</code> rồi mới vào vòng lặp, vì khi đó <code>self</code> lại bị giữ mạnh trong suốt vòng lặp. Cách đúng là giữ handle của task và <code>cancel()</code> khi màn hình biến mất (từ <code>onDisappear</code> hoặc coordinator), hoặc chỉ unwrap <code>self</code> bên trong từng vòng lặp. Trong SwiftUI, modifier <code>.task</code> tự cancel khi view biến mất nên là cách gọn nhất. Lưu ý không thể dựa vào <code>deinit</code> để cancel task, vì <code>deinit</code> chính là thứ đang không chạy.</div>
+        <pre class="code-block"><code><span class="tk-ann">@MainActor</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">ChatViewModel</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> listenTask: <span class="tk-type">Task</span>&lt;<span class="tk-type">Void</span>, <span class="tk-type">Never</span>&gt;?
+
+  <span class="tk-kw">func</span> start(stream: <span class="tk-type">AsyncStream</span>&lt;<span class="tk-type">Message</span>&gt;) {
+    listenTask = <span class="tk-type">Task</span> { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] <span class="tk-kw">in</span>
+      <span class="tk-kw">for</span> <span class="tk-kw">await</span> message <span class="tk-kw">in</span> stream {
+        <span class="tk-kw">guard</span> <span class="tk-kw">let</span> <span class="tk-kw">self</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// chỉ giữ self mạnh trong từng vòng</span>
+        <span class="tk-kw">self</span>.handle(message)
+      }
+    }
+  }
+
+  <span class="tk-kw">func</span> stop() { listenTask?.cancel() }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="concurrency">
+  <div class="section-head"><h2>Concurrency</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/concurrency/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q01.html">Màn Home cần gọi 3 API độc lập (profile, banner, khuyến mãi), còn màn danh sách phải tải thumbnail cho N sản phẩm. Bạn dùng <code>async let</code> hay <code>TaskGroup</code> cho từng trường hợp? Nếu một request throw thì các request còn lại ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>async let</code> hợp với số task cố định, biết trước lúc viết code, mỗi task có thể trả về kiểu khác nhau; <code>withThrowingTaskGroup</code> dành cho số task động như N thumbnail, kết quả cùng kiểu và được nhận về theo thứ tự hoàn thành. Cả hai đều là structured concurrency: child task không sống lâu hơn scope tạo ra nó, task cha bị cancel thì child cũng bị cancel. Khi lỗi thoát khỏi scope, các child còn đang chạy bị cancel và được chờ kết thúc rồi hàm mới throw ra ngoài. Bẫy hay gặp: với <code>async let</code>, lỗi chỉ lộ ra khi <code>await</code> tới đúng biến đó nên thứ tự await quyết định phát hiện lỗi sớm hay muộn; còn viết <code>let a = try await f()</code> liên tiếp thì các request chạy tuần tự chứ không song song.</div>
+        <pre class="code-block"><code><span class="tk-kw">func</span> loadHome() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">HomeData</span> {
+  <span class="tk-kw">async</span> <span class="tk-kw">let</span> profile = api.fetchProfile()
+  <span class="tk-kw">async</span> <span class="tk-kw">let</span> banners = api.fetchBanners()
+  <span class="tk-kw">async</span> <span class="tk-kw">let</span> deals = api.fetchDeals()
+  <span class="tk-com">// Ba request chạy song song, chờ đủ cả ba</span>
+  <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">HomeData</span>(profile: profile, banners: banners, deals: deals)
+}
+<span class="tk-kw">func</span> loadThumbnails(ids: [<span class="tk-type">String</span>]) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; [<span class="tk-type">String</span>: <span class="tk-type">Data</span>] {
+  <span class="tk-kw">try</span> <span class="tk-kw">await</span> withThrowingTaskGroup(of: (<span class="tk-type">String</span>, <span class="tk-type">Data</span>).<span class="tk-kw">self</span>) { group <span class="tk-kw">in</span>
+    <span class="tk-kw">for</span> id <span class="tk-kw">in</span> ids { group.addTask { <span class="tk-kw">try</span> <span class="tk-kw">await</span> (id, api.thumbnail(id)) } }
+    <span class="tk-kw">var</span> result: [<span class="tk-type">String</span>: <span class="tk-type">Data</span>] = [:]
+    <span class="tk-kw">for</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> (id, data) <span class="tk-kw">in</span> group { result[id] = data }
+    <span class="tk-kw">return</span> result
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q02.html">Bạn đưa logic refresh token vào một <code>actor</code> để tránh race condition, nhưng log vẫn cho thấy API refresh bị gọi 2–3 lần khi nhiều request cùng gặp 401. Vì sao actor không chặn được, và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Actor chỉ đảm bảo tại một thời điểm có tối đa một đoạn code chạy trên nó, nhưng actor là reentrant: tại mỗi <code>await</code>, actor được phép xử lý lời gọi khác. Request thứ nhất thấy token hết hạn và <code>await</code> refresh; trong lúc chờ, request thứ hai vào actor, cũng thấy token hết hạn và gọi refresh lần nữa. Cách sửa phổ biến là lưu <code>Task</code> refresh đang chạy vào một property, các lời gọi đến sau chỉ <code>await</code> chính task đó. Nguyên tắc chung khi viết actor: sau mỗi <code>await</code> đừng giả định state còn như cũ, hãy kiểm tra lại, và gom phần đọc rồi sửa state vào đoạn đồng bộ không có <code>await</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">actor</span> <span class="tk-type">TokenProvider</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> token: <span class="tk-type">Token</span>?
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> refreshTask: <span class="tk-type">Task</span>&lt;<span class="tk-type">Token</span>, <span class="tk-type">Error</span>&gt;?
+
+  <span class="tk-kw">func</span> validToken() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Token</span> {
+    <span class="tk-kw">if</span> <span class="tk-kw">let</span> token, !token.isExpired { <span class="tk-kw">return</span> token }
+    <span class="tk-kw">if</span> <span class="tk-kw">let</span> refreshTask { <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> refreshTask.value } <span class="tk-com">// đã có người refresh</span>
+    <span class="tk-kw">let</span> task = <span class="tk-type">Task</span> { <span class="tk-kw">try</span> <span class="tk-kw">await</span> authAPI.refresh() }
+    refreshTask = task
+    <span class="tk-kw">defer</span> { refreshTask = <span class="tk-kw">nil</span> }
+    <span class="tk-kw">let</span> newToken = <span class="tk-kw">try</span> <span class="tk-kw">await</span> task.value
+    token = newToken
+    <span class="tk-kw">return</span> newToken
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q03.html">ViewModel gán <code>@Published</code> từ completion handler của <code>URLSession</code> và Xcode báo tím &quot;Publishing changes from background threads is not allowed&quot;. Với Swift Concurrency, bạn sửa thế nào cho triệt để thay vì rải <code>DispatchQueue.main.async</code> khắp nơi?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đánh dấu cả ViewModel là <code>@MainActor</code>: mọi property và method của nó được cô lập trên main actor, compiler buộc code từ ngữ cảnh khác phải <code>await</code> khi truy cập, nên không còn chuyện quên chuyển về main thread. Đồng thời đổi sang API async như <code>URLSession.data(for:)</code>: khi <code>await</code>, hàm chỉ suspend chứ không block main thread, request được xử lý ở nơi khác và khi xong thì quay lại main actor để gán state. Còn <code>DispatchQueue.main.async</code> phải nhớ đặt ở từng chỗ và compiler không kiểm tra giúp. Bẫy cần biết: <code>@MainActor</code> không làm việc nặng nhẹ đi, nếu parse JSON lớn hay xử lý ảnh đồng bộ ngay trong method của ViewModel thì main thread vẫn bị chiếm, phần đó nên tách sang type hoặc actor khác.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q04.html">Ô search gọi API mỗi khi user gõ, và kết quả của từ khoá cũ đôi khi về sau, đè lên kết quả mới. Bạn huỷ request cũ thế nào? Gọi <code>task.cancel()</code> thì code trong task có dừng ngay không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cancellation trong Swift Concurrency là cooperative: <code>cancel()</code> chỉ đánh dấu task đã bị huỷ, code bên trong phải tự kiểm tra bằng <code>Task.isCancelled</code>, <code>try Task.checkCancellation()</code>, hoặc gọi các API có hỗ trợ huỷ như <code>Task.sleep</code> và các hàm async của <code>URLSession</code> (chúng throw khi task bị cancel). Cách làm: giữ tham chiếu <code>Task</code> hiện tại, cancel nó trước khi tạo task mới, dùng <code>Task.sleep</code> để debounce. Quan trọng là kiểm tra lại <code>Task.isCancelled</code> sau khi <code>await</code> xong và trước khi gán kết quả, nếu không response của từ khoá cũ vẫn có thể ghi đè. Trong SwiftUI có thể dùng <code>.task(id: query)</code>, SwiftUI tự cancel task cũ mỗi khi <code>query</code> đổi.</div>
+        <pre class="code-block"><code><span class="tk-com">// Trong ViewModel @MainActor</span>
+<span class="tk-kw">private</span> <span class="tk-kw">var</span> searchTask: <span class="tk-type">Task</span>&lt;<span class="tk-type">Void</span>, <span class="tk-type">Never</span>&gt;?
+
+<span class="tk-kw">func</span> queryChanged(_ text: <span class="tk-type">String</span>) {
+  searchTask?.cancel()
+  searchTask = <span class="tk-type">Task</span> {
+    <span class="tk-kw">try</span>? <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: .milliseconds(<span class="tk-num">300</span>)) <span class="tk-com">// debounce</span>
+    <span class="tk-kw">guard</span> !<span class="tk-type">Task</span>.isCancelled <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    <span class="tk-kw">let</span> result = <span class="tk-kw">try</span>? <span class="tk-kw">await</span> api.search(text)
+    <span class="tk-kw">guard</span> !<span class="tk-type">Task</span>.isCancelled, <span class="tk-kw">let</span> result <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// bỏ kết quả cũ</span>
+    items = result
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q05.html">Team còn dùng một SDK cũ chỉ có API dạng callback. Bạn bọc nó thành hàm <code>async</code> thế nào, và bẫy nào có thể khiến app crash hoặc treo?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>withCheckedThrowingContinuation</code>: bên trong gọi API cũ, khi callback trả về thì <code>resume(returning:)</code> hoặc <code>resume(throwing:)</code> (có sẵn <code>Result</code> thì dùng <code>resume(with:)</code>). Luật bắt buộc là resume đúng một lần trên mọi nhánh: resume hai lần sẽ crash, quên resume thì task treo mãi và bản checked chỉ log cảnh báo continuation bị leak. <code>withUnsafeContinuation</code> bỏ các kiểm tra này để nhanh hơn một chút, chỉ nên dùng khi đã chắc chắn code đúng. Nếu callback được gọi nhiều lần (delegate vị trí, tiến trình download) thì continuation không phù hợp, hãy dùng <code>AsyncStream</code> với <code>continuation.yield</code> và <code>onTermination</code> để dọn dẹp.</div>
+        <pre class="code-block"><code><span class="tk-kw">func</span> loadProfile(id: <span class="tk-type">String</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Profile</span> {
+  <span class="tk-kw">try</span> <span class="tk-kw">await</span> withCheckedThrowingContinuation { continuation <span class="tk-kw">in</span>
+    legacySDK.fetchProfile(id: id) { profile, error <span class="tk-kw">in</span>
+      <span class="tk-kw">if</span> <span class="tk-kw">let</span> profile {
+        continuation.resume(returning: profile)
+      } <span class="tk-kw">else</span> {
+        <span class="tk-com">// Nhánh nào cũng phải resume đúng một lần</span>
+        continuation.resume(throwing: error ?? <span class="tk-type">SDKError</span>.unknown)
+      }
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q06.html">Bật Swift 6 language mode, project báo hàng loạt lỗi liên quan tới <code>Sendable</code> khi truyền dữ liệu giữa các actor và task. <code>Sendable</code> nghĩa là gì, và bạn xử lý các lỗi này theo hướng nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Sendable</code> đánh dấu kiểu có thể chuyển qua ranh giới concurrency (giữa các actor, vào task khác) mà không gây data race. Struct/enum không public có mọi thành phần <code>Sendable</code> thì được suy ra tự động, actor luôn <code>Sendable</code>, còn class chỉ hợp lệ khi là <code>final</code> và chỉ chứa <code>let</code> có kiểu <code>Sendable</code>, hoặc được cô lập vào global actor như <code>@MainActor</code>. Hướng xử lý: ưu tiên model là struct bất biến, đưa state mutable dùng chung vào actor, đánh dấu <code>@MainActor</code> cho type thuộc UI. <code>@unchecked Sendable</code> chỉ dùng khi tự bảo vệ bằng lock và chấp nhận tự chịu trách nhiệm; <code>@preconcurrency import</code> giúp tạm giảm lỗi từ module bên thứ ba chưa cập nhật. Nên migrate từng module: bật strict concurrency mức <code>complete</code> ở Swift 5 mode để thấy warning trước, sửa xong mới chuyển sang Swift 6 mode.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q07.html">Codebase đang dùng Combine cho màn search (<code>debounce</code>, <code>removeDuplicates</code>, <code>flatMap</code>). Team muốn chuyển sang async/await. Combine và <code>AsyncSequence</code> khác nhau ở điểm nào, phần nào nên giữ Combine?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Combine là push-based: publisher đẩy giá trị cho subscriber, có sẵn nhiều operator theo thời gian như <code>debounce</code>, <code>throttle</code>, <code>combineLatest</code>, subscription sống theo <code>AnyCancellable</code>. <code>AsyncSequence</code> là pull-based: consumer dùng <code>for await</code> lấy từng giá trị, tự gắn với cancellation của task và với actor, code đọc tuần tự dễ hiểu; nhưng thư viện chuẩn chưa có operator theo thời gian, cần thêm package <code>swift-async-algorithms</code>. Có thể chuyển dần vì publisher nào cũng có <code>.values</code> để dùng như <code>AsyncSequence</code>. Pipeline phản ứng nhiều nguồn đang chạy ổn thì cứ giữ Combine, còn gọi API một lần thì async/await gọn hơn. Riêng màn search, <code>flatMap</code> không huỷ request của từ khoá cũ nên kết quả cũ có thể về sau và đè kết quả mới; dùng <code>map</code> + <code>switchToLatest</code> để chỉ giữ request mới nhất.</div>
+        <pre class="code-block"><code><span class="tk-kw">init</span>(api: <span class="tk-type">SearchAPI</span>) {
+  $query
+    .debounce(<span class="tk-kw">for</span>: .milliseconds(<span class="tk-num">300</span>), scheduler: <span class="tk-type">DispatchQueue</span>.main)
+    .removeDuplicates()
+    .map { text <span class="tk-kw">in</span> api.search(text) } <span class="tk-com">// AnyPublisher&lt;[Item], Never&gt;</span>
+    .switchToLatest()                  <span class="tk-com">// bỏ kết quả của từ khoá cũ</span>
+    .receive(on: <span class="tk-type">DispatchQueue</span>.main)
+    .assign(to: &amp;$items)               <span class="tk-com">// không giữ self, tự huỷ theo object</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="uikit">
+  <div class="section-head"><h2>UIKit &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/uikit/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q21.html">Bạn đổi <code>constant</code> của một constraint rồi gọi <code>UIView.animate</code>, nhưng view nhảy ngay sang vị trí mới mà không có animation. Giải thích layout cycle và cách sửa; <code>setNeedsLayout</code> khác <code>layoutIfNeeded</code> thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đổi constraint không cập nhật frame ngay: UIKit chỉ đánh dấu view cần layout lại, tới lần cập nhật kế tiếp của run loop mới chạy <code>layoutSubviews</code> từ trên xuống. <code>setNeedsLayout()</code> chỉ đánh dấu rồi trả về ngay, layout xảy ra sau; <code>layoutIfNeeded()</code> ép layout chạy đồng bộ ngay lập tức nếu đang có đánh dấu. Vì vậy muốn animate thì đổi <code>constant</code> trước, rồi trong block animation gọi <code>layoutIfNeeded()</code> trên view cha chung (thường là <code>view</code> của VC) để frame mới được tính bên trong animation. Nên gọi <code>layoutIfNeeded()</code> một lần trước khi đổi constraint để hoàn tất thay đổi đang chờ, tránh chúng bị cuốn vào animation. Cùng lý do đó, frame đọc trong <code>viewDidLoad</code> thường chưa đúng, hãy dùng <code>viewDidLayoutSubviews</code>.</div>
+        <pre class="code-block"><code>view.layoutIfNeeded() <span class="tk-com">// hoàn tất layout đang chờ</span>
+bottomConstraint.constant = keyboardHeight
+<span class="tk-type">UIView</span>.animate(withDuration: <span class="tk-num">0.25</span>) {
+  <span class="tk-kw">self</span>.view.layoutIfNeeded() <span class="tk-com">// frame mới được tính trong block animation</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q22.html">Nút &quot;đóng&quot; được đặt lệch một nửa ra ngoài bounds của view cha (cha đã tắt <code>clipsToBounds</code>), phần lòi ra ngoài bấm không ăn. Vì sao, và hit-testing với responder chain hoạt động thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi chạm, UIKit gọi <code>hitTest(_:with:)</code> từ window đi xuống: mỗi view kiểm tra <code>point(inside:with:)</code>, nếu điểm nằm ngoài bounds của mình thì bỏ qua toàn bộ cây con, nên phần subview lòi ra ngoài cha không bao giờ nhận touch dù vẫn được vẽ. View cũng bị bỏ qua khi <code>isHidden</code>, <code>alpha</code> dưới 0.01 hoặc <code>isUserInteractionEnabled = false</code>. Cách sửa là override <code>point(inside:with:)</code> của view cha để tính thêm vùng của nút, hoặc đơn giản hơn là đổi layout cho nút nằm gọn trong cha. Sau khi tìm được view nhận touch, event được xử lý theo responder chain: view, các superview, view controller, window rồi <code>UIApplication</code>, cho tới khi có responder xử lý; action gửi tới target <code>nil</code> cũng được tìm dọc chuỗi này.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="swiftui">
+  <div class="section-head"><h2>SwiftUI</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/swiftui/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q09.html">Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù text nằm trong <code>@State</code> của view con. Nguyên nhân liên quan tới identity của view là gì, và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SwiftUI gắn <code>@State</code> với identity của view chứ không gắn với struct view. Identity gồm structural identity (vị trí trong cây, mỗi nhánh <code>if</code>/<code>else</code> là một vị trí khác nhau) và explicit identity (<code>id</code> trong <code>ForEach</code>, modifier <code>.id(...)</code>). Nếu viết <code>if isLoading { FormView().disabled(true) } else { FormView() }</code> thì khi đổi nhánh, SwiftUI coi đó là hai view khác nhau, huỷ view cũ cùng state của nó rồi tạo view mới. Cách sửa là giữ một view duy nhất và thay đổi bằng modifier (<code>.disabled(isLoading)</code>, <code>.opacity</code>, <code>.overlay</code>) thay vì rẽ nhánh. Ngược lại, khi muốn chủ động reset state (đổi user, đổi sản phẩm), gắn <code>.id(product.id)</code> để SwiftUI tạo view mới; đừng dùng <code>.id(UUID())</code> vì view sẽ bị tạo lại ở mỗi lần render.</div>
+        <pre class="code-block"><code><span class="tk-com">// Sai: hai nhánh là hai identity khác nhau, state của FormView bị reset</span>
+<span class="tk-kw">if</span> isLoading {
+  <span class="tk-type">FormView</span>().disabled(<span class="tk-kw">true</span>)
+} <span class="tk-kw">else</span> {
+  <span class="tk-type">FormView</span>()
+}
+
+<span class="tk-com">// Đúng: một identity, chỉ đổi modifier</span>
+<span class="tk-type">FormView</span>()
+  .disabled(isLoading)
+  .overlay { <span class="tk-kw">if</span> isLoading { <span class="tk-type">ProgressView</span>() } }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q10.html">Team chuyển ViewModel từ <code>ObservableObject</code> + <code>@Published</code> sang macro <code>@Observable</code>. Cơ chế cập nhật view khác gì, và <code>@StateObject</code>, <code>@ObservedObject</code>, <code>@EnvironmentObject</code> được thay bằng gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với <code>ObservableObject</code>, bất kỳ <code>@Published</code> nào đổi cũng bắn <code>objectWillChange</code>, nên mọi view đang observe object đó đều tính lại <code>body</code>, kể cả view không dùng property vừa đổi. <code>@Observable</code> (framework Observation, iOS 17+) theo dõi theo từng property: SwiftUI ghi lại property nào được đọc trong <code>body</code> và chỉ cập nhật view khi đúng property đó đổi, giảm re-render rõ rệt. Khi chuyển: <code>@StateObject</code> thành <code>@State</code>, <code>@ObservedObject</code> thành property thường (<code>let</code>/<code>var</code>), cần tạo binding thì dùng <code>@Bindable</code>, <code>@EnvironmentObject</code> thành <code>@Environment(Model.self)</code> đi cùng <code>.environment(model)</code>. Bẫy: property không cần theo dõi thì đánh dấu <code>@ObservationIgnored</code>, và <code>@State</code> vẫn chạy biểu thức khởi tạo mỗi lần view init (chỉ giữ instance đầu tiên) nên tránh làm việc nặng trong <code>init</code> của model.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Observable</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">CartModel</span> {
+  <span class="tk-kw">var</span> items: [<span class="tk-type">Item</span>] = []
+  <span class="tk-kw">var</span> couponCode = <span class="tk-str">&quot;&quot;</span>
+  <span class="tk-ann">@ObservationIgnored</span> <span class="tk-kw">var</span> lastSync: <span class="tk-type">Date</span>? <span class="tk-com">// đổi không làm view cập nhật</span>
+}
+<span class="tk-kw">struct</span> <span class="tk-type">CartScreen</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> model = <span class="tk-type">CartModel</span>() <span class="tk-com">// thay cho @StateObject</span>
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> { <span class="tk-type">CouponField</span>(model: model) }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">CouponField</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@Bindable</span> <span class="tk-kw">var</span> model: <span class="tk-type">CartModel</span> <span class="tk-com">// để tạo binding $model.couponCode</span>
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> { <span class="tk-type">TextField</span>(<span class="tk-str">&quot;Mã giảm giá&quot;</span>, text: $model.couponCode) }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q11.html">View cha cần biết chiều cao thực tế của một view con (để làm header co giãn hoặc căn các cột bằng nhau). <code>GeometryReader</code> và <code>PreferenceKey</code> phối hợp thế nào, và vì sao không nên bọc cả màn hình trong <code>GeometryReader</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trong SwiftUI dữ liệu chảy từ cha xuống con; muốn đẩy thông tin ngược lên thì dùng <code>PreferenceKey</code>: con gắn <code>.preference(key:value:)</code>, cha đọc bằng <code>.onPreferenceChange</code>, còn <code>reduce</code> quyết định cách gộp khi nhiều con cùng gửi giá trị (lấy max, cộng dồn…). Để đo kích thước, đặt <code>GeometryReader</code> trong <code>.background</code> của view con: nó được đề xuất đúng kích thước của con và không làm thay đổi layout. Bọc trực tiếp nội dung trong <code>GeometryReader</code> thì nó chiếm toàn bộ không gian được đề xuất và đặt con ở góc trên bên trái, rất dễ phá layout. Cẩn thận vòng lặp: đo kích thước rồi set state làm đổi chính kích thước đó sẽ khiến layout cập nhật liên tục.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">HeightKey</span>: <span class="tk-type">PreferenceKey</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> defaultValue: <span class="tk-type">CGFloat</span> = <span class="tk-num">0</span>
+  <span class="tk-kw">static</span> <span class="tk-kw">func</span> reduce(value: <span class="tk-kw">inout</span> <span class="tk-type">CGFloat</span>, nextValue: () -&gt; <span class="tk-type">CGFloat</span>) {
+    value = max(value, nextValue()) <span class="tk-com">// nhiều con: lấy cao nhất</span>
+  }
+}
+
+<span class="tk-type">HeaderView</span>()
+  .background(<span class="tk-type">GeometryReader</span> { proxy <span class="tk-kw">in</span>
+    <span class="tk-type">Color</span>.clear.preference(key: <span class="tk-type">HeightKey</span>.<span class="tk-kw">self</span>, value: proxy.size.height)
+  })
+  .onPreferenceChange(<span class="tk-type">HeightKey</span>.<span class="tk-kw">self</span>) { headerHeight = $<span class="tk-num">0</span> }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q25.html">App SwiftUI cần mở thẳng màn chi tiết đơn hàng khi user bấm universal link <code>https://shop.vn/orders/123</code>, kể cả khi app đang ở tab khác hoặc đã push nhiều màn. Bạn tổ chức navigation thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>NavigationStack(path:)</code> với path là mảng route <code>Hashable</code> (enum <code>Route</code>) hoặc <code>NavigationPath</code>, đặt trong một router <code>@Observable</code> để điều khiển điều hướng bằng code: push là append, pop về root là gán mảng rỗng. Mỗi kiểu route đăng ký đích đến bằng <code>.navigationDestination(for:)</code> gắn bên trong stack. Khi nhận link qua <code>.onOpenURL</code> (nhận cả universal link lẫn custom scheme), parse URL thành route, chọn đúng tab rồi gán lại cả path. Universal link cần file <code>apple-app-site-association</code> trên domain và entitlement Associated Domains (<code>applinks:shop.vn</code>); nếu máy chưa cài app, link mở website. Nhớ xử lý trường hợp user chưa đăng nhập: lưu route lại và điều hướng sau khi login xong.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">Route</span>: <span class="tk-type">Hashable</span> {
+  <span class="tk-kw">case</span> orders
+  <span class="tk-kw">case</span> orderDetail(id: <span class="tk-type">String</span>)
+}
+
+<span class="tk-ann">@Observable</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Router</span> {
+  <span class="tk-kw">var</span> path: [<span class="tk-type">Route</span>] = []
+  <span class="tk-kw">func</span> handle(_ url: <span class="tk-type">URL</span>) {
+    <span class="tk-kw">guard</span> url.pathComponents.count == <span class="tk-num">3</span>, url.pathComponents[<span class="tk-num">1</span>] == <span class="tk-str">&quot;orders&quot;</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    path = [.orders, .orderDetail(id: url.pathComponents[<span class="tk-num">2</span>])]
+  }
+}
+<span class="tk-com">// NavigationStack(path: $router.path) { ... }</span>
+<span class="tk-com">//   .navigationDestination(for: Route.self) { route in destination(route) }</span>
+<span class="tk-com">//   .onOpenURL { router.handle($0) }</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q15.html">ViewController của bạn tự <code>push</code> màn tiếp theo và biết quá nhiều về flow (login xong đi đâu, mở từ notification thì vào màn nào). Coordinator giải quyết việc này thế nào, và có bẫy gì về bộ nhớ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Coordinator tách trách nhiệm điều hướng ra khỏi ViewController: VC chỉ báo sự kiện (user đã login, đã chọn sản phẩm) qua delegate hoặc closure, còn coordinator quyết định tạo màn nào, inject dependency gì và push hay present. Nhờ vậy VC tái sử dụng được ở nhiều flow, deep link chỉ cần gọi vào coordinator, và logic flow test được mà không cần dựng UI. Bẫy bộ nhớ: coordinator không ai giữ sẽ bị giải phóng ngay sau <code>start()</code>, nên coordinator cha phải giữ con trong mảng <code>childCoordinators</code> và xoá khi flow kết thúc; ngược lại VC chỉ nên giữ coordinator bằng <code>weak</code> để không tạo retain cycle. Chỗ hay sót là khi user bấm nút Back hệ thống hoặc vuốt để quay lại, cần bắt qua <code>UINavigationControllerDelegate</code> để dọn child coordinator.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q16.html">Mọi service trong app đều được truy cập qua singleton kiểu <code>APIClient.shared</code>, giờ viết unit test cho ViewModel thì không mock được. Bạn refactor theo hướng dependency injection thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Định nghĩa protocol mô tả đúng những gì ViewModel cần (vd. <code>ProductFetching</code> có <code>fetchProducts()</code>), cho <code>APIClient</code> conform, rồi truyền vào ViewModel qua initializer. Khi test chỉ cần truyền một stub hoặc fake conform protocol, không đụng tới mạng. Để refactor dần mà không phải sửa mọi chỗ gọi cùng lúc, có thể tạm để default value <code>service: any ProductFetching = APIClient.shared</code> trong init. Việc lắp ráp dependency nên dồn về một chỗ (composition root như <code>App</code>, <code>SceneDelegate</code> hoặc coordinator) thay vì mỗi class tự lấy singleton. Service locator hay DI container (như Swinject) tiện cho app lớn nhưng che giấu dependency, lỗi thiếu đăng ký chỉ lộ ra lúc runtime; còn constructor injection thì compiler kiểm tra giúp.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q17.html">App bắt đầu lớn, build chậm và các feature import chéo nhau. Bạn chia thành các Swift Package local thế nào, và làm sao để feature Cart mở được màn Product Detail mà không import trực tiếp module của nó?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chia theo tầng: module nền như <code>Networking</code>, <code>DesignSystem</code>, <code>Models</code> không phụ thuộc feature nào; mỗi feature là một target riêng chỉ phụ thuộc module nền; app target là nơi duy nhất import mọi feature và lắp ráp chúng. Để feature gọi nhau, tách phần interface (protocol như <code>ProductDetailBuilding</code> hoặc enum route) ra một module nhẹ dùng chung, implementation nằm trong feature, rồi app target inject implementation lúc khởi tạo. Nhờ vậy dependency graph một chiều, không vòng, sửa một feature chỉ build lại module đó và những module phụ thuộc nó, mỗi feature có thể có demo app và test riêng. Chỉ đánh dấu <code>public</code> phần API thật sự cần lộ, còn lại để <code>internal</code> mặc định để giữ ranh giới giữa các module.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q18.html">Bạn import vài nghìn record từ API vào Core Data và UI bị giật. Chuyển sang background context thế nào cho đúng, và làm sao để <code>viewContext</code> thấy dữ liệu mới?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>newBackgroundContext()</code> hoặc <code>performBackgroundTask</code> và làm mọi thao tác bên trong <code>perform</code>, vì mỗi <code>NSManagedObjectContext</code> gắn với queue riêng và không thread-safe; <code>viewContext</code> chỉ dùng trên main thread cho UI. Đặt <code>viewContext.automaticallyMergesChangesFromParent = true</code> để sau khi background context <code>save()</code>, thay đổi được merge sang context của UI. Với lượng rất lớn, <code>NSBatchInsertRequest</code> nhanh hơn nhiều vì ghi thẳng xuống store, nhưng nó bỏ qua context nên phải tự merge (qua persistent history tracking hoặc <code>mergeChanges(fromRemoteContextSave:into:)</code>). Không truyền <code>NSManagedObject</code> giữa các context, hãy truyền <code>objectID</code>. Đặt <code>mergePolicy</code> phù hợp để tránh lỗi conflict khi hai context cùng sửa một record.</div>
+        <pre class="code-block"><code>container.viewContext.automaticallyMergesChangesFromParent = <span class="tk-kw">true</span>
+
+<span class="tk-kw">func</span> importProducts(_ dtos: [<span class="tk-type">ProductDTO</span>]) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> {
+  <span class="tk-kw">let</span> context = container.newBackgroundContext()
+  context.mergePolicy = <span class="tk-type">NSMergePolicy</span>.mergeByPropertyObjectTrump
+  <span class="tk-kw">try</span> <span class="tk-kw">await</span> context.perform {
+    <span class="tk-kw">for</span> dto <span class="tk-kw">in</span> dtos {
+      <span class="tk-kw">let</span> product = <span class="tk-type">Product</span>(context: context)
+      product.id = dto.id
+      product.name = dto.name
+    }
+    <span class="tk-kw">try</span> context.save() <span class="tk-com">// viewContext tự merge thay đổi</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q19.html">Dự án mới target iOS 17 trở lên, team phân vân giữa SwiftData và Core Data. Bạn cân nhắc những gì trước khi chọn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SwiftData xây trên nền Core Data nhưng API thuần Swift: model khai báo bằng macro <code>@Model</code>, quản lý qua <code>ModelContainer</code>/<code>ModelContext</code>, SwiftUI đọc dữ liệu bằng <code>@Query</code> tự cập nhật, ít boilerplate hơn hẳn. Đổi lại nó còn mới: một số thứ của Core Data như <code>NSFetchedResultsController</code> cho UIKit, batch insert/update hay tuỳ biến sâu chưa có tương đương đầy đủ, và hành vi có thay đổi giữa các bản iOS nên cần test kỹ trên từng phiên bản hỗ trợ. Về concurrency, <code>ModelContext</code> và object <code>@Model</code> không <code>Sendable</code>; việc nặng ở background dùng actor <code>@ModelActor</code> với context riêng, giữa các context chỉ truyền <code>PersistentIdentifier</code>. App SwiftUI là chính, schema vừa phải thì SwiftData hợp lý; app UIKit lớn, cần kiểm soát hiệu năng chặt hoặc đã đầu tư Core Data thì nên giữ Core Data, và hai bên có thể dùng chung một store để chuyển dần.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q20.html">Bạn cần cache ảnh avatar trong app. <code>NSCache</code>, <code>Dictionary</code> và <code>URLCache</code> khác nhau thế nào, và bạn kết hợp chúng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>NSCache</code> là cache trong RAM, thread-safe, tự giải phóng phần tử khi hệ thống thiếu bộ nhớ, đặt được <code>countLimit</code>/<code>totalCostLimit</code> (chỉ là giới hạn mềm) và key phải là object như <code>NSString</code>/<code>NSURL</code>. <code>Dictionary</code> thì không tự dọn khi thiếu bộ nhớ và không an toàn khi đọc ghi từ nhiều thread. <code>URLCache</code> cache response HTTP trên RAM và disk theo header của server (<code>Cache-Control</code>, <code>ETag</code>…), nên chỉ hiệu quả khi server trả header phù hợp và response không quá lớn so với dung lượng cache. Kiến trúc hay dùng là hai tầng: <code>NSCache</code> giữ <code>UIImage</code> đã decode để hiển thị tức thì, tầng disk (<code>URLCache</code> hoặc tự ghi file vào thư mục Caches) giữ dữ liệu qua các lần mở app. Ngoài ra nên gộp các request trùng URL đang chạy để không tải một ảnh nhiều lần.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm <code>load() async</code> gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Inject dependency qua protocol, trong test truyền stub trả về dữ liệu cố định hoặc throw lỗi, có thể đếm số lần được gọi để kiểm tra hành vi (vd. không gọi API lần hai khi đã có cache). XCTest hỗ trợ trực tiếp <code>func testX() async throws</code>, nên chỉ cần <code>await viewModel.load()</code> rồi assert, không cần <code>sleep</code>. Nếu ViewModel là <code>@MainActor</code> thì đánh dấu hàm test <code>@MainActor</code> để truy cập state trực tiếp. Bẫy hay gặp: ViewModel tự tạo <code>Task {}</code> bên trong một hàm đồng bộ thì test không có gì để <code>await</code>, assert chạy trước khi task xong; nên thiết kế hàm <code>async</code> hoặc giữ handle của task để test chờ. Với API callback thì dùng <code>XCTestExpectation</code>, và trong test async hãy dùng <code>await fulfillment(of:timeout:)</code> thay cho <code>wait(for:)</code>, vì <code>wait</code> block thread và có thể gây deadlock.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q24.html">Swift Testing (<code>@Test</code>, <code>#expect</code>) khác XCTest ở những điểm nào? Dự án đang có vài trăm test XCTest thì có nên chuyển hết không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Swift Testing dùng macro thay cho quy ước đặt tên: hàm gắn <code>@Test</code> là một test, không cần kế thừa <code>XCTestCase</code>, suite có thể là struct và mỗi test chạy trên một instance mới. <code>#expect(a == b)</code> thay cho cả họ <code>XCTAssert...</code> và khi fail hiển thị rõ giá trị từng vế; <code>#require</code> thì dừng test ngay khi điều kiện sai, hay dùng để unwrap optional. Có sẵn test tham số hoá <code>@Test(arguments:)</code>, trait như <code>.tags</code>, <code>.disabled</code>, và mặc định chạy song song nên test dùng chung state toàn cục dễ flaky. Hai framework chạy chung được trong cùng target, nên không cần chuyển hết: viết test mới bằng Swift Testing, chuyển dần khi động vào test cũ. UI test và performance test (<code>XCUIApplication</code>, <code>measure</code>) hiện vẫn viết bằng XCTest.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-type">Testing</span>
+
+<span class="tk-kw">struct</span> <span class="tk-type">PriceFormatterTests</span> {
+  <span class="tk-ann">@Test</span>(arguments: zip([<span class="tk-num">0</span>, <span class="tk-num">1000</span>, <span class="tk-num">25000</span>], [<span class="tk-str">&quot;0 ₫&quot;</span>, <span class="tk-str">&quot;1.000 ₫&quot;</span>, <span class="tk-str">&quot;25.000 ₫&quot;</span>]))
+  <span class="tk-kw">func</span> formatVND(amount: <span class="tk-type">Int</span>, expected: <span class="tk-type">String</span>) {
+    #expect(<span class="tk-type">PriceFormatter</span>.vnd(amount) == expected)
+  }
+
+  <span class="tk-ann">@Test</span> <span class="tk-kw">func</span> parseValidPrice() <span class="tk-kw">throws</span> {
+    <span class="tk-kw">let</span> value = <span class="tk-kw">try</span> #require(<span class="tk-type">PriceFormatter</span>.parse(<span class="tk-str">&quot;1.000 ₫&quot;</span>)) <span class="tk-com">// nil thì dừng test</span>
+    #expect(value == <span class="tk-num">1000</span>)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm iOS Middle</h2><a class="section-sub" href="../../../#/ios/quiz?rank=middle&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/ios-mid-m01.html">Giả sử fetchA() và fetchB() độc lập, mỗi hàm mất khoảng 1 giây. Hai cách viết dưới đây mất bao lâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m02.html">Task group dưới đây thêm task theo thứ tự 3, 1, 2 với thời gian ngủ tỉ lệ theo n. Mảng result in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m03.html">Điều gì xảy ra với task sau khi gọi task.cancel()?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m04.html">Hai lời gọi withdraw(80) chạy đồng thời trên actor sau, số dư ban đầu là 100. Điều nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m05.html">Hàm đồng bộ run() gọi thẳng method và đọc property của actor Counter như dưới. Chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m06.html">Trong một method của class @MainActor, điểm nào đúng khi so sánh Task { } với Task.detached { }?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m07.html">Hàm bọc API callback sau có thể gặp vấn đề gì khi chạy?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m08.html">Ở Swift 6 language mode, khai báo nào conform Sendable hợp lệ mà không cần @unchecked? (AppLogger là class tự viết, không final, có property var.)</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m09.html">Trong sink của $query, closure vừa in tham số nhận được vừa đọc lại vm.query. Console in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m10.html">ViewModel sau không bao giờ cập nhật results dù query thay đổi. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m11.html">ViewModel sau không bao giờ được giải phóng sau khi màn hình đóng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m12.html">Với var a = [1, 2, 3], tiếp theo var b = a rồi b.append(4): buffer phần tử của Array thực sự bị copy khi nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m13.html">Hàm makeIcon trả về some View với hai nhánh return như dưới. Compiler xử lý thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m14.html">Hàm sau kết thúc chuỗi operator bằng .eraseToAnyPublisher() và khai báo kiểu trả về AnyPublisher&lt;[Item], Never&gt;. Mục đích chính của việc này là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m15.html">Property wrapper Trimmed cắt khoảng trắng và đếm số lần gán qua projectedValue. Sau hai lần gán, dòng print in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m16.html">Hàm update nhận WritableKeyPath; lời gọi với \.name compile được nhưng dòng cuối với \.id thì báo lỗi. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m17.html">Closure nội dung của một VStack gồm một Text và một câu if show { Text(&quot;B&quot;) } không có else. Nhờ @ViewBuilder (một result builder), compiler biến closure này thành gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m18.html">Khai báo func total(_ prices: some Collection&lt;Int&gt;) -&gt; Int tương đương với cách viết nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m19.html">So sánh hai giá trị đều khai báo kiểu any Equatable bằng == như dưới thì kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m20.html">CounterView(start: 0) đang hiển thị, sau đó view cha render lại với start bằng 10 (identity không đổi). Text hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m21.html">Mỗi lần bấm Toggle layout, giá trị đếm mà CounterView lưu trong @State của nó sẽ thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m22.html">Code khác gán profile.followers += 1. body của NameLabel có được tính lại không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m23.html">View con nhận một object @Observable từ cha (cha sở hữu nó bằng @State) và cần tạo binding $settings.isDarkMode cho Toggle. Khai báo nào phù hợp?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m24.html">Điều nào đúng về modifier .task(id: selectedCategory) { await load(selectedCategory) }?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m25.html">Trong một PreferenceKey, hàm static func reduce(value: inout Value, nextValue: () -&gt; Value) dùng để làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m26.html">So sánh @StateObject private var vm = FeedViewModel() (ObservableObject) với @State private var model = FeedModel() (@Observable). Điểm nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m27.html">Bạn gán heightConstraint.constant = 300 rồi viết UIView.animate(withDuration: 0.3) { self.view.setNeedsLayout() }. Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m28.html">Đồng hồ đếm ngược tạo bằng Timer.scheduledTimer(withTimeInterval:repeats:block:) đứng yên mỗi khi user kéo UIScrollView, thả tay mới chạy tiếp. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m29.html">Một UIButton nằm lệch một nửa ra ngoài bounds của view cha, cha đặt clipsToBounds = false. Chạm vào phần nút nằm ngoài cha thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m30.html">Gọi UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) có tác dụng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m31.html">Bạn fetch Order trong background context của Core Data rồi cần hiển thị nó trên main thread. Cách làm đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m32.html">Điểm nào đúng về NSCache khi dùng làm cache ảnh trong RAM?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m33.html">Cần import hàng nghìn bản ghi vào SwiftData mà không làm đứng UI. Cách nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m34.html">AppCoordinator.showLogin() tạo let login = LoginCoordinator(...) trong hàm, gán login.onFinish = { [weak self] in self?.showHome() } rồi gọi login.start(). Các VC chỉ giữ coordinator bằng weak. Login xong nhưng onFinish không bao giờ được gọi, vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m35.html">Trong VIPER, thành phần nào chứa code thực hiện điều hướng (tạo module màn tiếp theo rồi push/present)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m36.html">Theo Clean Architecture, protocol OrderRepository và class RemoteOrderRepository (gọi API) nên đặt ở tầng nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m37.html">Trong Swift Testing, #expect và #require khác nhau thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m38.html">Trong func testUpload() async, bạn cần đợi một XCTestExpectation được fulfill từ callback. Cách viết nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m39.html">Một suite Swift Testing dùng chung biến static var mockStore mà nhiều test cùng sửa. Chạy riêng từng test thì pass, chạy cả suite thì fail ngẫu nhiên. Nguyên nhân hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m40.html">Điều nào đúng về universal link so với custom URL scheme (myapp://)?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

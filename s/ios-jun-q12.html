@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Junior: Backend trả price lúc là số 120000, lúc là chuỗi &quot;120000&quot;, còn field tags có kh…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Khi kiểu dữ liệu không ổn định thì tự viết init(from decoder:): lấy container theo CodingKeys, thử decode kiểu này, không được thì thử kiểu kia, cuối cùng né…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q12.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: Backend trả price lúc là số 120000, lúc là chuỗi &quot;120000&quot;, còn field tags có kh…">
@@ -16,10 +17,88 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-jun-q12");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Backend trả price lúc là số 120000, lúc là chuỗ…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q12.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Backend trả price lúc là số 120000, lúc là chuỗi &quot;120000&quot;, còn field tags có khi không có. Bạn viết init(from:) tuỳ biến thế nào?</p>
-<p><a href="../#/q/ios-jun-q12">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Backend trả price lúc là số 120000, lúc là chuỗ…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Backend trả <code>price</code> lúc là số <code>120000</code>, lúc là chuỗi <code>&quot;120000&quot;</code>, còn field <code>tags</code> có khi không có. Bạn viết <code>init(from:)</code> tuỳ biến thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi kiểu dữ liệu không ổn định thì tự viết <code>init(from decoder:)</code>: lấy container theo <code>CodingKeys</code>, thử decode kiểu này, không được thì thử kiểu kia, cuối cùng ném <code>DecodingError</code> có mô tả rõ ràng thay vì gán bừa một giá trị. Field có thể thiếu mà muốn có giá trị mặc định thì dùng <code>decodeIfPresent(...) ?? []</code>. Nhớ rằng viết <code>init(from:)</code> ngay trong thân struct sẽ làm mất memberwise initializer tự sinh; muốn giữ lại để tiện tạo dữ liệu test thì đặt nó trong <code>extension</code>. Về lâu dài vẫn nên thống nhất kiểu dữ liệu với backend.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Product</span>: <span class="tk-type">Decodable</span> {
+  <span class="tk-kw">let</span> price: <span class="tk-type">Int</span>
+  <span class="tk-kw">let</span> tags: [<span class="tk-type">String</span>]
+  <span class="tk-kw">enum</span> <span class="tk-type">CodingKeys</span>: <span class="tk-type">String</span>, <span class="tk-type">CodingKey</span> { <span class="tk-kw">case</span> price, tags }
+  <span class="tk-kw">init</span>(from decoder: <span class="tk-type">Decoder</span>) <span class="tk-kw">throws</span> {
+    <span class="tk-kw">let</span> c = <span class="tk-kw">try</span> decoder.container(keyedBy: <span class="tk-type">CodingKeys</span>.<span class="tk-kw">self</span>)
+    <span class="tk-kw">let</span> number = <span class="tk-kw">try</span>? c.decode(<span class="tk-type">Int</span>.<span class="tk-kw">self</span>, forKey: .price)
+    <span class="tk-kw">let</span> text = <span class="tk-kw">try</span>? c.decode(<span class="tk-type">String</span>.<span class="tk-kw">self</span>, forKey: .price)
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> value = number ?? text.flatMap({ <span class="tk-type">Int</span>($<span class="tk-num">0</span>) }) <span class="tk-kw">else</span> {
+      <span class="tk-kw">throw</span> <span class="tk-type">DecodingError</span>.dataCorruptedError(forKey: .price, <span class="tk-kw">in</span>: c, debugDescription: <span class="tk-str">&quot;price sai kiểu&quot;</span>)
+    }
+    price = value
+    tags = <span class="tk-kw">try</span> c.decodeIfPresent([<span class="tk-type">String</span>].<span class="tk-kw">self</span>, forKey: .tags) ?? [] <span class="tk-com">// thiếu key -&gt; []</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q12">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q11.html"><span class="muted small">← Câu trước</span><span>API trả JSON dạng snake_case, có field lúc có lúc không, có field đôi khi là nu…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q13.html"><span class="muted small">Câu sau →</span><span>Server trả HTTP 401 hoặc 500 nhưng trong completion của dataTask thì error vẫn…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/ios/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q11.html">API trả JSON dạng snake_case, có field lúc có lúc không, có field đôi khi là null. Bạn thiết kế model Codable thế nào để decode không vỡ?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q13.html">Server trả HTTP 401 hoặc 500 nhưng trong completion của dataTask thì error vẫn là nil, app đem body lỗi đi decode rồi báo lỗi parse khó hiểu. Vì sao, và xử lý thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-m17.html">JSON có key age nhưng giá trị là null, còn model khai báo age là Int không optional. JSONDecoder mặc định cho kết quả gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m18.html">Hàm loadProfile() dưới đây được gọi nhưng completion không bao giờ chạy, kể cả khi mất mạng. Nguyên nhân là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m19.html">App tải thumbnail sản phẩm từ server, mất thì tải lại được và không cần backup lên iCloud. Nên lưu file vào thư mục nào?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m20.html">App lưu đường dẫn tuyệt đối của ảnh trong thư mục Documents vào database. Sau khi cập nhật app, ảnh cũ không hiển thị dù file vẫn còn. Vì sao?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

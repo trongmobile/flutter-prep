@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Fresher: this trong JavaScript được xác định thế nào? Arrow function khác func…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Với function thường, this được quyết định lúc gọi chứ không phải lúc khai báo: gọi user.greet() thì this là user, nhưng gán const f = user.greet rồi gọi f()…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q03.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: this trong JavaScript được xác định thế nào? Arrow function khác func…">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-fre-q03");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"this trong JavaScript được xác định thế nào? Ar…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q03.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>this trong JavaScript được xác định thế nào? Arrow function khác function thường ở điểm nào về this?</p>
-<p><a href="../#/q/rn-fre-q03">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">this trong JavaScript được xác định thế nào? Ar…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/js/">JavaScript &amp; TypeScript</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title"><code>this</code> trong JavaScript được xác định thế nào? Arrow function khác function thường ở điểm nào về <code>this</code>?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với function thường, <code>this</code> được quyết định lúc gọi chứ không phải lúc khai báo: gọi <code>user.greet()</code> thì <code>this</code> là <code>user</code>, nhưng gán <code>const f = user.greet</code> rồi gọi <code>f()</code> thì <code>this</code> không còn là <code>user</code>: trong strict mode (mặc định của ES module và class) nó là <code>undefined</code> và truy cập <code>this.name</code> sẽ ném lỗi. Arrow function không có <code>this</code> riêng mà dùng <code>this</code> của scope bao quanh nơi nó được viết, và <code>call</code>/<code>apply</code>/<code>bind</code> cũng không đổi được. Vì vậy arrow function hợp làm callback bên trong method (<code>setTimeout</code>, <code>map</code>), còn method của object cần dùng <code>this</code> thì không nên viết bằng arrow. Với function component và hooks gần như không cần <code>this</code>; nó chủ yếu còn gặp ở class component cũ, nơi phải <code>bind</code> handler hoặc khai báo handler bằng arrow class field.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q03">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q02.html"><span class="muted small">← Câu trước</span><span>Closure là gì? Cho một ví dụ closure bạn gặp khi viết code thực tế.</span></a>
+  <a class="pager-next" href="../s/rn-fre-q04.html"><span class="muted small">Câu sau →</span><span>== và === khác nhau thế nào? Những giá trị nào là falsy trong JavaScript?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề JavaScript &amp; TypeScript</h2><a class="section-sub" href="../phong-van/react-native/chu-de/js/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q01.html">var, let và const khác nhau thế nào? Khai báo object bằng const thì có sửa được thuộc tính không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q02.html">Closure là gì? Cho một ví dụ closure bạn gặp khi viết code thực tế.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q04.html">== và === khác nhau thế nào? Những giá trị nào là falsy trong JavaScript?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q05.html">Destructuring và spread ... dùng thế nào? Vì sao nói spread chỉ là shallow copy?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q06.html">Promise và async/await liên quan thế nào? await có làm đứng UI không, và xử lý lỗi ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q07.html">Trong TypeScript, type và interface khác nhau thế nào khi khai báo props cho component? Prop optional viết ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Fresher: Controlled TextInput là gì? Vì sao form đăng nhập thường được làm the…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Controlled nghĩa là nội dung ô nhập lấy từ state qua prop value, và mỗi lần người dùng gõ thì onChangeText cập nhật lại state; state trở thành nguồn dữ liệu…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q13.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: Controlled TextInput là gì? Vì sao form đăng nhập thường được làm the…">
@@ -16,10 +17,88 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-fre-q13");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Controlled TextInput là gì? Vì sao form đăng nh…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q13.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Controlled TextInput là gì? Vì sao form đăng nhập thường được làm theo kiểu controlled?</p>
-<p><a href="../#/q/rn-fre-q13">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Controlled TextInput là gì? Vì sao form đăng nh…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/react/">React &amp; Hooks</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Controlled <code>TextInput</code> là gì? Vì sao form đăng nhập thường được làm theo kiểu controlled?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Controlled nghĩa là nội dung ô nhập lấy từ state qua prop <code>value</code>, và mỗi lần người dùng gõ thì <code>onChangeText</code> cập nhật lại state; state trở thành nguồn dữ liệu duy nhất. Nhờ vậy dễ validate ngay khi gõ, format dữ liệu, reset form hoặc disable nút submit khi dữ liệu chưa hợp lệ. <code>onChangeText</code> nhận thẳng chuỗi mới, còn <code>onChange</code> nhận event và text nằm ở <code>e.nativeEvent.text</code>. Bẫy: truyền <code>value</code> mà không cập nhật state trong <code>onChangeText</code> thì ô nhập luôn bị ép về giá trị cũ, gõ không đổi được; nếu chỉ cần giá trị ban đầu thì dùng <code>defaultValue</code> (uncontrolled).</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">LoginForm</span>({ onLogin }: { onLogin: (email: <span class="tk-kw">string</span>) =&gt; <span class="tk-kw">void</span> }) {
+  <span class="tk-kw">const</span> [email, setEmail] = useState(<span class="tk-str">&#39;&#39;</span>);
+  <span class="tk-kw">const</span> isValid = email.includes(<span class="tk-str">&#39;@&#39;</span>);
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">TextInput</span>
+        value={email}
+        onChangeText={setEmail} <span class="tk-com">// nhận thẳng chuỗi mới</span>
+        placeholder=<span class="tk-str">&quot;Email&quot;</span>
+        autoCapitalize=<span class="tk-str">&quot;none&quot;</span>
+      /&gt;
+      &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Đăng nhập&quot;</span> disabled={!isValid} onPress={() =&gt; onLogin(email)} /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q13">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q12.html"><span class="muted small">← Câu trước</span><span>Có những cách nào để render có điều kiện trong React? Vì sao {count &amp;&amp; &lt;Text&gt;…&lt;…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q14.html"><span class="muted small">Câu sau →</span><span>View, Text, Image trong React Native được hiển thị ra sao trên máy? Vì sao ảnh…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề React &amp; Hooks</h2><a class="section-sub" href="../phong-van/react-native/chu-de/react/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q08.html">Props và state khác nhau thế nào? Component con có được sửa props mà nó nhận không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q09.html">Vì sao gọi setCount(count + 1) ba lần liên tiếp trong một handler mà count chỉ tăng 1? Sửa thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q10.html">JSX là gì? Kể vài quy tắc JSX hay bị viết sai, đặc biệt khi dùng trong React Native.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q11.html">Khi render danh sách, key dùng để làm gì? Nên chọn giá trị nào làm key?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q12.html">Có những cách nào để render có điều kiện trong React? Vì sao {count &amp;&amp; &lt;Text&gt;…&lt;/Text&gt;} có thể làm app React Native bị lỗi?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-m12.html">Component Card được dùng như dưới đây. Bên trong Card, phần &lt;Text&gt;Nội dung&lt;/Text&gt; được nhận qua đâu?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

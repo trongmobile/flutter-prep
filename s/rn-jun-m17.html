@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz React Native Junior: Hàm run in ra giá trị xấp xỉ bao nhiêu (ms)?</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="await trong for...of thực sự tạm dừng hàm async ở mỗi vòng, nên ba lần chờ nối tiếp nhau; chỉ forEach mới bỏ qua promise của callback. Muốn chạy song song (k…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-m17.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz React Native Junior: Hàm run in ra giá trị xấp xỉ bao nhiêu (ms)?">
@@ -16,10 +17,88 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-jun-m17");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Hàm run in ra giá trị xấp xỉ bao nhiêu (ms)?","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-m17.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Hàm run in ra giá trị xấp xỉ bao nhiêu (ms)?</p>
-<p><a href="../#/q/rn-jun-m17">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Hàm run in ra giá trị xấp xỉ bao nhiêu (ms)?</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/js/">JavaScript &amp; TypeScript</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Hàm <code>run</code> in ra giá trị xấp xỉ bao nhiêu (ms)?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">const</span> delay = (ms: <span class="tk-kw">number</span>) =&gt; <span class="tk-kw">new</span> <span class="tk-type">Promise</span>((r) =&gt; setTimeout(r, ms));
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> run() {
+  <span class="tk-kw">const</span> start = <span class="tk-type">Date</span>.now();
+  <span class="tk-kw">for</span> (<span class="tk-kw">const</span> ms <span class="tk-kw">of</span> [<span class="tk-num">300</span>, <span class="tk-num">300</span>, <span class="tk-num">300</span>]) {
+    <span class="tk-kw">await</span> delay(ms);
+  }
+  console.log(<span class="tk-type">Date</span>.now() - start);
+}
+
+run();</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Khoảng <code>300</code>, vì ba <code>delay</code> chạy song song</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Khoảng <code>900</code>, ba lần chờ nối tiếp nhau</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Khoảng <code>0</code>, vì <code>for...of</code> không chờ <code>await</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Khoảng <code>600</code>, vì vòng đầu tiên không phải chờ</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div><code>await</code> trong <code>for...of</code> thực sự tạm dừng hàm async ở mỗi vòng, nên ba lần chờ nối tiếp nhau; chỉ <code>forEach</code> mới bỏ qua promise của callback. Muốn chạy song song (khoảng 300ms) thì tạo hết các promise rồi <code>await Promise.all(...)</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-m17">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-m16.html"><span class="muted small">← Câu trước</span><span>Bạn cần gửi vị trí cuộn lên analytics tối đa mỗi giây một lần trong lúc người d…</span></a>
+  <a class="pager-next" href="../s/rn-jun-m18.html"><span class="muted small">Câu sau →</span><span>Nếu không truyền keyExtractor, FlatList lấy key cho mỗi item theo cách nào?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề JavaScript &amp; TypeScript</h2><a class="section-sub" href="../phong-van/react-native/chu-de/js/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q08.html">Vì sao callback của Promise.then luôn chạy trước setTimeout(fn, 0) dù timer được đặt trước? Hiểu biết này liên quan gì tới việc app React Native bị đơ khi xử lý dữ liệu lớn?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q09.html">Màn hình Home gọi 3 API song song (banner, danh mục, sản phẩm gợi ý). Chỉ cần API banner lỗi là cả màn hình trắng. Bạn dùng Promise.all hay Promise.allSettled, và vì sao?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q10.html">Đoạn code upload ảnh dưới đây báo &quot;Xong&quot; ngay lập tức dù ảnh chưa upload, và lỗi upload không bị catch bắt. Vì sao?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-m11.html">Theo thứ tự chuẩn của event loop, đoạn code sau in ra gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m12.html">Đoạn code sau in ra theo thứ tự nào?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m13.html">Đoạn code sau in ra gì và vào lúc nào?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

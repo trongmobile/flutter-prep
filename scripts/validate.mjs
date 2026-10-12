@@ -153,22 +153,21 @@ if (!args.length) {
   for (const f of needed) if (!precache.includes(f)) errors.push(`sw.js: PRECACHE is missing "${f}" (offline would break)`);
   for (const f of precache) if (f !== "./" && !fs.existsSync(path.join(root, f))) errors.push(`sw.js: PRECACHE lists missing file "${f}"`);
 
-  // Trang chia sẻ s/<id>.html phải khớp dữ liệu hiện tại.
-  const { allSharePages } = await import("./share-pages.mjs");
-  const pages = await allSharePages();
+  // Trang tĩnh (s/, phong-van/, sitemap.xml) phải khớp dữ liệu hiện tại.
+  const { allPages, GENERATED_DIRS } = await import("./pages.mjs");
+  const pages = await allPages();
+  const wanted = new Set(pages.map((p) => p.path));
   let stale = 0;
   for (const p of pages) {
-    const file = path.join(root, "s", `${p.id}.html`);
-    if (!fs.existsSync(file) || fs.readFileSync(file, "utf8") !== p.html) stale++;
+    const file = path.join(root, p.path);
+    if (!fs.existsSync(file) || fs.readFileSync(file, "utf8") !== p.content) stale++;
   }
-  const extra = fs.existsSync(path.join(root, "s"))
-    ? fs.readdirSync(path.join(root, "s")).filter((f) => !pages.some((p) => `${p.id}.html` === f)).length
-    : 0;
+  const extra = GENERATED_DIRS.flatMap((d) => (fs.existsSync(path.join(root, d)) ? walk(d) : [])).filter((f) => f.endsWith(".html") && !wanted.has(f)).length;
   for (const t of TRACKS) {
     if (!fs.existsSync(path.join(root, "assets", `og-${t.id}.png`))) errors.push(`assets/og-${t.id}.png: thiếu ảnh preview cho trang chia sẻ của track ${t.name}`);
   }
-  if (stale || extra) errors.push(`s/: ${stale} trang chia sẻ cũ/thiếu, ${extra} trang thừa — chạy: node scripts/build-share-pages.mjs`);
-  else console.log(`Share pages: ${pages.length} OK · sw.js precache: ${precache.length} files OK`);
+  if (stale || extra) errors.push(`Trang tĩnh: ${stale} trang cũ/thiếu, ${extra} trang thừa — chạy: node scripts/build-pages.mjs`);
+  else console.log(`Static pages: ${pages.length} OK · sw.js precache: ${precache.length} files OK`);
 }
 
 for (const w of warnings) console.log("WARN  " + w);

@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Fresher (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">Fresher</span>
+</nav>
+
+<header class="view-head rank-green">
+  <div class="eyebrow">phỏng vấn · ios · fresher (0–1 năm)</div>
+  <h1>Câu hỏi phỏng vấn iOS Fresher</h1>
+  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../../../#/ios/study/fresher">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip active" href="../../../phong-van/ios/fresher/" aria-current="page">Fresher</a>
+  <a class="chip" href="../../../phong-van/ios/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/ios/middle/">Middle</a>
+  <a class="chip" href="../../../phong-van/ios/senior/">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#swift">Swift</a> <span class="count">7</span></li>
+    <li><a href="#memory">Memory &amp; ARC</a> <span class="count">2</span></li>
+    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">5</span></li>
+    <li><a href="#swiftui">SwiftUI</a> <span class="count">4</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
+    <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">3</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="swift">
+  <div class="section-head"><h2>Swift</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/swift/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q01.html">Optional trong Swift là gì? Có những cách nào để lấy giá trị ra khỏi một Optional, và vì sao nên hạn chế force unwrap <code>!</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Optional (<code>T?</code>) nghĩa là biến có thể chứa giá trị kiểu <code>T</code> hoặc <code>nil</code>; bản chất nó là enum với hai case <code>.some</code> và <code>.none</code>. Biến non-optional không bao giờ nhận <code>nil</code>, nên compiler buộc bạn xử lý trường hợp thiếu dữ liệu ngay khi viết code. Cách lấy giá trị an toàn: <code>if let</code>/<code>guard let</code>, toán tử <code>??</code> để có giá trị mặc định, optional chaining <code>user?.address?.city</code> (gặp <code>nil</code> thì cả biểu thức thành <code>nil</code>). Force unwrap <code>!</code> crash ngay lập tức nếu giá trị là <code>nil</code>, nên chỉ dùng khi chắc chắn tuyệt đối.</div>
+        <pre class="code-block"><code><span class="tk-kw">var</span> nickname: <span class="tk-type">String</span>? = <span class="tk-kw">nil</span>
+
+<span class="tk-kw">let</span> display = nickname ?? <span class="tk-str">&quot;Khách&quot;</span>   <span class="tk-com">// &quot;Khách&quot;</span>
+<span class="tk-kw">let</span> length = nickname?.count          <span class="tk-com">// Int?, đang là nil</span>
+
+<span class="tk-kw">if</span> <span class="tk-kw">let</span> name = nickname {
+    print(<span class="tk-str">&quot;Xin chào \(name)&quot;</span>)         <span class="tk-com">// chỉ chạy khi khác nil</span>
+}
+
+<span class="tk-com">// print(nickname!.count)             // crash vì nickname là nil</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q02.html"><code>if let</code> và <code>guard let</code> khác nhau thế nào? Khi nào bạn chọn <code>guard let</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai đều unwrap Optional, khác nhau ở phạm vi của biến. Với <code>if let</code>, biến đã unwrap chỉ dùng được bên trong khối <code>{}</code> của <code>if</code>. Với <code>guard let</code>, biến dùng được ở toàn bộ phần còn lại của hàm, đổi lại nhánh <code>else</code> bắt buộc thoát khỏi scope bằng <code>return</code>, <code>throw</code>, <code>break</code>, <code>continue</code> hoặc <code>fatalError()</code>, thiếu là lỗi compile. Vì vậy <code>guard let</code> hợp để kiểm tra điều kiện ở đầu hàm theo kiểu early exit, tránh <code>if</code> lồng nhiều tầng. Từ Swift 5.7 có thể viết gọn <code>if let name {</code> thay cho <code>if let name = name {</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q03.html">Struct và class trong Swift khác nhau thế nào? Vì sao khai báo <code>let</code> với một instance struct thì không sửa được property, còn với class thì vẫn sửa được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Struct là value type: gán sang biến khác hay truyền vào hàm sẽ tạo bản sao độc lập. Class là reference type: nhiều biến cùng trỏ tới một object, sửa ở chỗ này thì chỗ khác cũng thấy; class còn có kế thừa, <code>deinit</code> và được quản lý bằng ARC. Với struct, <code>let</code> đóng băng cả giá trị nên không sửa được property nào; với class, <code>let</code> chỉ cố định tham chiếu, property <code>var</code> bên trong object vẫn sửa được. Swift khuyến khích dùng struct làm mặc định cho model, chỉ dùng class khi cần chia sẻ trạng thái, kế thừa hoặc làm việc với API như <code>UIViewController</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">PointS</span> { <span class="tk-kw">var</span> x = <span class="tk-num">0</span> }
+<span class="tk-kw">class</span> <span class="tk-type">PointC</span> { <span class="tk-kw">var</span> x = <span class="tk-num">0</span> }
+
+<span class="tk-kw">var</span> a = <span class="tk-type">PointS</span>()
+<span class="tk-kw">var</span> b = a        <span class="tk-com">// tạo bản sao</span>
+b.x = <span class="tk-num">10</span>
+print(a.x)       <span class="tk-com">// 0</span>
+
+<span class="tk-kw">let</span> c = <span class="tk-type">PointC</span>()
+<span class="tk-kw">let</span> d = c        <span class="tk-com">// cùng một object</span>
+d.x = <span class="tk-num">10</span>
+print(c.x)       <span class="tk-com">// 10</span>
+
+<span class="tk-kw">let</span> s = <span class="tk-type">PointS</span>()
+<span class="tk-com">// s.x = 5       // lỗi compile: s là let</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q04.html">Enum có associated value là gì? Cho ví dụ dùng <code>switch</code> để hiển thị trạng thái tải dữ liệu của một màn hình.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi case của enum có thể mang kèm dữ liệu riêng với kiểu khác nhau, ví dụ <code>.loaded([String])</code> mang danh sách còn <code>.failed(message:)</code> mang thông báo lỗi. <code>switch</code> trên enum bắt buộc phủ hết các case, thiếu là lỗi compile, nên khi thêm case mới compiler chỉ ra mọi chỗ cần sửa; vì lý do đó nên tránh <code>default</code> khi switch trên enum của chính mình. Dùng <code>case .failed(let message)</code> để lấy dữ liệu đi kèm. Khác với raw value (<code>enum Direction: String</code>) cố định cho từng case, associated value được truyền vào lúc tạo giá trị.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">LoadState</span> {
+    <span class="tk-kw">case</span> loading
+    <span class="tk-kw">case</span> loaded([<span class="tk-type">String</span>])
+    <span class="tk-kw">case</span> failed(message: <span class="tk-type">String</span>)
+}
+<span class="tk-kw">func</span> render(_ state: <span class="tk-type">LoadState</span>) {
+    <span class="tk-kw">switch</span> state {
+    <span class="tk-kw">case</span> .loading:
+        print(<span class="tk-str">&quot;Đang tải...&quot;</span>)
+    <span class="tk-kw">case</span> .loaded(<span class="tk-kw">let</span> items):
+        print(<span class="tk-str">&quot;Có \(items.count) mục&quot;</span>)
+    <span class="tk-kw">case</span> .failed(<span class="tk-kw">let</span> message):
+        print(<span class="tk-str">&quot;Lỗi: \(message)&quot;</span>)
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q05.html">Closure trong Swift là gì? Giải thích cú pháp trailing closure và <code>$0</code> qua ví dụ <code>filter</code>, <code>map</code>, <code>reduce</code>.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Closure là khối code có thể gán vào biến, truyền làm tham số hoặc trả về từ hàm; nó còn capture được biến ở phạm vi bao quanh để dùng về sau. Khi closure là tham số cuối, có thể viết nó ra ngoài dấu ngoặc tròn (trailing closure). Nếu kiểu đã suy ra được thì bỏ kiểu tham số, bỏ <code>return</code> với closure chỉ có một biểu thức, và dùng tên viết tắt <code>$0</code>, <code>$1</code>. Nên viết tắt vừa phải: closure dài nhiều dòng thì đặt tên tham số rõ ràng cho dễ đọc.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> prices = [<span class="tk-num">120</span>, <span class="tk-num">45</span>, <span class="tk-num">300</span>, <span class="tk-num">80</span>]
+
+<span class="tk-com">// Viết đầy đủ</span>
+<span class="tk-kw">let</span> cheap = prices.filter({ (price: <span class="tk-type">Int</span>) -&gt; <span class="tk-type">Bool</span> <span class="tk-kw">in</span>
+    <span class="tk-kw">return</span> price &lt; <span class="tk-num">100</span>
+})
+
+<span class="tk-com">// Trailing closure + tên viết tắt</span>
+<span class="tk-kw">let</span> doubled = prices.map { $<span class="tk-num">0</span> * <span class="tk-num">2</span> }
+<span class="tk-kw">let</span> total = prices.reduce(<span class="tk-num">0</span>) { $<span class="tk-num">0</span> + $<span class="tk-num">1</span> }
+
+print(cheap)   <span class="tk-com">// [45, 80]</span>
+print(total)   <span class="tk-com">// 545</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q06.html">Protocol và extension trong Swift dùng để làm gì? Extension có thêm được stored property không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Protocol định nghĩa một hợp đồng gồm các method/property mà kiểu tuân theo (struct, class, enum) phải cài đặt, giúp code làm việc được với bất kỳ kiểu nào thoả protocol; <code>UITableViewDataSource</code> là ví dụ quen thuộc. Extension thêm method, computed property, initializer hoặc conformance protocol cho kiểu có sẵn, kể cả kiểu bạn không có source như <code>String</code>, <code>Int</code>. Extension không thêm được stored property cho instance và không override được method đã có. Cách dùng phổ biến là tách mỗi protocol conformance ra một extension riêng cho gọn, như <code>extension ProfileViewController: UITableViewDataSource</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">protocol</span> <span class="tk-type">Describable</span> {
+    <span class="tk-kw">var</span> summary: <span class="tk-type">String</span> { <span class="tk-kw">get</span> }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">Product</span>: <span class="tk-type">Describable</span> {
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">let</span> price: <span class="tk-type">Int</span>
+    <span class="tk-kw">var</span> summary: <span class="tk-type">String</span> { <span class="tk-str">&quot;\(name) - \(price)đ&quot;</span> }
+}
+
+<span class="tk-kw">extension</span> <span class="tk-type">Int</span> {
+    <span class="tk-kw">var</span> isEven: <span class="tk-type">Bool</span> { <span class="tk-kw">self</span> % <span class="tk-num">2</span> == <span class="tk-num">0</span> } <span class="tk-com">// computed property: OK</span>
+    <span class="tk-com">// var cache = 0                   // lỗi: không thêm được stored property</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q07.html">Swift xử lý lỗi bằng <code>throws</code>, <code>do/catch</code>, <code>try?</code> và <code>try!</code> như thế nào? Khi nào dùng <code>try?</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hàm có thể ném lỗi được đánh dấu <code>throws</code>, lỗi là giá trị của kiểu conform protocol <code>Error</code> (thường là enum). Khi gọi phải viết <code>try</code> và đặt trong <code>do/catch</code> để xử lý, hoặc để lỗi lan tiếp ra ngoài nếu hàm hiện tại cũng <code>throws</code>. <code>try?</code> đổi kết quả thành Optional, có lỗi thì nhận <code>nil</code>, hợp khi không cần biết lý do lỗi; <code>try!</code> crash nếu có lỗi nên rất hạn chế dùng. Bẫy hay gặp là lạm dụng <code>try?</code> khiến lỗi bị nuốt mất, lúc debug không biết vì sao dữ liệu rỗng.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">LoginError</span>: <span class="tk-type">Error</span> { <span class="tk-kw">case</span> emptyPassword, wrongPassword }
+<span class="tk-kw">func</span> login(password: <span class="tk-type">String</span>) <span class="tk-kw">throws</span> -&gt; <span class="tk-type">String</span> {
+    <span class="tk-kw">if</span> password.isEmpty { <span class="tk-kw">throw</span> <span class="tk-type">LoginError</span>.emptyPassword }
+    <span class="tk-kw">if</span> password != <span class="tk-str">&quot;123456&quot;</span> { <span class="tk-kw">throw</span> <span class="tk-type">LoginError</span>.wrongPassword }
+    <span class="tk-kw">return</span> <span class="tk-str">&quot;token-abc&quot;</span>
+}
+
+<span class="tk-kw">do</span> {
+    <span class="tk-kw">let</span> token = <span class="tk-kw">try</span> login(password: <span class="tk-str">&quot;&quot;</span>)
+    print(token)
+} <span class="tk-kw">catch</span> <span class="tk-type">LoginError</span>.emptyPassword {
+    print(<span class="tk-str">&quot;Vui lòng nhập mật khẩu&quot;</span>)
+} <span class="tk-kw">catch</span> {
+    print(<span class="tk-str">&quot;Lỗi khác: \(error)&quot;</span>)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="memory">
+  <div class="section-head"><h2>Memory &amp; ARC</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/memory/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q08.html">ARC là gì? Khi nào một object bị giải phóng khỏi bộ nhớ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">ARC (Automatic Reference Counting) quản lý bộ nhớ cho instance của class: mỗi strong reference làm tăng bộ đếm tham chiếu, khi reference bị gán <code>nil</code> hoặc ra khỏi scope thì bộ đếm giảm, về 0 thì object được giải phóng và <code>deinit</code> chạy. Khác garbage collector, ARC không có tiến trình quét chạy nền; compiler chèn sẵn lệnh retain/release lúc build nên object được giải phóng ngay khi không còn ai giữ. Struct và enum là value type nên không được đếm tham chiếu theo cách này. Điểm yếu của ARC là không tự xử lý được hai object giữ strong reference lẫn nhau (retain cycle).</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">Player</span> {
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">init</span>(name: <span class="tk-type">String</span>) { <span class="tk-kw">self</span>.name = name }
+    <span class="tk-kw">deinit</span> { print(<span class="tk-str">&quot;\(name) được giải phóng&quot;</span>) }
+}
+
+<span class="tk-kw">var</span> p1: <span class="tk-type">Player</span>? = <span class="tk-type">Player</span>(name: <span class="tk-str">&quot;An&quot;</span>) <span class="tk-com">// bộ đếm = 1</span>
+<span class="tk-kw">var</span> p2 = p1                           <span class="tk-com">// bộ đếm = 2</span>
+p1 = <span class="tk-kw">nil</span>                              <span class="tk-com">// bộ đếm = 1, chưa giải phóng</span>
+p2 = <span class="tk-kw">nil</span>                              <span class="tk-com">// bộ đếm = 0 -&gt; deinit chạy</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q09.html">Strong reference và weak reference khác nhau thế nào? Vì sao biến <code>weak</code> luôn phải có kiểu Optional?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Strong reference (mặc định) giữ object sống: còn ít nhất một strong reference thì object chưa bị giải phóng. Weak reference trỏ tới object nhưng không tăng bộ đếm; khi object bị giải phóng, ARC tự đặt mọi weak reference tới nó về <code>nil</code>. Chính vì có thể tự thành <code>nil</code> bất cứ lúc nào nên biến <code>weak</code> bắt buộc có kiểu Optional. Dùng <code>weak</code> để phá vòng tham chiếu trong quan hệ cha – con: cha giữ con bằng strong, con trỏ ngược về cha bằng weak, như <code>delegate</code> hay <code>department</code> trong ví dụ dưới.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">Department</span> {
+    <span class="tk-kw">var</span> manager: <span class="tk-type">Employee</span>?           <span class="tk-com">// strong: phòng ban giữ nhân viên</span>
+    <span class="tk-kw">deinit</span> { print(<span class="tk-str">&quot;Department deinit&quot;</span>) }
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Employee</span> {
+    <span class="tk-kw">weak</span> <span class="tk-kw">var</span> department: <span class="tk-type">Department</span>? <span class="tk-com">// weak: không giữ ngược phòng ban</span>
+    <span class="tk-kw">deinit</span> { print(<span class="tk-str">&quot;Employee deinit&quot;</span>) }
+}
+
+<span class="tk-kw">var</span> d: <span class="tk-type">Department</span>? = <span class="tk-type">Department</span>()
+<span class="tk-kw">let</span> e = <span class="tk-type">Employee</span>()
+d?.manager = e
+e.department = d
+d = <span class="tk-kw">nil</span> <span class="tk-com">// in &quot;Department deinit&quot;, e.department tự thành nil</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="uikit">
+  <div class="section-head"><h2>UIKit &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/uikit/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q10.html">Kể các method vòng đời chính của <code>UIViewController</code>. Gọi API lấy dữ liệu nên đặt ở <code>viewDidLoad</code> hay <code>viewWillAppear</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thứ tự chính: <code>viewDidLoad</code> (view đã được load, chỉ gọi một lần) → <code>viewWillAppear</code> → <code>viewDidAppear</code> mỗi lần màn hình hiện ra, và <code>viewWillDisappear</code> → <code>viewDidDisappear</code> khi bị che hoặc rời đi; override thì nhớ gọi <code>super</code>. <code>viewDidLoad</code> hợp để setup một lần và gọi API lần đầu. <code>viewWillAppear</code> chạy lại mỗi lần quay về màn hình (ví dụ pop từ màn chi tiết), hợp để làm mới dữ liệu có thể đã đổi, nhưng đặt API nặng ở đây thì mỗi lần quay lại đều gọi lại. Bẫy: từ iOS 13 modal mặc định hiện dạng sheet, khi sheet đóng thì màn hình bên dưới không được gọi lại <code>viewWillAppear</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Auto Layout tính frame của view từ các constraint giữa các anchor (top, leading, width, centerX…), nên mỗi view cần đủ thông tin để xác định vị trí và kích thước, không thiếu (ambiguous) và không mâu thuẫn (conflict). <code>UILabel</code>, <code>UIButton</code> có intrinsic content size nên thường chỉ cần constraint vị trí. Khi tạo view bằng code phải đặt <code>translatesAutoresizingMaskIntoConstraints = false</code>; nếu quên, UIKit tự sinh constraint từ autoresizing mask và chúng xung đột với constraint của bạn. Ngoài ra phải <code>addSubview</code> trước khi activate constraint, và neo nội dung vào <code>safeAreaLayoutGuide</code> để không bị notch che.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> titleLabel = <span class="tk-type">UILabel</span>()
+titleLabel.translatesAutoresizingMaskIntoConstraints = <span class="tk-kw">false</span>
+view.addSubview(titleLabel)
+
+<span class="tk-type">NSLayoutConstraint</span>.activate([
+    titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: <span class="tk-num">16</span>),
+    titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: <span class="tk-num">16</span>),
+    titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -<span class="tk-num">16</span>)
+])
+<span class="tk-com">// Không cần height: UILabel có intrinsic content size</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q12.html"><code>UITableViewDataSource</code> và <code>UITableViewDelegate</code> khác nhau thế nào? Để hiển thị một danh sách đơn giản cần cài đặt những method nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">DataSource trả lời câu hỏi &quot;hiển thị cái gì&quot;: có bao nhiêu section/row và cell cho từng <code>IndexPath</code>; hai method bắt buộc là <code>numberOfRowsInSection</code> và <code>cellForRowAt</code>. Delegate lo phần giao diện và tương tác: chiều cao row, header/footer, chạm vào row (<code>didSelectRowAt</code>), swipe action. Trong <code>cellForRowAt</code> luôn lấy cell bằng <code>dequeueReusableCell(withIdentifier:for:)</code> để tái sử dụng, và identifier phải được đăng ký trước (bằng <code>register</code> hoặc trong storyboard), nếu không app crash. Quên gán <code>tableView.dataSource = self</code> là lý do phổ biến khiến bảng trống trơn.</div>
+        <pre class="code-block"><code><span class="tk-kw">extension</span> <span class="tk-type">ContactsViewController</span>: <span class="tk-type">UITableViewDataSource</span> {
+    <span class="tk-kw">func</span> tableView(_ tableView: <span class="tk-type">UITableView</span>, numberOfRowsInSection section: <span class="tk-type">Int</span>) -&gt; <span class="tk-type">Int</span> {
+        contacts.count
+    }
+
+    <span class="tk-kw">func</span> tableView(_ tableView: <span class="tk-type">UITableView</span>, cellForRowAt indexPath: <span class="tk-type">IndexPath</span>) -&gt; <span class="tk-type">UITableViewCell</span> {
+        <span class="tk-kw">let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span class="tk-str">&quot;ContactCell&quot;</span>, <span class="tk-kw">for</span>: indexPath)
+        <span class="tk-kw">var</span> content = cell.defaultContentConfiguration()
+        content.text = contacts[indexPath.row].name
+        cell.contentConfiguration = content
+        <span class="tk-kw">return</span> cell
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q13.html"><code>@IBOutlet</code> và <code>@IBAction</code> là gì? Vì sao đổi tên một biến outlet xong thì app crash với lỗi &quot;this class is not key value coding-compliant for the key…&quot;?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>@IBOutlet</code> đánh dấu property để Interface Builder nối với một view trong storyboard/xib, còn <code>@IBAction</code> đánh dấu method nhận sự kiện như chạm nút. Outlet thường có dạng <code>@IBOutlet weak var titleLabel: UILabel!</code>: implicitly unwrapped vì chỉ có giá trị sau khi view được load, và Xcode mặc định để <code>weak</code> vì superview đã giữ view đó. Storyboard lưu kết nối theo tên; đổi tên biến trong code mà không nối lại thì lúc load view, UIKit gán vào key không còn tồn tại và crash với lỗi trên. Cách sửa: mở Connections Inspector, xoá kết nối cũ có dấu cảnh báo rồi nối lại.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q14.html">Dựng UI bằng storyboard, xib hay viết code khác nhau thế nào? Dự án nhiều người cùng làm thì bạn chọn cách nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Storyboard trực quan, kéo thả nhanh, nhìn được luồng màn hình qua segue, hợp để học và làm prototype; nhưng nó là file XML lớn, nhiều người cùng sửa rất dễ conflict khi merge, và lỗi kết nối outlet chỉ lộ ra lúc runtime. Xib hợp cho từng view hoặc cell riêng lẻ, ít conflict hơn. Viết UI bằng code dễ review, dễ tái sử dụng, merge nhẹ nhàng, đổi lại dài dòng hơn và không xem trước trực quan. Dự án làm nhóm thường chọn code hoặc chia mỗi màn hình một storyboard/xib, còn màn hình mới ngày càng hay được viết bằng SwiftUI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="swiftui">
+  <div class="section-head"><h2>SwiftUI</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/swiftui/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q15.html">SwiftUI khác UIKit ở điểm cơ bản nào? Vì sao view trong SwiftUI là <code>struct</code> chứ không phải class?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">UIKit theo kiểu imperative: bạn tạo view object rồi tự cập nhật nó khi dữ liệu đổi (<code>label.text = ...</code>). SwiftUI theo kiểu declarative: bạn mô tả UI như một hàm của state trong <code>body</code>, khi state đổi SwiftUI tự tính lại <code>body</code> và cập nhật phần khác biệt lên màn hình. View trong SwiftUI là struct nhẹ, chỉ là bản mô tả và được tạo lại liên tục với chi phí thấp, nên đừng lưu dữ liệu cần giữ lâu trong property thường của view. Hai bên dùng chung được: <code>UIHostingController</code> nhúng SwiftUI vào UIKit, còn <code>UIViewRepresentable</code> đưa view UIKit vào SwiftUI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q16.html"><code>@State</code> dùng để làm gì? Vì sao trong <code>Button</code> không thể viết <code>count += 1</code> nếu <code>count</code> chỉ là property thường của view?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">View là struct và <code>body</code> không phải <code>mutating</code>, nên property thường không sửa được từ bên trong view (lỗi <code>Cannot assign to property: &#39;self&#39; is immutable</code>). <code>@State</code> để SwiftUI lưu giá trị ở vùng nhớ do framework quản lý, tách khỏi struct, nên giá trị không mất khi view struct được tạo lại; mỗi lần giá trị đổi, SwiftUI chạy lại <code>body</code> để cập nhật UI. <code>@State</code> dành cho state đơn giản thuộc riêng view đó (bộ đếm, công tắc, text đang nhập) nên khai báo <code>private</code>; muốn view con sửa được thì truyền <code>$count</code>, tức một binding.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">CounterView</span>: <span class="tk-type">View</span> {
+    <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> count = <span class="tk-num">0</span>
+
+    <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+        <span class="tk-type">VStack</span>(spacing: <span class="tk-num">12</span>) {
+            <span class="tk-type">Text</span>(<span class="tk-str">&quot;Đã bấm \(count) lần&quot;</span>)
+            <span class="tk-type">Button</span>(<span class="tk-str">&quot;Tăng&quot;</span>) {
+                count += <span class="tk-num">1</span> <span class="tk-com">// body được tính lại</span>
+            }
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q17.html"><code>VStack</code>, <code>HStack</code>, <code>ZStack</code> khác nhau thế nào? Làm sao đẩy một nút về sát mép phải màn hình?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>VStack</code> xếp view con theo chiều dọc, <code>HStack</code> theo chiều ngang, còn <code>ZStack</code> xếp chồng lên nhau (view khai báo sau nằm trên), hay dùng để đặt chữ lên ảnh. Mỗi stack có <code>alignment</code> và <code>spacing</code> để căn chỉnh, và mặc định chỉ to vừa đủ nội dung. <code>Spacer()</code> chiếm hết khoảng trống còn lại theo trục của stack chứa nó, nên <code>HStack { Text(&quot;Giỏ hàng&quot;); Spacer(); Button(...) }</code> sẽ đẩy nút về sát mép phải. Một cách khác là gắn <code>.frame(maxWidth: .infinity, alignment: .trailing)</code> cho nút.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q18.html">Vì sao trong SwiftUI thứ tự modifier lại quan trọng? <code>.padding().background(.yellow)</code> và <code>.background(.yellow).padding()</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi modifier không sửa view gốc mà bọc nó trong một view mới, nên modifier được áp dụng từ trong ra ngoài đúng theo thứ tự viết. <code>.padding().background(.yellow)</code> thêm khoảng đệm trước rồi tô nền cho cả khối, nên vùng vàng rộng hơn chữ. <code>.background(.yellow).padding()</code> tô nền vừa khít chữ rồi mới thêm khoảng trống trong suốt bên ngoài. Tương tự, đặt <code>.frame</code> trước hay sau <code>.background</code> cũng cho vùng nền khác nhau, nên khi UI lệch so với thiết kế hãy kiểm tra thứ tự modifier trước tiên.</div>
+        <pre class="code-block"><code><span class="tk-type">Text</span>(<span class="tk-str">&quot;Sale 50%&quot;</span>)
+    .padding()
+    .background(.yellow) <span class="tk-com">// nền vàng phủ cả phần padding</span>
+
+<span class="tk-type">Text</span>(<span class="tk-str">&quot;Sale 50%&quot;</span>)
+    .background(.yellow) <span class="tk-com">// nền vàng vừa khít chữ</span>
+    .padding()           <span class="tk-com">// padding trong suốt bên ngoài</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q19.html">Trong UIKit, push một màn hình bằng <code>UINavigationController</code> và present modal khác nhau thế nào? Đóng mỗi loại ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Push (<code>navigationController?.pushViewController(vc, animated: true)</code>) đưa màn hình mới vào stack của navigation controller, có sẵn nút Back và cử chỉ vuốt từ mép trái để quay lại, hợp với luồng đi sâu như danh sách → chi tiết; đóng bằng <code>popViewController(animated:)</code>. Present (<code>present(vc, animated: true)</code>) mở màn hình dạng modal cho tác vụ tách biệt như đăng nhập, chọn ảnh; đóng bằng <code>dismiss(animated:)</code>. Bẫy hay gặp: màn hình hiện tại không nằm trong <code>UINavigationController</code> thì <code>navigationController</code> là <code>nil</code>, lời gọi push bị bỏ qua mà không báo lỗi. Từ iOS 13 modal mặc định là sheet, muốn toàn màn hình thì đặt <code>modalPresentationStyle = .fullScreen</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q20.html">Muốn truyền <code>productId</code> sang màn hình chi tiết, rồi gửi kết quả chỉnh sửa ngược về màn hình trước, bạn làm thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Truyền đi: gán dữ liệu vào property (hoặc initializer) của view controller đích trước khi push/present; với segue thì gán trong <code>prepare(for:sender:)</code>. Đừng gán thẳng vào outlet như <code>detailVC.nameLabel.text = ...</code> lúc này, vì view chưa load nên outlet còn <code>nil</code> và app crash; hãy lưu vào property rồi đổ lên UI trong <code>viewDidLoad</code>. Truyền ngược về: dùng delegate (protocol) hoặc closure callback do màn hình trước gán, màn hình sau gọi khi có kết quả rồi pop/dismiss. Trong closure nên dùng <code>[weak self]</code> khi tham chiếu màn hình trước, đây là thói quen tốt để tránh retain cycle.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">EditNameViewController</span>: <span class="tk-type">UIViewController</span> {
+    <span class="tk-kw">var</span> currentName = <span class="tk-str">&quot;&quot;</span>               <span class="tk-com">// dữ liệu truyền vào</span>
+    <span class="tk-kw">var</span> onSave: ((<span class="tk-type">String</span>) -&gt; <span class="tk-type">Void</span>)?    <span class="tk-com">// callback trả kết quả về</span>
+
+    <span class="tk-kw">func</span> saveTapped(newName: <span class="tk-type">String</span>) {
+        onSave?(newName)
+        navigationController?.popViewController(animated: <span class="tk-kw">true</span>)
+    }
+}
+
+<span class="tk-com">// Ở màn hình trước</span>
+<span class="tk-kw">let</span> editVC = <span class="tk-type">EditNameViewController</span>()
+editVC.currentName = user.name
+editVC.onSave = { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] name <span class="tk-kw">in</span> <span class="tk-kw">self</span>?.nameLabel.text = name }
+navigationController?.pushViewController(editVC, animated: <span class="tk-kw">true</span>)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q21.html"><code>UserDefaults</code> phù hợp để lưu gì? Có nên lưu access token hay mật khẩu vào đó không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>UserDefaults</code> lưu cặp key–value nhỏ như cài đặt người dùng (ngôn ngữ, dark mode) hay cờ đã xem onboarding. Dữ liệu được ghi thành file plist trong thư mục của app và được nạp vào bộ nhớ khi dùng, nên không hợp với dữ liệu lớn như danh sách sản phẩm hay ảnh. Nó cũng không được bảo vệ như Keychain: ai lấy được file (qua bản backup hay máy jailbreak) là đọc được, nên token và mật khẩu phải lưu trong Keychain. Không cần gọi <code>synchronize()</code> sau khi ghi, tài liệu của Apple ghi rõ method này không cần thiết và không nên dùng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q22.html">Muốn lưu một struct như <code>UserSettings</code> vào <code>UserDefaults</code> thì làm thế nào? Vì sao gán thẳng struct vào lại crash?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>UserDefaults</code> chỉ lưu được kiểu property list: <code>String</code>, số, <code>Bool</code>, <code>Date</code>, <code>Data</code>, cùng <code>Array</code> và <code>Dictionary</code> chứa các kiểu đó. Gán struct tuỳ biến vào <code>set(_:forKey:)</code> vẫn compile được vì tham số có kiểu <code>Any?</code>, nhưng lúc chạy sẽ crash với lỗi <code>Attempt to insert non-property list object</code>. Cách làm là cho struct conform <code>Codable</code>, dùng <code>JSONEncoder</code> chuyển thành <code>Data</code> rồi lưu, khi đọc thì dùng <code>JSONDecoder</code> chuyển ngược lại. Cách này chỉ hợp với dữ liệu nhỏ; dữ liệu lớn nên lưu file hoặc dùng database.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">UserSettings</span>: <span class="tk-type">Codable</span> {
+    <span class="tk-kw">var</span> fontSize: <span class="tk-type">Int</span>
+    <span class="tk-kw">var</span> isDarkMode: <span class="tk-type">Bool</span>
+}
+
+<span class="tk-kw">let</span> settings = <span class="tk-type">UserSettings</span>(fontSize: <span class="tk-num">16</span>, isDarkMode: <span class="tk-kw">true</span>)
+<span class="tk-com">// UserDefaults.standard.set(settings, forKey: &quot;settings&quot;) // crash lúc runtime</span>
+
+<span class="tk-kw">if</span> <span class="tk-kw">let</span> data = <span class="tk-kw">try</span>? <span class="tk-type">JSONEncoder</span>().encode(settings) {
+    <span class="tk-type">UserDefaults</span>.standard.<span class="tk-kw">set</span>(data, forKey: <span class="tk-str">&quot;settings&quot;</span>)
+}
+<span class="tk-kw">if</span> <span class="tk-kw">let</span> data = <span class="tk-type">UserDefaults</span>.standard.data(forKey: <span class="tk-str">&quot;settings&quot;</span>),
+   <span class="tk-kw">let</span> saved = <span class="tk-kw">try</span>? <span class="tk-type">JSONDecoder</span>().decode(<span class="tk-type">UserSettings</span>.<span class="tk-kw">self</span>, from: data) {
+    print(saved.fontSize) <span class="tk-com">// 16</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="platform">
+  <div class="section-head"><h2>App lifecycle &amp; Platform</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/platform/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q23.html"><code>AppDelegate</code> và <code>SceneDelegate</code> khác nhau thế nào? Vì sao từ iOS 13 lại có thêm <code>SceneDelegate</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>AppDelegate</code> xử lý sự kiện ở mức cả tiến trình app: khởi động (<code>application(_:didFinishLaunchingWithOptions:)</code>), cấu hình thư viện bên thứ ba, đăng ký push notification. Từ iOS 13, phần giao diện được tách sang <code>SceneDelegate</code> vì một app (nhất là trên iPad) có thể mở nhiều cửa sổ cùng lúc, mỗi scene có <code>UIWindow</code> và vòng đời riêng: <code>scene(_:willConnectTo:options:)</code> để tạo window, <code>sceneDidBecomeActive</code>, <code>sceneDidEnterBackground</code>… Khi app dùng scene, các callback như <code>applicationDidEnterBackground</code> của AppDelegate không còn được gọi. App SwiftUI dùng <code>@main struct MyApp: App</code> thì không cần hai file này, vẫn gắn được AppDelegate qua <code>@UIApplicationDelegateAdaptor</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q24.html">File <code>Info.plist</code> dùng để làm gì? Kể vài key quan trọng bạn hay phải sửa.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Info.plist</code> chứa thông tin cấu hình mà hệ thống đọc về app, như bundle identifier, tên hiển thị dưới icon (<code>CFBundleDisplayName</code>), version và build number, launch screen, các hướng màn hình hỗ trợ, cấu hình scene. Các mô tả lý do xin quyền như <code>NSCameraUsageDescription</code> cũng khai báo ở đây; thiếu key này mà app truy cập camera thì hệ thống sẽ dừng app ngay. Ở các phiên bản Xcode gần đây, nhiều giá trị được khai báo trong tab Info/Build Settings của target và Xcode tự sinh vào Info.plist lúc build, nên project mới có thể không có file Info.plist riêng hoặc file rất ngắn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q25.html">Bundle identifier là gì? Version và build number khác nhau thế nào khi đẩy bản mới lên TestFlight?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bundle identifier (ví dụ <code>com.example.shopapp</code>) là định danh duy nhất của app trong hệ sinh thái Apple, gắn với App ID, provisioning profile, push notification và app trên App Store Connect; đổi bundle ID thì hệ thống coi là một app khác, và sau khi đã upload build thì không đổi được nữa. Version (<code>CFBundleShortVersionString</code>, ví dụ <code>1.2.0</code>) là số phiên bản người dùng thấy trên App Store. Build number (<code>CFBundleVersion</code>, ví dụ <code>45</code>) đánh dấu từng lần build: cùng một version có thể upload nhiều build lên TestFlight, nhưng mỗi lần phải tăng build number, trùng với build đã có sẽ bị từ chối. Trong Build Settings, hai giá trị này là <code>MARKETING_VERSION</code> và <code>CURRENT_PROJECT_VERSION</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm iOS Fresher</h2><a class="section-sub" href="../../../#/ios/quiz?rank=fresher&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/ios-fre-m01.html">Thêm phần tử vào mảng khai báo bằng let như đoạn code sau thì kết quả thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m02.html">Score là struct; sau khi gán var b = a rồi sửa b.value, đoạn code in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m03.html">Hai hằng let cùng trỏ tới một instance của class Counter; sửa qua c2 thì c1.value in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m04.html">Với let nickname: String? = &quot;an&quot;, biến length trong let length = nickname?.count có kiểu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m05.html">Dùng ?? với giá trị lấy từ Dictionary, đoạn code in ra gì theo thứ tự từng dòng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m06.html">switch trên enum có associated value sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m07.html">Hàm dùng guard let sau có vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m08.html">Sau các thao tác trên Set như đoạn code sau, tags.count bằng bao nhiêu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m09.html">Chuỗi filter → map → reduce sau in ra giá trị nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m10.html">Một property khai báo không kèm từ khoá access control (ví dụ var name: String trong class) thì có mức truy cập mặc định nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m11.html">Gọi hàm throws bằng try? như sau thì print(a, b) in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m12.html">Màn hình A push sang màn hình B, sau đó người dùng bấm Back quay về A. Lúc quay về, A được gọi những method vòng đời nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m13.html">Trong viewDidLoad, bạn đọc view.bounds.width để tính kích thước một subview, nhưng trên một số máy giá trị không khớp màn hình thật. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m14.html">Bạn tạo UILabel bằng code, addSubview rồi activate đủ constraint, nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot; và label nằm sai chỗ. Nguyên nhân hay gặp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m15.html">frame và bounds của một UIView khác nhau thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m16.html">Để UITableView hiển thị dữ liệu, hai method nào của UITableViewDataSource là bắt buộc?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m17.html">Bảng hiển thị dữ liệu bình thường, nhưng chạm vào row thì tableView(_:didSelectRowAt:) không bao giờ được gọi. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m18.html">Sau khi đổi tên một @IBOutlet trong code (không sửa storyboard), app crash khi mở màn hình với lỗi this class is not key value coding-compliant for the key titleLabel. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m19.html">Bạn neo topAnchor của một label vào view.topAnchor, và trên iPhone có notch/Dynamic Island thì phần trên của chữ bị che. Nên sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m20.html">Đoạn code SwiftUI sau có vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m21.html">Với đoạn code sau, vùng nền xanh trông thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m22.html">Trong ZStack { Color.black; Image(&quot;avatar&quot;); Text(&quot;Online&quot;) }, view nào hiển thị trên cùng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m23.html">Bạn muốn Text(&quot;Tổng&quot;) nằm sát trái và Text(&quot;120.000đ&quot;) nằm sát phải trên cùng một hàng. Cách viết nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m24.html">Đoạn code sau hiển thị hai dòng chữ với font như thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m25.html">Khi giá trị của một property @State thay đổi, SwiftUI làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m26.html">Trong TextField(&quot;Tên đăng nhập&quot;, text: $name) với @State private var name = &quot;&quot;, vì sao phải truyền $name chứ không phải name?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m27.html">Bấm nút chạy đoạn code sau nhưng không có màn hình nào hiện ra, cũng không crash. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m28.html">LoginViewController được mở bằng present(loginVC, animated: true). Trong LoginViewController, nút Đóng nên gọi gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m29.html">Đoạn code sau crash với lỗi Unexpectedly found nil while implicitly unwrapping an Optional value. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m30.html">Hai biến cùng giữ một instance Player; thứ tự in ra của đoạn code sau là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m31.html">Hàm test() sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m32.html">ARC đếm tham chiếu và tự giải phóng bộ nhớ cho loại giá trị nào trong Swift?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m33.html">Hai class giữ strong reference tới nhau như sau; console in ra gì sau khi gán cả p và apt về nil?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m34.html">Key launchCount và userName chưa từng được lưu. UserDefaults.standard.integer(forKey: &quot;launchCount&quot;) và UserDefaults.standard.string(forKey: &quot;userName&quot;) lần lượt trả về gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m35.html">Sau khi đăng nhập, app nhận được access token. Nên lưu token này ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m36.html">Gán thẳng một struct vào UserDefaults như đoạn code sau thì chạy thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m37.html">Muốn đổi tên app hiển thị dưới icon trên màn hình Home mà không đổi tên project, bạn sửa key nào trong Info.plist?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m38.html">App đang có version 1.3.0 build 12 trên TestFlight. Bạn sửa một bug nhỏ và muốn upload lại cho tester, cần thay đổi gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m39.html">App UIKit tạo từ template mới (có SceneDelegate). Bạn muốn bỏ storyboard và tự tạo UIWindow cùng màn hình gốc bằng code. Đặt code đó ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m40.html">Phát biểu nào đúng về bundle identifier (ví dụ com.example.shopapp)?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

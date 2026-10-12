@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Middle: Với go_router, làm sao xây bottom navigation mà mỗi tab giữ nguyên stack đi…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Dùng StatefulShellRoute.indexedStack: mỗi tab là một StatefulShellBranch có Navigator riêng, các branch được giữ trong IndexedStack nên state và stack con kh…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q11.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: Với go_router, làm sao xây bottom navigation mà mỗi tab giữ nguyên stack đi…">
@@ -16,10 +17,87 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/mid-q11");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Với go_router, làm sao xây bottom navigation mà…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q11.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Với go_router, làm sao xây bottom navigation mà mỗi tab giữ nguyên stack điều hướng và state khi chuyển tab?</p>
-<p><a href="../#/q/mid-q11">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Với go_router, làm sao xây bottom navigation mà…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Với go_router, làm sao xây bottom navigation mà mỗi tab giữ nguyên stack điều hướng và state khi chuyển tab?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>StatefulShellRoute.indexedStack</code>: mỗi tab là một <code>StatefulShellBranch</code> có Navigator riêng, các branch được giữ trong <code>IndexedStack</code> nên state và stack con không mất khi đổi tab. <code>builder</code> nhận <code>StatefulNavigationShell</code> để dựng <code>Scaffold</code> + <code>NavigationBar</code>; đổi tab bằng <code>goBranch(index)</code>, truyền <code>initialLocation: true</code> khi bấm lại tab đang mở để quay về gốc tab. Khác với <code>ShellRoute</code> thường (chỉ một Navigator con dùng chung), cách này hợp với app nhiều tab kiểu mạng xã hội; đổi lại tốn bộ nhớ hơn vì các tab đã mở đều được giữ sống.</div>
+        <pre class="code-block"><code><span class="tk-type">StatefulShellRoute</span>.indexedStack(
+  builder: (context, state, shell) =&gt; <span class="tk-type">ScaffoldWithNavBar</span>(shell: shell),
+  branches: [
+    <span class="tk-type">StatefulShellBranch</span>(routes: [
+      <span class="tk-type">GoRoute</span>(path: <span class="tk-str">&#39;/feed&#39;</span>, builder: (c, s) =&gt; <span class="tk-kw">const</span> <span class="tk-type">FeedPage</span>()),
+    ]),
+    <span class="tk-type">StatefulShellBranch</span>(routes: [
+      <span class="tk-type">GoRoute</span>(path: <span class="tk-str">&#39;/profile&#39;</span>, builder: (c, s) =&gt; <span class="tk-kw">const</span> <span class="tk-type">ProfilePage</span>()),
+    ]),
+  ],
+)
+<span class="tk-com">// Trong ScaffoldWithNavBar:</span>
+<span class="tk-com">// onDestinationSelected: (i) =&gt; shell.goBranch(i,</span>
+<span class="tk-com">//     initialLocation: i == shell.currentIndex),</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q11">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q10.html"><span class="muted small">← Câu trước</span><span>Khi viết CustomPainter, shouldRepaint và tham số repaint dùng để làm gì?</span></a>
+  <a class="pager-next" href="../s/mid-q12.html"><span class="muted small">Câu sau →</span><span>Làm auth guard với go_router như thế nào? Deep link vào một trang cần đăng nhập…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/flutter/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q12.html">Làm auth guard với go_router như thế nào? Deep link vào một trang cần đăng nhập sẽ được xử lý ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-m18.html">Với cấu hình go_router sau, đang ở HomePage gọi context.go(&#39;/products/42&#39;) rồi nhấn back. Màn hình nào hiện ra?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/mid-m19.html">App dùng go_router với redirect kiểm tra đăng nhập. Khi token hết hạn và app gọi logout(), màn hình hiện tại không tự chuyển về /login. Nguyên nhân thường gặp là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/mid-m20.html">Trên Flutter 3.24+, cách khuyến nghị để chặn nút back và hỏi &#39;Bỏ thay đổi?&#39; trước khi rời form là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/fre-q27.html">Navigator.push và Navigator.pop hoạt động thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q28.html">Làm sao truyền dữ liệu sang màn hình mới và nhận kết quả trả về khi quay lại?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

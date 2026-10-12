@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <span aria-current="page">Senior</span>
+</nav>
+
+<header class="view-head rank-purple">
+  <div class="eyebrow">phỏng vấn · react native · senior (4+ năm)</div>
+  <h1>Câu hỏi phỏng vấn React Native Senior</h1>
+  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../../../#/react-native/study/senior">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/react-native/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/react-native/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/react-native/middle/">Middle</a>
+  <a class="chip active" href="../../../phong-van/react-native/senior/" aria-current="page">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">5</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">3</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">6</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">1</span></li>
+    <li><a href="#security">Security</a> <span class="count">3</span></li>
+    <li><a href="#design">System Design</a> <span class="count">4</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">3</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="native">
+  <div class="section-head"><h2>Native &amp; New Architecture</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/native/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q01.html">Ở kiến trúc cũ, mọi lời gọi giữa JS và native đi qua bridge. Bridge có những giới hạn gì, JSI khắc phục chúng ra sao, và dùng JSI có bẫy gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bridge cũ serialize mọi lời gọi thành JSON, gom batch rồi gửi bất đồng bộ giữa JS thread và native, nên tốn chi phí serialize hai chiều, không chia sẻ được bộ nhớ, và những việc cần kết quả ngay (đọc storage, đo layout) rất khó làm; method đồng bộ có tồn tại nhưng bị hạn chế và không chạy được khi debug từ xa qua Chrome. JSI là API C++ cho phép JS runtime (Hermes) giữ tham chiếu tới host object C++ và gọi method của nó trực tiếp, đồng bộ hoặc bất đồng bộ, không qua JSON. TurboModules, Fabric và các thư viện như Reanimated, MMKV, VisionCamera đều dựa trên JSI. Bẫy thứ nhất: lời gọi đồng bộ chạy ngay trên JS thread, native chậm bao lâu thì JS đứng bấy lâu, nên việc tốn thời gian vẫn phải trả <code>Promise</code> và chạy ở thread khác. Bẫy thứ hai: <code>jsi::Runtime</code> không thread-safe; muốn gọi lại JS từ thread native phải lên lịch qua <code>CallInvoker</code>, đụng vào runtime từ thread khác sẽ gây crash ngẫu nhiên rất khó tái hiện.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q02.html">Fabric thay renderer cũ như thế nào? Những lợi ích nào của Fabric mà user và dev thực sự cảm nhận được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Fabric đưa lõi renderer về C++ dùng chung cho iOS và Android. Mỗi lần React render, Fabric tạo shadow tree bất biến (immutable) trong C++, tính layout bằng Yoga, rồi commit cây mới và mount các thay đổi lên view native trên UI thread. Vì shadow tree bất biến và đọc được an toàn từ nhiều thread, renderer hỗ trợ concurrent features của React 18 như <code>startTransition</code>, Suspense, automatic batching — điều kiến trúc cũ không làm được. Fabric cũng cho phép đọc layout đồng bộ: đo vị trí trong <code>useLayoutEffect</code> rồi cập nhật ngay trong cùng frame, nên hết cảnh tooltip hay popover nháy sai vị trí một frame. Với dev, một implementation chung giúp giảm khác biệt hành vi giữa hai nền tảng. Khi migrate cần chú ý: native component cũ dùng <code>requireNativeComponent</code> chỉ chạy được nhờ interop layer, và code dựa vào API nội bộ của <code>UIManager</code> cũ có thể đổi hành vi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q03.html">Team bạn duy trì một TurboModule nội bộ (thanh toán, sinh trắc học) dùng chung cho 3 app, các app đều phát hành JS qua OTA. Khi cần thêm method hoặc đổi kiểu trong spec, bạn đặt quy trình gì để không làm vỡ app đang chạy?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Điểm mấu chốt: Codegen chỉ bảo đảm JS và native khớp nhau trong cùng một lần build; còn khi bundle JS đi qua OTA, JS mới có thể chạy trên binary cũ mà native chưa có method mới. Vì vậy mọi thay đổi spec được coi là thay đổi native: phải ra binary mới và đổi <code>runtimeVersion</code> (policy <code>fingerprint</code> làm việc này tự động) để update dùng spec mới không tới được binary cũ. Thứ hai, ưu tiên thay đổi tương thích ngược: thêm method mới thay vì đổi chữ ký method cũ, đánh dấu deprecated rồi mới xoá sau vài bản phát hành. Thứ ba, thư viện có version theo semver và changelog ghi rõ thay đổi nào cần build native; phía JS có thể kiểm tra khả năng của binary (ví dụ một hằng số version do module trả về) trước khi gọi tính năng mới. Cuối cùng, CI của từng app chạy E2E với bản thư viện mới trước khi nâng, và review spec như review API public vì nó là hợp đồng giữa các team.</div>
+        <pre class="code-block"><code><span class="tk-com">// NativePayment.ts</span>
+<span class="tk-kw">export</span> <span class="tk-kw">interface</span> <span class="tk-type">Spec</span> <span class="tk-kw">extends</span> <span class="tk-type">TurboModule</span> {
+  getApiVersion(): <span class="tk-kw">number</span>; <span class="tk-com">// JS kiểm tra trước khi dùng tính năng mới</span>
+  pay(orderId: <span class="tk-kw">string</span>): <span class="tk-type">Promise</span>&lt;<span class="tk-kw">string</span>&gt;;
+  <span class="tk-com">// Thêm mới thay vì đổi chữ ký của pay()</span>
+  payWithBiometric(orderId: <span class="tk-kw">string</span>, reason: <span class="tk-kw">string</span>): <span class="tk-type">Promise</span>&lt;<span class="tk-kw">string</span>&gt;;
+}
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-type">TurboModuleRegistry</span>.getEnforcing&lt;<span class="tk-type">Spec</span>&gt;(<span class="tk-str">&#39;NativePayment&#39;</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q04.html">App của bạn vẫn chạy kiến trúc cũ với khoảng 60 thư viện native bên thứ ba. Bạn lên kế hoạch chuyển sang New Architecture thế nào để không làm vỡ production?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bước đầu là kiểm kê: đối chiếu từng thư viện với React Native Directory (có cờ hỗ trợ New Architecture) và xếp loại: đã hỗ trợ, chạy được qua interop layer, hay phải thay thế/fork, nhân tiện bỏ các thư viện không còn được bảo trì. Interop layer giúp phần lớn module và component kiểu cũ chạy trên New Architecture mà không cần viết lại, nhưng không phải tất cả: thư viện truy cập thẳng bridge hay API nội bộ của renderer cũ thường hỏng, nhất là ở chế độ bridgeless. Về kỹ thuật, tôi nâng RN lên bản mới trước (từ 0.76 New Architecture bật mặc định, các bản gần đây đã bỏ hẳn tuỳ chọn tắt), làm trên một nhánh riêng, chạy toàn bộ E2E và QA thủ công các màn nhạy cảm như map, video, camera, WebView trên cả hai nền tảng. Native code tự viết thì chuyển sang TurboModule/Fabric component với Codegen. Khi phát hành, dùng staged rollout, so sánh crash-free rate và thời gian startup với bản cũ, và giữ sẵn đường lùi là binary trước đó.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q05.html">Công ty muốn nhúng vài màn React Native vào app native Android/iOS đang chạy (brownfield). Những vấn đề kỹ thuật chính bạn phải thiết kế là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thứ nhất là vòng đời runtime: khởi tạo React Native (JS runtime, load bundle, native module) tốn đáng kể, nên tạo một instance dùng chung ở mức Application/AppDelegate, có thể pre-warm trước khi user vào màn RN, thay vì tạo mới mỗi lần mở màn. Thứ hai là ranh giới điều hướng: mỗi điểm vào RN là một root component đăng ký bằng <code>AppRegistry.registerComponent</code> và nhận initial props; phải quy ước rõ bên nào quản lý back stack, nút back Android và deep link. Thứ ba là giao tiếp hai chiều: native module cho JS gọi vào native (lấy token, analytics, mở màn native), event cho native báo sang JS, với contract có type qua Codegen. Thứ tư là build và phân phối: team native thường không muốn cài Node, nên đóng gói phần RN (kèm bundle đã build) thành artifact AAR/XCFramework để tích hợp như dependency thường, đồng thời xử lý các thư viện native trùng giữa hai phía (OkHttp, Firebase). Cuối cùng, nếu dùng OTA cho phần RN thì update phải gắn với version native của host app.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="tooling">
+  <div class="section-head"><h2>Expo, Build &amp; Release</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/tooling/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q13.html">Sau khi App Center/CodePush ngừng hoạt động, team chuyển sang EAS Update. <code>runtimeVersion</code> dùng để làm gì, và cấu hình sai thì hậu quả là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">OTA chỉ thay được JS bundle và asset; phần native (thư viện native, quyền, cấu hình Info.plist/Manifest, bản thân React Native) chỉ đổi được qua binary mới trên store. <code>runtimeVersion</code> là hợp đồng giữa một bản build native và các update: app chỉ nhận update có cùng <code>runtimeVersion</code>. Nếu thêm thư viện native mà quên đổi runtime version, update dùng thư viện đó sẽ tới tay binary cũ chưa có code native tương ứng và crash ngay khi gọi tới. Vì vậy tôi chọn policy tự động: <code>fingerprint</code> tính hash từ cấu hình và code native, đổi native là đổi runtime; hoặc <code>appVersion</code> nếu team kỷ luật tăng version mỗi lần đổi native. Kết hợp channel theo môi trường (preview, production), rollout update theo phần trăm, theo dõi crash trước khi mở rộng, và luôn thử update trên build production thật chứ không chỉ trên dev client.</div>
+        <pre class="code-block"><code><span class="tk-com">// app.config.ts</span>
+<span class="tk-kw">import</span> <span class="tk-kw">type</span> { <span class="tk-type">ExpoConfig</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;expo/config&#39;</span>;
+
+<span class="tk-kw">const</span> config: <span class="tk-type">ExpoConfig</span> = {
+  name: <span class="tk-str">&#39;Shop&#39;</span>,
+  slug: <span class="tk-str">&#39;shop&#39;</span>,
+  version: <span class="tk-str">&#39;2.4.0&#39;</span>,
+  runtimeVersion: { policy: <span class="tk-str">&#39;fingerprint&#39;</span> }, <span class="tk-com">// đổi native -&gt; runtime mới</span>
+  updates: { url: <span class="tk-str">&#39;https://u.expo.dev/&lt;project-id&gt;&#39;</span> },
+};
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> config;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q14.html">Crash report từ production trên Sentry chỉ hiện stack trace kiểu <code>index.android.bundle:1:284731</code>. Vì sao, và quy trình release cần làm gì để đọc được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bundle production đã được minify và, với Hermes, biên dịch sang bytecode, nên vị trí lỗi chỉ là offset trong file đã biến đổi; cần source map để map ngược về file và dòng gốc. Với Hermes phải dùng source map đã ghép (map của Metro cộng map do <code>hermesc</code> sinh ra), map của Metro đứng một mình sẽ cho kết quả sai. Quy trình: mỗi build trên CI tạo source map và upload lên Sentry, gắn đúng release/dist (hoặc debug ID ở các bản SDK mới) khớp với giá trị SDK gửi lên khi crash. Mỗi bản OTA là một bundle mới nên cũng phải upload map tương ứng, nếu không crash từ bản update sẽ không đọc được. Phần native cũng cần dSYM trên iOS và mapping file của R8 trên Android. <code>@sentry/react-native</code> có tích hợp vào bước build Gradle/Xcode và EAS; điều quan trọng là tự động hoá trong pipeline chứ không làm tay, và kiểm chứng bằng một crash thử trên bản staging.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q15.html">Team đang commit thư mục <code>ios/</code> và <code>android/</code>, sửa tay rất nhiều, và mỗi lần nâng React Native mất cả tuần. Bạn có đề xuất chuyển sang Continuous Native Generation (Expo prebuild) không? Đánh đổi là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với Continuous Native Generation, <code>ios/</code> và <code>android/</code> không được commit mà được sinh lại từ <code>app.json</code>/<code>app.config.ts</code> cùng config plugin mỗi khi build (<code>npx expo prebuild</code>). Lợi ích lớn nhất là nâng cấp: không còn phải merge diff template vào project native đã bị sửa tay nhiều năm. Mọi thay đổi native (quyền, entitlement, Gradle, Podfile, đoạn code trong AppDelegate) phải viết thành config plugin, nên chúng được ghi lại, có version và review được thay vì nằm rải rác. Đánh đổi: tốn công chuyển các chỉnh sửa tay hiện có thành plugin; tuỳ biến native phức tạp viết plugin khá vất vả, nhất là plugin sửa file bằng chuỗi/regex dễ vỡ khi template đổi; và team phải bỏ thói quen sửa trực tiếp thư mục sinh ra. Tôi sẽ đánh giá lượng code native tự viết và tần suất nâng cấp, rồi thử trên một nhánh; code native tự viết nhiều có thể chuyển thành local Expo module thay vì để trong thư mục sinh ra.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q06.html">Màn danh sách đơn hàng giật khi cuộn trên Android tầm thấp. Perf Monitor cho thấy JS FPS tụt mạnh còn UI FPS vẫn gần 60. Điều đó nói lên gì, và bạn profile tiếp thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">JS thread chạy React (render, reconcile), business logic và handler sự kiện; UI thread vẽ và xử lý scroll native. UI FPS ổn nghĩa là scroll native vẫn mượt, nhưng JS không kịp render item mới nên FlatList lộ vùng trắng, <code>onPress</code> phản hồi trễ, animation không dùng native driver bị khựng. Trước hết tôi tái hiện trên build release trên đúng máy yếu, vì dev mode chậm hơn nhiều và cho số liệu sai lệch. Sau đó dùng React DevTools Profiler xem commit nào lâu và vì sao component render lại, kết hợp Hermes sampling profiler để tìm hàm JS nặng. Thủ phạm hay gặp: <code>renderItem</code> tạo object/closure mới khiến <code>memo</code> vô dụng, item quá nặng, format ngày/tiền tốn kém trong mỗi lần render, state đặt quá cao khiến cả list render lại. Nếu ngược lại UI FPS tụt mà JS ổn thì xem Perfetto (Android) hoặc Instruments (iOS) để tìm layout phức tạp, overdraw, decode ảnh lớn, shadow.</div>
+        <pre class="code-block"><code><span class="tk-com">// Mỗi lần cha render, style và onPress đều là giá trị mới</span>
+<span class="tk-com">// nên OrderRow dù bọc memo vẫn render lại toàn bộ</span>
+&lt;<span class="tk-type">FlatList</span>
+  data={orders}
+  renderItem={({ item }) =&gt; (
+    &lt;<span class="tk-type">OrderRow</span> order={item} style={{ padding: <span class="tk-num">12</span> }} onPress={() =&gt; open(item.id)} /&gt;
+  )}
+/&gt;;
+
+<span class="tk-com">// Sửa: style để trong StyleSheet của OrderRow, `open` ổn định (useCallback)</span>
+<span class="tk-kw">const</span> renderItem = useCallback(
+  ({ item }: { item: <span class="tk-type">Order</span> }) =&gt; &lt;<span class="tk-type">OrderRow</span> order={item} onOpen={open} /&gt;,
+  [open],
+);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q07.html">Cold start của app RN mất gần 4 giây trên máy Android tầm trung. Bạn đo và tối ưu theo những hướng nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi đo trên build release, trên đúng máy tầm trung, và tách cold start thành các đoạn: khởi tạo native (<code>Application.onCreate</code>, SDK native), khởi tạo React Native và load bundle, thực thi module JS lúc import, render màn đầu và chờ dữ liệu; công cụ là Perfetto/Android Studio, Instruments trên iOS, cộng marker thời gian trong JS. Hướng tối ưu: đảm bảo dùng Hermes để bundle được biên dịch sẵn thành bytecode, không phải parse lúc chạy; giữ inline requires bật (template RN đã bật) để module chỉ thực thi khi được dùng lần đầu, và tránh side effect nặng ở top-level module; lazy-load màn hình và thư viện lớn ít dùng; chỉ khởi tạo SDK cần cho màn đầu, phần còn lại dời ra sau first render; hiển thị dữ liệu cache hoặc skeleton thay vì chờ API. Phía native cũng phải xem, vì SDK khởi tạo đồng bộ trong <code>Application.onCreate</code>/<code>AppDelegate</code> có thể tốn đáng kể. Cuối cùng đặt ngân sách startup và theo dõi qua Android vitals, Xcode Organizer để không bị thoái lui âm thầm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q08.html">Một thuật toán xử lý dữ liệu viết bằng JS thuần chạy rất nhanh khi thử trên Node, nhưng trong app dùng Hermes lại chậm hơn hẳn. Vì sao, bạn xử lý thế nào, và Hermes còn khác V8/JavaScriptCore ở điểm nào cần biết?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hermes được thiết kế cho React Native với ưu tiên là startup và memory: ở bản release, bundle được <code>hermesc</code> biên dịch sẵn thành bytecode lúc build, nên app không phải parse và compile JS khi khởi động. GC của Hermes (Hades) làm phần lớn công việc song song trên thread nền nên các lần dừng ngắn, hợp với ứng dụng có UI. Đổi lại, Hermes không dùng JIT, nên code CPU-bound chạy lâu (xử lý chuỗi lớn, crypto viết bằng JS thuần, parse dữ liệu khổng lồ) có thể chậm hơn trên engine có JIT; cách xử lý đúng là đưa việc nặng xuống native/JSI hoặc backend chứ không phải đổi engine. Vài khác biệt hành vi cần biết: <code>Function.prototype.toString</code> không trả lại source gốc, và một số tính năng JS mới có thể chưa được hỗ trợ đầy đủ. Hermes là engine mặc định từ RN 0.70, và React Native DevTools kết nối thẳng vào Hermes để debug, thay cho cách remote debugging qua Chrome trước đây vốn chạy JS trên một engine khác.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q09.html">Memory của app tăng dần sau mỗi lần vào ra màn chi tiết sản phẩm, cuối cùng app bị OS kill. Bạn tìm và xử lý leak trong RN thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi lặp lại flow vào/ra vài chục lần trên build release, theo dõi memory bằng Android Studio Profiler hoặc Xcode, rồi tách xem phần tăng nằm ở JS heap hay bộ nhớ native. Với JS heap, chụp heap snapshot bằng tab Memory của React Native DevTools trước và sau, so sánh object không được giải phóng và lần theo retaining path; với native thì dùng heap dump (Android) hoặc Allocations/Memory Graph (iOS). Nguyên nhân hay gặp trong RN: subscription không được gỡ (<code>AppState</code>, <code>Keyboard</code>, <code>Dimensions</code>, event emitter của native module, WebSocket), <code>setInterval</code>/<code>setTimeout</code> không clear, closure giữ state của màn bị lưu vào store toàn cục hoặc cache cấp module không giới hạn, callback JS bị SDK native giữ lại, và cache ảnh không giới hạn. Cách phòng: effect nào đăng ký thì cleanup phải huỷ, dùng API trả subscription và gọi <code>.remove()</code>, giới hạn kích thước cache, và có kịch bản E2E lặp flow để bắt hồi quy.</div>
+        <pre class="code-block"><code>useEffect(() =&gt; {
+  <span class="tk-kw">const</span> sub = <span class="tk-type">AppState</span>.addEventListener(<span class="tk-str">&#39;change&#39;</span>, onAppStateChange);
+  <span class="tk-kw">const</span> timer = setInterval(refreshPrice, 30_000);
+  <span class="tk-kw">return</span> () =&gt; {
+    sub.remove(); <span class="tk-com">// thiếu dòng này: listener và closure sống mãi</span>
+    clearInterval(timer);
+  };
+}, [onAppStateChange, refreshPrice]);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q10.html">Feed hiển thị ảnh user upload (ảnh gốc 12MP). Trên Android tầm thấp app hay bị OOM khi cuộn nhanh. Vì sao, và bạn sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dung lượng file JPEG không phản ánh memory: khi hiển thị, ảnh được decode thành bitmap khoảng <code>width × height × 4</code> byte, nên ảnh 4000×3000 chiếm khoảng 48MB dù chỉ hiện trong thumbnail nhỏ — vài ảnh như vậy cùng lúc là đủ OOM. Sửa tận gốc ở server/CDN: sinh nhiều kích thước hoặc resize theo tham số, và client xin đúng kích thước hiển thị nhân với mật độ điểm ảnh. Phía client, dùng thư viện ảnh có downsampling và cache tốt như <code>expo-image</code>; với <code>Image</code> của core trên Android, <code>resizeMethod=&quot;resize&quot;</code> giúp giảm kích thước ảnh trước khi decode. List dùng FlashList hoặc FlatList được cấu hình hợp lý để không giữ quá nhiều item ngoài viewport, và chỉ tải ảnh full-size khi user thực sự mở màn xem ảnh.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> px = <span class="tk-type">PixelRatio</span>.getPixelSizeForLayoutSize(<span class="tk-num">120</span>);
+
+&lt;<span class="tk-type">Image</span>
+  source={{ uri: <span class="tk-str">`${photo.url}?w=${px}&amp;h=${px}`</span> }} <span class="tk-com">// CDN resize sẵn</span>
+  style={{ width: <span class="tk-num">120</span>, height: <span class="tk-num">120</span> }}
+  resizeMethod=<span class="tk-str">&quot;resize&quot;</span> <span class="tk-com">// Android: downsample trước khi decode</span>
+/&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q11.html">Sau một năm, JS bundle của app tăng từ 6MB lên 14MB và startup chậm dần. Bạn phân tích và kiểm soát kích thước bundle thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi tạo bundle production kèm source map rồi phân tích bằng <code>source-map-explorer</code> hoặc <code>react-native-bundle-visualizer</code> để thấy module nào chiếm chỗ. Thủ phạm quen thuộc: thư viện lớn kéo cả gói như <code>moment</code> kèm toàn bộ locale, <code>lodash</code> import nguyên gói thay vì từng hàm, nhiều thư viện trùng chức năng (hai thư viện ngày tháng, ba bộ icon), JSON tĩnh hoặc ảnh base64 lớn nhúng trong code, và code mock/dev lọt vào production. Cần nhớ Metro mặc định không tree-shake mạnh như bundler web, nên import cả gói thường đồng nghĩa với kéo cả gói vào bundle. Để kiểm soát lâu dài: đặt ngân sách kích thước bundle và báo chênh lệch trên CI ở mỗi PR, review dependency mới theo kích thước, tình trạng bảo trì và có kèm native code hay không. Bundle nhỏ hơn còn giúp mỗi bản OTA tải nhanh hơn.</div>
+        <pre class="code-block"><code><span class="tk-com">// Kéo toàn bộ lodash vào bundle</span>
+<span class="tk-kw">import</span> _ <span class="tk-kw">from</span> <span class="tk-str">&#39;lodash&#39;</span>;
+<span class="tk-kw">const</span> onSearch = _.debounce(search, <span class="tk-num">300</span>);
+
+<span class="tk-com">// Chỉ kéo đúng module cần dùng</span>
+<span class="tk-kw">import</span> debounce <span class="tk-kw">from</span> <span class="tk-str">&#39;lodash/debounce&#39;</span>;
+<span class="tk-kw">const</span> onSearch2 = debounce(search, <span class="tk-num">300</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q12.html">App RN có 30 dev, mỗi PR chạy CI hơn 40 phút mà bug vẫn lọt lên production. Bạn thiết kế lại test strategy thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đầu tiên nhìn dữ liệu: bug lọt thuộc loại gì (logic, tích hợp API, UI trên một nền tảng, lỗi native sau khi nâng thư viện) và thời gian CI tốn ở đâu (build native, E2E, retry test flaky). Tầng nhanh và nhiều nhất là Jest + React Native Testing Library cho logic, hook và component theo hành vi; trong monorepo chỉ chạy test của package bị ảnh hưởng (Nx/Turborepo) và cache kết quả. Lỗi tích hợp API bắt bằng contract test hoặc kiểm tra schema chạy ở CI của cả backend. E2E (Maestro hoặc Detox) chỉ giữ cho vài luồng sống còn như đăng nhập, thanh toán, onboarding, chạy trên build release; binary native chỉ build lại khi fingerprint phần native đổi, PR chỉ sửa JS thì dùng lại binary đã cache. Test flaky phải được cách ly và có người chịu trách nhiệm, không retry vô hạn. Cuối cùng chấp nhận test không bắt được mọi thứ: staged rollout, feature flag và giám sát crash là lớp an toàn cuối cùng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q16.html">Một dev đặt secret key của cổng thanh toán vào <code>.env</code> và đọc qua <code>react-native-config</code>, lập luận rằng Hermes đã biên dịch ra bytecode nên không ai đọc được. Bạn phản hồi thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lập luận này sai. Biến từ <code>.env</code> qua <code>react-native-config</code> hay <code>EXPO_PUBLIC_*</code> đều được nhúng nguyên văn vào app (trong bundle JS hoặc resource native), và bytecode Hermes không phải là mã hoá: string literal vẫn nằm nguyên trong file, có sẵn công cụ disassemble/decompile bytecode Hermes, thậm chí lệnh <code>strings</code> cũng đủ thấy key. Kẻ tấn công còn có thể dùng proxy hoặc Frida để xem request lúc chạy. Nguyên tắc là mọi thứ nằm trong app đều coi như public: secret thật (key thanh toán, key AI, key quản trị) phải ở backend; app gọi backend bằng token ngắn hạn của user, backend mới gọi dịch vụ bên thứ ba. Key bắt buộc nằm ở client (Maps SDK, analytics) thì giới hạn bằng restriction theo package name/bundle id/chữ ký và quota. App Check, Play Integrity hay App Attest giúp backend biết request đến từ app thật, nhưng chỉ là lớp bổ sung chứ không thay cho việc không giao secret cho client.</div>
+        <pre class="code-block"><code><span class="tk-com">// Sai: secret nằm trong app, ai giải nén APK/IPA cũng lấy được</span>
+<span class="tk-kw">await</span> fetch(<span class="tk-str">&#39;https://api.payment.example/charge&#39;</span>, {
+  method: <span class="tk-str">&#39;POST&#39;</span>,
+  headers: { <span class="tk-type">Authorization</span>: <span class="tk-str">`Bearer ${Config.PAYMENT_SECRET_KEY}`</span> },
+});
+
+<span class="tk-com">// Đúng: app chỉ gửi token của user, backend giữ secret</span>
+<span class="tk-kw">await</span> fetch(<span class="tk-str">`${API_URL}/orders/${orderId}/pay`</span>, {
+  method: <span class="tk-str">&#39;POST&#39;</span>,
+  headers: { <span class="tk-type">Authorization</span>: <span class="tk-str">`Bearer ${accessToken}`</span> },
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q17.html">Bạn triển khai SSL pinning cho app RN thế nào, và cần chuẩn bị gì để pinning không &#39;khoá&#39; toàn bộ user khi server đổi chứng chỉ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>fetch</code> của RN đi qua stack mạng native (OkHttp trên Android, <code>NSURLSession</code> trên iOS), nên pinning phải làm ở tầng native: trên Android cấu hình <code>CertificatePinner</code> cho OkHttp client mà RN dùng thông qua <code>OkHttpClientProvider.setOkHttpClientFactory</code>, trên iOS dùng TrustKit hoặc một thư viện pinning dựng sẵn cho RN. Nhớ rằng SDK có HTTP client riêng hay WebView sẽ không được bao phủ. Pin public key (hash SPKI) thay vì cả certificate để gia hạn chứng chỉ với cùng key không làm vỡ pin, và luôn có ít nhất một pin dự phòng (key backup tạo sẵn hoặc key của CA trung gian). Cần quy trình xoay key phối hợp với backend/infra: phát hành app chứa pin mới trước, đợi đa số user cập nhật rồi mới đổi chứng chỉ; không trông vào OTA vì cấu hình pin nằm trong code native. Pinning chặn được MITM qua proxy trên máy bình thường, nhưng trên máy root/jailbreak có Frida thì vẫn bị bypass, nên chỉ là một lớp bảo vệ.</div>
+        <pre class="code-block" data-lang="Kotlin"><code><span class="tk-kw">class</span> <span class="tk-type">PinnedClientFactory</span> : <span class="tk-type">OkHttpClientFactory</span> {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> createNewNetworkModuleClient(): <span class="tk-type">OkHttpClient</span> {
+    <span class="tk-kw">val</span> pinner = <span class="tk-type">CertificatePinner</span>.<span class="tk-type">Builder</span>()
+      .add(<span class="tk-str">&quot;api.shop.vn&quot;</span>, <span class="tk-str">&quot;sha256/AAAA...=&quot;</span>) <span class="tk-com">// key đang dùng</span>
+      .add(<span class="tk-str">&quot;api.shop.vn&quot;</span>, <span class="tk-str">&quot;sha256/BBBB...=&quot;</span>) <span class="tk-com">// key dự phòng</span>
+      .build()
+    <span class="tk-kw">return</span> <span class="tk-type">OkHttpClientProvider</span>.createClientBuilder()
+      .certificatePinner(pinner)
+      .build()
+  }
+}
+<span class="tk-com">// MainApplication.onCreate():</span>
+<span class="tk-com">// OkHttpClientProvider.setOkHttpClientFactory(PinnedClientFactory())</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q18.html">Khách hàng (một ví điện tử) yêu cầu app RN phải &#39;chặn máy root/jailbreak và chống sửa app&#39;. Bạn thiết kế lớp bảo vệ này thế nào cho thực tế?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết nói rõ với stakeholder: mọi kiểm tra phía client đều có thể bị bypass (Frida, patch bundle), nên client chỉ cung cấp tín hiệu, quyết định cuối cùng nằm ở server. Tôi kết hợp nhiều lớp: thư viện phát hiện root/jailbreak, debugger, hook chạy ở tầng native để gắn cờ rủi ro; attestation của nền tảng — Play Integrity API trên Android, App Attest trên iOS — để server xác minh request đến từ bản app chính hãng trên thiết bị đáng tin, vì kết quả do Google/Apple ký nên client không tự giả được. Server áp dụng chính sách theo mức rủi ro: thiết bị đáng ngờ vẫn xem được số dư nhưng giao dịch lớn cần thêm OTP hoặc sinh trắc học, hoặc chặn hẳn nếu quy định yêu cầu. Token và dữ liệu nhạy cảm lưu trong Keychain/Keystore qua <code>react-native-keychain</code> hoặc <code>expo-secure-store</code>; không log token, tắt dev menu và log debug ở bản release; bật <code>FLAG_SECURE</code> cho màn nhạy cảm trên Android. Obfuscation JS và native chỉ làm tăng chi phí reverse, không phải hàng rào chính.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q19.html">Công ty có 3 app RN (khách hàng, tài xế, merchant) dùng chung nhiều UI và logic. Bạn tổ chức monorepo thế nào, và những bẫy riêng của RN trong monorepo là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi dùng workspace của package manager (pnpm hoặc Yarn workspaces), thêm Turborepo/Nx để cache và chỉ chạy task bị ảnh hưởng. Cấu trúc: <code>apps/*</code> cho từng app; <code>packages/*</code> cho design system (token, component), API client có type, utils và các feature package có ranh giới rõ, chỉ export qua entry public. Bẫy riêng của RN: thứ nhất, cả repo chỉ được có một bản <code>react</code> và <code>react-native</code> — hai bản <code>react</code> gây lỗi &#39;Invalid hook call&#39;, hai bản thư viện native gây đăng ký trùng hoặc autolinking sai — nên package dùng chung khai báo chúng là <code>peerDependencies</code> và ép version thống nhất ở root. Thứ hai, Metro phải được cấu hình để thấy code ngoài thư mục app (<code>watchFolders</code>, resolve <code>node_modules</code> ở root; Expo tự cấu hình việc này trong các SDK gần đây). Thứ ba, thư viện có native code nên được khai báo trong <code>package.json</code> của app để autolinking nhận đúng. Cuối cùng, các app nên đi cùng phiên bản RN để chia sẻ được native dependency, nên cần lịch nâng cấp chung.</div>
+        <pre class="code-block"><code><span class="tk-com">// apps/driver/metro.config.js</span>
+<span class="tk-kw">const</span> path = require(<span class="tk-str">&#39;path&#39;</span>);
+<span class="tk-kw">const</span> { getDefaultConfig } = require(<span class="tk-str">&#39;@react-native/metro-config&#39;</span>);
+
+<span class="tk-kw">const</span> root = path.resolve(__dirname, <span class="tk-str">&#39;../..&#39;</span>);
+<span class="tk-kw">const</span> config = getDefaultConfig(__dirname);
+
+config.watchFolders = [root]; <span class="tk-com">// thấy được packages/*</span>
+config.resolver.nodeModulesPaths = [
+  path.resolve(__dirname, <span class="tk-str">&#39;node_modules&#39;</span>),
+  path.resolve(root, <span class="tk-str">&#39;node_modules&#39;</span>),
+];
+
+module.exports = config;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q20.html">Bạn cần ship cùng một app cho 8 thương hiệu khác nhau (logo, màu, bundle id, vài tính năng riêng). Thiết kế codebase RN thế nào để không thành 8 nhánh git?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Một codebase duy nhất, khác biệt giữa các brand được mô tả bằng cấu hình chứ không bằng nhánh. Ở build time, mỗi brand có một file config (tên app, bundle id/applicationId, icon, splash, màu, URL backend, key SDK) được chọn qua biến môi trường; với Expo thì <code>app.config.ts</code> đọc biến <code>BRAND</code> để sinh project native tương ứng, với project bare thì dùng product flavors trên Android và scheme/target trên iOS. Ở runtime, theme token và asset được nạp theo brand qua một provider; tính năng khác nhau bật bằng feature flag hoặc danh sách capability của brand, thay vì <code>if (brand === &#39;x&#39;)</code> rải khắp code. CI build theo ma trận brand × môi trường; mỗi brand có tài khoản store, signing và channel OTA riêng để update không đi nhầm brand. Thêm screenshot test cho từng brand để bắt vỡ giao diện, và quy tắc review: mọi tuỳ biến brand mới phải đi qua config hoặc flag.</div>
+        <pre class="code-block"><code><span class="tk-com">// app.config.ts</span>
+<span class="tk-kw">import</span> <span class="tk-kw">type</span> { <span class="tk-type">ExpoConfig</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;expo/config&#39;</span>;
+<span class="tk-kw">import</span> { brands } <span class="tk-kw">from</span> <span class="tk-str">&#39;./brands&#39;</span>;
+
+<span class="tk-kw">const</span> brand = brands[process.env.<span class="tk-type">BRAND</span> ?? <span class="tk-str">&#39;default&#39;</span>];
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> (): <span class="tk-type">ExpoConfig</span> =&gt; ({
+  name: brand.displayName,
+  slug: brand.slug,
+  icon: brand.icon,
+  ios: { bundleIdentifier: brand.iosBundleId },
+  android: { package: brand.androidPackage },
+  extra: { brandId: brand.id, apiUrl: brand.apiUrl },
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q21.html">Thiết kế phía client cho tính năng chat trong app RN: gửi được khi mất mạng, hiển thị tin ngay, không trùng tin, cuộn mượt với lịch sử dài.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nguồn sự thật trên client là DB local (SQLite qua <code>op-sqlite</code>/<code>expo-sqlite</code>, hoặc WatermelonDB), UI chỉ subscribe DB. Gửi tin: tạo bản ghi với <code>clientId</code> (UUID) trạng thái <code>pending</code>, hiển thị ngay (optimistic), đưa vào outbox; worker gửi lần lượt khi có mạng, retry với exponential backoff, server dùng <code>clientId</code> làm idempotency key nên gửi lại không tạo bản trùng, ack trả về <code>serverId</code> và thời gian server để chuyển sang <code>sent</code>. Nhận tin: WebSocket khi app ở foreground, tự reconnect có backoff, và sau mỗi lần reconnect gọi API lấy tin sau cursor cuối để lấp khoảng trống; ở background thì dựa vào push notification vì OS không cho giữ socket lâu. Hiển thị: list đảo chiều (<code>inverted</code>), phân trang theo cursor khi cuộn lên, key dùng <code>clientId</code> để tin không bị remount khi nhận <code>serverId</code>. Thêm trạng thái <code>failed</code> cho user gửi lại, sắp xếp theo thời gian server, và giới hạn dữ liệu lưu local.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Message</span> = {
+  clientId: <span class="tk-kw">string</span>; <span class="tk-com">// UUID tạo ở client, dùng làm idempotency key</span>
+  serverId?: <span class="tk-kw">string</span>; <span class="tk-com">// có sau khi server ack</span>
+  conversationId: <span class="tk-kw">string</span>;
+  body: <span class="tk-kw">string</span>;
+  status: <span class="tk-str">&#39;pending&#39;</span> | <span class="tk-str">&#39;sent&#39;</span> | <span class="tk-str">&#39;failed&#39;</span>;
+  createdAt: <span class="tk-kw">number</span>; <span class="tk-com">// giờ server khi đã ack, giờ máy khi pending</span>
+};</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q22.html">Công ty đang có hai app native riêng (Kotlin và Swift), CTO hỏi có nên chuyển sang React Native không. Bạn đánh giá và đề xuất lộ trình thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi bắt đầu từ bài toán chứ không từ công nghệ: lý do muốn đổi (tốc độ ra tính năng, thiếu người, hai app lệch nhau), loại app (nội dung, thương mại hay nặng đồ hoạ, camera, realtime), kỹ năng team hiện có, và có web React để chia sẻ logic không. RN hợp khi team có nền React/TypeScript, muốn chia sẻ code với web, cần OTA cho phần JS và muốn UI dùng component native của nền tảng; Flutter hợp khi cần UI tuỳ biến đồng nhất giữa hai nền tảng vì nó tự vẽ toàn bộ; native vẫn là lựa chọn đúng cho app gắn chặt với API nền tảng mới nhất hoặc cần hiệu năng cực cao. Nếu chọn RN, tôi không viết lại toàn bộ một lần mà đi theo hướng brownfield: nhúng RN vào app hiện có, viết màn mới bằng RN, chuyển dần các màn ít rủi ro, giữ phần native đặc thù thành native module. Kèm theo là tiêu chí đo được (thời gian ra tính năng, crash-free, startup, kích thước app) và mốc đánh giá lại sau một hai quý.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q23.html">Một bản OTA vừa đẩy lên production làm app crash ngay khi mở ở khoảng 20% user. Bạn xử lý sự cố này thế nào, cả lúc đang cháy lẫn sau đó?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ưu tiên cầm máu: dừng mọi rollout đang chạy và rollback ngay — publish lại bản update ổn định trước đó hoặc quay về bundle nhúng trong binary — trên đúng channel và runtime version. Cần nhớ máy đã tải update lỗi chỉ nhận bản sửa ở lần khởi động sau, và nếu app crash ngay lúc khởi động thì phải trông vào cơ chế error recovery của thư viện update — cần hiểu rõ cơ chế này trước khi dùng OTA. Song song, chỉ định một người điều phối, một kênh liên lạc, cập nhật cho support và PM theo mốc thời gian, dùng Sentry (đã có source map) để khoanh vùng — nguyên nhân hay gặp là update gọi native module mà binary cũ chưa có do sai runtime version. Sau sự cố là postmortem không đổ lỗi: timeline, root cause, vì sao quy trình không chặn được, rồi action item có người chịu trách nhiệm như bắt buộc thử update trên build production qua channel preview, rollout theo phần trăm kèm theo dõi crash-free, chuyển runtime version sang <code>fingerprint</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q24.html">App đang chạy bản React Native cũ hơn hiện tại nhiều phiên bản, nhưng team sản phẩm không muốn dừng làm tính năng để nâng cấp. Bạn thuyết phục và tổ chức việc này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi trình bày bằng rủi ro và chi phí mà phía sản phẩm quan tâm, thay vì nói &#39;nợ kỹ thuật&#39; chung chung: Google Play yêu cầu nâng target API hằng năm và Apple yêu cầu build bằng SDK mới, thư viện quan trọng dần ngừng hỗ trợ bản cũ, lỗ hổng bảo mật không được vá, và chi phí nâng cấp tăng theo số phiên bản bị bỏ lỡ. Đề xuất cụ thể: dành một tỷ lệ capacity cố định mỗi sprint hoặc một nhóm nhỏ luân phiên phụ trách, thay vì dừng toàn bộ team. Về kỹ thuật, dùng React Native Upgrade Helper để xem diff template, nâng từng bước vài phiên bản một, mỗi bước có checklist (thư viện native, E2E, so sánh startup và crash), làm trên nhánh ngắn hạn và merge thường xuyên để không lệch xa main, phát hành bằng staged rollout. Sau đó biến việc nâng cấp thành nhịp đều đặn theo các bản phát hành của RN, để không tích luỹ lại thành một dự án lớn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q25.html">Team vừa nhận 4 dev chuyển từ React web sang. Sau vài sprint, code review liên tục gặp lại các lỗi &#39;kiểu web&#39;. Bạn nâng chất lượng team thế nào mà không biến bản thân thành nút thắt review?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết tôi gom các lỗi lặp lại thành danh sách cụ thể, thường là: nghĩ theo DOM/CSS (kỳ vọng style kế thừa, quên Flexbox mặc định là <code>column</code>), render list dài bằng <code>ScrollView</code> + <code>map</code>, bỏ qua khác biệt iOS/Android (bàn phím, safe area, nút back), chạy animation trên JS thread, và chỉ test trên simulator iOS. Với từng loại lỗi, ưu tiên cho máy bắt: rule ESLint (rules of hooks, <code>react-native/no-inline-styles</code>), template feature dựng sẵn, checklist PR có mục kiểm tra trên máy Android thật. Phần không tự động được thì làm buổi chia sẻ ngắn dựa trên chính PR của team, pair programming cho tính năng đầu tiên, và một tài liệu ngắn &#39;RN cho dev web&#39;. Khi review, tôi giải thích lý do (vì sao <code>FlatList</code> chứ không phải <code>ScrollView</code>) thay vì sửa hộ, và cho dev mới tham gia review code người khác để học nhanh hơn và chia tải review. Hiệu quả đo bằng số comment lặp lại giảm dần qua các sprint.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm React Native Senior</h2><a class="section-sub" href="../../../#/react-native/quiz?rank=senior&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/rn-sen-m01.html">Native module Android giữ một listener cảm biến và gọi callback sang JS. Sau khi reload JS từ dev menu (process vẫn sống), app thỉnh thoảng crash vì listener cũ vẫn bắn sự kiện vào React instance đã bị huỷ. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m02.html">Một TurboModule có method đồng bộ đọc và giải mã file mất khoảng 300ms, được gọi trong onPress. Khi user bấm nút, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m03.html">Trong một C++ TurboModule, việc tải file chạy trên thread nền và khi xong cần gọi callback JS mà module đã lưu lại. Cách làm đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m04.html">Mô tả nào đúng về cách Fabric xử lý một cập nhật UI sau khi React render xong?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m05.html">Sau khi bật New Architecture, một native component cũ viết theo kiểu requireNativeComponent (chưa có Codegen) vẫn hiển thị bình thường. Cơ chế nào giúp điều này?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m06.html">Native module đọc cảm biến gửi khoảng 200 event mỗi giây sang JS để vẽ một chỉ số trên màn hình. JS thread nghẽn, các thao tác khác đều trễ. Hướng xử lý hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m07.html">App native nhúng 5 màn React Native (brownfield); code hiện tại tạo mới một React host/instance mỗi lần mở một màn RN. Hậu quả chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m08.html">Sau khi migrate 40 native module cũ sang TurboModule mà không đổi logic, thời gian khởi động giảm rõ rệt. Lý do chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m09.html">Team dùng useTransition để giữ ô tìm kiếm mượt khi lọc list lớn nhưng không thấy khác biệt nào. App vẫn chạy kiến trúc cũ. Giải thích nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m10.html">Sau khi bật React Compiler cho app RN, phát biểu nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m11.html">Một thư viện cũ đọc source của hàm để suy ra tên tham số. Trên bản release chạy Hermes, lệnh console.log dưới đây in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m12.html">Module dưới đây cache kết quả theo object product để khỏi tính lại. Sau vài giờ dùng app, memory tăng dần. Cách sửa hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m13.html">Lớp API client dùng withTimeout dưới đây để báo lỗi nếu server không trả lời sau 5 giây. Khi timeout xảy ra, request fetch ra sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m14.html">App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài MB) xuống AsyncStorage. Thời gian từ lúc mở app tới màn đầu tiên tăng dần theo dung lượng dữ liệu. Hướng sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m15.html">JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ nào vẫn hoạt động bình thường?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m16.html">Component dưới đây được mount, sau đó userId đổi 2 lần rồi component bị unmount (không bật StrictMode). Điều gì xảy ra với các interval?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m17.html">Ảnh 3000×2000 px được hiển thị trong thumbnail 100×100 dp mà không downsample. Khi decode thành bitmap 4 byte mỗi pixel (ARGB_8888), ảnh chiếm khoảng bao nhiêu RAM?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m18.html">Metro đang bật inlineRequires (mặc định trong template React Native) và không module nào khác import ./analytics. Khi app khởi động, log nào xuất hiện?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m19.html">List dùng FlashList, mỗi item có nút &#39;Xem thêm&#39; mở rộng nội dung bằng state cục bộ. Khi cuộn, user thấy cả những item chưa từng bấm cũng đang mở rộng. Nguyên nhân?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m20.html">Heap snapshot của Hermes cho thấy JS heap ổn định quanh 40MB, nhưng tổng memory của process (theo Android Studio/Xcode) tăng liên tục khi lướt gallery. Nghi phạm hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m21.html">Màn chat log toàn bộ payload của mỗi message WebSocket như dưới. Ở bản release, phát biểu nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m22.html">Bạn cần đo xem một màn hình có thật sự chậm ở phía JS không trước khi tối ưu. Cách đo nào cho số liệu đáng tin nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m23.html">Mỗi card trong list mở rộng bằng Reanimated như dưới. Khi nhiều card cùng animate, phát biểu nào đúng nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m24.html">Dùng Gesture Handler cùng Reanimated, callback onEnd của gesture (chạy dưới dạng worklet trên UI thread) gọi thẳng setScore của React. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m25.html">Bản 2.4.0 (cấu hình dưới) thêm react-native-maps và đã lên store. Sau đó team đẩy một bản EAS Update có dùng thư viện này. User còn ở bản 2.3.0 sẽ thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m26.html">Bản iOS mới đang phát hành theo phased release 7 ngày trên App Store. Trong thời gian đó, user muốn có bản mới ngay thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m27.html">Về chính sách của App Store và Google Play đối với OTA update cho app React Native, phát biểu nào chính xác nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m28.html">App bật Hermes. Team upload source map do Metro sinh ra lên Sentry, nhưng stack trace production vẫn trỏ sai dòng. Thiếu bước gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m29.html">Bản 3.2.0 (versionCode 320) đang staged rollout 20% trên Google Play thì phát hiện crash nghiêm trọng ở phần native. Team bấm dừng (halt) rollout. Điều gì đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m30.html">Project Expo dùng Continuous Native Generation (android/ không commit). Một dev sửa tay android/app/build.gradle trên máy mình và build thử thành công. CI chạy npx expo prebuild --clean rồi build. Kết quả?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m31.html">Một PR lưu refresh token bằng MMKV có bật mã hoá, với encryptionKey là một chuỗi hằng số viết thẳng trong code JS. Nhận xét nào chính xác nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m32.html">App pin bằng CertificatePinner của OkHttp (Android) và TrustKit (iOS), chỉ với một hash là public key của certificate hiện tại. Infra thay certificate mới với key pair mới. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m33.html">App gọi Play Integrity API và nhận về integrity token. Cách dùng token này đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m34.html">Luồng đăng nhập OAuth trả authorization code về app qua custom scheme myapp://callback. Rủi ro chính và cách giảm thiểu đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m35.html">Màn WebView cho phép trang web xin dữ liệu từ app qua postMessage. Đoạn xử lý dưới có vấn đề bảo mật gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m36.html">Trong monorepo, app apps/driver dùng package packages/ui. Sau khi cài thêm dependency, mọi component của packages/ui báo lỗi &#39;Invalid hook call&#39;. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m37.html">Client gửi đơn hàng khi mạng chập chờn: request bị timeout dù server có thể đã xử lý xong, và client tự động retry. Cách đúng để không tạo đơn trùng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m38.html">Feed mới nhất phân trang bằng ?offset=20&amp;limit=20. Trong lúc user đang cuộn, có 5 bài mới được đăng. Hiện tượng ở trang kế tiếp và cách khắc phục?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m39.html">CI build lại app native cho mọi PR mất 25 phút, dù đa số PR chỉ sửa JS. Cách rút ngắn mà vẫn an toàn nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m40.html">Giữa dự án, một dev giỏi đề xuất thay Redux bằng một thư viện state mới cho &#39;gọn hơn&#39;; nửa team ủng hộ, nửa kia lo rủi ro. Là tech lead, cách xử lý hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

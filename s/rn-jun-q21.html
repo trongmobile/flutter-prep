@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Junior: Dự án vừa nâng lên bản React Native chạy New Architecture mặc định. Gi…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Với bridge, JS và native là hai thế giới tách biệt: mỗi lời gọi được serialize thành JSON, gom theo batch và gửi bất đồng bộ qua lại, nên tốn chi phí chuyển…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-q21.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior: Dự án vừa nâng lên bản React Native chạy New Architecture mặc định. Gi…">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-jun-q21");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Dự án vừa nâng lên bản React Native chạy New Ar…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-q21.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Dự án vừa nâng lên bản React Native chạy New Architecture mặc định. Giải thích ngắn gọn New Architecture khác kiến trúc cũ (bridge) ở đâu, và khi thêm một thư viện native mới bạn cần kiểm tra gì?</p>
-<p><a href="../#/q/rn-jun-q21">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Dự án vừa nâng lên bản React Native chạy New Ar…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/native/">Native &amp; New Architecture</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Dự án vừa nâng lên bản React Native chạy New Architecture mặc định. Giải thích ngắn gọn New Architecture khác kiến trúc cũ (bridge) ở đâu, và khi thêm một thư viện native mới bạn cần kiểm tra gì?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với bridge, JS và native là hai thế giới tách biệt: mỗi lời gọi được serialize thành JSON, gom theo batch và gửi bất đồng bộ qua lại, nên tốn chi phí chuyển đổi, không gọi đồng bộ được và dễ nghẽn khi dữ liệu dồn dập như sự kiện cuộn hay animation. JSI (JavaScript Interface) là lớp C++ cho phép JS giữ tham chiếu tới object C++/native và gọi method trực tiếp, kể cả đồng bộ, không cần serialize JSON. Trên nền JSI có TurboModules (native module khởi tạo khi cần, gọi trực tiếp) và Fabric (renderer mới). New Architecture được bật mặc định từ React Native 0.76, nên khi chọn thư viện native cần xem README hoặc React Native Directory để biết nó đã hỗ trợ New Architecture chưa, thư viện còn được bảo trì không, rồi test kỹ trên cả hai nền tảng; nhiều thư viện cũ vẫn chạy nhờ lớp tương thích (interop layer) nhưng không phải trường hợp nào cũng ổn.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-q21">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-q20.html"><span class="muted small">← Câu trước</span><span>Sau khi đăng nhập, bạn lưu access token và refresh token ở đâu? Đồng nghiệp bảo…</span></a>
+  <a class="pager-next" href="../s/rn-jun-q22.html"><span class="muted small">Câu sau →</span><span>README cũ của một thư viện native (ví dụ react-native-keychain) vẫn hướng dẫn c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; New Architecture</h2><a class="section-sub" href="../phong-van/react-native/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q22.html">README cũ của một thư viện native (ví dụ react-native-keychain) vẫn hướng dẫn chạy react-native link và sửa tay MainApplication, Podfile. Với React Native hiện tại, autolinking làm thay bạn những gì, và bạn vẫn phải tự làm bước nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-m33.html">Điểm khác biệt cốt lõi giữa JSI (New Architecture) và bridge của kiến trúc cũ là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m34.html">Trên Android, người dùng đã từ chối quyền camera tới mức hệ thống không hỏi lại nữa. Gọi PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA) lúc này thì sao?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m35.html">Code xin quyền camera trên iOS nhưng quên khai báo NSCameraUsageDescription trong Info.plist. Điều gì xảy ra khi app truy cập camera?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-q18.html">Bạn cần viết một Turbo Native Module đọc mức pin cho cả Android và iOS. Các bước với Codegen là gì, và được lợi gì so với native module kiểu cũ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q19.html">Native module cần đẩy sự kiện liên tục lên JS (vị trí GPS, tiến độ tải file). Bạn làm thế nào ở cả hai phía, và cần chú ý gì để không rò rỉ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

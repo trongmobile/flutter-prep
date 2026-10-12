@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle (80 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="80 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle (80 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="80 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <span aria-current="page">Middle</span>
+</nav>
+
+<header class="view-head rank-amber">
+  <div class="eyebrow">phỏng vấn · flutter · middle (2–4 năm)</div>
+  <h1>Câu hỏi phỏng vấn Flutter Middle</h1>
+  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 80 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../../../#/flutter/study/middle">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/flutter/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/flutter/junior/">Junior</a>
+  <a class="chip active" href="../../../phong-van/flutter/middle/" aria-current="page">Middle</a>
+  <a class="chip" href="../../../phong-van/flutter/senior/">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#dart">Dart</a> <span class="count">3</span></li>
+    <li><a href="#async">Async &amp; Isolate</a> <span class="count">8</span></li>
+    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">14</span></li>
+    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">4</span></li>
+    <li><a href="#state">State Management</a> <span class="count">19</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">8</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#native">Native &amp; Platform</a> <span class="count">4</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">5</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">9</span></li>
+    <li><a href="#security">Security</a> <span class="count">1</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="dart">
+  <div class="section-head"><h2>Dart</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/dart/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q01.html">Vì sao <code>sealed class</code> kết hợp <code>switch</code> expression là cách tốt để mô hình hóa UI state (loading/success/error)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>sealed class</code> cho compiler biết toàn bộ subtype (chúng phải nằm cùng library), nên <code>switch</code> trên nó được kiểm tra exhaustiveness: thiếu một case là lỗi compile chứ không phải bug runtime. Khi thêm state mới (ví dụ <code>AuthExpired</code>), mọi chỗ <code>switch</code> chưa xử lý sẽ báo lỗi ngay, rất an toàn khi refactor. Kết hợp object pattern như <code>Authenticated(:final user)</code> để destructure field gọn gàng. Lưu ý: đừng thêm case <code>_</code> vì nó tắt luôn lợi ích này, và <code>sealed class</code> ngầm là abstract nên không khởi tạo trực tiếp được.</div>
+        <pre class="code-block"><code><span class="tk-kw">sealed</span> <span class="tk-kw">class</span> <span class="tk-type">AuthState</span> {}
+<span class="tk-kw">class</span> <span class="tk-type">AuthLoading</span> <span class="tk-kw">extends</span> <span class="tk-type">AuthState</span> {}
+<span class="tk-kw">class</span> <span class="tk-type">Authenticated</span> <span class="tk-kw">extends</span> <span class="tk-type">AuthState</span> {
+  <span class="tk-type">Authenticated</span>(<span class="tk-kw">this</span>.user);
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> user;
+}
+<span class="tk-kw">class</span> <span class="tk-type">AuthFailure</span> <span class="tk-kw">extends</span> <span class="tk-type">AuthState</span> {}
+
+<span class="tk-type">String</span> label(<span class="tk-type">AuthState</span> s) =&gt; <span class="tk-kw">switch</span> (s) {
+  <span class="tk-type">AuthLoading</span>() =&gt; <span class="tk-str">&#39;Đang tải...&#39;</span>,
+  <span class="tk-type">Authenticated</span>(:<span class="tk-kw">final</span> user) =&gt; <span class="tk-str">&#39;Xin chào $user&#39;</span>,
+  <span class="tk-type">AuthFailure</span>() =&gt; <span class="tk-str">&#39;Đăng nhập thất bại&#39;</span>,
+};</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q02.html">Record và pattern trong Dart 3 giải quyết vấn đề gì? Khi nào nên dùng record thay vì tạo class?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Record là kiểu tổng hợp ẩn danh, bất biến, có <code>==</code>/<code>hashCode</code> theo giá trị, rất hợp để trả về nhiều giá trị từ một hàm mà không cần tạo class tạm. Pattern cho phép destructure record, list, map, object ngay khi khai báo hoặc trong <code>switch</code>/<code>if-case</code>, kể cả kiểm tra kiểu khi đọc JSON. Dùng record cho dữ liệu cục bộ, ngắn hạn (giá trị trả về, key ghép cho <code>Map</code>); khi dữ liệu mang ý nghĩa nghiệp vụ, đi qua nhiều layer hoặc cần method thì nên dùng class (hoặc freezed) để có tên rõ ràng và dễ mở rộng.</div>
+        <pre class="code-block"><code>(double min, double max) range(<span class="tk-type">List</span>&lt;double&gt; xs) {
+  <span class="tk-kw">final</span> sorted = [...xs]..sort();
+  <span class="tk-kw">return</span> (sorted.first, sorted.last);
+}
+
+<span class="tk-kw">void</span> handle(<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt; json) {
+  <span class="tk-kw">final</span> (min, max) = range([<span class="tk-num">3</span>, <span class="tk-num">1</span>, <span class="tk-num">4</span>]);
+  <span class="tk-kw">if</span> (json <span class="tk-kw">case</span> {<span class="tk-str">&#39;name&#39;</span>: <span class="tk-type">String</span> name, <span class="tk-str">&#39;age&#39;</span>: int age}) {
+    print(<span class="tk-str">&#39;$name $age, range: $min-$max&#39;</span>);
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q03.html">Các class modifier <code>interface</code>, <code>base</code>, <code>final</code>, <code>sealed</code> trong Dart 3 khác nhau thế nào? Khi nào dùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chúng giới hạn cách code bên ngoài library sử dụng class: <code>interface class</code> cho <code>implements</code> nhưng cấm <code>extends</code>; <code>base class</code> cho <code>extends</code> nhưng cấm <code>implements</code> (và subclass cũng phải là <code>base</code>/<code>final</code>/<code>sealed</code>); <code>final class</code> cấm cả hai; <code>sealed class</code> là abstract, cấm kế thừa ngoài library và bật kiểm tra exhaustiveness. Bên trong cùng library thì không bị giới hạn. Thực tế: tác giả package dùng <code>final</code>/<code>base</code> để sau này thêm method mà không làm vỡ code người dùng, còn trong app hay dùng <code>sealed</code> cho state/result và <code>abstract interface class</code> cho contract của repository.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="async">
+  <div class="section-head"><h2>Async &amp; Isolate</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/async/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q04.html">Màn hình bị giật khi parse một JSON vài MB. Bạn dùng <code>Isolate.run</code> thế nào và cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đưa phần CPU-bound (decode và map sang model) vào <code>Isolate.run</code>: nó spawn isolate mới, chạy closure, gửi kết quả về bằng <code>Isolate.exit</code> (không phải copy lại) rồi tự đóng isolate. Closure và kết quả phải gửi được giữa các isolate — nếu closure vô tình capture <code>this</code> hoặc object chứa file/socket đang mở thì sẽ lỗi hoặc copy thừa, nên đặt logic trong hàm top-level/static chỉ nhận đúng dữ liệu cần. Isolate không chia sẻ memory: biến global/static ở isolate mới là bản riêng, và chỉ đáng dùng khi việc tính toán lâu hơn chi phí spawn + copy input. Trên web không có isolate thật, <code>compute</code> của Flutter sẽ chạy callback ngay trên main thread.</div>
+        <pre class="code-block"><code><span class="tk-type">Future</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Product</span>&gt;&gt; parseProducts(<span class="tk-type">String</span> body) {
+  <span class="tk-kw">return</span> <span class="tk-type">Isolate</span>.run(() {
+    <span class="tk-kw">final</span> list = jsonDecode(body) <span class="tk-kw">as</span> <span class="tk-type">List</span>&lt;<span class="tk-kw">dynamic</span>&gt;;
+    <span class="tk-kw">return</span> list
+        .map((e) =&gt; <span class="tk-type">Product</span>.fromJson(e <span class="tk-kw">as</span> <span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt;))
+        .toList();
+  });
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q05.html">Vì sao phải <code>cancel()</code> <code>StreamSubscription</code>? Có những cách nào để không quên việc này?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nếu nguồn stream sống lâu (service, socket, Firebase…), subscription giữ callback và cả <code>State</code> mà callback capture, nên không cancel sẽ leak memory, vẫn nhận event và dễ gọi <code>setState</code> sau khi widget đã dispose. Cancel còn báo cho nguồn phát dọn dẹp: generator <code>async*</code> dừng và chạy <code>finally</code>, <code>StreamController</code> gọi <code>onCancel</code>. Cách an toàn: lưu subscription và cancel trong <code>dispose()</code>, dùng <code>StreamBuilder</code> để framework tự quản lý, <code>ref.onDispose(sub.cancel)</code> trong Riverpod, hoặc <code>await for</code> (thoát vòng lặp bằng <code>break</code>/<code>return</code> sẽ tự cancel). Nếu stream đến từ <code>widget</code>, nhớ hủy và subscribe lại trong <code>didUpdateWidget</code> khi stream thay đổi.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _PriceTickerState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">PriceTicker</span>&gt; {
+  <span class="tk-type">StreamSubscription</span>&lt;double&gt;? _sub;
+  double? _price;
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> initState() {
+    <span class="tk-kw">super</span>.initState();
+    _sub = widget.prices.listen((p) =&gt; setState(() =&gt; _price = p));
+  }
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _sub?.cancel();
+    <span class="tk-kw">super</span>.dispose();
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d02-2.html">Microtask queue và Event queue khác nhau thế nào? Cái nào ưu tiên hơn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Microtask queue (sinh ra từ <code>Future.then</code>, <code>async/await</code>) luôn được xử lý hết trước khi Dart quay lại xử lý Event queue (I/O, timer, sự kiện UI).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d02-3.html"><code>async*</code> và <code>sync*</code> dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai đều tạo generator function dùng <code>yield</code>. <code>sync*</code> trả về <code>Iterable</code> (đồng bộ); <code>async*</code> trả về <code>Stream</code> (bất đồng bộ).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d03-1.html">Isolate trong Dart là gì? Vì sao Dart cần Isolate thay vì multi-threading truyền thống?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Isolate là một luồng thực thi độc lập với bộ nhớ riêng, giao tiếp qua message-passing (không share memory). Nhờ vậy tránh được race condition tự nhiên mà không cần lock/mutex như thread truyền thống.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d03-3.html">StreamController <code>broadcast</code> khác gì single-subscription?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Single-subscription chỉ cho một listener và buffer sự kiện nếu chưa có ai lắng nghe. Broadcast cho phép nhiều listener nhưng không buffer, listener chỉ nhận sự kiện phát sinh sau khi subscribe.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d03-4.html"><code>StreamBuilder</code> rebuild khi nào? Pitfall thường gặp là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Rebuild mỗi khi Stream emit giá trị mới. Pitfall phổ biến: tạo Stream mới ngay trong <code>build()</code> khiến Stream bị recreate liên tục, mất dữ liệu hoặc gây rebuild vô hạn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d07-4.html">Review: kể 2 khác biệt giữa Isolate và Thread hệ điều hành truyền thống.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">(1) Isolate không share memory, giao tiếp qua message-passing, trong khi Thread share memory và cần lock. (2) Nhờ đó Isolate tránh race condition tự nhiên mà không cần đồng bộ hoá thủ công.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="widget">
+  <div class="section-head"><h2>Widget &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/widget/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q06.html">Implicit animation và explicit animation khác nhau thế nào? Khi nào chọn loại nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Implicit animation (<code>AnimatedContainer</code>, <code>AnimatedOpacity</code>, <code>TweenAnimationBuilder</code>…) tự tạo và quản lý controller bên trong: bạn chỉ đổi giá trị đích rồi <code>setState</code>, widget tự tween từ giá trị cũ sang mới. Explicit animation dùng <code>AnimationController</code> do bạn tự tạo (cần <code>TickerProvider</code>, tự <code>dispose</code>) kết hợp các widget <code>*Transition</code> hoặc <code>AnimatedBuilder</code>, cho phép <code>forward</code>/<code>reverse</code>/<code>repeat</code>, dừng giữa chừng, phối hợp nhiều animation hoặc gắn với gesture. Quy tắc thực tế: chuyển &#39;A → B khi state đổi&#39; thì dùng implicit cho gọn; cần lặp, staggered hay chạy theo tay kéo thì dùng explicit.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q07.html"><code>vsync</code>/<code>TickerProvider</code> trong <code>AnimationController</code> để làm gì? Khi nào dùng <code>SingleTickerProviderStateMixin</code>, khi nào dùng <code>TickerProviderStateMixin</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Ticker</code> gọi callback mỗi frame để controller cập nhật giá trị; <code>vsync</code> cung cấp Ticker chịu sự điều khiển của <code>TickerMode</code>, nên khi route bị route khác che hoàn toàn (offstage) animation tạm ngưng thay vì tiêu tốn CPU/pin. <code>SingleTickerProviderStateMixin</code> nhẹ hơn nhưng chỉ tạo được đúng một Ticker; State có từ hai controller trở lên (hoặc tạo lại controller nhiều lần) phải dùng <code>TickerProviderStateMixin</code>, nếu không sẽ gặp assertion &#39;multiple tickers were created&#39;. Luôn <code>dispose()</code> controller trong <code>dispose()</code> của State, nếu không sẽ báo lỗi State bị dispose khi Ticker còn active.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _PulseState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">Pulse</span>&gt; <span class="tk-kw">with</span> <span class="tk-type">SingleTickerProviderStateMixin</span> {
+  <span class="tk-kw">late</span> <span class="tk-kw">final</span> _c = <span class="tk-type">AnimationController</span>(
+    vsync: <span class="tk-kw">this</span>,
+    duration: <span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">800</span>),
+  )..repeat(reverse: <span class="tk-kw">true</span>);
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _c.dispose(); <span class="tk-com">// bắt buộc, nếu không Ticker vẫn active</span>
+    <span class="tk-kw">super</span>.dispose();
+  }
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) =&gt;
+      <span class="tk-type">FadeTransition</span>(opacity: _c, child: widget.child);
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q08.html">Bạn thiết lập đa ngôn ngữ cho app Flutter bằng <code>intl</code> + ARB như thế nào? Xử lý tham số và số nhiều ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thêm <code>flutter_localizations</code> và <code>intl</code>, bật <code>generate: true</code> trong <code>pubspec.yaml</code>, khai báo <code>l10n.yaml</code> (thư mục ARB, file template) và viết mỗi ngôn ngữ một file <code>app_xx.arb</code>; <code>flutter gen-l10n</code> (hoặc tự chạy khi build) sinh class <code>AppLocalizations</code> type-safe — các bản Flutter gần đây sinh file thẳng vào source thay vì synthetic package <code>flutter_gen</code> cũ. Đăng ký <code>localizationsDelegates</code> và <code>supportedLocales</code> vào <code>MaterialApp</code>, rồi gọi <code>AppLocalizations.of(context)!.key</code>. Tham số và số nhiều viết theo cú pháp ICU (<code>{count, plural, =0{…} other{…}}</code>) để mỗi ngôn ngữ có quy tắc riêng; tránh tự ghép chuỗi vì thứ tự từ khác nhau giữa các ngôn ngữ.</div>
+        <pre class="code-block"><code><span class="tk-com">// lib/l10n/app_vi.arb</span>
+<span class="tk-com">// {</span>
+<span class="tk-com">//   &quot;hello&quot;: &quot;Xin chào {name}&quot;,</span>
+<span class="tk-com">//   &quot;cartItems&quot;: &quot;{count, plural, =0{Giỏ hàng trống} other{{count} sản phẩm}}&quot;</span>
+<span class="tk-com">// }</span>
+
+<span class="tk-type">MaterialApp</span>(
+  localizationsDelegates: <span class="tk-type">AppLocalizations</span>.localizationsDelegates,
+  supportedLocales: <span class="tk-type">AppLocalizations</span>.supportedLocales,
+  home: <span class="tk-type">Builder</span>(
+    builder: (context) =&gt; <span class="tk-type">Text</span>(<span class="tk-type">AppLocalizations</span>.of(context)!.cartItems(<span class="tk-num">3</span>)),
+  ),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d04-1.html">Widget tree, Element tree, RenderObject tree khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Widget tree là cấu hình bất biến (blueprint); Element tree là instance quản lý lifecycle, giữ liên kết giữa Widget và RenderObject; RenderObject tree chịu trách nhiệm layout và paint thực tế.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d04-2.html">Vì sao Widget là immutable? Điều này ảnh hưởng gì đến hiệu năng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Immutable giúp Flutter diff nhanh giữa widget cũ/mới bằng cách tạo object mới mỗi lần build thay vì mutate, giúp xác định chính xác phần nào cần cập nhật mà không side-effect.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d04-4.html">Element khi nào bị dispose và tạo lại hoàn toàn thay vì chỉ update?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi <code>runtimeType</code> và <code>key</code> của widget mới khác với widget cũ ở cùng vị trí trong tree — Flutter dispose Element cũ và tạo Element mới, làm mất toàn bộ state cũ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d04-5.html"><code>BuildContext</code> thực chất là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chính là Element. <code>BuildContext</code> là interface để Element expose thông tin (vị trí trong tree, tìm ancestor widget như Theme, MediaQuery) mà không lộ toàn bộ implementation nội bộ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d05-2.html"><code>didUpdateWidget</code> được gọi khi nào, dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gọi khi parent rebuild và tạo widget mới cùng type/key (Element được tái sử dụng nhưng config đổi). Dùng để so sánh <code>oldWidget</code> với widget mới và xử lý side-effect, ví dụ restart animation.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d05-3.html"><code>didChangeDependencies</code> được gọi khi nào, ngoài lần đầu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi khi một <code>InheritedWidget</code> mà widget đang subscribe (qua <code>dependOnInheritedWidgetOfExactType</code>) thay đổi giá trị.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d05-4.html">Vì sao không nên gọi <code>Theme.of(context)</code> trong <code>initState()</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vì <code>initState()</code> chỉ chạy một lần: nếu đăng ký phụ thuộc <code>InheritedWidget</code> ở đây thì khi Theme đổi, widget không được cập nhật lại, nên Flutter assert lỗi <code>dependOnInheritedWidgetOfExactType() was called before initState() completed</code>. Hãy đọc trong <code>didChangeDependencies()</code> hoặc <code>build()</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d06-2.html"><code>ValueKey</code>, <code>ObjectKey</code>, <code>UniqueKey</code> khác nhau ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ValueKey</code> so sánh bằng giá trị (String, int...); <code>ObjectKey</code> so sánh bằng identity của object cụ thể; <code>UniqueKey</code> luôn khác nhau mỗi lần tạo, ép Flutter luôn coi là widget mới.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d06-3.html"><code>GlobalKey</code> khác <code>LocalKey</code> ở điểm nào? Chi phí của <code>GlobalKey</code> là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>GlobalKey</code> là duy nhất toàn app, cho phép truy cập State/RenderObject từ bất kỳ đâu và giữ state khi widget đổi vị trí trong tree. Chi phí: tốn kém hơn do phải maintain registry toàn cục, lạm dụng gây khó bảo trì.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d06-4.html">Khi nào bạn THỰC SỰ cần Key trong một <code>ListView</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi item trong list có thể bị thêm, xoá hoặc sắp xếp lại ở giữa danh sách, và mỗi item cần giữ đúng state riêng theo item đó chứ không theo vị trí index.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d29-1.html">Giải thích khác biệt giữa Element tree và Widget tree, vì sao Element cần tồn tại riêng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Widget tree là blueprint bất biến; Element là instance sống giữ trạng thái và liên kết với RenderObject, tồn tại xuyên suốt để Flutter biết chỗ nào cần update thay vì tạo lại từ đầu mỗi frame.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="layout">
+  <div class="section-head"><h2>Layout &amp; Rendering</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/layout/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q09.html">Khi nào cần <code>CustomScrollView</code> với sliver thay vì <code>ListView</code>/<code>Column</code> lồng nhau?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi một màn hình cuộn gồm nhiều phần khác loại (header co giãn, banner, grid, list dài) cần cuộn chung một scroll mà vẫn lazy-build. Đặt <code>ListView</code>/<code>GridView</code> với <code>shrinkWrap: true</code> trong <code>SingleChildScrollView</code> buộc layout toàn bộ item ngay từ đầu, mất lợi ích lazy và rất tốn với list dài. Trong <code>CustomScrollView</code>, mỗi phần là một sliver (<code>SliverAppBar</code>, <code>SliverList.builder</code>, <code>SliverGrid</code>…) và chỉ phần gần viewport mới được build. Lưu ý <code>slivers:</code> chỉ nhận sliver, widget box thường phải bọc bằng <code>SliverToBoxAdapter</code>.</div>
+        <pre class="code-block"><code><span class="tk-type">CustomScrollView</span>(
+  slivers: [
+    <span class="tk-kw">const</span> <span class="tk-type">SliverAppBar</span>(
+      pinned: <span class="tk-kw">true</span>, expandedHeight: <span class="tk-num">200</span>,
+      flexibleSpace: <span class="tk-type">FlexibleSpaceBar</span>(title: <span class="tk-type">Text</span>(<span class="tk-str">&#39;Shop&#39;</span>)),
+    ),
+    <span class="tk-kw">const</span> <span class="tk-type">SliverToBoxAdapter</span>(child: <span class="tk-type">PromoBanner</span>()),
+    <span class="tk-type">SliverGrid</span>.count(crossAxisCount: <span class="tk-num">4</span>, children: categoryIcons),
+    <span class="tk-type">SliverList</span>.builder(
+      itemCount: products.length,
+      itemBuilder: (context, i) =&gt; <span class="tk-type">ProductTile</span>(products[i]),
+    ),
+  ],
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q10.html">Khi viết <code>CustomPainter</code>, <code>shouldRepaint</code> và tham số <code>repaint</code> dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>shouldRepaint(old)</code> được gọi khi <code>CustomPaint</code> nhận một instance painter mới: trả <code>true</code> nếu dữ liệu vẽ khác (so field với <code>old</code>), trả <code>false</code> để bỏ qua bước paint; luôn <code>true</code> thì lãng phí, luôn <code>false</code> thì chart không cập nhật khi data đổi. Với animation, truyền <code>Listenable</code> (ví dụ <code>AnimationController</code>) vào <code>super(repaint: ...)</code>: painter vẽ lại mỗi khi listenable thông báo mà không cần rebuild widget. Giữ <code>paint()</code> nhẹ (không I/O, không tính toán nặng), và với hình animate liên tục có thể bọc <code>RepaintBoundary</code> để không kéo phần còn lại của màn hình repaint theo.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ProgressPainter</span> <span class="tk-kw">extends</span> <span class="tk-type">CustomPainter</span> {
+  <span class="tk-type">ProgressPainter</span>(<span class="tk-kw">this</span>.progress, <span class="tk-kw">this</span>.color) : <span class="tk-kw">super</span>(repaint: progress);
+  <span class="tk-kw">final</span> <span class="tk-type">Animation</span>&lt;double&gt; progress;
+  <span class="tk-kw">final</span> <span class="tk-type">Color</span> color;
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> paint(<span class="tk-type">Canvas</span> canvas, <span class="tk-type">Size</span> size) {
+    <span class="tk-kw">final</span> paint = <span class="tk-type">Paint</span>()..color = color..strokeWidth = <span class="tk-num">6</span>;
+    canvas.drawLine(<span class="tk-type">Offset</span>.zero, <span class="tk-type">Offset</span>(size.width * progress.value, <span class="tk-num">0</span>), paint);
+  }
+  <span class="tk-ann">@override</span>
+  bool shouldRepaint(<span class="tk-type">ProgressPainter</span> old) =&gt;
+      old.progress != progress || old.color != color;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d07-3.html">&#39;Constraints go down, sizes go up&#39; nghĩa là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Parent truyền constraint (min/max width/height) xuống con; con tự quyết định size trong giới hạn đó rồi trả size ngược lên để parent định vị.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d29-4.html">Giải thích &#39;constraints go down, size goes up&#39; qua ví dụ Row chứa Expanded.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Row</code> truyền constraint chia đều không gian còn lại xuống từng <code>Expanded</code>; mỗi <code>Expanded</code> tự tính kích thước con bên trong rồi trả size ngược lên để <code>Row</code> sắp xếp vị trí cuối cùng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="state">
+  <div class="section-head"><h2>State Management</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/state/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q13.html">Trong Riverpod hiện đại, <code>Notifier</code>/<code>AsyncNotifier</code> khác gì <code>StateNotifier</code>/<code>StateProvider</code> cũ? Viết một <code>AsyncNotifier</code> có load và thêm item.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Notifier</code>/<code>AsyncNotifier</code> là API được khuyến nghị từ Riverpod 2: state khởi tạo trong <code>build()</code> (có thể <code>ref.watch</code> provider khác và tự chạy lại khi dependency đổi), class có sẵn <code>ref</code> nên không phải truyền <code>Ref</code> qua constructor như <code>StateNotifier</code>. <code>AsyncNotifier</code> trả <code>Future</code> từ <code>build()</code> và Riverpod tự bọc thành <code>AsyncValue</code> (loading/data/error); method thay đổi dữ liệu dùng <code>AsyncValue.guard</code> để bắt lỗi thành <code>AsyncError</code>. <code>StateProvider</code>, <code>StateNotifierProvider</code>, <code>ChangeNotifierProvider</code> giờ là legacy (Riverpod 3 tách chúng sang import <code>legacy.dart</code>), chỉ nên giữ khi bảo trì code cũ.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> todosProvider =
+    <span class="tk-type">AsyncNotifierProvider</span>&lt;<span class="tk-type">TodosNotifier</span>, <span class="tk-type">List</span>&lt;<span class="tk-type">Todo</span>&gt;&gt;(<span class="tk-type">TodosNotifier</span>.<span class="tk-kw">new</span>);
+<span class="tk-kw">class</span> <span class="tk-type">TodosNotifier</span> <span class="tk-kw">extends</span> <span class="tk-type">AsyncNotifier</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Todo</span>&gt;&gt; {
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Future</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Todo</span>&gt;&gt; build() =&gt; ref.watch(todoRepoProvider).fetchAll();
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; add(<span class="tk-type">Todo</span> todo) <span class="tk-kw">async</span> {
+    <span class="tk-kw">final</span> repo = ref.read(todoRepoProvider);
+    state = <span class="tk-kw">const</span> <span class="tk-type">AsyncLoading</span>();
+    state = <span class="tk-kw">await</span> <span class="tk-type">AsyncValue</span>.guard(() <span class="tk-kw">async</span> {
+      <span class="tk-kw">await</span> repo.add(todo);
+      <span class="tk-kw">return</span> repo.fetchAll();
+    });
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q14.html">Màn hình dùng <code>BlocBuilder</code> rebuild quá nhiều dù chỉ hiển thị một field của state. Bạn tối ưu thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết đảm bảo state so sánh theo giá trị (<code>Equatable</code> hoặc freezed): Bloc bỏ qua <code>emit</code> khi state mới <code>==</code> state hiện tại, nên nếu state không override <code>==</code> thì mỗi lần emit đều rebuild. Sau đó thu hẹp phạm vi: <code>buildWhen</code> so sánh đúng field cần dùng, hoặc gọn hơn là <code>BlocSelector</code>/<code>context.select</code> để chỉ rebuild khi giá trị được chọn thay đổi. Đặt <code>BlocBuilder</code> sát widget cần dữ liệu thay vì bọc cả <code>Scaffold</code>, và tách side effect (SnackBar, điều hướng) sang <code>BlocListener</code> với <code>listenWhen</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// Chỉ rebuild khi total đổi</span>
+<span class="tk-type">BlocBuilder</span>&lt;<span class="tk-type">CartBloc</span>, <span class="tk-type">CartState</span>&gt;(
+  buildWhen: (prev, curr) =&gt; prev.total != curr.total,
+  builder: (context, state) =&gt; <span class="tk-type">Text</span>(<span class="tk-str">&#39;${state.total} đ&#39;</span>),
+)
+
+<span class="tk-com">// Gọn hơn với BlocSelector</span>
+<span class="tk-type">BlocSelector</span>&lt;<span class="tk-type">CartBloc</span>, <span class="tk-type">CartState</span>, int&gt;(
+  selector: (state) =&gt; state.total,
+  builder: (context, total) =&gt; <span class="tk-type">Text</span>(<span class="tk-str">&#39;$total đ&#39;</span>),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q15.html">Phân biệt ephemeral state và app state. Khi nào <code>setState</code> là đủ, khi nào nên đưa state vào Riverpod/Bloc?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ephemeral state là state cục bộ của một widget mà nơi khác không cần biết (tab đang chọn, trạng thái expand, animation, giá trị form tạm) — <code>setState</code> trong <code>StatefulWidget</code> là đủ và đơn giản nhất. App state được chia sẻ giữa nhiều màn hình, sống lâu hơn widget, cần test logic riêng hoặc đồng bộ với server (user đăng nhập, giỏ hàng, dữ liệu cache) — nên đưa vào Riverpod/Bloc. Dấu hiệu cần nâng cấp: phải truyền data/callback qua nhiều tầng, hai màn hình cần cùng dữ liệu, hoặc logic nghiệp vụ nằm lẫn trong <code>State</code>. Ngược lại, đẩy mọi thứ (kể cả checkbox tạm) lên global state làm code rườm rà và khó theo dõi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d08-2.html"><code>InheritedWidget</code> thông báo thay đổi cho widget con dựa trên cơ chế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi <code>updateShouldNotify()</code> trả <code>true</code>, mọi widget con đã đăng ký qua <code>dependOnInheritedWidgetOfExactType</code> sẽ được đánh dấu rebuild, không cần truyền callback thủ công qua nhiều tầng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d08-5.html">Vì sao package Provider được xây trên nền <code>InheritedWidget</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Để tận dụng cơ chế dependency tracking và rebuild tối ưu có sẵn của Flutter, đồng thời thêm API tiện lợi như dispose tự động mà không cần tự viết InheritedWidget thủ công.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d09-2.html"><code>Selector</code> giải quyết vấn đề gì mà <code>Consumer</code> không làm được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho phép chọn một phần cụ thể (derived value) từ model và chỉ rebuild khi riêng phần đó đổi, kể cả khi các field khác trong ChangeNotifier cũng thay đổi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d09-4.html"><code>ProxyProvider</code> dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tạo một provider mà giá trị phụ thuộc vào (kết hợp từ) một hoặc nhiều provider khác nằm phía trên nó trong tree.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d09-5.html"><code>ChangeNotifier</code> có nhược điểm gì so với các giải pháp khác?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mutable state dễ gây side-effect khó trace, không có type-safety cho state như Bloc, và dễ quên gọi <code>notifyListeners()</code> dẫn đến UI không cập nhật.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d10-1.html">Riverpod giải quyết vấn đề gì mà Provider gặp phải?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không phụ thuộc <code>BuildContext</code> nên đọc được ngoài widget tree, và compile-time safe — bắt lỗi thiếu provider lúc compile thay vì runtime, tránh <code>ProviderNotFoundException</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d10-2.html"><code>ref.watch</code>, <code>ref.read</code>, <code>ref.listen</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>watch</code> subscribe và rebuild khi đổi (dùng trong build); <code>read</code> đọc một lần không subscribe (dùng trong callback); <code>listen</code> subscribe để chạy side-effect như show SnackBar mà không rebuild UI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d10-3.html"><code>autoDispose</code> modifier dùng khi nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi muốn provider tự huỷ state khi không còn widget nào lắng nghe, phù hợp cho state gắn với một màn hình cụ thể thay vì global.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d10-4.html"><code>family</code> modifier giải quyết vấn đề gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho phép provider nhận tham số đầu vào để tạo nhiều instance state khác nhau dựa trên tham số đó, ví dụ provider theo <code>userId</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d10-5.html"><code>AsyncValue</code> giúp gì khi xử lý trạng thái gọi network?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đóng gói sẵn ba trạng thái loading/data/error, giúp UI dùng <code>.when()</code> xử lý đầy đủ mọi case mà không cần tự quản lý boolean thủ công.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d11-1.html">Cubit khác Bloc ở điểm cơ bản nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cubit gọi method trực tiếp để emit state mới, đơn giản hơn. Bloc nhận Event qua <code>add()</code> rồi xử lý bất đồng bộ qua Stream để emit state, tách biệt rõ input và output, dễ trace hơn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d11-3.html"><code>BlocListener</code> và <code>BlocBuilder</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>BlocBuilder</code> rebuild UI theo state; <code>BlocListener</code> chạy side-effect như navigation hay dialog mà không rebuild UI. <code>BlocConsumer</code> dùng khi cần cả hai.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d11-5.html"><code>HydratedBloc</code> giải quyết vấn đề gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tự động persist và restore state của Bloc/Cubit xuống local storage, giữ lại state sau khi app bị kill hoặc restart.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d14-4.html">Review: gọi <code>notifyListeners()</code> sau khi ChangeNotifier đã dispose, hoặc <code>setState()</code> sau khi widget đã dispose thì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Debug mode sẽ throw lỗi: <code>A ChangeNotifier was used after being disposed</code> hoặc <code>setState() called after dispose()</code>. Thường gặp khi callback chạy sau một <code>await</code>; cần kiểm tra <code>mounted</code> (với State) hoặc huỷ subscription/timer trong <code>dispose()</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d29-3.html">Khi nào bạn chọn Riverpod thay vì Provider cho một dự án mới bắt đầu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi muốn compile-time safety, không phụ thuộc BuildContext và cần testability cao ngay từ đầu, đánh đổi là learning curve cao hơn một chút.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d29-5.html">Tại sao BLoC tách Event và State thành hai khái niệm riêng thay vì gộp như Cubit?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Event làm rõ cái gì kích hoạt hành động, dễ log và replay, tách biệt với State là kết quả sau xử lý — hữu ích khi cần trace toàn bộ luồng input-output trong hệ thống lớn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q11.html">Với go_router, làm sao xây bottom navigation mà mỗi tab giữ nguyên stack điều hướng và state khi chuyển tab?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>StatefulShellRoute.indexedStack</code>: mỗi tab là một <code>StatefulShellBranch</code> có Navigator riêng, các branch được giữ trong <code>IndexedStack</code> nên state và stack con không mất khi đổi tab. <code>builder</code> nhận <code>StatefulNavigationShell</code> để dựng <code>Scaffold</code> + <code>NavigationBar</code>; đổi tab bằng <code>goBranch(index)</code>, truyền <code>initialLocation: true</code> khi bấm lại tab đang mở để quay về gốc tab. Khác với <code>ShellRoute</code> thường (chỉ một Navigator con dùng chung), cách này hợp với app nhiều tab kiểu mạng xã hội; đổi lại tốn bộ nhớ hơn vì các tab đã mở đều được giữ sống.</div>
+        <pre class="code-block"><code><span class="tk-type">StatefulShellRoute</span>.indexedStack(
+  builder: (context, state, shell) =&gt; <span class="tk-type">ScaffoldWithNavBar</span>(shell: shell),
+  branches: [
+    <span class="tk-type">StatefulShellBranch</span>(routes: [
+      <span class="tk-type">GoRoute</span>(path: <span class="tk-str">&#39;/feed&#39;</span>, builder: (c, s) =&gt; <span class="tk-kw">const</span> <span class="tk-type">FeedPage</span>()),
+    ]),
+    <span class="tk-type">StatefulShellBranch</span>(routes: [
+      <span class="tk-type">GoRoute</span>(path: <span class="tk-str">&#39;/profile&#39;</span>, builder: (c, s) =&gt; <span class="tk-kw">const</span> <span class="tk-type">ProfilePage</span>()),
+    ]),
+  ],
+)
+<span class="tk-com">// Trong ScaffoldWithNavBar:</span>
+<span class="tk-com">// onDestinationSelected: (i) =&gt; shell.goBranch(i,</span>
+<span class="tk-com">//     initialLocation: i == shell.currentIndex),</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q12.html">Làm auth guard với go_router như thế nào? Deep link vào một trang cần đăng nhập sẽ được xử lý ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khai báo <code>redirect</code> (top-level hoặc trên từng <code>GoRoute</code>): trả về path mới để chuyển hướng, trả <code>null</code> để đi tiếp; truyền <code>refreshListenable</code> (ví dụ <code>ChangeNotifier</code> giữ trạng thái auth) để router chạy lại <code>redirect</code> khi đăng nhập/đăng xuất. Deep link cũng đi qua cùng cấu hình route, nên link <code>/orders/42</code> khi chưa login sẽ bị chuyển sang <code>/login</code>; hãy lưu đích ban đầu (query <code>from</code>) để quay lại sau khi đăng nhập, và cẩn thận tránh hai route redirect qua lại lẫn nhau. Phía native vẫn phải cấu hình App Links/intent-filter (Android) và Universal Links/Associated Domains (iOS) thì OS mới mở app bằng URL đó.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> router = <span class="tk-type">GoRouter</span>(
+  refreshListenable: auth, <span class="tk-com">// ChangeNotifier giữ trạng thái login</span>
+  redirect: (context, state) {
+    <span class="tk-kw">final</span> atLogin = state.matchedLocation == <span class="tk-str">&#39;/login&#39;</span>;
+    <span class="tk-kw">if</span> (!auth.isLoggedIn) {
+      <span class="tk-kw">if</span> (atLogin) <span class="tk-kw">return</span> <span class="tk-kw">null</span>;
+      <span class="tk-kw">final</span> from = <span class="tk-type">Uri</span>.encodeComponent(state.uri.toString());
+      <span class="tk-kw">return</span> <span class="tk-str">&#39;/login?from=$from&#39;</span>;
+    }
+    <span class="tk-kw">if</span> (atLogin) <span class="tk-kw">return</span> state.uri.queryParameters[<span class="tk-str">&#39;from&#39;</span>] ?? <span class="tk-str">&#39;/&#39;</span>;
+    <span class="tk-kw">return</span> <span class="tk-kw">null</span>;
+  },
+  routes: routes,
+);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q16.html">Lỗi từ Dio (timeout, 401, 500) nên được xử lý ở layer nào và trả lên trên dưới dạng gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bắt và chuyển đổi ở data layer (repository implementation hoặc data source), vì <code>DioException</code> là chi tiết hạ tầng mà domain và UI không nên biết. Repository map lỗi sang <code>Failure</code> của domain (<code>NetworkFailure</code>, <code>UnauthorizedFailure</code>, <code>ServerFailure</code>…) rồi trả về kiểu <code>Result</code> dạng sealed (hoặc <code>Either</code> của fpdart), buộc caller xử lý cả hai nhánh bằng <code>switch</code> exhaustive. Presentation chỉ việc map <code>Failure</code> sang thông điệp thân thiện. Nhờ vậy có thể thay Dio bằng client khác hay thêm cache mà không chạm UI, và test dễ hơn vì mock trả <code>Err(...)</code> thay vì phải dựng <code>DioException</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">sealed</span> <span class="tk-kw">class</span> <span class="tk-type">Result</span>&lt;<span class="tk-type">T</span>&gt; { <span class="tk-kw">const</span> <span class="tk-type">Result</span>(); }
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Ok</span>&lt;<span class="tk-type">T</span>&gt; <span class="tk-kw">extends</span> <span class="tk-type">Result</span>&lt;<span class="tk-type">T</span>&gt; { <span class="tk-kw">const</span> <span class="tk-type">Ok</span>(<span class="tk-kw">this</span>.value); <span class="tk-kw">final</span> <span class="tk-type">T</span> value; }
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Err</span>&lt;<span class="tk-type">T</span>&gt; <span class="tk-kw">extends</span> <span class="tk-type">Result</span>&lt;<span class="tk-type">T</span>&gt; { <span class="tk-kw">const</span> <span class="tk-type">Err</span>(<span class="tk-kw">this</span>.failure); <span class="tk-kw">final</span> <span class="tk-type">Failure</span> failure; }
+
+<span class="tk-com">// data layer: bắt DioException, trả về Failure của domain</span>
+<span class="tk-type">Future</span>&lt;<span class="tk-type">Result</span>&lt;<span class="tk-type">User</span>&gt;&gt; getUser(<span class="tk-type">String</span> id) <span class="tk-kw">async</span> {
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">final</span> dto = <span class="tk-kw">await</span> _api.fetchUser(id);
+    <span class="tk-kw">return</span> <span class="tk-type">Ok</span>(dto.toEntity());
+  } <span class="tk-kw">on</span> <span class="tk-type">DioException</span> <span class="tk-kw">catch</span> (e) {
+    <span class="tk-kw">return</span> <span class="tk-type">Err</span>(e.response == <span class="tk-kw">null</span> ? <span class="tk-type">NetworkFailure</span>() : <span class="tk-type">ServerFailure</span>());
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d12-1.html">3 layer chính trong Clean Architecture áp dụng cho Flutter?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Presentation (UI và state management) → Domain (Entity, UseCase, abstract Repository — thuần Dart) → Data (implement Repository, DataSource, Model/DTO).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d12-4.html">UseCase là gì, tại sao cần nó khi đã có Repository?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">UseCase đại diện một hành động nghiệp vụ cụ thể, điều phối một hoặc nhiều Repository — tách biệt &#39;làm gì&#39; khỏi &#39;lấy data từ đâu&#39;.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d12-5.html">Model (DTO) và Entity khác nhau ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Entity thuộc Domain, đại diện business object thuần tuý; Model/DTO thuộc Data layer, có thêm logic <code>fromJson</code>/<code>toJson</code> để map dữ liệu từ API sang Entity.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d13-2.html"><code>registerSingleton</code>, <code>registerFactory</code>, <code>registerLazySingleton</code> trong GetIt khác nhau ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>registerSingleton</code> tạo instance ngay và dùng chung; <code>registerFactory</code> tạo instance mới mỗi lần gọi <code>get()</code>; <code>registerLazySingleton</code> chỉ tạo một lần duy nhất khi được gọi lần đầu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d13-3.html"><code>Injectable</code> (code generation) giải quyết vấn đề gì so với đăng ký GetIt thủ công?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tự động sinh code đăng ký dependency dựa trên annotation, giảm boilerplate và lỗi runtime do quên đăng ký khi số lượng dependency lớn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d13-4.html">DI giúp ích gì cụ thể cho Unit Test?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho phép inject Fake/Mock repository thay vì instance thật khi test UseCase hoặc Bloc, giúp test nhanh, ổn định, không phụ thuộc network thật.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d14-3.html">Kể một tình huống nên tránh dùng Bloc vì over-engineering.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ví dụ một toggle UI đơn giản như show/hide password không có business logic — dùng <code>setState</code> hoặc <code>ValueNotifier</code> là đủ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q19.html"><code>freezed</code> + <code>json_serializable</code> giúp gì so với viết tay model và <code>fromJson</code>/<code>toJson</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chúng sinh code cho phần lặp lại dễ sai: <code>==</code>/<code>hashCode</code> theo giá trị, <code>copyWith</code>, <code>toString</code>, <code>fromJson</code>/<code>toJson</code>, và với freezed còn có union/sealed class cho state. Model bất biến, so sánh theo giá trị rất quan trọng với Bloc/Riverpod (tránh rebuild thừa, tránh vô tình mutate state). Trade-off: thêm bước <code>dart run build_runner build</code>, phải quản lý các file <code>*.freezed.dart</code>/<code>*.g.dart</code> và thời gian generate tăng ở project lớn; model vài field đơn giản thì record hoặc viết tay vẫn ổn. Lưu ý từ freezed 3, class dùng factory constructor phải khai báo <code>abstract</code> hoặc <code>sealed</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-str">&#39;package:freezed_annotation/freezed_annotation.dart&#39;</span>;
+
+<span class="tk-kw">part</span> <span class="tk-str">&#39;user.freezed.dart&#39;</span>;
+<span class="tk-kw">part</span> <span class="tk-str">&#39;user.g.dart&#39;</span>;
+
+<span class="tk-ann">@freezed</span>
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">User</span> <span class="tk-kw">with</span> _$<span class="tk-type">User</span> {
+  <span class="tk-kw">const</span> <span class="tk-kw">factory</span> <span class="tk-type">User</span>({
+    <span class="tk-kw">required</span> <span class="tk-type">String</span> id,
+    <span class="tk-kw">required</span> <span class="tk-type">String</span> name,
+    <span class="tk-ann">@Default</span>(<span class="tk-kw">false</span>) bool isAdmin,
+  }) = _User;
+  <span class="tk-kw">factory</span> <span class="tk-type">User</span>.fromJson(<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt; json) =&gt; _$<span class="tk-type">UserFromJson</span>(json);
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d25-2.html">Khi nào chọn Drift, Isar hay Hive thay vì SharedPreferences?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi cần lưu dữ liệu có cấu trúc phức tạp, truy vấn linh hoạt và số lượng lớn record; SharedPreferences chỉ phù hợp key-value đơn giản, không hỗ trợ query.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d27-1.html">Interceptor trong Dio dùng để làm gì? Cho hai ví dụ.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Can thiệp vào request hoặc response tại một điểm tập trung. Ví dụ: tự động gắn Authorization token vào mọi request, hoặc tự động log request/response để debug.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="native">
+  <div class="section-head"><h2>Native &amp; Platform</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/native/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d15-1.html">3 loại Channel (MethodChannel, EventChannel, BasicMessageChannel) khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>MethodChannel</code> gọi một method và nhận kết quả kiểu request-response; <code>EventChannel</code> nhận luồng sự kiện liên tục từ native như Stream; <code>BasicMessageChannel</code> gửi message hai chiều tự do.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d15-2.html">Platform Channel giới hạn kiểu dữ liệu nào có thể truyền qua?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chỉ truyền được kiểu hỗ trợ bởi <code>StandardMessageCodec</code> như num, bool, String, List, Map, Uint8List — không truyền trực tiếp object phức tạp hay function.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d15-3.html">Platform Channel hoạt động bất đồng bộ hay đồng bộ? Vì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bất đồng bộ, trả về Future ở phía Dart, để tránh block UI thread trong lúc chờ code native xử lý.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d15-4.html">Vì sao mỗi channel cần một <code>name</code> duy nhất?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vì cả Dart và Native cùng đăng ký channel qua tên này để khớp đúng kênh giao tiếp; trùng tên có thể gây gọi nhầm hoặc conflict giữa các plugin.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q20.html">List ảnh tải từ network làm app tốn RAM và cuộn bị giật. Bạn tối ưu thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ảnh được decode theo kích thước gốc: một ảnh 4000×3000 hiển thị trong thumbnail 100px vẫn chiếm khoảng 48MB bitmap, nên hãy truyền <code>cacheWidth</code>/<code>cacheHeight</code> (hoặc <code>ResizeImage</code>) để decode đúng kích thước hiển thị (nhân với <code>devicePixelRatio</code>). <code>Image.network</code> chỉ cache trong bộ nhớ (<code>ImageCache</code>, mặc định 1000 ảnh/100MB), nên dùng <code>cached_network_image</code> để có thêm cache trên disk, placeholder và không tải lại khi cuộn qua lại. Kết hợp <code>ListView.builder</code> để chỉ build item gần viewport, ưu tiên server trả thumbnail đúng kích thước, và kiểm tra bằng DevTools (tab Memory, tùy chọn highlight oversized images).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d20-2.html">&#39;Jank&#39; là gì? Ngưỡng frame time để đạt 60fps là bao nhiêu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Jank là hiện tượng giật khi frame render chậm hơn tốc độ khung hình mong muốn. Để đạt 60fps, mỗi frame phải hoàn thành trong khoảng 16.6ms.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d20-5.html">Công cụ nào trong DevTools giúp phát hiện widget bị rebuild thừa?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tính năng <code>Track Widget Rebuilds</code>, kết hợp <code>debugPrintRebuildDirtyWidgets</code> hoặc Widget Inspector với khả năng highlight vùng bị repaint.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d21-1.html"><code>const</code> constructor giúp tối ưu hiệu năng thế nào cụ thể?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flutter nhận biết widget const không đổi giữa các lần build nên tái sử dụng cùng instance, bỏ qua việc rebuild và so sánh lại toàn bộ subtree đó.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d21-3.html"><code>--split-per-abi</code> khi build Android giúp ích gì cho app size?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tạo APK riêng cho từng kiến trúc CPU thay vì một APK chứa native code cho tất cả kiến trúc, giảm đáng kể dung lượng cài đặt trên từng thiết bị.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q17.html">Viết widget test cho màn hình đăng nhập phụ thuộc <code>AuthRepository</code> như thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Inject repository qua constructor hoặc DI (override của Riverpod, <code>BlocProvider</code>) để thay bằng mock của mocktail, stub hàm trả <code>Future</code> bằng <code>when(...).thenAnswer(...)</code>. Dùng <code>pumpWidget</code> với <code>MaterialApp</code> bọc ngoài (cung cấp <code>Directionality</code>, <code>Navigator</code>, theme), tương tác qua <code>enterText</code>/<code>tap</code>, rồi <code>pump()</code> để frame mới được build trước khi <code>expect</code> với <code>find.text</code>/<code>find.byKey</code>. Cuối cùng <code>verify</code> repository được gọi đúng tham số. Nếu UI có animation hoặc delay thì dùng <code>pump(duration)</code>/<code>pumpAndSettle</code>, nhưng nhớ <code>pumpAndSettle</code> sẽ timeout nếu có animation chạy vô hạn như <code>CircularProgressIndicator</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">MockAuthRepo</span> <span class="tk-kw">extends</span> <span class="tk-type">Mock</span> <span class="tk-kw">implements</span> <span class="tk-type">AuthRepository</span> {}
+
+testWidgets(<span class="tk-str">&#39;hiện lỗi khi sai mật khẩu&#39;</span>, (tester) <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> repo = <span class="tk-type">MockAuthRepo</span>();
+  <span class="tk-kw">when</span>(() =&gt; repo.login(any(), any()))
+      .thenAnswer((_) <span class="tk-kw">async</span> =&gt; <span class="tk-kw">throw</span> <span class="tk-kw">const</span> <span class="tk-type">WrongPassword</span>());
+  <span class="tk-kw">await</span> tester.pumpWidget(<span class="tk-type">MaterialApp</span>(home: <span class="tk-type">LoginPage</span>(repo: repo)));
+  <span class="tk-kw">await</span> tester.enterText(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;email&#39;</span>)), <span class="tk-str">&#39;a@b.com&#39;</span>);
+  <span class="tk-kw">await</span> tester.enterText(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;password&#39;</span>)), <span class="tk-str">&#39;123&#39;</span>);
+  <span class="tk-kw">await</span> tester.tap(find.text(<span class="tk-str">&#39;Đăng nhập&#39;</span>));
+  <span class="tk-kw">await</span> tester.pump();
+  expect(find.text(<span class="tk-str">&#39;Sai mật khẩu&#39;</span>), findsOneWidget);
+  verify(() =&gt; repo.login(<span class="tk-str">&#39;a@b.com&#39;</span>, <span class="tk-str">&#39;123&#39;</span>)).called(<span class="tk-num">1</span>);
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q18.html">Làm sao unit test một provider/notifier của Riverpod mà không cần dựng widget?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tạo <code>ProviderContainer</code> với <code>overrides</code> để thay dependency (repository, API client) bằng mock/fake, đọc provider qua container và <code>addTearDown(container.dispose)</code> để dọn dẹp sau test. Với <code>AsyncNotifier</code>, <code>await container.read(provider.future)</code> để chờ <code>build()</code> xong; với mutation, gọi <code>container.read(provider.notifier).method()</code> rồi kiểm tra <code>container.read(provider)</code>. Muốn kiểm tra chuỗi state (loading → data), dùng <code>container.listen</code> để ghi lại từng giá trị. Trong widget test, override tương tự bằng <code>ProviderScope(overrides: [...])</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">MockTodoRepo</span> <span class="tk-kw">extends</span> <span class="tk-type">Mock</span> <span class="tk-kw">implements</span> <span class="tk-type">TodoRepo</span> {}
+
+test(<span class="tk-str">&#39;load todos từ repository&#39;</span>, () <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> repo = <span class="tk-type">MockTodoRepo</span>();
+  <span class="tk-kw">when</span>(() =&gt; repo.fetchAll()).thenAnswer((_) <span class="tk-kw">async</span> =&gt; [<span class="tk-kw">const</span> <span class="tk-type">Todo</span>(<span class="tk-str">&#39;a&#39;</span>)]);
+  <span class="tk-kw">final</span> container = <span class="tk-type">ProviderContainer</span>(
+    overrides: [todoRepoProvider.overrideWithValue(repo)],
+  );
+  addTearDown(container.dispose);
+  <span class="tk-kw">final</span> todos = <span class="tk-kw">await</span> container.read(todosProvider.future);
+  expect(todos, hasLength(<span class="tk-num">1</span>));
+  verify(() =&gt; repo.fetchAll()).called(<span class="tk-num">1</span>);
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d22-2.html">Vì sao nên có nhiều Unit test hơn Integration test?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Unit test chạy nhanh, ổn định, rẻ để maintain; Integration test chậm, dễ flaky và tốn chi phí CI hơn nhiều lần nên chỉ dùng cho các flow quan trọng nhất.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d22-3.html"><code>pump()</code> và <code>pumpAndSettle()</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>pump()</code> chỉ render đúng một frame hoặc sau một khoảng duration chỉ định; <code>pumpAndSettle()</code> pump liên tục cho tới khi không còn frame nào được lên lịch nữa.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d23-1.html">Mockito và Mocktail khác nhau cơ bản ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mockito cần code generation qua build_runner để tạo Mock class; Mocktail dùng thuần Dart dựa vào null safety, không cần code gen, đơn giản hoá setup.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d23-2.html"><code>verify()</code> khác <code>when()</code> ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>when()</code> định nghĩa hành vi giả lập khi một method được gọi; <code>verify()</code> kiểm tra sau khi code chạy xong, xác nhận method đó có thực sự được gọi hay không và gọi bao nhiêu lần.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d23-3.html">Làm sao test một Bloc hiệu quả? Package nào thường dùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng package <code>bloc_test</code>, định nghĩa <code>build</code> để khởi tạo bloc, <code>act</code> để bắn event vào, và <code>expect</code> để liệt kê danh sách state mong đợi phát ra theo đúng thứ tự.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d23-4.html">Kiểm tra kết quả của một hàm trả về Stream trong package <code>test</code> bằng cách nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng matcher <code>emitsInOrder([...])</code> kết hợp <code>expectLater(stream, ...)</code> để assert thứ tự và giá trị các sự kiện phát ra.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d24-2.html">&#39;Flavor&#39; trong Flutter dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho phép build nhiều biến thể app như dev, staging, production từ cùng một codebase với config khác nhau, mà không cần maintain nhiều project riêng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d27-4.html">Vì sao không nên lưu token nhạy cảm bằng SharedPreferences?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SharedPreferences lưu dữ liệu dạng plaintext, thiết bị đã root hoặc jailbreak có thể đọc trực tiếp; <code>flutter_secure_storage</code> tận dụng Keychain/Keystore để mã hoá ở tầng hệ điều hành.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm Flutter Middle</h2><a class="section-sub" href="../../../#/flutter/quiz?rank=middle&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/mid-m01.html">Đoạn code sau in ra gì (theo thứ tự từng dòng)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m02.html">Kết quả của đoạn code dùng extension type sau?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m03.html">Bạn viết một package và muốn class Logger được phép extends ở package khác nhưng cấm implements (để sau này thêm method không làm vỡ code người dùng). Dùng modifier nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m04.html">Điều gì xảy ra với đoạn code sau?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m05.html">Đoạn code sau chạy thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m06.html">Thứ tự in ra của đoạn code sau?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m07.html">Đoạn code dùng generator async* sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m08.html">Đoạn code chạy Isolate.run sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m09.html">Đoạn code dùng StreamController sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m10.html">Đoạn code sau in ra gì khi break khỏi vòng await for?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m11.html">Trong một State, analyzer cảnh báo use_build_context_synchronously ở đoạn code sau. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m12.html">State dùng SingleTickerProviderStateMixin nhưng tạo hai AnimationController cùng vsync: this. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m13.html">Màn hình danh sách có hai widget Hero(tag: &#39;avatar&#39;) cùng lúc. Khi push sang trang chi tiết thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m14.html">Trong file ARB, giá trị nào của key cartItems giúp gen-l10n sinh method cartItems(int count) hiển thị &#39;Giỏ hàng trống&#39; khi count = 0 và &#39;N sản phẩm&#39; khi lớn hơn?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m15.html">Đoạn code sau gặp vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m16.html">Cách hiệu quả nhất để một CustomPainter vẽ lại mỗi frame theo AnimationController là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m17.html">Widget chỉ cần chiều rộng màn hình nhưng dùng MediaQuery.of(context).size, nên rebuild cả khi bàn phím bật/tắt. Cách tốt hơn là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m18.html">Với cấu hình go_router sau, đang ở HomePage gọi context.go(&#39;/products/42&#39;) rồi nhấn back. Màn hình nào hiện ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m19.html">App dùng go_router với redirect kiểm tra đăng nhập. Khi token hết hạn và app gọi logout(), màn hình hiện tại không tự chuyển về /login. Nguyên nhân thường gặp là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m20.html">Trên Flutter 3.24+, cách khuyến nghị để chặn nút back và hỏi &#39;Bỏ thay đổi?&#39; trước khi rời form là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m21.html">Khi counterProvider thay đổi giá trị, Text trong widget sau hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m22.html">UI dùng ref.watch(cartProvider) nhưng không cập nhật khi gọi add. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m23.html">Provider autoDispose gọi lại API mỗi lần user quay lại màn hình. Bạn muốn giữ cache sau khi tải thành công nhưng vẫn để provider tự hủy nếu request lỗi. Dùng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m24.html">Màn hình liên tục hiển thị loading và gọi API lặp đi lặp lại. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m25.html">Trong một provider khác, bạn cần await dữ liệu của userProvider (một AsyncNotifierProvider). Cách đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m26.html">Listener in ra những gì khi gọi cubit..set(1)..set(1)..set(2)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m27.html">Bạn muốn hiện SnackBar đúng một lần mỗi khi status chuyển sang failure, không hiện lại khi các field khác của state thay đổi. Dùng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m28.html">Một Cubit await API rồi emit kết quả, nhưng user đã rời màn hình khiến BlocProvider gọi close() trước khi API trả về. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m29.html">ApiClient dùng chung toàn app và chỉ nên tạo khi cần lần đầu; LoginBloc phải là instance mới mỗi lần mở màn hình. Đăng ký với get_it thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m30.html">Phát biểu nào đúng về các giá trị truyền qua --dart-define / --dart-define-from-file?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m31.html">Khi review code theo Clean Architecture, điểm nào vi phạm rõ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m32.html">Test sau fail dù nút bấm đúng là gọi setState để tăng counter. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m33.html">Hàm save nhận tham số kiểu Order (class tự định nghĩa). Test ném StateError ngay tại dòng when(...). Cách sửa là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m34.html">Với mocktail, stub hàm Future&lt;User&gt; getUser() bằng thenReturn(Future.value(user)) thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m35.html">Phát biểu nào đúng về golden test trong Flutter?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m36.html">Sau khi thêm interceptor dưới đây, mọi request đều treo, không bao giờ trả về. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m37.html">App cần lưu đơn hàng offline với quan hệ nhiều bảng, query có join/lọc phức tạp, migration schema có kiểm soát và stream tự cập nhật UI. Lựa chọn phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m38.html">Tách UI thành method Widget _buildHeader() thay vì class Header extends StatelessWidget. Nhược điểm chính của method là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m39.html">Vì sao truyền ExpensiveChart qua tham số child thay vì tạo nó bên trong builder?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m40.html">Native trả lỗi như comment bên dưới. Phía Dart in ra gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

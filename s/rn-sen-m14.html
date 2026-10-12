@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz React Native Senior: App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Lúc mở app, redux-persist phải đọc và parse toàn bộ state đã lưu trước khi màn đầu sẵn sàng, nên state càng lớn càng chậm. Dùng whitelist chỉ giữ phần nhỏ nh…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-m14.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz React Native Senior: App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài…">
@@ -16,10 +17,78 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-sen-m14");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"App dùng redux-persist lưu toàn bộ Redux store…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-m14.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài MB) xuống AsyncStorage. Thời gian từ lúc mở app tới màn đầu tiên tăng dần theo dung lượng dữ liệu. Hướng sửa phù hợp nhất?</p>
-<p><a href="../#/q/rn-sen-m14">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App dùng redux-persist lưu toàn bộ Redux store…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/state/">State Management</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">App dùng <code>redux-persist</code> lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài MB) xuống AsyncStorage. Thời gian từ lúc mở app tới màn đầu tiên tăng dần theo dung lượng dữ liệu. Hướng sửa phù hợp nhất?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Tăng <code>throttle</code> của persist để giảm số lần ghi xuống storage</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Bọc <code>PersistGate</code> quanh toàn app để chờ rehydrate xong mới render</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Chuyển cache sản phẩm vào React Context để khỏi phải persist</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Chỉ persist slice nhỏ cần thiết, cache dữ liệu server để lớp riêng</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div>Lúc mở app, <code>redux-persist</code> phải đọc và parse toàn bộ state đã lưu trước khi màn đầu sẵn sàng, nên state càng lớn càng chậm. Dùng <code>whitelist</code> chỉ giữ phần nhỏ như cài đặt, trạng thái onboarding; dữ liệu server để TanStack Query/RTK Query hoặc DB local tải dần. <code>throttle</code> chỉ giảm tần suất ghi, còn <code>PersistGate</code> chính là chỗ đang phải chờ rehydrate.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-m14">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-m13.html"><span class="muted small">← Câu trước</span><span>Lớp API client dùng withTimeout dưới đây để báo lỗi nếu server không trả lời sa…</span></a>
+  <a class="pager-next" href="../s/rn-sen-m15.html"><span class="muted small">Câu sau →</span><span>JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ n…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề State Management</h2><a class="section-sub" href="../phong-van/react-native/chu-de/state/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q07.html">Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-mid-q01.html">Trong createSlice bạn viết state.items.push(...) ngay trong reducer. Vì sao như vậy không phá nguyên tắc immutable của Redux, và cách viết này có bẫy gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q02.html">Dự án đang gọi API bằng createAsyncThunk và tự lưu loading/error/data vào slice. Chuyển sang RTK Query được lợi gì, và làm sao để danh sách tự làm mới sau khi tạo bài viết mới?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q03.html">Màn hình dùng Zustand bị re-render mỗi khi bất kỳ field nào trong store đổi, dù nó chỉ cần user.name. Vì sao và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q04.html">Team đang lưu mọi response API vào Redux. Bạn đề xuất tách server state và client state: hai loại khác nhau thế nào, và staleTime/gcTime của TanStack Query nghĩa là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m13.html">Case reducer viết dạng arrow function một dòng trong createSlice dưới đây có vấn đề gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

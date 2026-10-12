@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Junior: Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng compo…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Với state chỉ vài component gần nhau cần, cứ lifting state lên cha chung gần nhất và truyền props: đơn giản, luồng dữ liệu rõ ràng. Khi dữ liệu phải đi xuyên…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-q07.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior: Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng compo…">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-jun-q07");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Thông tin user đăng nhập đang được truyền qua p…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-q07.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</p>
-<p><a href="../#/q/rn-jun-q07">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Thông tin user đăng nhập đang được truyền qua p…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/state/">State Management</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với state chỉ vài component gần nhau cần, cứ lifting state lên cha chung gần nhất và truyền props: đơn giản, luồng dữ liệu rõ ràng. Khi dữ liệu phải đi xuyên nhiều tầng mà các tầng giữa không dùng tới (prop drilling), Context cho phép component ở sâu đọc thẳng bằng <code>useContext</code>; nó hợp cho dữ liệu ít đổi mà nhiều nơi cần như user, theme, ngôn ngữ. Bẫy cần biết: khi <code>value</code> của Provider đổi tham chiếu, mọi component dùng Context đó đều re-render, và viết <code>value={{ user, logout }}</code> inline tạo object mới mỗi lần Provider render; nên bọc value bằng <code>useMemo</code> và tách Context theo mức độ thay đổi. Component dùng Context mà không có Provider phía trên sẽ nhận giá trị mặc định truyền cho <code>createContext</code>, nên thường viết hook <code>useAuth</code> kiểm tra và báo lỗi rõ ràng.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-q07">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-q06.html"><span class="muted small">← Câu trước</span><span>Màn hình Profile crash với lỗi Rendered more hooks than during the previous ren…</span></a>
+  <a class="pager-next" href="../s/rn-jun-q08.html"><span class="muted small">Câu sau →</span><span>Vì sao callback của Promise.then luôn chạy trước setTimeout(fn, 0) dù timer đượ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề State Management</h2><a class="section-sub" href="../phong-van/react-native/chu-de/state/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-q01.html">Trong createSlice bạn viết state.items.push(...) ngay trong reducer. Vì sao như vậy không phá nguyên tắc immutable của Redux, và cách viết này có bẫy gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q02.html">Dự án đang gọi API bằng createAsyncThunk và tự lưu loading/error/data vào slice. Chuyển sang RTK Query được lợi gì, và làm sao để danh sách tự làm mới sau khi tạo bài viết mới?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q03.html">Màn hình dùng Zustand bị re-render mỗi khi bất kỳ field nào trong store đổi, dù nó chỉ cần user.name. Vì sao và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q04.html">Team đang lưu mọi response API vào Redux. Bạn đề xuất tách server state và client state: hai loại khác nhau thế nào, và staleTime/gcTime của TanStack Query nghĩa là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m13.html">Case reducer viết dạng arrow function một dòng trong createSlice dưới đây có vấn đề gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m14.html">Với RTK Query, sau khi mutation addPost thành công, danh sách từ getPosts không tự làm mới. Cần bổ sung gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

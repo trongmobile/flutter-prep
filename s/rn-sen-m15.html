@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz React Native Senior: JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ nào v…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Với native driver, cấu hình animation được gửi sang native trước khi chạy nên từng frame không cần JS thread. Style theo trạng thái pressed của Pressable cần…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-m15.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz React Native Senior: JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ nào v…">
@@ -16,10 +17,78 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-sen-m15");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"JS thread bị chặn 2 giây bởi một vòng lặp xử lý…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-m15.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ nào vẫn hoạt động bình thường?</p>
-<p><a href="../#/q/rn-sen-m15">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">JS thread bị chặn 2 giây bởi một vòng lặp xử lý…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/perf/">Performance</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ nào vẫn hoạt động bình thường?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Nút <code>Pressable</code> vẫn đổi style khi bấm vì phản hồi do native xử lý</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>Animated.timing</code> với <code>useNativeDriver: false</code> vẫn chạy đều 60fps</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Animation <code>Animated</code> đã start với <code>useNativeDriver: true</code> vẫn mượt</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>TextInput</code> controlled vẫn cập nhật <code>value</code> theo từng ký tự user gõ</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Với native driver, cấu hình animation được gửi sang native trước khi chạy nên từng frame không cần JS thread. Style theo trạng thái <code>pressed</code> của <code>Pressable</code> cần JS xử lý sự kiện touch nên sẽ đứng (ripple native trên Android là ngoại lệ), còn <code>TextInput</code> controlled cần JS chạy <code>onChangeText</code> và render lại <code>value</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-m15">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-m14.html"><span class="muted small">← Câu trước</span><span>App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm…</span></a>
+  <a class="pager-next" href="../s/rn-sen-m16.html"><span class="muted small">Câu sau →</span><span>Component dưới đây được mount, sau đó userId đổi 2 lần rồi component bị unmount…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Performance</h2><a class="section-sub" href="../phong-van/react-native/chu-de/perf/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q06.html">Màn danh sách đơn hàng giật khi cuộn trên Android tầm thấp. Perf Monitor cho thấy JS FPS tụt mạnh còn UI FPS vẫn gần 60. Điều đó nói lên gì, và bạn profile tiếp thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q07.html">Cold start của app RN mất gần 4 giây trên máy Android tầm trung. Bạn đo và tối ưu theo những hướng nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q08.html">Một thuật toán xử lý dữ liệu viết bằng JS thuần chạy rất nhanh khi thử trên Node, nhưng trong app dùng Hermes lại chậm hơn hẳn. Vì sao, bạn xử lý thế nào, và Hermes còn khác V8/JavaScriptCore ở điểm nào cần biết?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q09.html">Memory của app tăng dần sau mỗi lần vào ra màn chi tiết sản phẩm, cuối cùng app bị OS kill. Bạn tìm và xử lý leak trong RN thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q10.html">Feed hiển thị ảnh user upload (ảnh gốc 12MP). Trên Android tầm thấp app hay bị OOM khi cuộn nhanh. Vì sao, và bạn sửa thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q11.html">Sau một năm, JS bundle của app tăng từ 6MB lên 14MB và startup chậm dần. Bạn phân tích và kiểm soát kích thước bundle thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview</title>
+<meta name="description" content="14 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview">
+<meta property="og:description" content="14 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Concurrency","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../../phong-van/android/">Android</a>
+      <a href="../../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">Concurrency</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn iOS: Concurrency</h1>
+  <p class="subtitle">14 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-jun-q07.html">Gọi API bằng URLSession rồi gán dữ liệu và tableView.reloadData() ngay trong completion; đôi khi UI không cập nhật, Xcode hiện cảnh báo tím của Main Thread Checker. Vì sao và sửa thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q08.html">Phân biệt serial queue với concurrent queue, sync với async trong GCD. Cần một logger được gọi từ nhiều thread trong app thì bạn thiết kế thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q09.html">Một bạn viết DispatchQueue.main.sync { ... } trong viewDidLoad để &quot;chắc chắn chạy trên main&quot; và app crash ngay khi mở màn hình. Giải thích vì sao.</a></li>
+    <li><a href="../../../../s/ios-jun-q10.html">Màn hình Home cần gọi song song 3 API (banner, danh mục, sản phẩm) và chỉ tắt loading khi cả 3 xong. Bạn làm bằng GCD thế nào, cần tránh lỗi gì?</a></li>
+    <li><a href="../../../../s/ios-jun-m12.html">Trong viewDidLoad (main thread), code trộn main.async và global().sync. Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m13.html">Hai lệnh async và một lệnh sync được đưa vào cùng một queue tạo bằng DispatchQueue(label:). Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m14.html">Nhiều thread cùng append vào một biến var results: [Int] dùng chung, ví dụ bên trong DispatchQueue.concurrentPerform. Điều gì có thể xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m15.html">Người dùng bấm mở một tài liệu lớn và đang chờ nó hiện ra; việc đọc và parse file chạy trên DispatchQueue.global(qos:). QoS nào phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m16.html">Bạn debounce ô tìm kiếm bằng DispatchWorkItem: mỗi lần gõ thì cancel() item cũ và asyncAfter một item mới sau 0,3 giây. Phát biểu nào đúng về cancel()?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> iOS Middle</h2><a class="section-sub" href="../../../../phong-van/ios/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-mid-q01.html">Màn Home cần gọi 3 API độc lập (profile, banner, khuyến mãi), còn màn danh sách phải tải thumbnail cho N sản phẩm. Bạn dùng async let hay TaskGroup cho từng trường hợp? Nếu một request throw thì các request còn lại ra sao?</a></li>
+    <li><a href="../../../../s/ios-mid-q02.html">Bạn đưa logic refresh token vào một actor để tránh race condition, nhưng log vẫn cho thấy API refresh bị gọi 2–3 lần khi nhiều request cùng gặp 401. Vì sao actor không chặn được, và sửa thế nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q03.html">ViewModel gán @Published từ completion handler của URLSession và Xcode báo tím &quot;Publishing changes from background threads is not allowed&quot;. Với Swift Concurrency, bạn sửa thế nào cho triệt để thay vì rải DispatchQueue.main.async khắp nơi?</a></li>
+    <li><a href="../../../../s/ios-mid-q04.html">Ô search gọi API mỗi khi user gõ, và kết quả của từ khoá cũ đôi khi về sau, đè lên kết quả mới. Bạn huỷ request cũ thế nào? Gọi task.cancel() thì code trong task có dừng ngay không?</a></li>
+    <li><a href="../../../../s/ios-mid-q05.html">Team còn dùng một SDK cũ chỉ có API dạng callback. Bạn bọc nó thành hàm async thế nào, và bẫy nào có thể khiến app crash hoặc treo?</a></li>
+    <li><a href="../../../../s/ios-mid-q06.html">Bật Swift 6 language mode, project báo hàng loạt lỗi liên quan tới Sendable khi truyền dữ liệu giữa các actor và task. Sendable nghĩa là gì, và bạn xử lý các lỗi này theo hướng nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q07.html">Codebase đang dùng Combine cho màn search (debounce, removeDuplicates, flatMap). Team muốn chuyển sang async/await. Combine và AsyncSequence khác nhau ở điểm nào, phần nào nên giữ Combine?</a></li>
+    <li><a href="../../../../s/ios-mid-m01.html">Giả sử fetchA() và fetchB() độc lập, mỗi hàm mất khoảng 1 giây. Hai cách viết dưới đây mất bao lâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m02.html">Task group dưới đây thêm task theo thứ tự 3, 1, 2 với thời gian ngủ tỉ lệ theo n. Mảng result in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m03.html">Điều gì xảy ra với task sau khi gọi task.cancel()?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m04.html">Hai lời gọi withdraw(80) chạy đồng thời trên actor sau, số dư ban đầu là 100. Điều nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m05.html">Hàm đồng bộ run() gọi thẳng method và đọc property của actor Counter như dưới. Chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m06.html">Trong một method của class @MainActor, điểm nào đúng khi so sánh Task { } với Task.detached { }?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m07.html">Hàm bọc API callback sau có thể gặp vấn đề gì khi chạy?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m08.html">Ở Swift 6 language mode, khai báo nào conform Sendable hợp lệ mà không cần @unchecked? (AppLogger là class tự viết, không final, có property var.)</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m09.html">Trong sink của $query, closure vừa in tham số nhận được vừa đọc lại vm.query. Console in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m10.html">ViewModel sau không bao giờ cập nhật results dù query thay đổi. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-sen-q05.html">Bạn cần một ImageCache dùng chung cho cả app: đọc rất nhiều từ cellForRowAt trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng actor, @MainActor hay lock? Đánh đổi là gì?</a></li>
+    <li><a href="../../../../s/ios-sen-q06.html">Code cũ dùng DispatchSemaphore trên main thread để chờ kết quả từ một queue .utility, và Xcode báo cảnh báo priority inversion. Vấn đề là gì và sửa thế nào?</a></li>
+    <li><a href="../../../../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a></li>
+    <li><a href="../../../../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m11.html">Vòng lặp sau đẩy 500 block tải file vào global queue, mỗi block gọi mạng đồng bộ. Điều gì dễ xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m12.html">Trong một hàm async, dev dùng DispatchSemaphore để chờ một Task khác xong nhằm &#39;biến async thành sync&#39;. Rủi ro lớn nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m13.html">Khi nào việc đánh dấu @unchecked Sendable như class cache dưới đây là chấp nhận được?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swift/">Swift</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/memory/">Memory &amp; ARC</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swiftui/">SwiftUI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/platform/">App lifecycle &amp; Platform</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

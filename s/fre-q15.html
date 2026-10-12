@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Fresher: Vai trò của MaterialApp và Scaffold là gì?</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="MaterialApp thường là widget gốc của app: cấu hình theme, Navigator/routes, localization, title và cung cấp các thiết lập Material cho toàn bộ cây bên dưới.…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/fre-q15.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher: Vai trò của MaterialApp và Scaffold là gì?">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/fre-q15");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/"},{"@type":"ListItem","position":5,"name":"Vai trò của MaterialApp và Scaffold là gì?","item":"https://trongmobile.github.io/flutter-prep/s/fre-q15.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Vai trò của MaterialApp và Scaffold là gì?</p>
-<p><a href="../#/q/fre-q15">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Vai trò của MaterialApp và Scaffold là gì?</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/flutter/chu-de/widget/">Widget &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Vai trò của <code>MaterialApp</code> và <code>Scaffold</code> là gì?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>MaterialApp</code> thường là widget gốc của app: cấu hình theme, <code>Navigator</code>/routes, localization, title và cung cấp các thiết lập Material cho toàn bộ cây bên dưới. <code>Scaffold</code> là khung bố cục của một màn hình Material với các slot như <code>appBar</code>, <code>body</code>, <code>floatingActionButton</code>, <code>drawer</code>, <code>bottomNavigationBar</code>. Thường cả app chỉ có một <code>MaterialApp</code> còn mỗi màn hình có một <code>Scaffold</code>; lồng thêm <code>MaterialApp</code> trong từng màn hình là lỗi hay gặp, vì nó tạo <code>Navigator</code> và theme riêng tách khỏi phần còn lại của app.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/fre-q15">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/fre-q14.html"><span class="muted small">← Câu trước</span><span>StatelessWidget và StatefulWidget khác nhau thế nào? Khi nào chọn loại nào?</span></a>
+  <a class="pager-next" href="../s/fre-q16.html"><span class="muted small">Câu sau →</span><span>Làm sao lấy nội dung người dùng nhập trong TextField?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/flutter/fresher/">Tất cả câu hỏi Flutter Fresher</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Widget &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/flutter/chu-de/widget/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/fre-q13.html">Câu &#39;Trong Flutter, mọi thứ đều là widget&#39; nghĩa là gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q14.html">StatelessWidget và StatefulWidget khác nhau thế nào? Khi nào chọn loại nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q16.html">Làm sao lấy nội dung người dùng nhập trong TextField?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q17.html">Flutter 3 có những loại button Material nào? Làm sao để disable một button?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q18.html">Cách hiển thị ảnh từ assets và từ internet trong Flutter?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q19.html">Làm sao cấu hình theme chung cho toàn app và lấy màu từ theme bên trong widget?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

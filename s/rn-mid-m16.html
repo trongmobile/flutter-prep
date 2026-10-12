@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz React Native Middle: Cần lấy cả count và inc từ store Zustand trong một lần gọi hook mà không re-render…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Selector trả về object mới mỗi lần nên so sánh Object.is luôn thấy &#39;khác&#39;; useShallow so sánh shallow từng field nên chỉ re-render khi count hoặc inc đổi. ge…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-m16.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz React Native Middle: Cần lấy cả count và inc từ store Zustand trong một lần gọi hook mà không re-render…">
@@ -16,10 +17,78 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-mid-m16");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"Cần lấy cả count và inc từ store Zustand trong…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-m16.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Cần lấy cả count và inc từ store Zustand trong một lần gọi hook mà không re-render thừa. Cách nào đúng?</p>
-<p><a href="../#/q/rn-mid-m16">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Cần lấy cả count và inc từ store Zustand trong…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/state/">State Management</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Cần lấy cả <code>count</code> và <code>inc</code> từ store Zustand trong một lần gọi hook mà không re-render thừa. Cách nào đúng?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Bọc kết quả của <code>useStore()</code> trong <code>useMemo</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Bọc selector trả về object bằng <code>useShallow</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Gọi <code>useStore.getState()</code> ngay trong lúc render</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Bọc component đang dùng store bằng <code>React.memo</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>Selector trả về object mới mỗi lần nên so sánh <code>Object.is</code> luôn thấy &#39;khác&#39;; <code>useShallow</code> so sánh shallow từng field nên chỉ re-render khi <code>count</code> hoặc <code>inc</code> đổi. <code>getState()</code> trong render không subscribe nên UI sẽ không cập nhật, còn <code>useMemo</code>/<code>React.memo</code> không chặn được việc store kích hoạt render.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-m16">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-m15.html"><span class="muted small">← Câu trước</span><span>Gọi inc() từ một màn hình khác. Component Avatar có re-render không?</span></a>
+  <a class="pager-next" href="../s/rn-mid-m17.html"><span class="muted small">Câu sau →</span><span>Dữ liệu tải xong ở phút 0; người dùng rời màn hình rồi quay lại ở phút thứ 3 (g…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề State Management</h2><a class="section-sub" href="../phong-van/react-native/chu-de/state/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-q01.html">Trong createSlice bạn viết state.items.push(...) ngay trong reducer. Vì sao như vậy không phá nguyên tắc immutable của Redux, và cách viết này có bẫy gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q02.html">Dự án đang gọi API bằng createAsyncThunk và tự lưu loading/error/data vào slice. Chuyển sang RTK Query được lợi gì, và làm sao để danh sách tự làm mới sau khi tạo bài viết mới?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q03.html">Màn hình dùng Zustand bị re-render mỗi khi bất kỳ field nào trong store đổi, dù nó chỉ cần user.name. Vì sao và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q04.html">Team đang lưu mọi response API vào Redux. Bạn đề xuất tách server state và client state: hai loại khác nhau thế nào, và staleTime/gcTime của TanStack Query nghĩa là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m13.html">Case reducer viết dạng arrow function một dòng trong createSlice dưới đây có vấn đề gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m14.html">Với RTK Query, sau khi mutation addPost thành công, danh sách từ getPosts không tự làm mới. Cần bổ sung gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Senior: Một bạn junior liên tục để lọt retain cycle và force unwrap, PR nào cũng phải s…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Tôi coi đây là vấn đề của cả quy trình chứ không chỉ của một người. Về con người: ngồi pair một buổi để cùng tìm một retain cycle bằng Memory Graph, giải thí…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q25.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Một bạn junior liên tục để lọt retain cycle và force unwrap, PR nào cũng phải s…">
@@ -16,10 +17,70 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-sen-q25");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Một bạn junior liên tục để lọt retain cycle và…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q25.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Một bạn junior liên tục để lọt retain cycle và force unwrap, PR nào cũng phải sửa nhiều vòng. Với vai trò senior, bạn làm gì?</p>
-<p><a href="../#/q/ios-sen-q25">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Một bạn junior liên tục để lọt retain cycle và…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/soft/">Behavioral</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Một bạn junior liên tục để lọt retain cycle và force unwrap, PR nào cũng phải sửa nhiều vòng. Với vai trò senior, bạn làm gì?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi coi đây là vấn đề của cả quy trình chứ không chỉ của một người. Về con người: ngồi pair một buổi để cùng tìm một retain cycle bằng Memory Graph, giải thích vì sao chứ không chỉ để lại comment &#39;thêm weak self&#39;, và khuyến khích mở draft PR sớm để góp ý từ lúc thiết kế. Về công cụ: bật các rule SwiftLint như <code>force_unwrapping</code>, <code>weak_delegate</code>, và thêm helper trong test kiểm tra view controller được giải phóng sau khi đóng, để máy bắt lỗi thay cho người review. Comment review ghi rõ mức độ (bắt buộc sửa hay chỉ là gợi ý), nói về code chứ không nói về người. Sau vài tuần tôi nhìn lại số vòng review và phản hồi của bạn ấy để điều chỉnh cách hỗ trợ.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q25">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q24.html"><span class="muted small">← Câu trước</span><span>Một senior khác trong team muốn chuyển toàn bộ app sang The Composable Architec…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Behavioral</h2><a class="section-sub" href="../phong-van/ios/chu-de/soft/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q24.html">Một senior khác trong team muốn chuyển toàn bộ app sang The Composable Architecture (TCA), còn bạn thấy chưa phù hợp. Bạn xử lý bất đồng này thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m40.html">PM cần ước lượng việc chuyển màn hình checkout từ UIKit sang SwiftUI, trong khi team chưa từng làm SwiftUI ở quy mô này. Cách trả lời tốt nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz iOS Senior: Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev thêm cấu hình Info.plist sau và bị reviewer ph…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="NSAllowsArbitraryLoads tắt ATS cho mọi kết nối và App Review có thể yêu cầu giải trình; ngoại lệ theo từng domain giới hạn rủi ro vào đúng chỗ cần, tốt nhất…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m31.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz iOS Senior: Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev thêm cấu hình Info.plist sau và bị reviewer ph…">
@@ -16,10 +17,82 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-sen-m31");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev t…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m31.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev thêm cấu hình Info.plist sau và bị reviewer phản đối. Cách thay thế tốt hơn?</p>
-<p><a href="../#/q/ios-sen-m31">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev t…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/security/">Security</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev thêm cấu hình Info.plist sau và bị reviewer phản đối. Cách thay thế tốt hơn?</h1>
+  
+  <pre class="code-block" data-lang="XML"><code><span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>NSAppTransportSecurity<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;dict</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>NSAllowsArbitraryLoads<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;true</span><span class="tk-kw">/&gt;</span>
+<span class="tk-kw">&lt;/dict</span><span class="tk-kw">&gt;</span></code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Giữ nguyên, vì App Review không xem xét cấu hình ATS</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Thêm <code>NSAllowsLocalNetworking</code> để mọi request HTTP được phép</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Chuyển sang <code>NSURLConnection</code> vì API cũ này không chịu ATS</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Chỉ thêm <code>NSExceptionDomains</code> cho đúng domain đó, giữ ATS còn lại</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div><code>NSAllowsArbitraryLoads</code> tắt ATS cho mọi kết nối và App Review có thể yêu cầu giải trình; ngoại lệ theo từng domain giới hạn rủi ro vào đúng chỗ cần, tốt nhất vẫn là chuyển server sang HTTPS. <code>NSAllowsLocalNetworking</code> chỉ áp dụng cho địa chỉ mạng local, còn <code>NSURLConnection</code> cũng chịu ATS như <code>URLSession</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m31">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m30.html"><span class="muted small">← Câu trước</span><span>Nhận định nào đúng về private key được tạo trong Secure Enclave?</span></a>
+  <a class="pager-next" href="../s/ios-sen-m32.html"><span class="muted small">Câu sau →</span><span>Vì sao nên pin hash public key (SPKI) kèm ít nhất một pin dự phòng, thay vì pin…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Security</h2><a class="section-sub" href="../phong-van/ios/chu-de/security/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q17.html">App ngân hàng cần lưu refresh token và một khoá để ký giao dịch, yêu cầu Face ID mỗi lần ký. Bạn lưu trữ trên iOS thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q18.html">Team bảo mật yêu cầu certificate pinning cho API thanh toán. Bạn triển khai thế nào để app không &#39;chết&#39; hàng loạt khi server đổi chứng chỉ?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m29.html">Refresh token được lưu vào Keychain như sau. Khi BGAppRefreshTask chạy lúc máy đang khoá và đọc token này thì sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m30.html">Nhận định nào đúng về private key được tạo trong Secure Enclave?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m32.html">Vì sao nên pin hash public key (SPKI) kèm ít nhất một pin dự phòng, thay vì pin nguyên leaf certificate?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-q24.html">Bạn chuyển access token từ UserDefaults sang Keychain. Ngoài chuyện an toàn hơn, khi làm việc với Keychain có những bẫy nào cần biết?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

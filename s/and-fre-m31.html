@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz Android Fresher: Composable sau vẽ ra vùng màu đỏ có kích thước bao nhiêu?</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Modifier áp dụng theo thứ tự viết: size(100.dp) cố định kích thước, padding(20.dp) thu vùng bên trong lại 20dp mỗi phía, nên background chỉ vẽ trong phần 60×…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-fre-m31.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz Android Fresher: Composable sau vẽ ra vùng màu đỏ có kích thước bao nhiêu?">
@@ -16,10 +17,83 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/and-fre-m31");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/"},{"@type":"ListItem","position":5,"name":"Composable sau vẽ ra vùng màu đỏ có kích thước…","item":"https://trongmobile.github.io/flutter-prep/s/and-fre-m31.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Composable sau vẽ ra vùng màu đỏ có kích thước bao nhiêu?</p>
-<p><a href="../#/q/and-fre-m31">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Composable sau vẽ ra vùng màu đỏ có kích thước…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Composable sau vẽ ra vùng màu đỏ có kích thước bao nhiêu?</h1>
+  
+  <pre class="code-block"><code><span class="tk-type">Box</span>(
+  modifier = <span class="tk-type">Modifier</span>
+    .size(<span class="tk-num">100</span>.dp)
+    .padding(<span class="tk-num">20</span>.dp)
+    .background(<span class="tk-type">Color</span>.<span class="tk-type">Red</span>)
+)</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">100×100dp, nội dung lùi vào 20dp</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">60×60dp, nằm giữa vùng 100×100dp</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">140×140dp vì padding cộng thêm bên ngoài</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">80×80dp vì chỉ trừ padding một phía</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>Modifier áp dụng theo thứ tự viết: <code>size(100.dp)</code> cố định kích thước, <code>padding(20.dp)</code> thu vùng bên trong lại 20dp mỗi phía, nên <code>background</code> chỉ vẽ trong phần 60×60dp còn lại. Nếu đặt <code>background</code> trước <code>padding</code> thì màu đỏ mới phủ hết 100×100dp.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-fre-m31">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-fre-m30.html"><span class="muted small">← Câu trước</span><span>Cần hiển thị một badge số tin nhắn đè lên góc ảnh đại diện trong Jetpack Compos…</span></a>
+  <a class="pager-next" href="../s/and-fre-m32.html"><span class="muted small">Câu sau →</span><span>Muốn app tự hiển thị tiếng Việt khi máy đặt ngôn ngữ tiếng Việt, đặt file strin…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/android/fresher/">Tất cả câu hỏi Android Fresher</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-fre-q18.html">dp, sp và px khác nhau thế nào? Vì sao cỡ chữ nên dùng sp?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q19.html">Khi nào dùng LinearLayout, khi nào dùng ConstraintLayout? layout_weight hoạt động thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q20.html">RecyclerView gồm những thành phần nào? Vì sao nó hiệu quả hơn việc tạo sẵn view cho từng item trong một ScrollView?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q21.html">Trong Jetpack Compose, hàm @Composable là gì? Column, Row, Box khác nhau thế nào và vì sao thứ tự gọi Modifier lại quan trọng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q22.html">Bấm nút nhưng số đếm trên màn hình Compose không tăng. Đoạn code sau sai ở đâu và sửa thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-m26.html">Trên máy có mật độ xxhdpi (480dpi), một View rộng 100dp chiếm bao nhiêu pixel vật lý?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

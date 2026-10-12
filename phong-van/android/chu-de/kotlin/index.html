@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android: Kotlin — Mobile Interview</title>
+<meta name="description" content="12 câu hỏi phỏng vấn Android về Kotlin từ Fresher đến Senior, có đáp án mẫu và 21 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/kotlin/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android: Kotlin — Mobile Interview">
+<meta property="og:description" content="12 câu hỏi phỏng vấn Android về Kotlin từ Fresher đến Senior, có đáp án mẫu và 21 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/kotlin/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Kotlin","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/kotlin/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../../../../phong-van/ios/">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <span aria-current="page">Kotlin</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · android · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn Android: Kotlin</h1>
+  <p class="subtitle">12 câu hỏi kèm đáp án mẫu và 21 câu quiz về Kotlin, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/and-fre-q01.html">val và var khác nhau thế nào? Khai báo val list = mutableListOf(1, 2) rồi gọi list.add(3) có được không?</a></li>
+    <li><a href="../../../../s/and-fre-q02.html">Kotlin chống NullPointerException bằng cách nào? Giải thích ?., ?: và !! qua ví dụ.</a></li>
+    <li><a href="../../../../s/and-fre-q03.html">data class trong Kotlin tự sinh ra những gì? Khi nào nên dùng nó?</a></li>
+    <li><a href="../../../../s/and-fre-q04.html">when trong Kotlin khác switch của Java ở những điểm nào?</a></li>
+    <li><a href="../../../../s/and-fre-q05.html">List và MutableList trong Kotlin khác nhau thế nào? Các hàm như filter, map có sửa list gốc không?</a></li>
+    <li><a href="../../../../s/and-fre-q06.html">Extension function là gì? Nó có thực sự thêm method vào class gốc không?</a></li>
+    <li><a href="../../../../s/and-fre-m01.html">Phép chia trong đoạn code Kotlin sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m02.html">Đoạn code dùng safe call và toán tử Elvis sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m03.html">Khai báo nào dưới đây gây lỗi compile?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m04.html">Đoạn code dùng string template sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m05.html">Đoạn code so sánh hai object data class sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m06.html">Đoạn code dùng when sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m07.html">Đoạn code xử lý collection sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m08.html">Đoạn code sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m09.html">Lambda dưới đây được gọi một lần. Kết quả in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m10.html">Nhận định nào đúng về extension function trong Kotlin?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> Android Junior</h2><a class="section-sub" href="../../../../phong-van/android/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/and-jun-q01.html">Trong code review, bạn thấy đồng nghiệp dùng lẫn lộn let, apply, also, run. Bạn giải thích cách chọn scope function thế nào?</a></li>
+    <li><a href="../../../../s/and-jun-q02.html">lateinit var và val ... by lazy khác nhau thế nào? Khi nào app crash với UninitializedPropertyAccessException?</a></li>
+    <li><a href="../../../../s/and-jun-q03.html">Màn thanh toán hỗ trợ tiền mặt, thẻ (kèm 4 số cuối) và ví điện tử (kèm tên ví). Vì sao enum class không đủ để mô tả, và bạn dùng sealed class/sealed interface thế nào?</a></li>
+    <li><a href="../../../../s/and-jun-q04.html">Gọi một method Java trả về String từ Kotlin, code compile bình thường nhưng crash NullPointerException lúc chạy. Vì sao Kotlin không chặn được lúc compile?</a></li>
+    <li><a href="../../../../s/and-jun-m01.html">Kết hợp apply và let trên cùng một MutableList, đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m02.html">Khai báo property nào sau đây gây lỗi compile?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m03.html">Property config khai báo by lazy được đọc hai lần. Thứ tự các dòng in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m04.html">Class Kotlin Analytics có hàm create() trong companion object, không gắn @JvmStatic. Từ code Java, gọi hàm này thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m05.html">Một khai báo object AppConfig { ... } trong Kotlin được khởi tạo khi nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m06.html">Hàm bậc cao makeCounter trả về một lambda. Đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m07.html">Với user = User(name = &quot;An&quot;, avatarUrl = null), đoạn ?.let { } ?: sau in ra những gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> Android Middle</h2><a class="section-sub" href="../../../../phong-van/android/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/and-mid-q21.html">Vì sao reified chỉ dùng được trong hàm inline? Khi nào cần đánh dấu lambda là crossinline hoặc noinline?</a></li>
+    <li><a href="../../../../s/and-mid-q22.html">Vì sao truyền List&lt;Cat&gt; vào hàm nhận List&lt;Animal&gt; thì được, còn MutableList&lt;Cat&gt; vào MutableList&lt;Animal&gt; lại lỗi compile? out và in giải quyết việc này thế nào?</a></li>
+    <li><a href="../../../../s/and-mid-m18.html">Hàm extension dưới đây không dùng inline lẫn reified. Nó có vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m19.html">Lambda truyền vào hàm inline có lệnh return trần. Gọi main() in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m20.html">Với @JvmInline value class Cents(val value: Long), trường hợp nào giá trị Cents bị boxing thành object thật trên JVM?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m21.html">AppLogger dùng class delegation by base và override tag(). Gọi AppLogger(ConsoleLogger()).log(&quot;hi&quot;) in ra gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/android/chu-de/java/">Java &amp; JVM</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/coroutines/">Coroutines &amp; Flow</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/components/">Activity, Fragment &amp; Lifecycle</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/background/">Background &amp; Service</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/build/">Gradle &amp; Build</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/android/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

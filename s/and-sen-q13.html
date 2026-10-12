@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Senior: Làm sao tái hiện và xử lý process death một cách có hệ thống trong app lớn?…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Khi app ở background, hệ thống có thể kill process để lấy bộ nhớ. Lúc user quay lại, Android tạo process mới, khôi phục back stack Activity/Fragment (kể cả b…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q13.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Làm sao tái hiện và xử lý process death một cách có hệ thống trong app lớn?…">
@@ -16,10 +17,86 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/and-sen-q13");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Làm sao tái hiện và xử lý process death một các…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q13.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Làm sao tái hiện và xử lý process death một cách có hệ thống trong app lớn? Sau khi process bị kill, state nào mất và state nào được khôi phục?</p>
-<p><a href="../#/q/and-sen-q13">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Làm sao tái hiện và xử lý process death một các…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/components/">Activity, Fragment &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Làm sao tái hiện và xử lý process death một cách có hệ thống trong app lớn? Sau khi process bị kill, state nào mất và state nào được khôi phục?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi app ở background, hệ thống có thể kill process để lấy bộ nhớ. Lúc user quay lại, Android tạo process mới, khôi phục back stack Activity/Fragment (kể cả back stack của Navigation) cùng các <code>Bundle</code> đã lưu, nhưng mọi thứ chỉ nằm trong memory đều mất: singleton, cache, biến static, instance ViewModel cũ. Tái hiện: đưa app xuống background rồi chạy <code>adb shell am kill &lt;package&gt;</code>; khác với tuỳ chọn &#39;Don&#39;t keep activities&#39; chỉ destroy Activity còn process vẫn sống. Xử lý: state UI tối thiểu (id, query, tab đang chọn, input của form) lưu bằng <code>SavedStateHandle</code>/<code>rememberSaveable</code>; dữ liệu lớn để trong DB rồi load lại theo id; không giả định singleton đã được màn hình trước khởi tạo, vì màn hình sâu có thể là màn hình đầu tiên chạy trong process mới. Đừng nhét list lớn vào Bundle vì giới hạn Binder transaction (khoảng 1MB) dễ gây <code>TransactionTooLargeException</code>.</div>
+        <pre class="code-block"><code><span class="tk-ann">@HiltViewModel</span>
+<span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> savedState: <span class="tk-type">SavedStateHandle</span>,
+  orderRepo: <span class="tk-type">OrderRepository</span>,
+) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-com">// Chỉ lưu id và input nhỏ; dữ liệu lớn load lại từ DB theo id</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> orderId: <span class="tk-type">String</span> = checkNotNull(savedState[<span class="tk-str">&quot;orderId&quot;</span>])
+  <span class="tk-kw">val</span> note = savedState.getStateFlow(<span class="tk-str">&quot;note&quot;</span>, <span class="tk-str">&quot;&quot;</span>)
+  <span class="tk-kw">val</span> order = orderRepo.observeOrder(orderId)
+    .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-kw">null</span>)
+
+  <span class="tk-kw">fun</span> onNoteChange(<span class="tk-kw">value</span>: <span class="tk-type">String</span>) { savedState[<span class="tk-str">&quot;note&quot;</span>] = <span class="tk-kw">value</span> }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q13">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q12.html"><span class="muted small">← Câu trước</span><span>App có khoảng 20 feature module. Bạn đặt quy tắc phụ thuộc giữa các module thế…</span></a>
+  <a class="pager-next" href="../s/and-sen-q14.html"><span class="muted small">Câu sau →</span><span>Team chuyển sang trunk-based development và muốn mọi tính năng lớn đều nằm sau…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Activity, Fragment &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/android/chu-de/components/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-m29.html">Luồng bình thường không lỗi, nhưng Crashlytics báo UninitializedPropertyAccessException ở CheckoutActivity khi user quay lại app sau thời gian dài ở background. Nguyên nhân là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m30.html">Cách nào thực sự mô phỏng process death để kiểm tra việc khôi phục state?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q12.html">Kể tên 4 thành phần chính (app component) của một ứng dụng Android và vai trò của từng thành phần.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q13.html">File AndroidManifest.xml dùng để làm gì? Muốn một Activity hiện icon ở launcher thì khai báo thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q14.html">Kể các callback chính trong vòng đời Activity. Từ màn A mở màn B (B che kín A) rồi bấm Back thì thứ tự gọi thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q15.html">Explicit intent và implicit intent khác nhau thế nào? Khi dùng implicit intent cần cẩn thận điều gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

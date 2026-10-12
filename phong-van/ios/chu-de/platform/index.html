@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS: App lifecycle &amp; Platform — Mobile Interview</title>
+<meta name="description" content="8 câu hỏi phỏng vấn iOS về App lifecycle &amp; Platform từ Fresher đến Senior, có đáp án mẫu và 11 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/platform/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS: App lifecycle &amp; Platform — Mobile Interview">
+<meta property="og:description" content="8 câu hỏi phỏng vấn iOS về App lifecycle &amp; Platform từ Fresher đến Senior, có đáp án mẫu và 11 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/platform/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"App lifecycle & Platform","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/platform/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../../phong-van/android/">Android</a>
+      <a href="../../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">App lifecycle &amp; Platform</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn iOS: App lifecycle &amp; Platform</h1>
+  <p class="subtitle">8 câu hỏi kèm đáp án mẫu và 11 câu quiz về App lifecycle &amp; Platform, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-fre-q23.html">AppDelegate và SceneDelegate khác nhau thế nào? Vì sao từ iOS 13 lại có thêm SceneDelegate?</a></li>
+    <li><a href="../../../../s/ios-fre-q24.html">File Info.plist dùng để làm gì? Kể vài key quan trọng bạn hay phải sửa.</a></li>
+    <li><a href="../../../../s/ios-fre-q25.html">Bundle identifier là gì? Version và build number khác nhau thế nào khi đẩy bản mới lên TestFlight?</a></li>
+    <li><a href="../../../../s/ios-fre-m37.html">Muốn đổi tên app hiển thị dưới icon trên màn hình Home mà không đổi tên project, bạn sửa key nào trong Info.plist?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m38.html">App đang có version 1.3.0 build 12 trên TestFlight. Bạn sửa một bug nhỏ và muốn upload lại cho tester, cần thay đổi gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m39.html">App UIKit tạo từ template mới (có SceneDelegate). Bạn muốn bỏ storyboard và tự tạo UIWindow cùng màn hình gốc bằng code. Đặt code đó ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m40.html">Phát biểu nào đúng về bundle identifier (ví dụ com.example.shopapp)?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-jun-q22.html">Người dùng đang điền một form dài thì chuyển sang app khác, một lúc sau quay lại thấy app khởi động lại từ đầu và mất hết dữ liệu. Vì sao, và nên lưu nháp vào lúc nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q23.html">Mô tả luồng push notification từ lúc app xin quyền tới khi máy nhận được thông báo. Device token cần được xử lý thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-m34.html">App gọi AVCaptureDevice.requestAccess(for: .video) nhưng Info.plist chưa có key NSCameraUsageDescription. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m35.html">Đang dùng app, người dùng kéo Control Center xuống, app vẫn hiện mờ phía sau. Lúc này app ở trạng thái nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m36.html">Lần đầu người dùng bấm &quot;Không cho phép&quot; ở hộp thoại thông báo. Lần sau app gọi lại requestAuthorization(options:) thì sao?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-sen-q14.html">App chính, widget và Notification Service Extension cần dùng chung trạng thái đăng nhập và database. Bạn tổ chức thế nào, cần lưu ý gì?</a></li>
+    <li><a href="../../../../s/ios-sen-q15.html">App cần tự làm mới dữ liệu ở background vài giờ một lần và dọn database vào ban đêm. Bạn dùng BGTaskScheduler thế nào cho đúng?</a></li>
+    <li><a href="../../../../s/ios-sen-q16.html">App chat mã hoá đầu cuối cần hiện push có preview nội dung và ảnh. Bạn dùng silent push hay Notification Service Extension? Vì sao?</a></li>
+    <li><a href="../../../../s/ios-sen-m25.html">Server gửi silent push (content-available: 1) để app đồng bộ ngầm, nhưng với một số user app không bao giờ được đánh thức. Nguyên nhân hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m26.html">Notification Service Extension đã được thêm vào app nhưng didReceive(_:withContentHandler:) không bao giờ được gọi. Payload nhiều khả năng đang thiếu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m27.html">Đoạn đăng ký background task đặt trong SceneDelegate sau sẽ dẫn tới chuyện gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m28.html">Dung lượng tải về trên App Store của user iPhone nhỏ hơn nhiều so với file .ipa bạn upload. Cơ chế chính đứng sau là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swift/">Swift</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/memory/">Memory &amp; ARC</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/concurrency/">Concurrency</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swiftui/">SwiftUI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

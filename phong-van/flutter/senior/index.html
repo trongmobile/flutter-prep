@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Senior (84 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="84 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (84 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="84 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <span aria-current="page">Senior</span>
+</nav>
+
+<header class="view-head rank-purple">
+  <div class="eyebrow">phỏng vấn · flutter · senior (4+ năm)</div>
+  <h1>Câu hỏi phỏng vấn Flutter Senior</h1>
+  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 84 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../../../#/flutter/study/senior">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/flutter/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/flutter/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/flutter/middle/">Middle</a>
+  <a class="chip active" href="../../../phong-van/flutter/senior/" aria-current="page">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#async">Async &amp; Isolate</a> <span class="count">3</span></li>
+    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">3</span></li>
+    <li><a href="#state">State Management</a> <span class="count">4</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">12</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">5</span></li>
+    <li><a href="#native">Native &amp; Platform</a> <span class="count">22</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">8</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">7</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">8</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">10</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="async">
+  <div class="section-head"><h2>Async &amp; Isolate</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/async/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q06.html">Thiết kế một worker isolate sống lâu để xử lý tác vụ nặng liên tục (mã hoá file, xử lý ảnh). Bạn lưu ý gì về giao tiếp và truyền dữ liệu lớn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với tác vụ lẻ tẻ thì <code>Isolate.run</code> là đủ, nhưng khi xử lý liên tục thì spawn mỗi lần vừa tốn chi phí vừa mất state đã khởi tạo, nên tôi spawn một worker bằng <code>Isolate.spawn</code>, bắt tay để trao đổi <code>SendPort</code> hai chiều, gắn mỗi request một id ánh xạ tới <code>Completer</code>, có timeout, theo dõi lỗi/thoát qua <code>onError</code>/<code>onExit</code> và <code>kill</code> khi không còn dùng. Message giữa các isolate mặc định bị copy, nên với buffer vài chục MB tôi dùng <code>TransferableTypedData</code>: chỉ tốn một lần copy lúc tạo, gửi qua port trong thời gian hằng số, và bên nhận chỉ được <code>materialize()</code> đúng một lần; kết quả cuối của một isolate sắp kết thúc có thể trả bằng <code>Isolate.exit</code> để VM chuyển giao object mà không phải copy. Isolate tạo bằng <code>Isolate.spawn</code> cùng isolate group với isolate gốc nên spawn nhanh và gửi được cả closure, khác với <code>Isolate.spawnUri</code>. Nếu worker cần gọi plugin thì phải truyền <code>RootIsolateToken</code> và gọi <code>BackgroundIsolateBinaryMessenger.ensureInitialized</code>, đồng thời nhớ rằng isolate nền không nhận được message do phía native chủ động gửi.</div>
+        <pre class="code-block"><code><span class="tk-kw">void</span> _worker(<span class="tk-type">SendPort</span> toMain) {
+  <span class="tk-kw">final</span> inbox = <span class="tk-type">ReceivePort</span>();
+  toMain.send(inbox.sendPort); <span class="tk-com">// bắt tay: trả SendPort cho main</span>
+  inbox.listen((msg) {
+    <span class="tk-kw">final</span> (int id, <span class="tk-type">TransferableTypedData</span> data, <span class="tk-type">SendPort</span> reply) =
+        msg <span class="tk-kw">as</span> (int, <span class="tk-type">TransferableTypedData</span>, <span class="tk-type">SendPort</span>);
+    <span class="tk-kw">final</span> bytes = data.materialize().asUint8List(); <span class="tk-com">// không copy lại</span>
+    reply.send((id, bytes.length)); <span class="tk-com">// thay bằng xử lý thật</span>
+  });
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d03-5.html"><code>Isolate.spawn</code> khác <code>compute()</code> ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>compute()</code> chỉ chạy một tác vụ đơn giản rồi tự đóng isolate. <code>Isolate.spawn</code> cho control chi tiết hơn: giữ isolate sống và giao tiếp hai chiều liên tục qua <code>SendPort</code>/<code>ReceivePort</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d35-1.html">Phân biệt <code>Future.microtask</code> và <code>Future.delayed(Duration.zero)</code>.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Future.microtask</code> đưa task vào microtask queue, chạy trước mọi event tiếp theo; <code>Future.delayed(Duration.zero)</code> đưa vào event queue, chạy sau tất cả microtask hiện có dù delay bằng 0.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="layout">
+  <div class="section-head"><h2>Layout &amp; Rendering</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/layout/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q01.html">Khi nào bạn viết một <code>RenderBox</code> tùy biến thay vì dùng <code>CustomPaint</code> hay <code>CustomMultiChildLayout</code>? Mô tả các bước chính khi implement.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi chỉ xuống tầng <code>RenderBox</code> khi widget có sẵn không diễn đạt được layout cần thiết: size của cha phụ thuộc vào con theo cách đặc biệt (ví dụ bong bóng chat co theo dòng cuối của text để nhét giờ gửi), hit-test tùy biến, hoặc muốn xử lý thay đổi ngay ở tầng render để tránh rebuild. <code>CustomPaint</code> chỉ vẽ, còn <code>CustomMultiChildLayout</code> không cho size của chính nó phụ thuộc vào size của con, nên khi cần cả hai thì mới đáng viết <code>RenderBox</code>. Các bước: tạo <code>LeafRenderObjectWidget</code>/<code>SingleChildRenderObjectWidget</code> với <code>createRenderObject</code> và <code>updateRenderObject</code>; trong <code>RenderBox</code> override <code>performLayout</code> (layout con với constraints phù hợp, truyền <code>parentUsesSize: true</code> nếu đọc size con, set <code>size</code> qua <code>constraints.constrain</code>), <code>paint</code>, <code>hitTestChildren</code>/<code>hitTestSelf</code>, cùng <code>computeDryLayout</code> và các hàm intrinsic nếu widget có thể nằm trong <code>IntrinsicHeight</code> hoặc bị cha gọi <code>getDryLayout</code>. Chỗ hay bug nhất là setter: phải so sánh giá trị cũ rồi gọi đúng <code>markNeedsLayout</code> hoặc <code>markNeedsPaint</code>, và <code>updateRenderObject</code> phải truyền đủ mọi property.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">RenderDot</span> <span class="tk-kw">extends</span> <span class="tk-type">RenderBox</span> {
+  <span class="tk-type">RenderDot</span>(<span class="tk-kw">this</span>._radius);
+  double _radius;
+  <span class="tk-kw">set</span> radius(double value) {
+    <span class="tk-kw">if</span> (value == _radius) <span class="tk-kw">return</span>;
+    _radius = value;
+    markNeedsLayout(); <span class="tk-com">// size đổi; layout xong sẽ tự markNeedsPaint</span>
+  }
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Size</span> computeDryLayout(<span class="tk-type">BoxConstraints</span> constraints) =&gt;
+      constraints.constrain(<span class="tk-type">Size</span>.square(_radius * <span class="tk-num">2</span>));
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> performLayout() =&gt; size = computeDryLayout(constraints);
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q02.html">Relayout boundary là gì? Khi nào một <code>RenderObject</code> tự trở thành relayout boundary, và nó liên quan gì đến <code>markNeedsLayout</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi một <code>RenderObject</code> gọi <code>markNeedsLayout</code>, nếu nó không phải boundary thì framework đánh dấu tiếp lên cha, cho tới relayout boundary gần nhất, rồi chỉ layout lại từ điểm đó — nên boundary quyết định phạm vi của một lần relayout. Một node là relayout boundary khi cha không dùng size của nó (<code>parentUsesSize: false</code>), khi nó <code>sizedByParent</code>, khi constraints nhận được là tight, hoặc khi nó là root, vì trong các trường hợp đó size của nó thay đổi cũng không bắt cha phải tính lại. Khác với <code>RepaintBoundary</code> là widget bạn chủ động đặt để tách layer, relayout boundary do framework tự suy ra trong <code>layout()</code>; muốn tận dụng thì cho subtree hay thay đổi nhận tight constraints, ví dụ bọc trong <code>SizedBox</code> kích thước cố định. Còn <code>markNeedsPaint</code> chỉ đi lên tới repaint boundary gần nhất và không kéo theo layout, nên property chỉ ảnh hưởng hình vẽ thì đừng gọi <code>markNeedsLayout</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d07-1.html">Mô tả 4 giai đoạn chính trong rendering pipeline của Flutter?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Build (tạo Widget tree) → Layout (RenderObject tính size/position) → Paint (vẽ lên Layer) → Composite (GPU ghép các Layer thành frame cuối cùng).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="state">
+  <div class="section-head"><h2>State Management</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/state/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d08-4.html"><code>InheritedModel</code> khác <code>InheritedWidget</code> ở điểm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>InheritedModel</code> cho phép widget con chỉ rebuild khi một aspect cụ thể thay đổi, thay vì rebuild toàn bộ mỗi khi bất kỳ giá trị nào trong InheritedWidget đổi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d11-2.html"><code>EventTransformer</code> trong Bloc dùng để làm gì? Ví dụ thực tế?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Kiểm soát cách Bloc xử lý các Event đến, ví dụ debounce hoặc throttle. Ví dụ: dùng debounce cho search-as-you-type để tránh gọi API mỗi ký tự gõ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d11-4.html">Vì sao Bloc phù hợp với dự án lớn, nhiều dev ở MNC?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Enforce convention rõ ràng, tách business logic khỏi UI hoàn toàn, dễ test vì input/output tường minh, và dễ debug qua <code>BlocObserver</code> log mọi transition.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d35-2.html">Trade-off giữa Riverpod code-gen (<code>@riverpod</code>) và khai báo provider thủ công (<code>NotifierProvider</code>)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Code-gen giảm boilerplate và tự suy ra type nhưng cần thêm bước build_runner và code sinh ra khó đọc trực tiếp; khai báo thủ công tường minh hơn nhưng dài dòng hơn khi project lớn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q09.html">Pub workspaces (Dart 3.6+) giải quyết vấn đề gì trong một monorepo Flutter, và nó kết hợp với Melos ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước đây mỗi package trong monorepo có <code>pubspec.lock</code> riêng, nên cùng một dependency có thể resolve ra version khác nhau giữa các package, <code>pub get</code> phải chạy cho từng package và analyzer phải giữ nhiều context. Với pub workspaces, <code>pubspec.yaml</code> gốc khai báo danh sách <code>workspace:</code> và mỗi package con khai báo <code>resolution: workspace</code>: cả repo dùng chung một lần resolve, một lockfile và một <code>package_config.json</code>, nên mọi package chắc chắn dùng cùng version và IDE nhẹ hơn. Trade-off là không còn cho phép hai package cần hai version không tương thích của cùng một dependency — phải nâng cấp đồng loạt, điều thực ra lành mạnh cho một app monorepo. Workspaces chỉ lo phần resolve dependency; Melos vẫn hữu ích cho script chạy theo từng package, lọc package bị ảnh hưởng bởi thay đổi, versioning và changelog khi publish, và các bản Melos mới đã được xây trên nền pub workspaces.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q10.html">Trong codebase 30+ dev, làm sao enforce các rule kiến trúc (feature không import nội bộ feature khác, domain không phụ thuộc data) thay vì chỉ trông vào code review?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Rule chỉ nằm trong wiki sẽ bị phá dần, nên tôi biến nó thành thứ máy kiểm tra được và fail CI. Mức mạnh nhất là ranh giới package: mỗi feature/layer là một package, chỉ khai báo dependency được phép trong <code>pubspec.yaml</code> (lint <code>depend_on_referenced_packages</code> báo khi import package không khai báo), API public để ở <code>lib/&lt;package&gt;.dart</code>, phần nội bộ ở <code>lib/src/</code> và nâng lint <code>implementation_imports</code> thành error để chặn import vào <code>src</code> của package khác. Với rule chi tiết hơn, ví dụ presentation không được gọi thẳng repository, tôi viết custom lint hoặc một script kiểm tra import graph chạy trong CI. Kết hợp <code>CODEOWNERS</code> cho các package lõi và ADR ghi lại lý do của từng rule, để người mới hiểu vì sao bị chặn chứ không chỉ tìm cách lách.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d12-2.html">&#39;Dependency Rule&#39; trong Clean Architecture nghĩa là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dependency chỉ được trỏ vào trong, layer trong (Domain) không được biết gì về layer ngoài, thường đạt được qua abstract interface kết hợp Dependency Inversion.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d12-3.html">Vì sao Domain layer không nên import package Flutter hay Dio?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Để business logic cốt lõi độc lập với framework, dễ test và dễ đổi công nghệ (ví dụ đổi Dio sang http) mà không ảnh hưởng business rule.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d13-1.html">Constructor Injection và Service Locator khác nhau thế nào về testability?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Constructor Injection tường minh dependency qua constructor nên dễ mock khi test; Service Locator ẩn dependency trong registry toàn cục, test phải setup và reset locator, dễ rò rỉ state giữa các test.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d14-1.html">Team nhỏ, giai đoạn MVP, bạn chọn Provider hay Bloc? Vì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thường chọn Provider hoặc Riverpod vì ít boilerplate, tốc độ phát triển nhanh; Bloc phù hợp hơn khi team lớn cần convention chặt và logic phức tạp cần test kỹ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d14-2.html">Riverpod có thể thay thế hoàn toàn nhu cầu dùng GetIt không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có thể, vì Riverpod bản chất cũng là một dependency graph không cần BuildContext — nhiều team dùng Riverpod vừa làm state management vừa làm DI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d26-1.html">&#39;Feature-based module&#39; khác gì so với tổ chức theo layer như <code>screens/</code>, <code>models/</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Feature-based gom code theo tính năng, ví dụ <code>feature/login/</code>, <code>feature/checkout/</code>; layer-based gom theo loại file kỹ thuật. Feature-based thường dễ scale hơn với team lớn vì giảm xung đột code và rõ ràng ownership.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d26-2.html">Melos dùng để làm gì trong dự án Flutter dạng monorepo?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Quản lý nhiều package Dart/Flutter trong cùng một repository, chạy command như test hay analyze đồng loạt, quản lý version và dependency giữa các package nội bộ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d26-3.html">Lợi ích chính khi tách app lớn thành nhiều package nội bộ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ép buộc rõ boundary giữa các module, giảm thời gian build vì chỉ build lại package thay đổi, nhiều team làm song song ít conflict hơn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d26-4.html">Rủi ro thường gặp khi chia module quá nhỏ, quá sớm?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tăng độ phức tạp quản lý dependency giữa các package, tốn thời gian maintain pubspec cho từng package, đôi khi lợi ích không bù được chi phí nếu app còn nhỏ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d30-5.html">Feature-based module giúp giảm conflict code thế nào trong team 10 hoặc hơn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi team sở hữu rõ một thư mục theo tính năng, ít khi hai người cùng sửa một file chung, khác với gom theo layer khiến nhiều team cùng đụng vào chung thư mục screens hay models.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d25-1.html">&#39;Offline-first&#39; nghĩa là gì trong thiết kế app?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">App hoạt động đầy đủ dựa trên local database trước, coi network là đồng bộ nền, thay vì coi network là nguồn dữ liệu chính và local chỉ là cache tạm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d25-3.html">&#39;Optimistic UI update&#39; là gì? Rủi ro của cách tiếp cận này?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cập nhật UI ngay lập tức như thể request thành công trước khi có phản hồi thật từ server. Rủi ro: cần cơ chế rollback UI nếu request thất bại và thông báo lại cho người dùng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d25-4.html">Nêu một chiến lược phổ biến để giải quyết conflict khi đồng bộ dữ liệu hai chiều?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chiến lược <code>Last-Write-Wins</code> dựa vào timestamp, bản ghi mới nhất thắng, đơn giản nhưng có thể mất dữ liệu; phức tạp hơn là merge theo từng field hoặc để người dùng tự chọn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d27-2.html">Cơ chế refresh token tự động xử lý race-condition thế nào khi nhiều request cùng bị 401?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thường implement trong <code>onError</code> của Interceptor; để tránh nhiều request cùng gọi refresh song song, dùng một <code>Completer</code> dùng chung để các request khác chờ kết quả của lần refresh đầu tiên rồi mới retry.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d30-4.html">Vì sao cần lock hoặc Completer khi implement auto-refresh-token?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Để tránh nhiều request cùng bị 401 đều tự gọi refresh song song, có thể tạo nhiều token xung đột nhau — Completer dùng chung giúp các request sau chờ kết quả của lần refresh đầu tiên.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="native">
+  <div class="section-head"><h2>Native &amp; Platform</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/native/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q07.html">Nhúng Google Map hay WebView (platform view) vào màn hình Flutter có chi phí hiệu năng gì? Bạn giảm thiểu thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Platform view buộc engine ghép một native view với nội dung Flutter, và cái giá tùy chế độ: với hybrid composition (iOS, và Android khi dùng <code>initExpensiveAndroidView</code>), Flutter UI được compose trên platform thread thay vì raster thread riêng nên phải tranh tài nguyên với OS và plugin, dễ tụt FPS; trên Android 9 trở xuống chế độ này còn copy frame qua lại giữa bộ nhớ GPU và bộ nhớ chính. Chế độ mặc định của <code>AndroidView</code> (Texture Layer Hybrid Composition, fallback Virtual Display) nhẹ hơn cho Flutter nhưng có hạn chế riêng như scroll nhanh trong WebView có thể giật, <code>SurfaceView</code> bị chuyển sang virtual display, accessibility và text input kém hơn. Thực tế tôi giới hạn số platform view cùng lúc (không đặt map trong từng item của list), dùng ảnh tĩnh làm placeholder và chỉ tạo view thật khi user tương tác, tránh animate hay transform platform view, và luôn đo trên máy Android tầm thấp ở profile mode.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q08.html">Khi tích hợp thư viện native qua FFI, bạn xử lý threading và callback thế nào để không làm treo UI? <code>ffigen</code>/<code>jnigen</code> đóng vai trò gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lời gọi FFI là đồng bộ và chạy ngay trên thread của isolate gọi nó, nên một hàm C chạy 200ms gọi từ root isolate sẽ chặn UI 200ms; việc nặng phải chạy ở isolate khác (<code>Isolate.run</code>) hoặc để native tự chạy trên thread riêng rồi báo kết quả về. Với callback từ native: <code>Pointer.fromFunction</code> và <code>NativeCallable.isolateLocal</code> chỉ được gọi trên đúng thread của isolate (gọi từ thread khác sẽ abort process), còn <code>NativeCallable.listener</code> gọi được từ mọi thread nhưng chạy bất đồng bộ trên event loop, chỉ hỗ trợ hàm trả <code>void</code>, và phải <code>close()</code> khi xong nếu không isolate bị giữ sống mãi. <code>ffigen</code> sinh binding Dart từ header C/Objective-C, <code>jnigen</code> sinh binding gọi Java/Kotlin qua JNI, giúp bỏ phần glue code viết tay dễ sai kiểu và dễ lệch khi thư viện nâng version. Tôi vẫn bọc binding sinh ra sau một API Dart nhỏ, quản lý memory native bằng <code>Arena</code> hoặc <code>NativeFinalizer</code>, để phần còn lại của app không phụ thuộc trực tiếp vào FFI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d16-1.html">Pigeon giải quyết vấn đề gì so với viết MethodChannel thủ công?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Sinh code type-safe tự động cho cả Dart và Native (Kotlin/Swift) từ một file định nghĩa chung, tránh lỗi type mismatch và tránh tự parse Map/String thủ công dễ typo.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d16-2.html">Workflow cơ bản khi dùng Pigeon là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Định nghĩa API trong một file Dart đặc biệt → chạy generator → sinh code Dart và code native tương ứng → implement phần logic native trong code sinh ra đó.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d16-3.html">Pigeon có hỗ trợ Native gọi ngược lại Dart không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có, hỗ trợ cả <code>HostApi</code> (Dart gọi Native) và <code>FlutterApi</code> (Native gọi ngược lại Dart).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d16-4.html">Khi nào KHÔNG nên dùng Pigeon mà nên dùng MethodChannel thủ công?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi cần logic encode/decode phức tạp tuỳ biến, hoặc project chỉ có một, hai method đơn giản không đáng để thêm bước generate code.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d17-1.html">FFI trong Dart dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho phép Dart gọi trực tiếp function viết bằng C mà không cần đi qua Platform Channel hay native host code trung gian.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d17-2.html">Vì sao FFI thường nhanh hơn Platform Channel?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vì gọi trực tiếp vào native function giống gọi hàm C bình thường, không tốn chi phí serialize/deserialize qua message codec và không cần chuyển qua platform thread.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d17-3.html">FFI có gọi được code Swift/Kotlin thuần trực tiếp không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không trực tiếp — FFI chỉ giao tiếp qua C ABI, nên Swift/Kotlin cần expose thêm một lớp tương thích C, ví dụ qua <code>@_cdecl</code> trong Swift, để Dart FFI gọi vào được.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d17-4.html">Trường hợp thực tế nào nên ưu tiên FFI thay vì Platform Channel?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi cần hiệu năng cực cao và gọi liên tục, ví dụ xử lý ảnh hoặc audio real-time, tái sử dụng thư viện C/C++ có sẵn mà overhead của Channel gây bottleneck rõ rệt.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d17-5.html">Quản lý memory khi dùng FFI cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Phải tự cấp phát và giải phóng memory native thủ công vì garbage collector của Dart không quản lý memory phía native, dễ gây leak nếu quên free.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d18-1.html"><code>FlutterActivity</code> và <code>FlutterFragment</code> khi nào nên dùng loại nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>FlutterActivity</code> dùng khi toàn màn hình là Flutter; <code>FlutterFragment</code> dùng trong add-to-app khi cần nhúng Flutter vào một phần của Activity Android đã tồn tại, cùng màn hình có cả View Android lẫn Flutter.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d18-2.html">Vì sao nên cache hoặc pre-warm <code>FlutterEngine</code> trong app hybrid?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khởi tạo FlutterEngine tốn thời gian do phải load Dart VM; pre-warm sẵn một engine từ lúc app khởi động giúp lần mở màn hình Flutter đầu tiên không bị delay hay giật.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d18-3.html">Trong mô hình add-to-app, nhiều FlutterEngine cùng lúc có vấn đề gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Các engine trong cùng process dùng chung một Dart VM, nhưng mỗi engine có root isolate và pipeline render riêng nên tốn thêm memory và thời gian khởi tạo; các isolate cũng không chia sẻ state với nhau. Thường dùng <code>FlutterEngineGroup</code> để tạo các engine chia sẻ tài nguyên nội bộ (như code snapshot), giảm đáng kể chi phí cho mỗi engine thêm vào.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d18-4.html">Plugin native Android thường implement interface nào để nhận lifecycle Activity?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ActivityAware</code>, để biết khi nào attach hay detach khỏi Activity, kết hợp <code>ActivityResultListener</code> nếu cần xử lý kết quả trả về.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d19-1.html">Vai trò của <code>FlutterViewController</code> trong app iOS là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Là <code>UIViewController</code> chứa Flutter view, tương đương <code>FlutterActivity</code> bên Android, nơi Flutter engine render UI lên màn hình iOS.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d19-2.html"><code>AppDelegate</code> cần làm gì khi tích hợp Flutter vào app iOS?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đăng ký plugin qua <code>GeneratedPluginRegistrant.register</code>, và nếu add-to-app thì thường khởi tạo hoặc giữ một <code>FlutterEngine</code> dùng chung xuyên suốt vòng đời app.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d19-3.html">Plugin native iOS thường viết bằng ngôn ngữ nào và implement protocol gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thường viết Swift, implement <code>FlutterPlugin</code> protocol và đăng ký handler qua <code>FlutterMethodChannel</code> trong hàm <code>register(with registrar:)</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d19-4.html">Kết quả MethodChannel cần được trả về trên thread nào ở cả hai nền tảng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Luôn phải gọi <code>result.success</code> hoặc <code>result.error</code> trên main thread; nếu xử lý native ở background thread thì cần dispatch ngược lại main thread trước khi gọi callback.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d21-4.html">Review: cần gọi một SDK native phức tạp có nhiều callback bất đồng bộ, chọn Pigeon hay FFI?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chọn Pigeon hoặc MethodChannel, vì SDK phức tạp thường đã có sẵn API Kotlin/Swift với lifecycle riêng, cần đi qua binding native thật thay vì gọi C ABI trực tiếp qua FFI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d30-1.html">So sánh chi phí hiệu năng: MethodChannel vs FFI vs gọi trực tiếp package Dart thuần?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dart thuần nhanh nhất vì cùng một isolate không overhead; FFI gần bằng gọi native trực tiếp qua C ABI; MethodChannel chậm nhất vì phải serialize qua message codec và platform thread.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d35-3.html">Vì sao một số plugin cần implement cả <code>ActivityAware</code> lẫn xử lý riêng cho add-to-app?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vì trong add-to-app, Activity có thể được nhiều FlutterEngine dùng chung hoặc lifecycle không theo chuẩn một Activity một Flutter app thông thường, nên plugin cần xử lý thêm trường hợp attach/detach linh hoạt hơn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q03.html">Sau khi app chạy trên Impeller, những loại jank nào vẫn còn, và bạn khoanh vùng một vấn đề do renderer gây ra như thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Impeller (mặc định trên iOS và Android API 29+, máy cũ hơn fallback về Skia) biên dịch sẵn shader lúc build nên jank do compile shader lần đầu gần như biến mất, nhưng chi phí GPU thì không biến mất: <code>saveLayer</code> (do <code>Opacity</code> trên subtree lớn, <code>ShaderMask</code>, <code>Clip.antiAliasWithSaveLayer</code>), blur và <code>BackdropFilter</code>, clip/shadow phức tạp vẫn có thể đẩy raster thread vượt ngân sách frame. Jank ở UI thread (build/layout nặng, parse JSON trên root isolate) cũng không liên quan gì tới renderer. Khi khoanh vùng, tôi profile trên máy thật ở profile mode, xem frame chậm ở UI hay raster thread trong DevTools; trên Android có thể chạy <code>flutter run --no-enable-impeller</code> để so với Skia và biết lỗi nằm ở renderer/driver GPU hay ở app, còn trên iOS bản hiện tại không còn đường lui về Skia. Ví dụ thực tế: màn có blur toàn màn hình vẫn giật trên máy Android tầm thấp dù đã dùng Impeller — cách xử lý là thu nhỏ vùng blur hoặc dùng ảnh nền đã blur sẵn, và nếu nghi lỗi renderer thì tạo repro tối giản để report cho Flutter.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q04.html">Bạn phát hiện và phòng ngừa memory leak trong một app Flutter lớn như thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dấu hiệu thường là memory tăng dần sau mỗi lần mở/đóng cùng một màn hình; tôi lặp lại flow đó nhiều lần, chụp heap snapshot trong DevTools Memory trước và sau rồi diff để tìm class không giảm (thường là <code>State</code>, controller, model lớn) và lần theo retaining path. Nguyên nhân phổ biến: không <code>dispose</code> <code>AnimationController</code>/<code>TextEditingController</code>/<code>ScrollController</code>, không <code>cancel</code> <code>StreamSubscription</code> hoặc <code>removeListener</code> khỏi object sống lâu, và closure giữ <code>BuildContext</code> hay <code>this</code> bị lưu vào singleton, cache static hoặc callback của SDK native. Ở quy mô team, tôi bật leak tracking cho widget test bằng <code>leak_tracker_flutter_testing</code> (<code>LeakTesting.enable()</code> trong <code>flutter_test_config.dart</code>) để CI bắt các object của framework không được dispose, bật thêm lint như <code>cancel_subscriptions</code>, và thống nhất quy tắc &#39;ai tạo thì người đó dispose&#39;. Lưu ý heap snapshot chủ yếu phản ánh Dart heap; ảnh đã decode hay memory của SDK native cần xem thêm bằng Android Studio Profiler hoặc Xcode Instruments.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q05.html">App cold start mất khoảng 3 giây trên máy Android tầm trung. Bạn đo và tối ưu startup time thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết đo đúng: build profile trên máy thật, dùng <code>flutter run --profile --trace-startup</code> để có <code>start_up_info.json</code> (thời điểm vào engine, khởi tạo framework, first frame), đối chiếu với số liệu thật của user trên Android vitals và Xcode Organizer. Thủ phạm phổ biến nhất là <code>main()</code> <code>await</code> tuần tự hàng loạt SDK (Firebase, remote config, analytics, migrate DB) trước <code>runApp</code>; tôi chỉ giữ những gì màn đầu tiên thật sự cần, chạy song song bằng <code>Future.wait</code>, phần còn lại khởi tạo lazy sau first frame. Tiếp theo là màn đầu quá nặng — decode ảnh lớn, parse JSON lớn trên root isolate — thì hiển thị skeleton trước và dời việc nặng sang isolate. Phần native cũng tính vào: <code>Application.onCreate</code>/<code>AppDelegate</code> khởi tạo nhiều SDK, app size lớn, và với add-to-app thì nên pre-warm engine. Cuối cùng đặt ngân sách startup và theo dõi theo từng release để không bị thoái lui âm thầm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d07-2.html"><code>RepaintBoundary</code> giải quyết vấn đề gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cô lập một vùng thành Layer riêng, để khi vùng đó repaint không kéo theo việc paint lại toàn bộ cha/con không liên quan, giảm chi phí paint thừa.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d20-1.html">DevTools Timeline giúp phát hiện gì? Phân biệt UI thread và Raster thread.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho xem chi tiết thời gian mỗi frame tốn ở giai đoạn nào. UI thread chạy Dart code (build/layout/paint) để tạo layer tree; Raster thread nhận layer tree đó và ra lệnh cho GPU vẽ pixel. Frame chậm ở UI thread thường do build/logic nặng, chậm ở Raster thread thường do effect tốn kém (saveLayer, clip, shadow, shader).</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d20-3.html">&#39;Shader compilation jank&#39; là gì và cách khắc phục phổ biến?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Giật xảy ra khi shader được compile ngay lúc runtime ở lần đầu chạy một hiệu ứng. Với Skia cũ, cách khắc phục là SkSL warm-up. Từ khi Impeller là renderer mặc định (iOS, và Android API 29+), shader được biên dịch sẵn lúc build nên loại jank này gần như biến mất; nếu vẫn gặp thì kiểm tra app có đang chạy Impeller không.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d21-2.html">Deferred component trong Flutter dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cho phép tách một phần code hoặc tài nguyên khỏi bundle chính và chỉ tải khi cần (Android, qua Play Feature Delivery), giảm kích thước app tải về ban đầu. Trên web thì dùng <code>deferred as</code> import.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d30-2.html">App bị shader jank ngay lần đầu chạy animation mới, bạn debug bắt đầu từ đâu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bắt đầu từ DevTools Performance: xem frame chậm nằm ở UI hay Raster thread. Nếu là shader compilation, kiểm tra app có đang chạy Impeller không (mặc định trên iOS và Android API 29+); chỉ khi còn dùng Skia mới cần cân nhắc SkSL warm-up.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q14.html">Làm sao phát hiện sớm việc backend đổi API làm vỡ app mobile, khi các phiên bản app cũ vẫn chạy trên máy user hàng tháng trời?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Unit/widget test dùng JSON mock do chính team viết chỉ kiểm tra app khớp với giả định của mình, nên không bắt được việc backend đổi tên field hay kiểu dữ liệu. Tôi dùng contract test theo hướng consumer-driven (ví dụ Pact): app ghi lại những request/response mình thật sự dựa vào thành contract, và pipeline của backend phải verify contract của mọi version app còn hỗ trợ trước khi deploy. Nếu chưa làm được, tối thiểu là sinh model/fixture từ OpenAPI schema dùng chung và chạy smoke test với môi trường staging thật trên CI. Song song là kỷ luật thiết kế API: chỉ thay đổi theo hướng additive, version hoá endpoint khi breaking, client parse theo kiểu tolerant reader (bỏ qua field lạ, có default cho field thiếu), và có cơ chế force update dựa trên minimum supported version.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d22-4.html">Golden test có nhược điểm gì khi chạy trên CI?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nhạy cảm với môi trường render như font hay hệ điều hành khác nhau, nên cần chạy trên môi trường CI cố định để tránh false positive.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d24-1.html">Fastlane thường tự động hoá bước nào trong CI/CD Flutter?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tự động build, ký code, quản lý provisioning profile hoặc certificate, và upload lên TestFlight, Play Console hay Firebase App Distribution.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d24-3.html">Vì sao nên cache thư mục pub và Gradle trong pipeline CI?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Giảm đáng kể thời gian build mỗi lần chạy CI vì không cần tải lại toàn bộ dependency từ đầu mỗi lần trigger.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d24-4.html">Code signing tự động trên CI cho iOS thường gặp khó khăn gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Quản lý certificate và provisioning profile bảo mật không thể hardcode, thường cần encrypt và lưu trong secret của CI, hoặc dùng Fastlane <code>match</code> để đồng bộ qua một git repo riêng an toàn.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d30-3.html">Kể 2 rủi ro nếu bỏ qua Integration test, chỉ dựa vào Unit và Widget test.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không phát hiện được lỗi tương tác thật giữa các layer như navigation hay plugin native thật; bug chỉ xuất hiện trên device hoặc OS cụ thể sẽ lọt qua tới production.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d35-4.html">Golden test fail trên CI nhưng pass ở máy local — nguyên nhân thường gặp nhất?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khác biệt môi trường render như font hệ thống hoặc phiên bản Skia giữa máy local và CI — khắc phục bằng cách chạy Golden test trong một Docker image cố định giống hệt CI.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q11.html">Bật <code>--obfuscate --split-debug-info</code> có bảo vệ được API key và logic nhạy cảm trong app không? Bạn xử lý secrets thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không đủ: obfuscation chỉ đổi tên class/hàm trong bản AOT cho khó đọc, không mã hoá string hay asset, nên key nhét qua <code>--dart-define</code> hoặc hằng số vẫn trích xuất được bằng công cụ reverse engineering, và traffic vẫn có thể bị quan sát trên thiết bị do kẻ tấn công kiểm soát. Nguyên tắc là coi mọi thứ trong binary là public: secret thật (key thanh toán, key dịch vụ AI, key quản trị) phải ở backend; app chỉ giữ token ngắn hạn theo user, cất trong Keychain/Keystore qua <code>flutter_secure_storage</code>, và backend có thể xác thực app bằng Play Integrity/App Attest (ví dụ qua Firebase App Check). Key buộc phải nằm ở client như key của Maps SDK thì giới hạn bằng restriction theo package name/bundle id/chữ ký và quota. Về vận hành, <code>--split-debug-info</code> tách symbol ra file riêng: phải lưu trữ và upload đúng file của từng build lên Crashlytics/Sentry, nếu không stack trace production sẽ không đọc được.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d27-3.html">Certificate Pinning giải quyết vấn đề bảo mật gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chống tấn công Man-in-the-Middle bằng cách app chỉ tin tưởng một certificate hoặc public key cụ thể đã biết trước, thay vì tin bất kỳ CA hợp lệ nào trên thiết bị.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q12.html">Bạn thiết kế observability cho một app Flutter có hàng triệu user như thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi chia làm ba lớp. Crash và lỗi: gán <code>FlutterError.onError</code> cho lỗi framework và <code>PlatformDispatcher.instance.onError</code> cho lỗi bất đồng bộ không được xử lý, gửi về Crashlytics/Sentry kèm app version, build number, flavor, user id ẩn danh, upload symbol cho build obfuscate, và theo dõi crash-free users theo từng release để quyết định tiếp tục hay dừng staged rollout. Performance: đo startup, jank theo màn hình, latency và tỷ lệ lỗi API qua interceptor, gắn correlation id vào header để nối log mobile với trace phía backend. Log và analytics: structured log có level, sampling và lọc PII trước khi rời thiết bị, breadcrumb các bước điều hướng để khi crash biết user đã làm gì. Trên hết là dashboard và alert theo ngưỡng (ví dụ crash-free tụt dưới mục tiêu sau release) để team phát hiện sự cố trước khi user báo.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q13.html">App cần đồng bộ dữ liệu và nhận thông báo khi đang ở background trên cả iOS và Android. Những giới hạn nào của hệ điều hành ảnh hưởng đến thiết kế?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai OS đều không đảm bảo app được chạy nền đúng lúc: Android có Doze, App Standby Buckets, periodic work của WorkManager tối thiểu 15 phút và có thể bị trì hoãn; iOS chỉ chạy <code>BGAppRefreshTask</code>/<code>BGProcessingTask</code> khi hệ thống quyết định, còn silent push (<code>content-available</code>) bị throttle và không đánh thức app mà user đã force-quit. Vì vậy tôi thiết kế để dữ liệu vẫn đúng khi không có tác vụ nền nào chạy: server là nguồn sự thật, app luôn sync phần chênh lệch khi mở lại, background chỉ là tối ưu. Thông báo quan trọng gửi dạng push hiển thị (alert) chứ không dựa vào silent push để tự tạo local notification; cần chỉnh nội dung trước khi hiện trên iOS (giải mã, tải ảnh) thì dùng Notification Service Extension. Phía Flutter, handler nền của <code>firebase_messaging</code> chạy trong isolate riêng, phải là hàm top-level có <code>@pragma(&#39;vm:entry-point&#39;)</code> và không được đụng vào UI hay state của isolate chính.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d28-1.html">Thiết kế app chat real-time, bạn chọn WebSocket hay Polling cho tầng data? Vì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thường ưu tiên WebSocket hoặc Firebase Realtime cho độ trễ thấp, hai chiều liên tục; Polling chỉ phù hợp khi update không cần tức thời vì tốn tài nguyên hơn nếu cần gần real-time.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d28-2.html">Trạng thái tin nhắn &#39;đang gửi/đã gửi/lỗi&#39; nên quản lý ở tầng nào theo Clean Architecture?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Entity tin nhắn có field status do UseCase cập nhật dựa vào kết quả gọi Repository, UI chỉ render dựa theo status đó mà không tự suy luận trạng thái.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d28-3.html">Câu hỏi mở: bạn đặt câu hỏi làm rõ nào đầu tiên khi được giao đề thiết kế app đặt xe?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ví dụ: quy mô người dùng và khu vực, yêu cầu real-time tracking tài xế ở mức nào, hành vi offline ra sao, có cần app riêng cho tài xế không — làm rõ phạm vi trước khi đi vào chi tiết kỹ thuật là điểm cộng lớn ở vòng senior.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d33-1.html">Thiết kế tính năng tải tài liệu để xem offline trong app doanh nghiệp — các thành phần chính?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Local storage cho file kèm metadata như version và thời điểm tải, cơ chế kiểm tra đồng bộ khi có mạng trở lại, quản lý dung lượng cache, và UI thể hiện trạng thái đã tải hoặc lỗi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d33-2.html">App cần hỗ trợ 5 ngôn ngữ và theme đồng bộ real-time qua remote config — hướng kiến trúc?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tách locale và theme thành một nguồn state toàn cục ở gốc app, lắng nghe remote config qua Stream, rebuild lại phần UI phụ thuộc khi giá trị đổi mà không cần restart app.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d33-3.html">Màn hình list 10.000 item kèm search phức tạp — tối ưu hiệu năng thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">UI dùng <code>ListView.builder</code> hoặc Sliver để lazy render; filter và search nên chạy ở tầng data qua query có index hoặc isolate riêng thay vì filter trực tiếp trên UI thread mỗi lần gõ, kết hợp debounce.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q15.html">Bản release mới đang staged rollout 10% thì crash-free rate tụt mạnh. Với vai trò senior/tech lead, bạn xử lý sự cố này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Việc đầu tiên là cầm máu: tạm dừng staged rollout trên Play Console hoặc phased release trên App Store, và nếu lỗi nằm sau feature flag thì tắt flag từ xa — thường nhanh hơn mọi bản hotfix. Sau đó chỉ định rõ một người điều phối, một kênh liên lạc duy nhất, cập nhật trạng thái định kỳ cho PM và support, trong khi nhóm kỹ thuật dùng stack trace đã symbolicate, breadcrumb và phân bố theo thiết bị/OS để khoanh vùng. Vì store không cho rollback binary trên máy user, cách sửa là hotfix với build number cao hơn (hoặc code push cho lỗi thuần Dart nếu quy trình cho phép), kiểm thử có chủ đích trên đúng nhóm thiết bị lỗi rồi rollout lại từ từ. Kết thúc bằng postmortem không đổ lỗi: timeline, root cause, vì sao test và staged rollout chưa chặn sớm hơn, cùng action item cụ thể có người chịu trách nhiệm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d31-1.html">Kể về một lần bạn đưa ra quyết định kiến trúc quan trọng mà cả team chưa đồng thuận — bạn thuyết phục thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gợi ý STAR: Situation là bối cảnh và mâu thuẫn cụ thể; Task là vai trò của bạn; Action là dữ liệu hoặc demo bạn dùng để thuyết phục và cách lắng nghe phản biện; Result là kết quả đo lường được và bài học rút ra.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d31-2.html">Kể về một lần bạn mentor một dev junior đang gặp khó khăn.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nhấn mạnh việc xác định đúng gốc rễ vấn đề là kỹ năng hay sự tự tin, đặt câu hỏi dẫn dắt thay vì đưa đáp án ngay, và đo lường tiến bộ qua thời gian thay vì chỉ một buổi.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d31-3.html">Bạn xử lý thế nào khi phát hiện một quyết định kỹ thuật cũ đang là technical debt lớn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Định lượng rủi ro và chi phí cụ thể, đề xuất phương án trả dần thay vì viết lại từ đầu, và trình bày trade-off rõ ràng với stakeholder không chuyên kỹ thuật.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d31-4.html">Kể về một lần bạn phải phản đối một yêu cầu vì lý do kỹ thuật mà vẫn giữ mối quan hệ tốt.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tập trung giải thích rủi ro và chi phí cụ thể thay vì chỉ nói không được, đề xuất phương án thay thế khả thi, và giữ thái độ hợp tác thay vì đối đầu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d32-1.html">Kể về bug nghiêm trọng nhất bạn từng gặp trong production — cách debug và bài học về quy trình?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mô tả tác động thực tế, quy trình debug có hệ thống như log và reproduce, và quan trọng nhất là thay đổi gì trong quy trình sau đó để tránh lặp lại — đây là điểm phỏng vấn viên MNC đánh giá cao nhất.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d32-2.html">Hai senior dev bất đồng cách tiếp cận: refactor lớn hay ship nhanh — bạn giải quyết thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đưa cả hai về cùng một tiêu chí khách quan như rủi ro và deadline thực tế của business, đề xuất giải pháp trung gian nếu có thể, và đảm bảo quyết định cuối được cả hai bên hiểu rõ lý do.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d32-3.html">Bạn ưu tiên thế nào giữa chất lượng code và deadline gấp khi hai điều này xung đột?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không có câu trả lời tuyệt đối — đánh giá rủi ro cụ thể của việc cắt góc ở đâu an toàn, và luôn ghi nhận technical debt tạo ra để xử lý sau thay vì im lặng bỏ qua.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d32-4.html">Gợi ý 3 câu hỏi chất lượng để hỏi ngược nhà tuyển dụng ở vòng Senior.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ví dụ: thử thách kỹ thuật lớn nhất team đang đối mặt là gì, quy trình code review và release ở đây như thế nào, và điều gì phân biệt một Senior Engineer làm tốt với người chỉ làm đủ ở team này.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/d35-5.html">Tóm tắt trong 60 giây: vì sao công ty này nên chọn bạn cho vị trí Senior Flutter Developer?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Luyện tự trình bày — công thức gợi ý: một câu về kinh nghiệm cốt lõi, một ví dụ cụ thể tạo impact đo lường được, và một câu kết nối với định hướng của công ty đang ứng tuyển.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm Flutter Senior</h2><a class="section-sub" href="../../../#/flutter/quiz?rank=senior&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/sen-m01.html">Một custom RenderBox override sizedByParent =&gt; true. Theo layout protocol hiện tại của Flutter, size của nó nên được tính ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m02.html">performLayout dưới đây của một custom RenderBox (có một con) gặp vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m03.html">Setter của một property ảnh hưởng cả kích thước lẫn hình vẽ trong custom RenderBox chỉ gọi markNeedsLayout(). Reviewer yêu cầu gọi thêm markNeedsPaint(). Nhận xét nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m04.html">Để giảm repaint khi scroll, một PR bọc từng item của ListView.builder trong RepaintBoundary. Đánh giá nào chính xác nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m05.html">Profile mode cho thấy raster thread chậm ở màn hình có 50 card bo góc, trong khi UI thread vẫn nhẹ. Mỗi card dùng ClipRRect. Giá trị clipBehavior nào là nghi phạm hàng đầu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m06.html">Mỗi item của một list dài dùng IntrinsicHeight bọc Row để hai cột cao bằng nhau, và scroll bị jank ở UI thread. Giải thích nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m07.html">DevTools (profile mode) cho thấy frame chậm với UI thread ~6ms nhưng raster thread ~28ms, chỉ xảy ra khi mở bottom sheet có nền phía sau bị làm mờ. Hướng xử lý nào nhắm đúng nguyên nhân?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m08.html">main() đang await tuần tự Firebase.initializeApp(), remoteConfig.fetchAndActivate(), khởi tạo analytics và migrate database rồi mới gọi runApp. Time-to-first-frame quá cao. Cách tiếp cận nào hiệu quả và an toàn nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m09.html">Mở/đóng ChatScreen nhiều lần, heap snapshot trong DevTools cho thấy số instance _ChatState tăng liên tục. AppEvents.instance là singleton giữ một broadcast stream. Nguyên nhân gốc là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m10.html">Màn gallery hiển thị thumbnail 120×120 từ ảnh gốc 4000×3000; memory tăng vọt và một số máy bị OOM. Thay đổi nào giải quyết đúng gốc vấn đề?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m11.html">Khi bàn phím mở/đóng, DevTools cho thấy gần như cả màn hình rebuild ở mỗi frame của animation. Nhiều widget đang gọi MediaQuery.of(context).size.width. Cách sửa nào đúng nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m12.html">Màn hình có một GoogleMap (platform view, hybrid composition) phía trên một list Flutter. Scroll list bị tụt FPS, dù khi bỏ map thì cả UI thread lẫn raster thread đều nhẹ. Giải thích nào đúng nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m13.html">Root isolate gọi một hàm C qua FFI (binding sinh bằng ffigen, lời gọi đồng bộ) mất khoảng 200ms để nén ảnh. Điều gì xảy ra với UI?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m14.html">Một thư viện C nhận callback và gọi nó từ thread nền của chính thư viện khi tải xong dữ liệu. Phía Dart nên tạo callback này bằng cách nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m15.html">App native dùng add-to-app với 3 màn Flutter độc lập có thể mở cùng lúc, mỗi màn một FlutterEngine spawn từ cùng một FlutterEngineGroup. Phát biểu nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m16.html">Team cần gọi đồng bộ một số API của một SDK Java/Kotlin trên Android từ Dart mà không muốn viết MethodChannel thủ công. Công cụ phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m17.html">Một isolate tạo bằng Isolate.spawn cần đọc dữ liệu qua một plugin (platform channel) nhưng bị lỗi ngay khi gọi. Cách xử lý đúng từ Flutter 3.7 trở đi?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m18.html">Đoạn code sau (đã import &#39;dart:isolate&#39;) in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m19.html">Feed hiển thị bài mới nhất trước, phân trang bằng ?page=N&amp;limit=20. User báo khi kéo xuống thấy bài bị lặp, đôi khi mất bài. Nguyên nhân và cách sửa?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m20.html">Repository phát dữ liệu cache rồi gọi API và phát tiếp kết quả mới, qua hai nguồn riêng tới UI. Bug: thỉnh thoảng dữ liệu cũ hiển thị đè lên dữ liệu mới. Thiết kế nào loại bỏ triệt để lớp lỗi này mà vẫn hiển thị cache ngay lập tức?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m21.html">Outbox của app offline-first retry POST /orders khi request bị timeout. Thực tế server đã xử lý request đầu tiên, nên user bị tạo 2 đơn. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m22.html">App chat nhận tin qua WebSocket. Khi mạng chập chờn, app reconnect thành công nhưng thiếu vài tin nhắn được gửi trong lúc mất kết nối. Thiết kế đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m23.html">Bản release được build với --obfuscate --split-debug-info=build/symbols. Stack trace Dart trên Crashlytics toàn tên vô nghĩa. Bước nào còn thiếu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m24.html">Trên iOS, user xoá app rồi cài lại và thấy mình vẫn đăng nhập tài khoản cũ, dù dữ liệu SharedPreferences đã mất. Token được lưu bằng flutter_secure_storage. Giải thích nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m25.html">App ngân hàng dùng plugin phát hiện root/jailbreak và chặn ngay ở client. Pentest bypass được bằng Frida trong vài phút. Hướng cải thiện đúng nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m26.html">App pin hash của leaf certificate. Khi backend gia hạn cert, mọi phiên bản app đang chạy đều không gọi được API. Cách nào vẫn giữ lợi ích của pinning mà giảm rủi ro này tốt nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m27.html">Bạn bật phased release 7 ngày cho bản iOS mới trên App Store. Phát biểu nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m28.html">Team cân nhắc dùng code push (vd. Shorebird) để sửa lỗi nhanh. Phát biểu nào phù hợp với giới hạn kỹ thuật và chính sách của store?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m29.html">Backend đổi field user_name thành username; app production crash, dù toàn bộ unit/widget test (dùng JSON mock) vẫn pass. Loại test nào được thiết kế để chặn đúng lỗi này trước khi backend deploy?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m30.html">Crashlytics ghi nhận được lỗi trong build/layout, nhưng exception từ một Future không được await trong onPressed thì không thấy. App đã gán FlutterError.onError. Còn thiếu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m31.html">App chat dựa vào silent push (content-available) để tự tải tin nhắn rồi tạo local notification. Nhiều user iOS báo không nhận được thông báo. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m32.html">Yêu cầu: cứ 5 phút, app đang ở background phải gửi vị trí lên server trên cả iOS và Android; team định dùng một periodic task của workmanager. Đánh giá nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m33.html">ADR-012 (6 tháng trước) chọn package X cho local DB; nay X ngừng được bảo trì và team quyết định chuyển sang Drift. Cách xử lý nào đúng tinh thần ADR?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m34.html">PM hỏi ước lượng cho việc tích hợp một SDK thanh toán team chưa từng dùng, tài liệu sơ sài. Phản hồi nào chuyên nghiệp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m35.html">Monorepo dùng pub workspaces. feature_a khai báo intl: ^0.19.0, còn feature_b khai báo intl: ^0.20.0. Chạy dart pub get ở root sẽ thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m36.html">Flag new_checkout được bật 100% từ server. Crash tăng vọt, nhưng chỉ ở bản app 2.3 — bản đã có code sau flag nhưng tính năng còn dở. Bài học thiết kế feature flag trên mobile là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m37.html">Review một PR dùng Riverpod bản hiện hành: StateNotifierProvider&lt;CartController, AsyncValue&lt;Cart&gt;&gt;, tự set state = AsyncLoading() rồi try/catch thủ công. Góp ý phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m38.html">Package core_network để API public ở lib/core_network.dart, phần nội bộ ở lib/src/. Một feature import thẳng package:core_network/src/dio_client.dart. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m39.html">feature_cart cần mở màn chi tiết sản phẩm của feature_product, nhưng rule kiến trúc cấm các feature phụ thuộc lẫn nhau. Cách làm phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m40.html">Đội platform publish design_system lên private pub server; 6 app ở 6 repo riêng dùng nó theo semver. Sau một bản major có breaking change, vấn đề nào là cố hữu của mô hình này so với monorepo?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

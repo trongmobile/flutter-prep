@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz iOS Senior: Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Apple yêu cầu gán delegate của UNUserNotificationCenter trước khi app launch xong (trong willFinishLaunching/didFinishLaunching); gán muộn có thể bỏ lỡ respo…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m21.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz iOS Senior: Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold…">
@@ -16,10 +17,90 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-sen-m21");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Bấm push khi app đang chạy nền thì vào đúng màn…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m21.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</p>
-<p><a href="../#/q/ios-sen-m21">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bấm push khi app đang chạy nền thì vào đúng màn…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/navigation/">Navigation</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-com">// HomeViewController chỉ được tạo sau khi API đăng nhập trả về</span>
+<span class="tk-kw">override</span> <span class="tk-kw">func</span> viewDidLoad() {
+  <span class="tk-kw">super</span>.viewDidLoad()
+  <span class="tk-type">UNUserNotificationCenter</span>.current().delegate = <span class="tk-kw">self</span>
+}
+
+<span class="tk-kw">func</span> userNotificationCenter(_ center: <span class="tk-type">UNUserNotificationCenter</span>,
+                            didReceive response: <span class="tk-type">UNNotificationResponse</span>,
+                            withCompletionHandler completionHandler: <span class="tk-ann">@escaping</span> () -&gt; <span class="tk-type">Void</span>) {
+  <span class="tk-kw">let</span> orderId = response.notification.request.content.userInfo[<span class="tk-str">&quot;orderId&quot;</span>] as? <span class="tk-type">String</span>
+  router.openOrder(id: orderId)
+  completionHandler()
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Delegate gán quá muộn, sau khi app đã launch xong</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Push mở app từ trạng thái tắt hẳn không mang theo <code>userInfo</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Payload thiếu <code>content-available: 1</code> nên delegate không được gọi</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>didReceive</code> chỉ được gọi khi app đang mở ở foreground</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Apple yêu cầu gán delegate của <code>UNUserNotificationCenter</code> trước khi app launch xong (trong <code>willFinishLaunching</code>/<code>didFinishLaunching</code>); gán muộn có thể bỏ lỡ response của chính push đã khởi động app, còn khi app chạy nền thì delegate đã có sẵn. Nên gán delegate sớm ở <code>AppDelegate</code>, lưu route chờ và điều hướng khi UI cùng trạng thái đăng nhập đã sẵn sàng; <code>content-available</code> là cờ của silent push, không liên quan tới việc bấm vào thông báo.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m21">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m20.html"><span class="muted small">← Câu trước</span><span>Khi xây design system dùng chung cho nhiều team feature, code feature nên dùng…</span></a>
+  <a class="pager-next" href="../s/ios-sen-m22.html"><span class="muted small">Câu sau →</span><span>App và widget dùng chung store Core Data trong App Group như sau. Widget ghi đơ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/ios/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q19.html">Trong UIKit, push một màn hình bằng UINavigationController và present modal khác nhau thế nào? Đóng mỗi loại ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q20.html">Muốn truyền productId sang màn hình chi tiết, rồi gửi kết quả chỉnh sửa ngược về màn hình trước, bạn làm thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-jun-q20.html">Màn danh sách dùng segue showDetail để mở màn chi tiết, màn này được nhúng trong một UINavigationController trên storyboard. Trong prepare(for:sender:) bạn viết segue.destination as! ProductDetailViewController và app crash. Vì sao, và truyền dữ liệu qua segue thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q21.html">Khi chuyển từ NavigationView sang NavigationStack, cách điều hướng bằng NavigationLink(value:) kết hợp .navigationDestination(for:) có lợi gì so với NavigationLink(destination:) kiểu cũ?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-mid-q25.html">App SwiftUI cần mở thẳng màn chi tiết đơn hàng khi user bấm universal link https://shop.vn/orders/123, kể cả khi app đang ở tab khác hoặc đã push nhiều màn. Bạn tổ chức navigation thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-fre-m27.html">Bấm nút chạy đoạn code sau nhưng không có màn hình nào hiện ra, cũng không crash. Nguyên nhân khả dĩ nhất?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

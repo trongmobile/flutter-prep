@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Middle: Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù tex…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="SwiftUI gắn @State với identity của view chứ không gắn với struct view. Identity gồm structural identity (vị trí trong cây, mỗi nhánh if/else là một vị trí k…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q09.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù tex…">
@@ -16,10 +17,84 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-mid-q09");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Form nhập liệu bị mất hết text đã gõ mỗi khi bậ…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q09.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù text nằm trong @State của view con. Nguyên nhân liên quan tới identity của view là gì, và sửa thế nào?</p>
-<p><a href="../#/q/ios-mid-q09">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Form nhập liệu bị mất hết text đã gõ mỗi khi bậ…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swiftui/">SwiftUI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù text nằm trong <code>@State</code> của view con. Nguyên nhân liên quan tới identity của view là gì, và sửa thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SwiftUI gắn <code>@State</code> với identity của view chứ không gắn với struct view. Identity gồm structural identity (vị trí trong cây, mỗi nhánh <code>if</code>/<code>else</code> là một vị trí khác nhau) và explicit identity (<code>id</code> trong <code>ForEach</code>, modifier <code>.id(...)</code>). Nếu viết <code>if isLoading { FormView().disabled(true) } else { FormView() }</code> thì khi đổi nhánh, SwiftUI coi đó là hai view khác nhau, huỷ view cũ cùng state của nó rồi tạo view mới. Cách sửa là giữ một view duy nhất và thay đổi bằng modifier (<code>.disabled(isLoading)</code>, <code>.opacity</code>, <code>.overlay</code>) thay vì rẽ nhánh. Ngược lại, khi muốn chủ động reset state (đổi user, đổi sản phẩm), gắn <code>.id(product.id)</code> để SwiftUI tạo view mới; đừng dùng <code>.id(UUID())</code> vì view sẽ bị tạo lại ở mỗi lần render.</div>
+        <pre class="code-block"><code><span class="tk-com">// Sai: hai nhánh là hai identity khác nhau, state của FormView bị reset</span>
+<span class="tk-kw">if</span> isLoading {
+  <span class="tk-type">FormView</span>().disabled(<span class="tk-kw">true</span>)
+} <span class="tk-kw">else</span> {
+  <span class="tk-type">FormView</span>()
+}
+
+<span class="tk-com">// Đúng: một identity, chỉ đổi modifier</span>
+<span class="tk-type">FormView</span>()
+  .disabled(isLoading)
+  .overlay { <span class="tk-kw">if</span> isLoading { <span class="tk-type">ProgressView</span>() } }</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q09">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q08.html"><span class="muted small">← Câu trước</span><span>ViewModel lắng nghe một AsyncStream bằng Task { for await event in stream { ...…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q10.html"><span class="muted small">Câu sau →</span><span>Team chuyển ViewModel từ ObservableObject + @Published sang macro @Observable.…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề SwiftUI</h2><a class="section-sub" href="../phong-van/ios/chu-de/swiftui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q10.html">Team chuyển ViewModel từ ObservableObject + @Published sang macro @Observable. Cơ chế cập nhật view khác gì, và @StateObject, @ObservedObject, @EnvironmentObject được thay bằng gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q11.html">View cha cần biết chiều cao thực tế của một view con (để làm header co giãn hoặc căn các cột bằng nhau). GeometryReader và PreferenceKey phối hợp thế nào, và vì sao không nên bọc cả màn hình trong GeometryReader?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m20.html">CounterView(start: 0) đang hiển thị, sau đó view cha render lại với start bằng 10 (identity không đổi). Text hiển thị gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m21.html">Mỗi lần bấm Toggle layout, giá trị đếm mà CounterView lưu trong @State của nó sẽ thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m22.html">Code khác gán profile.followers += 1. body của NameLabel có được tính lại không?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m23.html">View con nhận một object @Observable từ cha (cha sở hữu nó bằng @State) và cần tạo binding $settings.isDarkMode cho Toggle. Khai báo nào phù hợp?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

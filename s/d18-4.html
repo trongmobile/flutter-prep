@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Senior: Plugin native Android thường implement interface nào để nhận lifecycle Acti…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="ActivityAware, để biết khi nào attach hay detach khỏi Activity, kết hợp ActivityResultListener nếu cần xử lý kết quả trả về.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/d18-4.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior: Plugin native Android thường implement interface nào để nhận lifecycle Acti…">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/d18-4");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/"},{"@type":"ListItem","position":5,"name":"Plugin native Android thường implement interfac…","item":"https://trongmobile.github.io/flutter-prep/s/d18-4.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Plugin native Android thường implement interface nào để nhận lifecycle Activity?</p>
-<p><a href="../#/q/d18-4">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Plugin native Android thường implement interfac…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/flutter/chu-de/native/">Native &amp; Platform</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Plugin native Android thường implement interface nào để nhận lifecycle Activity?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ActivityAware</code>, để biết khi nào attach hay detach khỏi Activity, kết hợp <code>ActivityResultListener</code> nếu cần xử lý kết quả trả về.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/d18-4">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/d18-3.html"><span class="muted small">← Câu trước</span><span>Trong mô hình add-to-app, nhiều FlutterEngine cùng lúc có vấn đề gì?</span></a>
+  <a class="pager-next" href="../s/d19-1.html"><span class="muted small">Câu sau →</span><span>Vai trò của FlutterViewController trong app iOS là gì?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/flutter/senior/">Tất cả câu hỏi Flutter Senior</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; Platform</h2><a class="section-sub" href="../phong-van/flutter/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/sen-q07.html">Nhúng Google Map hay WebView (platform view) vào màn hình Flutter có chi phí hiệu năng gì? Bạn giảm thiểu thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/sen-q08.html">Khi tích hợp thư viện native qua FFI, bạn xử lý threading và callback thế nào để không làm treo UI? ffigen/jnigen đóng vai trò gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d16-1.html">Pigeon giải quyết vấn đề gì so với viết MethodChannel thủ công?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d16-2.html">Workflow cơ bản khi dùng Pigeon là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d16-3.html">Pigeon có hỗ trợ Native gọi ngược lại Dart không?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d16-4.html">Khi nào KHÔNG nên dùng Pigeon mà nên dùng MethodChannel thủ công?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

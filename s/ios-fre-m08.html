@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz iOS Fresher: Sau các thao tác trên Set như đoạn code sau, tags.count bằng bao nhiêu?</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Set không chứa phần tử trùng: khởi tạo từ mảng có hai &quot;swift&quot; chỉ còn 2 phần tử, insert(&quot;ios&quot;) không thêm gì vì đã có, chỉ &quot;uikit&quot; được thêm vào. Ngoài ra Se…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-m08.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz iOS Fresher: Sau các thao tác trên Set như đoạn code sau, tags.count bằng bao nhiêu?">
@@ -16,10 +17,81 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-fre-m08");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Sau các thao tác trên Set như đoạn code sau, ta…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-m08.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Sau các thao tác trên Set như đoạn code sau, tags.count bằng bao nhiêu?</p>
-<p><a href="../#/q/ios-fre-m08">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Sau các thao tác trên Set như đoạn code sau, ta…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Sau các thao tác trên <code>Set</code> như đoạn code sau, <code>tags.count</code> bằng bao nhiêu?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">var</span> tags = <span class="tk-type">Set</span>([<span class="tk-str">&quot;swift&quot;</span>, <span class="tk-str">&quot;ios&quot;</span>, <span class="tk-str">&quot;swift&quot;</span>])
+tags.insert(<span class="tk-str">&quot;ios&quot;</span>)
+tags.insert(<span class="tk-str">&quot;uikit&quot;</span>)
+print(tags.count)</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>5</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>3</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>4</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Crash vì mảng dùng để khởi tạo có phần tử trùng</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div><code>Set</code> không chứa phần tử trùng: khởi tạo từ mảng có hai <code>&quot;swift&quot;</code> chỉ còn 2 phần tử, <code>insert(&quot;ios&quot;)</code> không thêm gì vì đã có, chỉ <code>&quot;uikit&quot;</code> được thêm vào. Ngoài ra <code>Set</code> không giữ thứ tự phần tử như <code>Array</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-m08">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-m07.html"><span class="muted small">← Câu trước</span><span>Hàm dùng guard let sau có vấn đề gì?</span></a>
+  <a class="pager-next" href="../s/ios-fre-m09.html"><span class="muted small">Câu sau →</span><span>Chuỗi filter → map → reduce sau in ra giá trị nào?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q01.html">Optional trong Swift là gì? Có những cách nào để lấy giá trị ra khỏi một Optional, và vì sao nên hạn chế force unwrap !?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q02.html">if let và guard let khác nhau thế nào? Khi nào bạn chọn guard let?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q03.html">Struct và class trong Swift khác nhau thế nào? Vì sao khai báo let với một instance struct thì không sửa được property, còn với class thì vẫn sửa được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q04.html">Enum có associated value là gì? Cho ví dụ dùng switch để hiển thị trạng thái tải dữ liệu của một màn hình.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q05.html">Closure trong Swift là gì? Giải thích cú pháp trailing closure và $0 qua ví dụ filter, map, reduce.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q06.html">Protocol và extension trong Swift dùng để làm gì? Extension có thêm được stored property không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

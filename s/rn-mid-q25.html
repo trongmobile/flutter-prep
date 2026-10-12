@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Middle: Bạn mô hình hoá trạng thái tải dữ liệu của màn hình bằng TypeScript th…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Kiểu nhiều field optional cho phép những tổ hợp vô nghĩa như vừa loading: true vừa có error, và mỗi lần dùng data lại phải thêm ! hoặc ?.. Dùng discriminated…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-q25.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle: Bạn mô hình hoá trạng thái tải dữ liệu của màn hình bằng TypeScript th…">
@@ -16,10 +17,88 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-mid-q25");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"Bạn mô hình hoá trạng thái tải dữ liệu của màn…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-q25.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Bạn mô hình hoá trạng thái tải dữ liệu của màn hình bằng TypeScript thế nào để tránh kiểu { loading: boolean; error?: string; data?: T } dễ sinh trạng thái vô lý?</p>
-<p><a href="../#/q/rn-mid-q25">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn mô hình hoá trạng thái tải dữ liệu của màn…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/js/">JavaScript &amp; TypeScript</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn mô hình hoá trạng thái tải dữ liệu của màn hình bằng TypeScript thế nào để tránh kiểu <code>{ loading: boolean; error?: string; data?: T }</code> dễ sinh trạng thái vô lý?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Kiểu nhiều field optional cho phép những tổ hợp vô nghĩa như vừa <code>loading: true</code> vừa có <code>error</code>, và mỗi lần dùng <code>data</code> lại phải thêm <code>!</code> hoặc <code>?.</code>. Dùng discriminated union: mỗi trạng thái là một nhánh có chung field <code>status</code> mang literal type, và chỉ nhánh <code>success</code> mới có <code>data</code>. Khi <code>switch (state.status)</code>, TypeScript tự thu hẹp (narrow) kiểu trong từng case; thêm nhánh <code>default</code> gán vào <code>never</code> thì sau này thêm trạng thái mới mà quên xử lý, compiler sẽ báo lỗi. Kết hợp generic <code>&lt;T&gt;</code> để dùng chung kiểu này cho mọi màn hình.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">AsyncState</span>&lt;<span class="tk-type">T</span>&gt; =
+  | { status: <span class="tk-str">&#39;idle&#39;</span> }
+  | { status: <span class="tk-str">&#39;loading&#39;</span> }
+  | { status: <span class="tk-str">&#39;success&#39;</span>; data: <span class="tk-type">T</span> }
+  | { status: <span class="tk-str">&#39;error&#39;</span>; error: <span class="tk-kw">string</span> };
+
+<span class="tk-kw">function</span> describe(state: <span class="tk-type">AsyncState</span>&lt;<span class="tk-type">User</span>[]&gt;): <span class="tk-kw">string</span> {
+  <span class="tk-kw">switch</span> (state.status) {
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;idle&#39;</span>: <span class="tk-kw">return</span> <span class="tk-str">&#39;Chưa tải&#39;</span>;
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;loading&#39;</span>: <span class="tk-kw">return</span> <span class="tk-str">&#39;Đang tải...&#39;</span>;
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;success&#39;</span>: <span class="tk-kw">return</span> state.data.length + <span class="tk-str">&#39; người dùng&#39;</span>; <span class="tk-com">// data: User[]</span>
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;error&#39;</span>: <span class="tk-kw">return</span> state.error;
+    <span class="tk-kw">default</span>: { <span class="tk-kw">const</span> unhandled: <span class="tk-kw">never</span> = state; <span class="tk-kw">return</span> unhandled; }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q25">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-q24.html"><span class="muted small">← Câu trước</span><span>Team chuẩn bị viết E2E test cho luồng đăng nhập và thanh toán. Bạn chọn Detox h…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề JavaScript &amp; TypeScript</h2><a class="section-sub" href="../phong-van/react-native/chu-de/js/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-m09.html">TypeScript xử lý hàm logError dưới đây thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m10.html">Union Action vừa được thêm nhánh { type: &#39;clear&#39; } nhưng hàm apply chưa được sửa. Chuyện gì xảy ra?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m11.html">Với function first&lt;T&gt;(arr: T[]): T | undefined, biến x trong const x = first([&#39;a&#39;, 1]) được suy ra kiểu gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m12.html">Với hàm pluck dùng ràng buộc K extends keyof T, hai lời gọi bên dưới cho kết quả gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q01.html">var, let và const khác nhau thế nào? Khai báo object bằng const thì có sửa được thuộc tính không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q02.html">Closure là gì? Cho một ví dụ closure bạn gặp khi viết code thực tế.</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Middle (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn React Native Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module,…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn React Native Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module,…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <span aria-current="page">Middle</span>
+</nav>
+
+<header class="view-head rank-amber">
+  <div class="eyebrow">phỏng vấn · react native · middle (2–4 năm)</div>
+  <h1>Câu hỏi phỏng vấn React Native Middle</h1>
+  <p class="subtitle">Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module, testing, Expo. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../../../#/react-native/study/middle">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/react-native/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/react-native/junior/">Junior</a>
+  <a class="chip active" href="../../../phong-van/react-native/middle/" aria-current="page">Middle</a>
+  <a class="chip" href="../../../phong-van/react-native/senior/">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">1</span></li>
+    <li><a href="#react">React &amp; Hooks</a> <span class="count">4</span></li>
+    <li><a href="#state">State Management</a> <span class="count">4</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
+    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">1</span></li>
+    <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">3</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">2</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">4</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="js">
+  <div class="section-head"><h2>JavaScript &amp; TypeScript</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/js/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q25.html">Bạn mô hình hoá trạng thái tải dữ liệu của màn hình bằng TypeScript thế nào để tránh kiểu <code>{ loading: boolean; error?: string; data?: T }</code> dễ sinh trạng thái vô lý?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Kiểu nhiều field optional cho phép những tổ hợp vô nghĩa như vừa <code>loading: true</code> vừa có <code>error</code>, và mỗi lần dùng <code>data</code> lại phải thêm <code>!</code> hoặc <code>?.</code>. Dùng discriminated union: mỗi trạng thái là một nhánh có chung field <code>status</code> mang literal type, và chỉ nhánh <code>success</code> mới có <code>data</code>. Khi <code>switch (state.status)</code>, TypeScript tự thu hẹp (narrow) kiểu trong từng case; thêm nhánh <code>default</code> gán vào <code>never</code> thì sau này thêm trạng thái mới mà quên xử lý, compiler sẽ báo lỗi. Kết hợp generic <code>&lt;T&gt;</code> để dùng chung kiểu này cho mọi màn hình.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">AsyncState</span>&lt;<span class="tk-type">T</span>&gt; =
+  | { status: <span class="tk-str">&#39;idle&#39;</span> }
+  | { status: <span class="tk-str">&#39;loading&#39;</span> }
+  | { status: <span class="tk-str">&#39;success&#39;</span>; data: <span class="tk-type">T</span> }
+  | { status: <span class="tk-str">&#39;error&#39;</span>; error: <span class="tk-kw">string</span> };
+
+<span class="tk-kw">function</span> describe(state: <span class="tk-type">AsyncState</span>&lt;<span class="tk-type">User</span>[]&gt;): <span class="tk-kw">string</span> {
+  <span class="tk-kw">switch</span> (state.status) {
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;idle&#39;</span>: <span class="tk-kw">return</span> <span class="tk-str">&#39;Chưa tải&#39;</span>;
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;loading&#39;</span>: <span class="tk-kw">return</span> <span class="tk-str">&#39;Đang tải...&#39;</span>;
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;success&#39;</span>: <span class="tk-kw">return</span> state.data.length + <span class="tk-str">&#39; người dùng&#39;</span>; <span class="tk-com">// data: User[]</span>
+    <span class="tk-kw">case</span> <span class="tk-str">&#39;error&#39;</span>: <span class="tk-kw">return</span> state.error;
+    <span class="tk-kw">default</span>: { <span class="tk-kw">const</span> unhandled: <span class="tk-kw">never</span> = state; <span class="tk-kw">return</span> unhandled; }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="react">
+  <div class="section-head"><h2>React &amp; Hooks</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/react/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q06.html">Màn <code>EditProfile</code> nhận prop <code>userId</code> và khởi tạo form bằng <code>useState(user.name)</code>. Khi chuyển sang xem user khác ngay trên màn đó, form vẫn hiện dữ liệu của user cũ. Vì sao, và sửa thế nào cho gọn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React giữ state theo vị trí và type của component trong cây: <code>EditProfile</code> vẫn nằm đúng chỗ cũ với cùng type nên được giữ nguyên instance, chỉ nhận props mới, còn giá trị truyền vào <code>useState</code> chỉ dùng ở lần mount đầu. Cách hay gặp nhưng không tốt là dùng <code>useEffect</code> theo dõi <code>userId</code> rồi <code>setName</code>: component render một lần với dữ liệu cũ, rồi mới render lại, và dễ quên reset field nào đó. Cách gọn là cho component một <code>key</code> gắn với danh tính dữ liệu, như <code>&lt;EditProfile key={userId} userId={userId} /&gt;</code>: <code>key</code> đổi thì React coi đây là component khác, unmount cái cũ và mount cái mới với state ban đầu. Đánh đổi là toàn bộ cây con mount lại (effect chạy lại, mất vị trí cuộn), nên chỉ đặt <code>key</code> ở mức component thực sự cần reset.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">ProfileScreen</span>({ route }: <span class="tk-type">Props</span>) {
+  <span class="tk-kw">const</span> { userId } = route.params;
+  <span class="tk-com">// key đổi -&gt; EditProfile mount lại, state form về giá trị ban đầu</span>
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">EditProfile</span> key={userId} userId={userId} /&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q07.html">Cần đo vị trí một View rồi đặt tooltip ngay bên dưới mà không bị nháy ở vị trí sai trong một frame. Dùng <code>useEffect</code> hay <code>useLayoutEffect</code>, vì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>useEffect</code> chạy sau khi kết quả đã được commit và vẽ ra màn hình, nên đo rồi <code>setState</code> vị trí trong đó có thể khiến người dùng thấy một frame tooltip ở chỗ cũ rồi mới nhảy. <code>useLayoutEffect</code> chạy đồng bộ sau commit nhưng trước khi frame được hiển thị, và cập nhật state bên trong nó được xử lý luôn trước khi vẽ. Với New Architecture (Fabric), layout đọc được đồng bộ trong <code>useLayoutEffect</code> (ví dụ qua <code>measureInWindow</code> của ref) nên tooltip đúng vị trí ngay frame đầu; kiến trúc cũ đo bất đồng bộ qua bridge nên khó tránh nháy. Vì <code>useLayoutEffect</code> chặn việc vẽ, chỉ dùng nó cho đo đạc và định vị; gọi API hay subscribe vẫn để ở <code>useEffect</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> anchorRef = useRef&lt;<span class="tk-type">View</span>&gt;(<span class="tk-kw">null</span>);
+<span class="tk-kw">const</span> [pos, setPos] = useState&lt;{ x: <span class="tk-kw">number</span>; y: <span class="tk-kw">number</span> } | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+useLayoutEffect(() =&gt; {
+  <span class="tk-com">// New Architecture: đo và setState trước khi frame được vẽ</span>
+  anchorRef.current?.measureInWindow((x, y, width, height) =&gt; {
+    setPos({ x, y: y + height });
+  });
+}, []);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q08.html">Một màn hình lỗi lúc render làm cả app trắng màn hình ở bản release. Error boundary giúp gì, và nó không bắt được loại lỗi nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Error boundary là class component có <code>static getDerivedStateFromError</code> (để render UI dự phòng) và <code>componentDidCatch</code> (để log lên Sentry/Crashlytics). Nó bắt lỗi ném ra trong lúc render, trong lifecycle và constructor của các component con, nhờ đó chỉ một phần cây bị thay bằng màn hình lỗi thay vì cả app sập. Nó không bắt lỗi trong event handler (<code>onPress</code>), code bất đồng bộ (<code>setTimeout</code>, promise bị reject), lỗi của chính nó và crash phía native; các trường hợp này phải <code>try/catch</code>, hoặc lưu lỗi vào state rồi ném lại khi render. Hiện chưa có hook tương đương nên thường viết một class dùng chung hoặc dùng thư viện <code>react-error-boundary</code>, và đặt boundary theo từng màn hình hay khối tính năng thay vì chỉ một cái ở root.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q10.html">Ô tìm kiếm lọc vài nghìn item ngay ở client, gõ phím bị giật. <code>useTransition</code> giúp gì trong trường hợp này và giới hạn của nó là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ý tưởng là tách cập nhật khẩn cấp (text trong ô input) khỏi cập nhật không khẩn cấp (kết quả lọc): text cập nhật bình thường, còn <code>setQuery</code> cho danh sách được bọc trong <code>startTransition</code> (hoặc dùng <code>useDeferredValue</code>). React render phần transition với mức ưu tiên thấp và có thể bỏ dở lần render đó khi có input mới, nên ô nhập vẫn mượt, <code>isPending</code> cho biết danh sách đang được cập nhật. Giới hạn: đây là concurrent rendering nên trong RN chỉ có khi bật New Architecture; nó không làm phép lọc nhanh hơn và vẫn chạy trên JS thread, nên một hàm đồng bộ quá nặng vẫn block. Không đưa state của chính <code>TextInput</code> controlled vào transition, vì input phải cập nhật đồng bộ.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> [text, setText] = useState(<span class="tk-str">&#39;&#39;</span>);
+<span class="tk-kw">const</span> [query, setQuery] = useState(<span class="tk-str">&#39;&#39;</span>);
+<span class="tk-kw">const</span> [isPending, startTransition] = useTransition();
+<span class="tk-kw">const</span> results = useMemo(() =&gt; filterProducts(all, query), [all, query]);
+
+&lt;<span class="tk-type">TextInput</span>
+  value={text}
+  onChangeText={(t) =&gt; {
+    setText(t); <span class="tk-com">// khẩn cấp: cập nhật ngay</span>
+    startTransition(() =&gt; setQuery(t)); <span class="tk-com">// không khẩn cấp: có thể bị ngắt</span>
+  }}
+/&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="state">
+  <div class="section-head"><h2>State Management</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/state/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q01.html">Trong <code>createSlice</code> bạn viết <code>state.items.push(...)</code> ngay trong reducer. Vì sao như vậy không phá nguyên tắc immutable của Redux, và cách viết này có bẫy gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Redux Toolkit dùng Immer: <code>state</code> trong case reducer là một draft (Proxy), bạn &#39;mutate&#39; draft, Immer ghi lại thay đổi rồi tạo ra state mới bất biến. Immer chỉ copy những nhánh bị đổi, phần còn lại giữ nguyên reference nên selector và <code>React.memo</code> vẫn so sánh <code>===</code> được. Bẫy hay gặp nhất là vừa sửa draft vừa <code>return</code> giá trị mới, ví dụ arrow function một dòng <code>(state, a) =&gt; state.push(a.payload)</code> trả về độ dài mảng khiến Immer ném lỗi; muốn thay toàn bộ state thì <code>return</code> object mới và không đụng vào draft. Ngoài ra <code>console.log(state)</code> trong reducer chỉ in ra Proxy, hãy dùng <code>current(state)</code>; và đừng đưa giá trị non-serializable (class instance, Promise) vào store vì middleware kiểm tra của RTK sẽ cảnh báo.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> cartSlice = createSlice({
+  name: <span class="tk-str">&#39;cart&#39;</span>,
+  initialState: { items: [] <span class="tk-kw">as</span> <span class="tk-type">CartItem</span>[] },
+  reducers: {
+    added(state, action: <span class="tk-type">PayloadAction</span>&lt;<span class="tk-type">CartItem</span>&gt;) {
+      state.items.push(action.payload); <span class="tk-com">// sửa draft, Immer tạo state mới</span>
+    },
+    cleared() {
+      <span class="tk-kw">return</span> { items: [] }; <span class="tk-com">// thay toàn bộ state: return, không sửa draft</span>
+    },
+  },
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q02.html">Dự án đang gọi API bằng <code>createAsyncThunk</code> và tự lưu <code>loading</code>/<code>error</code>/<code>data</code> vào slice. Chuyển sang RTK Query được lợi gì, và làm sao để danh sách tự làm mới sau khi tạo bài viết mới?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với thunk, mỗi endpoint phải tự viết reducer cho pending/fulfilled/rejected, tự lưu cache và tự chống gọi trùng. RTK Query sinh sẵn hook như <code>useGetPostsQuery</code>, <code>useAddPostMutation</code>, cache theo endpoint + tham số, gộp các request trùng nhau, tự xoá cache không còn component nào dùng sau <code>keepUnusedDataFor</code> (mặc định 60 giây) và hỗ trợ polling. Để danh sách tự làm mới, query khai báo <code>providesTags</code>, mutation khai báo <code>invalidatesTags</code> cùng tag; mutation xong thì mọi query mang tag đó được refetch, không cần dispatch tay. Thunk vẫn hợp với logic nhiều bước không thuần là đọc/ghi dữ liệu server, như luồng checkout phối hợp nhiều service.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q03.html">Màn hình dùng Zustand bị re-render mỗi khi bất kỳ field nào trong store đổi, dù nó chỉ cần <code>user.name</code>. Vì sao và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gọi <code>useStore()</code> không có selector nghĩa là subscribe toàn bộ state, nên mọi lần <code>set</code> đều làm component render lại. Hãy chọn đúng phần cần dùng: <code>useStore((s) =&gt; s.user.name)</code>; Zustand so sánh kết quả selector bằng <code>Object.is</code> và chỉ re-render khi nó đổi. Bẫy tiếp theo là selector trả về object/array mới mỗi lần như <code>(s) =&gt; ({ a: s.a, b: s.b })</code>: kết quả luôn &#39;khác&#39; nên vẫn re-render, ở Zustand v5 còn có thể gây lỗi vòng lặp render. Khi cần nhiều field, bọc selector bằng <code>useShallow</code> hoặc gọi nhiều hook riêng; action trong store có reference ổn định nên lấy riêng chúng không gây re-render.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { useShallow } <span class="tk-kw">from</span> <span class="tk-str">&#39;zustand/react/shallow&#39;</span>;
+
+<span class="tk-com">// Chỉ re-render khi name đổi</span>
+<span class="tk-kw">const</span> name = useStore((s) =&gt; s.user.name);
+
+<span class="tk-com">// Nhiều field: so sánh shallow thay vì so reference của object mới</span>
+<span class="tk-kw">const</span> { count, inc } = useStore(
+  useShallow((s) =&gt; ({ count: s.count, inc: s.inc })),
+);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q04.html">Team đang lưu mọi response API vào Redux. Bạn đề xuất tách server state và client state: hai loại khác nhau thế nào, và <code>staleTime</code>/<code>gcTime</code> của TanStack Query nghĩa là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Client state do app sở hữu hoàn toàn (tab đang chọn, form nhập dở, theme), còn server state là bản sao của dữ liệu nằm trên server: có thể đã cũ, cần cache, dedupe, refetch, retry, phân trang. Nhét server state vào Redux buộc ta tự viết lại tất cả những thứ đó; để TanStack Query lo phần này thì Redux/Zustand chỉ còn giữ client state, gọn hơn nhiều. <code>staleTime</code> (mặc định 0) là khoảng thời gian dữ liệu còn được coi là &#39;tươi&#39;: trong khoảng này mount lại hay focus lại sẽ không refetch. <code>gcTime</code> (mặc định 5 phút, tên cũ là <code>cacheTime</code>) là thời gian cache của một query không còn observer được giữ lại trước khi bị xoá. Trên RN cần nối <code>focusManager</code> với <code>AppState</code> và <code>onlineManager</code> với NetInfo, vì không có sự kiện focus/online như trình duyệt.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q09.html">Sau khi đăng nhập, app gọi <code>navigation.navigate(&#39;Home&#39;)</code>, nhưng bấm back trên Android lại quay về màn Login; đăng xuất xong cũng có thể back vào màn cần đăng nhập. Bạn tổ chức auth flow với React Navigation thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vấn đề là màn Login và màn chính nằm chung một stack, nên <code>navigate</code> chỉ đẩy thêm màn mới và Login vẫn còn trong lịch sử. Cách React Navigation khuyến nghị là khai báo màn hình có điều kiện theo trạng thái đăng nhập: chưa đăng nhập thì navigator chỉ có nhóm màn auth, đã đăng nhập thì chỉ có nhóm màn chính. Khi state auth đổi (lưu trong Context hoặc store), navigator tự chuyển sang nhóm màn mới và các màn của nhóm cũ bị gỡ khỏi lịch sử, nên không back lại được, cũng không cần tự gọi <code>navigate</code> hay <code>reset</code> sau khi đăng nhập. Lúc mở app, trong khi đọc token từ secure storage thì hiển thị splash, tránh nháy màn Login. Deep link tới màn cần đăng nhập phải được xử lý sau khi auth sẵn sàng, vì lúc chưa đăng nhập màn đó chưa tồn tại trong navigator.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">RootNavigator</span>() {
+  <span class="tk-kw">const</span> { isLoading, token } = useAuth();
+  <span class="tk-kw">if</span> (isLoading) <span class="tk-kw">return</span> &lt;<span class="tk-type">SplashScreen</span> /&gt;;
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Navigator</span>&gt;
+      {token == <span class="tk-kw">null</span> ? (
+        &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span> name=<span class="tk-str">&quot;Login&quot;</span> component={<span class="tk-type">LoginScreen</span>} /&gt;
+      ) : (
+        &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span> name=<span class="tk-str">&quot;Home&quot;</span> component={<span class="tk-type">HomeScreen</span>} /&gt;
+      )}
+    &lt;/<span class="tk-type">Stack</span>.<span class="tk-type">Navigator</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="native">
+  <div class="section-head"><h2>Native &amp; New Architecture</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/native/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q18.html">Bạn cần viết một Turbo Native Module đọc mức pin cho cả Android và iOS. Các bước với Codegen là gì, và được lợi gì so với native module kiểu cũ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bước một: viết spec bằng TypeScript trong file có tên bắt đầu bằng <code>Native</code> (như <code>NativeBattery.ts</code>), gồm interface <code>Spec extends TurboModule</code> và export <code>TurboModuleRegistry.getEnforcing&lt;Spec&gt;(&#39;NativeBattery&#39;)</code>. Bước hai: khai báo <code>codegenConfig</code> trong <code>package.json</code> (<code>name</code>, <code>type: &quot;modules&quot;</code>, <code>jsSrcsDir</code>). Codegen chạy khi build Android hoặc khi <code>pod install</code> trên iOS, sinh ra abstract class Java và protocol Objective-C++ để bạn implement phía native. So với module cũ đi qua bridge: lời gọi đi qua JSI nên không phải serialize JSON bất đồng bộ, có thể khai báo hàm đồng bộ khi thật cần, module chỉ được khởi tạo khi dùng lần đầu, và kiểu dữ liệu giữa JS với native được kiểm tra lúc build thay vì vỡ lúc runtime.</div>
+        <pre class="code-block"><code><span class="tk-com">// specs/NativeBattery.ts</span>
+<span class="tk-kw">import</span> <span class="tk-kw">type</span> { <span class="tk-type">TurboModule</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+<span class="tk-kw">import</span> { <span class="tk-type">TurboModuleRegistry</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">interface</span> <span class="tk-type">Spec</span> <span class="tk-kw">extends</span> <span class="tk-type">TurboModule</span> {
+  getBatteryLevel(): <span class="tk-type">Promise</span>&lt;<span class="tk-kw">number</span>&gt;;
+  isCharging(): <span class="tk-kw">boolean</span>; <span class="tk-com">// hàm đồng bộ</span>
+}
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-type">TurboModuleRegistry</span>.getEnforcing&lt;<span class="tk-type">Spec</span>&gt;(<span class="tk-str">&#39;NativeBattery&#39;</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q19.html">Native module cần đẩy sự kiện liên tục lên JS (vị trí GPS, tiến độ tải file). Bạn làm thế nào ở cả hai phía, và cần chú ý gì để không rò rỉ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cách truyền thống: Android lấy <code>RCTDeviceEventEmitter</code> qua <code>reactApplicationContext.getJSModule(...)</code> rồi gọi <code>emit(&quot;onProgress&quot;, params)</code>; iOS kế thừa <code>RCTEventEmitter</code>, khai báo <code>supportedEvents</code> và gọi <code>sendEventWithName</code>. Phía JS tạo <code>NativeEventEmitter</code> (iOS bắt buộc truyền module vào), <code>addListener</code> trong <code>useEffect</code> và gọi <code>subscription.remove()</code> ở cleanup; quên remove thì callback vẫn chạy sau khi màn hình unmount và closure bị giữ lại trong bộ nhớ. Phía native chỉ nên bật nguồn sự kiện (GPS, cảm biến) khi có listener, iOS có sẵn <code>startObserving</code>/<code>stopObserving</code> cho việc này, tránh tốn pin vô ích. Với New Architecture, spec Codegen có thể khai báo event emitter có kiểu, JS subscribe thẳng qua module mà không cần <code>NativeEventEmitter</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q20.html">Khi nào cần viết Fabric Native Component thay vì Turbo Native Module? Props và event của component được khai báo thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Turbo Native Module dành cho chức năng không có giao diện: gọi API hệ thống, trả dữ liệu về JS. Khi cần đặt một view native vào cây layout của RN, như map, camera preview, video player hay một chart viết sẵn bằng native, thì viết native component. Spec là file <code>&lt;Tên&gt;NativeComponent.ts</code> export <code>codegenNativeComponent&lt;NativeProps&gt;(...)</code>; props dùng kiểu của Codegen (<code>Int32</code>, <code>Double</code>, <code>WithDefault</code>…) còn event là prop kiểu <code>DirectEventHandler</code> hoặc <code>BubblingEventHandler</code>. Phía native viết ViewManager (Android) hoặc component view (iOS) để nhận props và bắn event, còn view vẫn được Yoga layout như <code>View</code> thường. Muốn gọi lệnh mệnh lệnh như <code>zoomTo()</code> từ JS thì khai báo thêm <code>codegenNativeCommands</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// MapViewNativeComponent.ts</span>
+<span class="tk-kw">import</span> <span class="tk-kw">type</span> { <span class="tk-type">ViewProps</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+<span class="tk-kw">import</span> <span class="tk-kw">type</span> { <span class="tk-type">Double</span>, <span class="tk-type">DirectEventHandler</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native/Libraries/Types/CodegenTypes&#39;</span>;
+<span class="tk-kw">import</span> codegenNativeComponent <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native/Libraries/Utilities/codegenNativeComponent&#39;</span>;
+
+<span class="tk-kw">type</span> <span class="tk-type">RegionEvent</span> = <span class="tk-type">Readonly</span>&lt;{ latitude: <span class="tk-type">Double</span>; longitude: <span class="tk-type">Double</span> }&gt;;
+
+<span class="tk-kw">export</span> <span class="tk-kw">interface</span> <span class="tk-type">NativeProps</span> <span class="tk-kw">extends</span> <span class="tk-type">ViewProps</span> {
+  zoomLevel?: <span class="tk-type">Double</span>;
+  onRegionChange?: <span class="tk-type">DirectEventHandler</span>&lt;<span class="tk-type">RegionEvent</span>&gt;;
+}
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> codegenNativeComponent&lt;<span class="tk-type">NativeProps</span>&gt;(<span class="tk-str">&#39;CustomMapView&#39;</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q05.html">Người dùng bấm &#39;thích&#39; một bài viết và muốn UI đổi ngay, không chờ API trả về. Bạn làm optimistic update với TanStack Query thế nào cho an toàn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trong <code>onMutate</code>: gọi <code>cancelQueries</code> để refetch đang chạy không ghi đè, lưu snapshot cũ bằng <code>getQueryData</code>, rồi <code>setQueryData</code> để cập nhật cache ngay; trả snapshot ra làm context. <code>onError</code> dùng context đó để rollback về dữ liệu cũ và báo lỗi cho người dùng. <code>onSettled</code> gọi <code>invalidateQueries</code> để đồng bộ lại với server dù thành công hay thất bại. Bẫy hay gặp là sửa trực tiếp object đang nằm trong cache thay vì tạo object mới, và quên <code>cancelQueries</code> khiến một response cũ về muộn ghi đè trạng thái optimistic.</div>
+        <pre class="code-block"><code>useMutation({
+  mutationFn: likePost,
+  onMutate: <span class="tk-kw">async</span> (id: <span class="tk-kw">string</span>) =&gt; {
+    <span class="tk-kw">await</span> queryClient.cancelQueries({ queryKey: [<span class="tk-str">&#39;post&#39;</span>, id] });
+    <span class="tk-kw">const</span> prev = queryClient.getQueryData&lt;<span class="tk-type">Post</span>&gt;([<span class="tk-str">&#39;post&#39;</span>, id]);
+    queryClient.setQueryData&lt;<span class="tk-type">Post</span>&gt;([<span class="tk-str">&#39;post&#39;</span>, id], (p) =&gt;
+      p ? { ...p, liked: <span class="tk-kw">true</span>, likes: p.likes + <span class="tk-num">1</span> } : p,
+    );
+    <span class="tk-kw">return</span> { prev };
+  },
+  onError: (_err, id, ctx) =&gt; queryClient.setQueryData([<span class="tk-str">&#39;post&#39;</span>, id], ctx?.prev),
+  onSettled: (_data, _err, id) =&gt; queryClient.invalidateQueries({ queryKey: [<span class="tk-str">&#39;post&#39;</span>, id] }),
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="animation">
+  <div class="section-head"><h2>Animation &amp; Gesture</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/animation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q15.html"><code>Animated</code> với <code>useNativeDriver: true</code> khác <code>false</code> thế nào? Vì sao animate <code>height</code> lại báo lỗi khi bật native driver?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với <code>useNativeDriver: false</code>, mỗi frame JS thread phải tính giá trị rồi gửi sang native để cập nhật view, nên khi JS đang bận (render list, parse JSON) animation sẽ giật. Bật native driver thì toàn bộ animation được mô tả và gửi sang native một lần khi <code>start()</code>, sau đó native tự chạy từng frame trên UI thread, không phụ thuộc JS thread. Đổi lại, native driver chỉ hỗ trợ thuộc tính không ảnh hưởng layout như <code>transform</code> và <code>opacity</code>; <code>width</code>, <code>height</code>, <code>top</code>, <code>flex</code> cần tính lại layout nên báo lỗi &#39;not supported by native animated module&#39;. Muốn hiệu ứng mở rộng thì dùng <code>transform: [{ scaleY }]</code>, hoặc chuyển sang Reanimated nếu thật sự cần animate layout; <code>Animated.event</code> cho scroll cũng nên bật native driver.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q16.html">Reanimated chạy animation &#39;trên UI thread&#39; nghĩa là gì? Shared value và worklet khác <code>useState</code> và hàm JS thường ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Reanimated tạo một JS runtime thứ hai chạy trên UI thread; worklet là hàm được đánh dấu để chạy trên runtime đó (callback của <code>useAnimatedStyle</code>, <code>useAnimatedScrollHandler</code> được Babel plugin tự biến thành worklet). Shared value (<code>useSharedValue</code>) đọc/ghi được từ cả hai runtime qua <code>.value</code>; gán nó không gây React re-render, và <code>useAnimatedStyle</code> phụ thuộc vào nó được tính lại ngay trên UI thread mỗi frame, nên animation vẫn mượt khi JS thread đang bận. Bẫy thường gặp: worklet không gọi trực tiếp được hàm JS thường như <code>setState</code> hay navigation mà phải lên lịch chạy về JS thread bằng <code>runOnJS</code> (ở Reanimated 4, các API luồng này được tách sang thư viện <code>react-native-worklets</code>); và không nên đọc hay ghi <code>.value</code> trong lúc component đang render.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> offset = useSharedValue(<span class="tk-num">0</span>);
+
+<span class="tk-kw">const</span> animatedStyle = useAnimatedStyle(() =&gt; ({
+  transform: [{ translateX: offset.value }], <span class="tk-com">// worklet, chạy trên UI thread</span>
+}));
+
+<span class="tk-kw">const</span> onPress = () =&gt; {
+  offset.value = withSpring(offset.value === <span class="tk-num">0</span> ? <span class="tk-num">120</span> : <span class="tk-num">0</span>); <span class="tk-com">// không re-render</span>
+};
+
+<span class="tk-kw">return</span> &lt;<span class="tk-type">Animated</span>.<span class="tk-type">View</span> style={[styles.box, animatedStyle]} /&gt;;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q17.html">Làm swipe-to-delete hay bottom sheet kéo theo tay, vì sao nên dùng <code>react-native-gesture-handler</code> kết hợp Reanimated thay vì <code>PanResponder</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>PanResponder</code> xử lý touch ở JS thread: mỗi lần ngón tay di chuyển, event phải đi sang JS rồi kết quả mới quay lại native, nên khi JS bận thì cử chỉ trễ và giật. Gesture Handler nhận diện cử chỉ bằng hệ thống gesture native; khi dùng cùng Reanimated, callback của <code>Gesture.Pan()</code> là worklet chạy thẳng trên UI thread và cập nhật shared value, nên view bám theo ngón tay mượt mà. Nó còn có API phối hợp cử chỉ như <code>Gesture.Simultaneous</code>, <code>Gesture.Exclusive</code>, <code>requireExternalGestureToFail</code> để xử lý xung đột với ScrollView, điều rất khó làm với <code>PanResponder</code>. Nhớ bọc gốc app trong <code>GestureHandlerRootView</code>, nếu không gesture sẽ không hoạt động.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="tooling">
+  <div class="section-head"><h2>Expo, Build &amp; Release</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/tooling/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q21.html">Dự án Expo cần tích hợp một SDK yêu cầu thêm <code>meta-data</code> vào <code>AndroidManifest.xml</code>. Với Continuous Native Generation (<code>expo prebuild</code>), bạn làm thế nào thay vì sửa tay thư mục native?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với CNG, thư mục <code>android</code>/<code>ios</code> được coi là sản phẩm sinh ra từ <code>app.json</code>/<code>app.config.ts</code> cùng các config plugin và thường không commit; <code>npx expo prebuild --clean</code> có thể xoá đi sinh lại, nên mọi sửa tay đều mất. Nếu thư viện có sẵn config plugin thì chỉ cần thêm vào mảng <code>plugins</code> kèm option. Nếu không, tự viết config plugin bằng các mod như <code>withAndroidManifest</code>, <code>withInfoPlist</code>, <code>withAppDelegate</code> để chỉnh file native một cách lặp lại được và review được. Lưu ý app có native code tuỳ biến thì không chạy trong Expo Go nữa, cần development build (qua EAS Build hoặc <code>npx expo run:android</code>).</div>
+        <pre class="code-block"><code><span class="tk-com">// plugins/withMapsApiKey.ts</span>
+<span class="tk-kw">import</span> { <span class="tk-type">ConfigPlugin</span>, withAndroidManifest, <span class="tk-type">AndroidConfig</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;expo/config-plugins&#39;</span>;
+
+<span class="tk-kw">const</span> withMapsApiKey: <span class="tk-type">ConfigPlugin</span>&lt;{ apiKey: <span class="tk-kw">string</span> }&gt; = (config, { apiKey }) =&gt;
+  withAndroidManifest(config, (cfg) =&gt; {
+    <span class="tk-kw">const</span> app = <span class="tk-type">AndroidConfig</span>.<span class="tk-type">Manifest</span>.getMainApplicationOrThrow(cfg.modResults);
+    <span class="tk-type">AndroidConfig</span>.<span class="tk-type">Manifest</span>.addMetaDataItemToMainApplication(
+      app, <span class="tk-str">&#39;com.google.android.geo.API_KEY&#39;</span>, apiKey,
+    );
+    <span class="tk-kw">return</span> cfg;
+  });
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> withMapsApiKey;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q22.html">Sếp hỏi: &#39;Đã có EAS Update rồi thì sao không sửa mọi lỗi qua OTA cho nhanh?&#39;. Bạn giải thích giới hạn của OTA update thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">OTA chỉ thay được JS bundle và asset đi kèm (ảnh, font). Mọi thứ thuộc binary native như thêm hay nâng thư viện có native code, nâng React Native/Expo SDK, đổi quyền trong <code>Info.plist</code>/<code>AndroidManifest</code>, icon, splash đều cần build mới và nộp store. <code>runtimeVersion</code> đánh dấu bản JS tương thích với binary nào: nếu đẩy JS gọi một native module mà binary cũ không có, app sẽ crash, nên phải đổi <code>runtimeVersion</code> (ví dụ dùng policy <code>fingerprint</code>) mỗi khi phần native thay đổi. Mặc định update được tải khi mở app và chỉ áp dụng ở lần khởi động sau, trừ khi tự gọi <code>fetchUpdateAsync</code> rồi <code>reloadAsync</code>, nên không phải người dùng nào cũng nhận ngay. Chính sách store cũng chỉ chấp nhận OTA cho sửa lỗi và thay đổi nhỏ, không được đổi bản chất của app.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q11.html">Một component con vẫn re-render dù props &#39;không đổi&#39;. Những nguyên nhân nào khiến component render lại, và <code>React.memo</code> chặn được trường hợp nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Component render lại khi state của chính nó đổi, khi component cha render lại (mặc định React render lại toàn bộ cây con, bất kể props), hoặc khi context mà nó đọc đổi giá trị. <code>React.memo</code> chỉ chặn trường hợp thứ hai: nó so sánh shallow từng prop bằng <code>Object.is</code>, nên object, array, function hay style inline tạo mới mỗi lần render đều khiến memo vô tác dụng; memo cũng không chặn được state nội bộ hay context thay đổi. Cách xử lý: đưa style vào <code>StyleSheet.create</code>, đưa hằng số ra ngoài component, ổn định callback bằng <code>useCallback</code>, tách context lớn thành nhiều context nhỏ. Quan trọng nhất là đo bằng React DevTools Profiler (bật highlight updates) trước khi tối ưu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q12.html">Màn Home có ô tìm kiếm ở đầu và một feed nặng bên dưới; mỗi lần gõ phím cả feed render lại. Trước khi rải <code>React.memo</code> khắp nơi, bạn có thể tái cấu trúc component thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nguyên nhân là state <code>text</code> của ô tìm kiếm nằm ở component <code>Home</code>, nên mỗi lần gõ <code>Home</code> render lại và kéo theo toàn bộ cây con, trong đó có feed. Cách đầu tiên là đưa state xuống gần nơi dùng (state colocation): tách <code>SearchBar</code> tự giữ <code>text</code>, chỉ báo lên cha khi thật sự cần (ví dụ lúc submit hoặc sau debounce), khi đó gõ phím chỉ render lại <code>SearchBar</code>. Cách thứ hai khi component giữ state phải bao quanh nội dung nặng: truyền phần nặng qua <code>children</code> hoặc prop; element đó do cha tạo ra nên giữ nguyên reference khi component bọc ngoài render lại, và React bỏ qua nó. Hai cách này giảm re-render mà không phải thêm <code>memo</code>/<code>useCallback</code> và lo deps; chỉ khi state buộc phải dùng chung mới cân nhắc memo hoá hoặc store có selector, và luôn kiểm chứng bằng Profiler.</div>
+        <pre class="code-block"><code><span class="tk-com">// State `text` nằm trong SearchBar: gõ phím không làm Home và HeavyFeed render lại</span>
+<span class="tk-kw">function</span> <span class="tk-type">SearchBar</span>({ onSubmit }: { onSubmit: (q: <span class="tk-kw">string</span>) =&gt; <span class="tk-kw">void</span> }) {
+  <span class="tk-kw">const</span> [text, setText] = useState(<span class="tk-str">&#39;&#39;</span>);
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">TextInput</span> value={text} onChangeText={setText} onSubmitEditing={() =&gt; onSubmit(text)} /&gt;;
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">Home</span>() {
+  <span class="tk-kw">const</span> [query, setQuery] = useState(<span class="tk-str">&#39;&#39;</span>);
+  <span class="tk-kw">return</span> (
+    &lt;&gt;
+      &lt;<span class="tk-type">SearchBar</span> onSubmit={setQuery} /&gt;
+      &lt;<span class="tk-type">HeavyFeed</span> query={query} /&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q13.html">Feed sản phẩm dùng <code>FlatList</code> vài nghìn item, cuộn nhanh thì thấy vùng trắng và giật. Bạn sẽ tinh chỉnh những gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết làm item rẻ: <code>renderItem</code> trả về component bọc <code>React.memo</code>, không tạo object/hàm inline, ảnh có kích thước cố định và được cache (ví dụ <code>expo-image</code>), <code>keyExtractor</code> dùng id ổn định; nếu item cao cố định thì cung cấp <code>getItemLayout</code> để FlatList khỏi phải đo. Sau đó chỉnh virtualization: <code>windowSize</code> (mặc định 21 màn hình) nhỏ lại giúp giảm bộ nhớ nhưng dễ thấy vùng trắng hơn; <code>initialNumToRender</code>, <code>maxToRenderPerBatch</code>, <code>updateCellsBatchingPeriod</code> cân bằng giữa độ mượt và tốc độ lấp đầy; <code>removeClippedSubviews</code> tách view ngoài màn hình khỏi hierarchy nhưng đôi khi gây mất nội dung. Nếu vẫn chưa đạt thì chuyển sang FlashList: nó recycle view thay vì mount/unmount, nhưng vì thế state cục bộ trong item phải được reset theo dữ liệu mới.</div>
+        <pre class="code-block"><code>&lt;<span class="tk-type">FlatList</span>
+  data={products}
+  keyExtractor={(p) =&gt; p.id}
+  renderItem={renderProduct} <span class="tk-com">// khai báo ngoài component, item bọc React.memo</span>
+  getItemLayout={(_, index) =&gt; ({ length: <span class="tk-type">ROW_H</span>, offset: <span class="tk-type">ROW_H</span> * index, index })}
+  windowSize={<span class="tk-num">7</span>}
+  initialNumToRender={<span class="tk-num">8</span>}
+  maxToRenderPerBatch={<span class="tk-num">8</span>}
+/&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q14.html">Hermes khác JavaScriptCore ở điểm nào, và vì sao nó giúp app React Native khởi động nhanh hơn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hermes là JS engine Meta viết riêng cho React Native và là engine mặc định hiện nay. Khác biệt chính: JS được biên dịch thành bytecode ngay lúc build, nên khi mở app engine không phải parse và compile source mà chỉ việc nạp bytecode, giúp thời gian tới khi tương tác được (TTI) ngắn hơn và tốn ít RAM hơn. Hermes không dùng JIT mà tối ưu cho interpreter, kèm GC có thời gian dừng ngắn; đánh đổi là code chạy nóng trong thời gian dài có thể chậm hơn engine có JIT, và một số tính năng JS mới có thể chưa được hỗ trợ đầy đủ. Kiểm tra app có đang chạy Hermes bằng <code>typeof HermesInternal === &#39;object&#39;</code>, và debug qua React Native DevTools.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q23.html">Chạy Jest cho component dùng thư viện có native module (AsyncStorage, camera…) bị lỗi native module là <code>null</code>. Vì sao, và nên mock thế nào cho hợp lý?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Jest chạy component trong Node với preset <code>react-native</code>, không có runtime native nào phía sau, nên mọi <code>NativeModules.X</code> hay Turbo Module đều không tồn tại. Nhiều thư viện cung cấp sẵn mock (ví dụ <code>@react-native-async-storage/async-storage/jest/async-storage-mock</code>), chỉ cần <code>jest.mock</code> trong file <code>setupFiles</code>. Với module tự viết thì mock chính file spec/wrapper JS để trả giá trị cố định, dùng <code>jest.fn()</code> để kiểm tra lời gọi. Nên bọc native module sau một hook hoặc service của mình để test logic với mock, còn hành vi native thật thì để E2E (Detox, Maestro) kiểm tra.</div>
+        <pre class="code-block"><code><span class="tk-com">// jest.setup.ts</span>
+jest.mock(<span class="tk-str">&#39;@react-native-async-storage/async-storage&#39;</span>, () =&gt;
+  require(<span class="tk-str">&#39;@react-native-async-storage/async-storage/jest/async-storage-mock&#39;</span>),
+);
+
+<span class="tk-com">// Mock Turbo Module tự viết</span>
+jest.mock(<span class="tk-str">&#39;./specs/NativeBattery&#39;</span>, () =&gt; ({
+  __esModule: <span class="tk-kw">true</span>,
+  <span class="tk-kw">default</span>: {
+    getBatteryLevel: jest.fn().mockResolvedValue(<span class="tk-num">0.8</span>),
+    isCharging: jest.fn(() =&gt; <span class="tk-kw">false</span>),
+  },
+}));</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q24.html">Team chuẩn bị viết E2E test cho luồng đăng nhập và thanh toán. Bạn chọn Detox hay Maestro, dựa trên tiêu chí nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Detox là gray-box: nó build app kèm thư viện đồng bộ, theo dõi request mạng, timer, animation và hàng đợi của JS thread để tự đợi app rảnh trước mỗi bước, nên test ổn định; test viết bằng JS/TS chạy với Jest. Đổi lại cấu hình build phức tạp hơn, và đôi khi phải tắt đồng bộ cho animation lặp vô hạn hoặc polling. Maestro là black-box: flow viết bằng YAML, điều khiển app qua UI như người dùng, tự chờ và retry, cài đặt nhanh, chạy được với bất kỳ bản build nào, nhưng không biết trạng thái bên trong app. Cả hai nên tìm phần tử qua <code>testID</code> thay vì text. Thường chọn Maestro khi cần có test nhanh, ít bảo trì; chọn Detox khi cần kiểm soát sâu và gắn chặt với codebase JS.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm React Native Middle</h2><a class="section-sub" href="../../../#/react-native/quiz?rank=middle&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/rn-mid-m01.html">ProfileForm giữ nội dung form trong useState. Khi userId đổi từ &#39;u1&#39; sang &#39;u2&#39;, state của form ra sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m02.html">Khi Box mount lần đầu, thứ tự log trong console là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m03.html">Danh sách [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;] render với key={i}, mỗi Row giữ state ghi chú riêng. Người dùng gõ x vào ghi chú của dòng A rồi xoá A. Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m04.html">Error boundary bọc quanh màn hình Checkout bắt được lỗi nào sau đây?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m05.html">App bọc &lt;StrictMode&gt;. Ở bản dev, mỗi lần bấm &#39;Thêm vào giỏ&#39; (gọi dispatch đúng một lần), sự kiện analytics bị ghi hai lần. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m06.html">Trong React Native, startTransition của useTransition thực sự làm gì với một cập nhật state?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m07.html">Khi isAdmin đổi từ false sang true, state nội bộ của Profile (ví dụ tab đang chọn) ra sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m08.html">Stack gốc có màn Main chứa Bottom Tab, header hiển thị là header của stack. Trong màn Orders của tab, gọi navigation.setOptions({ title: &#39;Đơn hàng&#39; }) nhưng tiêu đề header không đổi. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m09.html">TypeScript xử lý hàm logError dưới đây thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m10.html">Union Action vừa được thêm nhánh { type: &#39;clear&#39; } nhưng hàm apply chưa được sửa. Chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m11.html">Với function first&lt;T&gt;(arr: T[]): T | undefined, biến x trong const x = first([&#39;a&#39;, 1]) được suy ra kiểu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m12.html">Với hàm pluck dùng ràng buộc K extends keyof T, hai lời gọi bên dưới cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m13.html">Case reducer viết dạng arrow function một dòng trong createSlice dưới đây có vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m14.html">Với RTK Query, sau khi mutation addPost thành công, danh sách từ getPosts không tự làm mới. Cần bổ sung gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m15.html">Gọi inc() từ một màn hình khác. Component Avatar có re-render không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m16.html">Cần lấy cả count và inc từ store Zustand trong một lần gọi hook mà không re-render thừa. Cách nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m17.html">Dữ liệu tải xong ở phút 0; người dùng rời màn hình rồi quay lại ở phút thứ 3 (gcTime để mặc định). TanStack Query làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m18.html">Màn hình đơn hàng có tab lọc theo status; đổi tab nhưng danh sách vẫn là dữ liệu của tab cũ. Lỗi nằm ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m19.html">Gọi queryClient.invalidateQueries({ queryKey: [&#39;todos&#39;] }) sau khi thêm todo sẽ tác động tới những query nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m20.html">Theo cách tách server state và client state, dữ liệu nào nên quản lý bằng TanStack Query thay vì Zustand/Redux?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m21.html">Selector useSelector((s: RootState) =&gt; s.todos.items.filter((t) =&gt; t.done)) gây ra hiện tượng gì cho component?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m22.html">HeavyList không bọc React.memo. Khi người dùng cuộn làm state y của ScrollTracker đổi (còn App không render lại), HeavyList có render lại không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m23.html">Cha bọc onPress bằng useCallback nhưng Child là component thường, không có React.memo. Khi cha re-render thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m24.html">Đặt windowSize={5} cho một FlatList có ý nghĩa gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m25.html">Khác biệt cốt lõi giúp FlashList cuộn mượt hơn FlatList với danh sách dài là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m26.html">Hermes giúp app React Native khởi động nhanh hơn chủ yếu nhờ điều gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m27.html">Animation thay đổi width dưới đây chạy thế nào khi bật useNativeDriver: true?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m28.html">Mỗi lần bấm nút, component chứa đoạn Reanimated sau có re-render không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m29.html">Trong useAnimatedScrollHandler, gọi thẳng setHeaderHidden(true) khi cuộn quá 100px thì sao, và cách đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m30.html">Màn hình dùng GestureDetector của Gesture Handler nhưng kéo không có phản hồi gì. Thiếu bước nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m31.html">Trong file spec của Turbo Native Module, TurboModuleRegistry.getEnforcing khác TurboModuleRegistry.get ở điểm nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m32.html">Đã cấu hình codegenConfig với jsSrcsDir đúng thư mục, nhưng Codegen không sinh gì cho module có spec tên BatterySpec.ts. Nguyên nhân hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m33.html">Module iOS kế thừa RCTEventEmitter liên tục gửi sự kiện ngay cả khi JS chưa có listener, Xcode log cảnh báo. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m34.html">Cần nhúng một map view viết bằng native, có prop zoomLevel và event onRegionChange. Nên viết gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m35.html">Dự án Expo dùng Continuous Native Generation (không commit android/ios) cần thêm quyền vào AndroidManifest. Làm thế nào để thay đổi không bị mất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m36.html">Trong EAS Update, runtimeVersion dùng để làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m37.html">Thay đổi nào gửi được tới người dùng qua EAS Update mà không cần build và nộp store lại?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m38.html">Ô tìm kiếm chỉ gọi api.search sau khi người dùng ngừng gõ 400ms (debounce bằng setTimeout). Test sau fail vì api.search chưa được gọi. Sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m39.html">Jest báo native module là null khi test một component dùng AsyncStorage. Cách xử lý chuẩn là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-mid-m40.html">Điểm khiến Detox thường ít bị flaky hơn các công cụ E2E kiểu black-box là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/">iOS</a>
+      <a href="../../../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <span aria-current="page">Fresher</span>
+</nav>
+
+<header class="view-head rank-green">
+  <div class="eyebrow">phỏng vấn · react native · fresher (0–1 năm)</div>
+  <h1>Câu hỏi phỏng vấn React Native Fresher</h1>
+  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../../../#/react-native/study/fresher">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip active" href="../../../phong-van/react-native/fresher/" aria-current="page">Fresher</a>
+  <a class="chip" href="../../../phong-van/react-native/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/react-native/middle/">Middle</a>
+  <a class="chip" href="../../../phong-van/react-native/senior/">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">7</span></li>
+    <li><a href="#react">React &amp; Hooks</a> <span class="count">6</span></li>
+    <li><a href="#components">Component &amp; Styling</a> <span class="count">6</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="js">
+  <div class="section-head"><h2>JavaScript &amp; TypeScript</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/js/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q01.html"><code>var</code>, <code>let</code> và <code>const</code> khác nhau thế nào? Khai báo object bằng <code>const</code> thì có sửa được thuộc tính không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>var</code> có phạm vi theo function, được hoist và khởi tạo sẵn <code>undefined</code>, lại cho khai báo lại cùng tên nên dễ gây bug. <code>let</code> và <code>const</code> có phạm vi theo block <code>{}</code>; chúng cũng được hoist nhưng nằm trong temporal dead zone (TDZ) cho tới dòng khai báo, truy cập sớm sẽ ném <code>ReferenceError</code>. Riêng function declaration được hoist cả thân hàm nên gọi trước dòng khai báo vẫn chạy. <code>const</code> chỉ cấm gán lại biến chứ không làm object bất biến: sửa <code>user.name</code> vẫn được, gán <code>user = {}</code> mới lỗi. Quy ước hiện nay là mặc định dùng <code>const</code>, cần gán lại thì dùng <code>let</code>, không dùng <code>var</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> user = { name: <span class="tk-str">&#39;An&#39;</span> };
+user.name = <span class="tk-str">&#39;Bình&#39;</span>; <span class="tk-com">// OK: chỉ sửa thuộc tính</span>
+<span class="tk-com">// user = {};       // lỗi: không gán lại được biến const</span>
+
+<span class="tk-kw">if</span> (<span class="tk-kw">true</span>) {
+  <span class="tk-kw">var</span> a = <span class="tk-num">1</span>;
+  <span class="tk-kw">let</span> b = <span class="tk-num">2</span>;
+}
+console.log(a); <span class="tk-com">// 1: var không bị giới hạn trong block</span>
+<span class="tk-com">// console.log(b); // ReferenceError: b is not defined</span>
+
+console.log(c); <span class="tk-com">// ReferenceError: Cannot access &#39;c&#39; before initialization</span>
+<span class="tk-kw">let</span> c = <span class="tk-num">3</span>;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q02.html">Closure là gì? Cho một ví dụ closure bạn gặp khi viết code thực tế.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Closure là khi một hàm ghi nhớ và truy cập được các biến của scope nơi nó được tạo, kể cả khi hàm bên ngoài đã chạy xong. Ví dụ <code>createCounter</code> trả về một hàm vẫn giữ được biến <code>count</code>; mỗi lần gọi <code>createCounter</code> lại tạo ra một closure với <code>count</code> riêng. Ứng dụng thực tế: giấu dữ liệu private, tạo hàm cấu hình sẵn (factory), viết debounce. Trong React, mỗi event handler khai báo trong component cũng là closure: nó nhìn thấy props và state của đúng lần render đã tạo ra nó. Bẫy kinh điển là dùng <code>var</code> trong vòng <code>for</code> với callback chạy sau: mọi callback dùng chung một biến, nên hãy dùng <code>let</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> createCounter() {
+  <span class="tk-kw">let</span> count = <span class="tk-num">0</span>; <span class="tk-com">// bên ngoài không truy cập trực tiếp được</span>
+  <span class="tk-kw">return</span> () =&gt; {
+    count += <span class="tk-num">1</span>;
+    <span class="tk-kw">return</span> count;
+  };
+}
+
+<span class="tk-kw">const</span> next = createCounter();
+next(); <span class="tk-com">// 1</span>
+next(); <span class="tk-com">// 2: count vẫn còn sống nhờ closure</span>
+<span class="tk-kw">const</span> other = createCounter();
+other(); <span class="tk-com">// 1: closure mới, count riêng</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q03.html"><code>this</code> trong JavaScript được xác định thế nào? Arrow function khác function thường ở điểm nào về <code>this</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với function thường, <code>this</code> được quyết định lúc gọi chứ không phải lúc khai báo: gọi <code>user.greet()</code> thì <code>this</code> là <code>user</code>, nhưng gán <code>const f = user.greet</code> rồi gọi <code>f()</code> thì <code>this</code> không còn là <code>user</code>: trong strict mode (mặc định của ES module và class) nó là <code>undefined</code> và truy cập <code>this.name</code> sẽ ném lỗi. Arrow function không có <code>this</code> riêng mà dùng <code>this</code> của scope bao quanh nơi nó được viết, và <code>call</code>/<code>apply</code>/<code>bind</code> cũng không đổi được. Vì vậy arrow function hợp làm callback bên trong method (<code>setTimeout</code>, <code>map</code>), còn method của object cần dùng <code>this</code> thì không nên viết bằng arrow. Với function component và hooks gần như không cần <code>this</code>; nó chủ yếu còn gặp ở class component cũ, nơi phải <code>bind</code> handler hoặc khai báo handler bằng arrow class field.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q04.html"><code>==</code> và <code>===</code> khác nhau thế nào? Những giá trị nào là falsy trong JavaScript?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>===</code> so sánh nghiêm ngặt: khác kiểu là <code>false</code> ngay; <code>==</code> ép kiểu trước khi so nên cho ra những kết quả khó đoán như <code>&#39;1&#39; == 1</code> hay <code>0 == &#39;&#39;</code> đều là <code>true</code>. Quy ước là luôn dùng <code>===</code>; ngoại lệ hay gặp là <code>x == null</code> để bắt cùng lúc <code>null</code> và <code>undefined</code>, và TypeScript cũng báo lỗi nhiều phép so sánh giữa hai kiểu không liên quan. Falsy chỉ gồm <code>false</code>, <code>0</code>, <code>-0</code>, <code>0n</code>, <code>&#39;&#39;</code>, <code>null</code>, <code>undefined</code> và <code>NaN</code>; mọi giá trị khác đều truthy, kể cả <code>&#39;0&#39;</code>, <code>[]</code> và <code>{}</code>. Bẫy thường gặp: <code>price || &#39;Liên hệ&#39;</code> hiển thị &quot;Liên hệ&quot; khi giá bằng 0, trong khi <code>price ?? &#39;Liên hệ&#39;</code> chỉ thay thế khi giá là <code>null</code> hoặc <code>undefined</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q05.html">Destructuring và spread <code>...</code> dùng thế nào? Vì sao nói spread chỉ là shallow copy?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Destructuring tách giá trị từ object hoặc array ra biến: <code>const { name, age = 18 } = user</code>, <code>const [first, ...rest] = list</code>; giá trị mặc định chỉ áp dụng khi thuộc tính là <code>undefined</code>. Trong component, destructuring thường dùng ngay ở tham số để nhận props: <code>function Card({ title, onPress })</code>. Spread sao chép phần tử hoặc thuộc tính sang mảng/object mới, key viết sau ghi đè key trước, nên rất hợp để tạo state mới thay vì mutate. Nhưng spread chỉ copy một tầng: object lồng bên trong vẫn dùng chung tham chiếu, sửa bản copy cũng làm đổi bản gốc; khi cập nhật state lồng nhau phải spread lại từng tầng cần sửa.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> user = { name: <span class="tk-str">&#39;An&#39;</span>, address: { city: <span class="tk-str">&#39;Hà Nội&#39;</span> } };
+
+<span class="tk-kw">const</span> renamed = { ...user, name: <span class="tk-str">&#39;Bình&#39;</span> }; <span class="tk-com">// key sau ghi đè key trước</span>
+
+<span class="tk-kw">const</span> shallow = { ...user };
+shallow.address.city = <span class="tk-str">&#39;Đà Nẵng&#39;</span>;
+console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: address vẫn dùng chung</span>
+
+<span class="tk-com">// Cập nhật đúng: copy lại từng tầng cần sửa</span>
+<span class="tk-kw">const</span> moved = { ...user, address: { ...user.address, city: <span class="tk-str">&#39;Huế&#39;</span> } };</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q06.html">Promise và <code>async</code>/<code>await</code> liên quan thế nào? <code>await</code> có làm đứng UI không, và xử lý lỗi ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Promise đại diện cho một kết quả sẽ có trong tương lai, ở một trong ba trạng thái pending, fulfilled hoặc rejected, và được xử lý bằng <code>.then</code>/<code>.catch</code>/<code>.finally</code>. <code>async</code>/<code>await</code> là cú pháp viết Promise cho dễ đọc: hàm <code>async</code> luôn trả về Promise, còn <code>await</code> chỉ tạm dừng riêng hàm đó cho tới khi Promise xong. <code>await</code> không chặn JS thread, trong lúc chờ app vẫn render và nhận thao tác của người dùng. Lỗi được bắt bằng <code>try/catch</code> quanh <code>await</code>, còn <code>finally</code> dùng để tắt loading dù thành công hay thất bại. Bẫy hay gặp là quên <code>await</code>: bạn nhận về Promise thay vì dữ liệu và lỗi không rơi vào <code>catch</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> [loading, setLoading] = useState(<span class="tk-kw">false</span>);
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> onSubmit() {
+  setLoading(<span class="tk-kw">true</span>);
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">await</span> api.saveProfile(form); <span class="tk-com">// chờ nhưng không chặn UI</span>
+    <span class="tk-type">Alert</span>.alert(<span class="tk-str">&#39;Đã lưu&#39;</span>);
+  } <span class="tk-kw">catch</span> (e) {
+    <span class="tk-type">Alert</span>.alert(<span class="tk-str">&#39;Lỗi&#39;</span>, <span class="tk-str">&#39;Không lưu được, thử lại sau&#39;</span>);
+  } <span class="tk-kw">finally</span> {
+    setLoading(<span class="tk-kw">false</span>); <span class="tk-com">// luôn chạy</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q07.html">Trong TypeScript, <code>type</code> và <code>interface</code> khác nhau thế nào khi khai báo props cho component? Prop optional viết ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai đều mô tả được shape của object, nên với props gần như dùng thay nhau được; nhiều team chọn một cách và dùng thống nhất. <code>interface</code> mở rộng bằng <code>extends</code> và hỗ trợ declaration merging (hai khai báo trùng tên được gộp lại). <code>type</code> là alias cho mọi kiểu, nên chỉ <code>type</code> viết được union như <code>&#39;primary&#39; | &#39;secondary&#39;</code>, tuple, hay kết hợp kiểu bằng <code>&amp;</code>. Prop optional thêm dấu <code>?</code>: bên trong component nó có kiểu <code>string | undefined</code>, nên phải gán giá trị mặc định khi destructuring hoặc kiểm tra trước khi dùng.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">ButtonVariant</span> = <span class="tk-str">&#39;primary&#39;</span> | <span class="tk-str">&#39;secondary&#39;</span>; <span class="tk-com">// union: chỉ type làm được</span>
+
+<span class="tk-kw">interface</span> <span class="tk-type">AppButtonProps</span> {
+  title: <span class="tk-kw">string</span>;
+  variant?: <span class="tk-type">ButtonVariant</span>; <span class="tk-com">// optional: có thể không truyền</span>
+  onPress: () =&gt; <span class="tk-kw">void</span>;
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">AppButton</span>({ title, variant = <span class="tk-str">&#39;primary&#39;</span>, onPress }: <span class="tk-type">AppButtonProps</span>) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Pressable</span> onPress={onPress} style={variant === <span class="tk-str">&#39;primary&#39;</span> ? styles.primary : styles.secondary}&gt;
+      &lt;<span class="tk-type">Text</span>&gt;{title}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">Pressable</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="react">
+  <div class="section-head"><h2>React &amp; Hooks</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/react/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q08.html">Props và state khác nhau thế nào? Component con có được sửa props mà nó nhận không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Props là dữ liệu component cha truyền xuống, với component con chúng là read-only; state là dữ liệu component tự sở hữu, tạo bằng <code>useState</code> và chỉ thay đổi qua hàm setter. Khi props hoặc state thay đổi, component render lại để UI khớp với dữ liệu mới. Con không được sửa props vì React coi props là bất biến; muốn đổi dữ liệu do cha quản lý thì cha truyền xuống một callback như <code>onChange</code> và con gọi callback đó. Đây là luồng dữ liệu một chiều: dữ liệu chảy xuống qua props, sự kiện đi ngược lên qua callback, nhờ vậy dễ biết state nằm ở đâu và ai được phép đổi nó.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q09.html">Vì sao gọi <code>setCount(count + 1)</code> ba lần liên tiếp trong một handler mà <code>count</code> chỉ tăng 1? Sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Setter của <code>useState</code> không đổi biến <code>count</code> ngay mà xếp yêu cầu cập nhật vào hàng đợi và lên lịch render lại. Trong cùng một lần render, <code>count</code> là hằng số của lần render đó, nên cả ba lời gọi đều tương đương <code>setCount(0 + 1)</code>. Khi giá trị mới phụ thuộc giá trị cũ, hãy dùng updater function <code>setCount((c) =&gt; c + 1)</code>: React chạy lần lượt từng updater với giá trị mới nhất trong hàng đợi, nên tăng đủ 3. Cũng vì cơ chế này, <code>console.log(count)</code> ngay sau khi gọi setter vẫn in ra giá trị cũ.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> [count, setCount] = useState(<span class="tk-num">0</span>);
+
+<span class="tk-kw">const</span> addThreeWrong = () =&gt; {
+  setCount(count + <span class="tk-num">1</span>);
+  setCount(count + <span class="tk-num">1</span>);
+  setCount(count + <span class="tk-num">1</span>); <span class="tk-com">// count chỉ thành 1</span>
+};
+
+<span class="tk-kw">const</span> addThree = () =&gt; {
+  setCount((c) =&gt; c + <span class="tk-num">1</span>);
+  setCount((c) =&gt; c + <span class="tk-num">1</span>);
+  setCount((c) =&gt; c + <span class="tk-num">1</span>); <span class="tk-com">// count thành 3</span>
+};</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q10.html">JSX là gì? Kể vài quy tắc JSX hay bị viết sai, đặc biệt khi dùng trong React Native.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">JSX là cú pháp mở rộng của JavaScript, được Babel biên dịch thành lời gọi hàm (<code>jsx()</code> hoặc <code>React.createElement</code>) tạo ra object mô tả UI, nên bản chất nó là JavaScript chứ không phải HTML. Quy tắc cần nhớ: mỗi biểu thức JSX chỉ có một phần tử gốc (bọc bằng <code>View</code> hoặc Fragment <code>&lt;&gt;...&lt;/&gt;</code>), mọi thẻ phải đóng (<code>&lt;Image /&gt;</code>), trong <code>{}</code> chỉ đặt được biểu thức nên dùng toán tử ba ngôi hoặc <code>map</code> thay cho <code>if</code>/<code>for</code>, và tên component phải viết hoa chữ cái đầu. Riêng React Native, chữ phải nằm trong <code>&lt;Text&gt;</code>: đặt chuỗi trực tiếp trong <code>&lt;View&gt;</code> sẽ lỗi &quot;Text strings must be rendered within a &lt;Text&gt; component&quot;. Style truyền qua prop <code>style</code> dưới dạng object, không có <code>className</code> như web.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q11.html">Khi render danh sách, <code>key</code> dùng để làm gì? Nên chọn giá trị nào làm <code>key</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React dùng <code>key</code> để nhận ra phần tử nào giữ nguyên, được thêm, bị xoá hay đổi chỗ giữa hai lần render, từ đó tái sử dụng đúng component cùng state của nó. Key cần ổn định và duy nhất trong cùng một list, tốt nhất là id từ dữ liệu. Dùng index làm key chỉ an toàn khi list không bao giờ thêm, xoá hay sắp xếp; nếu chèn item lên đầu, index bị dịch chuyển khiến state như nội dung <code>TextInput</code> hay checkbox bị gắn nhầm sang item khác. Cũng đừng dùng <code>Math.random()</code> làm key, vì mỗi lần render ra key mới nên React huỷ và tạo lại toàn bộ item.</div>
+        <pre class="code-block"><code>{todos.map((todo) =&gt; (
+  &lt;<span class="tk-type">TodoRow</span> key={todo.id} todo={todo} /&gt; <span class="tk-com">// id ổn định từ dữ liệu</span>
+))}
+
+<span class="tk-com">// Tránh khi list có thể thêm/xoá/sắp xếp:</span>
+<span class="tk-com">// todos.map((todo, index) =&gt; &lt;TodoRow key={index} todo={todo} /&gt;)</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q12.html">Có những cách nào để render có điều kiện trong React? Vì sao <code>{count &amp;&amp; &lt;Text&gt;…&lt;/Text&gt;}</code> có thể làm app React Native bị lỗi?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với nhánh lớn như loading hoặc lỗi, dùng <code>if</code> rồi <code>return</code> sớm; với hai nhánh trong JSX dùng toán tử ba ngôi <code>cond ? &lt;A /&gt; : &lt;B /&gt;</code>; khi chỉ hiện hoặc ẩn thì dùng <code>cond &amp;&amp; &lt;A /&gt;</code>; muốn không render gì thì trả về <code>null</code>. Bẫy nằm ở chỗ <code>&amp;&amp;</code> trả về chính vế trái khi vế trái falsy: nếu <code>count</code> là <code>0</code> thì biểu thức cho ra số <code>0</code>, và React render nó như một đoạn text. Trên web bạn chỉ thấy một số 0 thừa, còn trong React Native đoạn text nằm ngoài <code>&lt;Text&gt;</code> gây lỗi &quot;Text strings must be rendered within a &lt;Text&gt; component&quot;. Cách tránh là ép điều kiện về boolean (<code>count &gt; 0 &amp;&amp;</code>) hoặc dùng toán tử ba ngôi.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">CartBadge</span>({ count }: { count: <span class="tk-kw">number</span> }) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      {<span class="tk-com">/* Sai: count = 0 thì render số 0 ngoài &lt;Text&gt; → lỗi */</span>}
+      {<span class="tk-com">/* {count &amp;&amp; &lt;Text&gt;{count} sản phẩm&lt;/Text&gt;} */</span>}
+      {count &gt; <span class="tk-num">0</span> &amp;&amp; &lt;<span class="tk-type">Text</span>&gt;{count} sản phẩm&lt;/<span class="tk-type">Text</span>&gt;}
+      {count === <span class="tk-num">0</span> ? &lt;<span class="tk-type">Text</span>&gt;<span class="tk-type">Gi</span>ỏ hàng trống&lt;/<span class="tk-type">Text</span>&gt; : <span class="tk-kw">null</span>}
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q13.html">Controlled <code>TextInput</code> là gì? Vì sao form đăng nhập thường được làm theo kiểu controlled?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Controlled nghĩa là nội dung ô nhập lấy từ state qua prop <code>value</code>, và mỗi lần người dùng gõ thì <code>onChangeText</code> cập nhật lại state; state trở thành nguồn dữ liệu duy nhất. Nhờ vậy dễ validate ngay khi gõ, format dữ liệu, reset form hoặc disable nút submit khi dữ liệu chưa hợp lệ. <code>onChangeText</code> nhận thẳng chuỗi mới, còn <code>onChange</code> nhận event và text nằm ở <code>e.nativeEvent.text</code>. Bẫy: truyền <code>value</code> mà không cập nhật state trong <code>onChangeText</code> thì ô nhập luôn bị ép về giá trị cũ, gõ không đổi được; nếu chỉ cần giá trị ban đầu thì dùng <code>defaultValue</code> (uncontrolled).</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">LoginForm</span>({ onLogin }: { onLogin: (email: <span class="tk-kw">string</span>) =&gt; <span class="tk-kw">void</span> }) {
+  <span class="tk-kw">const</span> [email, setEmail] = useState(<span class="tk-str">&#39;&#39;</span>);
+  <span class="tk-kw">const</span> isValid = email.includes(<span class="tk-str">&#39;@&#39;</span>);
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">TextInput</span>
+        value={email}
+        onChangeText={setEmail} <span class="tk-com">// nhận thẳng chuỗi mới</span>
+        placeholder=<span class="tk-str">&quot;Email&quot;</span>
+        autoCapitalize=<span class="tk-str">&quot;none&quot;</span>
+      /&gt;
+      &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Đăng nhập&quot;</span> disabled={!isValid} onPress={() =&gt; onLogin(email)} /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="components">
+  <div class="section-head"><h2>Component &amp; Styling</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/components/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q14.html"><code>View</code>, <code>Text</code>, <code>Image</code> trong React Native được hiển thị ra sao trên máy? Vì sao ảnh tải từ URL không hiện dù link đúng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React Native không dùng WebView hay HTML: mỗi core component được ánh xạ sang view native, ví dụ <code>View</code> tương ứng <code>UIView</code> trên iOS và <code>ViewGroup</code> trên Android, <code>Image</code> tương ứng <code>UIImageView</code> và <code>ImageView</code>. Mọi chuỗi chữ phải nằm trong <code>Text</code>, <code>View</code> không tự hiển thị text. Với ảnh local dùng <code>require(&#39;./logo.png&#39;)</code>, RN biết kích thước ảnh từ lúc build; còn ảnh mạng <code>source={{ uri }}</code> thì không biết trước, nên phải tự đặt <code>width</code>/<code>height</code>, nếu không ảnh có kích thước 0 và không hiện gì. <code>resizeMode</code> (<code>cover</code>, <code>contain</code>…) quyết định ảnh được co giãn thế nào trong khung đó.</div>
+        <pre class="code-block"><code>&lt;<span class="tk-type">View</span> style={{ padding: <span class="tk-num">16</span> }}&gt;
+  &lt;<span class="tk-type">Text</span>&gt;<span class="tk-type">Xin</span> chào&lt;/<span class="tk-type">Text</span>&gt;
+  {<span class="tk-com">/* ảnh local: RN biết kích thước lúc build */</span>}
+  &lt;<span class="tk-type">Image</span> source={require(<span class="tk-str">&#39;./logo.png&#39;</span>)} /&gt;
+  {<span class="tk-com">/* ảnh mạng: bắt buộc tự đặt width/height */</span>}
+  &lt;<span class="tk-type">Image</span>
+    source={{ uri: <span class="tk-str">&#39;https://example.com/avatar.png&#39;</span> }}
+    style={{ width: <span class="tk-num">64</span>, height: <span class="tk-num">64</span> }}
+    resizeMode=<span class="tk-str">&quot;cover&quot;</span>
+  /&gt;
+&lt;/<span class="tk-type">View</span>&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q15.html"><code>ScrollView</code> và <code>FlatList</code> khác nhau thế nào? Khi nào dùng cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ScrollView</code> render toàn bộ con ngay một lần, hợp với nội dung ngắn và số lượng biết trước như form hay trang chi tiết. <code>FlatList</code> là list ảo hoá (virtualized): chỉ render các item trong và gần vùng nhìn thấy, item ở xa bị gỡ ra, nên bộ nhớ và thời gian render ổn định khi list dài hoặc dữ liệu lấy từ API. <code>FlatList</code> nhận <code>data</code> và <code>renderItem</code> thay vì children, có sẵn <code>ListHeaderComponent</code>, <code>ListEmptyComponent</code>, <code>ItemSeparatorComponent</code> và kéo để làm mới qua <code>refreshing</code>/<code>onRefresh</code>. Bẫy: đặt <code>FlatList</code> trong <code>ScrollView</code> cùng chiều cuộn làm mất ảo hoá và RN sẽ cảnh báo; phần nội dung phía trên list nên đưa vào <code>ListHeaderComponent</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q16.html">Style trong React Native khác CSS trên web ở điểm nào? Vì sao nên dùng <code>StyleSheet.create</code> thay vì viết style inline?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Style trong RN là object JavaScript, tên thuộc tính viết camelCase (<code>backgroundColor</code>), số không có đơn vị và tính bằng density-independent pixel (dp trên Android, point trên iOS). Không có selector hay cascade: style gắn trực tiếp vào từng component và không kế thừa từ <code>View</code> cha, ngoại lệ là <code>Text</code> lồng trong <code>Text</code>. <code>StyleSheet.create</code> gom style ra ngoài hàm render nên code gọn, đặt tên được theo ý nghĩa và được editor gợi ý, kiểm tra kiểu; style inline thì tạo object mới ở mỗi lần render. Prop <code>style</code> nhận cả mảng: phần tử sau ghi đè phần tử trước và giá trị falsy bị bỏ qua, rất tiện cho style có điều kiện.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">Tag</span>({ label, active }: { label: <span class="tk-kw">string</span>; active?: <span class="tk-kw">boolean</span> }) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span> style={[styles.tag, active &amp;&amp; styles.active]}&gt;
+      &lt;<span class="tk-type">Text</span> style={styles.label}&gt;{label}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}
+
+<span class="tk-kw">const</span> styles = <span class="tk-type">StyleSheet</span>.create({
+  tag: { paddingHorizontal: <span class="tk-num">12</span>, paddingVertical: <span class="tk-num">6</span>, borderRadius: <span class="tk-num">16</span>, backgroundColor: <span class="tk-str">&#39;#eee&#39;</span> },
+  active: { backgroundColor: <span class="tk-str">&#39;#1e88e5&#39;</span> }, <span class="tk-com">// ghi đè màu nền của tag</span>
+  label: { fontSize: <span class="tk-num">14</span> },
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q17.html">Flexbox trong React Native khác Flexbox của CSS trên web ở những điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trong RN mọi <code>View</code> đều là flex container, không cần khai báo <code>display: &#39;flex&#39;</code>, và layout dựa hoàn toàn vào Flexbox (thông qua engine Yoga). Khác biệt lớn nhất nằm ở giá trị mặc định: <code>flexDirection</code> là <code>&#39;column&#39;</code> thay vì <code>row</code>, <code>alignContent</code> là <code>flex-start</code> thay vì <code>stretch</code>, <code>flexShrink</code> là <code>0</code> thay vì <code>1</code>, và <code>flex</code> chỉ nhận một con số. <code>flex: 1</code> nghĩa là chiếm phần không gian còn lại, chia theo tỉ lệ với các view anh em cũng có <code>flex</code>. <code>justifyContent</code> căn theo trục chính, <code>alignItems</code> căn theo trục phụ (mặc định <code>stretch</code>). Lỗi hay gặp là <code>View</code> gốc của màn hình thiếu <code>flex: 1</code> nên co lại theo nội dung, hoặc tưởng các phần tử tự xếp ngang như trên web.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q18.html"><code>Button</code>, <code>TouchableOpacity</code> và <code>Pressable</code> khác nhau thế nào? Làm nút bấm theo thiết kế riêng thì dùng gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Button</code> của core rất đơn giản: chỉ có <code>title</code>, <code>color</code>, <code>disabled</code>…, giao diện theo nền tảng và không nhận prop <code>style</code>, nên hiếm khi khớp thiết kế. <code>TouchableOpacity</code> tự mờ đi khi nhấn, là API cũ nhưng vẫn chạy tốt. <code>Pressable</code> là API mới được khuyến nghị: có <code>onPress</code>, <code>onPressIn</code>, <code>onPressOut</code>, <code>onLongPress</code>, cho <code>style</code> và <code>children</code> là hàm nhận <code>{ pressed }</code> để tự đổi giao diện khi nhấn, có <code>hitSlop</code> để mở rộng vùng chạm và <code>android_ripple</code> cho hiệu ứng gợn sóng. Nút theo thiết kế riêng thường dựng bằng <code>Pressable</code> + <code>Text</code>; nhớ giữ vùng chạm đủ lớn (khoảng 44pt trên iOS, 48dp trên Android) và <code>disabled</code> khi đang gửi request để tránh bấm hai lần.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q19.html">Làm sao để nội dung không bị tai thỏ hay thanh trạng thái che? Khi cần style khác nhau cho iOS và Android thì viết thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Máy có tai thỏ, Dynamic Island hay thanh home indicator có những vùng mép màn hình mà nội dung không nên nằm vào, gọi là safe area. <code>SafeAreaView</code> có sẵn trong <code>react-native</code> chỉ có tác dụng trên iOS và đã bị đánh dấu deprecated ở các bản gần đây, nên thực tế dùng thư viện <code>react-native-safe-area-context</code> (<code>SafeAreaProvider</code> ở gốc app, rồi <code>SafeAreaView</code> hoặc <code>useSafeAreaInsets</code>) cho cả hai nền tảng; React Navigation cũng dựa vào thư viện này. Để xử lý khác biệt nền tảng, kiểm tra <code>Platform.OS</code> (<code>&#39;ios&#39;</code> hoặc <code>&#39;android&#39;</code>) hoặc dùng <code>Platform.select</code> để chọn giá trị. Ví dụ hay gặp là đổ bóng: iOS dùng các thuộc tính <code>shadow*</code>, Android dùng <code>elevation</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { <span class="tk-type">SafeAreaView</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native-safe-area-context&#39;</span>;
+
+<span class="tk-kw">function</span> <span class="tk-type">ProfileScreen</span>() {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">SafeAreaView</span> style={{ flex: <span class="tk-num">1</span> }}&gt;
+      &lt;<span class="tk-type">View</span> style={styles.card}&gt;
+        &lt;<span class="tk-type">Text</span>&gt;Đang chạy trên {<span class="tk-type">Platform</span>.<span class="tk-type">OS</span> === <span class="tk-str">&#39;ios&#39;</span> ? <span class="tk-str">&#39;iOS&#39;</span> : <span class="tk-str">&#39;Android&#39;</span>}&lt;/<span class="tk-type">Text</span>&gt;
+      &lt;/<span class="tk-type">View</span>&gt;
+    &lt;/<span class="tk-type">SafeAreaView</span>&gt;
+  );
+}
+
+<span class="tk-kw">const</span> styles = <span class="tk-type">StyleSheet</span>.create({
+  card: { padding: <span class="tk-num">16</span>, backgroundColor: <span class="tk-str">&#39;white&#39;</span>, ...<span class="tk-type">Platform</span>.select({ ios: { shadowOpacity: <span class="tk-num">0.2</span> }, android: { elevation: <span class="tk-num">3</span> } }) },
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q20.html">Trong stack navigator của React Navigation, <code>navigate</code>, <code>push</code>, <code>goBack</code> và <code>popToTop</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Stack navigator giữ một chồng màn hình: <code>navigation.navigate(&#39;Detail&#39;)</code> chuyển tới màn hình theo tên, còn <code>goBack()</code> bỏ màn hiện tại để về màn trước, giống nút back của Android hay cử chỉ vuốt back trên iOS. <code>push(&#39;Detail&#39;, params)</code> luôn đẩy thêm một màn mới, kể cả khi đang đứng ở chính <code>Detail</code>, hợp với luồng như sản phẩm liên quan (chi tiết → chi tiết); còn <code>navigate</code> tới đúng màn đang hiển thị thì không tạo màn mới mà chỉ cập nhật params. <code>popToTop()</code> quay thẳng về màn đầu tiên của stack, ví dụ sau khi đặt hàng xong. Screen nhận <code>navigation</code> qua props; component con nằm sâu hơn thì lấy bằng hook <code>useNavigation()</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q21.html">Truyền dữ liệu sang màn hình khác bằng params thế nào? Nên truyền cả object sản phẩm hay chỉ truyền id?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Params đặt ở tham số thứ hai: <code>navigation.navigate(&#39;ProductDetail&#39;, { productId: 42 })</code>, màn hình đích đọc qua <code>route.params</code> (prop <code>route</code> hoặc hook <code>useRoute()</code>), và có thể đổi params của màn hiện tại bằng <code>navigation.setParams</code>. Tài liệu React Navigation khuyên params chỉ chứa dữ liệu tối thiểu để dựng màn hình như id hay bộ lọc, chứ không phải cả object lấy từ API: object truyền qua có thể đã cũ so với dữ liệu thật, và khi màn hình được mở từ deep link thì cũng chỉ có id. Params cũng nên serializable; truyền function hay class instance sẽ bị cảnh báo vì làm hỏng việc lưu, khôi phục state điều hướng và deep link. Màn hình đích dùng id để tự lấy dữ liệu từ API hoặc store.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q22.html">Gọi API bằng <code>fetch</code> thế nào? Vì sao server trả 404 hoặc 500 mà code không nhảy vào <code>catch</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>fetch(url, options)</code> trả về Promise của <code>Response</code>; với POST cần <code>method</code>, header <code>Content-Type: application/json</code> và <code>body: JSON.stringify(data)</code>, còn body trả về đọc bằng <code>await res.json()</code> (cũng là Promise). Promise của <code>fetch</code> chỉ reject khi có lỗi mạng như mất kết nối hay không phân giải được tên miền; HTTP 404 hay 500 vẫn là một response hợp lệ nên Promise vẫn resolve. Vì vậy phải tự kiểm tra <code>res.ok</code> (status 200–299) hoặc <code>res.status</code> rồi ném lỗi để tầng trên xử lý. Lưu ý thêm: bản release trên Android và iOS mặc định chặn request <code>http://</code> không mã hoá, nên API thật cần dùng HTTPS.</div>
+        <pre class="code-block"><code><span class="tk-kw">async</span> <span class="tk-kw">function</span> createTodo(title: <span class="tk-kw">string</span>) {
+  <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">&#39;https://api.example.com/todos&#39;</span>, {
+    method: <span class="tk-str">&#39;POST&#39;</span>,
+    headers: { <span class="tk-str">&#39;Content-Type&#39;</span>: <span class="tk-str">&#39;application/json&#39;</span> },
+    body: <span class="tk-type">JSON</span>.stringify({ title }),
+  });
+  <span class="tk-kw">if</span> (!res.ok) {
+    <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(<span class="tk-str">`HTTP ${res.status}`</span>); <span class="tk-com">// 4xx/5xx không tự reject</span>
+  }
+  <span class="tk-kw">return</span> res.json();
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q23.html">AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ vào AsyncStorage không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">AsyncStorage là kho key–value bất đồng bộ, lưu bền trên máy, hợp với dữ liệu nhỏ như cài đặt, theme hay cờ đã xem onboarding. Bản nằm trong core React Native đã bị tách ra, nay dùng package cộng đồng <code>@react-native-async-storage/async-storage</code>. Cả key và value đều là string và mọi hàm đều trả về Promise, nên object phải <code>JSON.stringify</code> khi ghi, <code>JSON.parse</code> khi đọc, và <code>getItem</code> trả về <code>null</code> khi key chưa tồn tại. Dữ liệu không được mã hoá nên không dùng cho token hay mật khẩu, và nó cũng không thay được database khi dữ liệu lớn hoặc cần truy vấn.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-type">AsyncStorage</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;@react-native-async-storage/async-storage&#39;</span>;
+
+<span class="tk-kw">type</span> <span class="tk-type">Settings</span> = { darkMode: <span class="tk-kw">boolean</span> };
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> saveSettings(settings: <span class="tk-type">Settings</span>) {
+  <span class="tk-kw">await</span> <span class="tk-type">AsyncStorage</span>.setItem(<span class="tk-str">&#39;settings&#39;</span>, <span class="tk-type">JSON</span>.stringify(settings));
+}
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> loadSettings(): <span class="tk-type">Promise</span>&lt;<span class="tk-type">Settings</span>&gt; {
+  <span class="tk-kw">const</span> raw = <span class="tk-kw">await</span> <span class="tk-type">AsyncStorage</span>.getItem(<span class="tk-str">&#39;settings&#39;</span>); <span class="tk-com">// string | null</span>
+  <span class="tk-kw">return</span> raw ? <span class="tk-type">JSON</span>.parse(raw) : { darkMode: <span class="tk-kw">false</span> };
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="tooling">
+  <div class="section-head"><h2>Expo, Build &amp; Release</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/tooling/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q24.html">Expo và React Native CLI khác nhau thế nào? Dự án mới bạn sẽ chọn cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React Native CLI tạo project &quot;bare&quot; với sẵn thư mục <code>android/</code> và <code>ios/</code>: bạn tự cài Android Studio, Xcode, tự quản lý code native và cấu hình build, đổi lại kiểm soát được mọi thứ. Expo là framework xây trên React Native: có Expo SDK với nhiều module dựng sẵn (camera, notification, file…), chạy thử nhanh bằng app Expo Go, build và phát hành trên cloud bằng EAS. Quan niệm cũ &quot;dùng Expo thì không thêm được native code&quot; không còn đúng: với development build, bạn vẫn dùng được thư viện native bất kỳ hoặc tự viết module; chỉ riêng Expo Go là giới hạn ở các module có sẵn trong nó. Tài liệu chính thức của React Native hiện khuyên bắt đầu dự án mới với một framework như Expo; RN CLI hợp khi cần tích hợp sâu vào hệ thống build native sẵn có.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q25.html">Metro là gì? Fast Refresh hoạt động thế nào và khi nào bạn buộc phải build lại app?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Metro là bundler của React Native: dùng Babel biên dịch JSX/TypeScript, gộp các module và asset thành bundle, khi phát triển thì chạy dev server (mặc định cổng 8081) để app tải bundle về. Babel chỉ bỏ phần type chứ không kiểm tra type, nên muốn bắt lỗi TypeScript phải chạy <code>tsc</code> hoặc dựa vào editor. Với Fast Refresh, khi bạn lưu file chỉ export component thì chỉ component đó được cập nhật và state của <code>useState</code> được giữ; nếu file export cả thứ khác, module đó cùng các module import nó được chạy lại nên state có thể mất. Mọi thay đổi native như cài thư viện có native code, sửa <code>AndroidManifest.xml</code>, <code>Info.plist</code> hay Podfile đều phải build lại app; reload JS hay xoá cache Metro không giải quyết được.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm React Native Fresher</h2><a class="section-sub" href="../../../#/react-native/quiz?rank=fresher&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/rn-fre-m01.html">Vòng lặp dùng var kết hợp setTimeout dưới đây in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m02.html">Chạy đoạn JavaScript sau, truy cập biến trước dòng khai báo var và let cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m03.html">Biểu thức nào sau đây trả về true trong JavaScript?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m04.html">Gọi show(0) với hàm dùng || và ?? dưới đây thì console in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m05.html">Trong một file module (strict mode), đoạn code sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m06.html">Callback của map dưới đây có thân trong ngoặc nhọn. Mảng doubled in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m07.html">Copy object bằng spread rồi sửa bản copy như dưới đây. Dòng cuối in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m08.html">Destructuring có giá trị mặc định dưới đây in ra gì khi age đang là null?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m09.html">Chuỗi Promise dưới đây có throw bên trong then. Console in ra những gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m10.html">Bên trong component Card, biến subtitle có kiểu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m11.html">Trong TypeScript, khai báo nào chỉ viết được bằng type, không viết được bằng interface?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m12.html">Component Card được dùng như dưới đây. Bên trong Card, phần &lt;Text&gt;Nội dung&lt;/Text&gt; được nhận qua đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m13.html">Bấm nút gọi onPress. Dòng console.log in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m14.html">Gọi addItem nhưng danh sách trên màn hình không đổi. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m15.html">Khi render danh sách bằng map, React dùng prop key để làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m16.html">Khai báo function profileCard() { ... } rồi dùng &lt;profileCard /&gt; trong JSX. Chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m17.html">Một component return hai phần tử &lt;Text&gt;Tên&lt;/Text&gt;&lt;Text&gt;Tuổi&lt;/Text&gt; đặt cạnh nhau, không có thẻ bọc ngoài. Chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m18.html">Khi messages là mảng rỗng, đoạn JSX sau gây ra điều gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m19.html">Component con QuantityPicker cần thay đổi số lượng mà màn hình cha đang quản lý bằng useState. Cách đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m20.html">Người dùng gõ thêm chữ vào ô nhập sau. Chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m21.html">Callback onChangeText của TextInput nhận tham số gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m22.html">Hai Text dưới đây được sắp xếp thế nào trên màn hình?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m23.html">Hai khối màu dưới đây chia màn hình thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m24.html">&lt;Text style={[{ color: &#39;red&#39;, fontSize: 18 }, { color: &#39;blue&#39; }]}&gt;Hi&lt;/Text&gt; hiển thị thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m25.html">Chữ 400.000đ trong đoạn code sau hiển thị thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m26.html">&lt;Image source={{ uri: &#39;https://example.com/avatar.png&#39; }} /&gt; không hiện gì dù URL đúng. Nguyên nhân thường gặp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m27.html">Muốn nút làm bằng Pressable mờ đi khi đang được nhấn, cách nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m28.html">Thiết kế yêu cầu nút bo góc 12, padding lớn, chữ in đậm. Dùng Button của React Native core thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m29.html">Dùng SafeAreaView import từ react-native để tránh tai thỏ, nhưng trên Android (app vẽ tràn viền, status bar trong suốt) nội dung vẫn bị che. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m30.html">Trong style của React Native, width: 100 có nghĩa là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m31.html">Màn hình cần hiển thị danh sách 5.000 sản phẩm tải từ API. Lựa chọn nào hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m32.html">Trong stack navigator, đang ở màn Product với params { id: 1 }, gọi navigation.navigate(&#39;Product&#39;, { id: 2 }). Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m33.html">Màn OrderDetail được mở bằng navigation.navigate(&#39;OrderDetail&#39;, { orderId: 7 }). Bên trong màn hình, đọc orderId thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m34.html">Luồng màn hình là Home → Cart → Checkout → Success. Ở Success, nút &quot;Về trang chủ&quot; cần quay về Home và bỏ các màn ở giữa. Dùng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m35.html">Server trả về HTTP 404 cho request dưới đây. Màn hình console in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m36.html">Cách đúng để lưu rồi đọc lại object user bằng AsyncStorage là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m37.html">await AsyncStorage.getItem(&#39;token&#39;) trả về gì khi key token chưa từng được lưu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m38.html">Metro trong dự án React Native đảm nhiệm việc gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m39.html">Trong project React Native CLI, bạn vừa cài một thư viện có native code (ví dụ camera) và app báo không tìm thấy native module. Cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m40.html">Dự án Expo đang chạy bằng Expo Go. Bạn thêm một thư viện có native code không nằm trong Expo SDK thì app báo lỗi. Hướng xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

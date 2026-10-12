@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Junior: Hàm suspend có tự chạy ở background thread không? Nên đặt withContext(Dispa…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Không. suspend chỉ có nghĩa là hàm có thể tạm dừng mà không chặn thread; code bên trong vẫn chạy trên dispatcher của coroutine gọi nó, nên một hàm suspend đọ…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-q15.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Junior: Hàm suspend có tự chạy ở background thread không? Nên đặt withContext(Dispa…">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/and-jun-q15");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"Hàm suspend có tự chạy ở background thread khôn…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-q15.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Hàm suspend có tự chạy ở background thread không? Nên đặt withContext(Dispatchers.IO) ở tầng nào?</p>
-<p><a href="../#/q/and-jun-q15">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Hàm suspend có tự chạy ở background thread khôn…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/coroutines/">Coroutines &amp; Flow</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Hàm <code>suspend</code> có tự chạy ở background thread không? Nên đặt <code>withContext(Dispatchers.IO)</code> ở tầng nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không. <code>suspend</code> chỉ có nghĩa là hàm có thể tạm dừng mà không chặn thread; code bên trong vẫn chạy trên dispatcher của coroutine gọi nó, nên một hàm <code>suspend</code> đọc file kiểu blocking được gọi từ <code>viewModelScope</code> (mặc định <code>Dispatchers.Main.immediate</code>) vẫn chặn main thread. Google khuyến nghị hàm suspend phải main-safe: lớp nào làm việc blocking thì tự chuyển thread bằng <code>withContext</code>, thường ở repository hoặc data source, để ViewModel gọi thoải mái từ main. <code>Dispatchers.IO</code> dành cho việc chờ I/O (file, database, SDK blocking), <code>Dispatchers.Default</code> cho tính toán nặng như sort list lớn hay xử lý ảnh. Hàm <code>suspend</code> của Retrofit và DAO <code>suspend</code> của Room đã main-safe sẵn, không cần bọc thêm.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-q15">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-q14.html"><span class="muted small">← Câu trước</span><span>Màn hình chi tiết cần gọi hai API độc lập (thông tin sản phẩm và đánh giá). Bạn…</span></a>
+  <a class="pager-next" href="../s/and-jun-q16.html"><span class="muted small">Câu sau →</span><span>viewModelScope, lifecycleScope và GlobalScope khác nhau thế nào? Vì sao không n…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Coroutines &amp; Flow</h2><a class="section-sub" href="../phong-van/android/chu-de/coroutines/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-jun-q14.html">Màn hình chi tiết cần gọi hai API độc lập (thông tin sản phẩm và đánh giá). Bạn dùng launch hay async để gọi song song? Hai builder này khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q16.html">viewModelScope, lifecycleScope và GlobalScope khác nhau thế nào? Vì sao không nên dùng GlobalScope để gọi API của một màn hình?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q17.html">Dự án đang chuyển từ LiveData sang StateFlow. Hai cái khác nhau ở những điểm nào cần lưu ý?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-m22.html">Trong runBlocking, một coroutine con được launch với delay(100). Thứ tự in ra là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m23.html">Hai async được gọi await() ngay sau khi tạo. Kết quả và thời gian đo được là bao nhiêu?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m24.html">Tác vụ nào phù hợp với Dispatchers.Default hơn Dispatchers.IO?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Junior: State hoisting trong Jetpack Compose là gì? Vì sao một composable SearchBar…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="State hoisting là đưa state ra khỏi composable, thay bằng hai tham số: giá trị hiện tại (query) và callback báo sự kiện (onQueryChange). Composable khi đó là…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-q22.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Junior: State hoisting trong Jetpack Compose là gì? Vì sao một composable SearchBar…">
@@ -16,10 +17,85 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/and-jun-q22");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"State hoisting trong Jetpack Compose là gì? Vì…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-q22.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>State hoisting trong Jetpack Compose là gì? Vì sao một composable SearchBar tự giữ remember { mutableStateOf(&quot;&quot;) } bên trong lại khó dùng lại và khó test?</p>
-<p><a href="../#/q/and-jun-q22">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">State hoisting trong Jetpack Compose là gì? Vì…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">State hoisting trong Jetpack Compose là gì? Vì sao một composable <code>SearchBar</code> tự giữ <code>remember { mutableStateOf(&quot;&quot;) }</code> bên trong lại khó dùng lại và khó test?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">State hoisting là đưa state ra khỏi composable, thay bằng hai tham số: giá trị hiện tại (<code>query</code>) và callback báo sự kiện (<code>onQueryChange</code>). Composable khi đó là stateless: chỉ hiển thị cái được truyền vào và báo lên khi người dùng tương tác, còn nơi giữ state (màn hình hoặc ViewModel) quyết định cập nhật thế nào. Nếu <code>SearchBar</code> tự giữ state, màn hình cha không đọc được text để gọi tìm kiếm, không xoá được text từ bên ngoài, và preview/test phải giả lập thao tác gõ mới vào được trạng thái mong muốn. Nguyên tắc là đẩy state lên tổ tiên chung thấp nhất cần đọc hoặc ghi nó, tạo luồng dữ liệu một chiều: state đi xuống, event đi lên.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">SearchBar</span>(
+    query: <span class="tk-type">String</span>,
+    onQueryChange: (<span class="tk-type">String</span>) -&gt; <span class="tk-type">Unit</span>,
+    modifier: <span class="tk-type">Modifier</span> = <span class="tk-type">Modifier</span>
+) {
+    <span class="tk-type">TextField</span>(<span class="tk-kw">value</span> = query, onValueChange = onQueryChange, modifier = modifier)
+}
+
+<span class="tk-com">// Màn hình giữ state, SearchBar chỉ hiển thị và báo sự kiện</span>
+<span class="tk-kw">val</span> query <span class="tk-kw">by</span> viewModel.query.collectAsStateWithLifecycle()
+<span class="tk-type">SearchBar</span>(query = query, onQueryChange = viewModel::onQueryChange)</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-q22">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-q21.html"><span class="muted small">← Câu trước</span><span>Vì sao nên dùng ListAdapter + DiffUtil.ItemCallback thay vì gọi notifyDataSetCh…</span></a>
+  <a class="pager-next" href="../s/and-jun-q23.html"><span class="muted small">Câu sau →</span><span>Dùng Navigation Component, màn giỏ hàng mở màn chọn địa chỉ; chọn xong phải trả…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-jun-q21.html">Vì sao nên dùng ListAdapter + DiffUtil.ItemCallback thay vì gọi notifyDataSetChanged() mỗi khi danh sách đổi? areItemsTheSame và areContentsTheSame khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-m33.html">Sửa trực tiếp MutableList đã submit rồi gọi submitList lại với chính list đó. Điều gì xảy ra với RecyclerView?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m34.html">Trong DiffUtil.ItemCallback, areContentsTheSame() được gọi khi nào?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m35.html">Người dùng gõ vào TextField trong composable sau. Điều gì xảy ra?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m36.html">Gọi analytics.logScreenView(&quot;home&quot;) trực tiếp trong thân @Composable fun HomeScreen(). Vấn đề là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q18.html">dp, sp và px khác nhau thế nào? Vì sao cỡ chữ nên dùng sp?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

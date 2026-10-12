@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Middle: Một class Java đếm số request đang chạy bằng private volatile int active; v…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Không đúng. volatile chỉ đảm bảo visibility (thread khác luôn thấy giá trị mới nhất) và chống reorder quanh biến đó, nhưng active++ gồm ba bước đọc, cộng, gh…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q23.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: Một class Java đếm số request đang chạy bằng private volatile int active; v…">
@@ -16,10 +17,86 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/and-mid-q23");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"Một class Java đếm số request đang chạy bằng pr…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q23.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Một class Java đếm số request đang chạy bằng private volatile int active; và active++ được gọi từ nhiều thread. Code này có đúng không? Phân biệt volatile, synchronized và AtomicInteger.</p>
-<p><a href="../#/q/and-mid-q23">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Một class Java đếm số request đang chạy bằng pr…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/java/">Java &amp; JVM</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Một class Java đếm số request đang chạy bằng <code>private volatile int active;</code> và <code>active++</code> được gọi từ nhiều thread. Code này có đúng không? Phân biệt <code>volatile</code>, <code>synchronized</code> và <code>AtomicInteger</code>.</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không đúng. <code>volatile</code> chỉ đảm bảo visibility (thread khác luôn thấy giá trị mới nhất) và chống reorder quanh biến đó, nhưng <code>active++</code> gồm ba bước đọc, cộng, ghi; hai thread có thể cùng đọc một giá trị và mất một lần tăng. <code>synchronized</code> đảm bảo cả mutual exclusion lẫn visibility cho cả khối code, dùng khi phải bảo vệ nhiều biến hoặc thao tác ghép kiểu check-then-act. <code>AtomicInteger.incrementAndGet()</code> dùng CAS nên atomic mà không cần khoá, phù hợp nhất cho một bộ đếm đơn lẻ. <code>volatile</code> một mình chỉ đủ khi một thread ghi và các thread khác chỉ đọc, như cờ dừng <code>volatile boolean running</code>.</div>
+        <pre class="code-block" data-lang="Java"><code><span class="tk-kw">class</span> <span class="tk-type">RequestTracker</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">final</span> <span class="tk-type">AtomicInteger</span> active = <span class="tk-kw">new</span> <span class="tk-type">AtomicInteger</span>();
+  <span class="tk-kw">private</span> <span class="tk-kw">int</span> total; <span class="tk-com">// được bảo vệ bởi khoá của this</span>
+
+  <span class="tk-kw">void</span> start() {
+    active.incrementAndGet(); <span class="tk-com">// atomic, không cần khoá</span>
+    <span class="tk-kw">synchronized</span> (<span class="tk-kw">this</span>) {
+      total++;
+    }
+  }
+
+  <span class="tk-kw">int</span> active() { <span class="tk-kw">return</span> active.get(); }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q23">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q22.html"><span class="muted small">← Câu trước</span><span>Vì sao truyền List&lt;Cat&gt; vào hàm nhận List&lt;Animal&gt; thì được, còn MutableList&lt;Cat…</span></a>
+  <a class="pager-next" href="../s/and-mid-q24.html"><span class="muted small">Câu sau →</span><span>Module Java cũ dùng ExecutorService để tải ảnh nền. Những lỗi hay gặp khi dùng…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Java &amp; JVM</h2><a class="section-sub" href="../phong-van/android/chu-de/java/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q24.html">Module Java cũ dùng ExecutorService để tải ảnh nền. Những lỗi hay gặp khi dùng ExecutorService trên Android là gì, và khi chuyển sang Kotlin bạn nối nó với coroutines thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q25.html">App thỉnh thoảng bị ANR. Trace cho thấy main thread chờ khoá của CartManager, còn thread sync chờ khoá của UserManager. Với code Java dưới đây, vì sao app treo và bạn phòng tránh thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-m22.html">Main thread gọi poller.stopPolling() nhưng có lúc thread poller không bao giờ dừng. Cách sửa tối thiểu và đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m23.html">Trong class Account, deposit() là instance method synchronized, còn audit() là static synchronized. Hai thread gọi account.deposit() và Account.audit() cùng lúc thì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m24.html">Gọi executor.shutdown() khi pool vẫn còn task đang chạy và vài task đang chờ trong queue. Điều gì xảy ra?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m25.html">Nhiều thread cùng gọi hit(&quot;home&quot;) trên map dưới đây. Vấn đề là gì và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

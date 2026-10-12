@@ -11,6 +11,7 @@ Website **Mobile Interview**: ôn phỏng vấn mobile theo nền tảng (**Flut
 - **Cộng đồng**: người dùng đóng góp câu hỏi, đề xuất tính năng, góp ý nội dung, báo lỗi, hỏi đáp; có Roadmap và trạng thái xử lý từng yêu cầu (dữ liệu lấy từ GitHub Issues). Câu hỏi được duyệt hiển thị tên người đóng góp.
 - **Việc làm**: theo từng nền tảng, có lối tắt sang trang tìm kiếm đã lọc sẵn trên ITviec, TopCV, VietnamWorks, CareerViet, LinkedIn, kèm tin tuyển dụng do cộng đồng đăng (GitHub Issues).
 - **Chia sẻ**: mỗi câu có trang riêng `#/q/<id>` và link chia sẻ `s/<id>.html` với ảnh/tiêu đề preview riêng khi đăng lên Facebook, Zalo.
+- **SEO**: site dùng `#hash` nên Google chỉ thấy trang chủ. `scripts/build-pages.mjs` sinh trang HTML tĩnh có sẵn nội dung cho từng câu (`s/<id>.html`), cho từng nền tảng / rank / chủ đề (`phong-van/...`) và `sitemap.xml`. Đáp án nằm trong ô bấm để xem, Google vẫn đọc được.
 - **Cài như app (PWA)**: cài lên màn hình chính điện thoại, học được cả khi offline.
 
 Đây là site tĩnh thuần HTML/CSS/JS (ES modules): không cần build, không có dependency. Tiến độ được lưu trong `localStorage` của trình duyệt.
@@ -42,7 +43,9 @@ js/views/               home, study, review (Ôn hôm nay), quiz, interview (Ph�
 js/pwa.js, sw.js        đăng ký service worker, cài app, cache offline (network-first)
 manifest.webmanifest    thông tin PWA (tên, icon, shortcut)
 assets/                 icon app, og.png (preview trang chủ), og-<track>.png (preview trang chia sẻ)
-s/<id>.html             trang chia sẻ từng câu (sinh bởi scripts/build-share-pages.mjs)
+s/<id>.html             trang tĩnh từng câu: link chia sẻ + trang cho Google (sinh bởi scripts/build-pages.mjs)
+phong-van/              trang tổng hợp tĩnh theo nền tảng / rank / chủ đề (SEO)
+sitemap.xml             danh sách trang tĩnh, gửi cho Google Search Console
 js/config.js            repo GitHub dùng cho trang Cộng đồng
 js/community.js         đọc GitHub Issues (cache + ETag), map label → trạng thái
 js/jobs.js              trang tuyển dụng ngoài theo track, đọc tin tuyển dụng (label `type: job`)
@@ -60,7 +63,7 @@ scripts/validate.mjs    kiểm tra schema dữ liệu, danh sách cache offline,
 
 Ngân hàng câu hỏi Flutter của mỗi rank = `data/flutter/questions/<rank>.js` + các câu trong lộ trình có `rank` tương ứng.
 
-Thêm một nền tảng mới: khai báo trong `data/tracks.js`, tạo `data/<track>/` giống các track khác, thêm file vào `PRECACHE` của `sw.js`, tạo ảnh `assets/og-<track>.png`, rồi chạy `node scripts/build-share-pages.mjs` và `node scripts/validate.mjs`.
+Thêm một nền tảng mới: khai báo trong `data/tracks.js`, tạo `data/<track>/` giống các track khác, thêm file vào `PRECACHE` của `sw.js`, tạo ảnh `assets/og-<track>.png`, rồi chạy `node scripts/build-pages.mjs` và `node scripts/validate.mjs`.
 
 ## Thống kê truy cập
 
@@ -125,11 +128,11 @@ Câu quiz (`data/<track>/quiz/<rank>.js`):
 
 App tự xáo trộn thứ tự đáp án, nên **không** viết đáp án kiểu "Cả A và B" hay "Tất cả các đáp án trên".
 
-Sau khi thêm/sửa câu hỏi, tạo lại trang chia sẻ rồi chạy kiểm tra (cần Node 18+):
+Sau khi thêm/sửa câu hỏi, tạo lại trang tĩnh rồi chạy kiểm tra (cần Node 18+):
 
 ```bash
-node scripts/build-share-pages.mjs        # cập nhật thư mục s/
-node scripts/validate.mjs                 # mọi track + cache offline + trang chia sẻ
+node scripts/build-pages.mjs              # cập nhật s/, phong-van/, sitemap.xml
+node scripts/validate.mjs                 # mọi track + cache offline + trang tĩnh
 node scripts/validate.mjs android         # chỉ kiểm tra dữ liệu một track
 node scripts/validate.mjs android junior  # chỉ một rank của một track
 ```

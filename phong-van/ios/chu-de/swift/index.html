@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS: Swift — Mobile Interview</title>
+<meta name="description" content="13 câu hỏi phỏng vấn iOS về Swift từ Fresher đến Senior, có đáp án mẫu và 25 câu quiz trắc nghiệm.">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swift/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS: Swift — Mobile Interview">
+<meta property="og:description" content="13 câu hỏi phỏng vấn iOS về Swift từ Fresher đến Senior, có đáp án mẫu và 25 câu quiz trắc nghiệm.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swift/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Swift","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swift/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../../phong-van/android/">Android</a>
+      <a href="../../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">Swift</span>
+</nav>
+
+<header class="view-head">
+  <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
+  <h1>Câu hỏi phỏng vấn iOS: Swift</h1>
+  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 25 câu quiz về Swift, xếp theo rank từ Fresher đến Senior.</p>
+</header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-fre-q01.html">Optional trong Swift là gì? Có những cách nào để lấy giá trị ra khỏi một Optional, và vì sao nên hạn chế force unwrap !?</a></li>
+    <li><a href="../../../../s/ios-fre-q02.html">if let và guard let khác nhau thế nào? Khi nào bạn chọn guard let?</a></li>
+    <li><a href="../../../../s/ios-fre-q03.html">Struct và class trong Swift khác nhau thế nào? Vì sao khai báo let với một instance struct thì không sửa được property, còn với class thì vẫn sửa được?</a></li>
+    <li><a href="../../../../s/ios-fre-q04.html">Enum có associated value là gì? Cho ví dụ dùng switch để hiển thị trạng thái tải dữ liệu của một màn hình.</a></li>
+    <li><a href="../../../../s/ios-fre-q05.html">Closure trong Swift là gì? Giải thích cú pháp trailing closure và $0 qua ví dụ filter, map, reduce.</a></li>
+    <li><a href="../../../../s/ios-fre-q06.html">Protocol và extension trong Swift dùng để làm gì? Extension có thêm được stored property không?</a></li>
+    <li><a href="../../../../s/ios-fre-q07.html">Swift xử lý lỗi bằng throws, do/catch, try? và try! như thế nào? Khi nào dùng try??</a></li>
+    <li><a href="../../../../s/ios-fre-m01.html">Thêm phần tử vào mảng khai báo bằng let như đoạn code sau thì kết quả thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m02.html">Score là struct; sau khi gán var b = a rồi sửa b.value, đoạn code in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m03.html">Hai hằng let cùng trỏ tới một instance của class Counter; sửa qua c2 thì c1.value in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m04.html">Với let nickname: String? = &quot;an&quot;, biến length trong let length = nickname?.count có kiểu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m05.html">Dùng ?? với giá trị lấy từ Dictionary, đoạn code in ra gì theo thứ tự từng dòng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m06.html">switch trên enum có associated value sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m07.html">Hàm dùng guard let sau có vấn đề gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m08.html">Sau các thao tác trên Set như đoạn code sau, tags.count bằng bao nhiêu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m09.html">Chuỗi filter → map → reduce sau in ra giá trị nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m10.html">Một property khai báo không kèm từ khoá access control (ví dụ var name: String trong class) thì có mức truy cập mặc định nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m11.html">Gọi hàm throws bằng try? như sau thì print(a, b) in ra gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-jun-q01.html">Vì sao compiler bắt thêm @escaping khi bạn lưu closure tham số vào property hoặc gọi nó trong completion của request mạng? Closure non-escaping có lợi gì?</a></li>
+    <li><a href="../../../../s/ios-jun-q02.html">Capture list [x] trong closure khác gì so với dùng biến x trực tiếp? Ngoài [weak self], bạn còn dùng capture list vào việc gì?</a></li>
+    <li><a href="../../../../s/ios-jun-q03.html">Dự án có hàng chục loại cell, chỗ nào cũng viết dequeueReusableCell(withIdentifier: &quot;ProductCell&quot;, for: indexPath) as! ProductCell và thỉnh thoảng crash vì gõ sai identifier. Bạn dùng protocol extension và generics để gọn lại thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-m01.html">Closure dùng capture list [box] với một class; sau đó biến box bị gán sang object mới. Đoạn code in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m02.html">Protocol Describable có requirement describe() kèm cài đặt mặc định trong extension; Book dùng bản mặc định, còn Movie tự cài đặt. Vòng lặp in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m03.html">Hàm có hai khối defer và một return. Thứ tự các dòng in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m04.html">Bạn muốn [1, 2, 3].total() và [1.5, 2.5].total() đều dùng được, còn [&quot;a&quot;].total() báo lỗi compile. Khai báo nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m05.html">Khai báo nào dùng được toán tử == mà không cần tự viết hàm so sánh?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m06.html">ViewModel lưu closure completion vào property để gọi lại khi có kết quả tìm kiếm. Đoạn code này có vấn đề gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> iOS Middle</h2><a class="section-sub" href="../../../../phong-van/ios/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-mid-q12.html">Trong code review bạn thấy func makeRepository() -&gt; any UserRepository ở chỗ này và func render(_ shape: some Shape) ở chỗ khác. some và any khác nhau thế nào, khi nào chọn cái nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q13.html">Array, Dictionary của Swift là value type nhưng gán qua lại rất rẻ nhờ copy-on-write. Nếu bạn tự viết một struct bọc storage là class (vd. một buffer lớn), làm sao để nó cũng có copy-on-write?</a></li>
+    <li><a href="../../../../s/ios-mid-q14.html">Bạn muốn các property như volume, progress luôn bị giới hạn trong một khoảng giá trị mà không phải lặp code ở từng setter. Viết property wrapper thế nào, và projectedValue (truy cập qua $) dùng để làm gì?</a></li>
+    <li><a href="../../../../s/ios-mid-m12.html">Với var a = [1, 2, 3], tiếp theo var b = a rồi b.append(4): buffer phần tử của Array thực sự bị copy khi nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m13.html">Hàm makeIcon trả về some View với hai nhánh return như dưới. Compiler xử lý thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m14.html">Hàm sau kết thúc chuỗi operator bằng .eraseToAnyPublisher() và khai báo kiểu trả về AnyPublisher&lt;[Item], Never&gt;. Mục đích chính của việc này là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m15.html">Property wrapper Trimmed cắt khoảng trắng và đếm số lần gán qua projectedValue. Sau hai lần gán, dòng print in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m16.html">Hàm update nhận WritableKeyPath; lời gọi với \.name compile được nhưng dòng cuối với \.id thì báo lỗi. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m17.html">Closure nội dung của một VStack gồm một Text và một câu if show { Text(&quot;B&quot;) } không có else. Nhờ @ViewBuilder (một result builder), compiler biến closure này thành gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m18.html">Khai báo func total(_ prices: some Collection&lt;Int&gt;) -&gt; Int tương đương với cách viết nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m19.html">So sánh hai giá trị đều khai báo kiểu any Equatable bằng == như dưới thì kết quả là gì?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2>Chủ đề khác</h2></div>
+  <div class="chips">
+    <a class="chip" href="../../../../phong-van/ios/chu-de/memory/">Memory &amp; ARC</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/concurrency/">Concurrency</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/swiftui/">SwiftUI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/navigation/">Navigation</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/data/">Networking &amp; Storage</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/platform/">App lifecycle &amp; Platform</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/perf/">Performance</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/security/">Security</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/design/">System Design</a>
+    <a class="chip" href="../../../../phong-van/ios/chu-de/soft/">Behavioral</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../../#/">Ôn luyện miễn phí</a> · <a href="../../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>

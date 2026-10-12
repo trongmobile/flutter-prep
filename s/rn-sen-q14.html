@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Senior: Crash report từ production trên Sentry chỉ hiện stack trace kiểu index…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Bundle production đã được minify và, với Hermes, biên dịch sang bytecode, nên vị trí lỗi chỉ là offset trong file đã biến đổi; cần source map để map ngược về…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q14.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Crash report từ production trên Sentry chỉ hiện stack trace kiểu index…">
@@ -16,10 +17,74 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-sen-q14");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Crash report từ production trên Sentry chỉ hiện…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q14.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Crash report từ production trên Sentry chỉ hiện stack trace kiểu index.android.bundle:1:284731. Vì sao, và quy trình release cần làm gì để đọc được?</p>
-<p><a href="../#/q/rn-sen-q14">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Crash report từ production trên Sentry chỉ hiện…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/tooling/">Expo, Build &amp; Release</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Crash report từ production trên Sentry chỉ hiện stack trace kiểu <code>index.android.bundle:1:284731</code>. Vì sao, và quy trình release cần làm gì để đọc được?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bundle production đã được minify và, với Hermes, biên dịch sang bytecode, nên vị trí lỗi chỉ là offset trong file đã biến đổi; cần source map để map ngược về file và dòng gốc. Với Hermes phải dùng source map đã ghép (map của Metro cộng map do <code>hermesc</code> sinh ra), map của Metro đứng một mình sẽ cho kết quả sai. Quy trình: mỗi build trên CI tạo source map và upload lên Sentry, gắn đúng release/dist (hoặc debug ID ở các bản SDK mới) khớp với giá trị SDK gửi lên khi crash. Mỗi bản OTA là một bundle mới nên cũng phải upload map tương ứng, nếu không crash từ bản update sẽ không đọc được. Phần native cũng cần dSYM trên iOS và mapping file của R8 trên Android. <code>@sentry/react-native</code> có tích hợp vào bước build Gradle/Xcode và EAS; điều quan trọng là tự động hoá trong pipeline chứ không làm tay, và kiểm chứng bằng một crash thử trên bản staging.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q14">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q13.html"><span class="muted small">← Câu trước</span><span>Sau khi App Center/CodePush ngừng hoạt động, team chuyển sang EAS Update. runti…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q15.html"><span class="muted small">Câu sau →</span><span>Team đang commit thư mục ios/ và android/, sửa tay rất nhiều, và mỗi lần nâng R…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Expo, Build &amp; Release</h2><a class="section-sub" href="../phong-van/react-native/chu-de/tooling/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q13.html">Sau khi App Center/CodePush ngừng hoạt động, team chuyển sang EAS Update. runtimeVersion dùng để làm gì, và cấu hình sai thì hậu quả là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q15.html">Team đang commit thư mục ios/ và android/, sửa tay rất nhiều, và mỗi lần nâng React Native mất cả tuần. Bạn có đề xuất chuyển sang Continuous Native Generation (Expo prebuild) không? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m25.html">Bản 2.4.0 (cấu hình dưới) thêm react-native-maps và đã lên store. Sau đó team đẩy một bản EAS Update có dùng thư viện này. User còn ở bản 2.3.0 sẽ thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m26.html">Bản iOS mới đang phát hành theo phased release 7 ngày trên App Store. Trong thời gian đó, user muốn có bản mới ngay thì sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m27.html">Về chính sách của App Store và Google Play đối với OTA update cho app React Native, phát biểu nào chính xác nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m28.html">App bật Hermes. Team upload source map do Metro sinh ra lên Sentry, nhưng stack trace production vẫn trỏ sai dòng. Thiếu bước gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

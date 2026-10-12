@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz Flutter Fresher: Đoạn code sau in ra các số theo thứ tự nào?</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Thân hàm async chạy đồng bộ cho tới await đầu tiên nên 1 được in ngay; tại await hàm tạm dừng và trả quyền về main nên 3 in tiếp; khoảng 100ms sau mới in 2.…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/fre-m12.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz Flutter Fresher: Đoạn code sau in ra các số theo thứ tự nào?">
@@ -16,10 +17,87 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/fre-m12");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/"},{"@type":"ListItem","position":5,"name":"Đoạn code sau in ra các số theo thứ tự nào?","item":"https://trongmobile.github.io/flutter-prep/s/fre-m12.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Đoạn code sau in ra các số theo thứ tự nào?</p>
-<p><a href="../#/q/fre-m12">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Đoạn code sau in ra các số theo thứ tự nào?</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/flutter/chu-de/async/">Async &amp; Isolate</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Đoạn code sau in ra các số theo thứ tự nào?</h1>
+  
+  <pre class="code-block"><code><span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; load() <span class="tk-kw">async</span> {
+  print(<span class="tk-str">&#39;1&#39;</span>);
+  <span class="tk-kw">await</span> <span class="tk-type">Future</span>.delayed(<span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">100</span>));
+  print(<span class="tk-str">&#39;2&#39;</span>);
+}
+
+<span class="tk-kw">void</span> main() {
+  load();
+  print(<span class="tk-str">&#39;3&#39;</span>);
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>1</code>, <code>2</code>, <code>3</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>3</code>, <code>1</code>, <code>2</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>3</code>, <code>2</code>, <code>1</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>1</code>, <code>3</code>, <code>2</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div>Thân hàm async chạy đồng bộ cho tới <code>await</code> đầu tiên nên <code>1</code> được in ngay; tại <code>await</code> hàm tạm dừng và trả quyền về <code>main</code> nên <code>3</code> in tiếp; khoảng 100ms sau mới in <code>2</code>. Nhiều người nghĩ cả hàm <code>load()</code> chạy sau nên chọn <code>3</code>, <code>1</code>, <code>2</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/fre-m12">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/fre-m11.html"><span class="muted small">← Câu trước</span><span>Phát biểu nào về extends, implements, with trong Dart là SAI?</span></a>
+  <a class="pager-next" href="../s/fre-m13.html"><span class="muted small">Câu sau →</span><span>Hàm async dưới đây phải khai báo kiểu trả về (chỗ ???) là gì?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/flutter/fresher/">Tất cả câu hỏi Flutter Fresher</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Async &amp; Isolate</h2><a class="section-sub" href="../phong-van/flutter/chu-de/async/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/fre-q11.html">async/await hoạt động thế nào? await có làm đứng (block) UI không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q12.html">Làm sao bắt lỗi khi gọi một hàm async, ví dụ gọi API thất bại?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-m13.html">Hàm async dưới đây phải khai báo kiểu trả về (chỗ ???) là gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/fre-m14.html">Vì sao đoạn code sau báo lỗi compile?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/jun-q08.html">Khi xử lý lỗi trong Dart, on, catch (e, st), rethrow và finally khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/jun-q09.html">Khi tự listen một Stream trong State, vì sao phải giữ lại StreamSubscription và cancel() nó?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Middle: Người dùng bấm 'thích' một bài viết và muốn UI đổi ngay, không chờ API…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
-<meta name="robots" content="noindex">
+<title>Câu hỏi phỏng vấn React Native Middle: Người dùng bấm &#39;thích&#39; một bài viết và muốn UI đổi ngay, không chờ API…</title>
+<meta name="description" content="Trong onMutate: gọi cancelQueries để refetch đang chạy không ghi đè, lưu snapshot cũ bằng getQueryData, rồi setQueryData để cập nhật cache ngay; trả snapshot…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-q05.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle: Người dùng bấm 'thích' một bài viết và muốn UI đổi ngay, không chờ API…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle: Người dùng bấm &#39;thích&#39; một bài viết và muốn UI đổi ngay, không chờ API…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-mid-q05.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
@@ -16,10 +17,86 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-mid-q05");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"Người dùng bấm 'thích' một bài viết và muốn UI…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-q05.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Người dùng bấm 'thích' một bài viết và muốn UI đổi ngay, không chờ API trả về. Bạn làm optimistic update với TanStack Query thế nào cho an toàn?</p>
-<p><a href="../#/q/rn-mid-q05">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Người dùng bấm &#39;thích&#39; một bài viết và muốn UI…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Người dùng bấm &#39;thích&#39; một bài viết và muốn UI đổi ngay, không chờ API trả về. Bạn làm optimistic update với TanStack Query thế nào cho an toàn?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trong <code>onMutate</code>: gọi <code>cancelQueries</code> để refetch đang chạy không ghi đè, lưu snapshot cũ bằng <code>getQueryData</code>, rồi <code>setQueryData</code> để cập nhật cache ngay; trả snapshot ra làm context. <code>onError</code> dùng context đó để rollback về dữ liệu cũ và báo lỗi cho người dùng. <code>onSettled</code> gọi <code>invalidateQueries</code> để đồng bộ lại với server dù thành công hay thất bại. Bẫy hay gặp là sửa trực tiếp object đang nằm trong cache thay vì tạo object mới, và quên <code>cancelQueries</code> khiến một response cũ về muộn ghi đè trạng thái optimistic.</div>
+        <pre class="code-block"><code>useMutation({
+  mutationFn: likePost,
+  onMutate: <span class="tk-kw">async</span> (id: <span class="tk-kw">string</span>) =&gt; {
+    <span class="tk-kw">await</span> queryClient.cancelQueries({ queryKey: [<span class="tk-str">&#39;post&#39;</span>, id] });
+    <span class="tk-kw">const</span> prev = queryClient.getQueryData&lt;<span class="tk-type">Post</span>&gt;([<span class="tk-str">&#39;post&#39;</span>, id]);
+    queryClient.setQueryData&lt;<span class="tk-type">Post</span>&gt;([<span class="tk-str">&#39;post&#39;</span>, id], (p) =&gt;
+      p ? { ...p, liked: <span class="tk-kw">true</span>, likes: p.likes + <span class="tk-num">1</span> } : p,
+    );
+    <span class="tk-kw">return</span> { prev };
+  },
+  onError: (_err, id, ctx) =&gt; queryClient.setQueryData([<span class="tk-str">&#39;post&#39;</span>, id], ctx?.prev),
+  onSettled: (_data, _err, id) =&gt; queryClient.invalidateQueries({ queryKey: [<span class="tk-str">&#39;post&#39;</span>, id] }),
+});</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q05">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-q04.html"><span class="muted small">← Câu trước</span><span>Team đang lưu mọi response API vào Redux. Bạn đề xuất tách server state và clie…</span></a>
+  <a class="pager-next" href="../s/rn-mid-q06.html"><span class="muted small">Câu sau →</span><span>Màn EditProfile nhận prop userId và khởi tạo form bằng useState(user.name). Khi…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/react-native/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-m18.html">Màn hình đơn hàng có tab lọc theo status; đổi tab nhưng danh sách vẫn là dữ liệu của tab cũ. Lỗi nằm ở đâu?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q22.html">Gọi API bằng fetch thế nào? Vì sao server trả 404 hoặc 500 mà code không nhảy vào catch?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q23.html">AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ vào AsyncStorage không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q18.html">Màn hình chi tiết sản phẩm gọi API theo id trong useEffect. Bạn tổ chức trạng thái loading/error thế nào, và cần xử lý gì khi người dùng thoát màn hình hoặc đổi id trước khi request xong?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q19.html">Team định dùng AsyncStorage để lưu danh sách vài nghìn sản phẩm cho chế độ offline cùng với cài đặt người dùng. Bạn góp ý gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-fre-m35.html">Server trả về HTTP 404 cho request dưới đây. Màn hình console in ra gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz React Native Junior: Khi component sau mount lần đầu (không bật Strict Mode), console in theo thứ tự nào?</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Effect không chạy tại dòng khai báo mà sau khi React commit kết quả render lên màn hình, nên cả hai log trong thân hàm in trước. cleanup chỉ chạy trước lần e…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-m01.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz React Native Junior: Khi component sau mount lần đầu (không bật Strict Mode), console in theo thứ tự nào?">
@@ -16,10 +17,86 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-jun-m01");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Khi component sau mount lần đầu (không bật Stri…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-m01.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Khi component sau mount lần đầu (không bật Strict Mode), console in theo thứ tự nào?</p>
-<p><a href="../#/q/rn-jun-m01">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Khi component sau mount lần đầu (không bật Stri…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/react/">React &amp; Hooks</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Khi component sau mount lần đầu (không bật Strict Mode), console in theo thứ tự nào?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">Demo</span>() {
+  console.log(<span class="tk-str">&#39;render&#39;</span>);
+  useEffect(() =&gt; {
+    console.log(<span class="tk-str">&#39;effect&#39;</span>);
+    <span class="tk-kw">return</span> () =&gt; console.log(<span class="tk-str">&#39;cleanup&#39;</span>);
+  }, []);
+  console.log(<span class="tk-str">&#39;after hook&#39;</span>);
+  <span class="tk-kw">return</span> <span class="tk-kw">null</span>;
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>render</code>, <code>after hook</code>, <code>effect</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>render</code>, <code>effect</code>, <code>after hook</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>effect</code>, <code>render</code>, <code>after hook</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>render</code>, <code>after hook</code>, <code>effect</code>, <code>cleanup</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Effect không chạy tại dòng khai báo mà sau khi React commit kết quả render lên màn hình, nên cả hai log trong thân hàm in trước. <code>cleanup</code> chỉ chạy trước lần effect kế tiếp hoặc khi unmount; với deps <code>[]</code> nghĩa là lúc unmount.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-m01">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <span></span>
+  <a class="pager-next" href="../s/rn-jun-m02.html"><span class="muted small">Câu sau →</span><span>useEffect không truyền tham số thứ hai (mảng dependency) thì effect chạy khi nà…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề React &amp; Hooks</h2><a class="section-sub" href="../phong-van/react-native/chu-de/react/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q01.html">Màn hình đăng ký listener (AppState, Keyboard, socket…) trong useEffect. Sau vài lần vào ra màn hình, mỗi sự kiện bị xử lý nhiều lần. Nguyên nhân và cách sửa?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q02.html">Đồng hồ đếm ngược dưới đây chỉ giảm từ 60 xuống 59 rồi đứng yên. Vì sao, và sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q03.html">Màn hình đăng ký cần: nhấn Next trên bàn phím thì focus sang ô mật khẩu, và giữ id của timer gửi lại OTP để huỷ khi rời màn hình. Vì sao cả hai việc này dùng useRef chứ không dùng useState?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q04.html">Màn hình có 2.000 sản phẩm, ô lọc theo giá và một nút mở modal sắp xếp. Mỗi lần mở hay đóng modal, app khựng lại vì lọc lại cả danh sách. Bạn dùng useMemo thế nào, và useMemo khác useCallback ra sao?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q05.html">Ô tìm kiếm gọi API mỗi lần gõ một ký tự. Hãy viết custom hook useDebounce để chỉ gọi API khi người dùng ngừng gõ 400ms. Hai component cùng dùng hook này có chung state không?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q06.html">Màn hình Profile crash với lỗi Rendered more hooks than during the previous render ngay khi người dùng đăng nhập xong. Nhìn đoạn code, nguyên nhân là gì và vì sao React có quy tắc này?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

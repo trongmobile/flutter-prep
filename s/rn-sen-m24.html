@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quiz React Native Senior: Dùng Gesture Handler cùng Reanimated, callback onEnd của gesture (chạy dưới dạng wo…</title>
-<meta name="description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Worklet chạy trong một JS runtime riêng trên UI thread; hàm không phải worklet như setScore không thể gọi thẳng từ đó và sẽ báo lỗi kiểu &#39;Tried to synchronou…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-m24.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Quiz React Native Senior: Dùng Gesture Handler cùng Reanimated, callback onEnd của gesture (chạy dưới dạng wo…">
@@ -16,10 +17,87 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/rn-sen-m24");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Dùng Gesture Handler cùng Reanimated, callback…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-m24.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Dùng Gesture Handler cùng Reanimated, callback onEnd của gesture (chạy dưới dạng worklet trên UI thread) gọi thẳng setScore của React. Điều gì xảy ra?</p>
-<p><a href="../#/q/rn-sen-m24">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Dùng Gesture Handler cùng Reanimated, callback…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/animation/">Animation &amp; Gesture</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Dùng Gesture Handler cùng Reanimated, callback <code>onEnd</code> của gesture (chạy dưới dạng worklet trên UI thread) gọi thẳng <code>setScore</code> của React. Điều gì xảy ra?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">const</span> [score, setScore] = useState(<span class="tk-num">0</span>);
+<span class="tk-kw">const</span> offset = useSharedValue(<span class="tk-num">0</span>);
+
+<span class="tk-kw">const</span> pan = <span class="tk-type">Gesture</span>.<span class="tk-type">Pan</span>()
+  .onUpdate((e) =&gt; {
+    offset.value = e.translationX;
+  })
+  .onEnd(() =&gt; {
+    setScore((s) =&gt; s + <span class="tk-num">1</span>); <span class="tk-com">// gọi từ UI thread</span>
+  });</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Chạy bình thường vì Reanimated tự chuyển mọi hàm về JS thread</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>setScore</code> chạy trên UI thread nên state được cập nhật nhanh hơn</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Báo lỗi vì hàm JS thường không gọi đồng bộ được từ UI runtime</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Không lỗi, nhưng <code>setScore</code> bị bỏ qua và <code>score</code> giữ nguyên</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Worklet chạy trong một JS runtime riêng trên UI thread; hàm không phải worklet như <code>setScore</code> không thể gọi thẳng từ đó và sẽ báo lỗi kiểu &#39;Tried to synchronously call a non-worklet function on the UI thread&#39;. Cần lên lịch về JS thread bằng <code>runOnJS(setScore)(...)</code> (các bản mới chuyển sang API tương đương của <code>react-native-worklets</code>) hoặc cho gesture chạy trên JS bằng <code>.runOnJS(true)</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-m24">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-m23.html"><span class="muted small">← Câu trước</span><span>Mỗi card trong list mở rộng bằng Reanimated như dưới. Khi nhiều card cùng anima…</span></a>
+  <a class="pager-next" href="../s/rn-sen-m25.html"><span class="muted small">Câu sau →</span><span>Bản 2.4.0 (cấu hình dưới) thêm react-native-maps và đã lên store. Sau đó team đ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Animation &amp; Gesture</h2><a class="section-sub" href="../phong-van/react-native/chu-de/animation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-m23.html">Mỗi card trong list mở rộng bằng Reanimated như dưới. Khi nhiều card cùng animate, phát biểu nào đúng nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-q15.html">Animated với useNativeDriver: true khác false thế nào? Vì sao animate height lại báo lỗi khi bật native driver?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q16.html">Reanimated chạy animation &#39;trên UI thread&#39; nghĩa là gì? Shared value và worklet khác useState và hàm JS thường ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q17.html">Làm swipe-to-delete hay bottom sheet kéo theo tay, vì sao nên dùng react-native-gesture-handler kết hợp Reanimated thay vì PanResponder?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m27.html">Animation thay đổi width dưới đây chạy thế nào khi bật useNativeDriver: true?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m28.html">Mỗi lần bấm nút, component chứa đoạn Reanimated sau có re-render không?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

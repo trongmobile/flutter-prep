@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (scripts/ chạy bằng node, chưa có dependency nhưng phòng khi thêm)
+node_modules/
+npm-debug.log*
+
+# Biến môi trường, file local
+.env
+.env.*
+*.local
+
+# Ghi chú marketing — không đưa lên repo (repo được public qua GitHub Pages)
+mkt.md

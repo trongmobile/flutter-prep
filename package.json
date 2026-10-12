@@ -5,7 +5,7 @@
   "description": "Ôn phỏng vấn Flutter theo rank: câu hỏi, flashcard, quiz, phỏng vấn thử, ôn tập ngắt quãng, lộ trình 35 ngày.",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "build:share": "node scripts/build-share-pages.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
     "serve": "python3 -m http.server 8000"
   }
 }

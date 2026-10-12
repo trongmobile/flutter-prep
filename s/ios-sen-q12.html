@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Senior: Thiết kế feature flag cho app iOS thế nào để vừa tắt được tính năng lỗi trong v…</title>
-<meta name="description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Mỗi flag có giá trị mặc định an toàn compile sẵn trong app; giá trị remote được fetch, cache lại và chốt tại một điểm ổn định như đầu session để UI không đổi…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q12.html">
+<meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Thiết kế feature flag cho app iOS thế nào để vừa tắt được tính năng lỗi trong v…">
@@ -16,10 +17,87 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<script>location.replace("../#/q/ios-sen-q12");</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Thiết kế feature flag cho app iOS thế nào để vừ…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q12.html"}]}</script>
 </head>
-<body style="font-family:system-ui,sans-serif;padding:24px">
-<p>Thiết kế feature flag cho app iOS thế nào để vừa tắt được tính năng lỗi trong vài phút, vừa không biến thành nợ kỹ thuật?</p>
-<p><a href="../#/q/ios-sen-q12">Mở câu hỏi trên Mobile Interview →</a></p>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Thiết kế feature flag cho app iOS thế nào để vừ…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Thiết kế feature flag cho app iOS thế nào để vừa tắt được tính năng lỗi trong vài phút, vừa không biến thành nợ kỹ thuật?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi flag có giá trị mặc định an toàn compile sẵn trong app; giá trị remote được fetch, cache lại và chốt tại một điểm ổn định như đầu session để UI không đổi giữa chừng. Code đọc flag qua một protocol được inject chứ không gọi thẳng SDK remote config, để unit test và preview đặt được giá trị cụ thể. Tôi tách kill switch (sống lâu, dùng để tắt nhanh khi có sự cố) khỏi release flag (phải xoá ngay sau khi rollout 100%); mỗi flag có owner và hạn xoá, CI cảnh báo flag quá hạn. Cũng cần nhớ App Review không chấp nhận tính năng ẩn chưa qua duyệt, nên flag dùng để rollout dần chứ không để lén bật tính năng mới sau khi app đã được duyệt.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">Flag</span>: <span class="tk-type">String</span> { <span class="tk-kw">case</span> newCheckout, qrPayment }
+
+<span class="tk-kw">protocol</span> <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-kw">func</span> isEnabled(_ flag: <span class="tk-type">Flag</span>) -&gt; <span class="tk-type">Bool</span>
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">RemoteFeatureFlags</span>: <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> defaults: [<span class="tk-type">Flag</span>: <span class="tk-type">Bool</span>] = [.newCheckout: <span class="tk-kw">false</span>, .qrPayment: <span class="tk-kw">false</span>]
+  <span class="tk-kw">let</span> snapshot: [<span class="tk-type">String</span>: <span class="tk-type">Bool</span>] <span class="tk-com">// giá trị remote đã cache, chốt lúc bắt đầu session</span>
+
+  <span class="tk-kw">func</span> isEnabled(_ flag: <span class="tk-type">Flag</span>) -&gt; <span class="tk-type">Bool</span> {
+    snapshot[flag.rawValue] ?? <span class="tk-type">Self</span>.defaults[flag] ?? <span class="tk-kw">false</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q12">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q11.html"><span class="muted small">← Câu trước</span><span>Khi tách app thành nhiều module, bạn chọn link static hay dynamic? Đánh đổi là…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q13.html"><span class="muted small">Câu sau →</span><span>App bán hàng cho phép nhân viên tạo đơn khi mất mạng và tự đồng bộ khi có mạng…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/ios/chu-de/arch/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q10.html">App có hơn 30 dev cùng làm trên một target khổng lồ, build sạch mất hơn 10 phút và conflict liên tục. Bạn lập lộ trình tách module thế nào để không phải dừng làm tính năng, và đo hiệu quả ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q11.html">Khi tách app thành nhiều module, bạn chọn link static hay dynamic? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m18.html">Với cấu hình package sau, app target link cả SharedKit (dynamic) lẫn AnalyticsCore (static). Hệ quả dễ gặp nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m19.html">Mergeable libraries (giới thiệu từ Xcode 15) được thiết kế để giải quyết đánh đổi nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m20.html">Khi xây design system dùng chung cho nhiều team feature, code feature nên dùng màu theo cách nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-q15.html">ViewController của bạn tự push màn tiếp theo và biết quá nhiều về flow (login xong đi đâu, mở từ notification thì vào màn nào). Coordinator giải quyết việc này thế nào, và có bẫy gì về bộ nhớ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
 </body>
 </html>

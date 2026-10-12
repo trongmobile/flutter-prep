@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior (25 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="25 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior (25 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="25 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../../../phong-van/flutter/">Flutter</a>
+      <a href="../../../phong-van/android/">Android</a>
+      <a href="../../../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../../../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../../../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../../../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../../../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <span aria-current="page">Senior</span>
+</nav>
+
+<header class="view-head rank-purple">
+  <div class="eyebrow">phỏng vấn · ios · senior (4+ năm)</div>
+  <h1>Câu hỏi phỏng vấn iOS Senior</h1>
+  <p class="subtitle">Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc lớn, system design, leadership. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../../../#/ios/study/senior">Ôn bằng flashcard</a>
+    <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
+  </div>
+</header>
+<nav class="chips" aria-label="Rank khác">
+  <a class="chip" href="../../../phong-van/ios/fresher/">Fresher</a>
+  <a class="chip" href="../../../phong-van/ios/junior/">Junior</a>
+  <a class="chip" href="../../../phong-van/ios/middle/">Middle</a>
+  <a class="chip active" href="../../../phong-van/ios/senior/" aria-current="page">Senior</a>
+</nav>
+<nav class="toc" aria-label="Mục lục">
+  <h2 class="side-title">Mục lục</h2>
+  <ul>
+    <li><a href="#memory">Memory &amp; ARC</a> <span class="count">2</span></li>
+    <li><a href="#concurrency">Concurrency</a> <span class="count">3</span></li>
+    <li><a href="#swiftui">SwiftUI</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">1</span></li>
+    <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">3</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">3</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">2</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+  </ul>
+</nav>
+<section id="memory">
+  <div class="section-head"><h2>Memory &amp; ARC</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/memory/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q08.html">Mỗi lần mở rồi đóng màn hình chi tiết, memory tăng thêm vài MB nhưng Memory Graph Debugger không báo leak nào. Bạn truy nguyên nhân thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Memory Graph chỉ đánh dấu leak (biểu tượng tím) cho object không còn đường tham chiếu nào từ root, điển hình là một retain cycle bị bỏ rơi. Object vẫn bị giữ bởi singleton, cache, observer dạng block của <code>NotificationCenter</code>, closure lưu trong service hay <code>Timer</code> thì vẫn reachable nên không bị báo, đó là abandoned memory. Cách tìm là dùng Allocations với Mark Generation: đánh dấu, mở rồi đóng màn hình vài lần, đánh dấu tiếp, rồi xem object nào sống sót qua các generation. Sau đó mở Memory Graph tại object đó để thấy chuỗi tham chiếu từ root, và bật Malloc Stack Logging trong scheme để biết nó được cấp phát ở đâu. Một kiểm tra rẻ mà hiệu quả là log trong <code>deinit</code> của view controller và ViewModel để phát hiện sớm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q09.html">Store kiểu Redux giữ <code>AppState</code> là struct chứa mảng vài nghìn tin nhắn. Time Profiler cho thấy mỗi lần nhận tin mới, reducer lại copy toàn bộ mảng dù Array có copy-on-write. Vì sao, và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Copy-on-write chỉ tránh được copy khi buffer được tham chiếu duy nhất đúng lúc ghi. Reducer kiểu <code>var next = state</code> rồi <code>next.messages.append(m)</code> khiến buffer đang được cả state cũ trong store lẫn <code>next</code> cùng giữ khi <code>append</code>, nên lần nào cũng copy cả mảng: chi phí O(n) cho mỗi tin, kèm áp lực memory. Cách sửa là cho reducer nhận <code>inout AppState</code> và sửa tại chỗ, để buffer chỉ có một chủ và <code>append</code> không phải copy; các thư viện như TCA cũng thiết kế reducer nhận <code>inout State</code>. Ngoài ra tránh để nơi khác giữ bản sao state trong lúc ghi (middleware, lịch sử undo, snapshot gửi cho UI), vì mỗi bản sao còn sống lại buộc lần ghi kế tiếp phải copy. Sửa xong đo lại bằng Time Profiler để chắc phần copy đã biến mất.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">AppState</span> { <span class="tk-kw">var</span> messages: [<span class="tk-type">Message</span>] = [] }
+
+<span class="tk-com">// Chậm: lúc append, buffer bị cả state lẫn next cùng giữ -&gt; copy cả mảng</span>
+<span class="tk-kw">func</span> reduce(_ state: <span class="tk-type">AppState</span>, _ message: <span class="tk-type">Message</span>) -&gt; <span class="tk-type">AppState</span> {
+  <span class="tk-kw">var</span> next = state
+  next.messages.append(message)
+  <span class="tk-kw">return</span> next
+}
+
+<span class="tk-com">// Nhanh: sửa tại chỗ, buffer chỉ có một chủ nên append không phải copy</span>
+<span class="tk-kw">func</span> reduce(_ state: <span class="tk-kw">inout</span> <span class="tk-type">AppState</span>, _ message: <span class="tk-type">Message</span>) {
+  state.messages.append(message)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="concurrency">
+  <div class="section-head"><h2>Concurrency</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/concurrency/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q05.html">Bạn cần một <code>ImageCache</code> dùng chung cho cả app: đọc rất nhiều từ <code>cellForRowAt</code> trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng <code>actor</code>, <code>@MainActor</code> hay lock? Đánh đổi là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Actor an toàn nhất vì compiler kiểm tra isolation giúp, nhưng mọi truy cập từ bên ngoài phải <code>await</code>: <code>cellForRowAt</code> vốn đồng bộ không đọc ngay được mà phải tạo <code>Task</code>, ảnh hiện trễ một nhịp, và mọi lời gọi xếp hàng tuần tự qua actor. <code>@MainActor</code> cho đọc đồng bộ ngay trên main, hợp khi truy cập chủ yếu từ UI và thao tác rất nhẹ, nhưng việc ghi từ background phải nhảy về main. Class <code>final</code> bọc state bằng lock (<code>NSLock</code>, <code>OSAllocatedUnfairLock</code>) và đánh dấu <code>@unchecked Sendable</code> thì đọc đồng bộ được từ mọi thread với chi phí rất thấp; đổi lại an toàn dựa vào kỷ luật của người viết: critical section ngắn, không bao giờ giữ lock qua <code>await</code>. Với cache nóng như ảnh tôi thường chọn lock, đóng gói trong một type nhỏ; state nghiệp vụ có nhiều bước async thì để actor.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q06.html">Code cũ dùng <code>DispatchSemaphore</code> trên main thread để chờ kết quả từ một queue <code>.utility</code>, và Xcode báo cảnh báo priority inversion. Vấn đề là gì và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Priority inversion xảy ra khi thread ưu tiên cao (main, QoS user-interactive) phải chờ một việc đang chạy ở QoS thấp; việc đó lại bị các tác vụ ưu tiên hơn chen ngang, nên main bị treo lâu hơn cần thiết. Với lock có owner như <code>os_unfair_lock</code> hay khi gọi <code>DispatchQueue.sync</code>, hệ thống biết ai đang giữ để tạm nâng priority cho bên đó; còn <code>DispatchSemaphore</code> và <code>DispatchGroup.wait()</code> không biết ai sẽ signal nên không làm được. Cách sửa tốt nhất là không block main: chuyển sang callback hoặc <code>async/await</code>, vì khi <code>await</code> một <code>Task</code> thì priority của task được escalate theo bên đang chờ. Nếu bắt buộc phải đồng bộ, dùng lock có owner và giữ critical section thật ngắn.</div>
+        <pre class="code-block"><code><span class="tk-com">// Code cũ: main thread chờ semaphore, hệ thống không biết nâng priority cho ai</span>
+<span class="tk-kw">func</span> loadConfigSync() -&gt; <span class="tk-type">Config</span> {
+  <span class="tk-kw">let</span> semaphore = <span class="tk-type">DispatchSemaphore</span>(value: <span class="tk-num">0</span>)
+  <span class="tk-kw">var</span> result: <span class="tk-type">Config</span>?
+  <span class="tk-type">DispatchQueue</span>.global(qos: .utility).<span class="tk-kw">async</span> {
+    result = <span class="tk-type">ConfigLoader</span>.load()
+    semaphore.signal()
+  }
+  semaphore.wait() <span class="tk-com">// main bị block: hang + priority inversion</span>
+  <span class="tk-kw">return</span> result!
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi migrate theo từng module chứ không bật một lần cho cả app. Bước một: giữ Swift 5 mode nhưng bật strict concurrency checking mức <code>complete</code> để có danh sách cảnh báo, bắt đầu từ các module lá ít phụ thuộc như model, networking, rồi mới tới feature và app target. Bước hai: làm rõ isolation, như view controller và ViewModel là <code>@MainActor</code>, value type đi qua ranh giới concurrency thì <code>Sendable</code>, state dùng chung chuyển vào actor; thư viện bên thứ ba chưa cập nhật thì <code>@preconcurrency import</code> để tạm hạ cảnh báo. <code>@unchecked Sendable</code> và <code>nonisolated(unsafe)</code> chỉ dùng khi thật sự có lock bảo vệ, kèm comment giải thích. Module nào sạch cảnh báo thì bật Swift 6 mode cho riêng module đó và để CI chặn cảnh báo mới. Các bản Swift gần đây còn cho đặt default isolation là <code>MainActor</code> cho cả module, rất hợp với module UI vì giảm hẳn số annotation phải viết.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="swiftui">
+  <div class="section-head"><h2>SwiftUI</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/swiftui/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q04.html">Màn hình SwiftUI có danh sách vài nghìn dòng bị khựng mỗi khi một bộ đếm nhỏ ở header thay đổi. Bạn điều tra và tối ưu thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết xác định <code>body</code> nào chạy lại và vì sao: tạm thêm <code>let _ = Self._printChanges()</code> vào <code>body</code>, hoặc dùng template SwiftUI trong Instruments để đếm số lần view cập nhật. Nguyên nhân hay gặp là cả màn hình quan sát một <code>ObservableObject</code> lớn: bất kỳ <code>@Published</code> nào đổi cũng khiến mọi view dùng object đó tính lại <code>body</code>. Cách sửa: chuyển sang <code>@Observable</code> để view chỉ phụ thuộc property nó thực sự đọc, tách phần hay đổi thành view con riêng, dùng <code>List</code>/<code>LazyVStack</code> với <code>id</code> ổn định, và đưa việc nặng như sort, filter, format ra khỏi <code>body</code>. Tránh <code>AnyView</code> tràn lan vì nó che kiểu tĩnh khiến SwiftUI khó diff, và tránh <code>id</code> sinh mới mỗi lần render vì nó phá identity, buộc SwiftUI dựng lại view thay vì cập nhật.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">FeedScreen</span>: <span class="tk-type">View</span> {
+  <span class="tk-kw">let</span> model: <span class="tk-type">FeedModel</span> <span class="tk-com">// @Observable</span>
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+    <span class="tk-kw">let</span> _ = <span class="tk-type">Self</span>._printChanges() <span class="tk-com">// tạm thời: in lý do body chạy lại</span>
+    <span class="tk-type">VStack</span> {
+      <span class="tk-type">ReadCounter</span>(model: model) <span class="tk-com">// chỉ view này đọc readCount</span>
+      <span class="tk-type">List</span>(model.posts) { post <span class="tk-kw">in</span> <span class="tk-type">PostRow</span>(post: post) }
+    }
+  }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">ReadCounter</span>: <span class="tk-type">View</span> {
+  <span class="tk-kw">let</span> model: <span class="tk-type">FeedModel</span>
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Đã đọc: \(model.readCount)&quot;</span>) }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q10.html">App có hơn 30 dev cùng làm trên một target khổng lồ, build sạch mất hơn 10 phút và conflict liên tục. Bạn lập lộ trình tách module thế nào để không phải dừng làm tính năng, và đo hiệu quả ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi bắt đầu bằng số liệu: thời gian clean build, incremental build sau khi sửa một file hay đụng tới (Build Timeline của Xcode, log build trên CI) và số conflict theo thư mục, để có baseline và biết chỗ nào đau nhất. Sau đó tách dần từ dưới lên thay vì big bang: trước là phần lá ít phụ thuộc như <code>Networking</code>, <code>DesignSystem</code>, <code>Analytics</code>, rồi mới tới từng feature; mỗi bước là một PR nhỏ merge được ngay, app vẫn chạy bình thường suốt quá trình. Quy tắc phụ thuộc (feature không import feature, chỉ đi qua module interface) được ghi thành tài liệu và kiểm tra tự động trên CI để graph không mục dần. Mỗi module có owner qua CODEOWNERS và demo app riêng để dev làm UI mà không cần build cả app. Sau mỗi giai đoạn so lại với baseline; build time không giảm thì xem lại ranh giới module thay vì tiếp tục chia nhỏ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q11.html">Khi tách app thành nhiều module, bạn chọn link static hay dynamic? Đánh đổi là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Static library/framework được copy vào binary lúc link: launch nhanh vì dyld không phải load thêm image và linker còn loại bỏ được code chết, đổi lại mỗi thay đổi đều phải link lại một binary lớn. Dynamic framework được load lúc chạy: build incremental nhanh hơn và có thể dùng chung giữa app với extension để giảm dung lượng, nhưng mỗi framework làm tăng thời gian launch trước <code>main</code>. Bẫy hay gặp là một module static bị link vào cả app lẫn một dynamic framework, tạo ra hai bản copy, singleton thành hai instance và runtime cảnh báo class bị trùng. Với SPM, product để <code>.automatic</code> thì Xcode tự quyết và thường link static; từ Xcode 15 có mergeable libraries cho phép Debug dùng dynamic còn Release gộp vào binary như static.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q12.html">Thiết kế feature flag cho app iOS thế nào để vừa tắt được tính năng lỗi trong vài phút, vừa không biến thành nợ kỹ thuật?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi flag có giá trị mặc định an toàn compile sẵn trong app; giá trị remote được fetch, cache lại và chốt tại một điểm ổn định như đầu session để UI không đổi giữa chừng. Code đọc flag qua một protocol được inject chứ không gọi thẳng SDK remote config, để unit test và preview đặt được giá trị cụ thể. Tôi tách kill switch (sống lâu, dùng để tắt nhanh khi có sự cố) khỏi release flag (phải xoá ngay sau khi rollout 100%); mỗi flag có owner và hạn xoá, CI cảnh báo flag quá hạn. Cũng cần nhớ App Review không chấp nhận tính năng ẩn chưa qua duyệt, nên flag dùng để rollout dần chứ không để lén bật tính năng mới sau khi app đã được duyệt.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">Flag</span>: <span class="tk-type">String</span> { <span class="tk-kw">case</span> newCheckout, qrPayment }
+
+<span class="tk-kw">protocol</span> <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-kw">func</span> isEnabled(_ flag: <span class="tk-type">Flag</span>) -&gt; <span class="tk-type">Bool</span>
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">RemoteFeatureFlags</span>: <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> defaults: [<span class="tk-type">Flag</span>: <span class="tk-type">Bool</span>] = [.newCheckout: <span class="tk-kw">false</span>, .qrPayment: <span class="tk-kw">false</span>]
+  <span class="tk-kw">let</span> snapshot: [<span class="tk-type">String</span>: <span class="tk-type">Bool</span>] <span class="tk-com">// giá trị remote đã cache, chốt lúc bắt đầu session</span>
+
+  <span class="tk-kw">func</span> isEnabled(_ flag: <span class="tk-type">Flag</span>) -&gt; <span class="tk-type">Bool</span> {
+    snapshot[flag.rawValue] ?? <span class="tk-type">Self</span>.defaults[flag] ?? <span class="tk-kw">false</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q13.html">App bán hàng cho phép nhân viên tạo đơn khi mất mạng và tự đồng bộ khi có mạng lại. Bạn thiết kế phần sync thế nào để không mất đơn và không tạo đơn trùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Database local (Core Data, SwiftData hoặc SQLite qua GRDB) là nguồn dữ liệu cho UI; mỗi thao tác ghi vừa cập nhật bản local vừa thêm một bản ghi vào outbox trong cùng transaction, nên app có bị kill giữa chừng cũng không mất. Mỗi mutation mang một idempotency key do client sinh một lần (UUID), server dùng key đó để bỏ qua request lặp lại, nhờ vậy retry sau timeout không tạo đơn trùng. Bộ sync xử lý outbox theo thứ tự, retry với exponential backoff, được kích hoạt khi app vào foreground, khi <code>NWPathMonitor</code> báo có mạng, và qua <code>BGAppRefreshTask</code> như một tối ưu chứ không phải điều kiện bắt buộc. Chiều kéo về dùng delta sync theo cursor hoặc version; xung đột phải có chính sách rõ ràng (server thắng, so version, hoặc để user chọn) thay vì để mặc định ngầm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="platform">
+  <div class="section-head"><h2>App lifecycle &amp; Platform</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/platform/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q14.html">App chính, widget và Notification Service Extension cần dùng chung trạng thái đăng nhập và database. Bạn tổ chức thế nào, cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Extension là process riêng với sandbox riêng, nên các target phải bật cùng một App Group: file và database đặt trong container của group, cấu hình nhỏ dùng <code>UserDefaults(suiteName:)</code>, còn token để trong Keychain với access group dùng chung. Hai process có thể ghi cùng lúc nên cần cơ chế phối hợp: SQLite chạy WAL, Core Data bật persistent history tracking để app thấy thay đổi do extension ghi, và báo widget vẽ lại bằng <code>WidgetCenter</code>. Extension có giới hạn memory chặt hơn app nhiều, nên đừng khởi tạo cả dependency graph của app bên trong. Bẫy nặng nhất là crash <code>0xdead10cc</code>: process bị suspend khi đang giữ file lock hoặc transaction SQLite trong shared container sẽ bị hệ thống kill, vì vậy phải ghi xong trước khi vào background hoặc bọc thao tác ghi bằng background task.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> groupID = <span class="tk-str">&quot;group.vn.shop.app&quot;</span>
+<span class="tk-com">// Database dùng chung giữa app và extension</span>
+<span class="tk-kw">let</span> container = <span class="tk-type">FileManager</span>.<span class="tk-kw">default</span>
+  .containerURL(forSecurityApplicationGroupIdentifier: groupID)!
+<span class="tk-kw">let</span> storeURL = container.appendingPathComponent(<span class="tk-str">&quot;Shop.sqlite&quot;</span>)
+<span class="tk-com">// Cấu hình nhỏ dùng chung</span>
+<span class="tk-kw">let</span> sharedDefaults = <span class="tk-type">UserDefaults</span>(suiteName: groupID)
+<span class="tk-com">// Sau khi app ghi dữ liệu mới, yêu cầu widget vẽ lại</span>
+<span class="tk-type">WidgetCenter</span>.shared.reloadTimelines(ofKind: <span class="tk-str">&quot;OrderStatusWidget&quot;</span>)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q15.html">App cần tự làm mới dữ liệu ở background vài giờ một lần và dọn database vào ban đêm. Bạn dùng <code>BGTaskScheduler</code> thế nào cho đúng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Việc làm mới nhẹ dùng <code>BGAppRefreshTaskRequest</code>, việc nặng như dọn database dùng <code>BGProcessingTaskRequest</code> (có thể yêu cầu cắm sạc, có mạng). Identifier phải khai báo trong <code>BGTaskSchedulerPermittedIdentifiers</code> của Info.plist, bật Background Modes tương ứng, và đăng ký handler trước khi app launch xong, nếu không sẽ crash. <code>earliestBeginDate</code> chỉ là mốc sớm nhất; hệ thống tự chọn thời điểm dựa trên pin, mạng và thói quen dùng app. User tắt Background App Refresh thì refresh task không chạy, còn app đã bị user force-quit thì thường không được chạy task nền cho tới khi user mở lại. Trong handler phải đặt <code>expirationHandler</code> để huỷ việc đang làm, luôn gọi <code>setTaskCompleted(success:)</code> và lên lịch lần kế tiếp. Khi debug có thể ép hệ thống chạy task bằng lệnh LLDB <code>_simulateLaunchForTaskWithIdentifier</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// Trong application(_:didFinishLaunchingWithOptions:)</span>
+<span class="tk-type">BGTaskScheduler</span>.shared.register(forTaskWithIdentifier: <span class="tk-str">&quot;vn.shop.refresh&quot;</span>, using: <span class="tk-kw">nil</span>) { task <span class="tk-kw">in</span>
+  <span class="tk-kw">self</span>.handleRefresh(task as! <span class="tk-type">BGAppRefreshTask</span>)
+}
+
+<span class="tk-kw">func</span> handleRefresh(_ task: <span class="tk-type">BGAppRefreshTask</span>) {
+  scheduleNextRefresh() <span class="tk-com">// luôn lên lịch cho lần kế tiếp</span>
+  <span class="tk-kw">let</span> work = <span class="tk-type">Task</span> {
+    <span class="tk-kw">let</span> ok = <span class="tk-kw">await</span> syncEngine.pullChanges()
+    task.setTaskCompleted(success: ok &amp;&amp; !<span class="tk-type">Task</span>.isCancelled)
+  }
+  task.expirationHandler = { work.cancel() } <span class="tk-com">// hết giờ thì huỷ việc đang làm</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q16.html">App chat mã hoá đầu cuối cần hiện push có preview nội dung và ảnh. Bạn dùng silent push hay Notification Service Extension? Vì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi chọn Notification Service Extension. Silent push (<code>content-available: 1</code>) chỉ là gợi ý để đánh thức app, bị hệ thống throttle và không được giao cho app mà user đã force-quit, nên không dùng được cho thông báo bắt buộc phải tới tay người dùng. Với NSE, server gửi push hiển thị có <code>mutable-content: 1</code>; extension nhận trong <code>didReceive(_:withContentHandler:)</code>, giải mã bằng khoá đọc từ Keychain dùng chung, tải ảnh rồi gắn <code>UNNotificationAttachment</code> trước khi gọi <code>contentHandler</code>. Extension chỉ có khoảng 30 giây và ít memory; nếu lỗi hoặc hết giờ, hệ thống hiện nguyên alert gốc. Vì vậy alert gốc chỉ nên là câu chung chung như &#39;Bạn có tin nhắn mới&#39;, còn ciphertext đặt trong một field riêng của payload.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q01.html">User báo feed cuộn giật trên iPhone đời cũ, còn máy của dev thì mượt. Bạn dùng Instruments để tìm nguyên nhân thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đầu tiên là profile bản Release trên đúng loại máy yếu: build Debug thiếu tối ưu của compiler, còn Simulator chạy bằng CPU/GPU của Mac nên số đo không phản ánh thực tế. Dùng template Animation Hitches để biết frame nào bị trễ, rồi Time Profiler để xem main thread đang làm gì lúc đó; bật Invert Call Tree và Hide System Libraries để hàm của app tốn CPU nhất nổi lên đầu. Thủ phạm hay gặp là decode ảnh, parse JSON, tạo <code>DateFormatter</code> hay tính chiều cao text ngay trong <code>cellForRowAt</code>, hoặc Auto Layout lồng nhau quá sâu. Nếu main thread nhàn mà vẫn hitch thì nghi phía render: offscreen rendering, blending, ảnh lớn hơn kích thước hiển thị. Sửa xong phải đo lại đúng kịch bản cũ để chứng minh có cải thiện.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q02.html">App mất gần 3 giây cho cold launch và PM muốn giảm một nửa. Bạn phân tích và tối ưu thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi tách launch làm hai đoạn. Trước <code>main</code>: dyld load và link các dynamic framework, chạy static initializer và <code>+load</code> của Objective-C; càng nhiều dynamic framework thì đoạn này càng dài, nên gộp hoặc chuyển sang link static và loại bỏ <code>+load</code>. Từ <code>main</code> tới frame đầu tiên: mọi việc trong <code>didFinishLaunching</code>, khởi tạo SDK, mở database, dựng root view controller; chỉ giữ thứ cần cho frame đầu, còn lại lazy hoặc dời ra sau khi UI hiện. Đo bằng template App Launch của Instruments trên máy thật ở trạng thái cold launch (ví dụ sau khi khởi động lại máy), và theo dõi số liệu thật của user qua Xcode Organizer hoặc MetricKit. Bẫy hay gặp là SDK analytics, quảng cáo khởi tạo đồng bộ và singleton nặng bị chạm tới quá sớm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q03.html">Màn hình gallery hiển thị lưới thumbnail từ ảnh chụp camera và app bị kill vì hết memory. Vì sao, và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dung lượng file JPEG không quyết định memory: khi hiển thị, ảnh được decode thành bitmap khoảng <code>width × height × 4</code> byte, nên ảnh 12MP (4032×3024) chiếm gần 50MB dù chỉ hiện trong ô 100×100 point. Vài chục ảnh như vậy đủ khiến app bị hệ thống kill vì vượt giới hạn memory. Cách đúng là downsample bằng ImageIO: tạo thumbnail có kích thước pixel tối đa bằng kích thước ô nhân scale màn hình, không bao giờ decode ảnh gốc, và làm việc này trên background queue. Kết quả nên cache bằng <code>NSCache</code> với cost là số byte đã decode. Với trường hợp đơn giản, từ iOS 15 có sẵn <code>preparingThumbnail(of:)</code> của <code>UIImage</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">func</span> downsample(at url: <span class="tk-type">URL</span>, to pointSize: <span class="tk-type">CGSize</span>, scale: <span class="tk-type">CGFloat</span>) -&gt; <span class="tk-type">UIImage</span>? {
+  <span class="tk-com">// Không cache ảnh gốc khi tạo image source</span>
+  <span class="tk-kw">let</span> sourceOptions = [kCGImageSourceShouldCache: <span class="tk-kw">false</span>] as <span class="tk-type">CFDictionary</span>
+  <span class="tk-kw">guard</span> <span class="tk-kw">let</span> source = <span class="tk-type">CGImageSourceCreateWithURL</span>(url as <span class="tk-type">CFURL</span>, sourceOptions) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+  <span class="tk-kw">let</span> maxPixel = max(pointSize.width, pointSize.height) * scale
+  <span class="tk-kw">let</span> options = [
+    kCGImageSourceCreateThumbnailFromImageAlways: <span class="tk-kw">true</span>,
+    kCGImageSourceShouldCacheImmediately: <span class="tk-kw">true</span>, <span class="tk-com">// decode ngay tại đây, trên background</span>
+    kCGImageSourceCreateThumbnailWithTransform: <span class="tk-kw">true</span>,
+    kCGImageSourceThumbnailMaxPixelSize: maxPixel
+  ] as <span class="tk-type">CFDictionary</span>
+  <span class="tk-kw">guard</span> <span class="tk-kw">let</span> cgImage = <span class="tk-type">CGImageSourceCreateThumbnailAtIndex</span>(source, <span class="tk-num">0</span>, options) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+  <span class="tk-kw">return</span> <span class="tk-type">UIImage</span>(cgImage: cgImage)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q19.html">Codebase iOS lớn có bộ UI test chạy 40 phút và hay fail ngẫu nhiên, dev bắt đầu bấm retry cho qua. Bạn xây lại chiến lược test thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi đẩy phần lớn kiểm thử xuống tầng nhanh và ổn định: unit test cho ViewModel, use case, logic nghiệp vụ với dependency là fake qua protocol, chạy trong vài giây và không phụ thuộc mạng. Giao diện component và màn hình kiểm bằng snapshot test (ví dụ thư viện swift-snapshot-testing) ở nhiều cấu hình: dark mode, Dynamic Type lớn, ngôn ngữ có chuỗi dài, bắt được lỗi layout mà không cần chạy cả app. XCUITest chỉ giữ cho vài luồng sống còn như đăng nhập, thanh toán, chạy với server giả lập được inject qua launch argument thay vì backend thật. Test flaky phải cách ly khỏi pipeline chặn merge ngay và có owner sửa, không chấp nhận văn hoá retry. Snapshot cần chạy trên cùng model simulator và phiên bản iOS cố định ở CI, nếu không khác biệt render sẽ làm test đỏ giả.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q20.html">Mô tả pipeline phát hành iOS bạn từng dựng: từ lúc merge code tới khi bản mới đến tay 100% user.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi PR chạy build, lint, unit test và snapshot test trên CI (GitHub Actions, Bitrise hoặc Xcode Cloud). Khi cắt release, pipeline tự tăng build number, ký bằng chứng chỉ quản lý tập trung (fastlane <code>match</code> hoặc signing do Xcode Cloud quản lý), archive, upload dSYM lên hệ thống crash report rồi đẩy lên TestFlight: nhóm internal test được ngay, nhóm external cần qua Beta App Review. Sau khi bản chính thức được duyệt, tôi bật phased release để Apple tăng dần tỷ lệ máy nhận auto-update trong 7 ngày, và tạm dừng nếu crash-free rate hay metric chính xấu đi. Cần nhớ phased release chỉ áp dụng cho auto-update, user tự vào App Store vẫn tải được ngay, và store không có rollback binary, nên tính năng rủi ro phải nằm sau feature flag để tắt từ xa.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q21.html">Crash report của bản production chỉ toàn địa chỉ hex, không có tên hàm. Quy trình symbolicate đúng là gì, và vì sao hay bị thiếu dSYM?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Binary release đã bị strip symbol, nên cần file dSYM sinh ra từ đúng lần build đó; crash report và dSYM được khớp với nhau qua UUID của binary chứ không qua version hay build number. Build release phải đặt <code>DEBUG_INFORMATION_FORMAT = dwarf-with-dsym</code>, giữ lại archive, và upload dSYM của app cùng các framework lên Crashlytics/Sentry ngay trong pipeline. Thiếu dSYM thường do build lại cùng version trên máy khác nên UUID khác, framework bên thứ ba không kèm dSYM, hoặc bản build trên CI quên bước upload. Kiểm tra UUID bằng <code>dwarfdump --uuid</code>, symbolicate tay bằng <code>atos</code> hoặc để Xcode Organizer làm. Bitcode đã bị deprecated từ Xcode 14, nên dSYM giờ do bạn tạo ra lúc archive, không còn phải tải về từ App Store Connect như trước.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q17.html">App ngân hàng cần lưu refresh token và một khoá để ký giao dịch, yêu cầu Face ID mỗi lần ký. Bạn lưu trữ trên iOS thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Refresh token để trong Keychain, không bao giờ trong <code>UserDefaults</code> hay file plist, với accessibility vừa đủ: cần đọc lúc máy khoá (refresh ở background) thì <code>AfterFirstUnlockThisDeviceOnly</code>, không cần thì <code>WhenUnlockedThisDeviceOnly</code>; hậu tố <code>ThisDeviceOnly</code> ngăn item theo bản backup sang máy khác. Khoá ký nên sinh trong Secure Enclave: private key không bao giờ rời chip, app chỉ gửi dữ liệu vào để ký, và gắn <code>SecAccessControl</code> với <code>.biometryCurrentSet</code> để mỗi lần ký phải qua Face ID; khi user thay đổi dữ liệu sinh trắc, khoá mất hiệu lực và phải đăng ký lại. Server giữ public key để verify chữ ký. Lưu ý item Keychain có thể còn lại sau khi gỡ app, nên lần chạy đầu sau khi cài lại cần dọn dữ liệu cũ.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> access = <span class="tk-type">SecAccessControlCreateWithFlags</span>(
+  <span class="tk-kw">nil</span>,
+  kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
+  [.privateKeyUsage, .biometryCurrentSet], <span class="tk-com">// mỗi lần ký phải qua Face ID</span>
+  <span class="tk-kw">nil</span>
+)!
+<span class="tk-com">// Khoá sinh trong Secure Enclave, private key không bao giờ rời chip</span>
+<span class="tk-kw">let</span> signingKey = <span class="tk-kw">try</span> <span class="tk-type">SecureEnclave</span>.<span class="tk-type">P256</span>.<span class="tk-type">Signing</span>.<span class="tk-type">PrivateKey</span>(accessControl: access)
+<span class="tk-com">// Blob đã mã hoá, chỉ dùng được trên đúng máy này -&gt; lưu vào Keychain</span>
+<span class="tk-kw">let</span> keyBlob = signingKey.dataRepresentation
+<span class="tk-com">// Gửi public key lên server để verify chữ ký</span>
+<span class="tk-kw">let</span> publicKeyDER = signingKey.publicKey.derRepresentation</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q18.html">Team bảo mật yêu cầu certificate pinning cho API thanh toán. Bạn triển khai thế nào để app không &#39;chết&#39; hàng loạt khi server đổi chứng chỉ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi pin public key (hash SPKI) thay vì cả certificate, vì certificate được gia hạn định kỳ còn cặp khoá có thể giữ nguyên; và luôn có ít nhất một pin dự phòng cho khoá sẽ xoay sang, để app đang chạy ngoài thị trường không mất kết nối. Từ iOS 14 có thể khai báo <code>NSPinnedDomains</code> ngay trong phần ATS của Info.plist; cần linh hoạt hơn thì tự kiểm tra trong <code>urlSession(_:didReceive:completionHandler:)</code>: đánh giá trust chuẩn trước, rồi so hash public key trong chuỗi chứng chỉ với danh sách pin. Quy trình quan trọng không kém code: lịch xoay khoá thống nhất với backend, log lỗi pinning để phát hiện sớm, và có sẵn cơ chế buộc cập nhật. Pinning không chống được kẻ tấn công kiểm soát thiết bị (hook bằng Frida là bỏ qua được), nên nó chỉ là một lớp phòng thủ.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>NSAppTransportSecurity<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;dict</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>NSPinnedDomains<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;dict</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>pay.example.vn<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;dict</span><span class="tk-kw">&gt;</span>
+      <span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>NSPinnedLeafIdentities<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+      <span class="tk-kw">&lt;array</span><span class="tk-kw">&gt;</span>
+        <span class="tk-kw">&lt;dict</span><span class="tk-kw">&gt;</span><span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>SPKI-SHA256-BASE64<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span><span class="tk-kw">&lt;string</span><span class="tk-kw">&gt;</span><span class="tk-type">PIN_KHOA_DANG_DUNG</span>=<span class="tk-kw">&lt;/string</span><span class="tk-kw">&gt;</span><span class="tk-kw">&lt;/dict</span><span class="tk-kw">&gt;</span>
+        <span class="tk-com">&lt;!-- pin dự phòng cho khoá sẽ xoay sang --&gt;</span>
+        <span class="tk-kw">&lt;dict</span><span class="tk-kw">&gt;</span><span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>SPKI-SHA256-BASE64<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span><span class="tk-kw">&lt;string</span><span class="tk-kw">&gt;</span><span class="tk-type">PIN_KHOA_DU_PHONG</span>=<span class="tk-kw">&lt;/string</span><span class="tk-kw">&gt;</span><span class="tk-kw">&lt;/dict</span><span class="tk-kw">&gt;</span>
+      <span class="tk-kw">&lt;/array</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;/dict</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;/dict</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/dict</span><span class="tk-kw">&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q22.html">Thiết kế phía client cho app chat 1-1 và nhóm: kết nối realtime, lưu trữ, trạng thái tin nhắn và push. Bạn trình bày thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Kết nối realtime qua WebSocket (<code>URLSessionWebSocketTask</code> hoặc thư viện), có heartbeat, reconnect với exponential backoff, và sau khi nối lại thì kéo phần còn thiếu theo sequence cuối cùng đã nhận. Database local là nguồn dữ liệu cho UI, phân trang ngược khi user cuộn lên. Gửi tin theo kiểu optimistic: tạo bản ghi local với <code>clientId</code> và trạng thái sending, hiện ngay; server xác nhận thì cập nhật <code>serverId</code>, <code>sequence</code> và chuyển sang sent; mất mạng thì nằm trong outbox chờ retry, server dựa vào <code>clientId</code> để chống trùng. Thứ tự tin dựa vào sequence do server cấp, không dựa vào đồng hồ thiết bị. Khi app không chạy thì nhận qua APNs, dùng Notification Service Extension để giải mã và hiện preview; trạng thái đã nhận, đã đọc là các event riêng, nên gộp theo batch để giảm tải.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">DeliveryState</span>: <span class="tk-type">String</span>, <span class="tk-type">Codable</span> {
+  <span class="tk-kw">case</span> <span class="tk-kw">sending</span>, sent, delivered, read, failed
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">Message</span>: <span class="tk-type">Codable</span>, <span class="tk-type">Identifiable</span> {
+  <span class="tk-kw">let</span> clientId: <span class="tk-type">UUID</span>      <span class="tk-com">// client sinh, dùng để chống trùng khi retry</span>
+  <span class="tk-kw">var</span> serverId: <span class="tk-type">String</span>?   <span class="tk-com">// nil khi server chưa xác nhận</span>
+  <span class="tk-kw">var</span> sequence: <span class="tk-type">Int64</span>?    <span class="tk-com">// thứ tự do server cấp, dùng để sắp xếp</span>
+  <span class="tk-kw">let</span> conversationId: <span class="tk-type">String</span>
+  <span class="tk-kw">var</span> body: <span class="tk-type">String</span>
+  <span class="tk-kw">var</span> state: <span class="tk-type">DeliveryState</span>
+  <span class="tk-kw">var</span> id: <span class="tk-type">UUID</span> { clientId }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q23.html">Nếu phải tự viết thư viện tải và cache ảnh thay cho Kingfisher hay SDWebImage, bạn thiết kế những thành phần nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi chia thành bốn phần. Memory cache dùng <code>NSCache</code> lưu ảnh đã decode và downsample, <code>cost</code> là số byte của bitmap để giới hạn theo dung lượng thật, và tự bị xả khi hệ thống thiếu memory. Disk cache lưu dữ liệu gốc với key là hash của URL, có giới hạn tổng dung lượng, dọn theo LRU và tôn trọng thời hạn cache. Tầng tải gộp request trùng: nhiều nơi cùng xin một URL thì chỉ có một request mạng; request bị huỷ khi không còn ai cần (cell đã bị reuse), và có prefetch qua <code>UITableViewDataSourcePrefetching</code>. Decode và downsample luôn chạy ngoài main thread; khi gán ảnh vào cell phải kiểm tra cell vẫn đang hiển thị đúng URL đó để không hiện nhầm ảnh.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q24.html">Một senior khác trong team muốn chuyển toàn bộ app sang The Composable Architecture (TCA), còn bạn thấy chưa phù hợp. Bạn xử lý bất đồng này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi đưa cuộc tranh luận về tiêu chí chung trước khi bàn giải pháp: vấn đề thực sự cần giải là gì (bug do state rối, khó test, onboarding chậm), team bao nhiêu người, deadline và chi phí học ra sao. Sau đó đề xuất cùng viết một ADR ngắn so sánh các phương án theo đúng tiêu chí đó, kèm một thử nghiệm có giới hạn: làm một feature thật bằng TCA trong một hai sprint rồi đo thời gian phát triển, số bug, build time và phản hồi của các dev khác. Nếu dữ liệu ủng hộ đồng nghiệp thì tôi theo; nếu vẫn bế tắc thì để tech lead hoặc EM quyết, và cả hai cam kết làm theo quyết định đó (disagree and commit). Điều tôi tránh là tranh cãi trong comment PR, hoặc để codebase chạy song song hai kiến trúc mà không ai chịu trách nhiệm.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q25.html">Một bạn junior liên tục để lọt retain cycle và force unwrap, PR nào cũng phải sửa nhiều vòng. Với vai trò senior, bạn làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi coi đây là vấn đề của cả quy trình chứ không chỉ của một người. Về con người: ngồi pair một buổi để cùng tìm một retain cycle bằng Memory Graph, giải thích vì sao chứ không chỉ để lại comment &#39;thêm weak self&#39;, và khuyến khích mở draft PR sớm để góp ý từ lúc thiết kế. Về công cụ: bật các rule SwiftLint như <code>force_unwrapping</code>, <code>weak_delegate</code>, và thêm helper trong test kiểm tra view controller được giải phóng sau khi đóng, để máy bắt lỗi thay cho người review. Comment review ghi rõ mức độ (bắt buộc sửa hay chỉ là gợi ý), nói về code chứ không nói về người. Sau vài tuần tôi nhìn lại số vòng review và phản hồi của bạn ấy để điều chỉnh cách hỗ trợ.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="quiz">
+  <div class="section-head"><h2>Quiz trắc nghiệm iOS Senior</h2><a class="section-sub" href="../../../#/ios/quiz?rank=senior&amp;start=1">Làm quiz trong app →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../s/ios-sen-m01.html">Card trong cell dưới đây làm cuộn giật, và Color Off-screen Rendered tô vàng toàn bộ card. Cách sửa hiệu quả nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m02.html">Ảnh JPEG 4000×3000 pixel nặng 2MB trên đĩa được hiển thị trong UIImageView 100×100 point bằng UIImage(contentsOfFile:), không downsample. Bitmap sau khi decode chiếm khoảng bao nhiêu memory?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m03.html">Template App Launch của Instruments cho thấy phần lớn thời gian khởi động nằm trước khi main() được gọi. Thay đổi nào có khả năng rút ngắn phần này nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m04.html">Call tree của Time Profiler chỉ thấy main, UIApplicationMain và hàng loạt frame hệ thống ở trên cùng. Cách nhanh nhất để thấy hàm nào trong code của app đang tốn CPU?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m05.html">Bạn muốn thu số liệu launch time, hang và memory từ máy của user thật, do chính hệ điều hành đo, mà không cần SDK bên thứ ba. Dùng API nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m06.html">Model Todo dưới đây khai báo id là computed property. Điều gì xảy ra với list khi body được tính lại?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m07.html">Màn lịch sử giao dịch hiển thị khoảng 5.000 dòng bằng đoạn code sau, mất vài giây mới hiện và memory tăng vọt. Nguyên nhân chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m08.html">Vì sao bọc view trong AnyView tràn lan (hàm trả về AnyView, mọi row đều là AnyView) thường bị khuyên tránh ở màn hình lớn?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m11.html">Vòng lặp sau đẩy 500 block tải file vào global queue, mỗi block gọi mạng đồng bộ. Điều gì dễ xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m12.html">Trong một hàm async, dev dùng DispatchSemaphore để chờ một Task khác xong nhằm &#39;biến async thành sync&#39;. Rủi ro lớn nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m13.html">Khi nào việc đánh dấu @unchecked Sendable như class cache dưới đây là chấp nhận được?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m14.html">Hàm xuất thumbnail sau chạy trên background thread; memory tăng liên tục suốt vòng lặp và chỉ giảm khi hàm kết thúc. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m15.html">Dashboard Crashlytics không ghi nhận crash nào, nhưng nhiều user phàn nàn app &#39;tự thoát&#39; khi đang xem video dài. Giải thích hợp lý nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m16.html">Closure ngoài đã có [weak self]. Sau khi connect gọi callback và user đóng màn hình, deinit của ChatViewController có chạy không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m17.html">Reviewer yêu cầu thêm [weak self] vào Task dưới đây để tránh retain cycle. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m18.html">Với cấu hình package sau, app target link cả SharedKit (dynamic) lẫn AnalyticsCore (static). Hệ quả dễ gặp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m19.html">Mergeable libraries (giới thiệu từ Xcode 15) được thiết kế để giải quyết đánh đổi nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m20.html">Khi xây design system dùng chung cho nhiều team feature, code feature nên dùng màu theo cách nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m21.html">Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m22.html">App và widget dùng chung store Core Data trong App Group như sau. Widget ghi đơn mới nhưng app đang mở không thấy cập nhật. Cần bổ sung gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m23.html">App cần upload video 500MB và tiếp tục cả khi user chuyển sang app khác. Cấu hình URLSession nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m24.html">Hàm đặt hàng sau thỉnh thoảng tạo đơn trùng khi mạng chập chờn, dù server đã nhận đơn đầu tiên. Cách sửa căn bản nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m25.html">Server gửi silent push (content-available: 1) để app đồng bộ ngầm, nhưng với một số user app không bao giờ được đánh thức. Nguyên nhân hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m26.html">Notification Service Extension đã được thêm vào app nhưng didReceive(_:withContentHandler:) không bao giờ được gọi. Payload nhiều khả năng đang thiếu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m27.html">Đoạn đăng ký background task đặt trong SceneDelegate sau sẽ dẫn tới chuyện gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m28.html">Dung lượng tải về trên App Store của user iPhone nhỏ hơn nhiều so với file .ipa bạn upload. Cơ chế chính đứng sau là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m29.html">Refresh token được lưu vào Keychain như sau. Khi BGAppRefreshTask chạy lúc máy đang khoá và đọc token này thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m30.html">Nhận định nào đúng về private key được tạo trong Secure Enclave?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m31.html">Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev thêm cấu hình Info.plist sau và bị reviewer phản đối. Cách thay thế tốt hơn?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m32.html">Vì sao nên pin hash public key (SPKI) kèm ít nhất một pin dự phòng, thay vì pin nguyên leaf certificate?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m33.html">Bản 3.2 đang phased release ở ngày thứ 2. Một user tự mở App Store và bấm Update thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m34.html">Đã upload dSYM của bản 2.4.0 (build 120), nhưng Crashlytics vẫn báo thiếu dSYM cho crash của đúng bản đó. Nguyên nhân hay gặp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m35.html">Snapshot test pass trên máy dev nhưng fail trên CI dù UI không hề đổi. Nguyên nhân hay gặp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m36.html">Bạn muốn gửi build TestFlight cho 300 khách hàng thân thiết không thuộc team App Store Connect. Điều nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m37.html">Thư viện tải ảnh tự viết: 20 cell cùng hiển thị avatar của một user và app gửi đi 20 request giống hệt nhau. Thành phần nào còn thiếu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m38.html">Bạn phát hành một SDK analytics cho các app khác tích hợp; SDK có dùng UserDefaults và đọc thời gian tạo file. Yêu cầu nào của Apple phải đáp ứng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m40.html">PM cần ước lượng việc chuyển màn hình checkout từ UIKit sang SwiftUI, trong khi team chưa từng làm SwiftUI ở quy mô này. Cách trả lời tốt nhất?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../../../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../../../#/">Ôn luyện miễn phí</a> · <a href="../../../#/community">Cộng đồng &amp; góp ý</a> · <a href="https://github.com/trongmobile/flutter-prep">Mã nguồn trên GitHub</a></p>
+</footer>
+</body>
+</html>
