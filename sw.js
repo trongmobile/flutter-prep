@@ -3,7 +3,7 @@
 // - Google Fonts: cache-first.
 // - GitHub API, GoatCounter...: để trình duyệt tự xử lý (không cache ở đây).
 // Danh sách PRECACHE được scripts/validate.mjs kiểm tra khớp với file thật.
-const CACHE = "interview-v2";
+const CACHE = "interview-v3";
 const FONT_CACHE = "interview-fonts-v1";
 const NETWORK_TIMEOUT = 4000;
 
@@ -18,6 +18,7 @@ const PRECACHE = [
   "js/community.js",
   "js/config.js",
   "js/jobs.js",
+  "js/leaderboard.js",
   "js/main.js",
   "js/pwa.js",
   "js/store.js",
@@ -26,6 +27,7 @@ const PRECACHE = [
   "js/views/home.js",
   "js/views/interview.js",
   "js/views/jobs.js",
+  "js/views/leaderboard.js",
   "js/views/progress.js",
   "js/views/question.js",
   "js/views/quiz.js",

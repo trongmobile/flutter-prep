@@ -9,6 +9,7 @@ export const KEYS = {
   srs: "fip.srs.v1",
   interview: "fip.interview.v1",
   prefs: "fip.prefs.v1",
+  player: "fip.player.v1",
 };
 
 const cache = {};
@@ -344,6 +345,36 @@ export const prefs = {
   },
 };
 
+// ---- Bảng xếp hạng: mã người chơi + biệt danh ----
+// id do máy tự sinh và giữ bí mật (ai có id thì nộp điểm được dưới tên đó), nằm trong file sao lưu
+// để chuyển sang máy khác. "Xoá toàn bộ tiến độ" không xoá id, tránh mất biệt danh đã đặt.
+function uuid() {
+  if (crypto.randomUUID) return crypto.randomUUID();
+  const b = crypto.getRandomValues(new Uint8Array(16));
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = Array.from(b, (x) => x.toString(16).padStart(2, "0")).join("");
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+}
+
+export const player = {
+  // { id, nick } hoặc null nếu chưa từng đặt biệt danh.
+  get() {
+    const p = read(KEYS.player, null);
+    return p && typeof p.id === "string" ? { id: p.id, nick: typeof p.nick === "string" ? p.nick : "" } : null;
+  },
+  ensure() {
+    const p = player.get();
+    if (p) return p;
+    const next = { id: uuid(), nick: "" };
+    write(KEYS.player, next);
+    return next;
+  },
+  setNick(nick) {
+    write(KEYS.player, { ...player.ensure(), nick });
+  },
+};
+
 // ---- Sao lưu / khôi phục ----
 export function exportAll() {
   const out = { app: "flutter-prep", version: 1, exportedAt: new Date().toISOString(), data: {} };
@@ -367,7 +398,7 @@ export function importAll(payload) {
 
 export function resetAll() {
   for (const key of Object.values(KEYS)) {
-    if (key !== KEYS.prefs) remove(key);
+    if (key !== KEYS.prefs && key !== KEYS.player) remove(key);
   }
   notifySrs();
 }

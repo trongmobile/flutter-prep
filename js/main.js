@@ -11,12 +11,14 @@ import * as jobs from "./views/jobs.js";
 import * as review from "./views/review.js";
 import * as interview from "./views/interview.js";
 import * as question from "./views/question.js";
+import * as leaderboard from "./views/leaderboard.js";
 import { prefs } from "./store.js";
 import { TRACKS, DEFAULT_TRACK, getTrack, trackOfId, loadTrack, setActiveTrack } from "../data/index.js";
 import { trackPageview } from "./analytics.js";
 import { initPwa } from "./pwa.js";
+import { leaderboardEnabled } from "./leaderboard.js";
 
-const VIEWS = { home, study, review, quiz, interview, roadmap, progress, jobs, community, q: question };
+const VIEWS = { home, study, review, quiz, leaderboard, interview, roadmap, progress, jobs, community, q: question };
 const TITLES = {
   home: "Trang chủ",
   study: "Ôn luyện",
@@ -24,13 +26,14 @@ const TITLES = {
   interview: "Phỏng vấn thử",
   q: "Câu hỏi",
   quiz: "Quiz",
+  leaderboard: "Bảng xếp hạng",
   roadmap: "Lộ trình 35 ngày",
   progress: "Tiến độ",
   jobs: "Việc làm",
   community: "Cộng đồng",
 };
 // View gắn với một track (URL có tiền tố track); các view còn lại dùng chung.
-const TRACK_VIEWS = new Set(["home", "study", "review", "quiz", "interview", "roadmap", "progress", "jobs"]);
+const TRACK_VIEWS = new Set(["home", "study", "review", "quiz", "leaderboard", "interview", "roadmap", "progress", "jobs"]);
 
 const app = document.getElementById("app");
 let current = null; // { destroy?, canLeave? } do view trả về
@@ -111,6 +114,7 @@ function updateNav(name, track) {
     const view = a.dataset.nav;
     if (TRACK_VIEWS.has(view)) a.setAttribute("href", view === "home" ? `#/${track.id}` : `#/${track.id}/${view}`);
     if (view === "roadmap") a.hidden = !track.hasRoadmap;
+    if (view === "leaderboard") a.hidden = !leaderboardEnabled();
     const active = view === name;
     a.classList.toggle("active", active);
     if (active) {
@@ -131,7 +135,7 @@ trackSelect.addEventListener("change", () => {
   const next = getTrack(trackSelect.value);
   const { name, params } = parseHash();
   let target = `#/${next.id}`;
-  if (name === "study" || name === "quiz") target += `/${name}${name === "study" && params[0] ? "/" + params[0] : ""}`;
+  if (name === "study" || name === "quiz" || name === "leaderboard") target += `/${name}${name !== "quiz" && params[0] ? "/" + params[0] : ""}`;
   else if (["review", "interview", "progress", "jobs"].includes(name) || (name === "roadmap" && next.hasRoadmap)) target += `/${name}`;
   else if (name === "community") {
     prefs.set("track", next.id);

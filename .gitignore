@@ -19,3 +19,4 @@ npm-debug.log*
 
 # Ghi chú marketing — không đưa lên repo (repo được public qua GitHub Pages)
 mkt.md
+supabase/leaderboard.sql

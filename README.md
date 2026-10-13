@@ -4,6 +4,7 @@ Website **Mobile Interview**: ôn phỏng vấn mobile theo nền tảng (**Flut
 
 - **Ôn luyện**: câu hỏi phỏng vấn kèm đáp án mẫu, lọc theo chủ đề/trạng thái, tìm kiếm, đánh dấu _Đã thuộc_ / _Cần ôn lại_, chế độ **Flashcard**.
 - **Quiz**: trắc nghiệm 4 đáp án theo rank hoặc tổng hợp, chọn chủ đề và số câu. Chế độ _Luyện tập_ (giải thích ngay) và _Thi thử_ (đếm giờ). Có màn xem lại bài và nút làm lại câu sai.
+- **Bảng xếp hạng**: bài _Thi thử_ đề chuẩn (20 câu, không lọc chủ đề) được xếp hạng theo nền tảng × rank (và Tổng hợp), có bảng _Tuần này_ và _Mọi thời đại_. Người thi tự đặt biệt danh, không cần đăng nhập. Điểm lưu trên Supabase (xem [Bật bảng xếp hạng](#bật-bảng-xếp-hạng-supabase)).
 - **Ôn hôm nay**: ôn tập ngắt quãng (hộp Leitner 1 → 3 → 7 → 14 → 30 → 60 ngày). Mỗi ngày gồm các câu đến hạn + vài câu mới; tự chấm _Quên / Khó / Nhớ_. Số câu cần ôn hiện trên menu.
 - **Phỏng vấn thử**: bốc câu ngẫu nhiên theo rank (xen kẽ chủ đề), đếm giờ, ghi âm câu trả lời ngay trên trình duyệt để nghe lại, tự chấm; câu chưa tốt tự vào lịch ôn.
 - **Lộ trình 35 ngày** (chỉ Flutter): lộ trình ~5 phút/ngày từ phiên bản đầu tiên. Tiến độ cũ vẫn được giữ.
@@ -14,7 +15,7 @@ Website **Mobile Interview**: ôn phỏng vấn mobile theo nền tảng (**Flut
 - **SEO**: site dùng `#hash` nên Google chỉ thấy trang chủ. `scripts/build-pages.mjs` sinh trang HTML tĩnh có sẵn nội dung cho từng câu (`s/<id>.html`), cho từng nền tảng / rank / chủ đề (`phong-van/...`) và `sitemap.xml`. Đáp án nằm trong ô bấm để xem, Google vẫn đọc được.
 - **Cài như app (PWA)**: cài lên màn hình chính điện thoại, học được cả khi offline.
 
-Đây là site tĩnh thuần HTML/CSS/JS (ES modules): không cần build, không có dependency. Tiến độ được lưu trong `localStorage` của trình duyệt.
+Đây là site tĩnh thuần HTML/CSS/JS (ES modules): không cần build, không có dependency. Tiến độ được lưu trong `localStorage` của trình duyệt; riêng bảng xếp hạng gửi biệt danh và điểm thi lên Supabase.
 
 ## Chạy local
 
@@ -38,7 +39,7 @@ js/main.js              router dạng hash theo track (#/android/study/junior, #
                         link không có track (#/study/junior) tự chuyển sang track đang chọn
 js/store.js             lưu tiến độ trong localStorage
 js/utils.js             escape HTML, tô màu code (Dart, Kotlin, Java, Swift, TS/JSX, XML), helpers
-js/views/               home, study, review (Ôn hôm nay), quiz, interview (Phỏng vấn thử),
+js/views/               home, study, review (Ôn hôm nay), quiz, leaderboard (Bảng xếp hạng), interview (Phỏng vấn thử),
                         roadmap, progress, jobs (Việc làm), community, question (#/q/<id>)
 js/pwa.js, sw.js        đăng ký service worker, cài app, cache offline (network-first)
 manifest.webmanifest    thông tin PWA (tên, icon, shortcut)
@@ -46,7 +47,9 @@ assets/                 icon app, og.png (preview trang chủ), og-<track>.png (
 s/<id>.html             trang tĩnh từng câu: link chia sẻ + trang cho Google (sinh bởi scripts/build-pages.mjs)
 phong-van/              trang tổng hợp tĩnh theo nền tảng / rank / chủ đề (SEO)
 sitemap.xml             danh sách trang tĩnh, gửi cho Google Search Console
-js/config.js            repo GitHub dùng cho trang Cộng đồng
+js/config.js            repo GitHub dùng cho trang Cộng đồng, Supabase cho bảng xếp hạng
+js/leaderboard.js       gọi API bảng xếp hạng (Supabase RPC), luật đề chuẩn, kiểm tra biệt danh
+supabase/leaderboard.sql  bảng + hàm SQL của bảng xếp hạng (chạy một lần trong Supabase)
 js/community.js         đọc GitHub Issues (cache + ETag), map label → trạng thái
 js/jobs.js              trang tuyển dụng ngoài theo track, đọc tin tuyển dụng (label `type: job`)
 .github/ISSUE_TEMPLATE/ form đóng góp (6 loại, gồm tin tuyển dụng) trên GitHub
@@ -64,6 +67,45 @@ scripts/validate.mjs    kiểm tra schema dữ liệu, danh sách cache offline,
 Ngân hàng câu hỏi Flutter của mỗi rank = `data/flutter/questions/<rank>.js` + các câu trong lộ trình có `rank` tương ứng.
 
 Thêm một nền tảng mới: khai báo trong `data/tracks.js`, tạo `data/<track>/` giống các track khác, thêm file vào `PRECACHE` của `sw.js`, tạo ảnh `assets/og-<track>.png`, rồi chạy `node scripts/build-pages.mjs` và `node scripts/validate.mjs`.
+
+## Bật bảng xếp hạng (Supabase)
+
+Bảng xếp hạng cần một nơi lưu điểm chung nên dùng [Supabase](https://supabase.com) (gói miễn phí là đủ). Khi `SUPABASE_URL` / `SUPABASE_KEY` trong `js/config.js` còn trống, menu _Bảng xếp hạng_ và các gợi ý trong Quiz tự ẩn.
+
+1. Tạo project mới trên Supabase (nên chọn region Singapore cho gần Việt Nam).
+2. Vào **SQL Editor**, dán toàn bộ `supabase/leaderboard.sql` rồi bấm **Run**. File chạy lại nhiều lần cũng được, không mất dữ liệu.
+3. Vào **Project Settings → API Keys**, copy **Project URL** và **publishable key** (hoặc `anon` key kiểu cũ), điền vào `js/config.js`:
+   ```js
+   export const SUPABASE_URL = "https://<project>.supabase.co";
+   export const SUPABASE_KEY = "sb_publishable_...";
+   ```
+4. Commit và push. Menu _Bảng xếp hạng_ sẽ hiện.
+
+Key này được phép công khai: hai bảng bật RLS và không có policy, trình duyệt chỉ gọi được 3 hàm `lb_set_nickname`, `lb_submit`, `lb_board`. Mỗi máy tự sinh một mã người chơi bí mật (nằm trong file sao lưu ở trang Tiến độ, nên chuyển máy vẫn giữ được biệt danh); bảng xếp hạng không bao giờ trả về mã này.
+
+Luật tính hạng:
+
+- Chỉ tính bài _Thi thử_ đúng 20 câu, không lọc chủ đề, không phải "Làm lại câu sai". Nút _Thi ngay_ trên trang Bảng xếp hạng mở thẳng đề chuẩn (`#/<track>/quiz?rank=<rank>&ranked=1`).
+- Xếp theo số câu đúng; bằng điểm thì ai làm nhanh hơn đứng trên, rồi tới ai nộp sớm hơn. Mỗi người chỉ tính bài tốt nhất trên từng bảng.
+- Bảng tuần tính từ 0h thứ Hai, giờ Việt Nam.
+- Lần đầu thi đề chuẩn, màn kết quả hỏi biệt danh (có thể bỏ qua). Từ lần sau điểm tự gửi lên.
+
+Chống gian lận chỉ ở mức cơ bản: đáp án nằm sẵn trong file JS nên ai cố tình vẫn gian lận được. Máy chủ từ chối kết quả bất thường (khác 20 câu, dưới 2 giây/câu, quá giờ), giới hạn 1 bài/30 giây cho mỗi bảng và 100 bài/ngày cho mỗi người. Biệt danh dài 2–20 ký tự, không trùng (không phân biệt hoa thường), có lọc vài từ tục: muốn thêm từ thì sửa mảng trong `lb_clean_nickname` rồi chạy lại file SQL.
+
+Quản trị trong **SQL Editor** của Supabase:
+
+```sql
+-- Xem bài nộp gần đây
+select p.nickname, s.* from lb_scores s join lb_players p on p.id = s.player_id order by s.created_at desc limit 50;
+-- Xoá một bài bất thường
+delete from lb_scores where id = 123;
+-- Đổi tên người chơi
+update lb_players set nickname = 'Tên mới' where lower(nickname) = lower('tên cũ');
+-- Xoá người chơi cùng toàn bộ điểm
+delete from lb_players where lower(nickname) = lower('tên');
+```
+
+Project miễn phí của Supabase tự tạm dừng nếu cả tuần không có request nào. Khi đó bật lại trong dashboard; trong lúc tạm dừng, trang Bảng xếp hạng chỉ báo không kết nối được, các phần khác của site vẫn chạy bình thường.
 
 ## Thống kê truy cập
 

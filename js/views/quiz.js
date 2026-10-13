@@ -1,9 +1,11 @@
 import { RANKS, getRank, quizFor, allQuiz, topics, currentTrack } from "../../data/index.js";
 import { quiz as quizStore, prefs } from "../store.js";
 import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, percent, formatDuration, creditHtml, shareItem } from "../utils.js";
+import { RANKED_COUNT, leaderboardEnabled, isRankedRun, currentPlayer, setNickname, submitScore } from "../leaderboard.js";
+import { nickForm, boardHref, boardName } from "./leaderboard.js";
 
 const COUNTS = [10, 20, 30, 0]; // 0 = tất cả
-const SECONDS_PER_QUESTION = 45;
+const SECONDS_PER_QUESTION = 45; // bảng xếp hạng kiểm tra thời gian theo số này (lb_submit)
 const LETTERS = ["A", "B", "C", "D"];
 
 export function mount(el, _params, query) {
@@ -38,6 +40,8 @@ export function mount(el, _params, query) {
     const available = pool().length;
     const wrong = wrongPool().length;
     const take = setup.count ? Math.min(setup.count, available) : available;
+    const ranked = isRankedRun({ mode: setup.mode, kind: "normal", topicCount: setup.topics.size, total: take });
+    const canRank = leaderboardEnabled() && base.length >= RANKED_COUNT;
 
     el.innerHTML = `
       <header class="view-head">
@@ -88,9 +92,19 @@ export function mount(el, _params, query) {
               <strong>Luyện tập</strong><span>Hiện đúng/sai và giải thích ngay sau mỗi câu.</span>
             </button>
             <button type="button" class="mode-card${setup.mode === "exam" ? " active" : ""}" data-mode="exam" aria-pressed="${setup.mode === "exam"}">
-              <strong>Thi thử</strong><span>Đếm ngược ${SECONDS_PER_QUESTION}s/câu, chỉ chấm điểm khi nộp bài.</span>
+              <strong>Thi thử</strong><span>Đếm ngược ${SECONDS_PER_QUESTION}s/câu, chỉ chấm điểm khi nộp bài.${
+                canRank ? ` Đề ${RANKED_COUNT} câu được tính vào bảng xếp hạng.` : ""
+              }</span>
             </button>
           </div>
+          ${
+            canRank && setup.mode === "exam"
+              ? ranked
+                ? `<p class="ranked-hint on">✓ Bài này được tính vào <a href="${boardHref(setup.rank)}">bảng xếp hạng ${escapeHtml(boardName(setup.rank))}</a>.</p>`
+                : `<p class="ranked-hint">Muốn lên bảng xếp hạng? Làm đề chuẩn ${RANKED_COUNT} câu, không lọc chủ đề.
+                    <button type="button" class="link-btn" data-action="ranked-setup">Chọn đề chuẩn</button></p>`
+              : ""
+          }
         </div>
 
         <div class="setup-foot">
@@ -122,10 +136,13 @@ export function mount(el, _params, query) {
 
   function start(questions, kind) {
     if (!questions.length) return;
+    const mode = kind === "retry" ? "practice" : setup.mode;
     session = {
       kind, // "normal" | "retry"
+      track: currentTrack().id,
       rank: kind === "retry" ? "mixed" : setup.rank,
-      mode: kind === "retry" ? "practice" : setup.mode,
+      mode,
+      ranked: isRankedRun({ mode, kind, topicCount: setup.topics.size, total: questions.length }),
       questions: questions.map(prepare),
       answers: new Array(questions.length).fill(null),
       locked: new Array(questions.length).fill(false),
@@ -250,16 +267,91 @@ export function mount(el, _params, query) {
     const s = session;
     const items = s.questions.map((q, i) => ({ q, chosen: s.answers[i], correct: s.answers[i] === q.correctIndex }));
     const correct = items.filter((x) => x.correct).length;
-    const duration = Math.round((Date.now() - s.startedAt) / 1000);
-    result = { ...s, items, correct, duration };
+    // Tab chạy nền làm timer chậm: không tính quá thời gian làm bài.
+    const duration = Math.round((Math.min(Date.now(), s.deadline || Infinity) - s.startedAt) / 1000);
+    const p = currentPlayer();
+    result = { ...s, items, correct, duration, lb: s.ranked ? { status: p && p.nick ? "sending" : "nick" } : null };
     quizStore.record(
-      { ts: Date.now(), track: currentTrack().id, rank: s.rank, mode: s.mode, kind: s.kind, total: items.length, correct, duration },
+      { ts: Date.now(), track: s.track, rank: s.rank, mode: s.mode, kind: s.kind, total: items.length, correct, duration },
       items.map((x) => ({ id: x.q.id, correct: x.correct })),
     );
     session = null;
     reviewFilter = "all";
     renderResult();
     window.scrollTo(0, 0);
+    if (result.lb && result.lb.status === "sending") sendScore();
+  }
+
+  // ---------- Bảng xếp hạng ----------
+  function lbCard(r) {
+    const lb = r.lb;
+    const name = `${escapeHtml(currentTrack().name)} ${escapeHtml(boardName(r.rank))}`;
+    switch (lb.status) {
+      case "nick":
+        return `
+          <div class="card lb-card">
+            <div class="lb-card-text">
+              <strong>Lên bảng xếp hạng ${name}</strong>
+              <p class="muted">Chọn biệt danh để hiện trên bảng. Từ lần sau, điểm bài thi đề chuẩn tự gửi lên với tên này.</p>
+            </div>
+            ${nickForm({ value: lb.draft || "", error: lb.error || "", busy: lb.busy, submitLabel: "Gửi điểm" })}
+            <button type="button" class="link-btn subtle" data-action="lb-skip">Không gửi lần này</button>
+          </div>`;
+      case "sending":
+        return `<div class="card lb-card"><p class="muted">Đang gửi điểm lên bảng xếp hạng ${name}...</p></div>`;
+      case "done": {
+        const { week, all } = lb.res;
+        const note = all.best ? "Đây là bài tốt nhất của bạn từ trước tới nay." : week.best ? "Bài tốt nhất của bạn tuần này." : "Bảng giữ bài tốt nhất trước đó của bạn.";
+        return `
+          <div class="card lb-card">
+            <div class="lb-card-text">
+              <strong>Hạng #${week.pos} tuần này · #${all.pos} mọi thời đại</strong>
+              <p class="muted">Bảng ${name} · ${note}</p>
+            </div>
+            <a class="btn btn-ghost" href="${boardHref(r.rank)}">Xem bảng xếp hạng →</a>
+          </div>`;
+      }
+      case "error":
+        return `
+          <div class="card lb-card">
+            <div class="lb-card-text"><strong>Chưa gửi được điểm</strong><p class="muted">${escapeHtml(lb.error)}</p></div>
+            <button type="button" class="btn btn-ghost" data-action="lb-retry">Thử lại</button>
+          </div>`;
+      default: // skipped
+        return `<p class="lb-skipped muted small">Không gửi điểm lần này. <button type="button" class="link-btn" data-action="lb-open">Gửi lên bảng xếp hạng</button></p>`;
+    }
+  }
+
+  function updateLb() {
+    const slot = el.querySelector('[data-slot="lb"]');
+    if (slot && result && result.lb) slot.innerHTML = lbCard(result);
+  }
+
+  async function sendScore() {
+    const r = result;
+    r.lb = { status: "sending" };
+    updateLb();
+    try {
+      const res = await submitScore({ track: r.track, rank: r.rank, correct: r.correct, total: r.items.length, duration: r.duration });
+      r.lb = { status: "done", res };
+    } catch (err) {
+      r.lb = err.code === "no_player" ? { status: "nick", error: err.message } : { status: "error", error: err.message };
+    }
+    if (result === r) updateLb();
+  }
+
+  async function saveNickAndSend(draft) {
+    const r = result;
+    r.lb = { status: "nick", draft, busy: true };
+    updateLb();
+    try {
+      await setNickname(draft);
+    } catch (err) {
+      r.lb = { status: "nick", draft, error: err.message };
+      if (result === r) updateLb();
+      return;
+    }
+    if (result === r) sendScore();
   }
 
   // ---------- Kết quả ----------
@@ -300,6 +392,7 @@ export function mount(el, _params, query) {
           </div>
         </div>
       </section>
+      ${r.lb ? `<div data-slot="lb">${lbCard(r)}</div>` : ""}
 
       <section>
         <div class="section-head"><h2>Theo chủ đề</h2></div>
@@ -419,7 +512,27 @@ export function mount(el, _params, query) {
       case "again":
         result = null;
         return renderSetup();
+      case "ranked-setup":
+        setup.count = RANKED_COUNT;
+        prefs.set("quizCount", RANKED_COUNT);
+        setup.topics.clear();
+        return renderSetup();
+      case "lb-skip":
+        result.lb = { status: "skipped" };
+        return updateLb();
+      case "lb-open":
+        result.lb = { status: "nick" };
+        return updateLb();
+      case "lb-retry":
+        return sendScore();
     }
+  });
+
+  el.addEventListener("submit", (e) => {
+    const form = e.target.closest('[data-form="nick"]');
+    if (!form || !result || !result.lb) return;
+    e.preventDefault();
+    saveNickAndSend(form.elements.nick.value);
   });
 
   function confirmQuit() {
@@ -447,7 +560,13 @@ export function mount(el, _params, query) {
 
   // Link "start=1" (vd. từ trang chủ) bắt đầu ngay.
   if (query.wrong === "1" && wrongPool().length) start(shuffle(wrongPool()), "retry");
-  else if (query.start === "1" && pool().length) {
+  else if (query.ranked === "1" && leaderboardEnabled() && quizFor(setup.rank).length >= RANKED_COUNT) {
+    // Nút "Thi ngay" ở trang Bảng xếp hạng: vào thẳng đề chuẩn (không đổi tuỳ chọn đã lưu).
+    setup.mode = "exam";
+    setup.count = RANKED_COUNT;
+    setup.topics.clear();
+    startFromSetup();
+  } else if (query.start === "1" && pool().length) {
     setup.count = 10;
     startFromSetup();
   } else renderSetup();
