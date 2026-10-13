@@ -8,7 +8,7 @@
 //   sitemap.xml                          danh sách trang gửi cho Google Search Console
 // Đáp án nằm trong <details> (bấm để xem) để người đọc tự trả lời trước; Google vẫn đọc được.
 import { RANKS, TRACKS, getRank, getTrack, loadAllTracks } from "../data/index.js";
-import { SITE_URL, GITHUB_URL } from "../js/config.js";
+import { SITE_URL } from "../js/config.js";
 import { escapeHtml as esc, fmt, codeOf } from "../js/utils.js";
 
 const plain = (s) => String(s).replace(/`/g, "").replace(/\s+/g, " ").trim();
@@ -84,7 +84,7 @@ ${body(base)}
 </main>
 <footer class="footer">
   <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
-  <p><a href="${base}phong-van/">Câu hỏi phỏng vấn</a> · <a href="${base}#/">Ôn luyện miễn phí</a> · <a href="${base}#/community">Cộng đồng &amp; góp ý</a> · <a href="${GITHUB_URL}">Mã nguồn trên GitHub</a></p>
+  <p><a href="${base}phong-van/">Câu hỏi phỏng vấn</a> · <a href="${base}#/">Ôn luyện miễn phí</a> · <a href="${base}#/community">Cộng đồng &amp; góp ý</a></p>
 </footer>
 </body>
 </html>
