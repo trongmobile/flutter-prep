@@ -3,7 +3,7 @@
 //   node scripts/mkt/stats.mjs leaderboard      chỉ top 3 bảng xếp hạng tuần này
 // In ra JSON. Phần nào lỗi (mất mạng, thiếu token) thì ghi { error } và chạy tiếp phần khác.
 //   leaderboard  top 3 tuần này của mọi bảng (Supabase, key công khai trong js/config.js)
-//   community    issue mới trên GitHub 7 ngày qua (API công khai, không cần token)
+//   community    issue mới trên GitHub 7 ngày qua (API công khai; nên đặt GITHUB_TOKEN để khỏi hết lượt gọi)
 //   traffic      lượt xem GoatCounter 7 ngày qua và 7 ngày trước đó (cần biến môi trường GOATCOUNTER_TOKEN)
 //   coverage     số câu hỏi / quiz theo nền tảng × rank × chủ đề, kèm các ô ít câu nhất (gợi ý nội dung)
 import { RANKS, loadAllTracks } from "../../data/index.js";
@@ -52,9 +52,10 @@ async function leaderboard() {
 
 async function community() {
   const since = new Date(Date.now() - 7 * DAY).toISOString();
-  const issues = await getJson(`${GITHUB_API}/issues?state=all&since=${since}&per_page=100`, {
-    headers: { Accept: "application/vnd.github+json", "User-Agent": "mobile-interview-mkt" },
-  });
+  // Không token thì giới hạn 60 request/giờ theo IP; máy cloud dùng chung IP nên hay hết lượt.
+  const headers = { Accept: "application/vnd.github+json", "User-Agent": "mobile-interview-mkt" };
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const issues = await getJson(`${GITHUB_API}/issues?state=all&since=${since}&per_page=100`, { headers });
   return issues
     .filter((i) => !i.pull_request && i.created_at >= since)
     .map((i) => ({ number: i.number, title: i.title, state: i.state, labels: i.labels.map((l) => l.name), url: i.html_url, created: i.created_at }));

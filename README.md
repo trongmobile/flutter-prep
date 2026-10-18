@@ -129,7 +129,7 @@ node scripts/mkt/stats.mjs           # số liệu dạng JSON; thêm "leaderboa
 node scripts/mkt/post.mjs --x x.txt --threads threads.txt --dry-run   # kiểm tra độ dài, bỏ --dry-run để đăng
 ```
 
-Token đặt trong biến môi trường của environment chạy routine, không đưa vào repo: `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET`, `THREADS_ACCESS_TOKEN`, `GOATCOUNTER_TOKEN` (tuỳ chọn). Kênh nào thiếu token thì script bỏ qua. Token Threads hết hạn sau 60 ngày.
+Token đặt trong biến môi trường của environment chạy routine, không đưa vào repo: `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET`, `THREADS_ACCESS_TOKEN`, `GOATCOUNTER_TOKEN` và `GITHUB_TOKEN` (tuỳ chọn, chỉ cần quyền đọc public repo). Kênh nào thiếu token thì script bỏ qua. Token Threads hết hạn sau 60 ngày.
 
 ## Quản lý trang Cộng đồng
 
