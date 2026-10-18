@@ -62,6 +62,7 @@ data/<track>/questions/<rank>.js  câu hỏi phỏng vấn theo rank
 data/<track>/quiz/<rank>.js       câu quiz trắc nghiệm theo rank
 data/flutter/roadmap.js lộ trình 35 ngày của Flutter (mỗi câu có rank + topic)
 scripts/validate.mjs    kiểm tra schema dữ liệu, danh sách cache offline, trang chia sẻ
+scripts/mkt/            script cho agent marketing: chọn câu của ngày, thu thập số liệu, đăng X/Threads
 ```
 
 Ngân hàng câu hỏi Flutter của mỗi rank = `data/flutter/questions/<rank>.js` + các câu trong lộ trình có `rank` tương ứng.
@@ -114,6 +115,21 @@ Site dùng [GoatCounter](https://www.goatcounter.com) (miễn phí, không dùng
 - Site dùng hash route (`#/quiz`, `#/study/junior`) nên `index.html` tắt đếm tự động (`no_onload`), còn `js/analytics.js` đếm mỗi lần đổi trang. Đường dẫn được gửi dạng `/flutter-prep/#/quiz` (bỏ phần `?query`).
 - Lượt xem từ `localhost` không được tính.
 - Muốn bỏ qua lượt truy cập của chính bạn: vào Settings của GoatCounter và thêm IP của bạn vào mục bỏ qua.
+
+## Marketing tự động
+
+Hai routine của Claude Code (chạy trên cloud theo lịch, quản lý tại https://claude.ai/code/routines) dùng các script trong `scripts/mkt/`:
+
+- **Đăng bài hằng ngày** (20h giờ Việt Nam): đăng một câu phỏng vấn lên X và Threads. Tối Chủ nhật đổi thành bài vinh danh top bảng xếp hạng tuần.
+- **Báo cáo tuần** (22h Chủ nhật): ghi báo cáo vào Claude Docs gồm lượt xem, bảng xếp hạng, issue cộng đồng, gợi ý nội dung/SEO, bản nháp bài cho nhóm Facebook/LinkedIn (đăng tay) và lịch câu tuần tới.
+
+```bash
+node scripts/mkt/pick.mjs            # câu của hôm nay; --next 7 để xem lịch tuần tới
+node scripts/mkt/stats.mjs           # số liệu dạng JSON; thêm "leaderboard" để chỉ lấy bảng xếp hạng
+node scripts/mkt/post.mjs --x x.txt --threads threads.txt --dry-run   # kiểm tra độ dài, bỏ --dry-run để đăng
+```
+
+Token đặt trong biến môi trường của environment chạy routine, không đưa vào repo: `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET`, `THREADS_ACCESS_TOKEN`, `GOATCOUNTER_TOKEN` (tuỳ chọn). Kênh nào thiếu token thì script bỏ qua. Token Threads hết hạn sau 60 ngày.
 
 ## Quản lý trang Cộng đồng
 
