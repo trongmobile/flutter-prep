@@ -2,7 +2,9 @@
 """Dựng video dọc 1080x1920 (Reels / TikTok) cho một câu phỏng vấn, cho agent marketing.
 
   python3 scripts/mkt/video.py render video.json out/   -> out/video.mp4, out/cover.jpg, out/page.html
-  python3 scripts/mkt/video.py page out/ --video URL --cover URL   -> viết lại out/page.html với link video
+  python3 scripts/mkt/video.py page out/                 -> chỉ viết lại out/page.html từ video đã dựng
+
+page.html nhúng sẵn video (base64) nên xuất bản một lần là xong, không cần tải video lên riêng.
 
 Cần: pip install pillow imageio-ffmpeg  (imageio-ffmpeg có sẵn ffmpeg, không phải cài riêng).
 
@@ -21,6 +23,7 @@ Mã thoát 2: chữ quá dài, đã thu nhỏ cỡ chữ mà vẫn không vừa 
 """
 import base64
 import html
+import io
 import json
 import math
 import os
@@ -506,7 +509,7 @@ def render(meta, out):
     meta["sizeMB"] = round(os.path.getsize(path) / 1024 / 1024, 2)
     with open(os.path.join(out, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
-    write_page(out, None, None)
+    write_page(out)
     print(json.dumps({"video": path, "cover": os.path.join(out, "cover.jpg"), "page": os.path.join(out, "page.html"),
                       "seconds": meta["duration"], "sizeMB": meta["sizeMB"]}, ensure_ascii=False))
 
@@ -543,7 +546,7 @@ a{color:var(--accent)}
 <main>
 <h1>Video ngày __DATE__</h1>
 <p class="meta">__LABEL__ · __SECONDS__ giây · __SIZE__ MB</p>
-<div class="player">__PLAYER__</div>
+<div class="player"><video id="player" controls playsinline preload="auto" poster="__POSTER__"></video></div>
 <div class="actions">
 <button class="primary" id="save" hidden>Lưu video</button>
 <button id="copy">Copy caption</button>
@@ -560,11 +563,34 @@ a{color:var(--accent)}
 </ul></div>
 <p class="foot">Câu gốc: <a href="__URL__" target="_blank" rel="noopener">__ID__</a></p>
 </main>
+<script type="application/octet-stream" id="video-data">__VIDEO_B64__</script>
 <script>
-const VIDEO_URL = __VIDEO_JSON__;
 const FILE_NAME = __FILE_JSON__;
-const status = document.getElementById("status");
-const say = (msg, ok) => { status.textContent = msg; status.className = ok ? "ok" : ""; };
+const statusEl = document.getElementById("status");
+const say = (msg, ok) => { statusEl.textContent = msg; statusEl.className = ok ? "ok" : ""; };
+
+// Video nhúng ngay trong trang: dựng Blob từ base64 để phát và để lưu, không phụ thuộc máy chủ.
+const b64 = document.getElementById("video-data").textContent.trim();
+const raw = atob(b64);
+const bytes = new Uint8Array(raw.length);
+for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+const videoBlob = new Blob([bytes], { type: "video/mp4" });
+const player = document.getElementById("player");
+let triedDataUrl = false;
+player.addEventListener("error", () => {
+  if (triedDataUrl) {
+    say("Trình duyệt này không phát được video ngay trên trang. Bấm Lưu video rồi mở bằng app Ảnh.");
+    return;
+  }
+  triedDataUrl = true;
+  player.src = "data:video/mp4;base64," + b64;
+});
+try {
+  player.src = URL.createObjectURL(videoBlob);
+} catch (e) {
+  triedDataUrl = true;
+  player.src = "data:video/mp4;base64," + b64;
+}
 
 document.getElementById("copy").addEventListener("click", async () => {
   const text = document.getElementById("caption").textContent;
@@ -582,7 +608,7 @@ document.getElementById("copy").addEventListener("click", async () => {
 });
 
 (async () => {
-  if (!VIDEO_URL || !window.claude) return;
+  if (!window.claude) return;
   const downloads = await window.claude.use("downloads");
   if (!downloads) return;
   const btn = document.getElementById("save");
@@ -591,8 +617,7 @@ document.getElementById("copy").addEventListener("click", async () => {
     btn.disabled = true;
     say("Đang chuẩn bị video…");
     try {
-      const blob = await (await fetch(VIDEO_URL)).blob();
-      await downloads.save({ filename: FILE_NAME, data: blob });
+      await downloads.save({ filename: FILE_NAME, data: videoBlob });
       say("Đã lưu video.", true);
     } catch (e) {
       if (e && e.code === "declined") say("");
@@ -607,14 +632,23 @@ document.getElementById("copy").addEventListener("click", async () => {
 """
 
 
-def write_page(out, video_url, cover_url):
+MAX_EMBED_MB = 12  # trang Artifact tối đa 16 MB, base64 làm file to thêm 1/3
+
+
+def write_page(out):
     with open(os.path.join(out, "meta.json"), encoding="utf-8") as f:
         meta = json.load(f)
     esc = lambda s: html.escape(str(s), quote=True)
-    if video_url:
-        player = f'<video controls playsinline preload="metadata" src="{esc(video_url)}"' + (f' poster="{esc(cover_url)}"' if cover_url else "") + "></video>"
-    else:
-        player = "Video đang được tải lên…"
+    with open(os.path.join(out, "video.mp4"), "rb") as f:
+        video = f.read()
+    if len(video) > MAX_EMBED_MB * 1024 * 1024:
+        raise RuntimeError(f"video {len(video) // 1024 // 1024} MB, quá lớn để nhúng vào trang")
+    # Ảnh bìa nhỏ cho thẻ <video>, để trang nhẹ.
+    cover = Image.open(os.path.join(out, "cover.jpg")).convert("RGB")
+    cover.thumbnail((540, 960))
+    buf = io.BytesIO()
+    cover.save(buf, "JPEG", quality=80)
+    poster = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
     caption = meta.get("caption", "").strip()
     tags = " ".join(meta.get("hashtags") or [])
     if tags and tags not in caption:
@@ -628,11 +662,11 @@ def write_page(out, video_url, cover_url):
         "__LABEL__": esc(f"{meta['trackName']} · {meta['rankName']}" + (f" · {meta['topicName']}" if meta.get("topicName") else "")),
         "__SECONDS__": esc(meta.get("duration", "")),
         "__SIZE__": esc(meta.get("sizeMB", "")),
-        "__PLAYER__": player,
+        "__POSTER__": poster,
+        "__VIDEO_B64__": base64.b64encode(video).decode(),
         "__CAPTION__": esc(caption),
         "__URL__": esc(meta["url"]),
         "__ID__": esc(meta["id"]),
-        "__VIDEO_JSON__": json.dumps(video_url),
         "__FILE_JSON__": json.dumps(f"mobile-interview-{meta.get('date') or meta['id']}.mp4"),
     }.items():
         page = page.replace(k, v)
@@ -654,8 +688,7 @@ def main(argv):
             return 1
         return 0
     if len(argv) >= 2 and argv[0] == "page":
-        opts = dict(zip(argv[2::2], argv[3::2]))
-        write_page(argv[1], opts.get("--video"), opts.get("--cover"))
+        write_page(argv[1])
         print(os.path.join(argv[1], "page.html"))
         return 0
     print(__doc__)
