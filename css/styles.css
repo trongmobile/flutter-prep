@@ -1158,7 +1158,11 @@ audio { width: 100%; max-width: 480px; height: 40px; }
 
 /* ============ Việc làm ============ */
 .job-sites-section { margin-top: 8px; }
-.job-sites { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); gap: 10px; }
+.job-locations { margin-bottom: 12px; }
+.job-sites { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 720px) {
+  .job-sites { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .job-site {
   display: grid; gap: 3px; padding: 12px 14px; border-radius: var(--radius);
   border: 1px solid var(--border-soft); background: var(--bg-elevated);

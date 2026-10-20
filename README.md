@@ -10,7 +10,7 @@ Website **Mobile Interview**: ôn phỏng vấn mobile theo nền tảng (**Flut
 - **Lộ trình 35 ngày** (chỉ Flutter): lộ trình ~5 phút/ngày từ phiên bản đầu tiên. Tiến độ cũ vẫn được giữ.
 - **Tiến độ**: chuỗi ngày học, mức độ thuộc bài theo rank, chủ đề hay sai, lịch sử quiz, sao lưu/khôi phục JSON.
 - **Cộng đồng**: người dùng đóng góp câu hỏi, đề xuất tính năng, góp ý nội dung, báo lỗi, hỏi đáp; có Roadmap và trạng thái xử lý từng yêu cầu (dữ liệu lấy từ GitHub Issues). Câu hỏi được duyệt hiển thị tên người đóng góp.
-- **Việc làm**: theo từng nền tảng, có lối tắt sang trang tìm kiếm đã lọc sẵn trên ITviec, TopCV, VietnamWorks, CareerViet, LinkedIn, kèm tin tuyển dụng do cộng đồng đăng (GitHub Issues).
+- **Việc làm**: theo từng nền tảng, có lối tắt sang trang tìm kiếm đã lọc sẵn (chọn được Toàn quốc / Hà Nội / TP.HCM / Đà Nẵng) trên ITviec, TopDev, TopCV, VietnamWorks, CareerViet, LinkedIn, kèm tin tuyển dụng do cộng đồng đăng (GitHub Issues).
 - **Chia sẻ**: mỗi câu có trang riêng `#/q/<id>` và link chia sẻ `s/<id>.html` với ảnh/tiêu đề preview riêng khi đăng lên Facebook, Zalo.
 - **SEO**: site dùng `#hash` nên Google chỉ thấy trang chủ. `scripts/build-pages.mjs` sinh trang HTML tĩnh có sẵn nội dung cho từng câu (`s/<id>.html`), cho từng nền tảng / rank / chủ đề (`phong-van/...`) và `sitemap.xml`. Đáp án nằm trong ô bấm để xem, Google vẫn đọc được.
 - **Cài như app (PWA)**: cài lên màn hình chính điện thoại, học được cả khi offline.

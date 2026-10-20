@@ -2,16 +2,56 @@
 // Tin cộng đồng là GitHub Issue có label "type: job" (template 6-job.yml), tải chung với trang Cộng đồng.
 import { TRACKS } from "../data/index.js";
 
+// Khu vực lọc sẵn trên link tìm việc. "all" = toàn quốc, không lọc.
+export const JOB_LOCATIONS = [
+  { id: "all", name: "Toàn quốc" },
+  { id: "hn", name: "Hà Nội" },
+  { id: "hcm", name: "TP.HCM" },
+  { id: "dn", name: "Đà Nẵng" },
+];
+
+// Mỗi trang tuyển dụng đặt khu vực vào URL một kiểu riêng (slug, mã số hoặc tên) nên khai báo theo từng trang.
+// Mã dưới đây lấy từ chính danh sách khu vực của từng trang, không phải số chung:
+// Hà Nội là 1 (TopCV) / 4 (CareerViet) / 24 (VietnamWorks) / 01 (TopDev), HCM là 2 / 8 / 29 / 79, Đà Nẵng là 8 / 511 / 17 / 48.
+// Lưu ý: ITviec trả 404 "Search term not found" khi tổ hợp kỹ năng + khu vực không có tin nào (hay gặp ở Đà Nẵng).
+const at = (map, loc) => map[loc] || "";
+
 // Trang tìm kiếm đã lọc sẵn theo nền tảng. slug = track.id, q = track.name (vd. "react-native" / "React Native").
 export const JOB_SITES = [
-  { id: "itviec", name: "ITviec", url: (t) => `https://itviec.com/it-jobs/${t.id}` },
-  { id: "topcv", name: "TopCV", url: (t) => `https://www.topcv.vn/tim-viec-lam-${t.id}` },
-  { id: "vietnamworks", name: "VietnamWorks", url: (t) => `https://www.vietnamworks.com/viec-lam?q=${encodeURIComponent(t.id)}` },
-  { id: "careerviet", name: "CareerViet", url: (t) => `https://careerviet.vn/viec-lam/${t.id}-k-vi.html` },
+  {
+    id: "itviec",
+    name: "ITviec",
+    url: (t, loc) => `https://itviec.com/it-jobs/${t.id}${at({ hn: "/ha-noi", hcm: "/ho-chi-minh-hcm", dn: "/da-nang" }, loc)}`,
+  },
+  {
+    id: "topdev",
+    name: "TopDev",
+    // Đà Nẵng là 48: menu của TopDev ghi 048 nhưng bộ lọc bỏ qua giá trị đó.
+    url: (t, loc) => `https://topdev.vn/jobs/search?keyword=${encodeURIComponent(t.name)}${at({ hn: "&region_ids=01", hcm: "&region_ids=79", dn: "&region_ids=48" }, loc)}`,
+  },
+  {
+    id: "topcv",
+    name: "TopCV",
+    url: (t, loc) => `https://www.topcv.vn/tim-viec-lam-${t.id}${at({ hn: "-tai-ha-noi-kl1", hcm: "-tai-ho-chi-minh-kl2", dn: "-tai-da-nang-kl8" }, loc)}`,
+  },
+  {
+    id: "vietnamworks",
+    name: "VietnamWorks",
+    url: (t, loc) => `https://www.vietnamworks.com/viec-lam?q=${encodeURIComponent(t.id)}${at({ hn: "&l=24", hcm: "&l=29", dn: "&l=17" }, loc)}`,
+  },
+  {
+    id: "careerviet",
+    name: "CareerViet",
+    url: (t, loc) => `https://careerviet.vn/viec-lam/${t.id}-k${at({ hn: "l4", hcm: "l8", dn: "l511" }, loc)}-vi.html`,
+  },
   {
     id: "linkedin",
     name: "LinkedIn",
-    url: (t) => `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(t.name)}&location=Vietnam`,
+    // "Ho Chi Minh City" thường bị LinkedIn hiểu thành một quận, nên dùng tên vùng đô thị.
+    url: (t, loc) =>
+      `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(t.name)}&location=${encodeURIComponent(
+        at({ hn: "Hanoi", hcm: "Ho Chi Minh City Metropolitan Area", dn: "Da Nang" }, loc) || "Vietnam",
+      )}`,
   },
 ];
 

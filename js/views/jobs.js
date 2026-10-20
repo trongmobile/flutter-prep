@@ -1,7 +1,8 @@
 import { currentTrack } from "../../data/index.js";
 import { GITHUB_URL } from "../config.js";
 import { loadIssues, timeAgo, RateLimitError } from "../community.js";
-import { JOB_SITES, JOB_TTL_DAYS, activeJobs } from "../jobs.js";
+import { JOB_LOCATIONS, JOB_SITES, JOB_TTL_DAYS, activeJobs } from "../jobs.js";
+import { prefs } from "../store.js";
 import { escapeHtml } from "../utils.js";
 
 const POST_URL = "#/community/new?type=job";
@@ -35,8 +36,14 @@ function jobCard(j) {
     </article>`;
 }
 
+function savedLocation() {
+  const id = prefs.get("jobLocation", "all");
+  return JOB_LOCATIONS.some((l) => l.id === id) ? id : "all";
+}
+
 export function mount(el) {
   const track = currentTrack();
+  let loc = savedLocation();
 
   el.innerHTML = `
     <header class="community-head">
@@ -53,15 +60,8 @@ export function mount(el) {
         <h2>Tìm trên các trang tuyển dụng</h2>
         <span class="section-sub">Mở trang tìm kiếm đã lọc sẵn ${escapeHtml(track.name)}</span>
       </div>
-      <div class="job-sites">
-        ${JOB_SITES.map(
-          (s) => `
-          <a class="job-site" href="${escapeHtml(s.url(track))}" target="_blank" rel="noopener noreferrer">
-            <strong>${s.name} <span aria-hidden="true">↗</span></strong>
-            <span>Việc ${escapeHtml(track.name)} tại Việt Nam</span>
-          </a>`,
-        ).join("")}
-      </div>
+      <div class="chips job-locations" role="group" aria-label="Khu vực"></div>
+      <div class="job-sites"></div>
     </section>
 
     <section>
@@ -73,6 +73,24 @@ export function mount(el) {
     </section>`;
 
   const slot = el.querySelector('[data-slot="jobs"]');
+  const locEl = el.querySelector(".job-locations");
+  const sitesEl = el.querySelector(".job-sites");
+
+  // Đổi khu vực chỉ vẽ lại phần link tìm việc, không tải lại tin cộng đồng.
+  function renderSites() {
+    const place = loc === "all" ? "Việt Nam" : JOB_LOCATIONS.find((l) => l.id === loc).name;
+    locEl.innerHTML = JOB_LOCATIONS.map(
+      (l) => `<button type="button" class="chip${l.id === loc ? " active" : ""}" data-loc="${l.id}" aria-pressed="${l.id === loc}">${l.name}</button>`,
+    ).join("");
+    sitesEl.innerHTML = JOB_SITES.map(
+      (s) => `
+        <a class="job-site" href="${escapeHtml(s.url(track, loc))}" target="_blank" rel="noopener noreferrer">
+          <strong>${s.name} <span aria-hidden="true">↗</span></strong>
+          <span>Việc ${escapeHtml(track.name)} tại ${escapeHtml(place)}</span>
+        </a>`,
+    ).join("");
+  }
+  renderSites();
 
   function render(items, notice) {
     const jobs = activeJobs(items, track.id);
@@ -108,6 +126,13 @@ export function mount(el) {
 
   el.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="refresh"]')) load(true);
+    const chip = e.target.closest("[data-loc]");
+    if (chip && chip.dataset.loc !== loc) {
+      loc = chip.dataset.loc;
+      prefs.set("jobLocation", loc);
+      renderSites();
+      locEl.querySelector(`[data-loc="${loc}"]`).focus();
+    }
   });
 
   load(false);
