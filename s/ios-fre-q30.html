@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Fresher: Vì sao UITableView tái sử dụng cell (dequeueReusableCell)? Lỗi nào hay gặp nếu…</title>
+<meta name="description" content="Table view chỉ tạo đủ số cell đang hiện trên màn hình; khi một cell cuộn ra khỏi tầm nhìn nó được đưa vào hàng đợi, rồi dequeueReusableCell(withIdentifier:fo…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-q30.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher: Vì sao UITableView tái sử dụng cell (dequeueReusableCell)? Lỗi nào hay gặp nếu…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-fre-q30.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Vì sao UITableView tái sử dụng cell (dequeueReu…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-q30.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Vì sao UITableView tái sử dụng cell (dequeueReu…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Vì sao <code>UITableView</code> tái sử dụng cell (<code>dequeueReusableCell</code>)? Lỗi nào hay gặp nếu không cấu hình lại cell đầy đủ?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Table view chỉ tạo đủ số cell đang hiện trên màn hình; khi một cell cuộn ra khỏi tầm nhìn nó được đưa vào hàng đợi, rồi <code>dequeueReusableCell(withIdentifier:for:)</code> trao lại cho row mới, nhờ vậy danh sách hàng nghìn dòng vẫn mượt và ít tốn bộ nhớ. Hệ quả là cell nhận về vẫn còn giữ trạng thái của row trước đó. Nếu trong <code>cellForRowAt</code> bạn chỉ đặt giá trị ở một nhánh, ví dụ <code>if task.isDone { textColor = .gray }</code> mà không có nhánh ngược lại, thì khi cuộn nhiều dòng chưa xong cũng bị xám; hoặc ảnh của row cũ hiện ra trước khi ảnh mới tải xong. Cách đúng: luôn gán lại mọi thuộc tính ở cả hai nhánh, dọn dẹp trong <code>prepareForReuse()</code> của cell (xoá ảnh, huỷ tác vụ tải ảnh), và lưu trạng thái như đã chọn hay đã mở rộng trong model chứ không lưu trong cell. Cell phải được đăng ký bằng <code>register(_:forCellReuseIdentifier:)</code> hoặc là prototype cell trong storyboard, nếu không <code>dequeue</code> sẽ crash.</div>
+        <pre class="code-block"><code><span class="tk-kw">func</span> tableView(_ tableView: <span class="tk-type">UITableView</span>, cellForRowAt indexPath: <span class="tk-type">IndexPath</span>) -&gt; <span class="tk-type">UITableViewCell</span> {
+    <span class="tk-kw">let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span class="tk-str">&quot;TaskCell&quot;</span>, <span class="tk-kw">for</span>: indexPath)
+    <span class="tk-kw">let</span> task = tasks[indexPath.row]
+    cell.textLabel?.text = task.title
+    <span class="tk-com">// Gán cả hai nhánh: nếu chỉ viết `if task.isDone { ... }` thì cell tái sử dụng</span>
+    <span class="tk-com">// vẫn giữ màu xám và dấu tick của row trước</span>
+    cell.textLabel?.textColor = task.isDone ? .gray : .label
+    cell.accessoryType = task.isDone ? .checkmark : .none
+    <span class="tk-kw">return</span> cell
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">AvatarCell</span>: <span class="tk-type">UITableViewCell</span> {
+    <span class="tk-kw">let</span> avatarView = <span class="tk-type">UIImageView</span>()
+
+    <span class="tk-kw">override</span> <span class="tk-kw">func</span> prepareForReuse() {
+        <span class="tk-kw">super</span>.prepareForReuse()
+        avatarView.image = <span class="tk-kw">nil</span>   <span class="tk-com">// tránh hiện ảnh của row trước</span>
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-q30">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-q29.html"><span class="muted small">← Câu trước</span><span>Các mức access control của Swift (private, fileprivate, internal, public, open)…</span></a>
+  <a class="pager-next" href="../s/ios-fre-q31.html"><span class="muted small">Câu sau →</span><span>UIStackView giúp gì so với tự viết constraint? axis, alignment, distribution và…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q12.html">UITableViewDataSource và UITableViewDelegate khác nhau thế nào? Để hiển thị một danh sách đơn giản cần cài đặt những method nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q13.html">@IBOutlet và @IBAction là gì? Vì sao đổi tên một biến outlet xong thì app crash với lỗi &quot;this class is not key value coding-compliant for the key…&quot;?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q14.html">Dựng UI bằng storyboard, xib hay viết code khác nhau thế nào? Dự án nhiều người cùng làm thì bạn chọn cách nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q31.html">UIStackView giúp gì so với tự viết constraint? axis, alignment, distribution và spacing hoạt động thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

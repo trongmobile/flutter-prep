@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher: Giải thích cấu trúc một project React Native: android/, ios/, node_mo…</title>
+<meta name="description" content="index.js là điểm vào của app, gọi AppRegistry.registerComponent để đăng ký component gốc App (viết trong App.tsx) với đúng tên project mà phía native sẽ tìm…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q37.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: Giải thích cấu trúc một project React Native: android/, ios/, node_mo…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-q37.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Giải thích cấu trúc một project React Native: a…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q37.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Giải thích cấu trúc một project React Native: a…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/tooling/">Expo, Build &amp; Release</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Giải thích cấu trúc một project React Native: <code>android/</code>, <code>ios/</code>, <code>node_modules/</code>, <code>package.json</code>, <code>index.js</code>, <code>App.tsx</code>. <code>dependencies</code> và <code>devDependencies</code> khác nhau thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>index.js</code> là điểm vào của app, gọi <code>AppRegistry.registerComponent</code> để đăng ký component gốc <code>App</code> (viết trong <code>App.tsx</code>) với đúng tên project mà phía native sẽ tìm khi khởi động. <code>android/</code> và <code>ios/</code> là hai project native thật (Gradle và Xcode) mà bạn mở bằng Android Studio hoặc Xcode, nơi sửa quyền, icon, <code>AndroidManifest.xml</code>, <code>Info.plist</code> hay thêm code native; project Expo &quot;managed&quot; có thể không có hai thư mục này vì chúng được sinh ra khi chạy <code>prebuild</code>. <code>node_modules/</code> chứa thư viện cài từ npm hoặc yarn, rất nặng, không commit lên git và luôn cài lại được từ lockfile. <code>package.json</code> liệt kê tên project, các script (<code>start</code>, <code>android</code>, <code>ios</code>, <code>test</code>) và phiên bản thư viện. <code>dependencies</code> là thư viện app cần khi chạy (react, react-native, react-navigation...), <code>devDependencies</code> chỉ phục vụ lúc phát triển (TypeScript, ESLint, Jest, các gói type). Với app React Native thì Metro chỉ đóng gói những gì bạn <code>import</code>, nên sự phân biệt này chủ yếu để mô tả ý nghĩa, và quan trọng hơn khi bạn xuất bản thư viện lên npm. Lockfile (<code>package-lock.json</code> hoặc <code>yarn.lock</code>) cần commit để cả team cài cùng một phiên bản.</div>
+        <pre class="code-block"><code><span class="tk-com">// index.js: điểm vào của app</span>
+<span class="tk-kw">import</span> { <span class="tk-type">AppRegistry</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+<span class="tk-kw">import</span> <span class="tk-type">App</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;./App&#39;</span>;
+<span class="tk-kw">import</span> { name <span class="tk-kw">as</span> appName } <span class="tk-kw">from</span> <span class="tk-str">&#39;./app.json&#39;</span>;
+
+<span class="tk-com">// Tên đăng ký phải khớp với tên mà phía native tìm khi khởi động</span>
+<span class="tk-type">AppRegistry</span>.registerComponent(appName, () =&gt; <span class="tk-type">App</span>);</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q37">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q36.html"><span class="muted small">← Câu trước</span><span>Server chạy ở localhost:3000 trên máy dev nhưng app báo Network request failed.…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Expo, Build &amp; Release</h2><a class="section-sub" href="../phong-van/react-native/chu-de/tooling/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q24.html">Expo và React Native CLI khác nhau thế nào? Dự án mới bạn sẽ chọn cái nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q25.html">Metro là gì? Fast Refresh hoạt động thế nào và khi nào bạn buộc phải build lại app?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-m38.html">Metro trong dự án React Native đảm nhiệm việc gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-m39.html">Trong project React Native CLI, bạn vừa cài một thư viện có native code (ví dụ camera) và app báo không tìm thấy native module. Cần làm gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-m40.html">Dự án Expo đang chạy bằng Expo Go. Bạn thêm một thư viện có native code không nằm trong Expo SDK thì app báo lỗi. Hướng xử lý đúng là gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-q23.html">Bạn debug một lỗi logic JS và một màn hình re-render quá nhiều thế nào? Vì sao các hướng dẫn cũ dùng Flipper hay &quot;Debug JS Remotely&quot; trên Chrome không còn phù hợp?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

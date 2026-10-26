@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher: export default và named export khác nhau thế nào? Vì sao import { But…</title>
+<meta name="description" content="Một file module có thể có nhiều named export nhưng chỉ có một export default. Named export được import bằng đúng tên trong ngoặc nhọn (import { formatPrice }…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q26.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: export default và named export khác nhau thế nào? Vì sao import { But…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-q26.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"export default và named export khác nhau thế nà…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q26.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">export default và named export khác nhau thế nà…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/js/">JavaScript &amp; TypeScript</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title"><code>export default</code> và named export khác nhau thế nào? Vì sao <code>import { Button } from &#39;./Button&#39;</code> đôi khi nhận về <code>undefined</code>?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Một file module có thể có nhiều named export nhưng chỉ có một <code>export default</code>. Named export được import bằng đúng tên trong ngoặc nhọn (<code>import { formatPrice } from &#39;./utils&#39;</code>, đổi tên bằng <code>as</code>), còn default export import không có ngoặc và đặt tên tuỳ ý (<code>import Button from &#39;./Button&#39;</code>). Nhầm hai kiểu là lỗi kinh điển: import <code>{ Card }</code> từ một file chỉ có default thì nhận về <code>undefined</code>, và khi render sẽ báo &quot;Element type is invalid: expected a string... but got: undefined&quot;. Ngoài ra <code>undefined</code> còn xuất hiện khi hai file import vòng tròn lẫn nhau (circular import), hay gặp khi gom export qua file <code>index.ts</code> (barrel file). Quy ước thường thấy là cả team chọn một kiểu; nhiều nhóm ưu tiên named export vì tên cố định ở mọi nơi nên auto-import và đổi tên (refactor) của editor hoạt động tốt hơn.</div>
+        <pre class="code-block"><code><span class="tk-com">// Button.tsx</span>
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> <span class="tk-type">Button</span> = () =&gt; <span class="tk-kw">null</span>;                <span class="tk-com">// named export</span>
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-kw">function</span> <span class="tk-type">Card</span>() { <span class="tk-kw">return</span> <span class="tk-kw">null</span>; }  <span class="tk-com">// default export (chỉ một)</span>
+
+<span class="tk-com">// App.tsx</span>
+<span class="tk-kw">import</span> <span class="tk-type">Card</span>, { <span class="tk-type">Button</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;./Button&#39;</span>;         <span class="tk-com">// default không ngoặc, named có ngoặc</span>
+<span class="tk-kw">import</span> { <span class="tk-type">Button</span> <span class="tk-kw">as</span> <span class="tk-type">AppButton</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;./Button&#39;</span>;  <span class="tk-com">// đổi tên khi bị trùng</span>
+
+<span class="tk-com">// SAI: Card là default export, import kiểu named sẽ ra undefined</span>
+<span class="tk-com">// import { Card } from &#39;./Button&#39;;</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q26">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q25.html"><span class="muted small">← Câu trước</span><span>Metro là gì? Fast Refresh hoạt động thế nào và khi nào bạn buộc phải build lại…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q27.html"><span class="muted small">Câu sau →</span><span>map, filter, find và reduce dùng để làm gì? Vì sao render danh sách phải dùng m…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề JavaScript &amp; TypeScript</h2><a class="section-sub" href="../phong-van/react-native/chu-de/js/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q01.html">var, let và const khác nhau thế nào? Khai báo object bằng const thì có sửa được thuộc tính không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q02.html">Closure là gì? Cho một ví dụ closure bạn gặp khi viết code thực tế.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q03.html">this trong JavaScript được xác định thế nào? Arrow function khác function thường ở điểm nào về this?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q04.html">== và === khác nhau thế nào? Những giá trị nào là falsy trong JavaScript?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q05.html">Destructuring và spread ... dùng thế nào? Vì sao nói spread chỉ là shallow copy?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q06.html">Promise và async/await liên quan thế nào? await có làm đứng UI không, và xử lý lỗi ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

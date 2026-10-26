@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Fresher (25 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="25 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<title>Câu hỏi phỏng vấn React Native Fresher (37 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="37 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (25 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="25 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (37 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="37 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · react native · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Fresher</h1>
-  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/react-native/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -62,12 +62,14 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">7</span></li>
-    <li><a href="#react">React &amp; Hooks</a> <span class="count">6</span></li>
-    <li><a href="#components">Component &amp; Styling</a> <span class="count">6</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
-    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">2</span></li>
+    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">10</span></li>
+    <li><a href="#react">React &amp; Hooks</a> <span class="count">8</span></li>
+    <li><a href="#components">Component &amp; Styling</a> <span class="count">8</span></li>
+    <li><a href="#state">State Management</a> <span class="count">1</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
+    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">1</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">3</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -210,6 +212,78 @@ console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: a
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q26.html"><code>export default</code> và named export khác nhau thế nào? Vì sao <code>import { Button } from &#39;./Button&#39;</code> đôi khi nhận về <code>undefined</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Một file module có thể có nhiều named export nhưng chỉ có một <code>export default</code>. Named export được import bằng đúng tên trong ngoặc nhọn (<code>import { formatPrice } from &#39;./utils&#39;</code>, đổi tên bằng <code>as</code>), còn default export import không có ngoặc và đặt tên tuỳ ý (<code>import Button from &#39;./Button&#39;</code>). Nhầm hai kiểu là lỗi kinh điển: import <code>{ Card }</code> từ một file chỉ có default thì nhận về <code>undefined</code>, và khi render sẽ báo &quot;Element type is invalid: expected a string... but got: undefined&quot;. Ngoài ra <code>undefined</code> còn xuất hiện khi hai file import vòng tròn lẫn nhau (circular import), hay gặp khi gom export qua file <code>index.ts</code> (barrel file). Quy ước thường thấy là cả team chọn một kiểu; nhiều nhóm ưu tiên named export vì tên cố định ở mọi nơi nên auto-import và đổi tên (refactor) của editor hoạt động tốt hơn.</div>
+        <pre class="code-block"><code><span class="tk-com">// Button.tsx</span>
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> <span class="tk-type">Button</span> = () =&gt; <span class="tk-kw">null</span>;                <span class="tk-com">// named export</span>
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-kw">function</span> <span class="tk-type">Card</span>() { <span class="tk-kw">return</span> <span class="tk-kw">null</span>; }  <span class="tk-com">// default export (chỉ một)</span>
+
+<span class="tk-com">// App.tsx</span>
+<span class="tk-kw">import</span> <span class="tk-type">Card</span>, { <span class="tk-type">Button</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;./Button&#39;</span>;         <span class="tk-com">// default không ngoặc, named có ngoặc</span>
+<span class="tk-kw">import</span> { <span class="tk-type">Button</span> <span class="tk-kw">as</span> <span class="tk-type">AppButton</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;./Button&#39;</span>;  <span class="tk-com">// đổi tên khi bị trùng</span>
+
+<span class="tk-com">// SAI: Card là default export, import kiểu named sẽ ra undefined</span>
+<span class="tk-com">// import { Card } from &#39;./Button&#39;;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q27.html"><code>map</code>, <code>filter</code>, <code>find</code> và <code>reduce</code> dùng để làm gì? Vì sao render danh sách phải dùng <code>map</code> chứ <code>forEach</code> thì không được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>map</code> biến mỗi phần tử thành một giá trị mới và trả về mảng mới cùng độ dài, hợp để chuyển dữ liệu thành các element JSX. <code>filter</code> giữ lại phần tử thoả điều kiện và trả về mảng mới. <code>find</code> trả về phần tử đầu tiên thoả điều kiện hoặc <code>undefined</code>. <code>some</code> và <code>every</code> trả về boolean. <code>reduce</code> gộp cả mảng thành một giá trị (tổng, object) bắt đầu từ giá trị khởi tạo. Những hàm này không sửa mảng gốc, rất hợp với state của React vốn phải cập nhật theo kiểu bất biến. <code>forEach</code> luôn trả về <code>undefined</code> và chỉ để chạy side effect, nên viết <code>{items.forEach(...)}</code> trong JSX sẽ không render gì; nó cũng không <code>break</code> được và không đợi <code>await</code> bên trong callback <code>async</code>. Cẩn thận <code>sort()</code> và <code>reverse()</code> thì lại sửa mảng gốc, cần copy trước bằng <code>[...items].sort(...)</code> khi đang làm việc với state.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> cart = [
+  { id: <span class="tk-num">1</span>, name: <span class="tk-str">&#39;Áo&#39;</span>, price: <span class="tk-num">200</span>, qty: <span class="tk-num">1</span> },
+  { id: <span class="tk-num">2</span>, name: <span class="tk-str">&#39;Mũ&#39;</span>, price: <span class="tk-num">50</span>, qty: <span class="tk-num">3</span> },
+];
+
+<span class="tk-kw">const</span> names = cart.map((i) =&gt; i.name);                            <span class="tk-com">// [&#39;Áo&#39;, &#39;Mũ&#39;]</span>
+<span class="tk-kw">const</span> expensive = cart.filter((i) =&gt; i.price &gt; <span class="tk-num">100</span>);              <span class="tk-com">// chỉ còn Áo</span>
+<span class="tk-kw">const</span> hat = cart.find((i) =&gt; i.id === <span class="tk-num">2</span>);                         <span class="tk-com">// object hoặc undefined</span>
+<span class="tk-kw">const</span> total = cart.reduce((sum, i) =&gt; sum + i.price * i.qty, <span class="tk-num">0</span>);  <span class="tk-com">// 350</span>
+
+<span class="tk-com">// Cập nhật state mà không sửa mảng gốc</span>
+setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> ? { ...i, qty: i.qty + <span class="tk-num">1</span> } : i)));</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q28.html">Vì sao nên dùng TypeScript trong React Native? Khai báo kiểu cho <code>useState</code> và dữ liệu API thế nào, và <code>any</code> khác <code>unknown</code> ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">TypeScript bắt lỗi sai kiểu, sai tên prop hay thiếu tham số ngay trong editor trước khi chạy app và cho gợi ý code tốt hơn; template của React Native hiện cũng mặc định dùng TS. Nó chỉ kiểm tra lúc phát triển, lúc chạy vẫn là JavaScript thuần. <code>useState</code> suy luận kiểu từ giá trị khởi tạo, nên khi khởi tạo bằng <code>null</code> hoặc mảng rỗng bạn phải chỉ rõ bằng generic, như <code>useState&lt;User | null&gt;(null)</code>. Dữ liệu API chỉ là kiểu bạn &quot;hứa&quot; với compiler (<code>as User</code>), TS không kiểm tra response thật, nên nếu server không đáng tin hãy kiểm tra thêm bằng thư viện như Zod. <code>any</code> tắt hoàn toàn việc kiểm tra kiểu cho giá trị đó, dùng nhiều thì mất ý nghĩa của TS; <code>unknown</code> an toàn hơn: nhận mọi giá trị nhưng phải thu hẹp kiểu (<code>typeof</code>, <code>instanceof</code>) rồi mới dùng được, hợp cho lỗi trong <code>catch</code> hay JSON chưa rõ cấu trúc. Union literal như <code>&#39;idle&#39; | &#39;loading&#39; | &#39;error&#39;</code> mô tả trạng thái chặt hơn nhiều so với <code>string</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">User</span> = { id: <span class="tk-kw">number</span>; name: <span class="tk-kw">string</span> };
+<span class="tk-kw">type</span> <span class="tk-type">Status</span> = <span class="tk-str">&#39;idle&#39;</span> | <span class="tk-str">&#39;loading&#39;</span> | <span class="tk-str">&#39;error&#39;</span>;       <span class="tk-com">// union: chỉ nhận 3 giá trị này</span>
+
+<span class="tk-kw">const</span> [user, setUser] = useState&lt;<span class="tk-type">User</span> | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>); <span class="tk-com">// cần generic vì khởi tạo là null</span>
+<span class="tk-kw">const</span> [status, setStatus] = useState&lt;<span class="tk-type">Status</span>&gt;(<span class="tk-str">&#39;idle&#39;</span>);
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> load() {
+  setStatus(<span class="tk-str">&#39;loading&#39;</span>);
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">&#39;https://api.example.com/me&#39;</span>);
+    setUser((<span class="tk-kw">await</span> res.json()) <span class="tk-kw">as</span> <span class="tk-type">User</span>);          <span class="tk-com">// chỉ &quot;hứa&quot; với TS, không kiểm tra lúc chạy</span>
+    setStatus(<span class="tk-str">&#39;idle&#39;</span>);
+  } <span class="tk-kw">catch</span> (e: <span class="tk-kw">unknown</span>) {
+    <span class="tk-kw">const</span> message = e <span class="tk-kw">instanceof</span> <span class="tk-type">Error</span> ? e.message : <span class="tk-str">&#39;Lỗi không xác định&#39;</span>;
+    console.warn(message);
+    setStatus(<span class="tk-str">&#39;error&#39;</span>);
+  }
+}
+
+<span class="tk-com">// user?.name có kiểu string | undefined, phải xử lý null trước khi dùng</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="react">
@@ -314,6 +388,60 @@ console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: a
         autoCapitalize=<span class="tk-str">&quot;none&quot;</span>
       /&gt;
       &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Đăng nhập&quot;</span> disabled={!isValid} onPress={() =&gt; onLogin(email)} /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q29.html"><code>useEffect</code> dùng để làm gì? Mảng dependency <code>[]</code>, <code>[id]</code> và không truyền mảng khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>useEffect</code> chạy side effect sau khi component render xong: những việc nằm ngoài phần render thuần như gọi API, đăng ký listener, đặt timer. Thời điểm chạy phụ thuộc vào mảng dependency. Không truyền mảng thì chạy sau mọi lần render, nếu bên trong lại <code>setState</code> thì dễ thành vòng lặp vô hạn. Truyền <code>[]</code> thì chỉ chạy một lần sau lần render đầu (mount). Truyền <code>[id]</code> thì chạy lần đầu và chạy lại mỗi khi <code>id</code> đổi giá trị. Mọi biến từ component (props, state, hàm) mà effect dùng nên có mặt trong mảng; quy tắc ESLint <code>react-hooks/exhaustive-deps</code> sẽ nhắc bạn. Hàm trả về từ effect là cleanup, chạy trước lần effect kế tiếp và khi component unmount. Callback truyền cho <code>useEffect</code> không được là <code>async</code> trực tiếp vì nó trả về Promise thay vì hàm cleanup, nên hãy khai báo hàm <code>async</code> bên trong rồi gọi nó. Lưu ý khi bật <code>StrictMode</code> ở môi trường dev, effect lúc mount chạy hai lần để lộ ra lỗi quên cleanup.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">User</span> = { name: <span class="tk-kw">string</span> };
+
+<span class="tk-kw">function</span> <span class="tk-type">UserScreen</span>({ userId }: { userId: <span class="tk-kw">number</span> }) {
+  <span class="tk-kw">const</span> [user, setUser] = useState&lt;<span class="tk-type">User</span> | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+  useEffect(() =&gt; {
+    <span class="tk-kw">let</span> cancelled = <span class="tk-kw">false</span>;                 <span class="tk-com">// tránh setState khi đã đổi user hoặc rời màn</span>
+    <span class="tk-kw">async</span> <span class="tk-kw">function</span> load() {                <span class="tk-com">// không viết async trực tiếp cho effect</span>
+      <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">`https://api.example.com/users/${userId}`</span>);
+      <span class="tk-kw">const</span> data: <span class="tk-type">User</span> = <span class="tk-kw">await</span> res.json();
+      <span class="tk-kw">if</span> (!cancelled) setUser(data);
+    }
+    load();
+    <span class="tk-kw">return</span> () =&gt; { cancelled = <span class="tk-kw">true</span>; };    <span class="tk-com">// cleanup</span>
+  }, [userId]);                            <span class="tk-com">// chạy lại mỗi khi userId đổi</span>
+
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{user ? user.name : <span class="tk-str">&#39;Đang tải...&#39;</span>}&lt;/<span class="tk-type">Text</span>&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q30.html">Khi nào một component render lại? Vì sao component cha render lại thì component con cũng render lại dù props không đổi?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Component render lại khi state của nó đổi (setter của <code>useState</code> nhận giá trị khác theo <code>Object.is</code>), khi props đổi, khi context nó đang dùng đổi, và mặc định cả khi component cha render lại, dù props truyền xuống y nguyên. &quot;Render&quot; ở đây chỉ là gọi hàm component để tính ra cây element mới; React so sánh với lần trước (reconciliation) và chỉ cập nhật các view native thật sự khác, nên render lại không đồng nghĩa với vẽ lại cả màn hình. Render thừa chỉ thành vấn đề khi component nặng hoặc nằm trong danh sách dài; lúc đó mới dùng <code>React.memo</code> (bỏ qua render khi props bằng nhau theo so sánh nông), kèm <code>useCallback</code>/<code>useMemo</code> để giữ nguyên tham chiếu của hàm và object truyền xuống, vì hàm hay object tạo mới ở mỗi lần render làm <code>memo</code> vô tác dụng. Đừng tối ưu sớm: hãy đo bằng React DevTools Profiler trước. Cũng đừng gọi <code>setState</code> trực tiếp trong thân component vì sẽ gây vòng lặp render vô hạn.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> <span class="tk-type">Child</span> = <span class="tk-type">React</span>.memo(<span class="tk-kw">function</span> <span class="tk-type">Child</span>({ title }: { title: <span class="tk-kw">string</span> }) {
+  console.log(<span class="tk-str">&#39;Child render&#39;</span>);
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{title}&lt;/<span class="tk-type">Text</span>&gt;;
+});
+
+<span class="tk-kw">function</span> <span class="tk-type">Parent</span>() {
+  <span class="tk-kw">const</span> [count, setCount] = useState(<span class="tk-num">0</span>);
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">Button</span> title={<span class="tk-str">`Bấm ${count}`</span>} onPress={() =&gt; setCount(count + <span class="tk-num">1</span>)} /&gt;
+      {<span class="tk-com">/* Bọc React.memo: title không đổi nên Child không render lại khi count đổi */</span>}
+      &lt;<span class="tk-type">Child</span> title=<span class="tk-str">&quot;Xin chào&quot;</span> /&gt;
     &lt;/<span class="tk-type">View</span>&gt;
   );
 }</code></pre>
@@ -428,6 +556,101 @@ console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: a
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q32.html">Các prop cơ bản của <code>FlatList</code> là gì? Làm sao hiện thông báo khi danh sách rỗng và thêm kéo để làm mới?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ba prop thường dùng nhất là <code>data</code> (mảng dữ liệu), <code>renderItem</code> (hàm nhận <code>{ item, index }</code> và trả về element) và <code>keyExtractor</code> (trả về key chuỗi duy nhất cho mỗi item; nếu không truyền, <code>FlatList</code> thử đọc <code>item.key</code>, rồi <code>item.id</code>, nếu không có thì dùng index). Những prop hay dùng thêm: <code>ListEmptyComponent</code> hiện khi <code>data</code> rỗng, <code>ListHeaderComponent</code>/<code>ListFooterComponent</code> cho tiêu đề hoặc spinner tải thêm, <code>ItemSeparatorComponent</code> cho đường kẻ giữa các hàng, <code>refreshing</code> kèm <code>onRefresh</code> cho kéo để làm mới, <code>onEndReached</code> để tải trang tiếp theo. <code>FlatList</code> chỉ render các item gần vùng đang nhìn thấy nên hợp với danh sách dài. Nó là <code>PureComponent</code> nên chỉ cập nhật khi các prop như <code>data</code> đổi tham chiếu: sửa trực tiếp mảng cũ (<code>push</code>) sẽ không làm danh sách vẽ lại, hãy tạo mảng mới; nếu item phụ thuộc state khác ngoài <code>data</code> thì truyền thêm <code>extraData</code>. Đừng lồng <code>FlatList</code> trong <code>ScrollView</code> cùng chiều cuộn vì mất tối ưu và sẽ có cảnh báo <code>VirtualizedLists should never be nested</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> [products, setProducts] = useState&lt;<span class="tk-type">Product</span>[]&gt;([]);
+<span class="tk-kw">const</span> [refreshing, setRefreshing] = useState(<span class="tk-kw">false</span>);
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> onRefresh() {
+  setRefreshing(<span class="tk-kw">true</span>);
+  setProducts(<span class="tk-kw">await</span> fetchProducts());
+  setRefreshing(<span class="tk-kw">false</span>);
+}
+
+<span class="tk-kw">return</span> (
+  &lt;<span class="tk-type">FlatList</span>
+    data={products}
+    keyExtractor={(item) =&gt; <span class="tk-type">String</span>(item.id)}
+    renderItem={({ item }) =&gt; &lt;<span class="tk-type">Text</span> style={styles.row}&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;}
+    <span class="tk-type">ItemSeparatorComponent</span>={() =&gt; &lt;<span class="tk-type">View</span> style={styles.divider} /&gt;}
+    <span class="tk-type">ListEmptyComponent</span>={&lt;<span class="tk-type">Text</span>&gt;<span class="tk-type">Ch</span>ưa có sản phẩm&lt;/<span class="tk-type">Text</span>&gt;}
+    refreshing={refreshing}
+    onRefresh={onRefresh}
+  /&gt;
+);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q33.html">Viết một component tái sử dụng như <code>AppButton</code> thế nào? Khai báo props, giá trị mặc định và cho phép tuỳ biến style ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Một component tái sử dụng tốt có API nhỏ và rõ: khai báo kiểu props bằng TypeScript, props tuỳ chọn có giá trị mặc định ngay ở bước destructuring (<code>variant = &#39;primary&#39;</code>), và nhận prop <code>style</code> để nơi dùng chỉnh thêm. Muốn style từ ngoài ghi đè được thì đặt style gốc trước và style truyền vào sau trong mảng, vì phần tử đứng sau thắng: <code>style={[styles.base, style]}</code>. Thay vì copy component ra nhiều bản, dùng prop biến thể như <code>variant: &#39;primary&#39; | &#39;outline&#39;</code>. Bọc bằng <code>Pressable</code> để có phản hồi khi nhấn và có <code>disabled</code>. Component chung không nên tự gọi API hay tự điều hướng; hãy nhận <code>onPress</code> từ bên ngoài để dùng được ở mọi màn hình. Nếu cần chèn nội dung tuỳ ý bên trong (ví dụ icon kèm chữ) thì nhận <code>children</code> kiểu <code>React.ReactNode</code> thay vì thêm hàng loạt prop.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">AppButtonProps</span> = {
+  title: <span class="tk-kw">string</span>;
+  onPress: () =&gt; <span class="tk-kw">void</span>;
+  variant?: <span class="tk-str">&#39;primary&#39;</span> | <span class="tk-str">&#39;outline&#39;</span>;     <span class="tk-com">// tuỳ chọn, mặc định primary</span>
+  disabled?: <span class="tk-kw">boolean</span>;
+  style?: <span class="tk-type">StyleProp</span>&lt;<span class="tk-type">ViewStyle</span>&gt;;        <span class="tk-com">// cho nơi dùng chỉnh thêm</span>
+};
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> <span class="tk-type">AppButton</span>({ title, onPress, variant = <span class="tk-str">&#39;primary&#39;</span>, disabled, style }: <span class="tk-type">AppButtonProps</span>) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Pressable</span>
+      onPress={onPress}
+      disabled={disabled}
+      style={({ pressed }) =&gt; [
+        styles.base,
+        variant === <span class="tk-str">&#39;outline&#39;</span> &amp;&amp; styles.outline,
+        pressed &amp;&amp; { opacity: <span class="tk-num">0.7</span> },
+        disabled &amp;&amp; { opacity: <span class="tk-num">0.4</span> },
+        style,                          <span class="tk-com">// style truyền từ ngoài đặt cuối để ghi đè</span>
+      ]}
+    &gt;
+      &lt;<span class="tk-type">Text</span> style={[styles.text, variant === <span class="tk-str">&#39;outline&#39;</span> &amp;&amp; styles.textOutline]}&gt;{title}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">Pressable</span>&gt;
+  );
+}
+
+<span class="tk-com">// &lt;AppButton title=&quot;Đăng nhập&quot; onPress={login} style={{ marginTop: 16 }} /&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="state">
+  <div class="section-head"><h2>State Management</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/state/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q34.html">Khi nào chỉ cần <code>useState</code>, khi nào nên dùng Context hoặc thư viện như Redux Toolkit, Zustand?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hãy bắt đầu bằng state cục bộ: state chỉ phục vụ một component (nội dung ô nhập, bật tắt modal) thì giữ bằng <code>useState</code> ngay tại đó. Khi hai component anh em cần chung dữ liệu thì &quot;nâng state lên&quot; (lifting state up) component cha gần nhất rồi truyền xuống bằng props. Nếu phải truyền qua nhiều tầng chỉ để tới một chỗ sâu (props drilling), hoặc dữ liệu mang tính toàn app mà ít đổi như theme, ngôn ngữ, thông tin người dùng đăng nhập, thì dùng Context. Context không hợp với state đổi liên tục vì mọi component đang dùng context đó đều render lại khi giá trị đổi. Khi state toàn cục lớn, nhiều màn dùng chung, đổi thường xuyên hoặc cần theo dõi từng action thì dùng Redux Toolkit hoặc Zustand, nơi component chỉ đăng ký lấy đúng phần nó cần. Dữ liệu lấy từ server (cache, loading, refetch) nên để thư viện như TanStack Query (React Query) lo thay vì tự nhét vào store. Nguyên tắc: chọn công cụ nhỏ nhất đủ dùng, đừng đưa mọi thứ vào store toàn cục.</div>
+        <pre class="code-block"><code><span class="tk-com">// 1. State cục bộ: chỉ một component dùng</span>
+<span class="tk-kw">const</span> [visible, setVisible] = useState(<span class="tk-kw">false</span>);
+
+<span class="tk-com">// 2. Context: dữ liệu toàn app, ít đổi</span>
+<span class="tk-kw">const</span> <span class="tk-type">ThemeContext</span> = createContext&lt;<span class="tk-str">&#39;light&#39;</span> | <span class="tk-str">&#39;dark&#39;</span>&gt;(<span class="tk-str">&#39;light&#39;</span>);
+<span class="tk-kw">const</span> theme = useContext(<span class="tk-type">ThemeContext</span>);
+
+<span class="tk-com">// 3. Zustand: store toàn cục, component chỉ đăng ký phần cần dùng</span>
+<span class="tk-kw">const</span> useCartStore = create&lt;<span class="tk-type">CartState</span>&gt;((<span class="tk-kw">set</span>) =&gt; ({
+  items: [],
+  add: (item) =&gt; <span class="tk-kw">set</span>((s) =&gt; ({ items: [...s.items, item] })),
+}));
+<span class="tk-kw">const</span> count = useCartStore((s) =&gt; s.items.length); <span class="tk-com">// chỉ render lại khi số lượng thay đổi</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -450,6 +673,49 @@ console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: a
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Params đặt ở tham số thứ hai: <code>navigation.navigate(&#39;ProductDetail&#39;, { productId: 42 })</code>, màn hình đích đọc qua <code>route.params</code> (prop <code>route</code> hoặc hook <code>useRoute()</code>), và có thể đổi params của màn hiện tại bằng <code>navigation.setParams</code>. Tài liệu React Navigation khuyên params chỉ chứa dữ liệu tối thiểu để dựng màn hình như id hay bộ lọc, chứ không phải cả object lấy từ API: object truyền qua có thể đã cũ so với dữ liệu thật, và khi màn hình được mở từ deep link thì cũng chỉ có id. Params cũng nên serializable; truyền function hay class instance sẽ bị cảnh báo vì làm hỏng việc lưu, khôi phục state điều hướng và deep link. Màn hình đích dùng id để tự lấy dữ liệu từ API hoặc store.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q35.html">Cài React Navigation cần những gì? <code>NavigationContainer</code>, navigator và screen liên hệ thế nào, khi nào dùng Stack, Tab, Drawer?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cài <code>@react-navigation/native</code> cùng hai package có native code là <code>react-native-screens</code> và <code>react-native-safe-area-context</code> (với Expo dùng <code>npx expo install</code>), rồi cài navigator cần dùng như <code>@react-navigation/native-stack</code> hoặc <code>@react-navigation/bottom-tabs</code>; trên iOS cần <code>pod install</code> và phải build lại app vì có native code. Cấu trúc: chỉ có một <code>NavigationContainer</code> ở gốc app để giữ state điều hướng; bên trong là navigator tạo bằng <code>createNativeStackNavigator()</code> hay <code>createBottomTabNavigator()</code>, mỗi navigator chứa nhiều <code>Screen</code> với <code>name</code> duy nhất và <code>component</code>. Gọi <code>useNavigation()</code> ở component nằm ngoài <code>NavigationContainer</code> sẽ báo <code>Couldn&#39;t find a navigation object</code>, còn render navigator mà thiếu container thì báo <code>Couldn&#39;t register the navigator</code>. Chọn loại: Stack cho luồng đi sâu có nút Back (danh sách rồi tới chi tiết); Tab cho 3–5 mục cấp một luôn cần truy cập (Trang chủ, Đơn hàng, Tài khoản); Drawer cho nhiều mục ít dùng (Drawer cần thêm <code>react-native-gesture-handler</code> và <code>react-native-reanimated</code>). Thường lồng nhau: Tab ở ngoài, mỗi tab chứa một Stack riêng. Khai báo kiểu <code>ParamList</code> cho navigator giúp TypeScript kiểm tra tên màn hình và params khi gọi <code>navigate</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">RootStackParamList</span> = {
+  <span class="tk-type">Home</span>: <span class="tk-kw">undefined</span>;            <span class="tk-com">// không có params</span>
+  <span class="tk-type">Detail</span>: { id: <span class="tk-kw">number</span> };
+};
+
+<span class="tk-kw">const</span> <span class="tk-type">Stack</span> = createNativeStackNavigator&lt;<span class="tk-type">RootStackParamList</span>&gt;();
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-kw">function</span> <span class="tk-type">App</span>() {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">NavigationContainer</span>&gt;     {<span class="tk-com">/* chỉ một container ở gốc app */</span>}
+      &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Navigator</span> initialRouteName=<span class="tk-str">&quot;Home&quot;</span>&gt;
+        &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span> name=<span class="tk-str">&quot;Home&quot;</span> component={<span class="tk-type">HomeScreen</span>} options={{ title: <span class="tk-str">&#39;Trang chủ&#39;</span> }} /&gt;
+        &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span> name=<span class="tk-str">&quot;Detail&quot;</span> component={<span class="tk-type">DetailScreen</span>} /&gt;
+      &lt;/<span class="tk-type">Stack</span>.<span class="tk-type">Navigator</span>&gt;
+    &lt;/<span class="tk-type">NavigationContainer</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="native">
+  <div class="section-head"><h2>Native &amp; New Architecture</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/native/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q31.html">React Native là gì? Khác gì với app hybrid dùng WebView (Ionic, Cordova) và với Flutter?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React Native cho phép viết app bằng JavaScript/TypeScript với React, nhưng giao diện được dựng bằng view native thật của hệ điều hành: <code>&lt;View&gt;</code> thành <code>UIView</code> trên iOS và <code>ViewGroup</code> trên Android, <code>&lt;Text&gt;</code> thành <code>UILabel</code>/<code>TextView</code>. Code JS chạy trong một JS engine (Hermes) trên JS thread, tính ra cây UI rồi ra lệnh cho phía native tạo và cập nhật view, còn việc vẽ và cuộn do native đảm nhiệm nên cảm giác gần với app native. Khác app hybrid như Ionic hay Cordova: những app đó chạy giao diện HTML/CSS bên trong WebView và không có component native. Khác Flutter: Flutter tự vẽ mọi pixel bằng engine riêng (Skia/Impeller) và dùng ngôn ngữ Dart, còn React Native dùng component của nền tảng nên giao diện mang sẵn phong cách hệ thống và tận dụng được hệ sinh thái JavaScript/React. Đổi lại phải xử lý khác biệt giữa iOS và Android, và lớp giao tiếp JS với native (New Architecture dùng JSI thay cho bridge bất đồng bộ cũ). Khi cần tính năng native chưa có sẵn thì viết module bằng Swift/Kotlin.</div>
         
         
       </div>
@@ -503,6 +769,27 @@ console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: a
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q36.html">Server chạy ở <code>localhost:3000</code> trên máy dev nhưng app báo <code>Network request failed</code>. Nguyên nhân thường gặp và cách xử lý trên iOS Simulator, Android Emulator và máy thật?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>localhost</code> luôn là chính thiết bị đang chạy app. iOS Simulator dùng chung mạng với máy Mac nên <code>http://localhost:3000</code> thường chạy được. Android Emulator là máy ảo riêng, <code>localhost</code> trỏ vào chính emulator; địa chỉ của máy dev là <code>10.0.2.2</code> (hoặc chạy <code>adb reverse tcp:3000 tcp:3000</code> để dùng <code>localhost</code>). Máy thật phải cùng mạng Wi-Fi và dùng IP LAN của máy dev (như <code>192.168.1.10</code>), đồng thời server phải lắng nghe trên <code>0.0.0.0</code> chứ không chỉ <code>127.0.0.1</code>, và firewall phải cho phép cổng đó. Còn có hai rào cản về HTTP không mã hoá: iOS có App Transport Security, template React Native đã mở cho mạng cục bộ nhưng nếu gọi IP LAN thì vẫn phải khai báo ngoại lệ trong <code>Info.plist</code>; Android 9 trở lên chặn cleartext, template chỉ bật <code>usesCleartextTraffic</code> ở bản debug. Nên đặt base URL theo môi trường thay vì ghi cứng khắp nơi, và dùng HTTPS cho production.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { <span class="tk-type">Platform</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+
+<span class="tk-com">// Chọn địa chỉ máy dev theo nền tảng khi chạy trên simulator/emulator</span>
+<span class="tk-kw">const</span> <span class="tk-type">DEV_HOST</span> = <span class="tk-type">Platform</span>.<span class="tk-type">OS</span> === <span class="tk-str">&#39;android&#39;</span> ? <span class="tk-str">&#39;10.0.2.2&#39;</span> : <span class="tk-str">&#39;localhost&#39;</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> <span class="tk-type">API_URL</span> = __DEV__
+  ? <span class="tk-str">`http://${DEV_HOST}:3000`</span>
+  : <span class="tk-str">&#39;https://api.myshop.com&#39;</span>;
+
+<span class="tk-com">// Máy thật: dùng IP LAN của máy dev, ví dụ http://192.168.1.10:3000</span>
+<span class="tk-com">// Android + adb reverse tcp:3000 tcp:3000: dùng được http://localhost:3000</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="tooling">
@@ -526,6 +813,23 @@ console.log(user.address.city); <span class="tk-com">// &#39;Đà Nẵng&#39;: a
       <div class="model-answer">
         <div class="answer-text">Metro là bundler của React Native: dùng Babel biên dịch JSX/TypeScript, gộp các module và asset thành bundle, khi phát triển thì chạy dev server (mặc định cổng 8081) để app tải bundle về. Babel chỉ bỏ phần type chứ không kiểm tra type, nên muốn bắt lỗi TypeScript phải chạy <code>tsc</code> hoặc dựa vào editor. Với Fast Refresh, khi bạn lưu file chỉ export component thì chỉ component đó được cập nhật và state của <code>useState</code> được giữ; nếu file export cả thứ khác, module đó cùng các module import nó được chạy lại nên state có thể mất. Mọi thay đổi native như cài thư viện có native code, sửa <code>AndroidManifest.xml</code>, <code>Info.plist</code> hay Podfile đều phải build lại app; reload JS hay xoá cache Metro không giải quyết được.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q37.html">Giải thích cấu trúc một project React Native: <code>android/</code>, <code>ios/</code>, <code>node_modules/</code>, <code>package.json</code>, <code>index.js</code>, <code>App.tsx</code>. <code>dependencies</code> và <code>devDependencies</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>index.js</code> là điểm vào của app, gọi <code>AppRegistry.registerComponent</code> để đăng ký component gốc <code>App</code> (viết trong <code>App.tsx</code>) với đúng tên project mà phía native sẽ tìm khi khởi động. <code>android/</code> và <code>ios/</code> là hai project native thật (Gradle và Xcode) mà bạn mở bằng Android Studio hoặc Xcode, nơi sửa quyền, icon, <code>AndroidManifest.xml</code>, <code>Info.plist</code> hay thêm code native; project Expo &quot;managed&quot; có thể không có hai thư mục này vì chúng được sinh ra khi chạy <code>prebuild</code>. <code>node_modules/</code> chứa thư viện cài từ npm hoặc yarn, rất nặng, không commit lên git và luôn cài lại được từ lockfile. <code>package.json</code> liệt kê tên project, các script (<code>start</code>, <code>android</code>, <code>ios</code>, <code>test</code>) và phiên bản thư viện. <code>dependencies</code> là thư viện app cần khi chạy (react, react-native, react-navigation...), <code>devDependencies</code> chỉ phục vụ lúc phát triển (TypeScript, ESLint, Jest, các gói type). Với app React Native thì Metro chỉ đóng gói những gì bạn <code>import</code>, nên sự phân biệt này chủ yếu để mô tả ý nghĩa, và quan trọng hơn khi bạn xuất bản thư viện lên npm. Lockfile (<code>package-lock.json</code> hoặc <code>yarn.lock</code>) cần commit để cả team cài cùng một phiên bản.</div>
+        <pre class="code-block"><code><span class="tk-com">// index.js: điểm vào của app</span>
+<span class="tk-kw">import</span> { <span class="tk-type">AppRegistry</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+<span class="tk-kw">import</span> <span class="tk-type">App</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;./App&#39;</span>;
+<span class="tk-kw">import</span> { name <span class="tk-kw">as</span> appName } <span class="tk-kw">from</span> <span class="tk-str">&#39;./app.json&#39;</span>;
+
+<span class="tk-com">// Tên đăng ký phải khớp với tên mà phía native tìm khi khởi động</span>
+<span class="tk-type">AppRegistry</span>.registerComponent(appName, () =&gt; <span class="tk-type">App</span>);</code></pre>
         
       </div>
     </details>

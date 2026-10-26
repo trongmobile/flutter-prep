@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher: Server chạy ở localhost:3000 trên máy dev nhưng app báo Network reque…</title>
+<meta name="description" content="localhost luôn là chính thiết bị đang chạy app. iOS Simulator dùng chung mạng với máy Mac nên http://localhost:3000 thường chạy được. Android Emulator là máy…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q36.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: Server chạy ở localhost:3000 trên máy dev nhưng app báo Network reque…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-q36.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Server chạy ở localhost:3000 trên máy dev nhưng…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q36.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Server chạy ở localhost:3000 trên máy dev nhưng…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Server chạy ở <code>localhost:3000</code> trên máy dev nhưng app báo <code>Network request failed</code>. Nguyên nhân thường gặp và cách xử lý trên iOS Simulator, Android Emulator và máy thật?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>localhost</code> luôn là chính thiết bị đang chạy app. iOS Simulator dùng chung mạng với máy Mac nên <code>http://localhost:3000</code> thường chạy được. Android Emulator là máy ảo riêng, <code>localhost</code> trỏ vào chính emulator; địa chỉ của máy dev là <code>10.0.2.2</code> (hoặc chạy <code>adb reverse tcp:3000 tcp:3000</code> để dùng <code>localhost</code>). Máy thật phải cùng mạng Wi-Fi và dùng IP LAN của máy dev (như <code>192.168.1.10</code>), đồng thời server phải lắng nghe trên <code>0.0.0.0</code> chứ không chỉ <code>127.0.0.1</code>, và firewall phải cho phép cổng đó. Còn có hai rào cản về HTTP không mã hoá: iOS có App Transport Security, template React Native đã mở cho mạng cục bộ nhưng nếu gọi IP LAN thì vẫn phải khai báo ngoại lệ trong <code>Info.plist</code>; Android 9 trở lên chặn cleartext, template chỉ bật <code>usesCleartextTraffic</code> ở bản debug. Nên đặt base URL theo môi trường thay vì ghi cứng khắp nơi, và dùng HTTPS cho production.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { <span class="tk-type">Platform</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+
+<span class="tk-com">// Chọn địa chỉ máy dev theo nền tảng khi chạy trên simulator/emulator</span>
+<span class="tk-kw">const</span> <span class="tk-type">DEV_HOST</span> = <span class="tk-type">Platform</span>.<span class="tk-type">OS</span> === <span class="tk-str">&#39;android&#39;</span> ? <span class="tk-str">&#39;10.0.2.2&#39;</span> : <span class="tk-str">&#39;localhost&#39;</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> <span class="tk-type">API_URL</span> = __DEV__
+  ? <span class="tk-str">`http://${DEV_HOST}:3000`</span>
+  : <span class="tk-str">&#39;https://api.myshop.com&#39;</span>;
+
+<span class="tk-com">// Máy thật: dùng IP LAN của máy dev, ví dụ http://192.168.1.10:3000</span>
+<span class="tk-com">// Android + adb reverse tcp:3000 tcp:3000: dùng được http://localhost:3000</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q36">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q35.html"><span class="muted small">← Câu trước</span><span>Cài React Navigation cần những gì? NavigationContainer, navigator và screen liê…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q37.html"><span class="muted small">Câu sau →</span><span>Giải thích cấu trúc một project React Native: android/, ios/, node_modules/, pa…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/react-native/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q22.html">Gọi API bằng fetch thế nào? Vì sao server trả 404 hoặc 500 mà code không nhảy vào catch?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q23.html">AsyncStorage là gì, lưu một object vào đó thế nào? Có nên lưu mọi thứ vào AsyncStorage không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-m35.html">Server trả về HTTP 404 cho request dưới đây. Màn hình console in ra gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-m36.html">Cách đúng để lưu rồi đọc lại object user bằng AsyncStorage là gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-m37.html">await AsyncStorage.getItem(&#39;token&#39;) trả về gì khi key token chưa từng được lưu?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-q18.html">Màn hình chi tiết sản phẩm gọi API theo id trong useEffect. Bạn tổ chức trạng thái loading/error thế nào, và cần xử lý gì khi người dùng thoát màn hình hoặc đổi id trước khi request xong?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

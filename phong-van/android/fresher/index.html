@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Fresher (25 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="25 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
+<title>Câu hỏi phỏng vấn Android Fresher (37 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="37 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher (25 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="25 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher (37 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="37 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · android · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Fresher</h1>
-  <p class="subtitle">Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/android/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -62,14 +62,14 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#kotlin">Kotlin</a> <span class="count">6</span></li>
-    <li><a href="#java">Java &amp; JVM</a> <span class="count">5</span></li>
-    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">5</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">5</span></li>
+    <li><a href="#kotlin">Kotlin</a> <span class="count">9</span></li>
+    <li><a href="#java">Java &amp; JVM</a> <span class="count">7</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">6</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">8</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">1</span></li>
-    <li><a href="#background">Background &amp; Service</a> <span class="count">1</span></li>
-    <li><a href="#build">Gradle &amp; Build</a> <span class="count">1</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
+    <li><a href="#background">Background &amp; Service</a> <span class="count">2</span></li>
+    <li><a href="#build">Gradle &amp; Build</a> <span class="count">2</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -201,6 +201,85 @@ println(names) <span class="tk-com">// [Giày, Áo]</span></code></pre>
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q26.html">Class trong Kotlin khác Java ở những điểm nào? Vì sao muốn kế thừa phải thêm <code>open</code>, và primary constructor cùng khối <code>init</code> hoạt động ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Class và method trong Kotlin mặc định là <code>final</code>: muốn cho kế thừa phải khai báo <code>open class</code>, muốn cho override phải đánh dấu <code>open fun</code>, và lớp con viết <code>override</code>. Primary constructor nằm ngay sau tên class; tham số có <code>val</code>/<code>var</code> tự thành property, không có thì chỉ là tham số dùng được trong <code>init</code> và khi khởi tạo property. Khối <code>init</code> chạy lúc tạo object, theo đúng thứ tự khai báo và xen kẽ với các property initializer. Giá trị mặc định cho tham số thay được phần lớn constructor overload kiểu Java; constructor phụ (<code>constructor(...)</code>) bắt buộc gọi về primary bằng <code>this(...)</code>. Chỉ khi kế thừa class Android có nhiều constructor như <code>View</code> thì mới cần constructor phụ hoặc <code>@JvmOverloads constructor</code>. Kotlin cũng không có từ khoá <code>new</code>: gọi thẳng <code>Dog(&quot;Mực&quot;)</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">open</span> <span class="tk-kw">class</span> <span class="tk-type">Animal</span>(<span class="tk-kw">val</span> name: <span class="tk-type">String</span>) {
+  <span class="tk-kw">open</span> <span class="tk-kw">fun</span> sound() = <span class="tk-str">&quot;...&quot;</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Dog</span>(name: <span class="tk-type">String</span>, <span class="tk-kw">val</span> age: <span class="tk-type">Int</span> = <span class="tk-num">1</span>) : <span class="tk-type">Animal</span>(name) {
+  <span class="tk-kw">init</span> {
+    println(<span class="tk-str">&quot;Tạo Dog $name&quot;</span>) <span class="tk-com">// chạy khi khởi tạo object</span>
+  }
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> sound() = <span class="tk-str">&quot;Gâu&quot;</span>
+}
+
+<span class="tk-kw">fun</span> main() {
+  <span class="tk-kw">val</span> d = <span class="tk-type">Dog</span>(<span class="tk-str">&quot;Mực&quot;</span>)           <span class="tk-com">// age dùng giá trị mặc định 1</span>
+  println(<span class="tk-str">&quot;${d.name} ${d.age} ${d.sound()}&quot;</span>) <span class="tk-com">// Mực 1 Gâu</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q27.html">Kotlin không có từ khoá <code>static</code>, vậy <code>object</code> và <code>companion object</code> dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>object</code> khai báo một singleton: class chỉ có đúng một instance, được tạo ở lần truy cập đầu tiên, an toàn với đa luồng, và gọi thẳng bằng tên như <code>Logger.d(...)</code>. <code>companion object</code> là một object nằm trong class, dùng cho những thứ &quot;thuộc về class&quot; thay cho member <code>static</code> của Java: hằng số, factory method như <code>newInstance</code>, tag log. Mỗi class có tối đa một companion, truy cập qua tên class (<code>ProductFragment.TAG</code>). Thực chất companion là object thật nên từ Java phải gọi qua <code>Companion</code>, trừ khi thêm <code>@JvmStatic</code>/<code>@JvmField</code>. Hằng compile-time nên khai báo bằng <code>const val</code>. Lưu ý singleton giữ state toàn cục thì khó test và dễ giữ nhầm <code>Context</code>/<code>Activity</code> gây memory leak; chỉ nên dùng <code>object</code> cho thứ không có state hoặc thật sự dùng chung.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ProductFragment</span> : <span class="tk-type">Fragment</span>() {
+  <span class="tk-kw">companion</span> <span class="tk-kw">object</span> {
+    <span class="tk-kw">const</span> <span class="tk-kw">val</span> <span class="tk-type">TAG</span> = <span class="tk-str">&quot;ProductFragment&quot;</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">const</span> <span class="tk-kw">val</span> <span class="tk-type">ARG_ID</span> = <span class="tk-str">&quot;product_id&quot;</span>
+
+    <span class="tk-com">// thay cho static factory method của Java</span>
+    <span class="tk-kw">fun</span> newInstance(id: <span class="tk-type">Int</span>) = <span class="tk-type">ProductFragment</span>().apply {
+      arguments = bundleOf(<span class="tk-type">ARG_ID</span> to id)
+    }
+  }
+}
+
+<span class="tk-kw">object</span> <span class="tk-type">Logger</span> {              <span class="tk-com">// singleton: chỉ có một instance</span>
+  <span class="tk-kw">fun</span> d(msg: <span class="tk-type">String</span>) = println(<span class="tk-str">&quot;[DEBUG] $msg&quot;</span>)
+}
+
+<span class="tk-com">// Cách dùng:</span>
+<span class="tk-com">// val fragment = ProductFragment.newInstance(7)</span>
+<span class="tk-com">// Logger.d(&quot;Mở ${ProductFragment.TAG}&quot;)</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q28.html">Lambda và higher-order function trong Kotlin là gì? Vì sao <code>button.setOnClickListener { ... }</code> viết được gọn như vậy?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Higher-order function là hàm nhận một hàm khác làm tham số hoặc trả về một hàm; lambda là cách viết nhanh một hàm không tên, ví dụ <code>{ x -&gt; x * 2 }</code>. Khi lambda chỉ có một tham số thì dùng <code>it</code> ngầm định; khi lambda là tham số cuối, nó được viết ra ngoài ngoặc đơn (trailing lambda), và nếu là tham số duy nhất thì bỏ luôn cặp ngoặc. Với interface Java chỉ có một method trừu tượng như <code>View.OnClickListener</code>, Kotlin cho truyền thẳng lambda (SAM conversion) thay cho anonymous class dài dòng. Lambda còn &quot;bắt&quot; được biến bên ngoài (closure), kể cả <code>var</code>. Các hàm quen thuộc như <code>filter</code>, <code>map</code>, <code>forEach</code>, <code>let</code>, <code>apply</code> đều là higher-order function, và chúng được đánh dấu <code>inline</code> nên lambda được chép thẳng vào chỗ gọi, không tốn thêm object.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> repeatAction(times: <span class="tk-type">Int</span>, action: (<span class="tk-type">Int</span>) -&gt; <span class="tk-type">Unit</span>) {
+  <span class="tk-kw">for</span> (i <span class="tk-kw">in</span> <span class="tk-num">1</span>..times) action(i)
+}
+
+<span class="tk-kw">fun</span> main() {
+  repeatAction(<span class="tk-num">3</span>) { println(<span class="tk-str">&quot;Lần $it&quot;</span>) } <span class="tk-com">// trailing lambda, it là tham số duy nhất</span>
+
+  <span class="tk-kw">val</span> prices = listOf(<span class="tk-num">120</span>, <span class="tk-num">50</span>, <span class="tk-num">300</span>)
+  <span class="tk-kw">val</span> total = prices.filter { it &gt;= <span class="tk-num">100</span> }.sum()
+  println(total) <span class="tk-com">// 420</span>
+}
+
+<span class="tk-com">// Trong Activity: SAM conversion của View.OnClickListener</span>
+<span class="tk-com">// button.setOnClickListener { view -&gt; save() }</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="java">
@@ -293,6 +372,61 @@ s = s.toUpperCase();      <span class="tk-com">// s trỏ tới object mới &qu
       <div class="model-answer">
         <div class="answer-text">Checked exception là lớp con của <code>Exception</code> nhưng không thuộc nhánh <code>RuntimeException</code> (ví dụ <code>IOException</code>); compiler Java bắt buộc phải <code>try/catch</code> hoặc khai báo <code>throws</code>. Unchecked exception là <code>RuntimeException</code> và các lớp con (<code>NullPointerException</code>, <code>IllegalArgumentException</code>, <code>IndexOutOfBoundsException</code>), thường do lỗi lập trình nên không bắt buộc xử lý; <code>Error</code> như <code>OutOfMemoryError</code> cũng không bị kiểm tra. Kotlin không có checked exception, nên khi gọi API Java ném <code>IOException</code> compiler không nhắc gì, bạn phải tự nhớ bắt lỗi nếu không muốn app crash. Ngược lại, hàm Kotlin muốn code Java bắt buộc xử lý exception thì gắn <code>@Throws(IOException::class)</code>.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q29.html">Bốn tính chất của lập trình hướng đối tượng (OOP) là gì? Cho ví dụ gắn với Android.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đóng gói (encapsulation) là giấu dữ liệu bên trong và chỉ cho truy cập qua method được kiểm soát, ví dụ field <code>private</code> kèm getter/setter, hay <code>ViewModel</code> giữ <code>private val _state</code> rồi chỉ expose bản read-only. Kế thừa (inheritance) cho lớp con dùng lại code của lớp cha, ví dụ <code>MainActivity</code> kế thừa <code>AppCompatActivity</code>; lạm dụng kế thừa làm code cứng nhắc nên nhiều khi nên chọn composition. Đa hình (polymorphism) là cùng một lời gọi nhưng hành vi tuỳ theo object thật lúc chạy: một danh sách <code>View</code> chứa cả <code>TextView</code> lẫn <code>Button</code>, gọi <code>onDraw</code> thì mỗi loại tự vẽ theo cách của nó (override được chọn lúc runtime). Trừu tượng (abstraction) là chỉ lộ &quot;làm gì&quot; qua abstract class hoặc interface và giấu &quot;làm thế nào&quot;, ví dụ ViewModel chỉ biết interface <code>UserRepository</code> mà không cần biết dữ liệu đến từ Retrofit hay Room. Khi trả lời nên kèm ví dụ như vậy thay vì chỉ đọc lại định nghĩa.</div>
+        <pre class="code-block" data-lang="Java"><code><span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">Shape</span> {                       <span class="tk-com">// trừu tượng: chỉ nói &quot;có diện tích&quot;</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">final</span> <span class="tk-type">String</span> name;                 <span class="tk-com">// đóng gói: field không public</span>
+  <span class="tk-type">Shape</span>(<span class="tk-type">String</span> name) { <span class="tk-kw">this</span>.name = name; }
+  <span class="tk-kw">abstract</span> <span class="tk-kw">double</span> area();
+  <span class="tk-type">String</span> describe() { <span class="tk-kw">return</span> name + <span class="tk-str">&quot;: &quot;</span> + area(); }
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Circle</span> <span class="tk-kw">extends</span> <span class="tk-type">Shape</span> {                 <span class="tk-com">// kế thừa Shape</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">final</span> <span class="tk-kw">double</span> r;
+  <span class="tk-type">Circle</span>(<span class="tk-kw">double</span> r) { <span class="tk-kw">super</span>(<span class="tk-str">&quot;Tròn&quot;</span>); <span class="tk-kw">this</span>.r = r; }
+  <span class="tk-ann">@Override</span> <span class="tk-kw">double</span> area() { <span class="tk-kw">return</span> <span class="tk-type">Math</span>.<span class="tk-type">PI</span> * r * r; }
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Square</span> <span class="tk-kw">extends</span> <span class="tk-type">Shape</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">final</span> <span class="tk-kw">double</span> side;
+  <span class="tk-type">Square</span>(<span class="tk-kw">double</span> side) { <span class="tk-kw">super</span>(<span class="tk-str">&quot;Vuông&quot;</span>); <span class="tk-kw">this</span>.side = side; }
+  <span class="tk-ann">@Override</span> <span class="tk-kw">double</span> area() { <span class="tk-kw">return</span> side * side; }
+}
+
+<span class="tk-com">// Đa hình: cùng gọi describe(), kết quả tuỳ object thật</span>
+<span class="tk-type">List</span>&lt;<span class="tk-type">Shape</span>&gt; shapes = <span class="tk-type">List</span>.of(<span class="tk-kw">new</span> <span class="tk-type">Circle</span>(<span class="tk-num">1</span>), <span class="tk-kw">new</span> <span class="tk-type">Square</span>(<span class="tk-num">2</span>));
+<span class="tk-kw">for</span> (<span class="tk-type">Shape</span> s : shapes) <span class="tk-type">System</span>.out.println(s.describe());</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q30.html"><code>static</code> và <code>final</code> trong Java nghĩa là gì? Vì sao giữ <code>Activity</code> hoặc <code>View</code> trong một field <code>static</code> lại gây memory leak?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>static</code> gắn member vào class chứ không vào từng instance: chỉ có một bản dùng chung, truy cập không cần tạo object, và sống suốt thời gian class còn được nạp, thường là cả vòng đời process. <code>final</code> nghĩa là không đổi sau khi gán: biến <code>final</code> chỉ gán một lần (tham chiếu không đổi nhưng object bên trong vẫn có thể bị sửa), method <code>final</code> không được override, class <code>final</code> không được kế thừa (như <code>String</code>); <code>static final</code> tạo thành hằng số. Vì field <code>static</code> sống lâu hơn mọi Activity, nếu lưu <code>Activity</code>, <code>Context</code> hay một <code>View</code> (view luôn giữ tham chiếu tới Activity chứa nó) vào đó thì Garbage Collector không thu hồi được Activity đã bị huỷ, chẳng hạn sau khi xoay màn hình, kéo theo cả cây view và bitmap của nó: memory leak. Cần context sống lâu thì dùng <code>applicationContext</code>; nếu bắt buộc giữ thì dùng <code>WeakReference</code> hoặc gỡ tham chiếu ở <code>onDestroy</code>. <code>companion object</code> và <code>object</code> của Kotlin có rủi ro tương tự.</div>
+        <pre class="code-block" data-lang="Java"><code><span class="tk-kw">public</span> <span class="tk-kw">class</span> <span class="tk-type">MainActivity</span> <span class="tk-kw">extends</span> <span class="tk-type">AppCompatActivity</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">final</span> <span class="tk-kw">int</span> <span class="tk-type">MAX_RETRY</span> = <span class="tk-num">3</span>;        <span class="tk-com">// hằng số: static final</span>
+
+  <span class="tk-com">// SAI: field static sống đến hết process, giữ luôn cả Activity đã destroy</span>
+  <span class="tk-kw">static</span> <span class="tk-type">TextView</span> sTitleView;
+
+  <span class="tk-ann">@Override</span>
+  <span class="tk-kw">protected</span> <span class="tk-kw">void</span> onCreate(<span class="tk-type">Bundle</span> savedInstanceState) {
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState);
+    setContentView(<span class="tk-type">R</span>.layout.activity_main);
+    sTitleView = findViewById(<span class="tk-type">R</span>.id.title); <span class="tk-com">// leak sau mỗi lần xoay màn hình</span>
+  }
+}</code></pre>
         
       </div>
     </details>
@@ -391,6 +525,31 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q31.html"><code>Context</code> là gì? <code>applicationContext</code> và Activity context khác nhau thế nào, khi nào dùng cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Context</code> là cầu nối tới môi trường hệ thống và tài nguyên của app: lấy resource (<code>getString</code>), đọc file, <code>SharedPreferences</code>, system service (<code>getSystemService</code>), mở Activity hoặc Service. <code>Activity</code>, <code>Service</code> và <code>Application</code> đều là Context. Activity context gắn với vòng đời Activity và mang theme của nó, nên bắt buộc dùng khi làm việc với UI như inflate layout hay hiện <code>AlertDialog</code>; truyền application context vào <code>AlertDialog.Builder</code> sẽ crash với lỗi <code>Unable to add window -- token null is not valid</code>, còn view inflate bằng nó sẽ mất theme. <code>applicationContext</code> sống suốt vòng đời process, dùng cho thứ sống lâu như Room database, Retrofit hay singleton. Quy tắc: việc nào có UI thì dùng Activity context, việc nào sống lâu thì dùng <code>applicationContext</code>, và đừng lưu Activity context vào object sống lâu hơn Activity (singleton, field static, listener quên huỷ) vì sẽ gây memory leak.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">AppDatabaseProvider</span>(context: <span class="tk-type">Context</span>) {
+  <span class="tk-com">// object sống lâu: dùng applicationContext để không giữ Activity</span>
+  <span class="tk-kw">val</span> db = <span class="tk-type">Room</span>.databaseBuilder(
+    context.applicationContext, <span class="tk-type">AppDatabase</span>::<span class="tk-kw">class</span>.java, <span class="tk-str">&quot;app.db&quot;</span>
+  ).build()
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">MainActivity</span> : <span class="tk-type">AppCompatActivity</span>() {
+  <span class="tk-kw">fun</span> showConfirm() {
+    <span class="tk-type">AlertDialog</span>.<span class="tk-type">Builder</span>(<span class="tk-kw">this</span>)            <span class="tk-com">// this = Activity context</span>
+      .setMessage(<span class="tk-str">&quot;Xoá mục này?&quot;</span>)
+      .setPositiveButton(<span class="tk-str">&quot;Xoá&quot;</span>, <span class="tk-kw">null</span>)
+      .show()
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="ui">
@@ -469,6 +628,76 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q32.html"><code>findViewById</code> có nhược điểm gì? ViewBinding giải quyết thế nào, và khác Kotlin synthetics ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>findViewById</code> trả về <code>View</code> rồi phải ép kiểu, nên sai id hoặc sai kiểu chỉ lộ ra lúc chạy (<code>null</code>, <code>ClassCastException</code>), và phải gọi lại ở nhiều nơi. ViewBinding sinh sẵn một class cho mỗi file layout (<code>activity_main.xml</code> thành <code>ActivityMainBinding</code>) với property cho từng view có id, đúng kiểu sẵn, nên gõ sai id là lỗi compile. Property là non-null nếu view có ở mọi cấu hình layout, và nullable nếu chỉ có ở một số biến thể như <code>layout-land</code>. Bật bằng <code>buildFeatures { viewBinding = true }</code> trong Gradle. Kotlin synthetics (<code>kotlinx.android.synthetic</code>) đã bị deprecated và không còn được khuyên dùng, ViewBinding thay thế nó mà không cần plugin. Khác DataBinding ở chỗ ViewBinding không có biểu thức <code>@{}</code> trong XML nên nhẹ và build nhanh hơn. Trong Fragment cần gán <code>_binding = null</code> ở <code>onDestroyView</code> vì Fragment sống lâu hơn view của nó, nếu không sẽ leak view.</div>
+        <pre class="code-block"><code><span class="tk-com">// build.gradle.kts (module app):</span>
+<span class="tk-com">// android { buildFeatures { viewBinding = true } }</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">MainActivity</span> : <span class="tk-type">AppCompatActivity</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">lateinit</span> <span class="tk-kw">var</span> binding: <span class="tk-type">ActivityMainBinding</span>
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate(savedInstanceState: <span class="tk-type">Bundle</span>?) {
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState)
+    binding = <span class="tk-type">ActivityMainBinding</span>.inflate(layoutInflater)
+    setContentView(binding.root)
+
+    binding.title.text = <span class="tk-str">&quot;Xin chào&quot;</span>          <span class="tk-com">// đúng kiểu TextView, sai id là lỗi compile</span>
+    binding.btnSave.setOnClickListener { save() }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q33.html">Tài nguyên (resource) trong Android được tổ chức thế nào? Vì sao không nên viết thẳng chuỗi, màu vào code?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mọi thứ không phải code đặt trong <code>res/</code>: <code>layout/</code>, <code>drawable/</code>, <code>mipmap/</code> (icon launcher), <code>values/</code> (<code>strings.xml</code>, <code>colors.xml</code>, <code>dimens.xml</code>, <code>themes.xml</code>), <code>font/</code>... Build sinh ra class <code>R</code> chứa id, dùng là <code>R.string.app_name</code> trong code hoặc <code>@string/app_name</code> trong XML. Thêm hậu tố cấu hình (qualifier) vào tên thư mục thì hệ thống tự chọn bản phù hợp lúc chạy: <code>values-vi</code> cho tiếng Việt, <code>values-night</code> hoặc <code>drawable-night</code> cho dark mode, <code>layout-land</code> cho màn ngang, <code>drawable-xxhdpi</code> theo mật độ màn hình, <code>values-sw600dp</code> cho tablet. Không nên hard-code chuỗi và màu vì không dịch được đa ngôn ngữ, không đổi theo theme hay dark mode được, đổi một màu phải sửa nhiều nơi, và lint sẽ cảnh báo &quot;Hardcoded string&quot;. Chuỗi có tham số thì dùng placeholder như <code>%1$s</code> (số nhiều dùng <code>plurals</code>) thay vì nối chuỗi.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-com">&lt;!-- res/values/strings.xml --&gt;</span>
+<span class="tk-kw">&lt;resources</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;string</span> <span class="tk-type">name</span>=<span class="tk-str">&quot;app_name&quot;</span><span class="tk-kw">&gt;</span>Shop<span class="tk-kw">&lt;/string</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;string</span> <span class="tk-type">name</span>=<span class="tk-str">&quot;greeting&quot;</span><span class="tk-kw">&gt;</span>Xin chào, %1$s!<span class="tk-kw">&lt;/string</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/resources</span><span class="tk-kw">&gt;</span>
+
+<span class="tk-com">&lt;!-- res/values/colors.xml: màu mặc định; res/values-night/colors.xml ghi đè #121212 cho dark mode --&gt;</span>
+<span class="tk-kw">&lt;resources</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;color</span> <span class="tk-type">name</span>=<span class="tk-str">&quot;surface&quot;</span><span class="tk-kw">&gt;</span>#FFFFFF<span class="tk-kw">&lt;/color</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/resources</span><span class="tk-kw">&gt;</span>
+
+<span class="tk-com">&lt;!-- Trong layout; trong code dùng getString(R.string.greeting, &quot;An&quot;) --&gt;</span>
+<span class="tk-kw">&lt;TextView</span>
+  <span class="tk-type">android:text</span>=<span class="tk-str">&quot;@string/app_name&quot;</span>
+  <span class="tk-type">android:background</span>=<span class="tk-str">&quot;@color/surface&quot;</span> <span class="tk-kw">/&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q34.html">Trong Jetpack Compose, <code>LazyColumn</code> khác <code>Column</code> thế nào? Vì sao nên truyền <code>key</code> vào <code>items</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Column</code> đo và vẽ tất cả phần tử con ngay lập tức, kể cả những thứ nằm ngoài màn hình, và không tự cuộn nếu bạn không thêm <code>Modifier.verticalScroll</code>; nó hợp cho vài phần tử cố định. <code>LazyColumn</code> chỉ compose và layout các item đang hiển thị (cộng vài item đệm), tự cuộn được, là bản thay thế RecyclerView mà không cần Adapter hay ViewHolder; dùng cho danh sách dài hoặc dữ liệu động qua DSL <code>items(list) { ... }</code>. Đừng đặt <code>LazyColumn</code> bên trong một <code>Column</code> có <code>verticalScroll</code>: chiều cao vô hạn khiến app crash. Truyền <code>key = { it.id }</code> giúp Compose nhận ra item theo id chứ không theo vị trí, nên khi chèn, xoá hay sắp xếp lại thì state của từng item (<code>remember</code>) và animation đi theo đúng item. Key phải duy nhất và ổn định; dùng index làm key thì mất tác dụng khi danh sách đổi thứ tự, còn trùng key thì app crash.</div>
+        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">Message</span>(<span class="tk-kw">val</span> id: <span class="tk-type">Long</span>, <span class="tk-kw">val</span> text: <span class="tk-type">String</span>)
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">MessageList</span>(messages: <span class="tk-type">List</span>&lt;<span class="tk-type">Message</span>&gt;) {
+  <span class="tk-type">LazyColumn</span>(contentPadding = <span class="tk-type">PaddingValues</span>(<span class="tk-num">16</span>.dp)) {
+    items(messages, key = { it.id }) { message -&gt;
+      <span class="tk-type">Text</span>(message.text, modifier = <span class="tk-type">Modifier</span>.padding(vertical = <span class="tk-num">8</span>.dp))
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -501,6 +730,32 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q36.html">App Android gọi API REST cần chuẩn bị gì? Vì sao gọi <code>http://</code> hoặc <code>localhost</code> của máy dev lại không được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết khai báo quyền <code>INTERNET</code> trong manifest (thiếu thì lỗi <code>SecurityException: Permission denied (missing INTERNET permission?)</code>), thêm thư viện HTTP như Retrofit/OkHttp cùng thư viện parse JSON (Gson, Moshi hoặc kotlinx.serialization), và gọi mạng ngoài main thread. Từ Android 9 (API 28), HTTP không mã hoá bị chặn mặc định với lỗi <code>Cleartext HTTP traffic to ... not permitted</code>: server production phải dùng HTTPS; khi dev thì chỉ cho phép đúng domain cần thiết trong <code>network_security_config.xml</code> (nên đặt ở bản debug), tránh bật <code>usesCleartextTraffic=&quot;true&quot;</code> cho cả app. Trên emulator, <code>localhost</code> hay <code>127.0.0.1</code> chính là emulator chứ không phải máy dev; địa chỉ máy dev là <code>10.0.2.2</code>. Máy thật cùng Wi-Fi thì dùng IP LAN của máy dev, hoặc chạy <code>adb reverse tcp:3000 tcp:3000</code> để dùng được <code>localhost</code>.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-com">&lt;!-- AndroidManifest.xml --&gt;</span>
+<span class="tk-kw">&lt;uses-permission</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.permission.INTERNET&quot;</span> <span class="tk-kw">/&gt;</span>
+
+<span class="tk-kw">&lt;application</span>
+  <span class="tk-type">android:networkSecurityConfig</span>=<span class="tk-str">&quot;@xml/network_security_config&quot;</span><span class="tk-kw">&gt;</span>
+  ...
+<span class="tk-kw">&lt;/application</span><span class="tk-kw">&gt;</span>
+
+<span class="tk-com">&lt;!-- res/xml/network_security_config.xml: chỉ cho phép HTTP tới máy dev khi chạy emulator --&gt;</span>
+<span class="tk-kw">&lt;network-security-config</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;domain-config</span> <span class="tk-type">cleartextTrafficPermitted</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;domain</span> <span class="tk-type">includeSubdomains</span>=<span class="tk-str">&quot;false&quot;</span><span class="tk-kw">&gt;</span>10.0.2.2<span class="tk-kw">&lt;/domain</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;/domain-config</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/network-security-config</span><span class="tk-kw">&gt;</span>
+
+<span class="tk-com">&lt;!-- Retrofit.Builder().baseUrl(&quot;http://10.0.2.2:3000/&quot;) --&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="background">
@@ -517,6 +772,29 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q35.html">Main thread (UI thread) là gì? Vì sao gọi mạng ngay trong <code>onCreate</code> thì crash, và vì sao cập nhật UI từ thread khác cũng báo lỗi?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi app Android có một main thread chạy <code>onCreate</code>, xử lý thao tác chạm và vẽ UI; với màn hình 60Hz mỗi khung hình chỉ có khoảng 16ms. Việc nặng như gọi mạng, đọc file hay truy vấn database trên main thread làm UI đứng hình, và nếu kẹt quá khoảng 5 giây thì app bị ANR. Vì vậy gọi mạng trên main thread bị hệ thống ném <code>NetworkOnMainThreadException</code>, và Room mặc định cũng từ chối truy vấn trên main thread. Chiều ngược lại, view không thread-safe nên chỉ main thread mới được đụng vào: cập nhật UI từ thread khác ném <code>CalledFromWrongThreadException</code>. Cách làm hiện nay là Coroutines: <code>lifecycleScope.launch</code> chạy trên main, chuyển việc nặng sang <code>withContext(Dispatchers.IO)</code> rồi quay lại main để cập nhật UI (hàm <code>suspend</code> của Retrofit đã tự chạy ngoài main thread). Cách cũ là <code>AsyncTask</code> (đã deprecated), <code>Handler</code>/<code>Looper</code> hoặc <code>Thread</code> kèm <code>runOnUiThread</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ProfileActivity</span> : <span class="tk-type">AppCompatActivity</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate(savedInstanceState: <span class="tk-type">Bundle</span>?) {
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState)
+    <span class="tk-com">// val user = api.getUserBlocking() // SAI: NetworkOnMainThreadException</span>
+
+    lifecycleScope.launch {             <span class="tk-com">// bắt đầu trên main thread</span>
+      <span class="tk-kw">val</span> user = withContext(<span class="tk-type">Dispatchers</span>.<span class="tk-type">IO</span>) {
+        repository.loadUser()           <span class="tk-com">// việc nặng chạy nền</span>
+      }
+      nameText.text = user.name         <span class="tk-com">// về lại main, cập nhật UI an toàn</span>
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="build">
@@ -529,6 +807,30 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       <div class="model-answer">
         <div class="answer-text">APK là file cài đặt mà thiết bị chạy được trực tiếp. AAB (Android App Bundle) là định dạng để publish lên Google Play chứ không cài thẳng lên máy; Play dùng nó sinh ra các APK tối ưu riêng cho từng thiết bị (tách theo ABI của CPU, mật độ màn hình, ngôn ngữ), nên người dùng tải về ít dung lượng hơn. Từ tháng 8/2021, app mới đăng lên Google Play bắt buộc dùng AAB. Vì Play tự build APK từ AAB nên cần Play App Signing: Google giữ app signing key, còn bạn ký bản upload bằng upload key. Muốn cài thử AAB lên máy thì dùng <code>bundletool</code> để sinh APK; còn gửi bản test trực tiếp cho tester thì thường build APK.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q37.html"><code>compileSdk</code>, <code>targetSdk</code> và <code>minSdk</code> khác nhau thế nào? Mỗi giá trị ảnh hưởng gì đến app?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>minSdk</code> là API thấp nhất app hỗ trợ: máy cũ hơn không cài được và Google Play không hiện app cho máy đó; gọi API mới hơn <code>minSdk</code> thì phải kiểm tra <code>Build.VERSION.SDK_INT</code> hoặc dùng thư viện AndroidX tương thích, lint sẽ cảnh báo nếu quên. <code>compileSdk</code> là phiên bản SDK dùng để biên dịch, quyết định bạn gọi được những API nào; nó chỉ ảnh hưởng lúc build chứ không đổi hành vi lúc chạy, và thường đặt bản mới nhất. <code>targetSdk</code> khai báo bạn đã kiểm thử app với phiên bản Android nào: hệ thống bật các hành vi và hạn chế của phiên bản đó (ví dụ từ targetSdk 33 phải xin quyền <code>POST_NOTIFICATIONS</code> để hiện thông báo), nên nâng <code>targetSdk</code> phải test lại app. Google Play bắt app mới và bản cập nhật phải nhắm tới <code>targetSdk</code> đủ mới, mốc cụ thể đổi theo từng năm. Quan hệ thường gặp: <code>minSdk</code> ≤ <code>targetSdk</code> ≤ <code>compileSdk</code>.</div>
+        <pre class="code-block"><code>android {
+  namespace = <span class="tk-str">&quot;com.example.shop&quot;</span>
+  compileSdk = <span class="tk-num">35</span>            <span class="tk-com">// biên dịch với SDK Android 15 (chỉ ảnh hưởng lúc build)</span>
+
+  defaultConfig {
+    minSdk = <span class="tk-num">24</span>              <span class="tk-com">// chỉ máy Android 7.0 trở lên mới cài được</span>
+    targetSdk = <span class="tk-num">35</span>           <span class="tk-com">// đã kiểm thử với hành vi của Android 15</span>
+  }
+}
+
+<span class="tk-com">// Gọi API mới hơn minSdk thì phải kiểm tra phiên bản</span>
+<span class="tk-kw">if</span> (<span class="tk-type">Build</span>.<span class="tk-type">VERSION</span>.<span class="tk-type">SDK_INT</span> &gt;= <span class="tk-type">Build</span>.<span class="tk-type">VERSION_CODES</span>.<span class="tk-type">TIRAMISU</span>) {
+  requestPermissions(arrayOf(<span class="tk-type">Manifest</span>.permission.<span class="tk-type">POST_NOTIFICATIONS</span>), <span class="tk-num">0</span>)
+}</code></pre>
         
       </div>
     </details>

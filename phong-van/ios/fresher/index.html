@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Fresher (25 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="25 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<title>Câu hỏi phỏng vấn iOS Fresher (37 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="37 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher (25 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="25 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher (37 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="37 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · ios · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Fresher</h1>
-  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/ios/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -62,13 +62,14 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#swift">Swift</a> <span class="count">7</span></li>
+    <li><a href="#swift">Swift</a> <span class="count">11</span></li>
     <li><a href="#memory">Memory &amp; ARC</a> <span class="count">2</span></li>
-    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">5</span></li>
-    <li><a href="#swiftui">SwiftUI</a> <span class="count">4</span></li>
+    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">7</span></li>
+    <li><a href="#swiftui">SwiftUI</a> <span class="count">6</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
-    <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">3</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">5</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -228,6 +229,120 @@ print(total)   <span class="tk-com">// 545</span></code></pre>
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q26.html"><code>Array</code>, <code>Dictionary</code> và <code>Set</code> trong Swift khác nhau thế nào? Vì sao <code>dictionary[key]</code> trả về Optional?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Array</code> là danh sách có thứ tự, truy cập theo index, cho phép phần tử trùng. Index ngoài phạm vi là crash lúc chạy nên cần kiểm tra trước, hoặc dùng <code>first</code>/<code>last</code> vốn trả về Optional. <code>Dictionary</code> lưu các cặp key–value với key phải <code>Hashable</code> và duy nhất, thứ tự duyệt không được đảm bảo. <code>dict[key]</code> trả về <code>Value?</code> vì key có thể chưa tồn tại; dùng <code>if let</code>, <code>??</code> hoặc <code>dict[key, default: 0]</code> để lấy giá trị an toàn. <code>Set</code> chứa các phần tử <code>Hashable</code> duy nhất và không có thứ tự, kiểm tra <code>contains</code> rất nhanh và có sẵn phép toán tập hợp như <code>union</code>, <code>intersection</code>, <code>subtracting</code>, nên hợp để loại trùng hoặc kiểm tra tồn tại. Cả ba đều là struct (value type), nên gán sang biến khác là tạo bản sao độc lập và khai báo bằng <code>let</code> thì không sửa được nội dung.</div>
+        <pre class="code-block"><code><span class="tk-kw">var</span> names = [<span class="tk-str">&quot;An&quot;</span>, <span class="tk-str">&quot;Bình&quot;</span>, <span class="tk-str">&quot;An&quot;</span>]        <span class="tk-com">// Array: có thứ tự, cho phép trùng</span>
+names.append(<span class="tk-str">&quot;Chi&quot;</span>)
+print(names[<span class="tk-num">0</span>], names.first ?? <span class="tk-str">&quot;&quot;</span>)       <span class="tk-com">// An An</span>
+
+<span class="tk-kw">var</span> scores = [<span class="tk-str">&quot;An&quot;</span>: <span class="tk-num">8</span>, <span class="tk-str">&quot;Bình&quot;</span>: <span class="tk-num">6</span>]        <span class="tk-com">// Dictionary</span>
+print(scores[<span class="tk-str">&quot;Chi&quot;</span>] as <span class="tk-type">Any</span>)              <span class="tk-com">// nil (key chưa có)</span>
+scores[<span class="tk-str">&quot;Chi&quot;</span>, <span class="tk-kw">default</span>: <span class="tk-num">0</span>] += <span class="tk-num">5</span>           <span class="tk-com">// key mới bắt đầu từ giá trị mặc định 0</span>
+print(scores[<span class="tk-str">&quot;Chi&quot;</span>] ?? <span class="tk-num">0</span>)                <span class="tk-com">// 5</span>
+
+<span class="tk-kw">let</span> tags: <span class="tk-type">Set</span> = [<span class="tk-str">&quot;swift&quot;</span>, <span class="tk-str">&quot;ios&quot;</span>, <span class="tk-str">&quot;swift&quot;</span>]
+print(tags.count)                        <span class="tk-com">// 2 (đã loại trùng)</span>
+print(tags.contains(<span class="tk-str">&quot;ios&quot;</span>))              <span class="tk-com">// true</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q27.html">Stored property, computed property, <code>lazy</code> và property observer (<code>didSet</code>) khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Stored property lưu giá trị ngay trong instance (<code>var</code> hoặc <code>let</code>). Computed property không lưu gì mà tính lại mỗi lần đọc qua <code>get</code> (và tuỳ chọn <code>set</code>), hợp cho giá trị suy ra từ property khác như <code>area</code> hay <code>fullName</code>; nó luôn khai báo bằng <code>var</code>. <code>lazy var</code> chỉ tính giá trị ở lần truy cập đầu tiên rồi lưu lại, hợp cho thứ tốn kém như <code>DateFormatter</code> hay view phức tạp; nó chỉ dùng được với <code>var</code>, và trong struct thì việc truy cập lần đầu là <code>mutating</code>. Property observer <code>willSet</code>/<code>didSet</code> chạy ngay trước và sau mỗi lần giá trị thay đổi, hay dùng để cập nhật UI khi model đổi; chúng không chạy khi gán giá trị trong <code>init</code> của chính type đó. Nhớ phân biệt: computed property chạy lại code mỗi lần đọc nên đừng đặt việc nặng ở đó.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Rectangle</span> {
+    <span class="tk-kw">var</span> width: <span class="tk-type">Double</span>
+    <span class="tk-kw">var</span> height: <span class="tk-type">Double</span>
+    <span class="tk-kw">var</span> area: <span class="tk-type">Double</span> { width * height }   <span class="tk-com">// computed: tính lại mỗi lần đọc</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Profile</span> {
+    <span class="tk-kw">var</span> name: <span class="tk-type">String</span> = <span class="tk-str">&quot;&quot;</span> {
+        <span class="tk-kw">didSet</span> { print(<span class="tk-str">&quot;Đổi tên: \(oldValue) -&gt; \(name)&quot;</span>) } <span class="tk-com">// observer</span>
+    }
+    <span class="tk-kw">lazy</span> <span class="tk-kw">var</span> formatter: <span class="tk-type">DateFormatter</span> = {  <span class="tk-com">// chỉ tạo ở lần dùng đầu tiên</span>
+        <span class="tk-kw">let</span> f = <span class="tk-type">DateFormatter</span>()
+        f.dateFormat = <span class="tk-str">&quot;dd/MM/yyyy&quot;</span>
+        <span class="tk-kw">return</span> f
+    }()
+}
+
+<span class="tk-kw">let</span> profile = <span class="tk-type">Profile</span>()
+profile.name = <span class="tk-str">&quot;An&quot;</span>   <span class="tk-com">// in: Đổi tên:  -&gt; An</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q28.html"><code>init</code> trong Swift hoạt động thế nào? Struct và class khác nhau ra sao về khởi tạo, và <code>convenience init</code> dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Quy tắc cốt lõi: mọi stored property phải có giá trị trước khi instance được dùng (riêng <code>var</code> kiểu Optional tự mang giá trị <code>nil</code>). Struct được cấp sẵn memberwise initializer, ví dụ <code>Point(x: 3)</code> khi các property có giá trị mặc định; nếu tự viết <code>init</code> ngay trong thân struct thì mất memberwise init (viết trong <code>extension</code> thì vẫn giữ). Class không có memberwise init nên phải tự viết. Designated init là init chính: nó phải khởi tạo mọi property của chính class đó rồi mới gọi <code>super.init</code> của lớp cha, sau bước này mới được dùng <code>self</code> hay sửa property thừa kế. <code>convenience init</code> là init phụ, bắt buộc gọi một init khác của cùng class (<code>self.init(...)</code>), thường chỉ để cung cấp giá trị mặc định. <code>init?</code> là failable init, trả về <code>nil</code> khi dữ liệu không hợp lệ. <code>required init</code> buộc lớp con phải cài lại, như <code>init?(coder:)</code> của <code>UIView</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Point</span> {
+    <span class="tk-kw">var</span> x = <span class="tk-num">0</span>
+    <span class="tk-kw">var</span> y = <span class="tk-num">0</span>
+}
+<span class="tk-kw">let</span> p = <span class="tk-type">Point</span>(x: <span class="tk-num">3</span>)            <span class="tk-com">// memberwise init, y lấy giá trị mặc định</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">Animal</span> {
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">init</span>(name: <span class="tk-type">String</span>) { <span class="tk-kw">self</span>.name = name }
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Dog</span>: <span class="tk-type">Animal</span> {
+    <span class="tk-kw">let</span> breed: <span class="tk-type">String</span>
+    <span class="tk-kw">init</span>(name: <span class="tk-type">String</span>, breed: <span class="tk-type">String</span>) {
+        <span class="tk-kw">self</span>.breed = breed      <span class="tk-com">// 1. khởi tạo property của chính class</span>
+        <span class="tk-kw">super</span>.<span class="tk-kw">init</span>(name: name)  <span class="tk-com">// 2. rồi mới gọi init của lớp cha</span>
+    }
+    convenience <span class="tk-kw">init</span>(breed: <span class="tk-type">String</span>) {
+        <span class="tk-kw">self</span>.<span class="tk-kw">init</span>(name: <span class="tk-str">&quot;Chưa đặt tên&quot;</span>, breed: breed) <span class="tk-com">// phải gọi init khác của cùng class</span>
+    }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">Age</span> {
+    <span class="tk-kw">let</span> value: <span class="tk-type">Int</span>
+    <span class="tk-kw">init</span>?(_ value: <span class="tk-type">Int</span>) {       <span class="tk-com">// failable init</span>
+        <span class="tk-kw">guard</span> value &gt;= <span class="tk-num">0</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+        <span class="tk-kw">self</span>.value = value
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q29.html">Các mức access control của Swift (<code>private</code>, <code>fileprivate</code>, <code>internal</code>, <code>public</code>, <code>open</code>) khác nhau thế nào? Mặc định là mức nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Xếp từ hẹp đến rộng: <code>private</code> chỉ dùng được trong khai báo bao quanh (và các <code>extension</code> của nó trong cùng file); <code>fileprivate</code> dùng được trong cả file; <code>internal</code> dùng được trong cùng module (app hoặc framework) và là mức mặc định khi bạn không viết gì; <code>public</code> cho module khác dùng nhưng không cho kế thừa hay override bên ngoài module; <code>open</code> (chỉ áp dụng cho class và member của nó) cho module khác dùng cả kế thừa lẫn override. Với app chỉ có một module, thực tế bạn dùng <code>private</code> và mặc định <code>internal</code>; <code>public</code>/<code>open</code> chỉ cần khi viết framework hoặc Swift Package. Thói quen tốt là đặt <code>private</code> cho mọi thứ không cần lộ ra, và dùng <code>private(set)</code> khi muốn bên ngoài đọc được nhưng chỉ bên trong được sửa, ví dụ <code>private(set) var items</code> trong ViewModel để View không tự ý sửa dữ liệu.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">CartViewModel</span> {
+    <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> items: [<span class="tk-type">String</span>] = []   <span class="tk-com">// ngoài đọc được, chỉ trong class mới sửa</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> discount = <span class="tk-num">0.0</span>              <span class="tk-com">// chỉ dùng bên trong class</span>
+
+    <span class="tk-kw">func</span> add(_ item: <span class="tk-type">String</span>) {              <span class="tk-com">// internal (mặc định)</span>
+        items.append(item)
+    }
+}
+
+<span class="tk-kw">let</span> cart = <span class="tk-type">CartViewModel</span>()
+cart.add(<span class="tk-str">&quot;Áo&quot;</span>)
+print(cart.items)             <span class="tk-com">// [&quot;Áo&quot;]</span>
+<span class="tk-com">// cart.items.append(&quot;Mũ&quot;)    // lỗi compile: setter là private</span>
+<span class="tk-com">// cart.discount = 0.1        // lỗi compile: discount là private</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="memory">
@@ -359,6 +474,65 @@ view.addSubview(titleLabel)
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q30.html">Vì sao <code>UITableView</code> tái sử dụng cell (<code>dequeueReusableCell</code>)? Lỗi nào hay gặp nếu không cấu hình lại cell đầy đủ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Table view chỉ tạo đủ số cell đang hiện trên màn hình; khi một cell cuộn ra khỏi tầm nhìn nó được đưa vào hàng đợi, rồi <code>dequeueReusableCell(withIdentifier:for:)</code> trao lại cho row mới, nhờ vậy danh sách hàng nghìn dòng vẫn mượt và ít tốn bộ nhớ. Hệ quả là cell nhận về vẫn còn giữ trạng thái của row trước đó. Nếu trong <code>cellForRowAt</code> bạn chỉ đặt giá trị ở một nhánh, ví dụ <code>if task.isDone { textColor = .gray }</code> mà không có nhánh ngược lại, thì khi cuộn nhiều dòng chưa xong cũng bị xám; hoặc ảnh của row cũ hiện ra trước khi ảnh mới tải xong. Cách đúng: luôn gán lại mọi thuộc tính ở cả hai nhánh, dọn dẹp trong <code>prepareForReuse()</code> của cell (xoá ảnh, huỷ tác vụ tải ảnh), và lưu trạng thái như đã chọn hay đã mở rộng trong model chứ không lưu trong cell. Cell phải được đăng ký bằng <code>register(_:forCellReuseIdentifier:)</code> hoặc là prototype cell trong storyboard, nếu không <code>dequeue</code> sẽ crash.</div>
+        <pre class="code-block"><code><span class="tk-kw">func</span> tableView(_ tableView: <span class="tk-type">UITableView</span>, cellForRowAt indexPath: <span class="tk-type">IndexPath</span>) -&gt; <span class="tk-type">UITableViewCell</span> {
+    <span class="tk-kw">let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span class="tk-str">&quot;TaskCell&quot;</span>, <span class="tk-kw">for</span>: indexPath)
+    <span class="tk-kw">let</span> task = tasks[indexPath.row]
+    cell.textLabel?.text = task.title
+    <span class="tk-com">// Gán cả hai nhánh: nếu chỉ viết `if task.isDone { ... }` thì cell tái sử dụng</span>
+    <span class="tk-com">// vẫn giữ màu xám và dấu tick của row trước</span>
+    cell.textLabel?.textColor = task.isDone ? .gray : .label
+    cell.accessoryType = task.isDone ? .checkmark : .none
+    <span class="tk-kw">return</span> cell
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">AvatarCell</span>: <span class="tk-type">UITableViewCell</span> {
+    <span class="tk-kw">let</span> avatarView = <span class="tk-type">UIImageView</span>()
+
+    <span class="tk-kw">override</span> <span class="tk-kw">func</span> prepareForReuse() {
+        <span class="tk-kw">super</span>.prepareForReuse()
+        avatarView.image = <span class="tk-kw">nil</span>   <span class="tk-com">// tránh hiện ảnh của row trước</span>
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q31.html"><code>UIStackView</code> giúp gì so với tự viết constraint? <code>axis</code>, <code>alignment</code>, <code>distribution</code> và <code>spacing</code> hoạt động thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>UIStackView</code> xếp các <code>arrangedSubviews</code> thành một hàng hoặc một cột và tự sinh constraint giữa chúng, nên form đăng nhập hay thanh nút chỉ cần đặt constraint cho riêng stack view. <code>axis</code> chọn hướng xếp (<code>.vertical</code> hoặc <code>.horizontal</code>), <code>spacing</code> là khoảng cách giữa các view, <code>alignment</code> căn theo trục vuông góc (<code>.fill</code>, <code>.leading</code>, <code>.center</code>...), còn <code>distribution</code> quyết định cách chia chỗ dọc theo trục xếp: <code>.fill</code> (một view giãn ra để lấp đầy), <code>.fillEqually</code> (chia đều), <code>.equalSpacing</code>... Gọi <code>isHidden = true</code> cho một view con thì stack view tự thu gọn khoảng trống của nó, rất tiện để ẩn hiện nhãn báo lỗi mà không phải sửa constraint. Cần thêm view bằng <code>addArrangedSubview</code> (không phải <code>addSubview</code>) và đặt <code>translatesAutoresizingMaskIntoConstraints = false</code> cho stack khi tạo bằng code. Với <code>.fill</code>, nếu nhiều view có content hugging priority bằng nhau thì Auto Layout không biết view nào nên giãn; hãy đặt <code>setContentHuggingPriority</code> khác nhau.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> titleLabel = <span class="tk-type">UILabel</span>()
+<span class="tk-kw">let</span> emailField = <span class="tk-type">UITextField</span>()
+<span class="tk-kw">let</span> errorLabel = <span class="tk-type">UILabel</span>()
+<span class="tk-kw">let</span> loginButton = <span class="tk-type">UIButton</span>(type: .system)
+
+<span class="tk-kw">let</span> form = <span class="tk-type">UIStackView</span>(arrangedSubviews: [titleLabel, emailField, errorLabel, loginButton])
+form.axis = .vertical
+form.spacing = <span class="tk-num">12</span>
+form.alignment = .fill
+form.translatesAutoresizingMaskIntoConstraints = <span class="tk-kw">false</span>
+view.addSubview(form)
+
+<span class="tk-com">// Chỉ cần constraint cho stack view, các view con tự xếp bên trong</span>
+<span class="tk-type">NSLayoutConstraint</span>.activate([
+    form.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+    form.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+    form.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+])
+
+errorLabel.isHidden = <span class="tk-kw">true</span>   <span class="tk-com">// stack view tự thu gọn chỗ của nhãn lỗi</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="swiftui">
@@ -425,6 +599,65 @@ view.addSubview(titleLabel)
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q32.html"><code>some View</code> trong <code>var body: some View</code> nghĩa là gì? Vì sao không viết thẳng <code>View</code> làm kiểu trả về được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>View</code> là protocol có associated type (<code>Body</code>), nên trước đây không dùng trần làm kiểu trả về được. <code>some View</code> là opaque return type: hàm trả về đúng một kiểu cụ thể tuân thủ <code>View</code>, compiler biết kiểu thật (ví dụ <code>ModifiedContent&lt;Text, _PaddingLayout&gt;</code>) còn nơi gọi chỉ thấy &quot;một thứ là View&quot;. Nhờ giữ nguyên thông tin kiểu mà SwiftUI so sánh và cập nhật cây view hiệu quả, khác với việc bọc tất cả vào <code>AnyView</code> (xoá kiểu, mất tối ưu). Hệ quả: mọi nhánh trong <code>body</code> phải ra cùng một kiểu cụ thể. <code>if</code>/<code>else</code> trong <code>body</code> trả về hai view khác kiểu vẫn hợp lệ vì <code>body</code> được gắn <code>@ViewBuilder</code>, nó gói hai nhánh vào một kiểu chung. Ở hàm thường thì không có sẵn điều này: hai câu <code>return</code> khác kiểu gây lỗi &quot;Function declares an opaque return type, but the return statements in its body do not have matching underlying types&quot;, nên cần thêm <code>@ViewBuilder</code> hoặc bọc bằng <code>Group</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">ProfileView</span>: <span class="tk-type">View</span> {
+    <span class="tk-kw">var</span> isLoggedIn: <span class="tk-type">Bool</span>
+
+    <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {           <span class="tk-com">// body luôn ra đúng một kiểu cụ thể</span>
+        <span class="tk-type">VStack</span> {
+            <span class="tk-kw">if</span> isLoggedIn {         <span class="tk-com">// @ViewBuilder cho phép if/else khác kiểu</span>
+                <span class="tk-type">Text</span>(<span class="tk-str">&quot;Xin chào&quot;</span>)
+            } <span class="tk-kw">else</span> {
+                <span class="tk-type">Button</span>(<span class="tk-str">&quot;Đăng nhập&quot;</span>) { }
+            }
+        }
+        .padding()
+    }
+}
+
+<span class="tk-com">// Hàm thường: cần @ViewBuilder mới trả về được hai kiểu khác nhau</span>
+<span class="tk-ann">@ViewBuilder</span>
+<span class="tk-kw">func</span> badge(isNew: <span class="tk-type">Bool</span>) -&gt; <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+    <span class="tk-kw">if</span> isNew { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Mới&quot;</span>) } <span class="tk-kw">else</span> { <span class="tk-type">Image</span>(systemName: <span class="tk-str">&quot;checkmark&quot;</span>) }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q33.html">Hiển thị danh sách trong SwiftUI bằng <code>List</code> và <code>ForEach</code> thế nào? <code>Identifiable</code> dùng để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>List</code> hiển thị dữ liệu thành các hàng cuộn được (tái sử dụng hàng như <code>UITableView</code>); <code>ForEach</code> là view lặp qua một collection để sinh view, dùng được bên trong <code>List</code>, <code>VStack</code>, <code>Section</code>... SwiftUI cần biết định danh ổn định của từng phần tử để so sánh khi dữ liệu thay đổi, nên model tuân thủ <code>Identifiable</code> với property <code>id</code> duy nhất (như <code>UUID</code> hoặc id từ server), hoặc chỉ định bằng <code>id: \.field</code>. Không nên dùng index làm id nếu danh sách có thể thêm, xoá hay sắp xếp lại, vì SwiftUI sẽ gán nhầm state cho hàng khác. Vuốt để xoá dùng <code>.onDelete</code> (chỉ có trên <code>ForEach</code>), nút tuỳ biến dùng <code>.swipeActions</code>, kéo để làm mới dùng <code>.refreshable</code>. <code>List</code> đã có sẵn style và hành vi hệ thống; nếu cần giao diện tuỳ biến hoàn toàn thì dùng <code>ScrollView</code> kèm <code>LazyVStack</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Todo</span>: <span class="tk-type">Identifiable</span> {
+    <span class="tk-kw">let</span> id = <span class="tk-type">UUID</span>()
+    <span class="tk-kw">var</span> title: <span class="tk-type">String</span>
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">TodoListView</span>: <span class="tk-type">View</span> {
+    <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> todos = [<span class="tk-type">Todo</span>(title: <span class="tk-str">&quot;Học Swift&quot;</span>), <span class="tk-type">Todo</span>(title: <span class="tk-str">&quot;Làm bài tập&quot;</span>)]
+
+    <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+        <span class="tk-type">List</span> {
+            <span class="tk-type">ForEach</span>(todos) { todo <span class="tk-kw">in</span>          <span class="tk-com">// dùng được vì Todo: Identifiable</span>
+                <span class="tk-type">Text</span>(todo.title)
+            }
+            .onDelete { offsets <span class="tk-kw">in</span>            <span class="tk-com">// vuốt để xoá</span>
+                todos.remove(atOffsets: offsets)
+            }
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -462,6 +695,52 @@ view.addSubview(titleLabel)
 editVC.currentName = user.name
 editVC.onSave = { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] name <span class="tk-kw">in</span> <span class="tk-kw">self</span>?.nameLabel.text = name }
 navigationController?.pushViewController(editVC, animated: <span class="tk-kw">true</span>)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q37.html">MVC trong iOS là gì? Vì sao hay gặp &quot;Massive View Controller&quot; và cách giảm nhẹ ban đầu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">MVC chia app thành Model (dữ liệu và luật nghiệp vụ), View (giao diện như <code>UIView</code>, cell) và Controller (<code>UIViewController</code>, nối hai bên: nhận thao tác người dùng, cập nhật model, đẩy dữ liệu lên view). Đây là mẫu Apple dùng sẵn trong UIKit nên là mặc định của hầu hết project. Thực tế <code>UIViewController</code> thường ôm quá nhiều việc: quản lý vòng đời view, làm data source và delegate, gọi mạng, parse JSON, format dữ liệu, điều hướng. Kết quả là file hàng nghìn dòng, khó đọc và khó viết test (Massive View Controller). Cách giảm nhẹ: tách việc gọi mạng sang service hoặc repository, đưa logic format và kiểm tra dữ liệu về model hoặc struct riêng, tách data source/delegate ra object riêng, chia màn hình lớn thành view tuỳ biến hoặc child view controller. Bước tiếp theo là MVVM (ViewModel giữ state và logic trình bày, ViewController chỉ gắn lên UI) kết hợp Coordinator cho điều hướng; SwiftUI hợp tự nhiên với MVVM. Điểm cần nhấn mạnh khi phỏng vấn: vấn đề không nằm ở bản thân MVC mà ở việc phân chia trách nhiệm.</div>
+        <pre class="code-block"><code><span class="tk-com">// Model: dữ liệu + format thuộc về model, không nằm trong ViewController</span>
+<span class="tk-kw">struct</span> <span class="tk-type">Product</span> {
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">let</span> price: <span class="tk-type">Int</span>
+    <span class="tk-kw">var</span> priceText: <span class="tk-type">String</span> { <span class="tk-str">&quot;\(price.formatted())đ&quot;</span> }
+}
+
+<span class="tk-com">// Service tách riêng: ViewController không cần biết gọi mạng thế nào</span>
+<span class="tk-kw">protocol</span> <span class="tk-type">ProductService</span> {
+    <span class="tk-kw">func</span> fetchProducts(completion: <span class="tk-ann">@escaping</span> ([<span class="tk-type">Product</span>]) -&gt; <span class="tk-type">Void</span>)
+}
+
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">ProductViewController</span>: <span class="tk-type">UIViewController</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> service: <span class="tk-type">ProductService</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> products: [<span class="tk-type">Product</span>] = []
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> tableView = <span class="tk-type">UITableView</span>()
+
+    <span class="tk-kw">init</span>(service: <span class="tk-type">ProductService</span>) {
+        <span class="tk-kw">self</span>.service = service
+        <span class="tk-kw">super</span>.<span class="tk-kw">init</span>(nibName: <span class="tk-kw">nil</span>, bundle: <span class="tk-kw">nil</span>)
+    }
+    <span class="tk-kw">required</span> <span class="tk-kw">init</span>?(coder: <span class="tk-type">NSCoder</span>) { fatalError(<span class="tk-str">&quot;init(coder:) chưa cài đặt&quot;</span>) }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">func</span> viewDidLoad() {
+        <span class="tk-kw">super</span>.viewDidLoad()
+        service.fetchProducts { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] items <span class="tk-kw">in</span>
+            <span class="tk-kw">self</span>?.products = items
+            <span class="tk-kw">self</span>?.tableView.reloadData()   <span class="tk-com">// ViewController chỉ điều phối</span>
+        }
+    }
+}</code></pre>
         
       </div>
     </details>
@@ -507,6 +786,35 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q34.html">Gọi API bằng <code>URLSession</code> và giải mã JSON bằng <code>Codable</code> thế nào? Vì sao gọi <code>http://</code> lại bị chặn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ba bước: tạo <code>URL</code>, gọi <code>URLSession.shared.dataTask(with:)</code> (completion nhận <code>Data?</code>, <code>URLResponse?</code>, <code>Error?</code>) và nhớ gọi <code>resume()</code> thì request mới chạy, rồi giải mã bằng <code>JSONDecoder</code> vào struct tuân thủ <code>Codable</code>. Tên property trùng key JSON; khác tên thì khai báo <code>CodingKeys</code> hoặc đặt <code>keyDecodingStrategy = .convertFromSnakeCase</code>. Completion chạy trên thread nền nên cập nhật UI phải quay về <code>DispatchQueue.main.async</code>; với <code>async/await</code> thì viết <code>try await URLSession.shared.data(from:)</code>. Đừng chỉ kiểm tra <code>error</code>: server trả 404 hay 500 vẫn cho <code>error == nil</code>, nên phải đọc cả <code>HTTPURLResponse.statusCode</code>. Gọi <code>http://</code> (không phải <code>https://</code>) bị App Transport Security (ATS) chặn mặc định với lỗi <code>-1022</code>. Cách đúng là dùng HTTPS cho server; chỉ khi bất đắc dĩ mới khai báo ngoại lệ cho từng domain trong <code>NSAppTransportSecurity</code> ở <code>Info.plist</code>, còn bật <code>NSAllowsArbitraryLoads</code> cho toàn app thì nên tránh vì dễ bị Apple hỏi khi duyệt.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Post</span>: <span class="tk-type">Codable</span> {
+    <span class="tk-kw">let</span> id: <span class="tk-type">Int</span>
+    <span class="tk-kw">let</span> title: <span class="tk-type">String</span>
+}
+
+<span class="tk-kw">func</span> loadPosts(completion: <span class="tk-ann">@escaping</span> ([<span class="tk-type">Post</span>]) -&gt; <span class="tk-type">Void</span>) {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> url = <span class="tk-type">URL</span>(string: <span class="tk-str">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span>) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+
+    <span class="tk-type">URLSession</span>.shared.dataTask(with: url) { data, response, error <span class="tk-kw">in</span>
+        <span class="tk-kw">guard</span> error == <span class="tk-kw">nil</span>,
+              <span class="tk-kw">let</span> http = response as? <span class="tk-type">HTTPURLResponse</span>, (<span class="tk-num">200</span>..&lt;<span class="tk-num">300</span>).contains(http.statusCode),
+              <span class="tk-kw">let</span> data = data,
+              <span class="tk-kw">let</span> posts = <span class="tk-kw">try</span>? <span class="tk-type">JSONDecoder</span>().decode([<span class="tk-type">Post</span>].<span class="tk-kw">self</span>, from: data) <span class="tk-kw">else</span> {
+            print(<span class="tk-str">&quot;Tải thất bại&quot;</span>)
+            <span class="tk-kw">return</span>
+        }
+        <span class="tk-type">DispatchQueue</span>.main.<span class="tk-kw">async</span> { completion(posts) } <span class="tk-com">// về main thread trước khi cập nhật UI</span>
+    }.resume()                                          <span class="tk-com">// quên resume() thì request không chạy</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="platform">
@@ -540,6 +848,28 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Bundle identifier (ví dụ <code>com.example.shopapp</code>) là định danh duy nhất của app trong hệ sinh thái Apple, gắn với App ID, provisioning profile, push notification và app trên App Store Connect; đổi bundle ID thì hệ thống coi là một app khác, và sau khi đã upload build thì không đổi được nữa. Version (<code>CFBundleShortVersionString</code>, ví dụ <code>1.2.0</code>) là số phiên bản người dùng thấy trên App Store. Build number (<code>CFBundleVersion</code>, ví dụ <code>45</code>) đánh dấu từng lần build: cùng một version có thể upload nhiều build lên TestFlight, nhưng mỗi lần phải tăng build number, trùng với build đã có sẽ bị từ chối. Trong Build Settings, hai giá trị này là <code>MARKETING_VERSION</code> và <code>CURRENT_PROJECT_VERSION</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q35.html">Certificate, App ID và provisioning profile liên quan với nhau thế nào? Vì sao app chạy được trên simulator nhưng lên máy thật lại báo lỗi signing?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Simulator không yêu cầu ký app, còn thiết bị thật thì bắt buộc. Có ba thành phần: Certificate (development hoặc distribution) chứng minh bạn là nhà phát triển do Apple cấp, và cặp private key của nó nằm trong Keychain trên máy bạn, mất key thì phải tạo lại hoặc export file <code>.p12</code> sang máy khác; App ID (gắn với bundle identifier) định danh app cùng các capability được bật cho nó như push notification; Provisioning profile gắn App ID, certificate và danh sách thiết bị được phép (với bản development, ad hoc) hoặc kiểu phân phối (App Store), và được đóng gói vào app khi build. Hệ thống chỉ cho chạy khi chữ ký khớp profile. Các lỗi hay gặp: <code>No profiles for &#39;com.x.y&#39; were found</code>, bundle ID đã bị tài khoản khác đăng ký, máy chưa nằm trong profile, certificate hoặc profile hết hạn. Người mới chỉ cần bật Automatically manage signing và chọn Team trong Signing &amp; Capabilities để Xcode tự tạo profile; Apple ID miễn phí (Personal Team) cài app lên máy thật được nhưng app chỉ chạy được 7 ngày và bị giới hạn capability.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q36.html">Swift Package Manager, CocoaPods và Carthage khác nhau thế nào? Dự án mới bạn chọn cái nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Swift Package Manager (SPM) được tích hợp sẵn trong Xcode: thêm thư viện qua File &gt; Add Package Dependencies bằng URL và quy tắc phiên bản, không cần cài công cụ gì thêm, không sửa cấu trúc project, và phiên bản đã chốt được ghi trong <code>Package.resolved</code> để cả team dùng cùng một bản. CocoaPods là công cụ cũ viết bằng Ruby, khai báo trong <code>Podfile</code>, sau <code>pod install</code> tạo ra file <code>.xcworkspace</code> và thư mục <code>Pods/</code>; nó từng là chuẩn, nhiều thư viện cũ hay thư viện Objective-C vẫn chỉ có Pod, nhưng cài chậm và dễ xung đột phiên bản. Carthage build sẵn thư viện thành framework rồi bạn tự ghép vào project, nhẹ và không can thiệp vào project nhưng thao tác thủ công nhiều nên giờ ít người dùng. Dự án mới nên chọn SPM; chỉ dùng CocoaPods khi một thư viện bắt buộc cần. Dù dùng cách nào cũng nên commit file khoá phiên bản (<code>Package.resolved</code>, <code>Podfile.lock</code>) để build giống nhau trên mọi máy.</div>
         
         
       </div>

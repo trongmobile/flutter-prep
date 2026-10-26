@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher: Các prop cơ bản của FlatList là gì? Làm sao hiện thông báo khi danh s…</title>
+<meta name="description" content="Ba prop thường dùng nhất là data (mảng dữ liệu), renderItem (hàm nhận { item, index } và trả về element) và keyExtractor (trả về key chuỗi duy nhất cho mỗi i…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q32.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: Các prop cơ bản của FlatList là gì? Làm sao hiện thông báo khi danh s…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-q32.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Các prop cơ bản của FlatList là gì? Làm sao hiệ…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q32.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Các prop cơ bản của FlatList là gì? Làm sao hiệ…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/components/">Component &amp; Styling</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Các prop cơ bản của <code>FlatList</code> là gì? Làm sao hiện thông báo khi danh sách rỗng và thêm kéo để làm mới?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ba prop thường dùng nhất là <code>data</code> (mảng dữ liệu), <code>renderItem</code> (hàm nhận <code>{ item, index }</code> và trả về element) và <code>keyExtractor</code> (trả về key chuỗi duy nhất cho mỗi item; nếu không truyền, <code>FlatList</code> thử đọc <code>item.key</code>, rồi <code>item.id</code>, nếu không có thì dùng index). Những prop hay dùng thêm: <code>ListEmptyComponent</code> hiện khi <code>data</code> rỗng, <code>ListHeaderComponent</code>/<code>ListFooterComponent</code> cho tiêu đề hoặc spinner tải thêm, <code>ItemSeparatorComponent</code> cho đường kẻ giữa các hàng, <code>refreshing</code> kèm <code>onRefresh</code> cho kéo để làm mới, <code>onEndReached</code> để tải trang tiếp theo. <code>FlatList</code> chỉ render các item gần vùng đang nhìn thấy nên hợp với danh sách dài. Nó là <code>PureComponent</code> nên chỉ cập nhật khi các prop như <code>data</code> đổi tham chiếu: sửa trực tiếp mảng cũ (<code>push</code>) sẽ không làm danh sách vẽ lại, hãy tạo mảng mới; nếu item phụ thuộc state khác ngoài <code>data</code> thì truyền thêm <code>extraData</code>. Đừng lồng <code>FlatList</code> trong <code>ScrollView</code> cùng chiều cuộn vì mất tối ưu và sẽ có cảnh báo <code>VirtualizedLists should never be nested</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> [products, setProducts] = useState&lt;<span class="tk-type">Product</span>[]&gt;([]);
+<span class="tk-kw">const</span> [refreshing, setRefreshing] = useState(<span class="tk-kw">false</span>);
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> onRefresh() {
+  setRefreshing(<span class="tk-kw">true</span>);
+  setProducts(<span class="tk-kw">await</span> fetchProducts());
+  setRefreshing(<span class="tk-kw">false</span>);
+}
+
+<span class="tk-kw">return</span> (
+  &lt;<span class="tk-type">FlatList</span>
+    data={products}
+    keyExtractor={(item) =&gt; <span class="tk-type">String</span>(item.id)}
+    renderItem={({ item }) =&gt; &lt;<span class="tk-type">Text</span> style={styles.row}&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;}
+    <span class="tk-type">ItemSeparatorComponent</span>={() =&gt; &lt;<span class="tk-type">View</span> style={styles.divider} /&gt;}
+    <span class="tk-type">ListEmptyComponent</span>={&lt;<span class="tk-type">Text</span>&gt;<span class="tk-type">Ch</span>ưa có sản phẩm&lt;/<span class="tk-type">Text</span>&gt;}
+    refreshing={refreshing}
+    onRefresh={onRefresh}
+  /&gt;
+);</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q32">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q31.html"><span class="muted small">← Câu trước</span><span>React Native là gì? Khác gì với app hybrid dùng WebView (Ionic, Cordova) và với…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q33.html"><span class="muted small">Câu sau →</span><span>Viết một component tái sử dụng như AppButton thế nào? Khai báo props, giá trị m…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Component &amp; Styling</h2><a class="section-sub" href="../phong-van/react-native/chu-de/components/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q14.html">View, Text, Image trong React Native được hiển thị ra sao trên máy? Vì sao ảnh tải từ URL không hiện dù link đúng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q15.html">ScrollView và FlatList khác nhau thế nào? Khi nào dùng cái nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q16.html">Style trong React Native khác CSS trên web ở điểm nào? Vì sao nên dùng StyleSheet.create thay vì viết style inline?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q17.html">Flexbox trong React Native khác Flexbox của CSS trên web ở những điểm nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q18.html">Button, TouchableOpacity và Pressable khác nhau thế nào? Làm nút bấm theo thiết kế riêng thì dùng gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q19.html">Làm sao để nội dung không bị tai thỏ hay thanh trạng thái che? Khi cần style khác nhau cho iOS và Android thì viết thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>
