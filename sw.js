@@ -17,6 +17,7 @@ const PRECACHE = [
   "js/analytics.js",
   "js/community.js",
   "js/config.js",
+  "js/jd.js",
   "js/jobs.js",
   "js/leaderboard.js",
   "js/main.js",

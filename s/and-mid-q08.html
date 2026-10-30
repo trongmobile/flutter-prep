@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text"><code>remember</code> chỉ giữ giá trị khi composable còn trong composition; Activity bị tạo lại khi xoay màn hình hay composable rời khỏi composition là mất. <code>rememberSaveable</code> lưu vào saved instance state (Bundle) nên sống qua configuration change và cả process death, nhưng chỉ chứa được kiểu lưu vào Bundle (primitive, <code>String</code>, <code>Parcelable</code>…) hoặc phải viết <code>Saver</code>, và không nên chứa dữ liệu lớn vì Bundle giới hạn kích thước (<code>TransactionTooLargeException</code>). ViewModel sống qua configuration change nhưng không qua process death, trừ phần lưu trong <code>SavedStateHandle</code>. Quy tắc thực tế: state thuần UI nhỏ (text đang gõ, tab đang chọn, mục đang mở rộng) dùng <code>rememberSaveable</code>; dữ liệu nghiệp vụ và kết quả gọi API để ở ViewModel; object tạm hoặc giá trị tính toán đắt thì dùng <code>remember</code>.</div>
         
-        
+        <p class="doc-link"><a href="https://developer.android.com/develop/ui/compose/state" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q08">Luyện câu này trong app</a></div>

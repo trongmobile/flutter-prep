@@ -162,7 +162,7 @@
     reply.send((id, bytes.length)); <span class="tk-com">// thay bằng xử lý thật</span>
   });
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://dart.dev/language/isolates" target="_blank" rel="noopener">Đọc thêm trong tài liệu · dart.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -326,7 +326,7 @@
       <div class="model-answer">
         <div class="answer-text">Trước đây mỗi package trong monorepo có <code>pubspec.lock</code> riêng, nên cùng một dependency có thể resolve ra version khác nhau giữa các package, <code>pub get</code> phải chạy cho từng package và analyzer phải giữ nhiều context. Với pub workspaces, <code>pubspec.yaml</code> gốc khai báo danh sách <code>workspace:</code> và mỗi package con khai báo <code>resolution: workspace</code>: cả repo dùng chung một lần resolve, một lockfile và một <code>package_config.json</code>, nên mọi package chắc chắn dùng cùng version và IDE nhẹ hơn. Trade-off là không còn cho phép hai package cần hai version không tương thích của cùng một dependency — phải nâng cấp đồng loạt, điều thực ra lành mạnh cho một app monorepo. Workspaces chỉ lo phần resolve dependency; Melos vẫn hữu ích cho script chạy theo từng package, lọc package bị ảnh hưởng bởi thay đổi, versioning và changelog khi publish, và các bản Melos mới đã được xây trên nền pub workspaces.</div>
         
-        
+        <p class="doc-link"><a href="https://dart.dev/tools/pub/workspaces" target="_blank" rel="noopener">Đọc thêm trong tài liệu · dart.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -751,7 +751,7 @@
       <div class="model-answer">
         <div class="answer-text">Platform view buộc engine ghép một native view với nội dung Flutter, và cái giá tùy chế độ: với hybrid composition (iOS, và Android khi dùng <code>initExpensiveAndroidView</code>), Flutter UI được compose trên platform thread thay vì raster thread riêng nên phải tranh tài nguyên với OS và plugin, dễ tụt FPS; trên Android 9 trở xuống chế độ này còn copy frame qua lại giữa bộ nhớ GPU và bộ nhớ chính. Chế độ mặc định của <code>AndroidView</code> (Texture Layer Hybrid Composition, fallback Virtual Display) nhẹ hơn cho Flutter nhưng có hạn chế riêng như scroll nhanh trong WebView có thể giật, <code>SurfaceView</code> bị chuyển sang virtual display, accessibility và text input kém hơn. Thực tế tôi giới hạn số platform view cùng lúc (không đặt map trong từng item của list), dùng ảnh tĩnh làm placeholder và chỉ tạo view thật khi user tương tác, tránh animate hay transform platform view, và luôn đo trên máy Android tầm thấp ở profile mode.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.flutter.dev/platform-integration/android/platform-views" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.flutter.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -762,7 +762,7 @@
       <div class="model-answer">
         <div class="answer-text">Lời gọi FFI là đồng bộ và chạy ngay trên thread của isolate gọi nó, nên một hàm C chạy 200ms gọi từ root isolate sẽ chặn UI 200ms; việc nặng phải chạy ở isolate khác (<code>Isolate.run</code>) hoặc để native tự chạy trên thread riêng rồi báo kết quả về. Với callback từ native: <code>Pointer.fromFunction</code> và <code>NativeCallable.isolateLocal</code> chỉ được gọi trên đúng thread của isolate (gọi từ thread khác sẽ abort process), còn <code>NativeCallable.listener</code> gọi được từ mọi thread nhưng chạy bất đồng bộ trên event loop, chỉ hỗ trợ hàm trả <code>void</code>, và phải <code>close()</code> khi xong nếu không isolate bị giữ sống mãi. <code>ffigen</code> sinh binding Dart từ header C/Objective-C, <code>jnigen</code> sinh binding gọi Java/Kotlin qua JNI, giúp bỏ phần glue code viết tay dễ sai kiểu và dễ lệch khi thư viện nâng version. Tôi vẫn bọc binding sinh ra sau một API Dart nhỏ, quản lý memory native bằng <code>Arena</code> hoặc <code>NativeFinalizer</code>, để phần còn lại của app không phụ thuộc trực tiếp vào FFI.</div>
         
-        
+        <p class="doc-link"><a href="https://dart.dev/interop/c-interop" target="_blank" rel="noopener">Đọc thêm trong tài liệu · dart.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -1048,7 +1048,7 @@ firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span cl
       <div class="model-answer">
         <div class="answer-text">Impeller (mặc định trên iOS và Android API 29+, máy cũ hơn fallback về Skia) biên dịch sẵn shader lúc build nên jank do compile shader lần đầu gần như biến mất, nhưng chi phí GPU thì không biến mất: <code>saveLayer</code> (do <code>Opacity</code> trên subtree lớn, <code>ShaderMask</code>, <code>Clip.antiAliasWithSaveLayer</code>), blur và <code>BackdropFilter</code>, clip/shadow phức tạp vẫn có thể đẩy raster thread vượt ngân sách frame. Jank ở UI thread (build/layout nặng, parse JSON trên root isolate) cũng không liên quan gì tới renderer. Khi khoanh vùng, tôi profile trên máy thật ở profile mode, xem frame chậm ở UI hay raster thread trong DevTools; trên Android có thể chạy <code>flutter run --no-enable-impeller</code> để so với Skia và biết lỗi nằm ở renderer/driver GPU hay ở app, còn trên iOS bản hiện tại không còn đường lui về Skia. Ví dụ thực tế: màn có blur toàn màn hình vẫn giật trên máy Android tầm thấp dù đã dùng Impeller — cách xử lý là thu nhỏ vùng blur hoặc dùng ảnh nền đã blur sẵn, và nếu nghi lỗi renderer thì tạo repro tối giản để report cho Flutter.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.flutter.dev/perf/impeller" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.flutter.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -1059,7 +1059,7 @@ firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span cl
       <div class="model-answer">
         <div class="answer-text">Dấu hiệu thường là memory tăng dần sau mỗi lần mở/đóng cùng một màn hình; tôi lặp lại flow đó nhiều lần, chụp heap snapshot trong DevTools Memory trước và sau rồi diff để tìm class không giảm (thường là <code>State</code>, controller, model lớn) và lần theo retaining path. Nguyên nhân phổ biến: không <code>dispose</code> <code>AnimationController</code>/<code>TextEditingController</code>/<code>ScrollController</code>, không <code>cancel</code> <code>StreamSubscription</code> hoặc <code>removeListener</code> khỏi object sống lâu, và closure giữ <code>BuildContext</code> hay <code>this</code> bị lưu vào singleton, cache static hoặc callback của SDK native. Ở quy mô team, tôi bật leak tracking cho widget test bằng <code>leak_tracker_flutter_testing</code> (<code>LeakTesting.enable()</code> trong <code>flutter_test_config.dart</code>) để CI bắt các object của framework không được dispose, bật thêm lint như <code>cancel_subscriptions</code>, và thống nhất quy tắc &#39;ai tạo thì người đó dispose&#39;. Lưu ý heap snapshot chủ yếu phản ánh Dart heap; ảnh đã decode hay memory của SDK native cần xem thêm bằng Android Studio Profiler hoặc Xcode Instruments.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.flutter.dev/tools/devtools/memory" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.flutter.dev ↗</a></p>
       </div>
     </details>
     </li>

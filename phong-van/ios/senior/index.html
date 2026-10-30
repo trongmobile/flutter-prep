@@ -587,7 +587,7 @@ layout {
 <span class="tk-kw">let</span> sharedDefaults = <span class="tk-type">UserDefaults</span>(suiteName: groupID)
 <span class="tk-com">// Sau khi app ghi dữ liệu mới, yêu cầu widget vẽ lại</span>
 <span class="tk-type">WidgetCenter</span>.shared.reloadTimelines(ofKind: <span class="tk-str">&quot;OrderStatusWidget&quot;</span>)</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/xcode/configuring-app-groups" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -610,7 +610,7 @@ layout {
   }
   task.expirationHandler = { work.cancel() } <span class="tk-com">// hết giờ thì huỷ việc đang làm</span>
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/backgroundtasks" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -621,7 +621,7 @@ layout {
       <div class="model-answer">
         <div class="answer-text">Tôi chọn Notification Service Extension. Silent push (<code>content-available: 1</code>) chỉ là gợi ý để đánh thức app, bị hệ thống throttle và không được giao cho app mà user đã force-quit, nên không dùng được cho thông báo bắt buộc phải tới tay người dùng. Với NSE, server gửi push hiển thị có <code>mutable-content: 1</code>; extension nhận trong <code>didReceive(_:withContentHandler:)</code>, giải mã bằng khoá đọc từ Keychain dùng chung, tải ảnh rồi gắn <code>UNNotificationAttachment</code> trước khi gọi <code>contentHandler</code>. Extension chỉ có khoảng 30 giây và ít memory; nếu lỗi hoặc hết giờ, hệ thống hiện nguyên alert gốc. Vì vậy alert gốc chỉ nên là câu chung chung như &#39;Bạn có tin nhắn mới&#39;, còn ciphertext đặt trong một field riêng của payload.</div>
         
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/usernotifications/modifying-content-in-newly-delivered-notifications" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -660,7 +660,7 @@ layout {
     <span class="tk-kw">break</span>
   }
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/storekit/in-app-purchase" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -804,7 +804,7 @@ layout {
 <span class="tk-kw">let</span> keyBlob = signingKey.dataRepresentation
 <span class="tk-com">// Gửi public key lên server để verify chữ ký</span>
 <span class="tk-kw">let</span> publicKeyDER = signingKey.publicKey.derRepresentation</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/security/keychain-services" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>

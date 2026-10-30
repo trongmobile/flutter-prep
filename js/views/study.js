@@ -1,6 +1,6 @@
 import { RANKS, getRank, questionsFor, topics, rankDesc, currentTrack } from "../../data/index.js";
 import { study, prefs } from "../store.js";
-import { escapeHtml, fmt, codeOf, topicTag, shuffle, percent, stackedBar, creditHtml, shareItem, link } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, shuffle, percent, stackedBar, docHtml, creditHtml, shareItem, link } from "../utils.js";
 
 const STATUS_FILTERS = [
   { id: "all", label: "Tất cả" },
@@ -141,6 +141,7 @@ export function mount(el, params) {
         <div class="q-answer"><div class="q-answer-clip"><div class="q-answer-inner">
           <div class="answer-text">${fmt(q.a)}</div>
           ${codeOf(q)}
+          ${docHtml(q)}
           ${creditHtml(q)}
           ${q.day ? `<a class="q-source" href="#/roadmap/${q.day}">Trong lộ trình: ngày ${q.day}</a>` : ""}
           <div class="mark-row">
@@ -225,7 +226,7 @@ export function mount(el, params) {
           <div class="flash-q">${fmt(q.q)}</div>
           ${
             deck.flipped
-              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeOf(q)}${creditHtml(q)}</div>`
+              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeOf(q)}${docHtml(q)}${creditHtml(q)}</div>`
               : `<div class="flash-hint">Tự trả lời trong đầu, rồi bấm để lật thẻ</div>`
           }
         </div>

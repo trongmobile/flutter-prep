@@ -1,6 +1,6 @@
 import { RANKS, getRank, questionsFor, allQuestions, allQuiz, topics, roadmap as roadmapData, currentTrack } from "../../data/index.js";
 import { study, quiz, roadmap, activity, srs, interview, SRS_INTERVALS, exportAll, importAll, resetAll, todayKey } from "../store.js";
-import { escapeHtml, percent, stackedBar, formatDate, formatDuration, confirmClick } from "../utils.js";
+import { escapeHtml, percent, stackedBar, formatDate, formatDuration, confirmClick, interviewScope } from "../utils.js";
 
 const HEATMAP_WEEKS = 15;
 
@@ -194,7 +194,7 @@ export function mount(el) {
       <tbody>${list
         .map((h) => {
           const p = percent(h.score, h.max);
-          return `<tr><td>${formatDate(h.ts)}</td><td>${escapeHtml(getRank(h.rank)?.name || h.rank)}</td><td>${h.total}</td>
+          return `<tr><td>${formatDate(h.ts)}</td><td>${escapeHtml(interviewScope(h))}</td><td>${h.total}</td>
             <td><span class="score-pill ${p >= 70 ? "good" : p >= 50 ? "mid" : "low"}">${h.score}/${h.max} · ${p}%</span></td><td>${formatDuration(h.duration)}</td></tr>`;
         })
         .join("")}</tbody>

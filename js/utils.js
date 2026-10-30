@@ -216,6 +216,19 @@ export async function shareItem(item) {
   }
 }
 
+// "Đọc thêm trong tài liệu · docs.flutter.dev ↗" cho câu có link tài liệu chính thức (trường doc).
+export function docHtml(item) {
+  if (!item || !item.doc) return "";
+  const host = new URL(item.doc).hostname.replace(/^www\./, "");
+  return `<p class="doc-link"><a href="${escapeHtml(item.doc)}" target="_blank" rel="noopener">Đọc thêm trong tài liệu · ${escapeHtml(host)} ↗</a></p>`;
+}
+
+// Phạm vi một buổi phỏng vấn thử trong lịch sử: "Senior", "Mọi rank · 3 chủ đề".
+export function interviewScope(h) {
+  const rank = h.rank === "all" ? "Mọi rank" : getRank(h.rank)?.name || h.rank;
+  return Array.isArray(h.topics) && h.topics.length ? `${rank} · ${h.topics.length} chủ đề` : rank;
+}
+
 // "Đóng góp bởi @user · #12" cho câu hỏi đến từ cộng đồng (trường by / issue).
 export function creditHtml(item) {
   if (!item || !item.by) return "";

@@ -184,7 +184,7 @@ module.exports = {
   <span class="tk-kw">const</span> total = order.items.reduce((sum, i) =&gt; sum + i.price * i.qty, <span class="tk-num">0</span>);
   <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{formatMoney(total)}&lt;/<span class="tk-type">Text</span>&gt;;
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://react.dev/learn/react-compiler" target="_blank" rel="noopener">Đọc thêm trong tài liệu · react.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -296,7 +296,7 @@ module.exports = {
     }
   }, [isLoggedIn, pendingUrl, linkTo, setPendingUrl]);
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://reactnavigation.org/docs/deep-linking/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnavigation.org ↗</a></p>
       </div>
     </details>
     </li>
@@ -323,7 +323,7 @@ module.exports = {
       <div class="model-answer">
         <div class="answer-text">Fabric đưa lõi renderer về C++ dùng chung cho iOS và Android. Mỗi lần React render, Fabric tạo shadow tree bất biến (immutable) trong C++, tính layout bằng Yoga, rồi commit cây mới và mount các thay đổi lên view native trên UI thread. Vì shadow tree bất biến và đọc được an toàn từ nhiều thread, renderer hỗ trợ concurrent features của React 18 như <code>startTransition</code>, Suspense, automatic batching — điều kiến trúc cũ không làm được. Fabric cũng cho phép đọc layout đồng bộ: đo vị trí trong <code>useLayoutEffect</code> rồi cập nhật ngay trong cùng frame, nên hết cảnh tooltip hay popover nháy sai vị trí một frame. Với dev, một implementation chung giúp giảm khác biệt hành vi giữa hai nền tảng. Khi migrate cần chú ý: native component cũ dùng <code>requireNativeComponent</code> chỉ chạy được nhờ interop layer, và code dựa vào API nội bộ của <code>UIManager</code> cũ có thể đổi hành vi.</div>
         
-        
+        <p class="doc-link"><a href="https://reactnative.dev/architecture/fabric-renderer" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -364,7 +364,7 @@ module.exports = {
       <div class="model-answer">
         <div class="answer-text">Thứ nhất là vòng đời runtime: khởi tạo React Native (JS runtime, load bundle, native module) tốn đáng kể, nên tạo một instance dùng chung ở mức Application/AppDelegate, có thể pre-warm trước khi user vào màn RN, thay vì tạo mới mỗi lần mở màn. Thứ hai là ranh giới điều hướng: mỗi điểm vào RN là một root component đăng ký bằng <code>AppRegistry.registerComponent</code> và nhận initial props; phải quy ước rõ bên nào quản lý back stack, nút back Android và deep link. Thứ ba là giao tiếp hai chiều: native module cho JS gọi vào native (lấy token, analytics, mở màn native), event cho native báo sang JS, với contract có type qua Codegen. Thứ tư là build và phân phối: team native thường không muốn cài Node, nên đóng gói phần RN (kèm bundle đã build) thành artifact AAR/XCFramework để tích hợp như dependency thường, đồng thời xử lý các thư viện native trùng giữa hai phía (OkHttp, Firebase). Cuối cùng, nếu dùng OTA cho phần RN thì update phải gắn với version native của host app.</div>
         
-        
+        <p class="doc-link"><a href="https://reactnative.dev/docs/integration-with-existing-apps" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -532,7 +532,7 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
 };
 
 <span class="tk-kw">export</span> <span class="tk-kw">default</span> config;</code></pre>
-        
+        <p class="doc-link"><a href="https://docs.expo.dev/eas-update/runtime-versions/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -554,7 +554,7 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
       <div class="model-answer">
         <div class="answer-text">Với Continuous Native Generation, <code>ios/</code> và <code>android/</code> không được commit mà được sinh lại từ <code>app.json</code>/<code>app.config.ts</code> cùng config plugin mỗi khi build (<code>npx expo prebuild</code>). Lợi ích lớn nhất là nâng cấp: không còn phải merge diff template vào project native đã bị sửa tay nhiều năm. Mọi thay đổi native (quyền, entitlement, Gradle, Podfile, đoạn code trong AppDelegate) phải viết thành config plugin, nên chúng được ghi lại, có version và review được thay vì nằm rải rác. Đánh đổi: tốn công chuyển các chỉnh sửa tay hiện có thành plugin; tuỳ biến native phức tạp viết plugin khá vất vả, nhất là plugin sửa file bằng chuỗi/regex dễ vỡ khi template đổi; và team phải bỏ thói quen sửa trực tiếp thư mục sinh ra. Tôi sẽ đánh giá lượng code native tự viết và tần suất nâng cấp, rồi thử trên một nhánh; code native tự viết nhiều có thể chuyển thành local Expo module thay vì để trong thư mục sinh ra.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.expo.dev/workflow/continuous-native-generation/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
     </li>

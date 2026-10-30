@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Fabric đưa lõi renderer về C++ dùng chung cho iOS và Android. Mỗi lần React render, Fabric tạo shadow tree bất biến (immutable) trong C++, tính layout bằng Yoga, rồi commit cây mới và mount các thay đổi lên view native trên UI thread. Vì shadow tree bất biến và đọc được an toàn từ nhiều thread, renderer hỗ trợ concurrent features của React 18 như <code>startTransition</code>, Suspense, automatic batching — điều kiến trúc cũ không làm được. Fabric cũng cho phép đọc layout đồng bộ: đo vị trí trong <code>useLayoutEffect</code> rồi cập nhật ngay trong cùng frame, nên hết cảnh tooltip hay popover nháy sai vị trí một frame. Với dev, một implementation chung giúp giảm khác biệt hành vi giữa hai nền tảng. Khi migrate cần chú ý: native component cũ dùng <code>requireNativeComponent</code> chỉ chạy được nhờ interop layer, và code dựa vào API nội bộ của <code>UIManager</code> cũ có thể đổi hành vi.</div>
         
-        
+        <p class="doc-link"><a href="https://reactnative.dev/architecture/fabric-renderer" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q02">Luyện câu này trong app</a></div>

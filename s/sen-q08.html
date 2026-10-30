@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Lời gọi FFI là đồng bộ và chạy ngay trên thread của isolate gọi nó, nên một hàm C chạy 200ms gọi từ root isolate sẽ chặn UI 200ms; việc nặng phải chạy ở isolate khác (<code>Isolate.run</code>) hoặc để native tự chạy trên thread riêng rồi báo kết quả về. Với callback từ native: <code>Pointer.fromFunction</code> và <code>NativeCallable.isolateLocal</code> chỉ được gọi trên đúng thread của isolate (gọi từ thread khác sẽ abort process), còn <code>NativeCallable.listener</code> gọi được từ mọi thread nhưng chạy bất đồng bộ trên event loop, chỉ hỗ trợ hàm trả <code>void</code>, và phải <code>close()</code> khi xong nếu không isolate bị giữ sống mãi. <code>ffigen</code> sinh binding Dart từ header C/Objective-C, <code>jnigen</code> sinh binding gọi Java/Kotlin qua JNI, giúp bỏ phần glue code viết tay dễ sai kiểu và dễ lệch khi thư viện nâng version. Tôi vẫn bọc binding sinh ra sau một API Dart nhỏ, quản lý memory native bằng <code>Arena</code> hoặc <code>NativeFinalizer</code>, để phần còn lại của app không phụ thuộc trực tiếp vào FFI.</div>
         
-        
+        <p class="doc-link"><a href="https://dart.dev/interop/c-interop" target="_blank" rel="noopener">Đọc thêm trong tài liệu · dart.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-q08">Luyện câu này trong app</a></div>

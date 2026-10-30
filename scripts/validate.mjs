@@ -4,11 +4,11 @@
 //       node scripts/validate.mjs android junior   (một rank của một track)
 //       node scripts/validate.mjs junior           (một rank của Flutter)
 import { RANKS } from "../data/meta.js";
-import { TRACKS, LANGS, getTrack } from "../data/tracks.js";
+import { TRACKS, LANGS, COMMON_KEYWORDS, getTrack } from "../data/tracks.js";
 
 const PREFIX = { fresher: "fre", junior: "jun", middle: "mid", senior: "sen" };
-const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code", "lang", "by", "issue"]);
-const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "lang", "options", "answer", "explain", "by", "issue"]);
+const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code", "lang", "doc", "by", "issue"]);
+const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "lang", "options", "answer", "explain", "doc", "by", "issue"]);
 const GITHUB_LOGIN = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/;
 // Đáp án tham chiếu đáp án khác sẽ sai nghĩa khi app xáo trộn thứ tự.
 const CROSS_REF = /(tất cả (các )?(đáp án|phương án|ý) trên|cả [A-D] và [A-D]|\b[A-D] và [A-D]\b|không (có )?(đáp án|phương án) nào|all of the above|none of the above|cả hai (đáp án|phương án))/i;
@@ -46,6 +46,15 @@ function checkCommon(item, where, keys, prefix, track, kind) {
   if (item.lang === track.lang) warnings.push(`${where}: lang "${item.lang}" is the track default, remove it`);
   if (!isStr(item.q)) errors.push(`${where}: missing q`);
   if (item.code !== undefined && !isStr(item.code)) errors.push(`${where}: code must be a non-empty string`);
+  if (item.doc !== undefined) {
+    let url = null;
+    try {
+      url = new URL(item.doc);
+    } catch (e) {
+      /* để báo lỗi bên dưới */
+    }
+    if (!url || url.protocol !== "https:") errors.push(`${where}: doc must be an https URL`);
+  }
   if (item.by !== undefined && !(typeof item.by === "string" && GITHUB_LOGIN.test(item.by))) errors.push(`${where}: by must be a GitHub username`);
   if (item.issue !== undefined && !(Number.isInteger(item.issue) && item.issue > 0)) errors.push(`${where}: issue must be a positive integer`);
   if (item.issue !== undefined && item.by === undefined) errors.push(`${where}: issue requires by`);
@@ -59,6 +68,14 @@ function checkCommon(item, where, keys, prefix, track, kind) {
 for (const track of TRACKS) {
   if (onlyTrack && onlyTrack !== track.id) continue;
   console.log(`== ${track.name}`);
+  // Từ khoá nhận diện chủ đề trong JD (js/jd.js): key phải là topic của track hoặc của COMMON_KEYWORDS.
+  for (const [topic, list] of Object.entries(track.keywords || {})) {
+    if (!(topic in track.topics) && !(topic in COMMON_KEYWORDS)) errors.push(`data/tracks.js: ${track.id} keywords has unknown topic "${topic}"`);
+    if (!Array.isArray(list) || !list.every(isStr)) errors.push(`data/tracks.js: ${track.id} keywords.${topic} must be an array of non-empty strings`);
+  }
+  for (const topic of Object.keys(track.topics)) {
+    if (!(track.keywords && track.keywords[topic] && track.keywords[topic].length)) warnings.push(`data/tracks.js: ${track.id} topic "${topic}" has no JD keywords`);
+  }
   seenText = new Map();
   const roadmapDays = track.id === "flutter" ? (await import("../data/flutter/roadmap.js")).DAYS : [];
   for (const d of roadmapDays) {

@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Error boundary là class component có <code>static getDerivedStateFromError</code> (để render UI dự phòng) và <code>componentDidCatch</code> (để log lên Sentry/Crashlytics). Nó bắt lỗi ném ra trong lúc render, trong lifecycle và constructor của các component con, nhờ đó chỉ một phần cây bị thay bằng màn hình lỗi thay vì cả app sập. Nó không bắt lỗi trong event handler (<code>onPress</code>), code bất đồng bộ (<code>setTimeout</code>, promise bị reject), lỗi của chính nó và crash phía native; các trường hợp này phải <code>try/catch</code>, hoặc lưu lỗi vào state rồi ném lại khi render. Hiện chưa có hook tương đương nên thường viết một class dùng chung hoặc dùng thư viện <code>react-error-boundary</code>, và đặt boundary theo từng màn hình hay khối tính năng thay vì chỉ một cái ở root.</div>
         
-        
+        <p class="doc-link"><a href="https://react.dev/reference/react/Component" target="_blank" rel="noopener">Đọc thêm trong tài liệu · react.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q08">Luyện câu này trong app</a></div>

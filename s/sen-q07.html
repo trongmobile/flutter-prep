@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Platform view buộc engine ghép một native view với nội dung Flutter, và cái giá tùy chế độ: với hybrid composition (iOS, và Android khi dùng <code>initExpensiveAndroidView</code>), Flutter UI được compose trên platform thread thay vì raster thread riêng nên phải tranh tài nguyên với OS và plugin, dễ tụt FPS; trên Android 9 trở xuống chế độ này còn copy frame qua lại giữa bộ nhớ GPU và bộ nhớ chính. Chế độ mặc định của <code>AndroidView</code> (Texture Layer Hybrid Composition, fallback Virtual Display) nhẹ hơn cho Flutter nhưng có hạn chế riêng như scroll nhanh trong WebView có thể giật, <code>SurfaceView</code> bị chuyển sang virtual display, accessibility và text input kém hơn. Thực tế tôi giới hạn số platform view cùng lúc (không đặt map trong từng item của list), dùng ảnh tĩnh làm placeholder và chỉ tạo view thật khi user tương tác, tránh animate hay transform platform view, và luôn đo trên máy Android tầm thấp ở profile mode.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.flutter.dev/platform-integration/android/platform-views" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.flutter.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-q07">Luyện câu này trong app</a></div>

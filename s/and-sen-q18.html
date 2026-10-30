@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">SafetyNet Attestation đã bị thay bằng Play Integrity API. Luồng đúng: app xin integrity token (standard request: gọi <code>prepareIntegrityToken</code> trước để warm up, khi cần thì request kèm <code>requestHash</code> băm từ nội dung hành động; classic request thì dùng nonce do server sinh), rồi gửi token lên backend. Backend gọi server của Google để giải mã rồi mới đọc verdict: <code>appIntegrity</code> (đúng package, chứng chỉ ký, được Play nhận diện), <code>deviceIntegrity</code> (ví dụ <code>MEETS_DEVICE_INTEGRITY</code>) và <code>accountDetails</code> (licensing). Backend phải đối chiếu requestHash/nonce và thời điểm để chống replay; tuyệt đối không ra quyết định trên client vì client có thể bị hook. Chính sách nên theo mức rủi ro: chặn cứng ở hành động nhạy cảm như thanh toán, còn lại có thể chỉ ghi nhận hoặc yêu cầu xác thực thêm, vì có user hợp lệ dùng ROM tuỳ biến. API có quota nên không gọi cho mọi request, và Integrity chỉ là một lớp, cần kết hợp rate limiting và kiểm tra phía server.</div>
         
-        
+        <p class="doc-link"><a href="https://developer.android.com/google/play/integrity" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q18">Luyện câu này trong app</a></div>

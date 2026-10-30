@@ -397,7 +397,7 @@ print(p.goodbye()) <span class="tk-com">// &quot;Hẹn gặp lại&quot;: biến
       <div class="model-answer">
         <div class="answer-text"><code>Sendable</code> đánh dấu kiểu có thể chuyển qua ranh giới concurrency (giữa các actor, vào task khác) mà không gây data race. Struct/enum không public có mọi thành phần <code>Sendable</code> thì được suy ra tự động, actor luôn <code>Sendable</code>, còn class chỉ hợp lệ khi là <code>final</code> và chỉ chứa <code>let</code> có kiểu <code>Sendable</code>, hoặc được cô lập vào global actor như <code>@MainActor</code>. Hướng xử lý: ưu tiên model là struct bất biến, đưa state mutable dùng chung vào actor, đánh dấu <code>@MainActor</code> cho type thuộc UI. <code>@unchecked Sendable</code> chỉ dùng khi tự bảo vệ bằng lock và chấp nhận tự chịu trách nhiệm; <code>@preconcurrency import</code> giúp tạm giảm lỗi từ module bên thứ ba chưa cập nhật. Nên migrate từng module: bật strict concurrency mức <code>complete</code> ở Swift 5 mode để thấy warning trước, sửa xong mới chuyển sang Swift 6 mode.</div>
         
-        
+        <p class="doc-link"><a href="https://www.swift.org/migration/documentation/migrationguide/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · swift.org ↗</a></p>
       </div>
     </details>
     </li>
@@ -574,7 +574,7 @@ bottomConstraint.constant = keyboardHeight
   <span class="tk-ann">@Bindable</span> <span class="tk-kw">var</span> model: <span class="tk-type">CartModel</span> <span class="tk-com">// để tạo binding $model.couponCode</span>
   <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> { <span class="tk-type">TextField</span>(<span class="tk-str">&quot;Mã giảm giá&quot;</span>, text: $model.couponCode) }
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -694,7 +694,7 @@ bottomConstraint.constant = keyboardHeight
 <span class="tk-com">// NavigationStack(path: $router.path) { ... }</span>
 <span class="tk-com">//   .navigationDestination(for: Route.self) { route in destination(route) }</span>
 <span class="tk-com">//   .onOpenURL { router.handle($0) }</span></code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -772,7 +772,7 @@ bottomConstraint.constant = keyboardHeight
       <div class="model-answer">
         <div class="answer-text">SwiftData xây trên nền Core Data nhưng API thuần Swift: model khai báo bằng macro <code>@Model</code>, quản lý qua <code>ModelContainer</code>/<code>ModelContext</code>, SwiftUI đọc dữ liệu bằng <code>@Query</code> tự cập nhật, ít boilerplate hơn hẳn. Đổi lại nó còn mới: một số thứ của Core Data như <code>NSFetchedResultsController</code> cho UIKit, batch insert/update hay tuỳ biến sâu chưa có tương đương đầy đủ, và hành vi có thay đổi giữa các bản iOS nên cần test kỹ trên từng phiên bản hỗ trợ. Về concurrency, <code>ModelContext</code> và object <code>@Model</code> không <code>Sendable</code>; việc nặng ở background dùng actor <code>@ModelActor</code> với context riêng, giữa các context chỉ truyền <code>PersistentIdentifier</code>. App SwiftUI là chính, schema vừa phải thì SwiftData hợp lý; app UIKit lớn, cần kiểm soát hiệu năng chặt hoặc đã đầu tư Core Data thì nên giữ Core Data, và hai bên có thể dùng chung một store để chuyển dần.</div>
         
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/swiftdata" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -928,7 +928,7 @@ present(<span class="tk-type">PHPickerViewController</span>(configuration: confi
     #expect(value == <span class="tk-num">1000</span>)
   }
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/testing" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -1024,7 +1024,7 @@ present(<span class="tk-type">PHPickerViewController</span>(configuration: confi
   }
   <span class="tk-kw">return</span> data
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/localauthentication" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>

@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Impeller (mặc định trên iOS và Android API 29+, máy cũ hơn fallback về Skia) biên dịch sẵn shader lúc build nên jank do compile shader lần đầu gần như biến mất, nhưng chi phí GPU thì không biến mất: <code>saveLayer</code> (do <code>Opacity</code> trên subtree lớn, <code>ShaderMask</code>, <code>Clip.antiAliasWithSaveLayer</code>), blur và <code>BackdropFilter</code>, clip/shadow phức tạp vẫn có thể đẩy raster thread vượt ngân sách frame. Jank ở UI thread (build/layout nặng, parse JSON trên root isolate) cũng không liên quan gì tới renderer. Khi khoanh vùng, tôi profile trên máy thật ở profile mode, xem frame chậm ở UI hay raster thread trong DevTools; trên Android có thể chạy <code>flutter run --no-enable-impeller</code> để so với Skia và biết lỗi nằm ở renderer/driver GPU hay ở app, còn trên iOS bản hiện tại không còn đường lui về Skia. Ví dụ thực tế: màn có blur toàn màn hình vẫn giật trên máy Android tầm thấp dù đã dùng Impeller — cách xử lý là thu nhỏ vùng blur hoặc dùng ảnh nền đã blur sẵn, và nếu nghi lỗi renderer thì tạo repro tối giản để report cho Flutter.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.flutter.dev/perf/impeller" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.flutter.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-q03">Luyện câu này trong app</a></div>

@@ -17,12 +17,14 @@ export default [
     topic: "perf",
     q: "Sau khi app chạy trên Impeller, những loại jank nào vẫn còn, và bạn khoanh vùng một vấn đề do renderer gây ra như thế nào?",
     a: "Impeller (mặc định trên iOS và Android API 29+, máy cũ hơn fallback về Skia) biên dịch sẵn shader lúc build nên jank do compile shader lần đầu gần như biến mất, nhưng chi phí GPU thì không biến mất: `saveLayer` (do `Opacity` trên subtree lớn, `ShaderMask`, `Clip.antiAliasWithSaveLayer`), blur và `BackdropFilter`, clip/shadow phức tạp vẫn có thể đẩy raster thread vượt ngân sách frame. Jank ở UI thread (build/layout nặng, parse JSON trên root isolate) cũng không liên quan gì tới renderer. Khi khoanh vùng, tôi profile trên máy thật ở profile mode, xem frame chậm ở UI hay raster thread trong DevTools; trên Android có thể chạy `flutter run --no-enable-impeller` để so với Skia và biết lỗi nằm ở renderer/driver GPU hay ở app, còn trên iOS bản hiện tại không còn đường lui về Skia. Ví dụ thực tế: màn có blur toàn màn hình vẫn giật trên máy Android tầm thấp dù đã dùng Impeller — cách xử lý là thu nhỏ vùng blur hoặc dùng ảnh nền đã blur sẵn, và nếu nghi lỗi renderer thì tạo repro tối giản để report cho Flutter.",
+    doc: "https://docs.flutter.dev/perf/impeller",
   },
   {
     id: "sen-q04",
     topic: "perf",
     q: "Bạn phát hiện và phòng ngừa memory leak trong một app Flutter lớn như thế nào?",
     a: "Dấu hiệu thường là memory tăng dần sau mỗi lần mở/đóng cùng một màn hình; tôi lặp lại flow đó nhiều lần, chụp heap snapshot trong DevTools Memory trước và sau rồi diff để tìm class không giảm (thường là `State`, controller, model lớn) và lần theo retaining path. Nguyên nhân phổ biến: không `dispose` `AnimationController`/`TextEditingController`/`ScrollController`, không `cancel` `StreamSubscription` hoặc `removeListener` khỏi object sống lâu, và closure giữ `BuildContext` hay `this` bị lưu vào singleton, cache static hoặc callback của SDK native. Ở quy mô team, tôi bật leak tracking cho widget test bằng `leak_tracker_flutter_testing` (`LeakTesting.enable()` trong `flutter_test_config.dart`) để CI bắt các object của framework không được dispose, bật thêm lint như `cancel_subscriptions`, và thống nhất quy tắc 'ai tạo thì người đó dispose'. Lưu ý heap snapshot chủ yếu phản ánh Dart heap; ảnh đã decode hay memory của SDK native cần xem thêm bằng Android Studio Profiler hoặc Xcode Instruments.",
+    doc: "https://docs.flutter.dev/tools/devtools/memory",
   },
   {
     id: "sen-q05",
@@ -36,24 +38,28 @@ export default [
     q: "Thiết kế một worker isolate sống lâu để xử lý tác vụ nặng liên tục (mã hoá file, xử lý ảnh). Bạn lưu ý gì về giao tiếp và truyền dữ liệu lớn?",
     a: "Với tác vụ lẻ tẻ thì `Isolate.run` là đủ, nhưng khi xử lý liên tục thì spawn mỗi lần vừa tốn chi phí vừa mất state đã khởi tạo, nên tôi spawn một worker bằng `Isolate.spawn`, bắt tay để trao đổi `SendPort` hai chiều, gắn mỗi request một id ánh xạ tới `Completer`, có timeout, theo dõi lỗi/thoát qua `onError`/`onExit` và `kill` khi không còn dùng. Message giữa các isolate mặc định bị copy, nên với buffer vài chục MB tôi dùng `TransferableTypedData`: chỉ tốn một lần copy lúc tạo, gửi qua port trong thời gian hằng số, và bên nhận chỉ được `materialize()` đúng một lần; kết quả cuối của một isolate sắp kết thúc có thể trả bằng `Isolate.exit` để VM chuyển giao object mà không phải copy. Isolate tạo bằng `Isolate.spawn` cùng isolate group với isolate gốc nên spawn nhanh và gửi được cả closure, khác với `Isolate.spawnUri`. Nếu worker cần gọi plugin thì phải truyền `RootIsolateToken` và gọi `BackgroundIsolateBinaryMessenger.ensureInitialized`, đồng thời nhớ rằng isolate nền không nhận được message do phía native chủ động gửi.",
     code: "void _worker(SendPort toMain) {\n  final inbox = ReceivePort();\n  toMain.send(inbox.sendPort); // bắt tay: trả SendPort cho main\n  inbox.listen((msg) {\n    final (int id, TransferableTypedData data, SendPort reply) =\n        msg as (int, TransferableTypedData, SendPort);\n    final bytes = data.materialize().asUint8List(); // không copy lại\n    reply.send((id, bytes.length)); // thay bằng xử lý thật\n  });\n}",
+    doc: "https://dart.dev/language/isolates",
   },
   {
     id: "sen-q07",
     topic: "native",
     q: "Nhúng Google Map hay WebView (platform view) vào màn hình Flutter có chi phí hiệu năng gì? Bạn giảm thiểu thế nào?",
     a: "Platform view buộc engine ghép một native view với nội dung Flutter, và cái giá tùy chế độ: với hybrid composition (iOS, và Android khi dùng `initExpensiveAndroidView`), Flutter UI được compose trên platform thread thay vì raster thread riêng nên phải tranh tài nguyên với OS và plugin, dễ tụt FPS; trên Android 9 trở xuống chế độ này còn copy frame qua lại giữa bộ nhớ GPU và bộ nhớ chính. Chế độ mặc định của `AndroidView` (Texture Layer Hybrid Composition, fallback Virtual Display) nhẹ hơn cho Flutter nhưng có hạn chế riêng như scroll nhanh trong WebView có thể giật, `SurfaceView` bị chuyển sang virtual display, accessibility và text input kém hơn. Thực tế tôi giới hạn số platform view cùng lúc (không đặt map trong từng item của list), dùng ảnh tĩnh làm placeholder và chỉ tạo view thật khi user tương tác, tránh animate hay transform platform view, và luôn đo trên máy Android tầm thấp ở profile mode.",
+    doc: "https://docs.flutter.dev/platform-integration/android/platform-views",
   },
   {
     id: "sen-q08",
     topic: "native",
     q: "Khi tích hợp thư viện native qua FFI, bạn xử lý threading và callback thế nào để không làm treo UI? `ffigen`/`jnigen` đóng vai trò gì?",
     a: "Lời gọi FFI là đồng bộ và chạy ngay trên thread của isolate gọi nó, nên một hàm C chạy 200ms gọi từ root isolate sẽ chặn UI 200ms; việc nặng phải chạy ở isolate khác (`Isolate.run`) hoặc để native tự chạy trên thread riêng rồi báo kết quả về. Với callback từ native: `Pointer.fromFunction` và `NativeCallable.isolateLocal` chỉ được gọi trên đúng thread của isolate (gọi từ thread khác sẽ abort process), còn `NativeCallable.listener` gọi được từ mọi thread nhưng chạy bất đồng bộ trên event loop, chỉ hỗ trợ hàm trả `void`, và phải `close()` khi xong nếu không isolate bị giữ sống mãi. `ffigen` sinh binding Dart từ header C/Objective-C, `jnigen` sinh binding gọi Java/Kotlin qua JNI, giúp bỏ phần glue code viết tay dễ sai kiểu và dễ lệch khi thư viện nâng version. Tôi vẫn bọc binding sinh ra sau một API Dart nhỏ, quản lý memory native bằng `Arena` hoặc `NativeFinalizer`, để phần còn lại của app không phụ thuộc trực tiếp vào FFI.",
+    doc: "https://dart.dev/interop/c-interop",
   },
   {
     id: "sen-q09",
     topic: "arch",
     q: "Pub workspaces (Dart 3.6+) giải quyết vấn đề gì trong một monorepo Flutter, và nó kết hợp với Melos ra sao?",
     a: "Trước đây mỗi package trong monorepo có `pubspec.lock` riêng, nên cùng một dependency có thể resolve ra version khác nhau giữa các package, `pub get` phải chạy cho từng package và analyzer phải giữ nhiều context. Với pub workspaces, `pubspec.yaml` gốc khai báo danh sách `workspace:` và mỗi package con khai báo `resolution: workspace`: cả repo dùng chung một lần resolve, một lockfile và một `package_config.json`, nên mọi package chắc chắn dùng cùng version và IDE nhẹ hơn. Trade-off là không còn cho phép hai package cần hai version không tương thích của cùng một dependency — phải nâng cấp đồng loạt, điều thực ra lành mạnh cho một app monorepo. Workspaces chỉ lo phần resolve dependency; Melos vẫn hữu ích cho script chạy theo từng package, lọc package bị ảnh hưởng bởi thay đổi, versioning và changelog khi publish, và các bản Melos mới đã được xây trên nền pub workspaces.",
+    doc: "https://dart.dev/tools/pub/workspaces",
   },
   {
     id: "sen-q10",

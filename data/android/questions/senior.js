@@ -5,6 +5,7 @@ export default [
     q: "App có cold start khoảng 2,5 giây trên máy tầm trung, trong `Application.onCreate` đang khởi tạo cả chục SDK. Bạn đo và tối ưu thế nào?",
     a: "Trước hết phải đo đúng: dùng Macrobenchmark với `StartupTimingMetric` trên máy thật, bản release (R8 bật, không debuggable), và gọi `reportFullyDrawn()` để có cả TTFD chứ không chỉ TTID; mở Perfetto/System Trace để xem main thread bận gì trong `bindApplication` và `activityStart`. Tối ưu theo thứ tự: SDK nào chưa cần cho frame đầu thì init lazy hoặc dời ra sau first frame; gom các `ContentProvider` tự khởi tạo của thư viện bằng App Startup (có thể tắt auto-init rồi gọi khi cần); đưa I/O ra khỏi main thread và tránh khởi tạo eager các object nặng trong DI graph. Sau đó thêm Baseline Profile để ART AOT-compile sẵn đường code startup ngay khi cài, cùng Startup Profile để R8 xếp các class startup vào DEX chính. Cuối cùng đưa benchmark vào CI để bắt regression thay vì đo một lần rồi thôi.",
     code: "class LoggerInitializer : Initializer<Logger> {\n  override fun create(context: Context): Logger =\n    Logger.init(context.applicationContext)\n\n  // Khai báo phụ thuộc thay vì tự sắp thứ tự trong Application\n  override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()\n}\n\n// Đã tắt auto-init trong Manifest, chỉ init khi thật sự cần:\nAppInitializer.getInstance(context)\n  .initializeComponent(LoggerInitializer::class.java)",
+    doc: "https://developer.android.com/topic/performance/issues/launch-time",
   },
   {
     id: "and-sen-q02",
@@ -31,6 +32,7 @@ export default [
     topic: "java",
     q: "Giải thích cách ART thực thi code của app hiện nay (interpreter, JIT, AOT). Vì sao vài lần mở đầu sau khi cài hoặc cập nhật thường chậm hơn, và Baseline Profile giải quyết việc đó ra sao?",
     a: "Dalvik chủ yếu thông dịch bytecode, từ Android 2.2 có thêm JIT. ART ở Android 5–6 AOT-compile toàn bộ app bằng `dex2oat` lúc cài, nên cài lâu và tốn dung lượng. Từ Android 7, ART dùng mô hình lai: mới cài thì code chạy bằng interpreter + JIT, JIT ghi các method nóng vào profile, rồi khi máy rảnh và đang sạc, hệ thống AOT-compile những method đó (profile-guided compilation). Vì vậy những lần mở đầu sau khi cài hoặc update chưa có code AOT nên chậm hơn và dễ jank. Baseline Profile là danh sách class/method quan trọng ship sẵn trong APK/AAB; khi cài qua Play, ART dùng nó để AOT-compile các đường code đó ngay, không phải đợi JIT tích luỹ profile. Cloud Profile của Play có tác dụng tương tự nhưng chỉ có sau khi bản phát hành đã có đủ người dùng, còn Baseline Profile phủ ngay từ ngày đầu.",
+    doc: "https://source.android.com/docs/core/runtime",
   },
   {
     id: "and-sen-q06",
@@ -87,6 +89,7 @@ export default [
     q: "Làm sao tái hiện và xử lý process death một cách có hệ thống trong app lớn? Sau khi process bị kill, state nào mất và state nào được khôi phục?",
     a: "Khi app ở background, hệ thống có thể kill process để lấy bộ nhớ. Lúc user quay lại, Android tạo process mới, khôi phục back stack Activity/Fragment (kể cả back stack của Navigation) cùng các `Bundle` đã lưu, nhưng mọi thứ chỉ nằm trong memory đều mất: singleton, cache, biến static, instance ViewModel cũ. Tái hiện: đưa app xuống background rồi chạy `adb shell am kill <package>`; khác với tuỳ chọn 'Don't keep activities' chỉ destroy Activity còn process vẫn sống. Xử lý: state UI tối thiểu (id, query, tab đang chọn, input của form) lưu bằng `SavedStateHandle`/`rememberSaveable`; dữ liệu lớn để trong DB rồi load lại theo id; không giả định singleton đã được màn hình trước khởi tạo, vì màn hình sâu có thể là màn hình đầu tiên chạy trong process mới. Đừng nhét list lớn vào Bundle vì giới hạn Binder transaction (khoảng 1MB) dễ gây `TransactionTooLargeException`.",
     code: "@HiltViewModel\nclass CheckoutViewModel @Inject constructor(\n  private val savedState: SavedStateHandle,\n  orderRepo: OrderRepository,\n) : ViewModel() {\n  // Chỉ lưu id và input nhỏ; dữ liệu lớn load lại từ DB theo id\n  private val orderId: String = checkNotNull(savedState[\"orderId\"])\n  val note = savedState.getStateFlow(\"note\", \"\")\n  val order = orderRepo.observeOrder(orderId)\n    .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)\n\n  fun onNoteChange(value: String) { savedState[\"note\"] = value }\n}",
+    doc: "https://developer.android.com/topic/libraries/architecture/saving-states",
   },
   {
     id: "and-sen-q14",
@@ -108,6 +111,7 @@ export default [
     q: "Bạn lưu access token và refresh token trên Android thế nào cho an toàn? `EncryptedSharedPreferences` còn là lựa chọn tốt không?",
     a: "`androidx.security:security-crypto` (gồm `EncryptedSharedPreferences`, `MasterKey`) đã deprecated, nên với code mới tôi tự mã hoá: tạo AES key trong Android Keystore (key không export được, có thể nằm trong TEE/StrongBox), mã hoá token bằng AES-GCM rồi lưu IV cùng ciphertext vào DataStore hoặc file trong internal storage. Keystore không ngăn kẻ đã root máy gọi key thông qua chính process của app, nhưng ngăn việc copy key ra khỏi thiết bị. Access token ngắn hạn có thể chỉ giữ trong memory, refresh token mới cần lưu bền và nên được backend rotate. Không log token, loại file chứa token khỏi backup (`dataExtractionRules`, với Android 11 trở xuống là `fullBackupContent`), vì key Keystore không đi theo bản backup nên dữ liệu restore sang máy mới không giải mã được. Cuối cùng phải xử lý `KeyPermanentlyInvalidatedException` (key yêu cầu xác thực người dùng bị vô hiệu khi user tắt khoá màn hình hoặc thêm vân tay) bằng cách xoá key và cho đăng nhập lại.",
     code: "fun encrypt(plain: ByteArray): Pair<ByteArray, ByteArray> {\n  val ks = KeyStore.getInstance(\"AndroidKeyStore\").apply { load(null) }\n  val key = ks.getKey(ALIAS, null) as? SecretKey ?: KeyGenerator\n    .getInstance(KeyProperties.KEY_ALGORITHM_AES, \"AndroidKeyStore\")\n    .apply {\n      init(KeyGenParameterSpec.Builder(ALIAS, KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT)\n        .setBlockModes(KeyProperties.BLOCK_MODE_GCM)\n        .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)\n        .build())\n    }.generateKey()\n  val cipher = Cipher.getInstance(\"AES/GCM/NoPadding\")\n  cipher.init(Cipher.ENCRYPT_MODE, key) // Keystore tự sinh IV ngẫu nhiên\n  return cipher.iv to cipher.doFinal(plain) // lưu cả IV và ciphertext\n}",
+    doc: "https://developer.android.com/privacy-and-security/keystore",
   },
   {
     id: "and-sen-q17",
@@ -116,12 +120,14 @@ export default [
     a: "Tôi pin public key (hash SPKI) thay vì cả certificate, để server renew certificate với cùng key không làm hỏng app, và luôn có ít nhất một backup pin cho key dự phòng chưa dùng. Có hai cách: Network Security Config với `<pin-set>` (khai báo qua `android:networkSecurityConfig` trong Manifest, có `expiration`, áp dụng ở tầng TrustManager của nền tảng), hoặc `CertificatePinner` của OkHttp nếu cần logic động. Rủi ro lớn nhất là tự khoá app: nếu server đổi key mà bản app đang chạy không có pin tương ứng, mọi request đều fail và chỉ sửa được bằng cách cập nhật app, còn user không cập nhật thì app chết hẳn. Vì vậy cần quy trình rotate key phối hợp với backend, đặt `expiration` và theo dõi lỗi pinning. Cũng phải hiểu đúng phạm vi: pinning chống MITM trên đường truyền (kể cả khi có CA lạ được cài thêm), nhưng không chống được người kiểm soát thiết bị dùng root và Frida để bypass.",
     code: "<!-- res/xml/network_security_config.xml -->\n<network-security-config>\n  <domain-config>\n    <domain includeSubdomains=\"true\">api.example.com</domain>\n    <pin-set expiration=\"2027-06-30\">\n      <pin digest=\"SHA-256\">7HIpactkIAq2Y49orFOOQKurWxmmSFZhBCoQYcRhJ3Y=</pin>\n      <!-- backup pin: key dự phòng chưa đưa vào dùng -->\n      <pin digest=\"SHA-256\">fwza0LRMXouZHRC8Ei+4PyuldPDcf3UKgO/04cDM1oE=</pin>\n    </pin-set>\n  </domain-config>\n</network-security-config>",
     lang: "xml",
+    doc: "https://developer.android.com/privacy-and-security/security-config",
   },
   {
     id: "and-sen-q18",
     topic: "security",
     q: "Backend muốn chặn request đến từ app bị sửa đổi, emulator hoặc bot. Bạn tích hợp Play Integrity API thế nào cho đúng?",
     a: "SafetyNet Attestation đã bị thay bằng Play Integrity API. Luồng đúng: app xin integrity token (standard request: gọi `prepareIntegrityToken` trước để warm up, khi cần thì request kèm `requestHash` băm từ nội dung hành động; classic request thì dùng nonce do server sinh), rồi gửi token lên backend. Backend gọi server của Google để giải mã rồi mới đọc verdict: `appIntegrity` (đúng package, chứng chỉ ký, được Play nhận diện), `deviceIntegrity` (ví dụ `MEETS_DEVICE_INTEGRITY`) và `accountDetails` (licensing). Backend phải đối chiếu requestHash/nonce và thời điểm để chống replay; tuyệt đối không ra quyết định trên client vì client có thể bị hook. Chính sách nên theo mức rủi ro: chặn cứng ở hành động nhạy cảm như thanh toán, còn lại có thể chỉ ghi nhận hoặc yêu cầu xác thực thêm, vì có user hợp lệ dùng ROM tuỳ biến. API có quota nên không gọi cho mọi request, và Integrity chỉ là một lớp, cần kết hợp rate limiting và kiểm tra phía server.",
+    doc: "https://developer.android.com/google/play/integrity",
   },
   {
     id: "and-sen-q19",

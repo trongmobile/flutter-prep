@@ -399,7 +399,7 @@
       <div class="model-answer">
         <div class="answer-text"><code>remember</code> chỉ giữ giá trị khi composable còn trong composition; Activity bị tạo lại khi xoay màn hình hay composable rời khỏi composition là mất. <code>rememberSaveable</code> lưu vào saved instance state (Bundle) nên sống qua configuration change và cả process death, nhưng chỉ chứa được kiểu lưu vào Bundle (primitive, <code>String</code>, <code>Parcelable</code>…) hoặc phải viết <code>Saver</code>, và không nên chứa dữ liệu lớn vì Bundle giới hạn kích thước (<code>TransactionTooLargeException</code>). ViewModel sống qua configuration change nhưng không qua process death, trừ phần lưu trong <code>SavedStateHandle</code>. Quy tắc thực tế: state thuần UI nhỏ (text đang gõ, tab đang chọn, mục đang mở rộng) dùng <code>rememberSaveable</code>; dữ liệu nghiệp vụ và kết quả gọi API để ở ViewModel; object tạm hoặc giá trị tính toán đắt thì dùng <code>remember</code>.</div>
         
-        
+        <p class="doc-link"><a href="https://developer.android.com/develop/ui/compose/state" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -423,7 +423,7 @@
     <span class="tk-type">Text</span>(<span class="tk-str">&quot;Lên đầu&quot;</span>)
   }
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.android.com/develop/ui/compose/side-effects" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -530,7 +530,7 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
 ) {
   <span class="tk-type">OrderDetailScreen</span>()
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.android.com/training/app-links" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -581,7 +581,7 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
   <span class="tk-ann">@Singleton</span>
   <span class="tk-kw">fun</span> provideOkHttp(): <span class="tk-type">OkHttpClient</span> = <span class="tk-type">OkHttpClient</span>.<span class="tk-type">Builder</span>().build()
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.android.com/training/dependency-injection/hilt-android" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -605,7 +605,7 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
 <span class="tk-type">Room</span>.databaseBuilder(context, <span class="tk-type">AppDatabase</span>::<span class="tk-kw">class</span>.java, <span class="tk-str">&quot;app.db&quot;</span>)
   .addMigrations(<span class="tk-type">MIGRATION_1_2</span>)
   .build()</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.android.com/training/data-storage/room/migrating-db-versions" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -716,7 +716,7 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
   <span class="tk-type">ExistingWorkPolicy</span>.<span class="tk-type">KEEP</span>, <span class="tk-com">// đã có work cho ảnh này thì bỏ qua</span>
   request,
 )</code></pre>
-        
+        <p class="doc-link"><a href="https://developer.android.com/develop/background-work/background-tasks/persistent" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -733,7 +733,7 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
   <span class="tk-type">android:name</span>=<span class="tk-str">&quot;.tracking.TrackingService&quot;</span>
   <span class="tk-type">android:exported</span>=<span class="tk-str">&quot;false&quot;</span>
   <span class="tk-type">android:foregroundServiceType</span>=<span class="tk-str">&quot;location&quot;</span> <span class="tk-kw">/&gt;</span></code></pre>
-        
+        <p class="doc-link"><a href="https://developer.android.com/develop/background-work/services/fgs" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>

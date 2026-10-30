@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Dấu hiệu thường là memory tăng dần sau mỗi lần mở/đóng cùng một màn hình; tôi lặp lại flow đó nhiều lần, chụp heap snapshot trong DevTools Memory trước và sau rồi diff để tìm class không giảm (thường là <code>State</code>, controller, model lớn) và lần theo retaining path. Nguyên nhân phổ biến: không <code>dispose</code> <code>AnimationController</code>/<code>TextEditingController</code>/<code>ScrollController</code>, không <code>cancel</code> <code>StreamSubscription</code> hoặc <code>removeListener</code> khỏi object sống lâu, và closure giữ <code>BuildContext</code> hay <code>this</code> bị lưu vào singleton, cache static hoặc callback của SDK native. Ở quy mô team, tôi bật leak tracking cho widget test bằng <code>leak_tracker_flutter_testing</code> (<code>LeakTesting.enable()</code> trong <code>flutter_test_config.dart</code>) để CI bắt các object của framework không được dispose, bật thêm lint như <code>cancel_subscriptions</code>, và thống nhất quy tắc &#39;ai tạo thì người đó dispose&#39;. Lưu ý heap snapshot chủ yếu phản ánh Dart heap; ảnh đã decode hay memory của SDK native cần xem thêm bằng Android Studio Profiler hoặc Xcode Instruments.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.flutter.dev/tools/devtools/memory" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.flutter.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-q04">Luyện câu này trong app</a></div>

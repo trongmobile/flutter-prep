@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">OTA chỉ thay được JS bundle và asset đi kèm (ảnh, font). Mọi thứ thuộc binary native như thêm hay nâng thư viện có native code, nâng React Native/Expo SDK, đổi quyền trong <code>Info.plist</code>/<code>AndroidManifest</code>, icon, splash đều cần build mới và nộp store. <code>runtimeVersion</code> đánh dấu bản JS tương thích với binary nào: nếu đẩy JS gọi một native module mà binary cũ không có, app sẽ crash, nên phải đổi <code>runtimeVersion</code> (ví dụ dùng policy <code>fingerprint</code>) mỗi khi phần native thay đổi. Mặc định update được tải khi mở app và chỉ áp dụng ở lần khởi động sau, trừ khi tự gọi <code>fetchUpdateAsync</code> rồi <code>reloadAsync</code>, nên không phải người dùng nào cũng nhận ngay. Chính sách store cũng chỉ chấp nhận OTA cho sửa lỗi và thay đổi nhỏ, không được đổi bản chất của app.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.expo.dev/eas-update/introduction/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q22">Luyện câu này trong app</a></div>

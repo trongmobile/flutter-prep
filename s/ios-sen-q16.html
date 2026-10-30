@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Tôi chọn Notification Service Extension. Silent push (<code>content-available: 1</code>) chỉ là gợi ý để đánh thức app, bị hệ thống throttle và không được giao cho app mà user đã force-quit, nên không dùng được cho thông báo bắt buộc phải tới tay người dùng. Với NSE, server gửi push hiển thị có <code>mutable-content: 1</code>; extension nhận trong <code>didReceive(_:withContentHandler:)</code>, giải mã bằng khoá đọc từ Keychain dùng chung, tải ảnh rồi gắn <code>UNNotificationAttachment</code> trước khi gọi <code>contentHandler</code>. Extension chỉ có khoảng 30 giây và ít memory; nếu lỗi hoặc hết giờ, hệ thống hiện nguyên alert gốc. Vì vậy alert gốc chỉ nên là câu chung chung như &#39;Bạn có tin nhắn mới&#39;, còn ciphertext đặt trong một field riêng của payload.</div>
         
-        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/usernotifications/modifying-content-in-newly-delivered-notifications" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q16">Luyện câu này trong app</a></div>

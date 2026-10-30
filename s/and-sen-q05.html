@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Dalvik chủ yếu thông dịch bytecode, từ Android 2.2 có thêm JIT. ART ở Android 5–6 AOT-compile toàn bộ app bằng <code>dex2oat</code> lúc cài, nên cài lâu và tốn dung lượng. Từ Android 7, ART dùng mô hình lai: mới cài thì code chạy bằng interpreter + JIT, JIT ghi các method nóng vào profile, rồi khi máy rảnh và đang sạc, hệ thống AOT-compile những method đó (profile-guided compilation). Vì vậy những lần mở đầu sau khi cài hoặc update chưa có code AOT nên chậm hơn và dễ jank. Baseline Profile là danh sách class/method quan trọng ship sẵn trong APK/AAB; khi cài qua Play, ART dùng nó để AOT-compile các đường code đó ngay, không phải đợi JIT tích luỹ profile. Cloud Profile của Play có tác dụng tương tự nhưng chỉ có sau khi bản phát hành đã có đủ người dùng, còn Baseline Profile phủ ngay từ ngày đầu.</div>
         
-        
+        <p class="doc-link"><a href="https://source.android.com/docs/core/runtime" target="_blank" rel="noopener">Đọc thêm trong tài liệu · source.android.com ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q05">Luyện câu này trong app</a></div>

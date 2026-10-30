@@ -51,6 +51,7 @@ export default [
     topic: "ui",
     q: "Trong Compose, state nào nên để `remember`, state nào dùng `rememberSaveable`, và khi nào phải đưa lên ViewModel? Mỗi loại sống sót qua những tình huống nào?",
     a: "`remember` chỉ giữ giá trị khi composable còn trong composition; Activity bị tạo lại khi xoay màn hình hay composable rời khỏi composition là mất. `rememberSaveable` lưu vào saved instance state (Bundle) nên sống qua configuration change và cả process death, nhưng chỉ chứa được kiểu lưu vào Bundle (primitive, `String`, `Parcelable`…) hoặc phải viết `Saver`, và không nên chứa dữ liệu lớn vì Bundle giới hạn kích thước (`TransactionTooLargeException`). ViewModel sống qua configuration change nhưng không qua process death, trừ phần lưu trong `SavedStateHandle`. Quy tắc thực tế: state thuần UI nhỏ (text đang gõ, tab đang chọn, mục đang mở rộng) dùng `rememberSaveable`; dữ liệu nghiệp vụ và kết quả gọi API để ở ViewModel; object tạm hoặc giá trị tính toán đắt thì dùng `remember`.",
+    doc: "https://developer.android.com/develop/ui/compose/state",
   },
   {
     id: "and-mid-q09",
@@ -58,6 +59,7 @@ export default [
     q: "Màn hình Compose cần: tải lại dữ liệu mỗi khi `userId` đổi, cuộn danh sách lên đầu khi bấm nút, và đăng ký/huỷ listener của một SDK chat. Mỗi việc dùng side-effect API nào?",
     a: "Tải dữ liệu theo `userId` dùng `LaunchedEffect(userId)`: coroutine chạy khi vào composition, bị huỷ và chạy lại mỗi khi key đổi. Cuộn khi bấm nút là việc do sự kiện kích hoạt chứ không phải do composition, nên lấy scope từ `rememberCoroutineScope()` rồi `launch` trong `onClick`. Listener cần dọn dẹp thì dùng `DisposableEffect(key)` với `onDispose { ... }` để huỷ đăng ký khi rời composition hoặc key đổi. Ngoài ra `SideEffect` chạy sau mỗi lần recompose thành công, hợp để đồng bộ state Compose sang object bên ngoài như analytics. Bẫy hay gặp: gọi `launch` hoặc logic nặng thẳng trong body composable, và dùng `LaunchedEffect(Unit)` trong khi effect phụ thuộc giá trị có thể đổi.",
     code: "@Composable\nfun ChatScreen(userId: String, vm: ChatViewModel, sdk: ChatSdk) {\n  LaunchedEffect(userId) { vm.load(userId) } // chạy lại khi userId đổi\n  DisposableEffect(sdk) {\n    val listener = ChatListener { vm.onMessage(it) }\n    sdk.addListener(listener)\n    onDispose { sdk.removeListener(listener) }\n  }\n  val scope = rememberCoroutineScope()\n  val listState = rememberLazyListState()\n  Button(onClick = { scope.launch { listState.animateScrollToItem(0) } }) {\n    Text(\"Lên đầu\")\n  }\n}",
+    doc: "https://developer.android.com/develop/ui/compose/side-effects",
   },
   {
     id: "and-mid-q10",
@@ -83,6 +85,7 @@ export default [
     q: "Trong Hilt, khi nào dùng `@Binds`, khi nào dùng `@Provides`? Bạn chọn scope (`@Singleton`, `@ViewModelScoped`…) cho một dependency dựa trên tiêu chí gì?",
     a: "`@Binds` dùng để nối interface với implementation mà Hilt đã biết cách tạo (có `@Inject constructor`): khai báo bằng hàm abstract trong module abstract, module không cần instance và Dagger sinh ít code hơn. `@Provides` dùng khi phải tự viết code tạo object: class của thư viện ngoài không sửa được constructor (Retrofit, OkHttpClient, Room database) hoặc cần builder và cấu hình. Về scope, không gắn scope nghĩa là mỗi lần inject tạo instance mới, và đó nên là mặc định. Chỉ gắn scope khi cần chia sẻ state hoặc object tốn kém để tạo: `@Singleton` cho OkHttpClient, database; `@ViewModelScoped` để dùng chung trong một ViewModel; `@ActivityRetainedScoped` để sống qua xoay màn hình. Scope phải khớp component mà module được `@InstallIn`, và lạm dụng scope sẽ giữ object lâu hơn cần thiết.",
     code: "@Module\n@InstallIn(SingletonComponent::class)\nabstract class RepositoryModule {\n  @Binds\n  abstract fun bindUserRepo(impl: UserRepositoryImpl): UserRepository\n}\n\n@Module\n@InstallIn(SingletonComponent::class)\nobject NetworkModule {\n  @Provides\n  @Singleton\n  fun provideOkHttp(): OkHttpClient = OkHttpClient.Builder().build()\n}",
+    doc: "https://developer.android.com/training/dependency-injection/hilt-android",
   },
   {
     id: "and-mid-q14",
@@ -90,6 +93,7 @@ export default [
     q: "Người dùng chụp ảnh và bấm Gửi khi đang mất mạng; ảnh phải được upload chắc chắn kể cả khi họ tắt app. Bạn thiết kế với WorkManager thế nào?",
     a: "Trước hết lưu ảnh và trạng thái chờ gửi xuống storage local, rồi enqueue một `OneTimeWorkRequest` có `Constraints` yêu cầu mạng. WorkManager lưu request vào database riêng nên work vẫn chạy sau khi app bị kill hay máy khởi động lại. Dùng `enqueueUniqueWork` với tên theo id ảnh để bấm nhiều lần không sinh work trùng; trong `doWork()` trả về `Result.retry()` khi lỗi tạm thời (WorkManager áp dụng backoff) và `Result.failure()` khi lỗi vĩnh viễn. Chỉ truyền id qua `inputData` vì `Data` bị giới hạn kích thước nhỏ, không truyền cả ảnh. Nếu người dùng đang chờ kết quả thì cân nhắc `setExpedited`. Lưu ý WorkManager đảm bảo work sẽ chạy, không đảm bảo chạy đúng thời điểm chính xác.",
     code: "val request = OneTimeWorkRequestBuilder<UploadPhotoWorker>()\n  .setConstraints(\n    Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()\n  )\n  .setInputData(workDataOf(\"photoId\" to photo.id))\n  .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 30, TimeUnit.SECONDS)\n  .build()\n\nWorkManager.getInstance(context).enqueueUniqueWork(\n  \"upload-${photo.id}\",\n  ExistingWorkPolicy.KEEP, // đã có work cho ảnh này thì bỏ qua\n  request,\n)",
+    doc: "https://developer.android.com/develop/background-work/background-tasks/persistent",
   },
   {
     id: "and-mid-q15",
@@ -98,6 +102,7 @@ export default [
     a: "Foreground service dành cho việc người dùng đang chủ động theo dõi và cần chạy liên tục ngay lúc này như phát nhạc, dẫn đường, ghi âm, cuộc gọi; nó bắt buộc hiển thị notification. WorkManager hợp với việc có thể trì hoãn nhưng cần đảm bảo hoàn thành như sync, upload; với việc dài nó cũng có thể tự chạy dạng foreground qua `setForeground()`. Ràng buộc chính: từ Android 12 (API 31), app target 31 trở lên không được khởi động foreground service khi đang ở background, trừ một số ngoại lệ; từ Android 14 (API 34), app target 34 trở lên phải khai báo `android:foregroundServiceType` và xin permission tương ứng như `FOREGROUND_SERVICE_LOCATION`, thiếu sẽ bị exception. Sau `startForegroundService()`, service phải gọi `startForeground()` trong vài giây, nếu không app bị ANR hoặc crash.",
     code: "<uses-permission android:name=\"android.permission.FOREGROUND_SERVICE\" />\n<uses-permission android:name=\"android.permission.FOREGROUND_SERVICE_LOCATION\" />\n\n<service\n  android:name=\".tracking.TrackingService\"\n  android:exported=\"false\"\n  android:foregroundServiceType=\"location\" />",
     lang: "xml",
+    doc: "https://developer.android.com/develop/background-work/services/fgs",
   },
   {
     id: "and-mid-q16",
@@ -105,6 +110,7 @@ export default [
     q: "Marketing cần link `https://shop.vn/orders/123` (trong email, SMS, notification) mở thẳng màn chi tiết đơn hàng của app dùng Navigation Compose với route type-safe. Bạn cấu hình deep link thế nào và cần lưu ý gì?",
     a: "Gắn deep link vào destination bằng `navDeepLink<OrderDetail>(basePath = \"https://shop.vn/orders\")`: Navigation tự nối tham số bắt buộc thành path (`/{orderId}`), tham số có giá trị mặc định thành query. Deep link khai báo trong Navigation Compose không tự lộ ra ngoài app, nên phải tự thêm `<intent-filter>` (`VIEW`, `DEFAULT`, `BROWSABLE`, scheme và host) cho Activity chứa `NavHost`; muốn link `https` mở thẳng app một cách tin cậy thì làm App Links với `android:autoVerify=\"true\"` và file `assetlinks.json` trên domain. `NavController` tự xử lý intent khi Activity được tạo, nhưng nếu Activity dùng `singleTop` thì intent mới đi vào `onNewIntent` và phải tự gọi `navController.handleDeepLink(intent)`. Cuối cùng, coi tham số từ link là input không tin cậy: kiểm tra định dạng, để backend kiểm tra quyền xem đơn, và nếu chưa đăng nhập thì qua màn đăng nhập rồi quay lại đích.",
     code: "@Serializable data class OrderDetail(val orderId: String)\n\n// Trong NavHost: https://shop.vn/orders/123 -> OrderDetail(\"123\")\ncomposable<OrderDetail>(\n  deepLinks = listOf(navDeepLink<OrderDetail>(basePath = \"https://shop.vn/orders\")),\n) {\n  OrderDetailScreen()\n}",
+    doc: "https://developer.android.com/training/app-links",
   },
   {
     id: "and-mid-q17",
@@ -112,6 +118,7 @@ export default [
     q: "Bạn thêm cột `avatar_url` vào bảng `users` của Room và tăng version database. Bản release lên, một số người dùng bị crash ngay khi mở app. Vì sao, và quy trình migration đúng là gì?",
     a: "Khi version tăng mà Room không tìm thấy đường migrate từ version cũ trên máy người dùng, nó ném `IllegalStateException` báo thiếu migration; còn nếu đổi schema mà quên tăng version thì Room báo không xác minh được data integrity. Cách đúng: viết `Migration(1, 2)` với câu `ALTER TABLE` tương ứng, hoặc dùng `@AutoMigration` cho thay đổi đơn giản (cần `exportSchema = true`, cấu hình thư mục schema và commit file schema JSON vào git). `fallbackToDestructiveMigration()` chỉ chấp nhận khi dữ liệu là cache tải lại được, vì nó xoá sạch database. Cuối cùng viết test với `MigrationTestHelper` để chạy migration trên database ở version cũ, đảm bảo đi được từ mọi version mà người dùng có thể còn giữ.",
     code: "val MIGRATION_1_2 = object : Migration(1, 2) {\n  override fun migrate(db: SupportSQLiteDatabase) {\n    db.execSQL(\"ALTER TABLE users ADD COLUMN avatar_url TEXT\")\n  }\n}\n\nRoom.databaseBuilder(context, AppDatabase::class.java, \"app.db\")\n  .addMigrations(MIGRATION_1_2)\n  .build()",
+    doc: "https://developer.android.com/training/data-storage/room/migrating-db-versions",
   },
   {
     id: "and-mid-q18",

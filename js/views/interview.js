@@ -1,9 +1,11 @@
-import { RANKS, getRank, questionsFor, currentTrack } from "../../data/index.js";
+import { RANKS, getRank, questionsFor, allQuestions, topics, topicName, currentTrack } from "../../data/index.js";
 import { srs, interview as interviewStore, prefs } from "../store.js";
-import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, formatDuration, formatDate, creditHtml, percent } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, formatDuration, formatDate, docHtml, creditHtml, percent, interviewScope } from "../utils.js";
+import { detectTopics } from "../jd.js";
 
 const COUNTS = [5, 8, 10];
 const TIMES = [60, 120, 180];
+const MAX_JD_TOPICS = 8; // nhận diện từ JD chỉ giữ chủ đề được nhắc nhiều nhất
 const RATINGS = [
   { value: 0, label: "Chưa trả lời được", short: "Chưa được", grade: "again" },
   { value: 1, label: "Trả lời được một phần", short: "Một phần", grade: "hard" },
@@ -14,10 +16,10 @@ function canRecord() {
   return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
 }
 
-// Bốc câu xen kẽ các chủ đề để giống một buổi phỏng vấn thật.
-function pickQuestions(rank, n) {
+// Bốc câu từ pool, xen kẽ các chủ đề để giống một buổi phỏng vấn thật.
+function pickQuestions(pool, n) {
   const groups = {};
-  for (const q of shuffle(questionsFor(rank))) (groups[q.topic] ||= []).push(q);
+  for (const q of shuffle(pool)) (groups[q.topic] ||= []).push(q);
   const lists = shuffle(Object.values(groups));
   const out = [];
   while (out.length < n && lists.some((l) => l.length)) {
@@ -29,7 +31,10 @@ function pickQuestions(rank, n) {
 export function mount(el) {
   const lastRank = prefs.get("interviewRank", prefs.get("lastRank", "junior"));
   const setup = {
-    rank: getRank(lastRank) ? lastRank : "junior",
+    rank: getRank(lastRank) || lastRank === "all" ? lastRank : "junior", // "all": mọi rank
+    topics: new Set(), // rỗng = mọi chủ đề
+    jd: "",
+    jdNote: "",
     count: COUNTS.includes(Number(prefs.get("interviewCount"))) ? Number(prefs.get("interviewCount")) : 5,
     time: TIMES.includes(Number(prefs.get("interviewTime"))) ? Number(prefs.get("interviewTime")) : 120,
     record: canRecord() && prefs.get("interviewRecord", true) !== false,
@@ -41,14 +46,27 @@ export function mount(el) {
   let ticker = null;
 
   // ---------- Thiết lập ----------
+  const rankName = (id) => (id === "all" ? "Mọi rank" : getRank(id).name);
+  const rankPool = () => (setup.rank === "all" ? allQuestions() : questionsFor(setup.rank));
+  // Câu hỏi đủ điều kiện: theo rank đã chọn và (nếu có chọn) theo chủ đề.
+  const pool = () => (setup.topics.size ? rankPool().filter((q) => setup.topics.has(q.topic)) : rankPool());
+  function topicCounts() {
+    const counts = {};
+    for (const q of rankPool()) counts[q.topic] = (counts[q.topic] || 0) + 1;
+    return counts;
+  }
+
   function renderSetup(note = "") {
     const history = interviewStore.history(currentTrack().id).slice(-5).reverse();
-    const minutes = Math.round((setup.count * (setup.time + 45)) / 60);
+    const counts = topicCounts();
+    const available = pool().length;
+    const shown = Math.min(setup.count, available);
+    const minutes = Math.round((shown * (setup.time + 45)) / 60);
     el.innerHTML = `
       <header class="view-head">
         <div class="eyebrow">phỏng vấn thử · ${escapeHtml(currentTrack().name)}</div>
         <h1>Phỏng vấn thử ${escapeHtml(currentTrack().name)}</h1>
-        <p class="subtitle">Câu hỏi được bốc ngẫu nhiên theo rank. Bạn trả lời thành tiếng trong thời gian giới hạn, rồi so với đáp án mẫu và tự chấm điểm.</p>
+        <p class="subtitle">Câu hỏi được bốc ngẫu nhiên theo rank, hoặc theo chủ đề và mô tả công việc (JD) bạn nhắm tới. Bạn trả lời thành tiếng trong thời gian giới hạn, rồi so với đáp án mẫu và tự chấm điểm.</p>
       </header>
       ${note ? `<div class="notice">${escapeHtml(note)}</div>` : ""}
       <div class="card setup">
@@ -59,6 +77,28 @@ export function mount(el) {
               (r) =>
                 `<button type="button" class="chip rank-${r.color}${setup.rank === r.id ? " active" : ""}" data-rank="${r.id}" aria-pressed="${setup.rank === r.id}">${escapeHtml(r.name)}</button>`,
             ).join("")}
+            <button type="button" class="chip${setup.rank === "all" ? " active" : ""}" data-rank="all" aria-pressed="${setup.rank === "all"}">Mọi rank</button>
+          </div>
+        </div>
+        <div class="setup-row">
+          <div class="setup-label">Chủ đề <span class="muted">— không chọn là bốc từ mọi chủ đề</span></div>
+          <div class="chips">
+            ${Object.entries(topics())
+              .map(([id, name]) => {
+                const n = counts[id] || 0;
+                const on = setup.topics.has(id);
+                return `<button type="button" class="chip${on ? " active" : ""}" data-topic="${id}" aria-pressed="${on}"${n ? "" : " disabled"}>${escapeHtml(name)} <span class="count">${n}</span></button>`;
+              })
+              .join("")}
+            ${setup.topics.size ? `<button type="button" class="link-btn" data-action="clear-topics">Bỏ chọn</button>` : ""}
+          </div>
+        </div>
+        <div class="setup-row">
+          <label class="setup-label" for="jd-input">Hoặc dán mô tả công việc (JD) <span class="muted">— tự chọn chủ đề phù hợp</span></label>
+          <textarea class="input jd-input" id="jd-input" rows="4" data-control="jd" placeholder="Dán phần yêu cầu kỹ thuật của JD vào đây, ví dụ: thành thạo Riverpod/Bloc, REST API, unit test, CI/CD…">${escapeHtml(setup.jd)}</textarea>
+          <div class="jd-actions">
+            <button type="button" class="btn btn-ghost" data-action="detect">Chọn chủ đề theo JD</button>
+            ${setup.jdNote ? `<span class="muted small" role="status">${escapeHtml(setup.jdNote)}</span>` : ""}
           </div>
         </div>
         <div class="setup-row">
@@ -83,8 +123,10 @@ export function mount(el) {
           </label>
         </div>
         <div class="setup-foot">
-          <span class="muted">Khoảng <strong>${minutes} phút</strong> · ${setup.count} câu ${escapeHtml(getRank(setup.rank).name)}</span>
-          <button type="button" class="btn btn-primary" data-action="start">Bắt đầu phỏng vấn →</button>
+          <span class="muted">Khoảng <strong>${minutes} phút</strong> · ${shown} câu ${escapeHtml(rankName(setup.rank))}${
+            setup.topics.size ? ` · ${setup.topics.size} chủ đề` : ""
+          }${shown < setup.count ? ` <span class="small">(chỉ có ${available} câu phù hợp)</span>` : ""}</span>
+          <button type="button" class="btn btn-primary" data-action="start"${available ? "" : " disabled"}>Bắt đầu phỏng vấn →</button>
         </div>
       </div>
 
@@ -106,7 +148,7 @@ export function mount(el) {
                 <tbody>${history
                   .map((h) => {
                     const p = percent(h.score, h.max);
-                    return `<tr><td>${formatDate(h.ts)}</td><td>${escapeHtml(getRank(h.rank)?.name || h.rank)}</td>
+                    return `<tr><td>${formatDate(h.ts)}</td><td>${escapeHtml(interviewScope(h))}</td>
                       <td><span class="score-pill ${p >= 70 ? "good" : p >= 50 ? "mid" : "low"}">${p}%</span></td><td>${formatDuration(h.duration)}</td></tr>`;
                   })
                   .join("")}</tbody>
@@ -119,6 +161,8 @@ export function mount(el) {
   // ---------- Buổi phỏng vấn ----------
   async function start() {
     cleanupMedia();
+    const questions = pickQuestions(pool(), setup.count);
+    if (!questions.length) return renderSetup("Chưa có câu hỏi phù hợp với lựa chọn này. Hãy đổi rank hoặc bỏ bớt chủ đề.");
     let note = "";
     if (setup.record) {
       try {
@@ -129,7 +173,6 @@ export function mount(el) {
       }
     }
     if (!el.isConnected) return cleanupMedia();
-    const questions = pickQuestions(setup.rank, setup.count);
     s = {
       questions,
       answers: questions.map(() => ({ rating: null, audio: null, seconds: 0 })),
@@ -190,6 +233,7 @@ export function mount(el) {
             <div class="setup-label">Đáp án mẫu</div>
             <div class="answer-text">${fmt(q.a)}</div>
             ${codeOf(q)}
+            ${docHtml(q)}
             ${creditHtml(q)}
           </div>
           <div class="setup-label">Bạn tự chấm câu trả lời của mình</div>
@@ -278,7 +322,16 @@ export function mount(el) {
     const score = s.answers.reduce((sum, a) => sum + (a.rating || 0), 0);
     const max = s.questions.length * 2;
     const duration = Math.round((Date.now() - s.startedAt) / 1000);
-    interviewStore.record({ ts: Date.now(), track: currentTrack().id, rank: setup.rank, total: s.questions.length, score, max, duration });
+    interviewStore.record({
+      ts: Date.now(),
+      track: currentTrack().id,
+      rank: setup.rank,
+      ...(setup.topics.size ? { topics: [...setup.topics] } : {}),
+      total: s.questions.length,
+      score,
+      max,
+      duration,
+    });
     s.phase = "summary";
     s.result = { score, max, duration };
     stopStream();
@@ -303,7 +356,7 @@ export function mount(el) {
           <span class="score-pct">${p}%</span>
         </div>
         <div class="result-info">
-          <div class="eyebrow">phỏng vấn thử · ${escapeHtml(getRank(setup.rank).name)} · ${formatDuration(duration)}</div>
+          <div class="eyebrow">phỏng vấn thử · ${escapeHtml(rankName(setup.rank))} · ${formatDuration(duration)}</div>
           <h1>${verdict(p)}</h1>
           ${weak ? `<p class="muted">${weak} câu chưa tốt đã được thêm vào <a href="#/review">Ôn hôm nay</a>.</p>` : ""}
           <div class="btn-row">
@@ -331,6 +384,25 @@ export function mount(el) {
           })
           .join("")}
       </section>`;
+  }
+
+  // Chọn chủ đề theo JD: giữ vài chủ đề được nhắc nhiều nhất mà rank đang chọn có câu hỏi.
+  function detectFromJd() {
+    setup.jd = el.querySelector("[data-control=jd]").value;
+    if (!setup.jd.trim()) {
+      setup.jdNote = "Hãy dán nội dung JD vào ô trên trước.";
+      return renderSetup();
+    }
+    const counts = topicCounts();
+    const found = detectTopics(setup.jd, currentTrack());
+    const usable = found.filter((f) => counts[f.topic]).slice(0, MAX_JD_TOPICS);
+    setup.topics = new Set(usable.map((f) => f.topic));
+    setup.jdNote = usable.length
+      ? `Nhận ra ${usable.length} chủ đề: ${usable.map((f) => topicName(f.topic)).join(", ")}. Bạn vẫn có thể bỏ hoặc thêm chủ đề ở trên.`
+      : found.length
+        ? "JD có nhắc chủ đề nhưng rank đang chọn chưa có câu hỏi về chúng — thử chọn Mọi rank."
+        : "Không nhận ra chủ đề kỹ thuật nào trong JD. Hãy dán phần yêu cầu kỹ thuật, hoặc chọn chủ đề thủ công.";
+    renderSetup();
   }
 
   // ---------- Dọn dẹp ----------
@@ -366,6 +438,13 @@ export function mount(el) {
     if (t.dataset.rank) {
       setup.rank = t.dataset.rank;
       prefs.set("interviewRank", setup.rank);
+      const counts = topicCounts();
+      setup.topics = new Set([...setup.topics].filter((topic) => counts[topic])); // bỏ chủ đề rank mới chưa có câu
+      return renderSetup();
+    }
+    if (t.dataset.topic) {
+      if (!setup.topics.delete(t.dataset.topic)) setup.topics.add(t.dataset.topic);
+      setup.jdNote = "";
       return renderSetup();
     }
     if (t.dataset.count) {
@@ -383,6 +462,12 @@ export function mount(el) {
       case "start":
       case "again":
         return start();
+      case "clear-topics":
+        setup.topics.clear();
+        setup.jdNote = "";
+        return renderSetup();
+      case "detect":
+        return detectFromJd();
       case "answer":
         return beginAnswer();
       case "done":
@@ -401,6 +486,9 @@ export function mount(el) {
         }
         return;
     }
+  });
+  el.addEventListener("input", (e) => {
+    if (e.target.dataset.control === "jd") setup.jd = e.target.value;
   });
   el.addEventListener("change", (e) => {
     if (e.target.dataset.control === "record") {

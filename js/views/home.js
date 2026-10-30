@@ -95,7 +95,7 @@ export function mount(el) {
       <a class="card today-card" href="#/interview">
         <span class="eyebrow">luyện nói · ghi âm</span>
         <span class="today-title">Phỏng vấn thử</span>
-        <span class="today-count">Câu hỏi ngẫu nhiên theo rank, đếm giờ, ghi âm câu trả lời rồi tự chấm.</span>
+        <span class="today-count">Câu hỏi theo rank hoặc theo JD bạn nhắm tới, đếm giờ, ghi âm câu trả lời rồi tự chấm.</span>
         <span class="today-cta">Bắt đầu phỏng vấn →</span>
       </a>
     </section>

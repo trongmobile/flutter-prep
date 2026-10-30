@@ -168,10 +168,13 @@ Câu hỏi phỏng vấn (`data/<track>/questions/<rank>.js`):
   a: "Đáp án mẫu",
   code: "optional: đoạn code nhiều dòng (hiển thị cùng đáp án)",
   lang: "java",           // optional: chỉ khi code khác ngôn ngữ mặc định của track (dart, kotlin, java, swift, ts, xml)
+  doc: "https://docs.flutter.dev/perf/impeller", // optional: link https tới tài liệu chính thức, hiện nút "Đọc thêm trong tài liệu"
   by: "octocat",          // optional: GitHub username người đóng góp
   issue: 12,              // optional: số issue trên trang Cộng đồng (cần có `by`)
 }
 ```
+
+Trường `doc` dùng được cho cả câu quiz. Chỉ gắn link trang tài liệu chính thức đã mở thử, đúng chủ đề của câu hỏi.
 
 Tiền tố track: Android `and`, iOS `ios`, React Native `rn`. Ngôn ngữ code mặc định: Flutter `dart`, Android `kotlin`, iOS `swift`, React Native `ts` (TypeScript + JSX).
 

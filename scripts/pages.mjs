@@ -9,7 +9,7 @@
 // Đáp án nằm trong <details> (bấm để xem) để người đọc tự trả lời trước; Google vẫn đọc được.
 import { RANKS, TRACKS, getRank, getTrack, loadAllTracks } from "../data/index.js";
 import { SITE_URL } from "../js/config.js";
-import { escapeHtml as esc, fmt, codeOf } from "../js/utils.js";
+import { escapeHtml as esc, fmt, codeOf, docHtml } from "../js/utils.js";
 
 const plain = (s) => String(s).replace(/`/g, "").replace(/\s+/g, " ").trim();
 const cut = (s, n) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s);
@@ -110,7 +110,7 @@ function answerBlock(item, kind, base) {
     <details class="reveal">
       <summary>Xem đáp án</summary>
       <div class="explain ok"><strong>Đáp án đúng: ${LETTERS[item.answer]}</strong><div>${fmt(item.explain)}</div></div>
-      ${credit(item, base)}
+      ${docHtml(item)}${credit(item, base)}
     </details>`;
   }
   return `<details class="reveal">
@@ -118,7 +118,7 @@ function answerBlock(item, kind, base) {
       <div class="model-answer">
         <div class="answer-text">${fmt(item.a)}</div>
         ${codeOf(item)}
-        ${credit(item, base)}
+        ${docHtml(item)}${credit(item, base)}
       </div>
     </details>`;
 }

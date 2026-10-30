@@ -1,6 +1,6 @@
 import { RANKS, getRank, quizFor, allQuiz, topics, currentTrack } from "../../data/index.js";
 import { quiz as quizStore, prefs } from "../store.js";
-import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, percent, formatDuration, creditHtml, shareItem } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, percent, formatDuration, docHtml, creditHtml, shareItem } from "../utils.js";
 import { RANKED_COUNT, leaderboardEnabled, isRankedRun, currentPlayer, setNickname, submitScore } from "../leaderboard.js";
 import { nickForm, boardHref, boardName } from "./leaderboard.js";
 
@@ -219,7 +219,7 @@ export function mount(el, _params, query) {
             ? `<div class="explain ${ok ? "ok" : "bad"}" role="status">
                 <strong>${ok ? "Chính xác!" : `Chưa đúng — đáp án là ${LETTERS[q.correctIndex]}.`}</strong>
                 <div>${fmt(q.explain)}</div>
-              </div>`
+              </div>${docHtml(q)}`
             : ""
         }
         <div class="quiz-actions">
@@ -448,6 +448,7 @@ export function mount(el, _params, query) {
                         .join("")}
                     </ul>
                     <div class="explain neutral">${fmt(q.explain)}</div>
+                    ${docHtml(q)}
                     ${creditHtml(q)}
                   </article>`;
                 })

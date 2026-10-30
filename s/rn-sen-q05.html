@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Thứ nhất là vòng đời runtime: khởi tạo React Native (JS runtime, load bundle, native module) tốn đáng kể, nên tạo một instance dùng chung ở mức Application/AppDelegate, có thể pre-warm trước khi user vào màn RN, thay vì tạo mới mỗi lần mở màn. Thứ hai là ranh giới điều hướng: mỗi điểm vào RN là một root component đăng ký bằng <code>AppRegistry.registerComponent</code> và nhận initial props; phải quy ước rõ bên nào quản lý back stack, nút back Android và deep link. Thứ ba là giao tiếp hai chiều: native module cho JS gọi vào native (lấy token, analytics, mở màn native), event cho native báo sang JS, với contract có type qua Codegen. Thứ tư là build và phân phối: team native thường không muốn cài Node, nên đóng gói phần RN (kèm bundle đã build) thành artifact AAR/XCFramework để tích hợp như dependency thường, đồng thời xử lý các thư viện native trùng giữa hai phía (OkHttp, Firebase). Cuối cùng, nếu dùng OTA cho phần RN thì update phải gắn với version native của host app.</div>
         
-        
+        <p class="doc-link"><a href="https://reactnative.dev/docs/integration-with-existing-apps" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q05">Luyện câu này trong app</a></div>

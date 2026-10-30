@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text"><code>Sendable</code> đánh dấu kiểu có thể chuyển qua ranh giới concurrency (giữa các actor, vào task khác) mà không gây data race. Struct/enum không public có mọi thành phần <code>Sendable</code> thì được suy ra tự động, actor luôn <code>Sendable</code>, còn class chỉ hợp lệ khi là <code>final</code> và chỉ chứa <code>let</code> có kiểu <code>Sendable</code>, hoặc được cô lập vào global actor như <code>@MainActor</code>. Hướng xử lý: ưu tiên model là struct bất biến, đưa state mutable dùng chung vào actor, đánh dấu <code>@MainActor</code> cho type thuộc UI. <code>@unchecked Sendable</code> chỉ dùng khi tự bảo vệ bằng lock và chấp nhận tự chịu trách nhiệm; <code>@preconcurrency import</code> giúp tạm giảm lỗi từ module bên thứ ba chưa cập nhật. Nên migrate từng module: bật strict concurrency mức <code>complete</code> ở Swift 5 mode để thấy warning trước, sửa xong mới chuyển sang Swift 6 mode.</div>
         
-        
+        <p class="doc-link"><a href="https://www.swift.org/migration/documentation/migrationguide/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · swift.org ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q06">Luyện câu này trong app</a></div>

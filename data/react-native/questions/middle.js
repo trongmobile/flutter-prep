@@ -51,6 +51,7 @@ export default [
     topic: "react",
     q: "Một màn hình lỗi lúc render làm cả app trắng màn hình ở bản release. Error boundary giúp gì, và nó không bắt được loại lỗi nào?",
     a: "Error boundary là class component có `static getDerivedStateFromError` (để render UI dự phòng) và `componentDidCatch` (để log lên Sentry/Crashlytics). Nó bắt lỗi ném ra trong lúc render, trong lifecycle và constructor của các component con, nhờ đó chỉ một phần cây bị thay bằng màn hình lỗi thay vì cả app sập. Nó không bắt lỗi trong event handler (`onPress`), code bất đồng bộ (`setTimeout`, promise bị reject), lỗi của chính nó và crash phía native; các trường hợp này phải `try/catch`, hoặc lưu lỗi vào state rồi ném lại khi render. Hiện chưa có hook tương đương nên thường viết một class dùng chung hoặc dùng thư viện `react-error-boundary`, và đặt boundary theo từng màn hình hay khối tính năng thay vì chỉ một cái ở root.",
+    doc: "https://react.dev/reference/react/Component",
   },
   {
     id: "rn-mid-q09",
@@ -65,6 +66,7 @@ export default [
     q: "Ô tìm kiếm lọc vài nghìn item ngay ở client, gõ phím bị giật. `useTransition` giúp gì trong trường hợp này và giới hạn của nó là gì?",
     a: "Ý tưởng là tách cập nhật khẩn cấp (text trong ô input) khỏi cập nhật không khẩn cấp (kết quả lọc): text cập nhật bình thường, còn `setQuery` cho danh sách được bọc trong `startTransition` (hoặc dùng `useDeferredValue`). React render phần transition với mức ưu tiên thấp và có thể bỏ dở lần render đó khi có input mới, nên ô nhập vẫn mượt, `isPending` cho biết danh sách đang được cập nhật. Giới hạn: đây là concurrent rendering nên trong RN chỉ có khi bật New Architecture; nó không làm phép lọc nhanh hơn và vẫn chạy trên JS thread, nên một hàm đồng bộ quá nặng vẫn block. Không đưa state của chính `TextInput` controlled vào transition, vì input phải cập nhật đồng bộ.",
     code: "const [text, setText] = useState('');\nconst [query, setQuery] = useState('');\nconst [isPending, startTransition] = useTransition();\nconst results = useMemo(() => filterProducts(all, query), [all, query]);\n\n<TextInput\n  value={text}\n  onChangeText={(t) => {\n    setText(t); // khẩn cấp: cập nhật ngay\n    startTransition(() => setQuery(t)); // không khẩn cấp: có thể bị ngắt\n  }}\n/>",
+    doc: "https://react.dev/reference/react/useTransition",
   },
   {
     id: "rn-mid-q11",
@@ -85,12 +87,14 @@ export default [
     q: "Feed sản phẩm dùng `FlatList` vài nghìn item, cuộn nhanh thì thấy vùng trắng và giật. Bạn sẽ tinh chỉnh những gì?",
     a: "Trước hết làm item rẻ: `renderItem` trả về component bọc `React.memo`, không tạo object/hàm inline, ảnh có kích thước cố định và được cache (ví dụ `expo-image`), `keyExtractor` dùng id ổn định; nếu item cao cố định thì cung cấp `getItemLayout` để FlatList khỏi phải đo. Sau đó chỉnh virtualization: `windowSize` (mặc định 21 màn hình) nhỏ lại giúp giảm bộ nhớ nhưng dễ thấy vùng trắng hơn; `initialNumToRender`, `maxToRenderPerBatch`, `updateCellsBatchingPeriod` cân bằng giữa độ mượt và tốc độ lấp đầy; `removeClippedSubviews` tách view ngoài màn hình khỏi hierarchy nhưng đôi khi gây mất nội dung. Nếu vẫn chưa đạt thì chuyển sang FlashList: nó recycle view thay vì mount/unmount, nhưng vì thế state cục bộ trong item phải được reset theo dữ liệu mới.",
     code: "<FlatList\n  data={products}\n  keyExtractor={(p) => p.id}\n  renderItem={renderProduct} // khai báo ngoài component, item bọc React.memo\n  getItemLayout={(_, index) => ({ length: ROW_H, offset: ROW_H * index, index })}\n  windowSize={7}\n  initialNumToRender={8}\n  maxToRenderPerBatch={8}\n/>",
+    doc: "https://reactnative.dev/docs/optimizing-flatlist-configuration",
   },
   {
     id: "rn-mid-q14",
     topic: "perf",
     q: "Hermes khác JavaScriptCore ở điểm nào, và vì sao nó giúp app React Native khởi động nhanh hơn?",
     a: "Hermes là JS engine Meta viết riêng cho React Native và là engine mặc định hiện nay. Khác biệt chính: JS được biên dịch thành bytecode ngay lúc build, nên khi mở app engine không phải parse và compile source mà chỉ việc nạp bytecode, giúp thời gian tới khi tương tác được (TTI) ngắn hơn và tốn ít RAM hơn. Hermes không dùng JIT mà tối ưu cho interpreter, kèm GC có thời gian dừng ngắn; đánh đổi là code chạy nóng trong thời gian dài có thể chậm hơn engine có JIT, và một số tính năng JS mới có thể chưa được hỗ trợ đầy đủ. Kiểm tra app có đang chạy Hermes bằng `typeof HermesInternal === 'object'`, và debug qua React Native DevTools.",
+    doc: "https://reactnative.dev/docs/hermes",
   },
   {
     id: "rn-mid-q15",
@@ -117,6 +121,7 @@ export default [
     q: "Bạn cần viết một Turbo Native Module đọc mức pin cho cả Android và iOS. Các bước với Codegen là gì, và được lợi gì so với native module kiểu cũ?",
     a: "Bước một: viết spec bằng TypeScript trong file có tên bắt đầu bằng `Native` (như `NativeBattery.ts`), gồm interface `Spec extends TurboModule` và export `TurboModuleRegistry.getEnforcing<Spec>('NativeBattery')`. Bước hai: khai báo `codegenConfig` trong `package.json` (`name`, `type: \"modules\"`, `jsSrcsDir`). Codegen chạy khi build Android hoặc khi `pod install` trên iOS, sinh ra abstract class Java và protocol Objective-C++ để bạn implement phía native. So với module cũ đi qua bridge: lời gọi đi qua JSI nên không phải serialize JSON bất đồng bộ, có thể khai báo hàm đồng bộ khi thật cần, module chỉ được khởi tạo khi dùng lần đầu, và kiểu dữ liệu giữa JS với native được kiểm tra lúc build thay vì vỡ lúc runtime.",
     code: "// specs/NativeBattery.ts\nimport type { TurboModule } from 'react-native';\nimport { TurboModuleRegistry } from 'react-native';\n\nexport interface Spec extends TurboModule {\n  getBatteryLevel(): Promise<number>;\n  isCharging(): boolean; // hàm đồng bộ\n}\n\nexport default TurboModuleRegistry.getEnforcing<Spec>('NativeBattery');",
+    doc: "https://reactnative.dev/docs/turbo-native-modules-introduction",
   },
   {
     id: "rn-mid-q19",
@@ -130,6 +135,7 @@ export default [
     q: "Khi nào cần viết Fabric Native Component thay vì Turbo Native Module? Props và event của component được khai báo thế nào?",
     a: "Turbo Native Module dành cho chức năng không có giao diện: gọi API hệ thống, trả dữ liệu về JS. Khi cần đặt một view native vào cây layout của RN, như map, camera preview, video player hay một chart viết sẵn bằng native, thì viết native component. Spec là file `<Tên>NativeComponent.ts` export `codegenNativeComponent<NativeProps>(...)`; props dùng kiểu của Codegen (`Int32`, `Double`, `WithDefault`…) còn event là prop kiểu `DirectEventHandler` hoặc `BubblingEventHandler`. Phía native viết ViewManager (Android) hoặc component view (iOS) để nhận props và bắn event, còn view vẫn được Yoga layout như `View` thường. Muốn gọi lệnh mệnh lệnh như `zoomTo()` từ JS thì khai báo thêm `codegenNativeCommands`.",
     code: "// MapViewNativeComponent.ts\nimport type { ViewProps } from 'react-native';\nimport type { Double, DirectEventHandler } from 'react-native/Libraries/Types/CodegenTypes';\nimport codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';\n\ntype RegionEvent = Readonly<{ latitude: Double; longitude: Double }>;\n\nexport interface NativeProps extends ViewProps {\n  zoomLevel?: Double;\n  onRegionChange?: DirectEventHandler<RegionEvent>;\n}\n\nexport default codegenNativeComponent<NativeProps>('CustomMapView');",
+    doc: "https://reactnative.dev/docs/fabric-native-components-introduction",
   },
   {
     id: "rn-mid-q21",
@@ -143,6 +149,7 @@ export default [
     topic: "tooling",
     q: "Sếp hỏi: 'Đã có EAS Update rồi thì sao không sửa mọi lỗi qua OTA cho nhanh?'. Bạn giải thích giới hạn của OTA update thế nào?",
     a: "OTA chỉ thay được JS bundle và asset đi kèm (ảnh, font). Mọi thứ thuộc binary native như thêm hay nâng thư viện có native code, nâng React Native/Expo SDK, đổi quyền trong `Info.plist`/`AndroidManifest`, icon, splash đều cần build mới và nộp store. `runtimeVersion` đánh dấu bản JS tương thích với binary nào: nếu đẩy JS gọi một native module mà binary cũ không có, app sẽ crash, nên phải đổi `runtimeVersion` (ví dụ dùng policy `fingerprint`) mỗi khi phần native thay đổi. Mặc định update được tải khi mở app và chỉ áp dụng ở lần khởi động sau, trừ khi tự gọi `fetchUpdateAsync` rồi `reloadAsync`, nên không phải người dùng nào cũng nhận ngay. Chính sách store cũng chỉ chấp nhận OTA cho sửa lỗi và thay đổi nhỏ, không được đổi bản chất của app.",
+    doc: "https://docs.expo.dev/eas-update/introduction/",
   },
   {
     id: "rn-mid-q23",
@@ -226,6 +233,7 @@ export default [
     q: "App dùng React Navigation với TypeScript nhưng `navigation.navigate('OrderDetail', { id })` hay bị sai tên màn hoặc thiếu params mà chỉ lỗi lúc chạy; điều hướng từ tab sang màn nằm sâu trong một stack khác thì báo `The action 'NAVIGATE' ... was not handled`. Bạn định kiểu navigation và xử lý navigator lồng nhau thế nào?",
     a: "Định nghĩa một `ParamList` cho mỗi navigator (map tên route sang kiểu params, `undefined` nếu không có), truyền nó làm generic cho `createNativeStackNavigator<RootStackParamList>()` và dùng `NativeStackScreenProps<RootStackParamList, 'OrderDetail'>` cho props của màn; khi đó `route.params.id` có kiểu và `navigate('OrderDetail', { id })` bị TypeScript báo nếu sai tên hay thiếu params. Muốn `useNavigation()` có kiểu mà không phải gán generic mỗi lần thì khai báo toàn cục `ReactNavigation.RootParamList` mở rộng từ `RootStackParamList`. Với navigator lồng nhau (stack bọc tab bọc stack), params của màn con không nằm trong `RootStackParamList` mà trong list của navigator con; dùng `NavigatorScreenParams<TabParamList>` để mô tả màn cha nhận params cho navigator con, và `CompositeScreenProps` hoặc `CompositeNavigationProp` để màn con gọi được cả hành động của navigator cha. Điều hướng sâu bằng `navigate('Main', { screen: 'Orders', params: { screen: 'OrderDetail', params: { id } } })`; lỗi 'was not handled' xảy ra khi navigator chứa màn đích chưa được mount (tab chưa render, hoặc màn nằm trong nhóm có điều kiện như chưa đăng nhập), nên phải đảm bảo navigator đó đã tồn tại hoặc điều hướng theo đúng cấp. Params phải serializable và nhỏ (id, không phải object lớn hay hàm) để deep link, state restoration và nút back hoạt động; dữ liệu chi tiết tải lại theo id. Lưu ý `navigate` không nhân đôi màn đang ở trên cùng stack, còn `push` luôn thêm một màn mới. Với Expo Router, kiểu của route được sinh tự động (`typedRoutes`) nên phần lớn bước định kiểu thủ công này không còn cần thiết.",
     code: "type OrdersStackParamList = {\n  OrderList: undefined;\n  OrderDetail: { id: string }; // params phải serializable: truyền id, không truyền object lớn\n};\n\ntype TabParamList = {\n  Home: undefined;\n  Orders: NavigatorScreenParams<OrdersStackParamList>; // tab Orders chứa một stack con\n};\n\ntype RootStackParamList = {\n  Login: undefined;\n  Main: NavigatorScreenParams<TabParamList>;\n};\n\n// Khai báo toàn cục: useNavigation() có kiểu mà không cần gán generic mỗi lần\ndeclare global {\n  namespace ReactNavigation {\n    interface RootParamList extends RootStackParamList {}\n  }\n}\n\n// Màn nằm sâu: kiểu bao gồm cả navigator cha\ntype Props = CompositeScreenProps<\n  NativeStackScreenProps<OrdersStackParamList, 'OrderDetail'>,\n  BottomTabScreenProps<TabParamList>\n>;\n\n// Điều hướng từ nơi bất kỳ tới màn sâu\nnavigation.navigate('Main', { screen: 'Orders', params: { screen: 'OrderDetail', params: { id } } });",
+    doc: "https://reactnavigation.org/docs/typescript/",
   },
   {
     id: "rn-mid-q35",
@@ -240,6 +248,7 @@ export default [
     q: "Team dùng Expo cần ba loại build: development (có dev client), preview (cho QA cài thử nội bộ) và production (lên store), mỗi loại trỏ tới API khác nhau. Bạn cấu hình `eas.json`, biến môi trường và OTA channel thế nào?",
     a: "`eas.json` định nghĩa các build profile. Profile `development` đặt `developmentClient: true` và `distribution: \"internal\"` (build dev client để chạy Metro và dùng native code tuỳ biến mà không cần Expo Go). Profile `preview` đặt `distribution: \"internal\"` để QA cài qua link (Android cài APK; iOS cần đăng ký UDID thiết bị hoặc đi qua TestFlight) và trỏ tới channel `preview`. Profile `production` dùng `distribution: \"store\"`, `autoIncrement` cho version code và build number, rồi đưa lên store bằng `eas submit`. Mỗi profile có `env` riêng (như `EXPO_PUBLIC_API_URL`); biến có tiền tố `EXPO_PUBLIC_` được nhúng vào bundle JS nên không dành cho secret, còn giá trị nhạy cảm dùng EAS Environment Variables hoặc secrets, chỉ có mặt lúc build. `app.config.ts` đọc biến môi trường (ví dụ `APP_VARIANT`) để đổi tên app, bundle identifier và scheme theo môi trường (`com.shop.app.dev`), nhờ đó cài song song được các bản trên một máy. `channel` của mỗi profile gắn bản build với một luồng EAS Update: bản preview chỉ nhận update đẩy lên channel `preview`, production chỉ nhận `production`, nên update thử nghiệm không lọt sang user thật; `runtimeVersion` (policy `fingerprint`) bảo đảm update chỉ tới đúng binary tương thích. Credentials (keystore, certificate, provisioning profile) do EAS lưu và quản lý, và hãy nhớ sao lưu keystore. Trên CI chạy `eas build --non-interactive --profile ...` với `EXPO_TOKEN`, thêm `--auto-submit` nếu muốn build xong tự nộp lên store.",
     code: "{\n  \"cli\": { \"appVersionSource\": \"remote\" },\n  \"build\": {\n    \"development\": {\n      \"developmentClient\": true,\n      \"distribution\": \"internal\",\n      \"channel\": \"development\",\n      \"env\": { \"APP_VARIANT\": \"dev\", \"EXPO_PUBLIC_API_URL\": \"https://dev.api.shop.vn\" }\n    },\n    \"preview\": {\n      \"distribution\": \"internal\",\n      \"channel\": \"preview\",\n      \"env\": { \"APP_VARIANT\": \"staging\", \"EXPO_PUBLIC_API_URL\": \"https://staging.api.shop.vn\" }\n    },\n    \"production\": {\n      \"distribution\": \"store\",\n      \"channel\": \"production\",\n      \"autoIncrement\": true,\n      \"env\": { \"APP_VARIANT\": \"production\", \"EXPO_PUBLIC_API_URL\": \"https://api.shop.vn\" }\n    }\n  }\n}",
+    doc: "https://docs.expo.dev/build/eas-json/",
   },
   {
     id: "rn-mid-q37",

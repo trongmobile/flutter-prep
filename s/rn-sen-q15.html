@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Với Continuous Native Generation, <code>ios/</code> và <code>android/</code> không được commit mà được sinh lại từ <code>app.json</code>/<code>app.config.ts</code> cùng config plugin mỗi khi build (<code>npx expo prebuild</code>). Lợi ích lớn nhất là nâng cấp: không còn phải merge diff template vào project native đã bị sửa tay nhiều năm. Mọi thay đổi native (quyền, entitlement, Gradle, Podfile, đoạn code trong AppDelegate) phải viết thành config plugin, nên chúng được ghi lại, có version và review được thay vì nằm rải rác. Đánh đổi: tốn công chuyển các chỉnh sửa tay hiện có thành plugin; tuỳ biến native phức tạp viết plugin khá vất vả, nhất là plugin sửa file bằng chuỗi/regex dễ vỡ khi template đổi; và team phải bỏ thói quen sửa trực tiếp thư mục sinh ra. Tôi sẽ đánh giá lượng code native tự viết và tần suất nâng cấp, rồi thử trên một nhánh; code native tự viết nhiều có thể chuyển thành local Expo module thay vì để trong thư mục sinh ra.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.expo.dev/workflow/continuous-native-generation/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q15">Luyện câu này trong app</a></div>

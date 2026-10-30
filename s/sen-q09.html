@@ -53,7 +53,7 @@
       <div class="model-answer">
         <div class="answer-text">Trước đây mỗi package trong monorepo có <code>pubspec.lock</code> riêng, nên cùng một dependency có thể resolve ra version khác nhau giữa các package, <code>pub get</code> phải chạy cho từng package và analyzer phải giữ nhiều context. Với pub workspaces, <code>pubspec.yaml</code> gốc khai báo danh sách <code>workspace:</code> và mỗi package con khai báo <code>resolution: workspace</code>: cả repo dùng chung một lần resolve, một lockfile và một <code>package_config.json</code>, nên mọi package chắc chắn dùng cùng version và IDE nhẹ hơn. Trade-off là không còn cho phép hai package cần hai version không tương thích của cùng một dependency — phải nâng cấp đồng loạt, điều thực ra lành mạnh cho một app monorepo. Workspaces chỉ lo phần resolve dependency; Melos vẫn hữu ích cho script chạy theo từng package, lọc package bị ảnh hưởng bởi thay đổi, versioning và changelog khi publish, và các bản Melos mới đã được xây trên nền pub workspaces.</div>
         
-        
+        <p class="doc-link"><a href="https://dart.dev/tools/pub/workspaces" target="_blank" rel="noopener">Đọc thêm trong tài liệu · dart.dev ↗</a></p>
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-q09">Luyện câu này trong app</a></div>

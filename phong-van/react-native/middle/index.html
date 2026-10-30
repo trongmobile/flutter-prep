@@ -177,7 +177,7 @@ useLayoutEffect(() =&gt; {
       <div class="model-answer">
         <div class="answer-text">Error boundary là class component có <code>static getDerivedStateFromError</code> (để render UI dự phòng) và <code>componentDidCatch</code> (để log lên Sentry/Crashlytics). Nó bắt lỗi ném ra trong lúc render, trong lifecycle và constructor của các component con, nhờ đó chỉ một phần cây bị thay bằng màn hình lỗi thay vì cả app sập. Nó không bắt lỗi trong event handler (<code>onPress</code>), code bất đồng bộ (<code>setTimeout</code>, promise bị reject), lỗi của chính nó và crash phía native; các trường hợp này phải <code>try/catch</code>, hoặc lưu lỗi vào state rồi ném lại khi render. Hiện chưa có hook tương đương nên thường viết một class dùng chung hoặc dùng thư viện <code>react-error-boundary</code>, và đặt boundary theo từng màn hình hay khối tính năng thay vì chỉ một cái ở root.</div>
         
-        
+        <p class="doc-link"><a href="https://react.dev/reference/react/Component" target="_blank" rel="noopener">Đọc thêm trong tài liệu · react.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -199,7 +199,7 @@ useLayoutEffect(() =&gt; {
     startTransition(() =&gt; setQuery(t)); <span class="tk-com">// không khẩn cấp: có thể bị ngắt</span>
   }}
 /&gt;</code></pre>
-        
+        <p class="doc-link"><a href="https://react.dev/reference/react/useTransition" target="_blank" rel="noopener">Đọc thêm trong tài liệu · react.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -466,7 +466,7 @@ i18n.use(initReactI18next).init({
 
 <span class="tk-com">// Điều hướng từ nơi bất kỳ tới màn sâu</span>
 navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span class="tk-str">&#39;Orders&#39;</span>, params: { screen: <span class="tk-str">&#39;OrderDetail&#39;</span>, params: { id } } });</code></pre>
-        
+        <p class="doc-link"><a href="https://reactnavigation.org/docs/typescript/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnavigation.org ↗</a></p>
       </div>
     </details>
     </li>
@@ -491,7 +491,7 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
 }
 
 <span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-type">TurboModuleRegistry</span>.getEnforcing&lt;<span class="tk-type">Spec</span>&gt;(<span class="tk-str">&#39;NativeBattery&#39;</span>);</code></pre>
-        
+        <p class="doc-link"><a href="https://reactnative.dev/docs/turbo-native-modules-introduction" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -525,7 +525,7 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
 }
 
 <span class="tk-kw">export</span> <span class="tk-kw">default</span> codegenNativeComponent&lt;<span class="tk-type">NativeProps</span>&gt;(<span class="tk-str">&#39;CustomMapView&#39;</span>);</code></pre>
-        
+        <p class="doc-link"><a href="https://reactnative.dev/docs/fabric-native-components-introduction" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -708,7 +708,7 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
       <div class="model-answer">
         <div class="answer-text">OTA chỉ thay được JS bundle và asset đi kèm (ảnh, font). Mọi thứ thuộc binary native như thêm hay nâng thư viện có native code, nâng React Native/Expo SDK, đổi quyền trong <code>Info.plist</code>/<code>AndroidManifest</code>, icon, splash đều cần build mới và nộp store. <code>runtimeVersion</code> đánh dấu bản JS tương thích với binary nào: nếu đẩy JS gọi một native module mà binary cũ không có, app sẽ crash, nên phải đổi <code>runtimeVersion</code> (ví dụ dùng policy <code>fingerprint</code>) mỗi khi phần native thay đổi. Mặc định update được tải khi mở app và chỉ áp dụng ở lần khởi động sau, trừ khi tự gọi <code>fetchUpdateAsync</code> rồi <code>reloadAsync</code>, nên không phải người dùng nào cũng nhận ngay. Chính sách store cũng chỉ chấp nhận OTA cho sửa lỗi và thay đổi nhỏ, không được đổi bản chất của app.</div>
         
-        
+        <p class="doc-link"><a href="https://docs.expo.dev/eas-update/introduction/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -761,7 +761,7 @@ module.exports = (api) =&gt; {
     }
   }
 }</code></pre>
-        
+        <p class="doc-link"><a href="https://docs.expo.dev/build/eas-json/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -821,7 +821,7 @@ module.exports = (api) =&gt; {
   initialNumToRender={<span class="tk-num">8</span>}
   maxToRenderPerBatch={<span class="tk-num">8</span>}
 /&gt;</code></pre>
-        
+        <p class="doc-link"><a href="https://reactnative.dev/docs/optimizing-flatlist-configuration" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -832,7 +832,7 @@ module.exports = (api) =&gt; {
       <div class="model-answer">
         <div class="answer-text">Hermes là JS engine Meta viết riêng cho React Native và là engine mặc định hiện nay. Khác biệt chính: JS được biên dịch thành bytecode ngay lúc build, nên khi mở app engine không phải parse và compile source mà chỉ việc nạp bytecode, giúp thời gian tới khi tương tác được (TTI) ngắn hơn và tốn ít RAM hơn. Hermes không dùng JIT mà tối ưu cho interpreter, kèm GC có thời gian dừng ngắn; đánh đổi là code chạy nóng trong thời gian dài có thể chậm hơn engine có JIT, và một số tính năng JS mới có thể chưa được hỗ trợ đầy đủ. Kiểm tra app có đang chạy Hermes bằng <code>typeof HermesInternal === &#39;object&#39;</code>, và debug qua React Native DevTools.</div>
         
-        
+        <p class="doc-link"><a href="https://reactnative.dev/docs/hermes" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>

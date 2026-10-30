@@ -1,6 +1,6 @@
 import { findItem, getRank, getTrack } from "../../data/index.js";
 import { study } from "../store.js";
-import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, creditHtml, shareItem, link } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, shuffle, docHtml, creditHtml, shareItem, link } from "../utils.js";
 
 const LETTERS = ["A", "B", "C", "D"];
 
@@ -49,7 +49,7 @@ export function mount(el, params) {
             ? `<div class="explain ${state.chosen === state.correct ? "ok" : "bad"}" role="status">
                 <strong>${state.chosen === state.correct ? "Chính xác!" : `Chưa đúng — đáp án là ${LETTERS[state.correct]}.`}</strong>
                 <div>${fmt(q.explain)}</div>
-              </div>${creditHtml(q)}`
+              </div>${docHtml(q)}${creditHtml(q)}`
             : `<p class="muted small">Chọn một đáp án để xem giải thích.</p>`
         }`;
     } else {
@@ -58,6 +58,7 @@ export function mount(el, params) {
             <div class="setup-label">Đáp án mẫu</div>
             <div class="answer-text">${fmt(q.a)}</div>
             ${codeOf(q)}
+            ${docHtml(q)}
             ${creditHtml(q)}
           </div>
           <div class="mark-row">

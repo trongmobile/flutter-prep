@@ -1,6 +1,6 @@
 import { RANKS, allQuestions, getRank, findItem, currentTrack } from "../../data/index.js";
 import { srs, study, prefs, todayKey, srsSchedule, SRS_INTERVALS } from "../store.js";
-import { escapeHtml, fmt, codeOf, topicTag, rankTag, creditHtml } from "../utils.js";
+import { escapeHtml, fmt, codeOf, topicTag, rankTag, docHtml, creditHtml } from "../utils.js";
 
 const NEW_PER_DAY = [0, 5, 10, 20];
 const GRADE_LABELS = { again: "Quên", hard: "Khó", good: "Nhớ" };
@@ -185,7 +185,7 @@ export function mount(el) {
           <div class="flash-q">${fmt(q.q)}</div>
           ${
             s.revealed
-              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeOf(q)}${creditHtml(q)}</div>`
+              ? `<div class="flash-a"><div class="answer-text">${fmt(q.a)}</div>${codeOf(q)}${docHtml(q)}${creditHtml(q)}</div>`
               : `<div class="flash-hint">Nhớ lại câu trả lời trong đầu, rồi bấm để xem đáp án</div>`
           }
         </div>
