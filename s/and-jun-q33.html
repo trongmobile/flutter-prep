@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Junior: Team cần ba môi trường dev, staging, prod với base URL khác nhau và muốn cà…</title>
+<meta name="description" content="buildTypes mô tả cách build (debug, release): bật R8 không, ký bằng keystore nào, có debuggable không. productFlavors mô tả biến thể của sản phẩm (dev/stagin…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-q33.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior: Team cần ba môi trường dev, staging, prod với base URL khác nhau và muốn cà…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-jun-q33.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"Team cần ba môi trường dev, staging, prod với b…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-q33.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Team cần ba môi trường dev, staging, prod với b…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/build/">Gradle &amp; Build</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Team cần ba môi trường dev, staging, prod với base URL khác nhau và muốn cài song song trên cùng một máy. <code>buildTypes</code> và <code>productFlavors</code> khác nhau thế nào, bạn cấu hình ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>buildTypes</code> mô tả cách build (<code>debug</code>, <code>release</code>): bật R8 không, ký bằng keystore nào, có debuggable không. <code>productFlavors</code> mô tả biến thể của sản phẩm (dev/staging/prod): base URL, tên app, <code>applicationId</code>, resource riêng trong <code>src/&lt;flavor&gt;</code>. Gradle ghép hai phía thành build variant như <code>devDebug</code>, <code>prodRelease</code>, và mỗi flavor phải thuộc một dimension khai báo trong <code>flavorDimensions</code>. Android định danh app bằng <code>applicationId</code> nên muốn cài song song phải đặt <code>applicationIdSuffix</code> khác nhau (<code>.dev</code>, <code>.staging</code>). Giá trị theo môi trường đưa vào <code>buildConfigField</code> rồi đọc qua <code>BuildConfig.BASE_URL</code>; từ AGP 8.0 <code>BuildConfig</code> không còn được sinh mặc định nên cần bật <code>buildFeatures { buildConfig = true }</code>, và giá trị chuỗi phải có thêm cặp nháy kép bên trong, thiếu thì lỗi compile. Bẫy hay gặp là test nhầm variant nên trỏ nhầm môi trường.</div>
+        <pre class="code-block"><code>android {
+    buildFeatures { buildConfig = <span class="tk-kw">true</span> }
+    flavorDimensions += <span class="tk-str">&quot;env&quot;</span>
+    productFlavors {
+        create(<span class="tk-str">&quot;dev&quot;</span>) {
+            dimension = <span class="tk-str">&quot;env&quot;</span>
+            applicationIdSuffix = <span class="tk-str">&quot;.dev&quot;</span>
+            buildConfigField(<span class="tk-str">&quot;String&quot;</span>, <span class="tk-str">&quot;BASE_URL&quot;</span>, <span class="tk-str">&quot;\&quot;https://dev.api.shop.vn/\&quot;&quot;</span>)
+        }
+        create(<span class="tk-str">&quot;prod&quot;</span>) {
+            dimension = <span class="tk-str">&quot;env&quot;</span>
+            buildConfigField(<span class="tk-str">&quot;String&quot;</span>, <span class="tk-str">&quot;BASE_URL&quot;</span>, <span class="tk-str">&quot;\&quot;https://api.shop.vn/\&quot;&quot;</span>)
+        }
+    }
+    buildTypes {
+        release {
+            isMinifyEnabled = <span class="tk-kw">true</span>
+            proguardFiles(getDefaultProguardFile(<span class="tk-str">&quot;proguard-android-optimize.txt&quot;</span>), <span class="tk-str">&quot;proguard-rules.pro&quot;</span>)
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-q33">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-q32.html"><span class="muted small">← Câu trước</span><span>Gọi notify() trên máy Android 8 hoặc Android 13 thì không thấy thông báo hiện r…</span></a>
+  <a class="pager-next" href="../s/and-jun-q34.html"><span class="muted small">Câu sau →</span><span>Đồng nghiệp hardcode một API key trong code rồi commit lên Git. Có những rủi ro…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Gradle &amp; Build</h2><a class="section-sub" href="../phong-van/android/chu-de/build/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-fre-q25.html">APK và AAB khác nhau thế nào? Vì sao Google Play yêu cầu AAB?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q37.html">compileSdk, targetSdk và minSdk khác nhau thế nào? Mỗi giá trị ảnh hưởng gì đến app?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-sen-q09.html">Trong dự án multi-module, api và implementation khác nhau thế nào? Vì sao lạm dụng api vừa làm build chậm vừa làm kiến trúc lỏng lẻo?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q10.html">CI build mất 15 phút, build incremental trên máy dev cũng chậm. Với codebase khoảng 50 module, bạn tối ưu Gradle theo hướng nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q11.html">Bản release parse JSON ra object toàn field null rồi crash, trong khi bản debug chạy bình thường. Bạn nghi R8 — điều tra và xử lý thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-fre-m38.html">Phát biểu nào đúng về Android App Bundle (AAB)?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview</title>
-<meta name="description" content="14 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta name="description" content="16 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview">
-<meta property="og:description" content="14 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta property="og:description" content="16 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Concurrency</h1>
-  <p class="subtitle">14 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">16 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
@@ -56,6 +56,8 @@
     <li><a href="../../../../s/ios-jun-q08.html">Phân biệt serial queue với concurrent queue, sync với async trong GCD. Cần một logger được gọi từ nhiều thread trong app thì bạn thiết kế thế nào?</a></li>
     <li><a href="../../../../s/ios-jun-q09.html">Một bạn viết DispatchQueue.main.sync { ... } trong viewDidLoad để &quot;chắc chắn chạy trên main&quot; và app crash ngay khi mở màn hình. Giải thích vì sao.</a></li>
     <li><a href="../../../../s/ios-jun-q10.html">Màn hình Home cần gọi song song 3 API (banner, danh mục, sản phẩm) và chỉ tắt loading khi cả 3 xong. Bạn làm bằng GCD thế nào, cần tránh lỗi gì?</a></li>
+    <li><a href="../../../../s/ios-jun-q29.html">Luồng tải ảnh gồm các bước tải về, áp filter rồi lưu cache, và phải huỷ được cả chuỗi khi người dùng rời màn hình. Khi nào bạn chọn OperationQueue thay vì GCD, và gọi cancel() lên một Operation có dừng ngay việc đang chạy không?</a></li>
+    <li><a href="../../../../s/ios-jun-q30.html">Bạn viết let user = try await api.fetchUser() trong viewDidLoad và compiler báo &#39;async&#39; call in a function that does not support concurrency. Vì sao, xử lý thế nào, và sau await cập nhật label có cần DispatchQueue.main.async không?</a></li>
     <li><a href="../../../../s/ios-jun-m12.html">Trong viewDidLoad (main thread), code trộn main.async và global().sync. Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m13.html">Hai lệnh async và một lệnh sync được đưa vào cùng một queue tạo bằng DispatchQueue(label:). Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m14.html">Nhiều thread cùng append vào một biến var results: [Int] dùng chung, ví dụ bên trong DispatchQueue.concurrentPerform. Điều gì có thể xảy ra?</a> <span class="tag">Quiz</span></li>

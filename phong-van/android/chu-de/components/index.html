@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Activity, Fragment &amp; Lifecycle — Mobile Interview</title>
-<meta name="description" content="13 câu hỏi phỏng vấn Android về Activity, Fragment &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta name="description" content="15 câu hỏi phỏng vấn Android về Activity, Fragment &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/components/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Activity, Fragment &amp; Lifecycle — Mobile Interview">
-<meta property="og:description" content="13 câu hỏi phỏng vấn Android về Activity, Fragment &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta property="og:description" content="15 câu hỏi phỏng vấn Android về Activity, Fragment &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/components/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Activity, Fragment &amp; Lifecycle</h1>
-  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 16 câu quiz về Activity, Fragment &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">15 câu hỏi kèm đáp án mẫu và 16 câu quiz về Activity, Fragment &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -75,6 +75,8 @@
     <li><a href="../../../../s/and-jun-q11.html">Gọi API xong, Activity chạy supportFragmentManager.beginTransaction().replace(...).commit() để chuyển sang màn kết quả. Thỉnh thoảng app crash với IllegalStateException: Can not perform this action after onSaveInstanceState. Vì sao, và sửa thế nào?</a></li>
     <li><a href="../../../../s/and-jun-q12.html">Bấm thông báo tin nhắn nhiều lần thì mở ra nhiều ChatActivity chồng lên nhau. Bạn xử lý bằng launch mode hoặc Intent flag thế nào?</a></li>
     <li><a href="../../../../s/and-jun-q13.html">startActivityForResult và onRequestPermissionsResult đã deprecated. Bạn xin quyền camera bằng Activity Result API thế nào và xử lý các trường hợp bị từ chối ra sao?</a></li>
+    <li><a href="../../../../s/and-jun-q27.html">Fragment dùng ViewBinding bị LeakCanary báo leak sau khi người dùng chuyển sang màn khác. Vì sao phải gán binding về null trong onDestroyView, và nên observe LiveData/Flow bằng viewLifecycleOwner hay this?</a></li>
+    <li><a href="../../../../s/and-jun-q28.html">Một BroadcastReceiver khai báo trong Manifest không nhận được broadcast hệ thống trên Android 8 trở lên, còn đăng ký bằng registerReceiver thì chạy. Vì sao, và đăng ký bằng code đúng cách cần lưu ý gì?</a></li>
     <li><a href="../../../../s/and-jun-m16.html">ListFragment và FilterFragment nằm trong cùng một Activity và cần dùng chung một instance FilterViewModel. Mỗi Fragment nên lấy ViewModel thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m17.html">Fragment A bị thay bằng Fragment B qua replace() kèm addToBackStack(). Với Fragment A, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m18.html">Đăng ký registerForActivityResult ngay trong click listener như sau gặp vấn đề gì khi người dùng bấm nút?</a> <span class="tag">Quiz</span></li>

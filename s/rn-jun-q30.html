@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Junior: Trên Android, ở màn Home bấm back là thoát app ngay, nhưng PM muốn &quot;nh…</title>
+<meta name="description" content="BackHandler chỉ có tác dụng trên Android. Nút back cứng gọi các handler đã đăng ký theo thứ tự ngược lại (đăng ký sau chạy trước); handler nào trả về true th…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-q30.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior: Trên Android, ở màn Home bấm back là thoát app ngay, nhưng PM muốn &quot;nh…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-jun-q30.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Trên Android, ở màn Home bấm back là thoát app…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-q30.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Trên Android, ở màn Home bấm back là thoát app…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Trên Android, ở màn Home bấm back là thoát app ngay, nhưng PM muốn &quot;nhấn back hai lần để thoát&quot; và khi bottom sheet tự dựng đang mở thì back phải đóng sheet trước. Bạn dùng <code>BackHandler</code> thế nào, và có bẫy gì khi dùng cùng React Navigation?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>BackHandler</code> chỉ có tác dụng trên Android. Nút back cứng gọi các handler đã đăng ký theo thứ tự ngược lại (đăng ký sau chạy trước); handler nào trả về <code>true</code> thì chuỗi dừng, nếu không ai trả <code>true</code> thì hệ thống làm hành vi mặc định (quay lại hoặc thoát app). Nên nếu sheet đang mở thì đóng nó và trả <code>true</code>; lần back đầu ở Home hiện toast và trả <code>true</code>, lần thứ hai trong 2 giây thì trả <code>false</code> để thoát. Bẫy với React Navigation: màn nằm dưới trong stack hoặc tab khác đã mở vẫn đang mounted, đăng ký bằng <code>useEffect</code> thường thì handler của chúng chặn nhầm nút back ở màn khác. Hãy đăng ký trong <code>useFocusEffect</code> để chỉ có hiệu lực khi màn đang focus, và gỡ bằng <code>sub.remove()</code> trong cleanup. Với <code>Modal</code> có sẵn của RN thì dùng prop <code>onRequestClose</code>, không cần <code>BackHandler</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">HomeScreen</span>() {
+  <span class="tk-kw">const</span> [sheetOpen, setSheetOpen] = useState(<span class="tk-kw">false</span>);
+  <span class="tk-kw">const</span> lastBackRef = useRef(<span class="tk-num">0</span>);
+
+  useFocusEffect(
+    useCallback(() =&gt; {
+      <span class="tk-kw">const</span> sub = <span class="tk-type">BackHandler</span>.addEventListener(<span class="tk-str">&#39;hardwareBackPress&#39;</span>, () =&gt; {
+        <span class="tk-kw">if</span> (sheetOpen) {
+          setSheetOpen(<span class="tk-kw">false</span>); <span class="tk-com">// đóng sheet trước</span>
+          <span class="tk-kw">return</span> <span class="tk-kw">true</span>; <span class="tk-com">// true: đã xử lý, không chạy handler nào khác</span>
+        }
+        <span class="tk-kw">const</span> now = <span class="tk-type">Date</span>.now();
+        <span class="tk-kw">if</span> (now - lastBackRef.current &lt; <span class="tk-num">2000</span>) <span class="tk-kw">return</span> <span class="tk-kw">false</span>; <span class="tk-com">// false: để hệ thống thoát app</span>
+        lastBackRef.current = now;
+        <span class="tk-type">ToastAndroid</span>.show(<span class="tk-str">&#39;Nhấn back lần nữa để thoát&#39;</span>, <span class="tk-type">ToastAndroid</span>.<span class="tk-type">SHORT</span>);
+        <span class="tk-kw">return</span> <span class="tk-kw">true</span>;
+      });
+      <span class="tk-kw">return</span> () =&gt; sub.remove(); <span class="tk-com">// mất focus thì gỡ, không chặn back của màn khác</span>
+    }, [sheetOpen]),
+  );
+
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">HomeContent</span> sheetOpen={sheetOpen} onCloseSheet={() =&gt; setSheetOpen(<span class="tk-kw">false</span>)} /&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-q30">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-q29.html"><span class="muted small">← Câu trước</span><span>Bạn có CountryPicker và CategoryPicker gần như giống hệt nhau, chỉ khác kiểu dữ…</span></a>
+  <a class="pager-next" href="../s/rn-jun-q31.html"><span class="muted small">Câu sau →</span><span>Người dùng vào thang máy mất mạng, app cứ quay spinner rồi báo lỗi chung chung,…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/react-native/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q15.html">App có bottom tab (Home, Đơn hàng, Tài khoản). Khi mở màn hình Chi tiết sản phẩm từ tab Home thì tab bar vẫn hiện bên dưới, trong khi thiết kế yêu cầu ẩn. Bạn tổ chức navigator thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q16.html">Marketing muốn gửi link myshop://product/42 để mở thẳng màn hình chi tiết sản phẩm. Bạn cấu hình deep link với React Navigation thế nào, và có bẫy gì khi người dùng bấm back từ màn hình đó?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q17.html">Người dùng rời tab Giỏ hàng sang tab khác thêm sản phẩm rồi quay lại, nhưng Giỏ hàng vẫn hiện dữ liệu cũ dù đã gọi API trong useEffect. Vì sao, và dùng useFocusEffect thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-m24.html">Đoạn code sau nằm trong một màn hình đang được focus. Nó có vấn đề gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m25.html">Trong Bottom Tab, người dùng chuyển từ tab Home sang Profile rồi quay lại Home. useEffect(() =&gt; { ... }, []) của màn hình Home có chạy lại không?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m26.html">Stack gốc có màn hình Main chứa Bottom Tab (Home, Settings). Từ một màn hình khác của Stack gốc, lời gọi nào mở đúng tab Settings?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

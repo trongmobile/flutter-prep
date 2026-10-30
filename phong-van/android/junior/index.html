@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Junior (25 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="25 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<title>Câu hỏi phỏng vấn Android Junior (37 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="37 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (25 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="25 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (37 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="37 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · android · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Junior</h1>
-  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/android/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -62,15 +62,20 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#kotlin">Kotlin</a> <span class="count">4</span></li>
+    <li><a href="#kotlin">Kotlin</a> <span class="count">5</span></li>
     <li><a href="#java">Java &amp; JVM</a> <span class="count">4</span></li>
     <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">4</span></li>
-    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">5</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">2</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">7</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">3</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
+    <li><a href="#background">Background &amp; Service</a> <span class="count">1</span></li>
+    <li><a href="#build">Gradle &amp; Build</a> <span class="count">1</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">1</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#security">Security</a> <span class="count">1</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -137,6 +142,23 @@
 <span class="tk-kw">val</span> nick: <span class="tk-type">String</span> = javaUser.nickname   <span class="tk-com">// crash ngay tại đây nếu null</span>
 <span class="tk-kw">val</span> safe: <span class="tk-type">String</span>? = javaUser.nickname  <span class="tk-com">// phải tự xử lý null</span>
 <span class="tk-kw">val</span> display = safe ?: <span class="tk-str">&quot;Khách&quot;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q26.html">Chuỗi <code>list.filter { }.map { }.first()</code> trên danh sách vài chục nghìn phần tử chạy chậm và tốn bộ nhớ. <code>Sequence</code> khác <code>List</code> ở điểm nào, và khi nào nên gọi <code>asSequence()</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Các hàm trên <code>List</code>/<code>Iterable</code> là eager: mỗi bước (<code>filter</code>, <code>map</code>) duyệt hết cả danh sách và tạo một list trung gian rồi mới sang bước sau. <code>Sequence</code> là lazy: các bước trung gian chỉ được ghi lại, tới thao tác kết thúc (<code>first</code>, <code>toList</code>, <code>count</code>) mới chạy, và từng phần tử đi qua cả chuỗi bước rồi mới tới phần tử kế tiếp. Nhờ vậy không có list trung gian và có thể dừng sớm với <code>first</code>, <code>take</code>, <code>find</code>. Nên dùng khi danh sách lớn, nhiều bước biến đổi hoặc chỉ cần vài phần tử đầu; với list nhỏ hoặc chỉ một bước thì <code>List</code> thường nhanh hơn, không cần <code>asSequence()</code>. Bẫy: <code>Sequence</code> không có <code>size</code> hay truy cập theo index, mỗi lần gọi thao tác kết thúc thường chạy lại cả chuỗi nên cần <code>toList()</code> nếu dùng kết quả nhiều lần, và lambda có side effect (log, đổi biến bên ngoài) chạy theo thứ tự khác hẳn bản <code>List</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">val</span> result = listOf(<span class="tk-num">1</span>, <span class="tk-num">2</span>, <span class="tk-num">3</span>, <span class="tk-num">4</span>)
+    .asSequence()
+    .filter { println(<span class="tk-str">&quot;filter $it&quot;</span>); it % <span class="tk-num">2</span> == <span class="tk-num">0</span> }
+    .map { println(<span class="tk-str">&quot;map $it&quot;</span>); it * <span class="tk-num">10</span> }
+    .first()
+<span class="tk-com">// In ra: filter 1, filter 2, map 2; result = 20, hai phần tử 3 và 4 không bao giờ được duyệt</span>
+<span class="tk-com">// Với List: in filter 1-4 trước, rồi mới map 2 và map 4</span></code></pre>
         
       </div>
     </details>
@@ -350,6 +372,61 @@ viewLifecycleOwner.lifecycleScope.launch {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q27.html">Fragment dùng ViewBinding bị LeakCanary báo leak sau khi người dùng chuyển sang màn khác. Vì sao phải gán binding về <code>null</code> trong <code>onDestroyView</code>, và nên observe LiveData/Flow bằng <code>viewLifecycleOwner</code> hay <code>this</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Fragment có hai vòng đời: bản thân Fragment và view của nó. Khi Fragment nằm trong back stack, <code>onDestroyView</code> chạy và view bị huỷ, nhưng instance Fragment vẫn sống để khi quay lại gọi <code>onCreateView</code> tạo view mới. Nếu field <code>binding</code> vẫn trỏ tới view cũ thì cả cây view (cùng Context của Activity mà nó giữ) không được GC dù không còn hiển thị, nên mới có mẫu <code>_binding</code> nullable, getter <code>binding</code> ép non-null và gán <code>_binding = null</code> trong <code>onDestroyView</code>. Với observer, dùng <code>viewLifecycleOwner</code> thay vì <code>this</code>: observer gắn vào Fragment không bị gỡ khi view bị huỷ, mỗi lần view được tạo lại lại thêm một observer nữa nên UI bị cập nhật trùng lặp. Cùng lý do, coroutine cập nhật UI nên chạy trong <code>viewLifecycleOwner.lifecycleScope</code> để bị huỷ khi view biến mất, tránh callback chạm vào binding đã <code>null</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ProfileFragment</span> : <span class="tk-type">Fragment</span>(<span class="tk-type">R</span>.layout.fragment_profile) {
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> _binding: <span class="tk-type">FragmentProfileBinding</span>? = <span class="tk-kw">null</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> binding <span class="tk-kw">get</span>() = _binding!!
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> viewModel: <span class="tk-type">ProfileViewModel</span> <span class="tk-kw">by</span> viewModels()
+
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onViewCreated(view: <span class="tk-type">View</span>, savedInstanceState: <span class="tk-type">Bundle</span>?) {
+        _binding = <span class="tk-type">FragmentProfileBinding</span>.bind(view)
+        viewModel.name.observe(viewLifecycleOwner) { binding.nameText.text = it }
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onDestroyView() {
+        <span class="tk-kw">super</span>.onDestroyView()
+        _binding = <span class="tk-kw">null</span> <span class="tk-com">// nhả cây view để GC thu hồi</span>
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q28.html">Một <code>BroadcastReceiver</code> khai báo trong Manifest không nhận được broadcast hệ thống trên Android 8 trở lên, còn đăng ký bằng <code>registerReceiver</code> thì chạy. Vì sao, và đăng ký bằng code đúng cách cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Receiver trong Manifest được hệ thống đánh thức kể cả khi app không chạy, còn receiver đăng ký bằng code chỉ sống cùng component đăng ký nó. Từ Android 8.0 (API 26), app nhắm tới API 26+ không nhận được phần lớn broadcast ngầm định (implicit) qua Manifest, chỉ còn vài ngoại lệ như <code>BOOT_COMPLETED</code>; một số broadcast như <code>ACTION_BATTERY_CHANGED</code> chỉ nhận được bằng <code>registerReceiver</code>. Đăng ký bằng code thì ghép cặp <code>registerReceiver</code>/<code>unregisterReceiver</code> theo <code>onStart</code>/<code>onStop</code>: quên huỷ thì Activity bị leak (logcat báo <code>IntentReceiverLeaked</code>), huỷ khi chưa đăng ký thì ném <code>IllegalArgumentException</code>. Từ Android 14, app nhắm tới API 34 đăng ký receiver cho broadcast không phải của hệ thống phải truyền <code>RECEIVER_EXPORTED</code> hoặc <code>RECEIVER_NOT_EXPORTED</code> (dùng <code>ContextCompat.registerReceiver</code> cho mọi phiên bản). <code>onReceive</code> chạy trên main thread, việc nặng giao cho WorkManager.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">BatteryActivity</span> : <span class="tk-type">AppCompatActivity</span>() {
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> batteryReceiver = <span class="tk-kw">object</span> : <span class="tk-type">BroadcastReceiver</span>() {
+        <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onReceive(context: <span class="tk-type">Context</span>, intent: <span class="tk-type">Intent</span>) {
+            showBattery(intent.getIntExtra(<span class="tk-type">BatteryManager</span>.<span class="tk-type">EXTRA_LEVEL</span>, -<span class="tk-num">1</span>))
+        }
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStart() {
+        <span class="tk-kw">super</span>.onStart()
+        <span class="tk-com">// Chỉ nghe broadcast hệ thống nên không cần cờ export</span>
+        registerReceiver(batteryReceiver, <span class="tk-type">IntentFilter</span>(<span class="tk-type">Intent</span>.<span class="tk-type">ACTION_BATTERY_CHANGED</span>))
+        <span class="tk-com">// Broadcast do chính app gửi: ContextCompat.registerReceiver(this, r, filter,</span>
+        <span class="tk-com">//     ContextCompat.RECEIVER_NOT_EXPORTED)</span>
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStop() {
+        <span class="tk-kw">super</span>.onStop()
+        unregisterReceiver(batteryReceiver)
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="ui">
@@ -400,6 +477,40 @@ adapter.submitList(products.map { <span class="tk-kw">if</span> (it.id == id) it
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q29.html">Danh sách có checkbox: tick một dòng rồi cuộn xuống thì thấy dòng khác cũng bị tick, bấm vài dòng thì xử lý nhầm item. Lỗi nằm ở đâu trong adapter và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">RecyclerView tái sử dụng ViewHolder: khi dòng trượt khỏi màn hình, chính ViewHolder đó được dùng lại cho item khác và view vẫn giữ trạng thái cũ (checkbox đang tick) nếu <code>onBindViewHolder</code> không ghi đè. Vì vậy trạng thái phải nằm trong data model (ví dụ <code>done</code> của <code>Task</code>) và mỗi lần bind phải gán đầy đủ mọi thuộc tính, kể cả nhánh <code>false</code>. Lỗi thứ hai là bắt <code>position</code> trong listener tạo ở <code>onBindViewHolder</code>: sau khi chèn hoặc xoá item phía trên, <code>onBindViewHolder</code> không chạy lại cho các dòng chỉ bị dịch chỗ nên <code>position</code> đã cũ. Cách đúng là gắn listener một lần trong <code>init</code> của ViewHolder và đọc <code>bindingAdapterPosition</code> lúc bấm, bỏ qua <code>RecyclerView.NO_POSITION</code>. Với checkbox, dùng <code>setOnClickListener</code> thay vì <code>setOnCheckedChangeListener</code> để việc gán <code>isChecked</code> trong <code>bind</code> không kích hoạt lại callback.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">TaskAdapter</span>(
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> onToggle: (<span class="tk-type">Task</span>) -&gt; <span class="tk-type">Unit</span>
+) : <span class="tk-type">ListAdapter</span>&lt;<span class="tk-type">Task</span>, <span class="tk-type">TaskAdapter</span>.<span class="tk-type">VH</span>&gt;(<span class="tk-type">TaskDiff</span>) {
+
+    <span class="tk-kw">inner</span> <span class="tk-kw">class</span> <span class="tk-type">VH</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> binding: <span class="tk-type">ItemTaskBinding</span>) : <span class="tk-type">RecyclerView</span>.<span class="tk-type">ViewHolder</span>(binding.root) {
+        <span class="tk-kw">init</span> {
+            <span class="tk-com">// Gắn listener một lần, đọc vị trí tại thời điểm bấm</span>
+            binding.check.setOnClickListener {
+                <span class="tk-kw">val</span> pos = bindingAdapterPosition
+                <span class="tk-kw">if</span> (pos != <span class="tk-type">RecyclerView</span>.<span class="tk-type">NO_POSITION</span>) onToggle(getItem(pos))
+            }
+        }
+
+        <span class="tk-kw">fun</span> bind(task: <span class="tk-type">Task</span>) {
+            binding.title.text = task.title
+            binding.check.isChecked = task.done <span class="tk-com">// luôn gán, kể cả khi false</span>
+        }
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreateViewHolder(parent: <span class="tk-type">ViewGroup</span>, viewType: <span class="tk-type">Int</span>) =
+        <span class="tk-type">VH</span>(<span class="tk-type">ItemTaskBinding</span>.inflate(<span class="tk-type">LayoutInflater</span>.from(parent.context), parent, <span class="tk-kw">false</span>))
+
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onBindViewHolder(holder: <span class="tk-type">VH</span>, position: <span class="tk-type">Int</span>) = holder.bind(getItem(position))
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -420,6 +531,55 @@ navController.popBackStack()
 findNavController().currentBackStackEntry?.savedStateHandle
     ?.getLiveData&lt;<span class="tk-type">Long</span>&gt;(<span class="tk-str">&quot;address_id&quot;</span>)
     ?.observe(viewLifecycleOwner) { id -&gt; viewModel.selectAddress(id) }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q37.html">Người dùng bấm nhanh hai lần vào một item thì app crash <code>IllegalArgumentException: Navigation action/destination ... cannot be found from the current destination</code>. Vì sao, và bạn chặn lỗi này thế nào (Navigation XML và Navigation Compose)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lần bấm đầu gọi <code>navigate(R.id.action_list_to_detail)</code>: NavController đổi ngay current destination thành <code>DetailFragment</code>, nhưng màn cũ còn trên giao diện thêm một lúc vì fragment transaction và animation chạy sau, nên lần bấm thứ hai vẫn vào được click listener và gọi lại action đó. Lúc này current destination là <code>DetailFragment</code>, không có action ấy nên NavController ném <code>IllegalArgumentException</code>. Cách chặn: kiểm tra <code>findNavController().currentDestination?.id == R.id.listFragment</code> trước khi <code>navigate</code> để bỏ qua lần bấm thừa, hoặc debounce/vô hiệu hoá nút ngay sau lần bấm đầu. Trong Navigation Compose, gọi <code>navigate(route)</code> hai lần không crash mà chồng hai màn giống nhau lên back stack; dùng <code>launchSingleTop = true</code>, hoặc chỉ điều hướng khi <code>backStackEntry.lifecycle.currentState == Lifecycle.State.RESUMED</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/android/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q31.html">Dependency Injection khác gì việc tự tạo <code>UserRepository()</code> bên trong ViewModel? Với Hilt, cần những annotation tối thiểu nào để ViewModel nhận được repository, và thiếu annotation nào thì app crash?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">DI nghĩa là class nhận thứ nó cần (dependency) từ bên ngoài, thường qua constructor, thay vì tự khởi tạo bên trong. Nhờ vậy ViewModel chỉ biết interface nên test truyền fake vào được, và việc dựng cả chuỗi phụ thuộc (OkHttp, Retrofit, API, Repository) nằm tập trung một chỗ. Hilt sinh code lúc compile nên thiếu binding là lỗi build chứ không phải crash lúc chạy. Cấu hình tối thiểu: <code>@HiltAndroidApp</code> trên <code>Application</code> (khai báo trong Manifest), <code>@AndroidEntryPoint</code> trên Activity/Fragment, <code>@HiltViewModel</code> cùng <code>@Inject constructor</code> trên ViewModel rồi lấy bằng <code>by viewModels()</code>. Bẫy hay gặp: quên <code>@HiltViewModel</code> thì <code>by viewModels()</code> không dựng được ViewModel có tham số và crash <code>Cannot create an instance of class</code>; Fragment có <code>@AndroidEntryPoint</code> mà Activity chứa nó thiếu annotation cũng crash; <code>@Inject</code> một interface mà thiếu <code>@Binds</code>/<code>@Provides</code> thì build báo thiếu binding.</div>
+        <pre class="code-block"><code><span class="tk-ann">@HiltAndroidApp</span>
+<span class="tk-kw">class</span> <span class="tk-type">ShopApp</span> : <span class="tk-type">Application</span>()
+
+<span class="tk-kw">class</span> <span class="tk-type">UserRepositoryImpl</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> api: <span class="tk-type">UserApi</span>
+) : <span class="tk-type">UserRepository</span>
+
+<span class="tk-ann">@Module</span>
+<span class="tk-ann">@InstallIn</span>(<span class="tk-type">SingletonComponent</span>::<span class="tk-kw">class</span>)
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">RepositoryModule</span> {
+    <span class="tk-ann">@Binds</span>
+    <span class="tk-kw">abstract</span> <span class="tk-kw">fun</span> bindUserRepository(impl: <span class="tk-type">UserRepositoryImpl</span>): <span class="tk-type">UserRepository</span>
+}
+
+<span class="tk-ann">@HiltViewModel</span>
+<span class="tk-kw">class</span> <span class="tk-type">ProfileViewModel</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> repository: <span class="tk-type">UserRepository</span>
+) : <span class="tk-type">ViewModel</span>()
+
+<span class="tk-ann">@AndroidEntryPoint</span>
+<span class="tk-kw">class</span> <span class="tk-type">ProfileFragment</span> : <span class="tk-type">Fragment</span>(<span class="tk-type">R</span>.layout.fragment_profile) {
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> viewModel: <span class="tk-type">ProfileViewModel</span> <span class="tk-kw">by</span> viewModels()
+}</code></pre>
         
       </div>
     </details>
@@ -487,6 +647,102 @@ findNavController().currentBackStackEntry?.savedStateHandle
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q30.html">Đơn hàng có nhiều dòng sản phẩm. Làm sao để Room trả về một <code>Order</code> kèm danh sách <code>OrderItem</code> chỉ với một lần gọi DAO, và vì sao không khai báo thẳng <code>List&lt;OrderItem&gt;</code> trong entity <code>Order</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Room cố tình không cho entity chứa tham chiếu tới entity khác: nạp quan hệ kiểu lazy trên main thread sẽ làm UI chậm, và một field <code>List&lt;OrderItem&gt;</code> cũng không có cột nào để lưu nên bị báo lỗi lúc compile. Cách đúng là mô hình theo bảng: bảng con có cột khoá ngoại <code>orderId</code> (khai báo <code>@ForeignKey</code> với <code>onDelete = CASCADE</code>, kèm <code>@Index</code> trên cột đó, thiếu index Room sẽ cảnh báo vì xoá hoặc join phải quét cả bảng con), rồi tạo một class thường, không phải entity, gộp <code>@Embedded val order</code> và <code>@Relation(parentColumn = &quot;id&quot;, entityColumn = &quot;orderId&quot;) val items</code>. DAO trả về class này và nên gắn <code>@Transaction</code>, vì Room chạy hai query (bảng cha rồi bảng con) và cần chúng nhìn cùng một trạng thái dữ liệu. Quan hệ nhiều-nhiều thì thêm bảng nối và dùng <code>associateBy = Junction(...)</code>.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Entity</span>(tableName = <span class="tk-str">&quot;orders&quot;</span>)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">Order</span>(
+    <span class="tk-ann">@PrimaryKey</span>(autoGenerate = <span class="tk-kw">true</span>) <span class="tk-kw">val</span> id: <span class="tk-type">Long</span> = <span class="tk-num">0</span>,
+    <span class="tk-kw">val</span> customer: <span class="tk-type">String</span>
+)
+
+<span class="tk-ann">@Entity</span>(
+    tableName = <span class="tk-str">&quot;order_items&quot;</span>,
+    foreignKeys = [<span class="tk-type">ForeignKey</span>(
+        entity = <span class="tk-type">Order</span>::<span class="tk-kw">class</span>,
+        parentColumns = [<span class="tk-str">&quot;id&quot;</span>],
+        childColumns = [<span class="tk-str">&quot;orderId&quot;</span>],
+        onDelete = <span class="tk-type">ForeignKey</span>.<span class="tk-type">CASCADE</span>
+    )],
+    indices = [<span class="tk-type">Index</span>(<span class="tk-str">&quot;orderId&quot;</span>)]
+)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">OrderItem</span>(
+    <span class="tk-ann">@PrimaryKey</span>(autoGenerate = <span class="tk-kw">true</span>) <span class="tk-kw">val</span> id: <span class="tk-type">Long</span> = <span class="tk-num">0</span>,
+    <span class="tk-kw">val</span> orderId: <span class="tk-type">Long</span>,
+    <span class="tk-kw">val</span> name: <span class="tk-type">String</span>
+)
+
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">OrderWithItems</span>(
+    <span class="tk-ann">@Embedded</span> <span class="tk-kw">val</span> order: <span class="tk-type">Order</span>,
+    <span class="tk-ann">@Relation</span>(parentColumn = <span class="tk-str">&quot;id&quot;</span>, entityColumn = <span class="tk-str">&quot;orderId&quot;</span>)
+    <span class="tk-kw">val</span> items: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderItem</span>&gt;
+)
+
+<span class="tk-ann">@Dao</span>
+<span class="tk-kw">interface</span> <span class="tk-type">OrderDao</span> {
+    <span class="tk-ann">@Transaction</span>
+    <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;SELECT * FROM orders ORDER BY id DESC&quot;</span>)
+    <span class="tk-kw">fun</span> observeAll(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">OrderWithItems</span>&gt;&gt;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="background">
+  <div class="section-head"><h2>Background &amp; Service</h2><a class="section-sub" href="../../../phong-van/android/chu-de/background/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q32.html">Gọi <code>notify()</code> trên máy Android 8 hoặc Android 13 thì không thấy thông báo hiện ra dù code chạy không lỗi. Nguyên nhân thường gặp là gì và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hai cơ chế này hay bị quên. Từ Android 8.0 (API 26) mọi notification phải thuộc một <code>NotificationChannel</code>: tạo bằng <code>createNotificationChannel</code> (gọi lại nhiều lần vô hại) ở <code>Application.onCreate</code>; dùng channel id chưa tồn tại thì thông báo không hiện và logcat báo lỗi. Channel thuộc quyền người dùng: importance của channel đã tạo không nâng lên được bằng code, muốn đổi hành vi (âm báo, mức ưu tiên) phải tạo channel với id mới, nên chia channel theo mục đích (nhắc nhở, tin nhắn) để người dùng tắt từng loại. Từ Android 13 (API 33), app nhắm tới API 33 trở lên phải khai báo <code>POST_NOTIFICATIONS</code> trong Manifest và xin quyền lúc chạy; chưa được cấp thì <code>notify()</code> không ném lỗi mà thông báo im lặng không hiện. Nên xin quyền đúng ngữ cảnh, kiểm tra bằng <code>NotificationManagerCompat.areNotificationsEnabled()</code>, và nếu bị từ chối thì hướng người dùng vào cài đặt thông báo của app.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="build">
+  <div class="section-head"><h2>Gradle &amp; Build</h2><a class="section-sub" href="../../../phong-van/android/chu-de/build/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q33.html">Team cần ba môi trường dev, staging, prod với base URL khác nhau và muốn cài song song trên cùng một máy. <code>buildTypes</code> và <code>productFlavors</code> khác nhau thế nào, bạn cấu hình ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>buildTypes</code> mô tả cách build (<code>debug</code>, <code>release</code>): bật R8 không, ký bằng keystore nào, có debuggable không. <code>productFlavors</code> mô tả biến thể của sản phẩm (dev/staging/prod): base URL, tên app, <code>applicationId</code>, resource riêng trong <code>src/&lt;flavor&gt;</code>. Gradle ghép hai phía thành build variant như <code>devDebug</code>, <code>prodRelease</code>, và mỗi flavor phải thuộc một dimension khai báo trong <code>flavorDimensions</code>. Android định danh app bằng <code>applicationId</code> nên muốn cài song song phải đặt <code>applicationIdSuffix</code> khác nhau (<code>.dev</code>, <code>.staging</code>). Giá trị theo môi trường đưa vào <code>buildConfigField</code> rồi đọc qua <code>BuildConfig.BASE_URL</code>; từ AGP 8.0 <code>BuildConfig</code> không còn được sinh mặc định nên cần bật <code>buildFeatures { buildConfig = true }</code>, và giá trị chuỗi phải có thêm cặp nháy kép bên trong, thiếu thì lỗi compile. Bẫy hay gặp là test nhầm variant nên trỏ nhầm môi trường.</div>
+        <pre class="code-block"><code>android {
+    buildFeatures { buildConfig = <span class="tk-kw">true</span> }
+    flavorDimensions += <span class="tk-str">&quot;env&quot;</span>
+    productFlavors {
+        create(<span class="tk-str">&quot;dev&quot;</span>) {
+            dimension = <span class="tk-str">&quot;env&quot;</span>
+            applicationIdSuffix = <span class="tk-str">&quot;.dev&quot;</span>
+            buildConfigField(<span class="tk-str">&quot;String&quot;</span>, <span class="tk-str">&quot;BASE_URL&quot;</span>, <span class="tk-str">&quot;\&quot;https://dev.api.shop.vn/\&quot;&quot;</span>)
+        }
+        create(<span class="tk-str">&quot;prod&quot;</span>) {
+            dimension = <span class="tk-str">&quot;env&quot;</span>
+            buildConfigField(<span class="tk-str">&quot;String&quot;</span>, <span class="tk-str">&quot;BASE_URL&quot;</span>, <span class="tk-str">&quot;\&quot;https://api.shop.vn/\&quot;&quot;</span>)
+        }
+    }
+    buildTypes {
+        release {
+            isMinifyEnabled = <span class="tk-kw">true</span>
+            proguardFiles(getDefaultProguardFile(<span class="tk-str">&quot;proguard-android-optimize.txt&quot;</span>), <span class="tk-str">&quot;proguard-rules.pro&quot;</span>)
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="perf">
@@ -527,6 +783,61 @@ findNavController().currentBackStackEntry?.savedStateHandle
         assertEquals(180_000, total)
     }
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q35.html">Khi nào đặt test ở <code>src/test</code>, khi nào ở <code>src/androidTest</code>? Viết một UI test Compose cơ bản cho màn đăng nhập thế nào, và vì sao UI test hay chập chờn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>src/test</code> là local unit test chạy trên JVM của máy dev: nhanh, không có Android thật, dùng cho logic thuần như ViewModel, use case, mapper. <code>src/androidTest</code> là instrumented test chạy trên thiết bị hoặc emulator, có <code>Context</code>, Activity, Room và UI thật, dùng cho test UI (Espresso với View, <code>compose-ui-test</code> với Compose) và tích hợp Room; chậm hơn nhiều nên chỉ viết cho luồng quan trọng như đăng nhập, thanh toán. Với Compose, dùng <code>createComposeRule()</code>, dựng màn bằng <code>setContent { }</code>, tìm node bằng <code>onNodeWithTag</code>/<code>onNodeWithText</code>, tương tác bằng <code>performClick()</code>/<code>performTextInput()</code>, kiểm tra bằng <code>assertIsDisplayed()</code>; rule tự đồng bộ với recomposition nên không cần <code>Thread.sleep</code>. Test chập chờn thường do việc bất đồng bộ ngoài tầm của rule (gọi mạng thật) hoặc animation: dùng fake repository hay <code>MockWebServer</code>, tắt animation trên máy test, với View dùng <code>IdlingResource</code> của Espresso.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">LoginScreenTest</span> {
+    <span class="tk-ann">@get</span>:<span class="tk-type">Rule</span>
+    <span class="tk-kw">val</span> composeRule = createComposeRule()
+
+    <span class="tk-ann">@Test</span>
+    <span class="tk-kw">fun</span> emptyEmail_showsError() {
+        composeRule.setContent { <span class="tk-type">LoginScreen</span>(onLoggedIn = {}) }
+
+        composeRule.onNodeWithTag(<span class="tk-str">&quot;login_button&quot;</span>).performClick()
+
+        composeRule.onNodeWithText(<span class="tk-str">&quot;Vui lòng nhập email&quot;</span>).assertIsDisplayed()
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/android/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q34.html">Đồng nghiệp hardcode một API key trong code rồi commit lên Git. Có những rủi ro gì, bạn xử lý ngay và về lâu dài thế nào? Đưa key vào <code>BuildConfig</code> có an toàn không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Rủi ro có hai tầng. Trên Git, key nằm vĩnh viễn trong lịch sử commit (xoá ở commit sau không đủ), ai đọc được repo đều thấy, nên việc đầu tiên là thu hồi hoặc rotate key ở nhà cung cấp rồi mới dọn code. Trong APK, ai tải app về cũng giải nén và đọc được chuỗi bằng jadx hay apktool; R8 chỉ đổi tên class/method chứ không mã hoá chuỗi hằng. Đưa key vào <code>local.properties</code> (đã <code>.gitignore</code>) hoặc biến môi trường của CI rồi sinh <code>buildConfigField</code> giúp key không nằm trong repo, nhưng key vẫn nằm trong APK nên chỉ giải quyết được vấn đề Git. Vì vậy phải phân loại: key vốn dành cho client (như Google Maps) thì giới hạn theo package name và chữ ký SHA-1 ở console nhà cung cấp; secret thật (khoá server, key trả phí theo lượt gọi, quyền ghi dữ liệu) không bao giờ để trong app mà gọi qua backend của bạn. Bật thêm secret scanning cho repo để bắt sớm lần sau.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/android/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q36.html">Bạn pull <code>main</code> về nhánh feature và dính conflict ở nhiều file, trong đó có <code>build.gradle.kts</code> và một file layout do đồng nghiệp vừa sửa. Bạn xử lý thế nào, và <code>merge</code> với <code>rebase</code> khác nhau ở đâu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không chọn bừa &quot;giữ bản của mình&quot; cho cả file. Mở từng vùng conflict, đọc cả hai phía để hiểu mỗi bên đang làm gì rồi ghép sao cho giữ được ý của cả hai; nếu không hiểu ý đồ bên kia (ví dụ họ đổi phiên bản dependency), xem <code>git blame</code> rồi nhắn hỏi tác giả. Giải quyết xong phải build, chạy test và mở thử màn hình bị ảnh hưởng, vì Git chỉ ghép văn bản chứ không đảm bảo code còn đúng. <code>merge</code> giữ nguyên lịch sử và tạo thêm merge commit; <code>rebase</code> viết lại commit của nhánh bạn lên đầu <code>main</code> mới, lịch sử tuyến tính nhưng commit đổi hash, nên chỉ rebase nhánh của riêng mình chưa ai dựa vào, và push lại cần <code>--force-with-lease</code> (không dùng <code>--force</code> trơn, không bao giờ force-push lên <code>main</code>). Để giảm conflict: chia PR nhỏ, cập nhật từ <code>main</code> thường xuyên, báo trong nhóm khi sửa file dùng chung.</div>
+        
         
       </div>
     </details>

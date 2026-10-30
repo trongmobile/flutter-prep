@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Junior: Team chuyển một màn từ MVC sang MVVM, nhưng ViewModel bạn viết lại import UIKit…</title>
+<meta name="description" content="Mục tiêu của MVVM là đưa logic trình bày ra khỏi View để test được mà không cần dựng UI. ViewModel nhận đầu vào (thao tác của người dùng, dữ liệu từ service…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q36.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: Team chuyển một màn từ MVC sang MVVM, nhưng ViewModel bạn viết lại import UIKit…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-q36.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Team chuyển một màn từ MVC sang MVVM, nhưng Vie…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q36.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Team chuyển một màn từ MVC sang MVVM, nhưng Vie…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Team chuyển một màn từ MVC sang MVVM, nhưng ViewModel bạn viết lại <code>import UIKit</code>, giữ <code>weak var viewController</code> và tự gán <code>label.text</code>. Reviewer nói vậy chưa phải MVVM. ViewModel nên và không nên làm gì, và nó báo thay đổi ra View thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mục tiêu của MVVM là đưa logic trình bày ra khỏi View để test được mà không cần dựng UI. ViewModel nhận đầu vào (thao tác của người dùng, dữ liệu từ service qua protocol) và xuất ra trạng thái đã sẵn sàng hiển thị như <code>title</code>, <code>isLoading</code>, <code>rows</code>; nó không <code>import UIKit</code> và không biết VC hay view nào đang tồn tại. VC chỉ làm hai việc: chuyển sự kiện xuống ViewModel và đăng ký nhận thay đổi để gán lên UI, bằng closure đơn giản, Combine với <code>@Published</code>, hay <code>ObservableObject</code>/<code>@Observable</code> trong SwiftUI. ViewModel mà giữ VC thì chỉ là Massive View Controller đổi chỗ, lại dễ retain cycle. Việc điều hướng cũng nên báo ra ngoài bằng closure hoặc cho Coordinator, không để ViewModel tự <code>push</code>. Nhờ vậy test ViewModel chỉ cần truyền service giả rồi kiểm tra trạng thái đầu ra.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q36">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q35.html"><span class="muted small">← Câu trước</span><span>Người dùng bấm &quot;Không cho phép&quot; ở hộp thoại xin quyền camera lần đầu. Sau đó bấ…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q37.html"><span class="muted small">Câu sau →</span><span>Bạn merge main vào nhánh feature và Git báo conflict ở project.pbxproj, vì bạn…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/ios/chu-de/arch/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q37.html">MVC trong iOS là gì? Vì sao hay gặp &quot;Massive View Controller&quot; và cách giảm nhẹ ban đầu?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-mid-q15.html">ViewController của bạn tự push màn tiếp theo và biết quá nhiều về flow (login xong đi đâu, mở từ notification thì vào màn nào). Coordinator giải quyết việc này thế nào, và có bẫy gì về bộ nhớ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q16.html">Mọi service trong app đều được truy cập qua singleton kiểu APIClient.shared, giờ viết unit test cho ViewModel thì không mock được. Bạn refactor theo hướng dependency injection thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q17.html">App bắt đầu lớn, build chậm và các feature import chéo nhau. Bạn chia thành các Swift Package local thế nào, và làm sao để feature Cart mở được màn Product Detail mà không import trực tiếp module của nó?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-sen-q10.html">App có hơn 30 dev cùng làm trên một target khổng lồ, build sạch mất hơn 10 phút và conflict liên tục. Bạn lập lộ trình tách module thế nào để không phải dừng làm tính năng, và đo hiệu quả ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q11.html">Khi tách app thành nhiều module, bạn chọn link static hay dynamic? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>
