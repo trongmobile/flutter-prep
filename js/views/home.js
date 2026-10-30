@@ -79,6 +79,7 @@ export function mount(el) {
             ? `<a class="btn btn-ghost" href="#/quiz?wrong=1&start=1">Làm lại ${wrongCount} câu sai</a>`
             : ""
         }
+        <a class="btn btn-ghost" href="${escapeHtml(track.docs)}" target="_blank" rel="noopener">Document ${escapeHtml(track.name)} ↗</a>
       </div>
     </header>
 

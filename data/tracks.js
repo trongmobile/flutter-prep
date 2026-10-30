@@ -1,6 +1,7 @@
 // Các nền tảng (track) có ngân hàng câu hỏi riêng. Rank dùng chung (meta.js),
 // còn mô tả rank, chủ đề và ngôn ngữ code mặc định khác nhau theo track.
 // idPrefix: tiền tố id câu hỏi (vd. "and-jun-q01"); Flutter giữ id cũ không có tiền tố.
+// docs: link tài liệu chính thức của nền tảng, hiển thị trên trang chủ và trang ôn luyện.
 
 export const TRACKS = [
   {
@@ -10,6 +11,7 @@ export const TRACKS = [
     lang: "dart",
     hasRoadmap: true, // lộ trình 35 ngày (data/flutter/roadmap.js)
     tagline: "Dart · Widget · State management · Rendering",
+    docs: "https://docs.flutter.dev", // tài liệu chính thức
     ranks: {
       fresher: "Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.",
       junior: "Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.",
@@ -39,6 +41,7 @@ export const TRACKS = [
     idPrefix: "and",
     lang: "kotlin",
     tagline: "Kotlin · Java · Coroutines · Jetpack Compose",
+    docs: "https://developer.android.com/docs", // tài liệu chính thức
     ranks: {
       fresher: "Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView.",
       junior: "Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room.",
@@ -69,6 +72,7 @@ export const TRACKS = [
     idPrefix: "ios",
     lang: "swift",
     tagline: "Swift · UIKit · SwiftUI · Concurrency",
+    docs: "https://developer.apple.com/documentation", // tài liệu chính thức
     ranks: {
       fresher: "Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản.",
       junior: "ARC & retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app.",
@@ -98,6 +102,7 @@ export const TRACKS = [
     idPrefix: "rn",
     lang: "ts",
     tagline: "JavaScript/TypeScript · React Hooks · New Architecture",
+    docs: "https://reactnative.dev/docs/getting-started", // tài liệu chính thức
     ranks: {
       fresher: "JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList.",
       junior: "Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.",

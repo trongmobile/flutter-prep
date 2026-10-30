@@ -39,7 +39,7 @@ export function mount(el, params) {
     <header class="view-head rank-${rank.color}">
       <div class="eyebrow">ôn luyện · ${escapeHtml(track.name)} · ${escapeHtml(rank.years)}</div>
       <h1>Câu hỏi phỏng vấn ${escapeHtml(track.name)} ${escapeHtml(rank.name)}</h1>
-      <p class="subtitle">${escapeHtml(rankDesc(rankId))}</p>
+      <p class="subtitle">${escapeHtml(rankDesc(rankId))} <a href="${escapeHtml(track.docs)}" target="_blank" rel="noopener">Document ${escapeHtml(track.name)} ↗</a></p>
       <div data-slot="mastery"></div>
     </header>
     <div class="toolbar">

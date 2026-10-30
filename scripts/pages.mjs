@@ -331,6 +331,7 @@ function trackPage(data) {
     <a class="btn btn-primary" href="${base}#/${track.id}">Ôn ${esc(track.name)} trong app</a>
     ${track.hasRoadmap ? `<a class="btn btn-ghost" href="${base}#/${track.id}/roadmap">Lộ trình 35 ngày</a>` : ""}
     <a class="btn btn-ghost" href="${base}#/${track.id}/interview">Phỏng vấn thử</a>
+    <a class="btn btn-ghost" href="${esc(track.docs)}" target="_blank" rel="noopener">Document ${esc(track.name)} ↗</a>
   </div>
 </header>
 <section>
