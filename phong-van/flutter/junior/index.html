@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Flutter Junior (49 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="49 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
+<title>Câu hỏi phỏng vấn Flutter Junior (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Junior (49 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="49 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Junior (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · flutter · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Junior</h1>
-  <p class="subtitle">Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local. Gồm 49 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/flutter/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -68,7 +68,7 @@
     <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">3</span></li>
     <li><a href="#state">State Management</a> <span class="count">7</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
     <li><a href="#native">Native &amp; Platform</a> <span class="count">2</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
@@ -812,6 +812,36 @@ print(empty.first); <span class="tk-com">// StateError: Bad state: No element</s
       .map((e) =&gt; <span class="tk-type">User</span>.fromJson(e <span class="tk-kw">as</span> <span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt;))
       .toList();
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/jun-q31.html">Khi nào dùng <code>shared_preferences</code> trong Flutter? Cách đọc, ghi thế nào, và những giới hạn cần nhớ (bất đồng bộ, kiểu dữ liệu, không dùng cho dữ liệu nhạy cảm hay dữ liệu lớn)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>shared_preferences</code> lưu các cặp key–value nhỏ và bền sau khi tắt app (UserDefaults trên iOS, SharedPreferences trên Android), hợp với cài đặt đơn giản như theme, ngôn ngữ, cờ đã xem onboarding. Lấy instance bằng <code>await SharedPreferences.getInstance()</code> (bất đồng bộ, nên khởi tạo một lần ở <code>main()</code> hoặc qua DI rồi tái sử dụng), sau đó dùng <code>getBool</code>, <code>getString</code>, <code>getInt</code>, <code>getDouble</code>, <code>getStringList</code> (trả <code>null</code> nếu chưa có nên kèm <code>?? giáTrịMặcĐịnh</code>) và các hàm <code>setX</code> (trả <code>Future&lt;bool&gt;</code>, cần <code>await</code> nếu muốn chắc đã ghi xong). Chỉ hỗ trợ kiểu nguyên thuỷ và <code>List&lt;String&gt;</code>; object phức tạp phải tự <code>jsonEncode</code>, và bạn chịu trách nhiệm migrate khi đổi cấu trúc. Giới hạn: không mã hoá nên không lưu token hay mật khẩu (dùng <code>flutter_secure_storage</code>), không dành cho dữ liệu lớn hay cần truy vấn (dùng SQLite, Drift hoặc Isar), và ghi từ nhiều isolate cần cẩn thận vì mỗi isolate có bản cache riêng (dùng <code>reload()</code>, hoặc API <code>SharedPreferencesAsync</code> mới hơn của package). Khi test, dùng <code>SharedPreferences.setMockInitialValues({...})</code> để đặt dữ liệu giả.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">SettingsRepository</span> {
+  <span class="tk-type">SettingsRepository</span>(<span class="tk-kw">this</span>._prefs);
+  <span class="tk-kw">final</span> <span class="tk-type">SharedPreferences</span> _prefs; <span class="tk-com">// lấy instance một lần rồi truyền vào</span>
+
+  bool <span class="tk-kw">get</span> seenOnboarding =&gt; _prefs.getBool(<span class="tk-str">&#39;seen_onboarding&#39;</span>) ?? <span class="tk-kw">false</span>;
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; markOnboardingSeen() =&gt; _prefs.setBool(<span class="tk-str">&#39;seen_onboarding&#39;</span>, <span class="tk-kw">true</span>);
+
+  <span class="tk-type">ThemeMode</span> <span class="tk-kw">get</span> themeMode =&gt;
+      <span class="tk-type">ThemeMode</span>.values.byName(_prefs.getString(<span class="tk-str">&#39;theme_mode&#39;</span>) ?? <span class="tk-str">&#39;system&#39;</span>);
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; setThemeMode(<span class="tk-type">ThemeMode</span> mode) =&gt; _prefs.setString(<span class="tk-str">&#39;theme_mode&#39;</span>, mode.name);
+}
+
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; main() <span class="tk-kw">async</span> {
+  <span class="tk-type">WidgetsFlutterBinding</span>.ensureInitialized();
+  <span class="tk-kw">final</span> prefs = <span class="tk-kw">await</span> <span class="tk-type">SharedPreferences</span>.getInstance();
+  runApp(<span class="tk-type">MyApp</span>(settings: <span class="tk-type">SettingsRepository</span>(prefs)));
+}
+
+<span class="tk-com">// Test: dữ liệu khởi tạo giả</span>
+<span class="tk-type">SharedPreferences</span>.setMockInitialValues({<span class="tk-str">&#39;seen_onboarding&#39;</span>: <span class="tk-kw">true</span>});</code></pre>
         
       </div>
     </details>

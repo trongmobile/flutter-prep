@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle: App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu t…</title>
+<meta name="description" content="Drift sinh code type-safe từ khai báo bảng và query. select(table).watch() trả về một Stream phát lại kết quả mỗi khi bảng liên quan bị ghi (insert, update,…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q32.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu t…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-q32.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"App dùng SQLite qua Drift: danh sách giỏ hàng c…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q32.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">App dùng SQLite qua Drift: danh sách giỏ hàng c…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu trong DB đổi, và bản cập nhật sau thêm cột mới vào bảng <code>orders</code> cho người dùng đang có dữ liệu. Bạn dùng <code>watch()</code>, <code>schemaVersion</code> và <code>MigrationStrategy</code> thế nào, và kiểm thử migration ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Drift sinh code type-safe từ khai báo bảng và query. <code>select(table).watch()</code> trả về một <code>Stream</code> phát lại kết quả mỗi khi bảng liên quan bị ghi (insert, update, delete), nên UI chỉ cần <code>StreamBuilder</code> hoặc provider bọc stream mà không phải tự làm mới; cẩn thận query nặng vì stream chạy lại mỗi lần bảng đổi, nên dùng <code>where</code> hẹp và index. Ghi nhiều dòng thì gom trong <code>transaction</code> hoặc <code>batch</code> để nhanh và atomic. Về migration: tăng <code>schemaVersion</code> và khai báo <code>MigrationStrategy(onUpgrade: (m, from, to) async { if (from &lt; 2) await m.addColumn(orders, orders.note); })</code>; dùng <code>onCreate: (m) =&gt; m.createAll()</code> cho cài mới và <code>beforeOpen</code> để bật <code>PRAGMA foreign_keys = ON</code>. Cột NOT NULL thêm mới cần giá trị mặc định cho các dòng cũ. Kiểm thử bằng công cụ schema của Drift (<code>dart run drift_dev schema dump</code> lưu schema của từng version, rồi <code>SchemaVerifier</code> tạo DB ở version cũ, chạy migration và so với schema mong đợi); thiếu đường nâng cấp hay làm mất dữ liệu người dùng chỉ lộ ra sau khi phát hành. Cho DB chạy ở isolate nền (<code>NativeDatabase.createInBackground</code>) để query nặng không chặn UI, và đừng xoá DB khi migration lỗi nếu đó là dữ liệu của người dùng.</div>
+        <pre class="code-block"><code><span class="tk-ann">@DriftDatabase</span>(tables: [<span class="tk-type">Orders</span>])
+<span class="tk-kw">class</span> <span class="tk-type">AppDatabase</span> <span class="tk-kw">extends</span> _$<span class="tk-type">AppDatabase</span> {
+  <span class="tk-type">AppDatabase</span>(<span class="tk-kw">super</span>.e);
+
+  <span class="tk-ann">@override</span>
+  int <span class="tk-kw">get</span> schemaVersion =&gt; <span class="tk-num">2</span>;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">MigrationStrategy</span> <span class="tk-kw">get</span> migration =&gt; <span class="tk-type">MigrationStrategy</span>(
+    onCreate: (m) =&gt; m.createAll(),
+    onUpgrade: (m, from, to) <span class="tk-kw">async</span> {
+      <span class="tk-kw">if</span> (from &lt; <span class="tk-num">2</span>) {
+        <span class="tk-kw">await</span> m.addColumn(orders, orders.note); <span class="tk-com">// cột mới phải nullable hoặc có default cho dữ liệu cũ</span>
+      }
+    },
+    beforeOpen: (details) <span class="tk-kw">async</span> {
+      <span class="tk-kw">await</span> customStatement(<span class="tk-str">&#39;PRAGMA foreign_keys = ON&#39;</span>);
+    },
+  );
+
+  <span class="tk-com">// UI tự cập nhật: stream phát lại mỗi khi bảng orders bị ghi</span>
+  <span class="tk-type">Stream</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Order</span>&gt;&gt; watchOpenOrders() =&gt;
+      (select(orders)..where((o) =&gt; o.status.equals(<span class="tk-str">&#39;open&#39;</span>))).watch();
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q32">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q31.html"><span class="muted small">← Câu trước</span><span>Cần upload ảnh (vài MB) từ điện thoại lên server, có thanh tiến độ, cho phép hu…</span></a>
+  <a class="pager-next" href="../s/mid-q33.html"><span class="muted small">Câu sau →</span><span>Bạn tích hợp push bằng Firebase Cloud Messaging trong Flutter: hiện thông báo k…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/flutter/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q19.html">freezed + json_serializable giúp gì so với viết tay model và fromJson/toJson?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q30.html">Danh sách bài viết dùng infinite scroll nhưng đôi khi tải trùng một trang, bài viết bị lặp sau khi pull-to-refresh, và khi lỗi mạng giữa chừng thì không tải tiếp được. Bạn thiết kế phân trang phía client thế nào (offset hay cursor, trạng thái, phát hiện cuối danh sách, loại trùng)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q31.html">Cần upload ảnh (vài MB) từ điện thoại lên server, có thanh tiến độ, cho phép huỷ, và không làm tràn bộ nhớ. Bạn dùng Dio với FormData, onSendProgress và CancelToken thế nào, và xử lý các lỗi hay gặp ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d25-2.html">Khi nào chọn Drift, Isar hay Hive thay vì SharedPreferences?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d27-1.html">Interceptor trong Dio dùng để làm gì? Cho hai ví dụ.</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-m36.html">Sau khi thêm interceptor dưới đây, mọi request đều treo, không bao giờ trả về. Vì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

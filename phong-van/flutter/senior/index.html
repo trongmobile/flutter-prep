@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Flutter Senior (84 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="84 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<title>Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (84 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="84 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · flutter · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Senior</h1>
-  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 84 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 100 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/flutter/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -62,20 +62,87 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
+    <li><a href="#dart">Dart</a> <span class="count">2</span></li>
     <li><a href="#async">Async &amp; Isolate</a> <span class="count">3</span></li>
-    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">3</span></li>
+    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">4</span></li>
     <li><a href="#state">State Management</a> <span class="count">4</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">12</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">5</span></li>
-    <li><a href="#native">Native &amp; Platform</a> <span class="count">22</span></li>
-    <li><a href="#perf">Performance</a> <span class="count">8</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">16</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">6</span></li>
+    <li><a href="#native">Native &amp; Platform</a> <span class="count">24</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">9</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">7</span></li>
-    <li><a href="#security">Security</a> <span class="count">2</span></li>
-    <li><a href="#design">System Design</a> <span class="count">8</span></li>
+    <li><a href="#security">Security</a> <span class="count">4</span></li>
+    <li><a href="#design">System Design</a> <span class="count">11</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">10</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
+<section id="dart">
+  <div class="section-head"><h2>Dart</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/dart/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q16.html">Vì sao Flutter có hot reload ở debug mà bản release thì không, và vì sao app Flutter không dùng được reflection (<code>dart:mirrors</code>) mà phải dùng sinh code? Dart chạy ở chế độ JIT và AOT khác nhau thế nào, và hệ quả với kích thước, startup và bảo mật ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Debug chạy Dart VM ở chế độ JIT: code được nạp dưới dạng kernel (biểu diễn trung gian), biên dịch khi chạy và có thể thay thế ngay khi app đang chạy, đó chính là cơ chế của hot reload (đẩy kernel mới vào isolate và giữ nguyên state). Release biên dịch AOT ra mã máy ngay lúc build; trên iOS bắt buộc phải AOT vì hệ điều hành không cho cấp phát bộ nhớ vừa ghi vừa thực thi, còn Android dùng AOT cho bản release để khởi động nhanh và hiệu năng ổn định, không có giai đoạn &#39;khởi động nguội&#39; của JIT. Vì AOT biên dịch trước và phải biết toàn bộ chương trình để tối ưu, trình biên dịch dùng tree shaking toàn cục (phân tích luồng kiểu) để loại bỏ code và class không thể được gọi tới: nhờ đó binary nhỏ hơn, nhưng cũng nghĩa là truy cập động theo tên (reflection) không thể hoạt động vì code đó có thể đã bị loại, nên <code>dart:mirrors</code> không được hỗ trợ trong Flutter và các thư viện phải dùng sinh code (<code>json_serializable</code>, <code>freezed</code>, <code>build_runner</code>). Hệ quả khác: hàm được gọi từ native hay tra cứu theo tên cần <code>@pragma(&#39;vm:entry-point&#39;)</code> để không bị loại (như callback chạy nền của plugin); không thể tải và chạy code Dart mới sau khi build nên code push phải dùng cơ chế riêng; <code>--obfuscate</code> chỉ đổi tên symbol trong snapshot chứ không mã hoá chuỗi hay asset; và chỉ profile mode (AOT kèm công cụ đo) phản ánh hiệu năng thật, còn debug cố tình chậm hơn hẳn nên không dùng để kết luận về jank. Flutter web biên dịch sang JavaScript hoặc Wasm và có chi phí, khác biệt riêng.</div>
+        <pre class="code-block"><code><span class="tk-ann">@pragma</span>(<span class="tk-str">&#39;vm:entry-point&#39;</span>) <span class="tk-com">// giữ lại hàm này vì native gọi bằng tên; không có pragma thì tree shaking có thể loại nó</span>
+<span class="tk-kw">void</span> callbackDispatcher() {
+  <span class="tk-type">WidgetsFlutterBinding</span>.ensureInitialized();
+  <span class="tk-com">// ...</span>
+}
+
+<span class="tk-com">// Không có reflection: sinh code thay thế (dart run build_runner build)</span>
+<span class="tk-ann">@JsonSerializable</span>()
+<span class="tk-kw">class</span> <span class="tk-type">User</span> {
+  <span class="tk-type">User</span>(<span class="tk-kw">this</span>.id, <span class="tk-kw">this</span>.name);
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> id;
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> name;
+
+  <span class="tk-kw">factory</span> <span class="tk-type">User</span>.fromJson(<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt; json) =&gt; _$<span class="tk-type">UserFromJson</span>(json);
+  <span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt; toJson() =&gt; _$<span class="tk-type">UserToJson</span>(<span class="tk-kw">this</span>);
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q17.html">Đoạn code <code>List&lt;num&gt; nums = &lt;int&gt;[1, 2]; nums.add(1.5);</code> compile được nhưng crash lúc chạy với <code>TypeError</code>. Vì sao generic của Dart là covariant, từ khoá <code>covariant</code> giải quyết gì, và gặp lỗi tương tự trong code Flutter thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Generic trong Dart là covariant theo thiết kế: <code>List&lt;int&gt;</code> được coi là kiểu con của <code>List&lt;num&gt;</code>, nên gán được mà analyzer không báo. Cách này tiện (truyền <code>List&lt;Text&gt;</code> vào chỗ cần <code>List&lt;Widget&gt;</code>) nhưng không an toàn kiểu ở thời điểm compile: khi <code>add(1.5)</code> vào một list thực chất là <code>List&lt;int&gt;</code>, Dart phải kiểm tra lúc chạy và ném <code>TypeError</code> (&#39;type double is not a subtype of type int&#39;). Vì vậy Dart chèn kiểm tra runtime ở mọi chỗ ghi qua một giao diện covariant; chỉ đọc (<code>Iterable&lt;T&gt;</code>) thì luôn an toàn. Gặp trong Flutter: <code>final items = [Text(&#39;a&#39;), Text(&#39;b&#39;)];</code> được suy ra là <code>List&lt;Text&gt;</code>, đưa vào <code>Column(children: items)</code> vẫn compile, nhưng nếu về sau <code>items.add(const Icon(Icons.add))</code> thì lỗi lúc chạy; cách tránh là khai báo kiểu tường minh <code>&lt;Widget&gt;[...]</code>. Tương tự, <code>Map&lt;String, dynamic&gt;</code> khác <code>Map&lt;String, Object?&gt;</code> khi parse JSON, và nên dùng <code>List&lt;T&gt;.from</code>/<code>List&lt;T&gt;.of</code> để tạo bản sao có kiểu đúng thay vì ép kiểu. Từ khoá <code>covariant</code> ở tham số cho phép lớp con thu hẹp kiểu tham số của method khi override (<code>void accept(covariant Dog d)</code>), điều vốn bị cấm, đổi lại việc kiểm tra dời sang runtime nên chỉ dùng khi thật cần (framework dùng nó ở những chỗ như <code>RenderObject.setupParentData(covariant RenderObject child)</code>). Khi thiết kế API, ưu tiên trả <code>Iterable&lt;T&gt;</code> hoặc list bất biến (<code>List.unmodifiable</code>) để chủ động tránh việc ghi vào list sai kiểu.</div>
+        <pre class="code-block"><code><span class="tk-kw">void</span> main() {
+  <span class="tk-type">List</span>&lt;num&gt; nums = &lt;int&gt;[<span class="tk-num">1</span>, <span class="tk-num">2</span>]; <span class="tk-com">// compile OK: List&lt;int&gt; là kiểu con của List&lt;num&gt;</span>
+  nums.add(<span class="tk-num">1.5</span>); <span class="tk-com">// TypeError lúc chạy: double không phải int</span>
+
+  <span class="tk-com">// Flutter: kiểu được suy ra là List&lt;Text&gt;</span>
+  <span class="tk-kw">final</span> items = [<span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;a&#39;</span>), <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;b&#39;</span>)];
+  <span class="tk-type">Column</span>(children: items); <span class="tk-com">// OK: chỉ đọc qua giao diện covariant</span>
+  <span class="tk-com">// items.add(const Icon(Icons.add)); // lỗi lúc chạy</span>
+
+  <span class="tk-kw">final</span> widgets = &lt;<span class="tk-type">Widget</span>&gt;[<span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;a&#39;</span>)]; <span class="tk-com">// khai báo kiểu tường minh</span>
+  widgets.add(<span class="tk-kw">const</span> <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.add)); <span class="tk-com">// OK</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Animal</span> {}
+
+<span class="tk-kw">class</span> <span class="tk-type">Dog</span> <span class="tk-kw">extends</span> <span class="tk-type">Animal</span> {}
+
+<span class="tk-kw">class</span> <span class="tk-type">Shelter</span> {
+  <span class="tk-kw">void</span> accept(<span class="tk-type">Animal</span> a) {}
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">DogShelter</span> <span class="tk-kw">extends</span> <span class="tk-type">Shelter</span> {
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> accept(<span class="tk-kw">covariant</span> <span class="tk-type">Dog</span> d) {} <span class="tk-com">// thu hẹp kiểu tham số: được kiểm tra lúc chạy</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
 <section id="async">
   <div class="section-head"><h2>Async &amp; Isolate</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/async/">Mọi rank →</a></div>
   <ol class="qa-list">
@@ -157,6 +224,32 @@
       <div class="model-answer">
         <div class="answer-text">Khi một <code>RenderObject</code> gọi <code>markNeedsLayout</code>, nếu nó không phải boundary thì framework đánh dấu tiếp lên cha, cho tới relayout boundary gần nhất, rồi chỉ layout lại từ điểm đó — nên boundary quyết định phạm vi của một lần relayout. Một node là relayout boundary khi cha không dùng size của nó (<code>parentUsesSize: false</code>), khi nó <code>sizedByParent</code>, khi constraints nhận được là tight, hoặc khi nó là root, vì trong các trường hợp đó size của nó thay đổi cũng không bắt cha phải tính lại. Khác với <code>RepaintBoundary</code> là widget bạn chủ động đặt để tách layer, relayout boundary do framework tự suy ra trong <code>layout()</code>; muốn tận dụng thì cho subtree hay thay đổi nhận tight constraints, ví dụ bọc trong <code>SizedBox</code> kích thước cố định. Còn <code>markNeedsPaint</code> chỉ đi lên tới repaint boundary gần nhất và không kéo theo layout, nên property chỉ ảnh hưởng hình vẽ thì đừng gọi <code>markNeedsLayout</code>.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q19.html">Danh sách 5.000 item bằng <code>ListView.builder</code> cuộn nhanh thì giật, thanh cuộn nhảy khi kéo, <code>jumpTo</code> không tới đúng chỗ, và state trong item bị lẫn khi danh sách đổi thứ tự. Cơ chế dựng lazy của <code>ListView.builder</code> hoạt động thế nào, và <code>itemExtent</code>, <code>prototypeItem</code>, <code>findChildIndexCallback</code>, <code>cacheExtent</code> giải quyết gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ListView.builder</code> tạo một <code>SliverList</code> với <code>SliverChildBuilderDelegate</code>: sliver chỉ gọi <code>itemBuilder</code> cho các item nằm trong vùng nhìn cộng <code>cacheExtent</code> (mặc định 250 logical pixel mỗi phía), và các Element ngoài vùng đó bị dispose (trừ khi được keep-alive). Vì không biết chiều cao của các item chưa dựng, sliver phải ước lượng tổng chiều dài từ những item đã đo, nên thanh cuộn nhảy và <code>jumpTo</code>/<code>animateTo</code> tới vị trí xa không chính xác khi item có chiều cao khác nhau. Nếu mọi item cao bằng nhau, <code>itemExtent</code> (hoặc <code>prototypeItem</code> khi bạn có một item mẫu) cho sliver biết chiều cao cố định nên nó bỏ qua việc đo từng con, tính vị trí O(1), cuộn nhanh và chính xác hơn; item cao khác nhau thì không dùng được. <code>findChildIndexCallback</code> cho delegate biết &#39;key này giờ ở index nào&#39; để khi danh sách đổi thứ tự hay chèn item, Flutter tái sử dụng đúng Element và State thay vì dựng lại (mỗi item cần một <code>key</code> ổn định, và tra cứu nên là O(1) bằng một <code>Map</code>). <code>addAutomaticKeepAlives</code> và <code>addRepaintBoundaries</code> (mặc định đều là true) thêm lớp bọc cho từng item: tắt <code>addRepaintBoundaries</code> khi item rất rẻ có thể giảm chi phí, còn item nặng thì nên giữ. Tăng <code>cacheExtent</code> thì dựng trước nhiều hơn nên cuộn nhanh ít bị trắng, đổi lại tốn bộ nhớ và CPU. Item nặng cần được tối ưu từ gốc: dùng <code>const</code>, tách widget, tránh <code>Opacity</code> hay clip lớn, và giải mã ảnh đúng kích thước; hãy đo bằng DevTools (build hay raster chậm) chứ không đoán.</div>
+        <pre class="code-block"><code><span class="tk-com">// Tạo một lần ngoài itemBuilder: tra cứu index theo id là O(1)</span>
+<span class="tk-kw">final</span> indexById = {<span class="tk-kw">for</span> (<span class="tk-kw">var</span> i = <span class="tk-num">0</span>; i &lt; items.length; i++) items[i].id: i};
+
+<span class="tk-type">ListView</span>.builder(
+  itemCount: items.length,
+  prototypeItem: <span class="tk-kw">const</span> <span class="tk-type">ProductTile</span>.placeholder(), <span class="tk-com">// mọi item cao bằng nhau: bỏ qua việc đo từng con</span>
+  cacheExtent: <span class="tk-num">600</span>, <span class="tk-com">// dựng trước nhiều hơn mặc định (250): cuộn nhanh ít bị trắng, đổi lại tốn bộ nhớ</span>
+  findChildIndexCallback: (<span class="tk-type">Key</span> key) {
+    <span class="tk-kw">final</span> id = (key <span class="tk-kw">as</span> <span class="tk-type">ValueKey</span>&lt;<span class="tk-type">String</span>&gt;).value;
+    <span class="tk-kw">return</span> indexById[id]; <span class="tk-com">// giúp Flutter giữ đúng State khi danh sách đổi thứ tự</span>
+  },
+  itemBuilder: (context, index) {
+    <span class="tk-kw">final</span> p = items[index];
+    <span class="tk-kw">return</span> <span class="tk-type">ProductTile</span>(key: <span class="tk-type">ValueKey</span>(p.id), product: p);
+  },
+)</code></pre>
         
       </div>
     </details>
@@ -244,6 +337,192 @@
       <div class="model-answer">
         <div class="answer-text">Rule chỉ nằm trong wiki sẽ bị phá dần, nên tôi biến nó thành thứ máy kiểm tra được và fail CI. Mức mạnh nhất là ranh giới package: mỗi feature/layer là một package, chỉ khai báo dependency được phép trong <code>pubspec.yaml</code> (lint <code>depend_on_referenced_packages</code> báo khi import package không khai báo), API public để ở <code>lib/&lt;package&gt;.dart</code>, phần nội bộ ở <code>lib/src/</code> và nâng lint <code>implementation_imports</code> thành error để chặn import vào <code>src</code> của package khác. Với rule chi tiết hơn, ví dụ presentation không được gọi thẳng repository, tôi viết custom lint hoặc một script kiểm tra import graph chạy trong CI. Kết hợp <code>CODEOWNERS</code> cho các package lõi và ADR ghi lại lý do của từng rule, để người mới hiểu vì sao bị chặn chứ không chỉ tìm cách lách.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q21.html">App 4 năm tuổi dùng Provider và <code>ChangeNotifier</code> rải rác (hàng trăm class), team muốn chuyển sang Riverpod (hoặc Bloc) mà không dừng làm tính năng. Bạn lập lộ trình migration tăng dần thế nào, và rủi ro lớn nhất là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bắt đầu bằng mục tiêu và số liệu: đau nhất là gì (rebuild thừa, khó test, phụ thuộc <code>BuildContext</code> ở mọi nơi, state lẫn lộn UI và dữ liệu), thay vì chuyển vì &#39;xu hướng&#39;. Sau đó áp dụng kiểu strangler: hai hệ thống sống song song trong một thời gian dài, feature mới viết bằng stack mới, feature cũ chỉ chuyển khi đằng nào cũng phải sửa lớn. Điều kiện để chạy song song an toàn: tách logic nghiệp vụ và dữ liệu ra khỏi lớp state (repository hay service thuần Dart, không phụ thuộc Provider hay Riverpod) để hai stack dùng chung một nguồn dữ liệu; nếu mỗi bên tự giữ bản sao thì sinh ra hai nguồn sự thật, nguyên nhân bug khó nhất của các cuộc migration. Cầu nối: stack cũ chỉ còn là lớp mỏng (<code>ChangeNotifier</code> nghe repository rồi <code>notifyListeners</code>), stack mới đọc cùng repository (qua <code>StreamProvider</code> hay <code>Provider</code>); quy ước rõ &#39;dữ liệu này thuộc về ai&#39;. Đặt quy tắc kiểm soát bằng lint hoặc review: cấm class mới dùng <code>ChangeNotifier</code> cũ, đếm số file còn dùng stack cũ như chỉ số tiến độ. Test hành vi (widget test theo màn hình) làm lưới an toàn thay vì test từng provider; chuyển từ lá lên (màn ít phụ thuộc trước) và mỗi PR nhỏ, merge được ngay. Rủi ro lớn nhất là bỏ dở giữa chừng (hai stack tồn tại vô thời hạn) và regression do khác biệt thời điểm cập nhật state; nên đặt mốc thời gian, người sở hữu và tiêu chí dừng nếu migration không đem lại lợi ích đo được.</div>
+        <pre class="code-block"><code><span class="tk-com">// Nguồn dữ liệu thuần Dart, dùng chung cho cả hai stack: một nguồn sự thật</span>
+<span class="tk-kw">class</span> <span class="tk-type">CartRepository</span> {
+  <span class="tk-kw">final</span> _controller = <span class="tk-type">StreamController</span>&lt;<span class="tk-type">Cart</span>&gt;.broadcast();
+  <span class="tk-type">Cart</span> _cart = <span class="tk-kw">const</span> <span class="tk-type">Cart</span>.empty();
+
+  <span class="tk-type">Cart</span> <span class="tk-kw">get</span> current =&gt; _cart;
+  <span class="tk-type">Stream</span>&lt;<span class="tk-type">Cart</span>&gt; <span class="tk-kw">get</span> changes =&gt; _controller.stream;
+
+  <span class="tk-kw">void</span> add(<span class="tk-type">Item</span> item) {
+    _cart = _cart.add(item);
+    _controller.add(_cart);
+  }
+}
+
+<span class="tk-com">// Stack cũ: ChangeNotifier chỉ còn là lớp mỏng nghe repository</span>
+<span class="tk-kw">class</span> <span class="tk-type">CartModel</span> <span class="tk-kw">extends</span> <span class="tk-type">ChangeNotifier</span> {
+  <span class="tk-type">CartModel</span>(<span class="tk-kw">this</span>._repo) {
+    _sub = _repo.changes.listen((_) =&gt; notifyListeners());
+  }
+  <span class="tk-kw">final</span> <span class="tk-type">CartRepository</span> _repo;
+  <span class="tk-kw">late</span> <span class="tk-kw">final</span> <span class="tk-type">StreamSubscription</span>&lt;<span class="tk-type">Cart</span>&gt; _sub;
+
+  <span class="tk-type">Cart</span> <span class="tk-kw">get</span> cart =&gt; _repo.current;
+  <span class="tk-kw">void</span> add(<span class="tk-type">Item</span> item) =&gt; _repo.add(item);
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _sub.cancel();
+    <span class="tk-kw">super</span>.dispose();
+  }
+}
+
+<span class="tk-com">// Stack mới: Riverpod đọc cùng repository, màn hình mới dùng provider này</span>
+<span class="tk-kw">final</span> cartProvider = <span class="tk-type">StreamProvider</span>&lt;<span class="tk-type">Cart</span>&gt;((ref) {
+  <span class="tk-kw">final</span> repo = ref.watch(cartRepositoryProvider);
+  <span class="tk-kw">return</span> repo.changes.startWith(repo.current); <span class="tk-com">// startWith (rxdart): phát giá trị hiện tại trước, rồi các thay đổi</span>
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q22.html">App có 15 feature, mỗi team sở hữu một feature package; toàn bộ route đang nằm trong một file <code>router.dart</code> khổng lồ, tham số truyền bằng chuỗi (<code>&#39;/orders/$id&#39;</code>) nên sai là lỗi runtime, và feature A không được import trực tiếp feature B. Bạn thiết kế navigation ở quy mô này thế nào với <code>go_router</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi feature package export danh sách <code>RouteBase</code> của riêng mình (cùng các route con), app shell chỉ ghép chúng lại; nhờ vậy team sở hữu route của feature mình và <code>router.dart</code> không còn là điểm nghẽn merge. Tham số truyền bằng route có kiểu: <code>go_router_builder</code> sinh class từ <code>@TypedGoRoute</code> (<code>OrderDetailRoute(id: &#39;123&#39;).go(context)</code>), nên sai tên route hay thiếu tham số là lỗi compile; tham số trong URL chỉ nên là id và bộ lọc nhỏ, dữ liệu lớn tải lại theo id (để deep link, khôi phục state và nút back hoạt động). Cross-feature: feature A không biết feature B mà phụ thuộc vào một package &#39;contracts&#39; nhỏ chứa route đã định kiểu hoặc interface điều hướng (<code>OrderNavigator.openOrder(id)</code>), app shell nối contract tới implementation qua DI; hoặc nhận callback từ app shell. Guard và redirect tập trung ở router gốc (<code>redirect</code> kèm <code>refreshListenable</code> theo trạng thái auth) để không rải kiểm tra đăng nhập vào từng màn; deep link khi chưa đăng nhập thì giữ đích lại và tiếp tục sau khi login. Bottom navigation giữ stack từng tab bằng <code>StatefulShellRoute</code>. Cần có quy tắc: mỗi đường dẫn do một nơi sở hữu; test cấu hình route (mỗi route khớp URL mong đợi, redirect chạy đúng) bằng test thuần không dựng UI; <code>NavigatorObserver</code> để ghi analytics màn hình; và xử lý route lỗi (<code>errorBuilder</code>) cho link không hợp lệ. Cũng nên bọc điều hướng sau một lớp mỏng vì API của package đổi giữa các major, để thay thế được khi cần.</div>
+        <pre class="code-block"><code><span class="tk-com">// Trong package feature_orders: route có kiểu, do team Orders sở hữu</span>
+<span class="tk-ann">@TypedGoRoute</span>&lt;<span class="tk-type">OrdersRoute</span>&gt;(
+  path: <span class="tk-str">&#39;/orders&#39;</span>,
+  routes: [<span class="tk-type">TypedGoRoute</span>&lt;<span class="tk-type">OrderDetailRoute</span>&gt;(path: <span class="tk-str">&#39;:id&#39;</span>)],
+)
+<span class="tk-kw">class</span> <span class="tk-type">OrdersRoute</span> <span class="tk-kw">extends</span> <span class="tk-type">GoRouteData</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">OrdersRoute</span>();
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context, <span class="tk-type">GoRouterState</span> state) =&gt; <span class="tk-kw">const</span> <span class="tk-type">OrderListPage</span>();
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">OrderDetailRoute</span> <span class="tk-kw">extends</span> <span class="tk-type">GoRouteData</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">OrderDetailRoute</span>({<span class="tk-kw">required</span> <span class="tk-kw">this</span>.id});
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> id;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context, <span class="tk-type">GoRouterState</span> state) =&gt; <span class="tk-type">OrderDetailPage</span>(id: id);
+}
+
+<span class="tk-com">// Dùng: sai tên route hoặc thiếu tham số là lỗi compile</span>
+<span class="tk-kw">const</span> <span class="tk-type">OrderDetailRoute</span>(id: <span class="tk-str">&#39;123&#39;</span>).go(context);
+
+<span class="tk-com">// App shell: ghép route của các feature (mỗi feature export List&lt;RouteBase&gt;), guard đặt tập trung một chỗ</span>
+<span class="tk-kw">final</span> router = <span class="tk-type">GoRouter</span>(
+  routes: [...ordersRoutes, ...profileRoutes, ...cartRoutes],
+  refreshListenable: authNotifier,
+  redirect: (context, state) {
+    <span class="tk-kw">final</span> loggedIn = authNotifier.isLoggedIn;
+    <span class="tk-kw">if</span> (!loggedIn &amp;&amp; !state.matchedLocation.startsWith(<span class="tk-str">&#39;/login&#39;</span>)) {
+      <span class="tk-kw">return</span> <span class="tk-str">&#39;/login?from=${Uri.encodeComponent(state.uri.toString())}&#39;</span>; <span class="tk-com">// nhớ đích để quay lại sau khi đăng nhập</span>
+    }
+    <span class="tk-kw">return</span> <span class="tk-kw">null</span>;
+  },
+);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q23.html">Công ty có 4 app Flutter dùng chung một design system, nhưng mỗi app tự copy widget và màu rồi lệch nhau. Bạn xây design system thành package dùng chung thế nào (token, component, tài liệu, kiểm thử, versioning)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tách thành một package riêng (<code>design_system</code>) với ba lớp. Token: màu, typography, spacing, radius, elevation, motion được định nghĩa một lần và đưa vào theme bằng <code>ThemeData</code> cùng <code>ThemeExtension</code> (cho phần ngoài Material), có bản sáng, tối và theo thương hiệu; lý tưởng là sinh code từ nguồn của designer (Figma variables, Style Dictionary) để hai bên không lệch nhau. Component: <code>AppButton</code>, <code>AppTextField</code>, <code>AppCard</code>... bọc widget của framework với API hẹp, nhận tham số ngữ nghĩa (<code>variant: AppButtonVariant.primary</code>) thay vì màu tuỳ ý, nên đổi giao diện được tập trung; mặc định có sẵn accessibility (vùng chạm 48dp, semantics, text scaling). Tài liệu: catalog sống bằng Widgetbook liệt kê mọi biến thể và trạng thái, là nơi designer và dev cùng review. Kiểm thử: golden test cho từng component ở sáng và tối, cỡ chữ lớn, RTL, chuỗi dài; chạy golden ở môi trường cố định trên CI (font đóng gói, cùng phiên bản Flutter) để tránh lệch pixel giữa máy local và CI. Kiểm soát việc dùng: custom lint cấm hard-code <code>Color(0x...)</code>, <code>TextStyle</code> thô hay <code>Colors.xxx</code> trong code app, để mọi thứ đi qua token. Phát hành: dùng semver, changelog, đánh dấu <code>@Deprecated</code> kèm hướng dẫn thay thế trước khi xoá, tự động hoá release bằng Melos; app tích hợp cố định version và nâng theo kế hoạch, tránh phá API mỗi lần đổi giao diện. Quy trình đóng góp cũng cần rõ: ai sở hữu design system, cách đề xuất component mới, và nguyên tắc &#39;chỉ đưa vào khi có ít nhất hai nơi dùng&#39; để package không phình thành bãi chứa.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">AppButtonVariant</span> { primary, secondary, danger }
+
+<span class="tk-kw">class</span> <span class="tk-type">AppButton</span> <span class="tk-kw">extends</span> <span class="tk-type">StatelessWidget</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">AppButton</span>({
+    <span class="tk-kw">super</span>.key,
+    <span class="tk-kw">required</span> <span class="tk-kw">this</span>.label,
+    <span class="tk-kw">required</span> <span class="tk-kw">this</span>.onPressed,
+    <span class="tk-kw">this</span>.variant = <span class="tk-type">AppButtonVariant</span>.primary, <span class="tk-com">// tham số ngữ nghĩa, không nhận màu tuỳ ý</span>
+  });
+
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> label;
+  <span class="tk-kw">final</span> <span class="tk-type">VoidCallback</span>? onPressed;
+  <span class="tk-kw">final</span> <span class="tk-type">AppButtonVariant</span> variant;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">final</span> tokens = <span class="tk-type">Theme</span>.of(context).<span class="tk-kw">extension</span>&lt;<span class="tk-type">AppTokens</span>&gt;()!;
+    <span class="tk-kw">final</span> background = <span class="tk-kw">switch</span> (variant) {
+      <span class="tk-type">AppButtonVariant</span>.primary =&gt; tokens.brand,
+      <span class="tk-type">AppButtonVariant</span>.secondary =&gt; tokens.surfaceVariant,
+      <span class="tk-type">AppButtonVariant</span>.danger =&gt; tokens.danger,
+    };
+    <span class="tk-kw">return</span> <span class="tk-type">ConstrainedBox</span>(
+      constraints: <span class="tk-kw">const</span> <span class="tk-type">BoxConstraints</span>(minHeight: kMinInteractiveDimension), <span class="tk-com">// vùng chạm tối thiểu 48dp</span>
+      child: <span class="tk-type">FilledButton</span>(
+        style: <span class="tk-type">FilledButton</span>.styleFrom(backgroundColor: background),
+        onPressed: onPressed,
+        child: <span class="tk-type">Text</span>(label),
+      ),
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q24.html">Team chuyển sang phát hành nhỏ và thường xuyên, muốn mọi tính năng lớn nằm sau feature flag, có thể tắt khẩn cấp và chạy A/B test. Bạn thiết kế hệ thống flag và remote config phía Flutter thế nào để không biến thành nợ kỹ thuật?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi định nghĩa flag tập trung, có kiểu (key, giá trị mặc định, loại: release toggle, kill switch hay experiment) và ẩn nhà cung cấp (Firebase Remote Config, LaunchDarkly, backend riêng) sau một interface <code>FeatureFlags</code>, để test dùng bản giả và đổi vendor không ảnh hưởng feature. Giá trị luôn có mặc định biên dịch sẵn trong app để chạy được khi offline hoặc lần đầu mở; giá trị remote được fetch rồi cache. Với Remote Config cần nhớ <code>minimumFetchInterval</code> giới hạn tần suất fetch (mặc định 12 giờ nên đặt ngắn hơn khi dev) và chiến lược &#39;activate&#39;: chốt giá trị ở thời điểm an toàn (đầu session) để UI không đổi hành vi giữa chừng, trừ kill switch thì nên áp dụng nhanh (lắng nghe <code>onConfigUpdated</code> để nhận cập nhật realtime). Kiểm tra flag ở biên (điểm vào route, chỗ DI chọn implementation) thay vì rải <code>if</code> khắp nơi, và kiểm soát các flag phụ thuộc nhau. A/B test cần phân nhóm ổn định theo người dùng (không đổi nhóm giữa các lần mở app), ghi nhóm vào analytics và quyết định bằng số liệu có ý nghĩa thống kê chứ không cảm tính. Chống nợ: mỗi flag có owner, ngày hết hạn và ticket dọn dẹp sau khi rollout 100%, CI cảnh báo flag quá hạn, và có màn hình debug cho QA override. Giới hạn cần nói rõ: code sau flag vẫn nằm trong binary (không dùng để giấu thứ nhạy cảm), quyền truy cập thật phải do backend kiểm soát, và các store cũng không chấp nhận việc bật tính năng ẩn làm thay đổi bản chất app sau khi đã được duyệt.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">Flag</span> {
+  newCheckout(<span class="tk-str">&#39;new_checkout&#39;</span>, <span class="tk-kw">false</span>),
+  chatKillSwitch(<span class="tk-str">&#39;chat_enabled&#39;</span>, <span class="tk-kw">true</span>);
+
+  <span class="tk-kw">const</span> <span class="tk-type">Flag</span>(<span class="tk-kw">this</span>.key, <span class="tk-kw">this</span>.defaultValue);
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> key;
+  <span class="tk-kw">final</span> bool defaultValue;
+}
+
+<span class="tk-kw">abstract</span> <span class="tk-kw">interface</span> <span class="tk-kw">class</span> <span class="tk-type">FeatureFlags</span> {
+  bool isEnabled(<span class="tk-type">Flag</span> flag);
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">RemoteFeatureFlags</span> <span class="tk-kw">implements</span> <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-type">RemoteFeatureFlags</span>(<span class="tk-kw">this</span>._remoteConfig);
+  <span class="tk-kw">final</span> <span class="tk-type">FirebaseRemoteConfig</span> _remoteConfig;
+
+  <span class="tk-kw">static</span> <span class="tk-type">Future</span>&lt;<span class="tk-type">RemoteFeatureFlags</span>&gt; init() <span class="tk-kw">async</span> {
+    <span class="tk-kw">final</span> rc = <span class="tk-type">FirebaseRemoteConfig</span>.instance;
+    <span class="tk-kw">await</span> rc.setDefaults({<span class="tk-kw">for</span> (<span class="tk-kw">final</span> f <span class="tk-kw">in</span> <span class="tk-type">Flag</span>.values) f.key: f.defaultValue}); <span class="tk-com">// mặc định có sẵn khi offline</span>
+    <span class="tk-kw">await</span> rc.setConfigSettings(
+      <span class="tk-type">RemoteConfigSettings</span>(
+        fetchTimeout: <span class="tk-kw">const</span> <span class="tk-type">Duration</span>(seconds: <span class="tk-num">10</span>),
+        minimumFetchInterval: kReleaseMode ? <span class="tk-kw">const</span> <span class="tk-type">Duration</span>(hours: <span class="tk-num">12</span>) : <span class="tk-type">Duration</span>.zero,
+      ),
+    );
+    <span class="tk-kw">await</span> rc.fetchAndActivate().catchError((_) =&gt; <span class="tk-kw">false</span>); <span class="tk-com">// lỗi mạng: dùng giá trị mặc định hoặc đã cache</span>
+    <span class="tk-kw">return</span> <span class="tk-type">RemoteFeatureFlags</span>(rc);
+  }
+
+  <span class="tk-ann">@override</span>
+  bool isEnabled(<span class="tk-type">Flag</span> flag) =&gt; _remoteConfig.getBool(flag.key);
+}
+
+<span class="tk-com">// Test chỉ cần bản giả, không phụ thuộc Firebase</span>
+<span class="tk-kw">class</span> <span class="tk-type">FakeFeatureFlags</span> <span class="tk-kw">implements</span> <span class="tk-type">FeatureFlags</span> {
+  <span class="tk-type">FakeFeatureFlags</span>(<span class="tk-kw">this</span>.overrides);
+  <span class="tk-kw">final</span> <span class="tk-type">Map</span>&lt;<span class="tk-type">Flag</span>, bool&gt; overrides;
+
+  <span class="tk-ann">@override</span>
+  bool isEnabled(<span class="tk-type">Flag</span> flag) =&gt; overrides[flag] ?? flag.defaultValue;
+}</code></pre>
         
       </div>
     </details>
@@ -364,6 +643,48 @@
   <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/data/">Mọi rank →</a></div>
   <ol class="qa-list">
     <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q27.html">Bảng <code>messages</code> trong SQLite (Drift) đã lên hàng triệu dòng: mở màn hình chat chậm vài giây, UI đứng khi import dữ liệu, và có yêu cầu mới là mã hoá database. Bạn tối ưu SQLite ở quy mô này thế nào (index, query, transaction, isolate, WAL, mã hoá)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đo trước: dùng <code>EXPLAIN QUERY PLAN</code> để xem query quét toàn bảng (<code>SCAN</code>) hay dùng index (<code>SEARCH ... USING INDEX</code>), rồi tạo index khớp với <code>WHERE</code> và <code>ORDER BY</code> thực tế (index kết hợp <code>(conversationId, createdAt)</code> cho truy vấn &#39;tin nhắn của một cuộc trò chuyện theo thời gian&#39;); index quá nhiều làm ghi chậm và tăng dung lượng. Phân trang bằng keyset (<code>WHERE createdAt &lt; ? ORDER BY createdAt DESC LIMIT 50</code>) thay vì <code>OFFSET</code> lớn vốn phải đọc rồi bỏ qua nhiều dòng. Ghi nhiều dòng phải nằm trong một <code>transaction</code> hoặc <code>batch</code>: mỗi lệnh ghi riêng lẻ là một transaction tự động kèm <code>fsync</code>, nên import 100.000 dòng có thể nhanh hơn hàng chục lần khi gộp lại. Chạy DB ở isolate nền (<code>NativeDatabase.createInBackground</code>) để query và import nặng không chặn UI thread; lưu ý chi phí chuyển dữ liệu qua isolate nên chỉ trả về những cột và số dòng cần. Bật WAL (<code>PRAGMA journal_mode = WAL</code>) để đọc và ghi không chặn nhau, kèm <code>synchronous = NORMAL</code> nếu chấp nhận đánh đổi độ bền khi mất điện đột ngột. Stream <code>watch()</code> chạy lại mỗi lần bảng đổi, nên với bảng ghi dồn dập cần thu hẹp query hoặc gom thay đổi (debounce). Mã hoá toàn bộ database dùng SQLCipher (<code>sqlcipher_flutter_libs</code>, đặt khoá bằng <code>PRAGMA key</code> khi mở) với khoá sinh ngẫu nhiên và cất trong Keychain hoặc Keystore, chấp nhận chi phí hiệu năng và kích thước. Dọn dữ liệu cũ định kỳ (xoá theo lô ở nền), <code>VACUUM</code> khi cần giải phóng dung lượng, kiểm thử migration trên dữ liệu lớn thật, và có chiến lược xử lý DB hỏng (backup, dựng lại từ server) vì không thể giả định chuyện đó không bao giờ xảy ra.</div>
+        <pre class="code-block"><code><span class="tk-type">LazyDatabase</span> openDatabase() {
+  <span class="tk-kw">return</span> <span class="tk-type">LazyDatabase</span>(() <span class="tk-kw">async</span> {
+    <span class="tk-kw">final</span> dir = <span class="tk-kw">await</span> getApplicationDocumentsDirectory();
+    <span class="tk-kw">final</span> file = <span class="tk-type">File</span>(p.join(dir.path, <span class="tk-str">&#39;app.db&#39;</span>));
+    <span class="tk-kw">return</span> <span class="tk-type">NativeDatabase</span>.createInBackground( <span class="tk-com">// chạy ở isolate nền, không chặn UI</span>
+      file,
+      setup: (db) {
+        db.execute(<span class="tk-str">&#39;PRAGMA journal_mode = WAL;&#39;</span>); <span class="tk-com">// đọc và ghi không chặn nhau</span>
+        db.execute(<span class="tk-str">&#39;PRAGMA synchronous = NORMAL;&#39;</span>);
+      },
+    );
+  });
+}
+
+<span class="tk-ann">@TableIndex</span>(name: <span class="tk-str">&#39;idx_messages_conv_time&#39;</span>, columns: {#conversationId, #createdAt})
+<span class="tk-kw">class</span> <span class="tk-type">Messages</span> <span class="tk-kw">extends</span> <span class="tk-type">Table</span> {
+  <span class="tk-type">IntColumn</span> <span class="tk-kw">get</span> id =&gt; integer().autoIncrement()();
+  <span class="tk-type">TextColumn</span> <span class="tk-kw">get</span> conversationId =&gt; text()();
+  <span class="tk-type">DateTimeColumn</span> <span class="tk-kw">get</span> createdAt =&gt; dateTime()();
+  <span class="tk-type">TextColumn</span> <span class="tk-kw">get</span> body =&gt; text()();
+}
+
+<span class="tk-com">// Phân trang keyset thay vì OFFSET lớn</span>
+<span class="tk-type">Future</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Message</span>&gt;&gt; pageBefore(<span class="tk-type">String</span> convId, <span class="tk-type">DateTime</span> before) =&gt;
+    (select(messages)
+          ..where((m) =&gt; m.conversationId.equals(convId) &amp; m.createdAt.isSmallerThanValue(before))
+          ..orderBy([(m) =&gt; <span class="tk-type">OrderingTerm</span>.desc(m.createdAt)])
+          ..limit(<span class="tk-num">50</span>))
+        .<span class="tk-kw">get</span>();
+
+<span class="tk-com">// Ghi nhiều dòng: một transaction, không phải 100.000 transaction riêng lẻ</span>
+<span class="tk-kw">await</span> batch((b) =&gt; b.insertAll(messages, incoming));</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d25-1.html">&#39;Offline-first&#39; nghĩa là gì trong thiết kế app?</a></h3>
       <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
@@ -441,6 +762,56 @@
       <div class="model-answer">
         <div class="answer-text">Lời gọi FFI là đồng bộ và chạy ngay trên thread của isolate gọi nó, nên một hàm C chạy 200ms gọi từ root isolate sẽ chặn UI 200ms; việc nặng phải chạy ở isolate khác (<code>Isolate.run</code>) hoặc để native tự chạy trên thread riêng rồi báo kết quả về. Với callback từ native: <code>Pointer.fromFunction</code> và <code>NativeCallable.isolateLocal</code> chỉ được gọi trên đúng thread của isolate (gọi từ thread khác sẽ abort process), còn <code>NativeCallable.listener</code> gọi được từ mọi thread nhưng chạy bất đồng bộ trên event loop, chỉ hỗ trợ hàm trả <code>void</code>, và phải <code>close()</code> khi xong nếu không isolate bị giữ sống mãi. <code>ffigen</code> sinh binding Dart từ header C/Objective-C, <code>jnigen</code> sinh binding gọi Java/Kotlin qua JNI, giúp bỏ phần glue code viết tay dễ sai kiểu và dễ lệch khi thư viện nâng version. Tôi vẫn bọc binding sinh ra sau một API Dart nhỏ, quản lý memory native bằng <code>Arena</code> hoặc <code>NativeFinalizer</code>, để phần còn lại của app không phụ thuộc trực tiếp vào FFI.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q20.html">Bạn viết một plugin nội bộ (ví dụ đọc thẻ NFC) dùng cho nhiều app, hỗ trợ Android, iOS và sau này cả web. Kiến trúc federated plugin gồm những package nào, <code>PlatformInterface</code> làm gì, và nó giúp ích gì so với một plugin đơn lẻ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Federated plugin tách một plugin thành nhiều package: package app-facing (API Dart mà app gọi), package <code>*_platform_interface</code> (lớp trừu tượng định nghĩa hợp đồng, kế thừa <code>PlatformInterface</code>, kèm implementation mặc định dùng <code>MethodChannel</code>), và mỗi nền tảng một package implementation (<code>*_android</code>, <code>*_ios</code>, <code>*_web</code>), mỗi cái đăng ký bản của mình lúc khởi động (<code>registerWith</code> hoặc <code>dartPluginClass</code>). Trong <code>pubspec.yaml</code> của package app-facing, mục <code>flutter: plugin: platforms:</code> ghi <code>default_package</code> cho từng nền tảng (endorsed), còn package implementation khai báo <code>implements:</code> cho nền tảng của nó. <code>PlatformInterface</code> có token <code>verify</code> để chặn việc cài đặt bằng <code>implements</code> (chỉ cho <code>extends</code> hoặc <code>mixin</code>), nhờ đó thêm method mới vào interface không phá các implementation bên thứ ba vì luôn có bản mặc định. Lợi ích: nhóm khác thêm được nền tảng (Windows, web) mà không cần quyền sửa package gốc; test code app bằng cách đặt <code>Plugin.instance = FakePlatform()</code> mà không cần native; mỗi nền tảng phát hành và đặt version độc lập; ranh giới hợp đồng rõ ràng, và có thể sinh code kênh bằng Pigeon. Chi phí: nhiều package hơn phải quản lý version và publish (nên dùng monorepo với Melos hoặc pub workspaces), cần bài test hợp đồng chung cho mọi implementation, và breaking change ở interface là breaking cho cả hệ sinh thái nên phải theo semver chặt. Nếu plugin chỉ dùng nội bộ cho hai nền tảng và một team duy nhất thì plugin đơn (một package có <code>android/</code> và <code>ios/</code>) là đủ; federated chỉ đáng khi có nhu cầu mở rộng nền tảng hoặc nhiều bên cùng đóng góp. Với thư viện C hoặc C++ có sẵn, plugin FFI (<code>ffiPlugin: true</code>) là một lựa chọn khác.</div>
+        <pre class="code-block"><code><span class="tk-com">// nfc_reader_platform_interface</span>
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">NfcReaderPlatform</span> <span class="tk-kw">extends</span> <span class="tk-type">PlatformInterface</span> {
+  <span class="tk-type">NfcReaderPlatform</span>() : <span class="tk-kw">super</span>(token: _token);
+  <span class="tk-kw">static</span> <span class="tk-kw">final</span> <span class="tk-type">Object</span> _token = <span class="tk-type">Object</span>();
+
+  <span class="tk-kw">static</span> <span class="tk-type">NfcReaderPlatform</span> _instance = <span class="tk-type">MethodChannelNfcReader</span>();
+  <span class="tk-kw">static</span> <span class="tk-type">NfcReaderPlatform</span> <span class="tk-kw">get</span> instance =&gt; _instance;
+  <span class="tk-kw">static</span> <span class="tk-kw">set</span> instance(<span class="tk-type">NfcReaderPlatform</span> value) {
+    <span class="tk-type">PlatformInterface</span>.verify(value, _token); <span class="tk-com">// chặn cài đặt bằng `implements`, chỉ cho extends</span>
+    _instance = value;
+  }
+
+  <span class="tk-type">Stream</span>&lt;<span class="tk-type">String</span>&gt; tags() =&gt; <span class="tk-kw">throw</span> <span class="tk-type">UnimplementedError</span>(<span class="tk-str">&#39;tags() chưa được hỗ trợ trên nền tảng này&#39;</span>);
+}
+
+<span class="tk-com">// nfc_reader (app-facing): app chỉ gọi API này</span>
+<span class="tk-kw">class</span> <span class="tk-type">NfcReader</span> {
+  <span class="tk-type">Stream</span>&lt;<span class="tk-type">String</span>&gt; <span class="tk-kw">get</span> tags =&gt; <span class="tk-type">NfcReaderPlatform</span>.instance.tags();
+}
+
+<span class="tk-com">// Test phía app: thay bằng bản giả, không cần native</span>
+<span class="tk-type">NfcReaderPlatform</span>.instance = <span class="tk-type">FakeNfcReaderPlatform</span>();</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q31.html">Crashlytics báo crash của bản release đã obfuscate chỉ toàn địa chỉ và tên bị đổi (<code>a.b.c</code>), và có crash native trong <code>libflutter.so</code> không có tên hàm. Quy trình symbolicate stack trace của Dart và của engine native là gì, và vì sao hay bị thiếu symbol?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi build <code>--obfuscate --split-debug-info=&lt;dir&gt;</code>, tên class và hàm trong snapshot bị đổi và thông tin debug được tách ra các file symbol (<code>app.android-arm64.symbols</code>...) nằm trong thư mục bạn chỉ định; stack trace Dart ở production vì vậy chỉ còn địa chỉ và tên bị xáo trộn. Để đọc lại, cần đúng file symbol của chính bản build đó: dùng <code>flutter symbolize -i stack.txt -d &lt;thư mục symbols&gt;</code> để dịch thủ công, hoặc upload symbol lên Crashlytics (<code>firebase crashlytics:symbols:upload --app=&lt;appId&gt; &lt;thư mục&gt;</code>) để stack được dịch ngay trên dashboard. Việc khớp symbol với crash dựa vào build id, nên build lại cùng source ở máy khác, hoặc cùng version nhưng build lại thì symbol cũ không dùng được: vì vậy pipeline CI phải lưu thư mục symbols của từng bản phát hành (artifact, kèm version và build number) và upload ngay khi build. Crash native của engine (<code>libflutter.so</code> trên Android, <code>Flutter.framework</code> trên iOS) là một lớp riêng: stack ở đó là địa chỉ trong thư viện native, cần symbol của đúng phiên bản engine (nên khoá phiên bản Flutter bằng FVM để biết chính xác engine nào), với Android dùng <code>ndk-stack</code> hoặc <code>addr2line</code> cùng file <code>.so</code> có symbol, còn iOS cần dSYM của app và của framework, upload lên Crashlytics trong bước archive. Các nguyên nhân thường thiếu symbol: quên upload cho một bản, build lại cho cùng version, bật <code>--split-debug-info</code> mà không giữ thư mục, hoặc plugin native không kèm dSYM. Hãy kiểm chứng bằng một crash thử trên bản staging đã obfuscate trước khi phát hành, và đặt kiểm tra trong CI rằng symbol đã được upload cho mọi bản release.</div>
+        <pre class="code-block"><code># <span class="tk-type">Build</span>: tách symbol ra thư mục riêng, bắt buộc lưu lại theo từng bản phát hành
+flutter build appbundle --release --obfuscate --split-debug-info=build/symbols/<span class="tk-num">1.4</span>.<span class="tk-num">0</span>+<span class="tk-num">27</span>
+
+# <span class="tk-type">D</span>ịch thủ công một stack trace đã obfuscate
+flutter symbolize -i crash_stack.txt -d build/symbols/<span class="tk-num">1.4</span>.<span class="tk-num">0</span>+<span class="tk-num">27</span>
+
+# <span class="tk-type">Upload</span> symbol lên <span class="tk-type">Crashlytics</span> (nên làm tự động trong <span class="tk-type">CI</span> ngay sau khi build)
+firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span class="tk-num">1234567890</span>:android:abc123 build/symbols/<span class="tk-num">1.4</span>.<span class="tk-num">0</span>+<span class="tk-num">27</span></code></pre>
         
       </div>
     </details>
@@ -704,6 +1075,43 @@
     </details>
     </li>
     <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q18.html">Bạn cần biết app của người dùng thật có bị giật không, theo từng màn hình và dòng máy, chứ không chỉ đo trên máy dev. Dùng <code>FrameTiming</code> và <code>addTimingsCallback</code> thế nào để thu thập số liệu frame ở production, và gửi lên mà không ảnh hưởng hiệu năng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flutter báo thời gian từng frame cho app qua <code>SchedulerBinding.instance.addTimingsCallback</code>, nhận danh sách <code>FrameTiming</code> theo lô (không phải từng frame một); mỗi phần tử có <code>buildDuration</code> (UI thread), <code>rasterDuration</code> (raster thread), <code>totalSpan</code> và <code>vsyncOverhead</code>, và callback có cả ở release nên dùng được cho telemetry. Quy trình: coi một frame là chậm khi <code>totalSpan</code> vượt chu kỳ vsync của máy (16,7 ms ở 60Hz, 8,3 ms ở 120Hz, nên đọc refresh rate thay vì hard-code), &#39;đóng băng&#39; khi quá 700 ms (cách Android vitals phân loại), rồi gom theo màn hình (gắn tên route hiện tại qua <code>NavigatorObserver</code>) thành bộ đếm và phân vị (p50, p90, p99, tỉ lệ frame chậm) thay vì gửi từng frame. Tách build và raster để biết nguyên nhân: build chậm là do logic hay rebuild, raster chậm là do hiệu ứng đắt (saveLayer, blur, shader). Gửi theo lô định kỳ hoặc khi app ra background, lấy mẫu một phần người dùng, kèm phiên bản app, model máy, bản OS và việc có bật Impeller hay không. Callback phải rẻ vì nó chạy trong lúc app đang vẽ: tránh I/O hay gọi mạng bên trong. Số liệu thực tế bổ sung cho DevTools chứ không thay thế: khi telemetry báo một màn có tỉ lệ jank cao thì dùng DevTools ở profile mode để tìm nguyên nhân. Có thể thêm marker tuỳ chỉnh bằng <code>Timeline.startSync</code> hay <code>TimelineTask</code> để thấy trong DevTools, và đưa kiểm tra hiệu năng vào CI bằng <code>integration_test</code> kèm <code>binding.traceAction</code> và <code>TimelineSummary</code> để bắt hồi quy trước khi phát hành.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">FrameMonitor</span> {
+  <span class="tk-type">FrameMonitor</span>(<span class="tk-kw">this</span>.currentScreen);
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> <span class="tk-kw">Function</span>() currentScreen; <span class="tk-com">// tên route hiện tại, lấy từ NavigatorObserver</span>
+  <span class="tk-kw">final</span> _stats = &lt;<span class="tk-type">String</span>, <span class="tk-type">ScreenStats</span>&gt;{};
+
+  <span class="tk-kw">void</span> start() {
+    <span class="tk-type">SchedulerBinding</span>.instance.addTimingsCallback(_onTimings);
+  }
+
+  <span class="tk-kw">void</span> _onTimings(<span class="tk-type">List</span>&lt;<span class="tk-type">FrameTiming</span>&gt; timings) {
+    <span class="tk-com">// Callback phải rẻ: chỉ cộng dồn bộ đếm, không I/O hay gọi mạng</span>
+    <span class="tk-kw">final</span> budget = frameBudget(); <span class="tk-com">// 16.7ms ở 60Hz, 8.3ms ở 120Hz</span>
+    <span class="tk-kw">final</span> stats = _stats.putIfAbsent(currentScreen(), <span class="tk-type">ScreenStats</span>.<span class="tk-kw">new</span>);
+    <span class="tk-kw">for</span> (<span class="tk-kw">final</span> t <span class="tk-kw">in</span> timings) {
+      stats.frames++;
+      <span class="tk-kw">if</span> (t.totalSpan &gt; budget) stats.slowFrames++;
+      <span class="tk-kw">if</span> (t.totalSpan &gt; <span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">700</span>)) stats.frozenFrames++;
+      <span class="tk-kw">if</span> (t.buildDuration &gt; budget) stats.slowBuild++; <span class="tk-com">// nghi do logic hay rebuild</span>
+      <span class="tk-kw">if</span> (t.rasterDuration &gt; budget) stats.slowRaster++; <span class="tk-com">// nghi do hiệu ứng đắt</span>
+    }
+  }
+
+  <span class="tk-com">// Gửi theo lô khi app ra nền hoặc theo chu kỳ dài, rồi reset bộ đếm</span>
+  <span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-type">Object</span>&gt; flush() =&gt; {
+    <span class="tk-kw">for</span> (<span class="tk-kw">final</span> e <span class="tk-kw">in</span> _stats.entries) e.key: e.value.toJson(),
+  };
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d07-2.html"><code>RepaintBoundary</code> giải quyết vấn đề gì?</a></h3>
       <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
@@ -857,6 +1265,57 @@
     </details>
     </li>
     <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q25.html">App ví điện tử cần: đăng nhập bằng vân tay hoặc Face ID, lưu refresh token an toàn, chặn chụp màn hình ở màn nhập PIN, và phát hiện thiết bị root hoặc jailbreak. Bạn thiết kế lớp bảo vệ này trong Flutter thế nào, và giới hạn của từng lớp là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mọi kiểm tra phía client chỉ là tín hiệu, nên chính sách cuối cùng phải nằm ở server. Lưu token: dùng Keychain (iOS) và Keystore (Android) qua <code>flutter_secure_storage</code>, không dùng SharedPreferences hay file thường; chọn mức truy cập hợp lý (iOS <code>first_unlock_this_device</code> để không đồng bộ qua iCloud và vẫn đọc được khi refresh ở nền). Sinh trắc học: kết quả của <code>local_auth.authenticate()</code> chỉ là một <code>bool</code> trong process của app, nên nếu quyết định mở khoá chỉ dựa vào đó thì có thể bị hook để bỏ qua; bền hơn là gắn bí mật với sinh trắc ở tầng hệ điều hành (khoá Keystore/Keychain yêu cầu xác thực sinh trắc khi dùng, thường cần code native hoặc plugin hỗ trợ), để đọc token phải đi qua hộp thoại sinh trắc thật. Xử lý các trạng thái: máy chưa đăng ký sinh trắc, bị khoá sau nhiều lần sai, dữ liệu sinh trắc đổi làm khoá mất hiệu lực, và luôn có đường đăng nhập thay thế (mật khẩu hoặc PIN). Chặn chụp màn hình và ẩn nội dung trong màn hình app switcher: Android đặt <code>FLAG_SECURE</code> cho cửa sổ (code native trong <code>MainActivity</code>, hoặc bật tắt theo màn hình qua MethodChannel hay plugin), iOS thì che bằng một view phủ khi app <code>inactive</code> (iOS không chặn được việc chụp màn hình mà chỉ phát hiện được quay màn hình và chụp xong). Root hoặc jailbreak: dùng thư viện như <code>freerasp</code> để lấy tín hiệu, rồi kết hợp attestation phía server (Play Integrity API trên Android, App Attest trên iOS) để server xác minh bản app và thiết bị; vì Frida hay công cụ hook vẫn qua được, chính sách nên theo mức rủi ro (xem số dư thì cho, giao dịch lớn cần thêm OTP). Obfuscation (<code>--obfuscate</code>) chỉ làm khó reverse chứ không phải hàng rào. Ngoài ra không log token, tắt log chi tiết ở release và xoá dữ liệu nhạy cảm khi đăng xuất.</div>
+        <pre class="code-block" data-lang="Kotlin"><code><span class="tk-com">// android/app/src/main/kotlin/.../MainActivity.kt</span>
+<span class="tk-kw">class</span> <span class="tk-type">MainActivity</span> : <span class="tk-type">FlutterFragmentActivity</span>() { <span class="tk-com">// local_auth cần FlutterFragmentActivity</span>
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate(savedInstanceState: <span class="tk-type">Bundle</span>?) {
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState)
+    <span class="tk-com">// Chặn chụp màn hình và ẩn nội dung trong màn hình app switcher</span>
+    <span class="tk-com">// (thực tế nên bật tắt theo màn hình, ví dụ chỉ ở màn nhập PIN, qua MethodChannel)</span>
+    window.setFlags(
+      <span class="tk-type">WindowManager</span>.<span class="tk-type">LayoutParams</span>.<span class="tk-type">FLAG_SECURE</span>,
+      <span class="tk-type">WindowManager</span>.<span class="tk-type">LayoutParams</span>.<span class="tk-type">FLAG_SECURE</span>,
+    )
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q26.html">App Flutter cần đăng nhập qua SSO của công ty (OIDC/OAuth2). Vì sao dùng Authorization Code kèm PKCE với trình duyệt hệ thống thay vì WebView hay lưu client secret trong app, và bạn xử lý redirect, lưu token, refresh, đăng xuất ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">App di động là public client: mọi thứ trong binary đều có thể bị trích xuất nên không thể giữ <code>client_secret</code>. Authorization Code kèm PKCE thay secret bằng một cặp giá trị động: app sinh <code>code_verifier</code> ngẫu nhiên, gửi <code>code_challenge</code> (băm SHA-256 của verifier, phương thức <code>S256</code>) trong yêu cầu đăng nhập, rồi gửi verifier khi đổi code lấy token; kẻ chặn được authorization code (qua custom scheme bị app khác đăng ký trùng) cũng không đổi được token vì không có verifier. Phải mở trang đăng nhập bằng trình duyệt hệ thống (Custom Tabs trên Android, <code>ASWebAuthenticationSession</code> trên iOS) chứ không phải WebView nhúng: app không thấy mật khẩu của người dùng, dùng được phiên SSO sẵn có của trình duyệt, và đó cũng là khuyến nghị của chuẩn (RFC 8252). Package <code>flutter_appauth</code> bọc các SDK AppAuth native và lo PKCE, <code>state</code>, <code>nonce</code>; dùng discovery document (<code>.well-known/openid-configuration</code>) để cấu hình. Redirect URI: App Links hay Universal Links (https đã xác minh) tốt hơn custom scheme vì custom scheme có thể bị app khác chiếm; luôn kiểm tra <code>state</code> để chống CSRF. Token: access token ngắn hạn giữ trong bộ nhớ, refresh token lưu Keychain/Keystore (<code>flutter_secure_storage</code>), bật refresh token rotation phía server và xử lý nhiều request cùng gặp 401 bằng một lần refresh dùng chung. Đăng xuất: xoá token cục bộ, gọi endpoint thu hồi token (revocation) và, nếu cần, end session của IdP để phiên SSO cũng kết thúc. ID token do server xác minh chữ ký cùng <code>aud</code>, <code>iss</code>, <code>exp</code>, đừng tin dữ liệu người dùng chỉ vì app giải mã được. Không dùng implicit flow hay password grant vì chúng đã bị khuyến cáo bỏ.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> appAuth = <span class="tk-type">FlutterAppAuth</span>();
+
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; signIn() <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> result = <span class="tk-kw">await</span> appAuth.authorizeAndExchangeCode(
+    <span class="tk-type">AuthorizationTokenRequest</span>(
+      <span class="tk-str">&#39;mobile-app-client-id&#39;</span>, <span class="tk-com">// public client: không có client secret</span>
+      <span class="tk-str">&#39;vn.shop.app:/oauth2redirect&#39;</span>, <span class="tk-com">// nên dùng App Links https đã xác minh nếu IdP hỗ trợ</span>
+      discoveryUrl: <span class="tk-str">&#39;https://sso.example.vn/.well-known/openid-configuration&#39;</span>,
+      scopes: [<span class="tk-str">&#39;openid&#39;</span>, <span class="tk-str">&#39;profile&#39;</span>, <span class="tk-str">&#39;offline_access&#39;</span>],
+      <span class="tk-com">// PKCE (S256), state và nonce do AppAuth tự sinh và kiểm tra</span>
+    ),
+  );
+
+  <span class="tk-kw">final</span> refresh = result.refreshToken;
+  <span class="tk-kw">if</span> (refresh != <span class="tk-kw">null</span>) {
+    <span class="tk-kw">await</span> secureStorage.write(key: <span class="tk-str">&#39;refresh_token&#39;</span>, value: refresh); <span class="tk-com">// Keychain hoặc Keystore</span>
+  }
+  tokenStore.setAccessToken(result.accessToken); <span class="tk-com">// access token ngắn hạn: chỉ giữ trong bộ nhớ</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d27-3.html">Certificate Pinning giải quyết vấn đề bảo mật gì?</a></h3>
       <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
@@ -890,6 +1349,97 @@
       <div class="model-answer">
         <div class="answer-text">Cả hai OS đều không đảm bảo app được chạy nền đúng lúc: Android có Doze, App Standby Buckets, periodic work của WorkManager tối thiểu 15 phút và có thể bị trì hoãn; iOS chỉ chạy <code>BGAppRefreshTask</code>/<code>BGProcessingTask</code> khi hệ thống quyết định, còn silent push (<code>content-available</code>) bị throttle và không đánh thức app mà user đã force-quit. Vì vậy tôi thiết kế để dữ liệu vẫn đúng khi không có tác vụ nền nào chạy: server là nguồn sự thật, app luôn sync phần chênh lệch khi mở lại, background chỉ là tối ưu. Thông báo quan trọng gửi dạng push hiển thị (alert) chứ không dựa vào silent push để tự tạo local notification; cần chỉnh nội dung trước khi hiện trên iOS (giải mã, tải ảnh) thì dùng Notification Service Extension. Phía Flutter, handler nền của <code>firebase_messaging</code> chạy trong isolate riêng, phải là hàm top-level có <code>@pragma(&#39;vm:entry-point&#39;)</code> và không được đụng vào UI hay state của isolate chính.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q28.html">CTO hỏi có nên chuyển hai app native (Kotlin và Swift) đang có sang Flutter không. Bạn đánh giá và đề xuất thế nào, ngoài việc so sánh hiệu năng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi bắt đầu từ vấn đề thật: lý do muốn đổi (tốc độ ra tính năng, hai app lệch nhau, thiếu người), loại sản phẩm (nội dung hay thương mại, nhiều animation hay chủ yếu form và danh sách, phụ thuộc sâu vào API nền tảng như AR, Bluetooth, widget màn hình khoá), kỹ năng của team (Dart là thứ phải học nhưng người đã biết Kotlin hay Swift lên tay nhanh) và nhu cầu mở rộng sang web hay desktop. Flutter mạnh khi cần một UI thống nhất giữa các nền tảng, tốc độ lặp nhanh nhờ hot reload và một codebase duy nhất. Điểm cần cân nhắc: UI tự vẽ nên &#39;cảm giác nền tảng&#39; và tính năng mới của hệ điều hành đến muộn hơn (cần plugin hoặc platform view), kích thước binary lớn hơn, phụ thuộc vào chất lượng plugin bên thứ ba, accessibility và text input có chi tiết riêng, cộng chi phí chuyển đổi và rủi ro hiệu năng ở các màn đặc thù. Không viết lại một lần: dùng add-to-app để nhúng module Flutter vào app hiện có, bắt đầu từ một luồng ít rủi ro nhưng có giá trị (onboarding, một tab nội dung) cùng tiêu chí đo được: thời gian làm tính năng, số bug lệch giữa hai nền tảng, crash-free, startup, kích thước app và độ hài lòng của dev; đặt mốc đánh giá lại sau một hai quý và có quyền dừng. Kiến trúc cũng phải chuẩn bị: lớp dữ liệu, auth, analytics dùng chung hoặc có cầu nối qua Pigeon hay FFI để native và Flutter không bị trùng logic. Cần có chiến lược thoát: giữ lõi nghiệp vụ tách khỏi UI để nếu Flutter không hợp thì chi phí quay lại có giới hạn. Ghi quyết định bằng ADR, nêu rõ giả định và rủi ro, và cũng cần thành thật rằng với app đã ổn định cùng đội native mạnh, &#39;không chuyển&#39; đôi khi là đáp án đúng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q29.html">Bạn thiết kế hệ thống ghi sự kiện analytics phía Flutter cho app triệu người dùng: không mất sự kiện khi mất mạng hoặc app bị kill, không làm chậm UI hay hao pin, và tuân thủ quyền riêng tư. Thiết kế thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi tách thành API tầng ứng dụng, hàng đợi bền và bộ gửi. API chỉ có một interface <code>Analytics.track(event)</code> (ẩn vendor như Firebase, Amplitude hay backend riêng) và chỉ nhận event theo tracking plan có kiểu (tên, thuộc tính), có thể sinh code từ tài liệu plan để tránh sai tên. Mỗi event được gắn ngay lúc phát sinh: id duy nhất (UUID, để server loại trùng khi retry), thời điểm ở client, session id, anonymous id, phiên bản app và màn hình hiện tại. Event được ghi vào hàng đợi bền (SQLite hoặc file nối đuôi) thay vì chỉ giữ trong bộ nhớ nên app bị kill cũng không mất; việc ghi chạy ngoài luồng UI và gom thành lô nhỏ. Bộ gửi (flush) chạy theo ngưỡng: đủ N event, quá T giây, hoặc khi app chuyển sang <code>paused</code> (qua <code>AppLifecycleListener</code>); gửi theo lô nén, retry với exponential backoff kèm jitter, chỉ xoá khỏi hàng đợi sau khi server xác nhận, giới hạn dung lượng hàng đợi (bỏ event cũ nhất hoặc ít quan trọng nhất khi đầy) và tôn trọng trạng thái mạng cùng chế độ tiết kiệm pin. Server dùng thời điểm nhận cùng độ lệch giữa giờ client và server để hiệu chỉnh thời gian vì đồng hồ máy có thể sai. Quyền riêng tư: chỉ bật khi người dùng đồng ý (consent theo khu vực, iOS ATT nếu dùng định danh quảng cáo), không đưa dữ liệu cá nhân (email, số điện thoại, nội dung nhập) vào thuộc tính, hash hoặc bỏ đi, cho phép xoá dữ liệu khi người dùng yêu cầu và ngừng thu thập khi họ rút consent. Lấy mẫu với event tần suất cao (cuộn, frame) nhưng không bao giờ lấy mẫu event quan trọng như mua hàng, và đo chính chi phí của hệ thống analytics (kích thước hàng đợi, tỉ lệ gửi lỗi). Test bằng một sink giả.</div>
+        <pre class="code-block"><code><span class="tk-kw">abstract</span> <span class="tk-kw">interface</span> <span class="tk-kw">class</span> <span class="tk-type">AnalyticsSink</span> {
+  <span class="tk-type">Future</span>&lt;bool&gt; send(<span class="tk-type">List</span>&lt;<span class="tk-type">AnalyticsEvent</span>&gt; batch); <span class="tk-com">// true: server đã xác nhận</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">AnalyticsClient</span> {
+  <span class="tk-type">AnalyticsClient</span>(<span class="tk-kw">this</span>._queue, <span class="tk-kw">this</span>._sink, {<span class="tk-kw">this</span>.batchSize = <span class="tk-num">20</span>});
+  <span class="tk-kw">final</span> <span class="tk-type">EventQueue</span> _queue; <span class="tk-com">// bền: SQLite hoặc file, không chỉ giữ trong RAM</span>
+  <span class="tk-kw">final</span> <span class="tk-type">AnalyticsSink</span> _sink;
+  <span class="tk-kw">final</span> int batchSize;
+  bool _flushing = <span class="tk-kw">false</span>;
+
+  <span class="tk-kw">void</span> track(<span class="tk-type">String</span> name, [<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-type">Object</span>?&gt; props = <span class="tk-kw">const</span> {}]) {
+    <span class="tk-kw">final</span> event = <span class="tk-type">AnalyticsEvent</span>(
+      id: <span class="tk-kw">const</span> <span class="tk-type">Uuid</span>().v4(), <span class="tk-com">// server dùng id để loại event trùng khi retry</span>
+      name: name,
+      props: scrubPii(props), <span class="tk-com">// bỏ dữ liệu cá nhân trước khi ghi</span>
+      clientTime: <span class="tk-type">DateTime</span>.now().toUtc(),
+      sessionId: _session.id,
+    );
+    unawaited(_queue.add(event).then((_) =&gt; _flushIfNeeded()));
+  }
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; flush() <span class="tk-kw">async</span> {
+    <span class="tk-kw">if</span> (_flushing) <span class="tk-kw">return</span>;
+    _flushing = <span class="tk-kw">true</span>;
+    <span class="tk-kw">try</span> {
+      <span class="tk-kw">while</span> (<span class="tk-kw">true</span>) {
+        <span class="tk-kw">final</span> batch = <span class="tk-kw">await</span> _queue.peek(batchSize);
+        <span class="tk-kw">if</span> (batch.isEmpty) <span class="tk-kw">break</span>;
+        <span class="tk-kw">if</span> (!<span class="tk-kw">await</span> _sink.send(batch)) <span class="tk-kw">break</span>; <span class="tk-com">// lỗi: giữ nguyên trong hàng đợi, thử lại sau với backoff</span>
+        <span class="tk-kw">await</span> _queue.remove(batch.map((e) =&gt; e.id)); <span class="tk-com">// chỉ xoá sau khi server xác nhận</span>
+      }
+    } <span class="tk-kw">finally</span> {
+      _flushing = <span class="tk-kw">false</span>;
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q30.html">App cho nhân viên upload video hiện trường 300MB, người dùng thường khoá máy hoặc chuyển app ngay sau khi bấm gửi, mạng chập chờn. Bạn thiết kế upload hoặc download lớn và bền trong Flutter thế nào, và vì sao dùng <code>Dio</code> thuần trong Dart là không đủ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Điểm cốt lõi: code Dart chạy trong process của app, và hệ điều hành tạm dừng hoặc kill process khi app ra nền (iOS suspend sau vài giây, Android có Doze và giới hạn chạy nền), nên request <code>Dio</code> đang chạy sẽ chết cùng app. Muốn transfer sống sót phải giao cho cơ chế native: iOS có <code>URLSession</code> cấu hình background (hệ thống tự thực hiện kể cả khi app bị suspend), Android có WorkManager hoặc foreground service (từ Android 14 phải khai báo loại foreground service, và có user-initiated data transfer job). Trong Flutter, plugin như <code>background_downloader</code> bọc các cơ chế này thành API Dart (hàng đợi, tiến độ, huỷ, thông báo) nên nên ưu tiên dùng thay vì tự dựng; chỉ tự viết platform channel khi có yêu cầu đặc thù. Thiết kế bền: lưu trạng thái job trong DB cục bộ (id, đường dẫn file, trạng thái, số byte đã gửi) để khôi phục sau khi app bị kill và hiển thị tiến độ; upload theo chunk hoặc giao thức resumable (tus, S3 multipart) để lỗi mạng chỉ phải gửi lại phần dở, kèm checksum để kiểm tra toàn vẹn; server idempotent theo id upload. Nén hoặc chuyển mã video trước khi gửi (làm lúc app còn ở foreground) vì khi đã vào hàng đợi nền thì app không chạy code để xử lý từng chunk. Retry với backoff, chỉ chạy khi có mạng hoặc Wi-Fi nếu người dùng chọn, và tôn trọng chế độ tiết kiệm dữ liệu. Giới hạn cần nói với PM: người dùng force-quit thì iOS huỷ transfer nền, hệ điều hành có thể trì hoãn việc không gấp, và thông báo tiến độ là bắt buộc trên Android khi dùng foreground service. UX cần hiển thị rõ trạng thái hàng đợi (đang chờ, đang gửi, lỗi, thử lại) và cho phép huỷ.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> task = <span class="tk-type">UploadTask</span>(
+  url: <span class="tk-str">&#39;https://api.shop.vn/uploads&#39;</span>,
+  filename: <span class="tk-str">&#39;site-visit.mp4&#39;</span>,
+  baseDirectory: <span class="tk-type">BaseDirectory</span>.applicationDocuments,
+  directory: <span class="tk-str">&#39;pending&#39;</span>,
+  httpRequestMethod: <span class="tk-str">&#39;PUT&#39;</span>,
+  updates: <span class="tk-type">Updates</span>.statusAndProgress,
+  requiresWiFi: <span class="tk-kw">false</span>,
+  retries: <span class="tk-num">5</span>, <span class="tk-com">// plugin tự retry khi lỗi tạm thời</span>
+  metaData: jsonEncode({<span class="tk-str">&#39;jobId&#39;</span>: job.id}), <span class="tk-com">// ánh xạ lại với DB khi app khởi động lại</span>
+);
+
+<span class="tk-com">// Giao cho cơ chế native: sống sót khi app ra nền (iOS background URLSession, Android WorkManager)</span>
+<span class="tk-kw">await</span> <span class="tk-type">FileDownloader</span>().enqueue(task);
+
+<span class="tk-type">FileDownloader</span>().updates.listen((update) {
+  <span class="tk-kw">switch</span> (update) {
+    <span class="tk-kw">case</span> <span class="tk-type">TaskStatusUpdate</span>(:<span class="tk-kw">final</span> status):
+      jobRepo.updateStatus(task.taskId, status.name); <span class="tk-com">// lưu bền để khôi phục sau khi app bị kill</span>
+    <span class="tk-kw">case</span> <span class="tk-type">TaskProgressUpdate</span>(:<span class="tk-kw">final</span> progress):
+      uploadProgress.value = progress;
+  }
+});</code></pre>
         
       </div>
     </details>

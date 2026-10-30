@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Senior: Đoạn code List&lt;num&gt; nums = &lt;int&gt;[1, 2]; nums.add(1.5); compile được nhưng c…</title>
+<meta name="description" content="Generic trong Dart là covariant theo thiết kế: List&lt;int&gt; được coi là kiểu con của List&lt;num&gt;, nên gán được mà analyzer không báo. Cách này tiện (truyền List&lt;T…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/sen-q17.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior: Đoạn code List&lt;num&gt; nums = &lt;int&gt;[1, 2]; nums.add(1.5); compile được nhưng c…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/sen-q17.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/"},{"@type":"ListItem","position":5,"name":"Đoạn code List\u003cnum> nums = \u003cint>[1, 2]; nums.ad…","item":"https://trongmobile.github.io/flutter-prep/s/sen-q17.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Đoạn code List&lt;num&gt; nums = &lt;int&gt;[1, 2]; nums.ad…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/flutter/chu-de/dart/">Dart</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Đoạn code <code>List&lt;num&gt; nums = &lt;int&gt;[1, 2]; nums.add(1.5);</code> compile được nhưng crash lúc chạy với <code>TypeError</code>. Vì sao generic của Dart là covariant, từ khoá <code>covariant</code> giải quyết gì, và gặp lỗi tương tự trong code Flutter thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Generic trong Dart là covariant theo thiết kế: <code>List&lt;int&gt;</code> được coi là kiểu con của <code>List&lt;num&gt;</code>, nên gán được mà analyzer không báo. Cách này tiện (truyền <code>List&lt;Text&gt;</code> vào chỗ cần <code>List&lt;Widget&gt;</code>) nhưng không an toàn kiểu ở thời điểm compile: khi <code>add(1.5)</code> vào một list thực chất là <code>List&lt;int&gt;</code>, Dart phải kiểm tra lúc chạy và ném <code>TypeError</code> (&#39;type double is not a subtype of type int&#39;). Vì vậy Dart chèn kiểm tra runtime ở mọi chỗ ghi qua một giao diện covariant; chỉ đọc (<code>Iterable&lt;T&gt;</code>) thì luôn an toàn. Gặp trong Flutter: <code>final items = [Text(&#39;a&#39;), Text(&#39;b&#39;)];</code> được suy ra là <code>List&lt;Text&gt;</code>, đưa vào <code>Column(children: items)</code> vẫn compile, nhưng nếu về sau <code>items.add(const Icon(Icons.add))</code> thì lỗi lúc chạy; cách tránh là khai báo kiểu tường minh <code>&lt;Widget&gt;[...]</code>. Tương tự, <code>Map&lt;String, dynamic&gt;</code> khác <code>Map&lt;String, Object?&gt;</code> khi parse JSON, và nên dùng <code>List&lt;T&gt;.from</code>/<code>List&lt;T&gt;.of</code> để tạo bản sao có kiểu đúng thay vì ép kiểu. Từ khoá <code>covariant</code> ở tham số cho phép lớp con thu hẹp kiểu tham số của method khi override (<code>void accept(covariant Dog d)</code>), điều vốn bị cấm, đổi lại việc kiểm tra dời sang runtime nên chỉ dùng khi thật cần (framework dùng nó ở những chỗ như <code>RenderObject.setupParentData(covariant RenderObject child)</code>). Khi thiết kế API, ưu tiên trả <code>Iterable&lt;T&gt;</code> hoặc list bất biến (<code>List.unmodifiable</code>) để chủ động tránh việc ghi vào list sai kiểu.</div>
+        <pre class="code-block"><code><span class="tk-kw">void</span> main() {
+  <span class="tk-type">List</span>&lt;num&gt; nums = &lt;int&gt;[<span class="tk-num">1</span>, <span class="tk-num">2</span>]; <span class="tk-com">// compile OK: List&lt;int&gt; là kiểu con của List&lt;num&gt;</span>
+  nums.add(<span class="tk-num">1.5</span>); <span class="tk-com">// TypeError lúc chạy: double không phải int</span>
+
+  <span class="tk-com">// Flutter: kiểu được suy ra là List&lt;Text&gt;</span>
+  <span class="tk-kw">final</span> items = [<span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;a&#39;</span>), <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;b&#39;</span>)];
+  <span class="tk-type">Column</span>(children: items); <span class="tk-com">// OK: chỉ đọc qua giao diện covariant</span>
+  <span class="tk-com">// items.add(const Icon(Icons.add)); // lỗi lúc chạy</span>
+
+  <span class="tk-kw">final</span> widgets = &lt;<span class="tk-type">Widget</span>&gt;[<span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;a&#39;</span>)]; <span class="tk-com">// khai báo kiểu tường minh</span>
+  widgets.add(<span class="tk-kw">const</span> <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.add)); <span class="tk-com">// OK</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">Animal</span> {}
+
+<span class="tk-kw">class</span> <span class="tk-type">Dog</span> <span class="tk-kw">extends</span> <span class="tk-type">Animal</span> {}
+
+<span class="tk-kw">class</span> <span class="tk-type">Shelter</span> {
+  <span class="tk-kw">void</span> accept(<span class="tk-type">Animal</span> a) {}
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">DogShelter</span> <span class="tk-kw">extends</span> <span class="tk-type">Shelter</span> {
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> accept(<span class="tk-kw">covariant</span> <span class="tk-type">Dog</span> d) {} <span class="tk-com">// thu hẹp kiểu tham số: được kiểm tra lúc chạy</span>
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-q17">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/sen-q16.html"><span class="muted small">← Câu trước</span><span>Vì sao Flutter có hot reload ở debug mà bản release thì không, và vì sao app Fl…</span></a>
+  <a class="pager-next" href="../s/sen-q18.html"><span class="muted small">Câu sau →</span><span>Bạn cần biết app của người dùng thật có bị giật không, theo từng màn hình và dò…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/flutter/senior/">Tất cả câu hỏi Flutter Senior</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Dart</h2><a class="section-sub" href="../phong-van/flutter/chu-de/dart/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/sen-q16.html">Vì sao Flutter có hot reload ở debug mà bản release thì không, và vì sao app Flutter không dùng được reflection (dart:mirrors) mà phải dùng sinh code? Dart chạy ở chế độ JIT và AOT khác nhau thế nào, và hệ quả với kích thước, startup và bảo mật ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/fre-q01.html">var, dynamic và Object khác nhau thế nào khi khai báo biến?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q02.html">List, Set và Map khác nhau thế nào? Cho ví dụ khi nào dùng mỗi loại.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q03.html">Named parameter và optional positional parameter khác nhau thế nào? Từ khóa required dùng khi nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q04.html">Nói hàm trong Dart là first-class object nghĩa là gì? Arrow function =&gt; dùng khi nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/fre-q05.html">Named constructor là gì? Viết gọn constructor bằng this. và initializer list thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

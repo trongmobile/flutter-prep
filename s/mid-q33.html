@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle: Bạn tích hợp push bằng Firebase Cloud Messaging trong Flutter: hiện thông b…</title>
+<meta name="description" content="firebase_messaging cung cấp: onMessage (stream, khi app ở foreground), onMessageOpenedApp (người dùng bấm thông báo khi app ở background), getInitialMessage(…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q33.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: Bạn tích hợp push bằng Firebase Cloud Messaging trong Flutter: hiện thông b…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-q33.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Bạn tích hợp push bằng Firebase Cloud Messaging…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q33.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn tích hợp push bằng Firebase Cloud Messaging…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/native/">Native &amp; Platform</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn tích hợp push bằng Firebase Cloud Messaging trong Flutter: hiện thông báo khi app đang mở, xử lý khi người dùng bấm thông báo lúc app đang chạy nền hoặc đã bị tắt, và xử lý tin nhắn khi app ở background. Những chỗ nào Android và iOS khác nhau?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>firebase_messaging</code> cung cấp: <code>onMessage</code> (stream, khi app ở foreground), <code>onMessageOpenedApp</code> (người dùng bấm thông báo khi app ở background), <code>getInitialMessage()</code> (người dùng bấm thông báo khi app đã bị tắt, gọi một lần lúc khởi động) và <code>FirebaseMessaging.onBackgroundMessage(handler)</code> cho tin nhắn data khi app ở background hoặc terminated; handler phải là hàm top-level (hoặc static) có <code>@pragma(&#39;vm:entry-point&#39;)</code> vì chạy trong isolate riêng và có thể chưa có gì được khởi tạo (cần <code>Firebase.initializeApp()</code> trong đó). Tin nhắn có khối <code>notification</code>: khi ở background hệ thống tự hiện; khi foreground trên Android không tự hiện (cần <code>flutter_local_notifications</code> kèm <code>AndroidNotificationChannel</code> để hiện), còn trên iOS bật <code>setForegroundNotificationPresentationOptions(alert: true, sound: true)</code> thì hiện. Tin nhắn chỉ có <code>data</code> luôn đi vào handler nên app tự quyết định hiển thị. Điều hướng khi bấm: lấy <code>message.data</code> rồi chuyển cho router hay deep link; với app bị tắt phải chờ app khởi tạo xong (đăng nhập, router) rồi mới điều hướng. Android 13 trở lên cần xin quyền <code>POST_NOTIFICATIONS</code> (<code>requestPermission()</code>); iOS cần xin quyền và cấu hình APNs (tải key APNs lên Firebase, bật capability Push Notifications và Background Modes). Token lấy bằng <code>getToken()</code> và lắng nghe <code>onTokenRefresh</code> để gửi lại lên server. Silent push trên iOS bị throttle và không đảm bảo tới nên đừng dùng cho việc bắt buộc.</div>
+        <pre class="code-block"><code><span class="tk-ann">@pragma</span>(<span class="tk-str">&#39;vm:entry-point&#39;</span>) <span class="tk-com">// handler chạy trong isolate riêng: phải là hàm top-level</span>
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; _onBackgroundMessage(<span class="tk-type">RemoteMessage</span> message) <span class="tk-kw">async</span> {
+  <span class="tk-kw">await</span> <span class="tk-type">Firebase</span>.initializeApp();
+  <span class="tk-com">// xử lý tin nhắn data, ví dụ lưu vào DB cục bộ</span>
+}
+
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; setupPush(<span class="tk-type">GoRouter</span> router) <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> fcm = <span class="tk-type">FirebaseMessaging</span>.instance;
+  <span class="tk-kw">await</span> fcm.requestPermission(); <span class="tk-com">// Android 13+ và iOS cần xin quyền</span>
+  <span class="tk-type">FirebaseMessaging</span>.onBackgroundMessage(_onBackgroundMessage);
+
+  <span class="tk-kw">await</span> fcm.setForegroundNotificationPresentationOptions(alert: <span class="tk-kw">true</span>, sound: <span class="tk-kw">true</span>); <span class="tk-com">// iOS: hiện khi foreground</span>
+
+  <span class="tk-type">FirebaseMessaging</span>.onMessage.listen(showLocalNotification); <span class="tk-com">// Android foreground: tự hiện bằng flutter_local_notifications</span>
+  <span class="tk-type">FirebaseMessaging</span>.onMessageOpenedApp.listen((m) =&gt; _open(router, m)); <span class="tk-com">// bấm khi app ở background</span>
+
+  <span class="tk-kw">final</span> initial = <span class="tk-kw">await</span> fcm.getInitialMessage(); <span class="tk-com">// bấm khi app đã bị tắt</span>
+  <span class="tk-kw">if</span> (initial != <span class="tk-kw">null</span>) _open(router, initial);
+
+  fcm.onTokenRefresh.listen(tokenRepo.upload); <span class="tk-com">// token đổi: gửi lại lên server</span>
+}
+
+<span class="tk-kw">void</span> _open(<span class="tk-type">GoRouter</span> router, <span class="tk-type">RemoteMessage</span> m) {
+  <span class="tk-kw">final</span> orderId = m.data[<span class="tk-str">&#39;orderId&#39;</span>];
+  <span class="tk-kw">if</span> (orderId != <span class="tk-kw">null</span>) router.go(<span class="tk-str">&#39;/orders/$orderId&#39;</span>);
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q33">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q32.html"><span class="muted small">← Câu trước</span><span>App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu trong…</span></a>
+  <a class="pager-next" href="../s/mid-q34.html"><span class="muted small">Câu sau →</span><span>Marketing gửi link https://shop.vn/orders/123 và muốn bấm vào là mở thẳng màn c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; Platform</h2><a class="section-sub" href="../phong-van/flutter/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/d15-1.html">3 loại Channel (MethodChannel, EventChannel, BasicMessageChannel) khác nhau thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-2.html">Platform Channel giới hạn kiểu dữ liệu nào có thể truyền qua?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-3.html">Platform Channel hoạt động bất đồng bộ hay đồng bộ? Vì sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-4.html">Vì sao mỗi channel cần một name duy nhất?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-m40.html">Native trả lỗi như comment bên dưới. Phía Dart in ra gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/fre-q35.html">Ở mức tổng quan, Flutter khác gì so với phát triển native (Kotlin/Swift) và React Native?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

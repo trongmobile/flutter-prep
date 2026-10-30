@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Flutter Middle (80 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="80 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<title>Câu hỏi phỏng vấn Flutter Middle (100 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle (80 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="80 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle (100 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · flutter · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Middle</h1>
-  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 80 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 100 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/flutter/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -62,17 +62,17 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#dart">Dart</a> <span class="count">3</span></li>
-    <li><a href="#async">Async &amp; Isolate</a> <span class="count">8</span></li>
-    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">14</span></li>
-    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">4</span></li>
-    <li><a href="#state">State Management</a> <span class="count">19</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">8</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
-    <li><a href="#native">Native &amp; Platform</a> <span class="count">4</span></li>
-    <li><a href="#perf">Performance</a> <span class="count">5</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">9</span></li>
+    <li><a href="#dart">Dart</a> <span class="count">4</span></li>
+    <li><a href="#async">Async &amp; Isolate</a> <span class="count">9</span></li>
+    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">21</span></li>
+    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">5</span></li>
+    <li><a href="#state">State Management</a> <span class="count">21</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">9</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">6</span></li>
+    <li><a href="#native">Native &amp; Platform</a> <span class="count">5</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">6</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">10</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
@@ -135,6 +135,34 @@
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q21.html">Hai hàm cùng nhận <code>int</code> là <code>getUser(int userId)</code> và <code>getOrder(int orderId)</code> nên rất dễ truyền nhầm id. Extension type của Dart 3.3 giải quyết việc này thế nào, và nó khác một class bọc thông thường ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Extension type tạo một kiểu mới ở thời điểm compile bọc quanh một &#39;representation type&#39; mà không tốn thêm object lúc chạy: với <code>extension type UserId(int value) {}</code> và <code>OrderId</code> tương tự, hai kiểu này khác nhau nên truyền nhầm là lỗi compile, nhưng ở runtime chúng chỉ là <code>int</code> (zero-cost, không cấp phát thêm như một class bọc). Nó chỉ lộ ra các thành viên bạn khai báo (hoặc <code>implements int</code> để dùng lại API của <code>int</code>), cho phép thêm method, getter và constructor kiểm tra hợp lệ (<code>OrderId.parse</code>). Đánh đổi: vì không tồn tại lúc chạy nên <code>x is UserId</code> thực chất kiểm tra <code>is int</code>, ép kiểu từ <code>dynamic</code> hay JSON không được kiểm tra thêm, và <code>runtimeType</code> thấy <code>int</code>. Do đó không dùng extension type thay cho class khi cần đa hình (override theo kiểu thật) hoặc lưu thêm thông tin theo từng instance. Chúng hợp cho id, đơn vị (Meters, Seconds), và wrapper quanh JSON (<code>extension type User(Map&lt;String, Object?&gt; json)</code>) khi muốn API gọn mà không tốn chi phí cấp phát.</div>
+        <pre class="code-block"><code><span class="tk-kw">extension</span> type <span class="tk-kw">const</span> <span class="tk-type">UserId</span>(int value) {}
+
+<span class="tk-kw">extension</span> type <span class="tk-kw">const</span> <span class="tk-type">OrderId</span>(int value) {
+  <span class="tk-type">OrderId</span>.parse(<span class="tk-type">String</span> raw) : value = int.parse(raw);
+  bool <span class="tk-kw">get</span> isValid =&gt; value &gt; <span class="tk-num">0</span>;
+}
+
+<span class="tk-type">Future</span>&lt;<span class="tk-type">User</span>&gt; getUser(<span class="tk-type">UserId</span> id) <span class="tk-kw">async</span> =&gt; api.fetchUser(id.value);
+<span class="tk-type">Future</span>&lt;<span class="tk-type">Order</span>&gt; getOrder(<span class="tk-type">OrderId</span> id) <span class="tk-kw">async</span> =&gt; api.fetchOrder(id.value);
+
+<span class="tk-kw">void</span> main() {
+  <span class="tk-kw">const</span> userId = <span class="tk-type">UserId</span>(<span class="tk-num">7</span>);
+  <span class="tk-com">// getOrder(userId); // lỗi compile: UserId không phải OrderId</span>
+  getUser(userId);
+
+  <span class="tk-kw">final</span> <span class="tk-kw">dynamic</span> raw = <span class="tk-str">&#39;abc&#39;</span>;
+  <span class="tk-com">// UserId(raw as int) vẫn lỗi lúc chạy: extension type không kiểm tra thêm kiểu của dữ liệu động</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="async">
@@ -178,6 +206,46 @@
     <span class="tk-kw">super</span>.dispose();
   }
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q22.html">Ô tìm kiếm gọi API mỗi khi gõ một ký tự, và kết quả của từ khoá cũ đôi khi về sau, đè lên kết quả mới. Bạn debounce và loại bỏ kết quả cũ thế nào trong Flutter (<code>Timer</code> thuần, rxdart hay Bloc/Riverpod)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có hai vấn đề cần giải riêng: gọi quá nhiều request (cần debounce) và kết quả về sai thứ tự (race condition). Debounce thuần Dart: giữ một <code>Timer?</code>, mỗi lần <code>onChanged</code> thì <code>cancel()</code> timer cũ rồi tạo timer mới 300ms trước khi gọi API, và nhớ <code>cancel()</code> trong <code>dispose()</code>. Race condition: gắn cho mỗi lần tìm một mã (bộ đếm hoặc chính chuỗi query) và bỏ kết quả nếu nó không còn là lần tìm mới nhất; hoặc dùng <code>CancelToken</code> của Dio để huỷ request cũ (server vẫn có thể xử lý nhưng app không nhận kết quả). Với Stream, <code>rxdart</code> có <code>debounceTime</code> và <code>switchMap</code> (tự huỷ subscription của request cũ khi có query mới), gọn nhất khi đã dùng Stream hay Bloc. Với Bloc có <code>EventTransformer</code> kèm <code>restartable()</code> của <code>bloc_concurrency</code>; với Riverpod, <code>AsyncNotifier</code> có thể kiểm tra mã tìm kiếm sau mỗi <code>await</code>, hoặc dùng <code>ref.onDispose</code> để huỷ request khi provider bị invalidate. Cũng nên bỏ qua query rỗng hoặc quá ngắn, và hiển thị trạng thái loading riêng cho lần tìm đang chạy.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _SearchBoxState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">SearchBox</span>&gt; {
+  <span class="tk-type">Timer</span>? _debounce;
+  int _searchId = <span class="tk-num">0</span>; <span class="tk-com">// đánh dấu lần tìm mới nhất</span>
+
+  <span class="tk-kw">void</span> _onChanged(<span class="tk-type">String</span> text) {
+    _debounce?.cancel();
+    _debounce = <span class="tk-type">Timer</span>(<span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">300</span>), () =&gt; _search(text.trim()));
+  }
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; _search(<span class="tk-type">String</span> query) <span class="tk-kw">async</span> {
+    <span class="tk-kw">if</span> (query.length &lt; <span class="tk-num">2</span>) <span class="tk-kw">return</span>;
+    <span class="tk-kw">final</span> id = ++_searchId;
+    <span class="tk-kw">final</span> results = <span class="tk-kw">await</span> api.search(query);
+    <span class="tk-kw">if</span> (!mounted || id != _searchId) <span class="tk-kw">return</span>; <span class="tk-com">// kết quả của lần tìm cũ: bỏ</span>
+    setState(() =&gt; _results = results);
+  }
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _debounce?.cancel();
+    <span class="tk-kw">super</span>.dispose();
+  }
+}
+
+<span class="tk-com">// Với rxdart: switchMap tự huỷ lần tìm cũ khi có query mới</span>
+queryController.stream
+    .debounceTime(<span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">300</span>))
+    .distinct()
+    .switchMap((q) =&gt; <span class="tk-type">Stream</span>.fromFuture(api.search(q)))
+    .listen(_onResults);</code></pre>
         
       </div>
     </details>
@@ -307,6 +375,262 @@
     builder: (context) =&gt; <span class="tk-type">Text</span>(<span class="tk-type">AppLocalizations</span>.of(context)!.cartItems(<span class="tk-num">3</span>)),
   ),
 )</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q23.html">App cần làm mới dữ liệu khi người dùng quay lại từ background và tạm dừng timer khi app ra nền. <code>AppLifecycleState</code> và <code>WidgetsBindingObserver</code> hoạt động thế nào, và <code>AppLifecycleListener</code> khác gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flutter báo trạng thái của app qua <code>AppLifecycleState</code>: <code>resumed</code> (đang hiển thị và nhận input), <code>inactive</code> (đang chuyển tiếp hoặc bị gián đoạn, như có cuộc gọi hay mở trình chuyển app), <code>hidden</code> (từ Flutter 3.13, không còn hiển thị), <code>paused</code> (ở background) và <code>detached</code> (engine còn chạy nhưng không còn view). Để lắng nghe, cho <code>State</code> mixin <code>WidgetsBindingObserver</code>, gọi <code>WidgetsBinding.instance.addObserver(this)</code> trong <code>initState</code>, override <code>didChangeAppLifecycleState</code> và bắt buộc <code>removeObserver</code> trong <code>dispose</code>. Từ Flutter 3.13 có <code>AppLifecycleListener</code> gọn hơn: truyền các callback <code>onResume</code>, <code>onPause</code>, <code>onInactive</code>, <code>onHide</code>, <code>onShow</code>... và gọi <code>dispose()</code> khi xong. Việc nên làm: ở <code>resumed</code> thì làm mới dữ liệu cũ (kiểm tra thời điểm lần cuối để không gọi API mỗi lần), kiểm tra lại quyền; ở <code>paused</code> thì lưu nháp, huỷ stream hoặc timer, dừng animation và camera. Lưu ý trên iOS <code>inactive</code> xảy ra cả khi kéo thanh thông báo nên không coi là rời app; và app có thể bị hệ thống kill khi đang <code>paused</code> mà không báo trước, nên lưu state quan trọng ngay lúc đó chứ đừng đợi <code>detached</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _FeedPageState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">FeedPage</span>&gt; {
+  <span class="tk-kw">late</span> <span class="tk-kw">final</span> <span class="tk-type">AppLifecycleListener</span> _listener;
+  <span class="tk-type">DateTime</span> _lastFetch = <span class="tk-type">DateTime</span>.now();
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> initState() {
+    <span class="tk-kw">super</span>.initState();
+    _listener = <span class="tk-type">AppLifecycleListener</span>(
+      onResume: _refreshIfStale,
+      onPause: _saveDraftAndStopPolling,
+    );
+  }
+
+  <span class="tk-kw">void</span> _refreshIfStale() {
+    <span class="tk-kw">if</span> (<span class="tk-type">DateTime</span>.now().difference(_lastFetch) &gt; <span class="tk-kw">const</span> <span class="tk-type">Duration</span>(minutes: <span class="tk-num">5</span>)) {
+      _lastFetch = <span class="tk-type">DateTime</span>.now();
+      context.read&lt;<span class="tk-type">FeedCubit</span>&gt;().refresh();
+    }
+  }
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _listener.dispose(); <span class="tk-com">// quên dispose là rò rỉ listener</span>
+    <span class="tk-kw">super</span>.dispose();
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q24.html">Các design token riêng của app (màu thành công, màu cảnh báo, khoảng cách) không nằm trong <code>ColorScheme</code> của Material. Làm sao thêm chúng vào theme bằng <code>ThemeExtension</code>, hỗ trợ dark mode, và lưu lựa chọn sáng/tối của người dùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ThemeExtension&lt;T&gt;</code> cho phép gắn dữ liệu tuỳ biến vào <code>ThemeData</code> và lấy ra qua <code>Theme.of(context).extension&lt;AppColors&gt;()</code>, thay vì rải hằng số màu khắp app. Class extension phải cài <code>copyWith</code> và <code>lerp</code> (để chuyển theme có animation mượt). Khai báo hai bản (sáng và tối) rồi gắn vào <code>ThemeData(extensions: [...])</code> của <code>theme</code> và <code>darkTheme</code>. Với Material 3, dùng <code>ColorScheme.fromSeed(seedColor:, brightness:)</code> để sinh bảng màu nhất quán và chỉ thêm extension cho phần nằm ngoài scheme. Chọn chế độ bằng <code>MaterialApp(themeMode: ThemeMode.system | light | dark)</code>; muốn người dùng đổi và nhớ lựa chọn thì giữ <code>ThemeMode</code> trong một notifier (Riverpod, Provider, Cubit), lưu bằng <code>shared_preferences</code> và đọc lúc khởi động để không nháy sai theme khi mở app. Giữ API gọn bằng extension trên <code>BuildContext</code> (<code>context.appColors.success</code>). Đừng hard-code màu trong widget, và kiểm tra cả hai theme (golden test sáng và tối) cùng độ tương phản.</div>
+        <pre class="code-block"><code><span class="tk-ann">@immutable</span>
+<span class="tk-kw">class</span> <span class="tk-type">AppColors</span> <span class="tk-kw">extends</span> <span class="tk-type">ThemeExtension</span>&lt;<span class="tk-type">AppColors</span>&gt; {
+  <span class="tk-kw">const</span> <span class="tk-type">AppColors</span>({<span class="tk-kw">required</span> <span class="tk-kw">this</span>.success, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.warning});
+  <span class="tk-kw">final</span> <span class="tk-type">Color</span> success;
+  <span class="tk-kw">final</span> <span class="tk-type">Color</span> warning;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">AppColors</span> copyWith({<span class="tk-type">Color</span>? success, <span class="tk-type">Color</span>? warning}) =&gt;
+      <span class="tk-type">AppColors</span>(success: success ?? <span class="tk-kw">this</span>.success, warning: warning ?? <span class="tk-kw">this</span>.warning);
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">AppColors</span> lerp(<span class="tk-type">ThemeExtension</span>&lt;<span class="tk-type">AppColors</span>&gt;? other, double t) {
+    <span class="tk-kw">if</span> (other <span class="tk-kw">is</span>! <span class="tk-type">AppColors</span>) <span class="tk-kw">return</span> <span class="tk-kw">this</span>;
+    <span class="tk-kw">return</span> <span class="tk-type">AppColors</span>(
+      success: <span class="tk-type">Color</span>.lerp(success, other.success, t)!,
+      warning: <span class="tk-type">Color</span>.lerp(warning, other.warning, t)!,
+    );
+  }
+}
+
+<span class="tk-kw">extension</span> <span class="tk-type">AppThemeX</span> <span class="tk-kw">on</span> <span class="tk-type">BuildContext</span> {
+  <span class="tk-type">AppColors</span> <span class="tk-kw">get</span> appColors =&gt; <span class="tk-type">Theme</span>.of(<span class="tk-kw">this</span>).<span class="tk-kw">extension</span>&lt;<span class="tk-type">AppColors</span>&gt;()!;
+}
+
+<span class="tk-type">MaterialApp</span>(
+  themeMode: themeMode, <span class="tk-com">// đọc từ notifier, lưu bằng shared_preferences</span>
+  theme: <span class="tk-type">ThemeData</span>(
+    colorScheme: <span class="tk-type">ColorScheme</span>.fromSeed(seedColor: <span class="tk-type">Colors</span>.indigo),
+    extensions: <span class="tk-kw">const</span> [<span class="tk-type">AppColors</span>(success: <span class="tk-type">Color</span>(0xFF2E7D32), warning: <span class="tk-type">Color</span>(0xFFED6C02))],
+  ),
+  darkTheme: <span class="tk-type">ThemeData</span>(
+    colorScheme: <span class="tk-type">ColorScheme</span>.fromSeed(seedColor: <span class="tk-type">Colors</span>.indigo, brightness: <span class="tk-type">Brightness</span>.dark),
+    extensions: <span class="tk-kw">const</span> [<span class="tk-type">AppColors</span>(success: <span class="tk-type">Color</span>(0xFF66BB6A), warning: <span class="tk-type">Color</span>(0xFFFFA726))],
+  ),
+  home: <span class="tk-kw">const</span> <span class="tk-type">HomePage</span>(),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q25.html">Khách hàng yêu cầu app hỗ trợ người dùng TalkBack và VoiceOver. Flutter xây dựng cây accessibility (semantics) thế nào, bạn thêm nhãn và gộp nội dung ra sao, và kiểm tra tự động những gì (vùng chạm, độ tương phản)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flutter tự sinh semantics tree từ widget: <code>Text</code>, các loại button và <code>TextField</code> đã có nhãn và vai trò sẵn nên trình đọc màn hình đọc được. Chỗ phải bổ sung: icon-only button thiếu nhãn (dùng <code>tooltip</code> của <code>IconButton</code> hoặc <code>Semantics(label: ...)</code>), ảnh có ý nghĩa (<code>Image(semanticLabel:)</code>), widget tự vẽ bằng <code>CustomPaint</code> hay <code>GestureDetector</code> (bọc <code>Semantics(button: true, label:, onTap:)</code>), và các trạng thái (<code>selected</code>, <code>toggled</code>, <code>value</code>). <code>MergeSemantics</code> gộp nhiều widget thành một mục đọc (ví dụ nhãn, giá và nút trong một card), <code>ExcludeSemantics</code> ẩn phần trang trí khỏi trình đọc, còn <code>Semantics(liveRegion: true)</code> hoặc <code>SemanticsService.announce</code> để thông báo thay đổi động. Các yêu cầu khác: vùng chạm tối thiểu 48×48 dp trên Android (44×44 pt trên iOS), <code>kMinInteractiveDimension</code>; độ tương phản đủ (WCAG: 4.5:1 cho chữ thường); hỗ trợ tăng cỡ chữ (không đặt chiều cao cố định cho text); không chỉ dùng màu để truyền đạt trạng thái; thứ tự focus hợp lý (<code>FocusTraversalGroup</code>). Kiểm tra tự động trong widget test bằng <code>meetsGuideline(androidTapTargetGuideline)</code>, <code>labeledTapTargetGuideline</code>, <code>textContrastGuideline</code>, và vẫn cần thử thủ công bằng TalkBack, VoiceOver vì công cụ chỉ bắt được một phần.</div>
+        <pre class="code-block"><code><span class="tk-type">Semantics</span>(
+  button: <span class="tk-kw">true</span>,
+  label: <span class="tk-str">&#39;Thêm vào giỏ hàng, Áo thun, 199.000 đồng&#39;</span>,
+  child: <span class="tk-type">ExcludeSemantics</span>( <span class="tk-com">// phần trang trí bên trong không cần đọc riêng</span>
+    child: <span class="tk-type">InkWell</span>(
+      onTap: addToCart,
+      child: <span class="tk-kw">const</span> <span class="tk-type">ProductCardContent</span>(),
+    ),
+  ),
+)
+
+<span class="tk-type">IconButton</span>(
+  icon: <span class="tk-kw">const</span> <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.delete),
+  tooltip: <span class="tk-str">&#39;Xoá sản phẩm&#39;</span>, <span class="tk-com">// vừa là tooltip, vừa là nhãn cho trình đọc màn hình</span>
+  onPressed: onDelete,
+)
+
+testWidgets(<span class="tk-str">&#39;đáp ứng hướng dẫn accessibility&#39;</span>, (tester) <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> handle = tester.ensureSemantics();
+  <span class="tk-kw">await</span> tester.pumpWidget(<span class="tk-kw">const</span> <span class="tk-type">MaterialApp</span>(home: <span class="tk-type">ProductPage</span>()));
+
+  <span class="tk-kw">await</span> expectLater(tester, meetsGuideline(androidTapTargetGuideline)); <span class="tk-com">// vùng chạm tối thiểu</span>
+  <span class="tk-kw">await</span> expectLater(tester, meetsGuideline(labeledTapTargetGuideline)); <span class="tk-com">// mọi vùng chạm đều có nhãn</span>
+  <span class="tk-kw">await</span> expectLater(tester, meetsGuideline(textContrastGuideline)); <span class="tk-com">// độ tương phản chữ</span>
+  handle.dispose();
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q26.html">Một thẻ vừa có <code>onTap</code> vừa có <code>onDoubleTap</code> bị trễ phản hồi khi chạm, và một item vuốt ngang đặt trong <code>PageView</code> hay <code>ListView</code> thì lúc nhận lúc không. Gesture arena của Flutter giải quyết xung đột cử chỉ thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi lần chạm, các <code>GestureRecognizer</code> cùng bắt đầu &#39;thi đấu&#39; trong gesture arena: chỉ một recognizer thắng và nhận sự kiện, các recognizer còn lại bị loại. Một recognizer có thể thắng sớm khi đủ điều kiện (ví dụ kéo vượt ngưỡng), hoặc thua khi recognizer khác thắng. Vì vậy <code>onTap</code> cùng <code>onDoubleTap</code> trên một widget: tap phải đợi hết khoảng chờ double-tap (khoảng 300 ms) để biết có lần chạm thứ hai không, gây trễ; chỉ khai báo <code>onDoubleTap</code> khi thật cần. Cử chỉ kéo ngang trong widget cuộn ngang (<code>PageView</code>, <code>TabBarView</code>, <code>ListView</code> ngang) tranh nhau cùng hướng: bên nào thắng phụ thuộc hướng kéo ban đầu; cuộn dọc và vuốt ngang khác hướng thì cùng tồn tại tốt. Muốn kiểm soát thì dùng <code>RawGestureDetector</code> với recognizer tuỳ chỉnh (như <code>EagerGestureRecognizer</code> để thắng ngay), <code>Listener</code> để nhận pointer thô ngoài arena, <code>behavior: HitTestBehavior.opaque</code> để vùng trống cũng nhận chạm, và <code>gestureRecognizers</code> của platform view (bản đồ, WebView) để quyết định cử chỉ nào được chuyển cho view native. Để debug, đặt <code>debugPrintGestureArenaDiagnostics = true</code> rồi đọc log.</div>
+        <pre class="code-block"><code><span class="tk-com">// Bản đồ trong ListView cuộn dọc: cho bản đồ thắng cử chỉ kéo</span>
+<span class="tk-type">SizedBox</span>(
+  height: <span class="tk-num">240</span>,
+  child: <span class="tk-type">GoogleMap</span>(
+    initialCameraPosition: <span class="tk-kw">const</span> <span class="tk-type">CameraPosition</span>(target: <span class="tk-type">LatLng</span>(<span class="tk-num">10.77</span>, <span class="tk-num">106.7</span>), zoom: <span class="tk-num">14</span>),
+    gestureRecognizers: {
+      <span class="tk-type">Factory</span>&lt;<span class="tk-type">OneSequenceGestureRecognizer</span>&gt;(() =&gt; <span class="tk-type">EagerGestureRecognizer</span>()),
+    },
+  ),
+)
+
+<span class="tk-com">// onTap kèm onDoubleTap: tap phải chờ khoảng 300ms để biết có lần chạm thứ hai không</span>
+<span class="tk-type">GestureDetector</span>(
+  onTap: openDetail,
+  onDoubleTap: toggleLike, <span class="tk-com">// chỉ khai báo khi thật cần, nếu không tap sẽ bị trễ</span>
+  child: <span class="tk-kw">const</span> <span class="tk-type">ProductCard</span>(),
+)
+
+<span class="tk-com">// Debug: in diagnostics của gesture arena ra console</span>
+debugPrintGestureArenaDiagnostics = <span class="tk-kw">true</span>;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q27.html">Bạn muốn ảnh sản phẩm &#39;bay&#39; mượt từ danh sách sang màn chi tiết (Hero), đồng thời đổi hiệu ứng chuyển trang (fade, slide) cho một số màn khi dùng <code>go_router</code>. Làm thế nào, và Hero hay lỗi ở đâu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Hero</code> bọc widget ở cả hai màn với cùng <code>tag</code>; khi điều hướng bằng một <code>PageRoute</code> (như <code>MaterialPageRoute</code>), Flutter tìm các Hero cùng tag ở route cũ và route mới rồi animate vị trí và kích thước giữa chúng trong overlay. Lỗi hay gặp: tag trùng nhau trong cùng một màn (dùng cùng tag cho mọi item của danh sách) nên phải gắn id (<code>&#39;product-${p.id}&#39;</code>); chỉ một trong hai route có Hero nên không có hiệu ứng; widget con ở hai bên khác nhau (Text khác style) làm hình &#39;nhảy&#39; giữa chừng, khắc phục bằng <code>flightShuttleBuilder</code> hoặc bọc <code>Material</code>; và dùng với route không phải <code>PageRoute</code> (như dialog) thì không hoạt động. Đổi hiệu ứng chuyển trang: với <code>Navigator</code> dùng <code>PageRouteBuilder(transitionsBuilder: ...)</code> (kèm <code>FadeTransition</code>, <code>SlideTransition</code>); với <code>go_router</code> dùng <code>pageBuilder</code> trả <code>CustomTransitionPage</code> (có <code>transitionsBuilder</code> và <code>transitionDuration</code>) cho từng route, hoặc đặt mặc định cho cả app bằng <code>PageTransitionsTheme</code> trong <code>ThemeData</code> theo từng nền tảng. Hiệu ứng nên ngắn (khoảng 200–400 ms), không chặn tương tác, và tôn trọng cài đặt giảm chuyển động của hệ thống (<code>MediaQuery.disableAnimationsOf</code>).</div>
+        <pre class="code-block"><code><span class="tk-com">// Danh sách: mỗi item một tag duy nhất</span>
+<span class="tk-type">Hero</span>(
+  tag: <span class="tk-str">&#39;product-${product.id}&#39;</span>,
+  child: <span class="tk-type">Image</span>.network(product.imageUrl, fit: <span class="tk-type">BoxFit</span>.cover),
+)
+
+<span class="tk-com">// go_router: hiệu ứng fade riêng cho màn chi tiết</span>
+<span class="tk-type">GoRoute</span>(
+  path: <span class="tk-str">&#39;/products/:id&#39;</span>,
+  pageBuilder: (context, state) =&gt; <span class="tk-type">CustomTransitionPage</span>(
+    key: state.pageKey,
+    transitionDuration: <span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">300</span>),
+    child: <span class="tk-type">ProductDetailPage</span>(id: state.pathParameters[<span class="tk-str">&#39;id&#39;</span>]!),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) =&gt;
+        <span class="tk-type">FadeTransition</span>(opacity: animation, child: child),
+  ),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q28.html">App có <code>TabBarView</code> mà mỗi tab là một danh sách cuộn; chuyển tab qua lại thì mất vị trí cuộn và phải tải lại dữ liệu. <code>AutomaticKeepAliveClientMixin</code>, <code>PageStorageKey</code> và <code>IndexedStack</code> giải quyết thế nào, và đánh đổi ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Widget con của <code>TabBarView</code>, <code>PageView</code> hay <code>ListView</code> bị dispose khi ra khỏi vùng nhìn (cả State của nó), nên vị trí cuộn và dữ liệu cục bộ mất. Có ba hướng. Một là <code>AutomaticKeepAliveClientMixin</code>: State của mỗi tab mixin vào, override <code>wantKeepAlive =&gt; true</code> và gọi <code>super.build(context)</code> trong <code>build</code>; tab đó được giữ sống (kể cả vị trí cuộn của <code>ScrollController</code> bên trong) khi ra khỏi vùng nhìn, đổi lại mọi tab đã mở đều chiếm bộ nhớ nên chỉ hợp khi số tab ít. Hai là <code>PageStorageKey</code> đặt trên <code>ListView</code> hay <code>ScrollView</code> để lưu và khôi phục vị trí cuộn vào <code>PageStorage</code> của route khi widget bị tạo lại; nó chỉ lưu giá trị cuộn chứ không giữ State hay dữ liệu. Ba là <code>IndexedStack</code>, giữ tất cả tab sống và build ngay từ đầu (tốn thêm lúc khởi động). Cách bền nhất là không giữ dữ liệu trong State của widget mà để ở tầng state management (Riverpod, Bloc) hoặc cache của repository: widget bị tạo lại vẫn đọc lại dữ liệu có sẵn, nên không cần giữ widget sống. Quyết định dựa trên chi phí: tab nặng (bản đồ, video) thì không nên giữ sống.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _FeedTabState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">FeedTab</span>&gt; <span class="tk-kw">with</span> <span class="tk-type">AutomaticKeepAliveClientMixin</span> {
+  <span class="tk-ann">@override</span>
+  bool <span class="tk-kw">get</span> wantKeepAlive =&gt; <span class="tk-kw">true</span>; <span class="tk-com">// giữ State (và vị trí cuộn) khi tab ra khỏi vùng nhìn</span>
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">super</span>.build(context); <span class="tk-com">// bắt buộc khi dùng mixin này</span>
+    <span class="tk-kw">return</span> <span class="tk-type">ListView</span>.builder(
+      key: <span class="tk-kw">const</span> <span class="tk-type">PageStorageKey</span>(<span class="tk-str">&#39;feed-list&#39;</span>), <span class="tk-com">// lưu và khôi phục vị trí cuộn</span>
+      itemCount: items.length,
+      itemBuilder: (_, i) =&gt; <span class="tk-type">FeedItem</span>(items[i]),
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q40.html">Form đăng ký có nhiều <code>TextField</code>: bấm Enter trên bàn phím phải nhảy sang ô tiếp theo, ô cuối thì gửi form, chạm ra ngoài thì ẩn bàn phím, và khi validate sai thì phải focus vào ô lỗi. Bạn quản lý focus bằng <code>FocusNode</code>, <code>TextInputAction</code> và <code>onTapOutside</code> thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi ô nhập có một <code>FocusNode</code>; <code>TextInputAction.next</code> đổi nút Enter thành &#39;Tiếp&#39; và <code>onSubmitted</code>/<code>onFieldSubmitted</code> chuyển focus bằng <code>FocusScope.of(context).nextFocus()</code> (đi theo thứ tự traversal mặc định) hoặc <code>requestFocus</code> tới một node cụ thể; ô cuối đặt <code>TextInputAction.done</code> và gọi hàm gửi. <code>FocusNode</code> do bạn tạo phải tạo một lần trong <code>initState</code> và <code>dispose()</code> trong <code>dispose</code>, giống <code>TextEditingController</code>. Ẩn bàn phím khi chạm ra ngoài: <code>TextField(onTapOutside: (_) =&gt; FocusManager.instance.primaryFocus?.unfocus())</code> (có từ Flutter 3.7), hoặc bọc cả màn hình bằng <code>GestureDetector(onTap: () =&gt; FocusScope.of(context).unfocus())</code>. Khi validate sai, tìm ô lỗi đầu tiên rồi <code>focusNode.requestFocus()</code> (Flutter tự cuộn tới ô đang focus trong vùng cuộn) hoặc <code>Scrollable.ensureVisible(context, ...)</code>; <code>Form</code> với <code>autovalidateMode</code> hiện lỗi sau khi người dùng tương tác và <code>FormState.validate()</code> trả về <code>bool</code>. <code>autofocus: true</code> hợp cho ô đầu của màn đơn giản nhưng đừng dùng ở mọi màn vì bàn phím bật lên bất ngờ. Dùng <code>AutofillGroup</code> và <code>autofillHints</code> (như <code>AutofillHints.email</code>) để hệ điều hành gợi ý email hay mật khẩu. Khi thứ tự tab tự nhiên không đúng (bàn phím cứng, web, desktop) thì dùng <code>FocusTraversalGroup</code> kèm <code>OrderedTraversalPolicy</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _SignUpFormState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">SignUpForm</span>&gt; {
+  <span class="tk-kw">final</span> _formKey = <span class="tk-type">GlobalKey</span>&lt;<span class="tk-type">FormState</span>&gt;();
+  <span class="tk-kw">final</span> _emailFocus = <span class="tk-type">FocusNode</span>();
+  <span class="tk-kw">final</span> _passwordFocus = <span class="tk-type">FocusNode</span>();
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _emailFocus.dispose(); <span class="tk-com">// FocusNode phải được dispose</span>
+    _passwordFocus.dispose();
+    <span class="tk-kw">super</span>.dispose();
+  }
+
+  <span class="tk-kw">void</span> _submit() {
+    <span class="tk-kw">if</span> (!_formKey.currentState!.validate()) {
+      <span class="tk-com">// Minh hoạ: thực tế tìm ô lỗi đầu tiên rồi requestFocus, Flutter tự cuộn tới ô đang focus</span>
+      _emailFocus.requestFocus();
+      <span class="tk-kw">return</span>;
+    }
+    <span class="tk-com">// gửi form...</span>
+  }
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">Form</span>(
+      key: _formKey,
+      child: <span class="tk-type">Column</span>(
+        children: [
+          <span class="tk-type">TextFormField</span>(
+            focusNode: _emailFocus,
+            textInputAction: <span class="tk-type">TextInputAction</span>.next, <span class="tk-com">// Enter chuyển sang ô kế tiếp</span>
+            keyboardType: <span class="tk-type">TextInputType</span>.emailAddress,
+            autofillHints: <span class="tk-kw">const</span> [<span class="tk-type">AutofillHints</span>.email],
+            onFieldSubmitted: (_) =&gt; _passwordFocus.requestFocus(),
+            onTapOutside: (_) =&gt; <span class="tk-type">FocusManager</span>.instance.primaryFocus?.unfocus(), <span class="tk-com">// chạm ra ngoài thì ẩn bàn phím</span>
+          ),
+          <span class="tk-type">TextFormField</span>(
+            focusNode: _passwordFocus,
+            obscureText: <span class="tk-kw">true</span>,
+            textInputAction: <span class="tk-type">TextInputAction</span>.done, <span class="tk-com">// ô cuối: Enter gửi form</span>
+            onFieldSubmitted: (_) =&gt; _submit(),
+            onTapOutside: (_) =&gt; <span class="tk-type">FocusManager</span>.instance.primaryFocus?.unfocus(),
+          ),
+        ],
+      ),
+    );
+  }
+}</code></pre>
         
       </div>
     </details>
@@ -485,6 +809,61 @@
     </details>
     </li>
     <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q29.html">App cần chạy tốt trên điện thoại, máy tính bảng và máy gập: điện thoại dùng thanh điều hướng dưới, màn hình rộng dùng <code>NavigationRail</code>. Bạn thiết kế layout thích ứng (adaptive) thế nào, và <code>.adaptive</code> widget, <code>LayoutBuilder</code>, <code>MediaQuery</code> được dùng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dựa vào kích thước cửa sổ chứ không dựa vào loại thiết bị: Material 3 chia theo breakpoint chiều rộng (compact dưới 600dp, medium 600–839dp, expanded từ 840dp). Đọc kích thước cả cửa sổ bằng <code>MediaQuery.sizeOf(context)</code> để chọn kiểu điều hướng (thanh dưới, <code>NavigationRail</code>, thanh bên cố định), còn <code>LayoutBuilder</code> đo không gian cha cấp cho một vùng cụ thể nên hợp với từng component (card đổi từ dọc sang ngang). Dựng cấu trúc master–detail: hẹp thì sang màn chi tiết bằng push, rộng thì hiện danh sách và chi tiết cạnh nhau, và state chọn item nằm ngoài layout để xoay màn hình hay kéo giãn cửa sổ không làm mất. Dùng <code>Flexible</code>/<code>Expanded</code> thay vì kích thước cố định, giới hạn bề rộng nội dung (<code>ConstrainedBox(maxWidth: 600)</code>) trên màn lớn để chữ không bị kéo quá dài. Các widget thích ứng nền tảng như <code>Switch.adaptive</code>, <code>Slider.adaptive</code>, <code>CircularProgressIndicator.adaptive</code>, <code>showAdaptiveDialog</code> chọn kiểu Material hay Cupertino theo nền tảng; nhưng thích ứng kích thước và thích ứng nền tảng là hai việc khác nhau. Máy gập có <code>MediaQuery.displayFeaturesOf</code> (vùng bản lề) để tránh đặt nội dung ngay trên khe gập. Đừng khoá hướng màn hình vì có tablet, ChromeOS và chế độ đa cửa sổ; kiểm tra bằng nhiều cỡ cửa sổ trong DevTools hoặc emulator resizable, và trong <code>flutter test</code> bằng <code>tester.view.physicalSize</code> cho từng breakpoint.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">AdaptiveShell</span> <span class="tk-kw">extends</span> <span class="tk-type">StatelessWidget</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">AdaptiveShell</span>({<span class="tk-kw">super</span>.key, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.index, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.onSelect, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.body});
+  <span class="tk-kw">final</span> int index;
+  <span class="tk-kw">final</span> <span class="tk-type">ValueChanged</span>&lt;int&gt; onSelect;
+  <span class="tk-kw">final</span> <span class="tk-type">Widget</span> body;
+
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> _destinations = [
+    (icon: <span class="tk-type">Icons</span>.home, label: <span class="tk-str">&#39;Trang chủ&#39;</span>),
+    (icon: <span class="tk-type">Icons</span>.receipt_long, label: <span class="tk-str">&#39;Đơn hàng&#39;</span>),
+    (icon: <span class="tk-type">Icons</span>.person, label: <span class="tk-str">&#39;Tài khoản&#39;</span>),
+  ];
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">final</span> width = <span class="tk-type">MediaQuery</span>.sizeOf(context).width; <span class="tk-com">// chiều rộng cửa sổ, không phải loại thiết bị</span>
+    <span class="tk-kw">if</span> (width &gt;= <span class="tk-num">600</span>) {
+      <span class="tk-kw">return</span> <span class="tk-type">Scaffold</span>(
+        body: <span class="tk-type">Row</span>(
+          children: [
+            <span class="tk-type">NavigationRail</span>(
+              selectedIndex: index,
+              onDestinationSelected: onSelect,
+              labelType: <span class="tk-type">NavigationRailLabelType</span>.all,
+              destinations: [
+                <span class="tk-kw">for</span> (<span class="tk-kw">final</span> d <span class="tk-kw">in</span> _destinations)
+                  <span class="tk-type">NavigationRailDestination</span>(icon: <span class="tk-type">Icon</span>(d.icon), label: <span class="tk-type">Text</span>(d.label)),
+              ],
+            ),
+            <span class="tk-type">Expanded</span>(child: body),
+          ],
+        ),
+      );
+    }
+    <span class="tk-kw">return</span> <span class="tk-type">Scaffold</span>(
+      body: body,
+      bottomNavigationBar: <span class="tk-type">NavigationBar</span>(
+        selectedIndex: index,
+        onDestinationSelected: onSelect,
+        destinations: [
+          <span class="tk-kw">for</span> (<span class="tk-kw">final</span> d <span class="tk-kw">in</span> _destinations) <span class="tk-type">NavigationDestination</span>(icon: <span class="tk-type">Icon</span>(d.icon), label: d.label),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d07-3.html">&#39;Constraints go down, sizes go up&#39; nghĩa là gì?</a></h3>
       <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
@@ -563,6 +942,78 @@
       <div class="model-answer">
         <div class="answer-text">Ephemeral state là state cục bộ của một widget mà nơi khác không cần biết (tab đang chọn, trạng thái expand, animation, giá trị form tạm) — <code>setState</code> trong <code>StatefulWidget</code> là đủ và đơn giản nhất. App state được chia sẻ giữa nhiều màn hình, sống lâu hơn widget, cần test logic riêng hoặc đồng bộ với server (user đăng nhập, giỏ hàng, dữ liệu cache) — nên đưa vào Riverpod/Bloc. Dấu hiệu cần nâng cấp: phải truyền data/callback qua nhiều tầng, hai màn hình cần cùng dữ liệu, hoặc logic nghiệp vụ nằm lẫn trong <code>State</code>. Ngược lại, đẩy mọi thứ (kể cả checkbox tạm) lên global state làm code rườm rà và khó theo dõi.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q35.html">Một bộ đếm hay một cờ bật/tắt đơn giản có cần dùng Provider hay Bloc không? <code>ValueNotifier</code>, <code>ValueListenableBuilder</code> và <code>ListenableBuilder</code> hoạt động thế nào, và những bẫy nào hay gặp (đổi nội dung list bên trong, quên dispose)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không cần: Flutter có sẵn <code>Listenable</code>. <code>ValueNotifier&lt;T&gt;</code> giữ một giá trị và gọi các listener mỗi khi <code>value</code> được gán một giá trị khác (so bằng <code>==</code>); <code>ValueListenableBuilder</code> lắng nghe nó và chỉ rebuild phần <code>builder</code>, nên hợp với state cục bộ nhỏ (tiến độ upload, ẩn hiện mật khẩu) mà không phải <code>setState</code> làm rebuild cả màn hình. <code>ChangeNotifier</code> dùng cho nhiều trường và tự gọi <code>notifyListeners()</code>; <code>ListenableBuilder</code> (Flutter 3.10 trở lên) rebuild theo bất kỳ <code>Listenable</code> nào, kể cả <code>Listenable.merge([a, b])</code> để lắng nghe nhiều nguồn và <code>AnimationController</code>. Các bẫy: gán cùng giá trị thì không thông báo; với <code>ValueNotifier&lt;List&lt;int&gt;&gt;</code>, <code>value.add(1)</code> sửa tại chỗ không thông báo vì tham chiếu không đổi, phải gán list mới (<code>value = [...value, 1]</code>); notifier tạo trong <code>build</code> sẽ bị tạo lại mỗi lần rebuild, nên tạo trong <code>initState</code> (hoặc là field của State) và <code>dispose()</code> khi xong; truyền <code>child</code> cho builder với những phần không đổi để khỏi rebuild. Khi state cần dùng chung nhiều màn, cần test logic hay có phụ thuộc phức tạp thì dùng giải pháp state management (Riverpod, Bloc); <code>ValueNotifier</code> là lựa chọn nhẹ cho phạm vi nhỏ.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _PasswordFieldState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">PasswordField</span>&gt; {
+  <span class="tk-kw">final</span> _obscure = <span class="tk-type">ValueNotifier</span>&lt;bool&gt;(<span class="tk-kw">true</span>); <span class="tk-com">// tạo một lần trong State</span>
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _obscure.dispose(); <span class="tk-com">// quên dispose là rò rỉ</span>
+    <span class="tk-kw">super</span>.dispose();
+  }
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">ValueListenableBuilder</span>&lt;bool&gt;(
+      valueListenable: _obscure,
+      builder: (context, obscure, child) =&gt; <span class="tk-type">TextField</span>(
+        obscureText: obscure,
+        decoration: <span class="tk-type">InputDecoration</span>(
+          suffixIcon: <span class="tk-type">IconButton</span>(
+            icon: <span class="tk-type">Icon</span>(obscure ? <span class="tk-type">Icons</span>.visibility : <span class="tk-type">Icons</span>.visibility_off),
+            onPressed: () =&gt; _obscure.value = !obscure, <span class="tk-com">// chỉ TextField này rebuild, không rebuild cả màn hình</span>
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+<span class="tk-com">// List: phải gán list mới thì mới thông báo</span>
+<span class="tk-kw">final</span> items = <span class="tk-type">ValueNotifier</span>&lt;<span class="tk-type">List</span>&lt;int&gt;&gt;([]);
+items.value = [...items.value, <span class="tk-num">1</span>]; <span class="tk-com">// items.value.add(1) sẽ không thông báo</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q36.html">Một widget chỉ hiển thị tên người dùng nhưng bị rebuild mỗi khi bất kỳ field nào của <code>User</code> đổi (như điểm thưởng cập nhật liên tục). Bạn dùng <code>ref.watch(provider.select(...))</code> của Riverpod thế nào, và khi nào <code>select</code> không giúp được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ref.watch(userProvider)</code> làm widget rebuild mỗi khi provider phát giá trị mới (khác theo <code>==</code>), kể cả khi phần widget dùng không đổi. <code>ref.watch(userProvider.select((u) =&gt; u.name))</code> chỉ rebuild khi giá trị mà <code>select</code> trả về đổi (so bằng <code>==</code>), nên hợp để theo dõi một field của model lớn hay một thuộc tính dẫn xuất (<code>select((s) =&gt; s.items.length)</code>). Với <code>AsyncValue</code>, lấy field từ giá trị đã có bằng <code>select((a) =&gt; a.asData?.value.name)</code>. <code>select</code> cũng dùng được với <code>ref.listen</code> để phản ứng với thay đổi một phần (hiện SnackBar khi riêng <code>error</code> đổi) mà không chạy callback cho các thay đổi khác. Lưu ý: hàm select phải trả về giá trị so sánh được; trả về list hay object mới mỗi lần (<code>.where(...)</code>, <code>.toList()</code>) thì luôn khác nên vẫn rebuild liên tục, cần model có <code>==</code> đúng (freezed, Equatable) hoặc trả về kiểu nguyên thuỷ. <code>select</code> chỉ giảm rebuild của widget phía người dùng, còn provider vẫn tính lại bình thường, nên tính toán nặng cần tách thành provider riêng. Chia nhỏ provider theo mối quan tâm (một provider cho profile, một cho điểm thưởng) là cách tối ưu căn bản hơn; đừng rải <code>select</code> khắp nơi để chữa thiết kế state quá to.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">UserNameText</span> <span class="tk-kw">extends</span> <span class="tk-type">ConsumerWidget</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">UserNameText</span>({<span class="tk-kw">super</span>.key});
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context, <span class="tk-type">WidgetRef</span> ref) {
+    <span class="tk-com">// Chỉ rebuild khi name đổi, bỏ qua thay đổi của points, avatar...</span>
+    <span class="tk-kw">final</span> name = ref.watch(userProvider.select((u) =&gt; u.name));
+    <span class="tk-kw">return</span> <span class="tk-type">Text</span>(name);
+  }
+}
+
+<span class="tk-com">// Lắng nghe một phần của state: hiện SnackBar khi chỉ riêng error đổi</span>
+ref.listen(
+  checkoutProvider.select((s) =&gt; s.error),
+  (previous, next) {
+    <span class="tk-kw">if</span> (next != <span class="tk-kw">null</span>) {
+      <span class="tk-type">ScaffoldMessenger</span>.of(context).showSnackBar(<span class="tk-type">SnackBar</span>(content: <span class="tk-type">Text</span>(next)));
+    }
+  },
+);
+
+<span class="tk-com">// AsyncValue: lấy field từ giá trị đã có</span>
+<span class="tk-kw">final</span> city = ref.watch(profileProvider.select((a) =&gt; a.asData?.value.city));</code></pre>
         
       </div>
     </details>
@@ -796,6 +1247,26 @@
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q34.html">Marketing gửi link <code>https://shop.vn/orders/123</code> và muốn bấm vào là mở thẳng màn chi tiết đơn hàng trong app Flutter (dùng <code>go_router</code>), còn chưa cài app thì mở web. Cấu hình App Links (Android) và Universal Links (iOS) thế nào, và kiểm tra ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cả hai nền tảng đều cần xác minh quyền sở hữu domain. Android: thêm <code>intent-filter</code> có <code>android:autoVerify=&quot;true&quot;</code>, <code>VIEW</code>, <code>DEFAULT</code>, <code>BROWSABLE</code> và <code>&lt;data android:scheme=&quot;https&quot; android:host=&quot;shop.vn&quot;&gt;</code> vào <code>MainActivity</code>, và đặt file <code>assetlinks.json</code> ở <code>https://shop.vn/.well-known/</code> chứa package name cùng SHA-256 fingerprint của chứng chỉ ký (nhớ cả khoá của Play App Signing). iOS: bật Associated Domains <code>applinks:shop.vn</code> trong Xcode và đặt file <code>apple-app-site-association</code> (không có đuôi, <code>application/json</code>, không redirect) trên domain, khai báo App ID (<code>TeamID.bundleId</code>) và các path. Phía Flutter, <code>go_router</code> nhận route ban đầu từ nền tảng và khớp với <code>path: &#39;/orders/:id&#39;</code>, nên trường hợp đơn giản không cần xử lý thêm; các bản Flutter mới bật deep linking mặc định, bản cũ cần khai báo cờ <code>flutter_deeplinking_enabled</code> ở Manifest và <code>FlutterDeepLinkingEnabled</code> ở Info.plist. Muốn tự xử lý (parse link bất thường, kiểm tra đăng nhập) thì dùng package <code>app_links</code>. Cần xử lý thêm: route không tồn tại (<code>errorBuilder</code>), người dùng chưa đăng nhập (lưu đích rồi đưa qua login), và cả hai trường hợp link khi app đang chạy lẫn khi cold start. Coi tham số trong link là input không đáng tin: validate và để server kiểm tra quyền xem đơn. Kiểm tra bằng <code>adb shell am start -a android.intent.action.VIEW -d &quot;https://shop.vn/orders/123&quot;</code>, <code>adb shell pm get-app-links &lt;package&gt;</code>, <code>xcrun simctl openurl booted &lt;url&gt;</code>; lưu ý Universal Link không kích hoạt khi gõ link vào thanh địa chỉ Safari, và iOS cache file AASA qua CDN của Apple nên sửa file có thể chưa có hiệu lực ngay.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-kw">&lt;activity</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;.MainActivity&quot;</span> <span class="tk-type">android:exported</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;intent-filter</span> <span class="tk-type">android:autoVerify</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;action</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.action.VIEW&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.DEFAULT&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;data</span> <span class="tk-type">android:scheme</span>=<span class="tk-str">&quot;https&quot;</span> <span class="tk-type">android:host</span>=<span class="tk-str">&quot;shop.vn&quot;</span> <span class="tk-type">android:pathPrefix</span>=<span class="tk-str">&quot;/orders&quot;</span> <span class="tk-kw">/&gt;</span>
+  <span class="tk-kw">&lt;/intent-filter</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/activity</span><span class="tk-kw">&gt;</span>
+<span class="tk-com">&lt;!-- Server phải trả https://shop.vn/.well-known/assetlinks.json (package và SHA-256 fingerprint).
+     iOS: Associated Domains applinks:shop.vn và file apple-app-site-association trên domain --&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="arch">
@@ -819,6 +1290,38 @@
   } <span class="tk-kw">on</span> <span class="tk-type">DioException</span> <span class="tk-kw">catch</span> (e) {
     <span class="tk-kw">return</span> <span class="tk-type">Err</span>(e.response == <span class="tk-kw">null</span> ? <span class="tk-type">NetworkFailure</span>() : <span class="tk-type">ServerFailure</span>());
   }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q38.html">App cần chạy với ba môi trường (dev, staging, production) có API URL, application id và icon khác nhau, cài song song được trên một máy. Bạn cấu hình thế nào bằng flavor và <code>--dart-define-from-file</code>, và nên hay không nên đặt gì vào đó?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có hai lớp. Lớp native (flavor): Android dùng <code>productFlavors</code> (<code>applicationIdSuffix</code>, tên app, icon, <code>google-services.json</code> riêng), iOS dùng scheme và build configuration kèm <code>xcconfig</code>; chạy bằng <code>flutter run --flavor dev</code>. Lớp Dart: truyền cấu hình lúc build bằng <code>--dart-define-from-file=config/dev.json</code> (hoặc nhiều <code>--dart-define=KEY=value</code>) và đọc bằng <code>String.fromEnvironment(&#39;API_URL&#39;)</code>; lưu ý các hàm <code>fromEnvironment</code> phải được gọi với <code>const</code> thì giá trị mới được thay lúc compile. Có thể dùng <code>appFlavor</code> (tên flavor đọc lúc chạy) để chọn cấu hình. Gói các giá trị vào một class <code>AppConfig</code> tạo một lần ở <code>main()</code> rồi inject, thay vì rải <code>fromEnvironment</code> khắp app. Nên để vào đây: URL, tên môi trường, cờ bật tắt log, id dịch vụ analytics theo môi trường. Không nên để secret thật (khoá thanh toán, khoá quản trị) vì giá trị <code>--dart-define</code> nằm trong binary nên trích xuất được, secret phải ở backend. Giữ file cấu hình theo môi trường trong repo (không có secret), còn giá trị riêng của CI đặt qua biến môi trường của pipeline. Đừng quên phần phụ trợ theo flavor: bundle id khác nhau thì cần Firebase app riêng, domain deep link riêng và push token riêng. Các công cụ như <code>flutter_flavorizr</code> giúp sinh cấu hình native, nhưng vẫn cần kiểm tra lại build release của từng flavor.</div>
+        <pre class="code-block"><code><span class="tk-com">// config/dev.json: {&quot;API_URL&quot;: &quot;https://dev.api.shop.vn&quot;, &quot;ENV&quot;: &quot;dev&quot;, &quot;ENABLE_LOGS&quot;: &quot;true&quot;}</span>
+<span class="tk-com">// Chạy: flutter run --flavor dev --dart-define-from-file=config/dev.json</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">AppConfig</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">AppConfig</span>({<span class="tk-kw">required</span> <span class="tk-kw">this</span>.apiUrl, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.env, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.enableLogs});
+
+  <span class="tk-com">// fromEnvironment phải được gọi với const thì giá trị mới được thay lúc compile</span>
+  <span class="tk-kw">factory</span> <span class="tk-type">AppConfig</span>.fromEnvironment() =&gt; <span class="tk-kw">const</span> <span class="tk-type">AppConfig</span>(
+    apiUrl: <span class="tk-type">String</span>.fromEnvironment(<span class="tk-str">&#39;API_URL&#39;</span>, defaultValue: <span class="tk-str">&#39;https://api.shop.vn&#39;</span>),
+    env: <span class="tk-type">String</span>.fromEnvironment(<span class="tk-str">&#39;ENV&#39;</span>, defaultValue: <span class="tk-str">&#39;production&#39;</span>),
+    enableLogs: bool.fromEnvironment(<span class="tk-str">&#39;ENABLE_LOGS&#39;</span>),
+  );
+
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> apiUrl;
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> env;
+  <span class="tk-kw">final</span> bool enableLogs;
+}
+
+<span class="tk-kw">void</span> main() {
+  <span class="tk-kw">final</span> config = <span class="tk-type">AppConfig</span>.fromEnvironment(); <span class="tk-com">// tạo một lần rồi inject, không rải fromEnvironment khắp app</span>
+  runApp(<span class="tk-type">App</span>(config: config));
 }</code></pre>
         
       </div>
@@ -931,6 +1434,134 @@
     </details>
     </li>
     <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q30.html">Danh sách bài viết dùng infinite scroll nhưng đôi khi tải trùng một trang, bài viết bị lặp sau khi pull-to-refresh, và khi lỗi mạng giữa chừng thì không tải tiếp được. Bạn thiết kế phân trang phía client thế nào (offset hay cursor, trạng thái, phát hiện cuối danh sách, loại trùng)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chia trạng thái rõ ràng: danh sách <code>items</code>, <code>nextCursor</code> (hoặc <code>page</code>), cờ <code>isLoadingMore</code>, <code>hasMore</code> và <code>error</code> riêng cho lần tải thêm. Phát hiện gần cuối bằng <code>ScrollController</code> (<code>position.pixels &gt;= position.maxScrollExtent - 300</code>) hoặc <code>NotificationListener&lt;ScrollNotification&gt;</code>, hoặc kích hoạt khi <code>itemBuilder</code> dựng tới item gần cuối; trước khi gọi API luôn kiểm tra <code>isLoadingMore</code> và <code>hasMore</code> để không tải trùng. Dùng cursor (id hoặc thời điểm của item cuối) thay vì offset/page khi dữ liệu thay đổi liên tục: offset dễ làm lặp hoặc sót item khi có bài mới chèn vào đầu. Pull-to-refresh (<code>RefreshIndicator</code>) thì reset cursor và thay toàn bộ danh sách, đồng thời bỏ qua các request tải thêm đang bay (gắn một mã phiên bản) để kết quả cũ không bị nối vào danh sách mới. Loại trùng theo id khi nối trang (dùng <code>Map</code> hoặc <code>Set</code>) phòng khi server trả trùng. Khi lỗi lúc tải thêm: giữ nguyên danh sách và hiện một dòng &#39;Thử lại&#39; ở cuối, đừng thay cả màn hình bằng lỗi; đặt <code>itemCount: items.length + (hasMore ? 1 : 0)</code> để dòng cuối là spinner hoặc nút thử lại. Có thể dùng package <code>infinite_scroll_pagination</code>, hoặc để Riverpod/Bloc giữ state phân trang và UI chỉ phát sự kiện <code>loadMore</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">PostListController</span> <span class="tk-kw">extends</span> <span class="tk-type">ChangeNotifier</span> {
+  <span class="tk-kw">final</span> _items = &lt;<span class="tk-type">String</span>, <span class="tk-type">Post</span>&gt;{}; <span class="tk-com">// theo id: tự loại bài trùng</span>
+  <span class="tk-type">String</span>? _cursor;
+  bool hasMore = <span class="tk-kw">true</span>;
+  bool isLoadingMore = <span class="tk-kw">false</span>;
+  <span class="tk-type">Object</span>? error;
+  int _generation = <span class="tk-num">0</span>; <span class="tk-com">// tăng khi refresh để bỏ kết quả của request cũ</span>
+
+  <span class="tk-type">List</span>&lt;<span class="tk-type">Post</span>&gt; <span class="tk-kw">get</span> items =&gt; _items.values.toList();
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; loadMore() <span class="tk-kw">async</span> {
+    <span class="tk-kw">if</span> (isLoadingMore || !hasMore) <span class="tk-kw">return</span>;
+    isLoadingMore = <span class="tk-kw">true</span>;
+    error = <span class="tk-kw">null</span>;
+    notifyListeners();
+    <span class="tk-kw">final</span> gen = _generation;
+    <span class="tk-kw">try</span> {
+      <span class="tk-kw">final</span> page = <span class="tk-kw">await</span> api.fetchPosts(cursor: _cursor, limit: <span class="tk-num">20</span>);
+      <span class="tk-kw">if</span> (gen != _generation) <span class="tk-kw">return</span>; <span class="tk-com">// đã refresh trong lúc chờ: bỏ kết quả cũ</span>
+      <span class="tk-kw">for</span> (<span class="tk-kw">final</span> p <span class="tk-kw">in</span> page.items) {
+        _items[p.id] = p;
+      }
+      _cursor = page.nextCursor;
+      hasMore = page.nextCursor != <span class="tk-kw">null</span>;
+    } <span class="tk-kw">catch</span> (e) {
+      <span class="tk-kw">if</span> (gen == _generation) error = e; <span class="tk-com">// giữ danh sách cũ, chỉ hiện nút thử lại ở cuối</span>
+    } <span class="tk-kw">finally</span> {
+      <span class="tk-kw">if</span> (gen == _generation) isLoadingMore = <span class="tk-kw">false</span>;
+      notifyListeners();
+    }
+  }
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; refresh() {
+    _generation++;
+    _items.clear();
+    _cursor = <span class="tk-kw">null</span>;
+    hasMore = <span class="tk-kw">true</span>;
+    isLoadingMore = <span class="tk-kw">false</span>;
+    <span class="tk-kw">return</span> loadMore();
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q31.html">Cần upload ảnh (vài MB) từ điện thoại lên server, có thanh tiến độ, cho phép huỷ, và không làm tràn bộ nhớ. Bạn dùng Dio với <code>FormData</code>, <code>onSendProgress</code> và <code>CancelToken</code> thế nào, và xử lý các lỗi hay gặp ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>FormData.fromMap</code> với <code>MultipartFile.fromFile(path, filename:)</code>: nó đọc file theo luồng khi gửi nên không nạp cả file vào RAM (khác <code>MultipartFile.fromBytes</code>). Tiến độ lấy từ <code>onSendProgress: (sent, total) {...}</code>; đẩy giá trị vào <code>ValueNotifier&lt;double&gt;</code> rồi hiển thị bằng <code>ValueListenableBuilder</code> để chỉ thanh tiến độ rebuild, và nhớ <code>total</code> có thể là <code>-1</code> khi chưa biết. <code>CancelToken</code> gắn vào request, gọi <code>cancelToken.cancel()</code> khi người dùng bấm huỷ hoặc rời màn hình; request ném <code>DioException</code> có <code>type == DioExceptionType.cancel</code>, cần phân biệt để không hiện như lỗi. Nên nén và đổi kích thước ảnh trước khi gửi (ảnh chụp 12MP thường nặng vài MB, không cần gửi bản gốc), đặt <code>sendTimeout</code> đủ dài cho mạng yếu. Mạng chập chờn cần phân biệt lỗi tạm thời (timeout, mất kết nối) để cho thử lại với backoff, và file lớn nên chia chunk hoặc dùng giao thức resumable để không gửi lại từ đầu. Với upload dài khi app ra nền, <code>Dio</code> trong Dart không đảm bảo sống khi app bị hệ thống tạm dừng, cần plugin dùng cơ chế native (WorkManager, URLSession nền). Phía server cần idempotency hoặc id upload để retry không tạo bản trùng.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">UploadController</span> {
+  <span class="tk-kw">final</span> progress = <span class="tk-type">ValueNotifier</span>&lt;double&gt;(<span class="tk-num">0</span>);
+  <span class="tk-type">CancelToken</span>? _cancelToken;
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-type">String</span>?&gt; upload(<span class="tk-type">File</span> file) <span class="tk-kw">async</span> {
+    _cancelToken = <span class="tk-type">CancelToken</span>();
+    <span class="tk-kw">final</span> form = <span class="tk-type">FormData</span>.fromMap({
+      <span class="tk-str">&#39;file&#39;</span>: <span class="tk-kw">await</span> <span class="tk-type">MultipartFile</span>.fromFile(file.path, filename: <span class="tk-str">&#39;photo.jpg&#39;</span>), <span class="tk-com">// đọc theo luồng, không nạp cả file vào RAM</span>
+    });
+    <span class="tk-kw">try</span> {
+      <span class="tk-kw">final</span> res = <span class="tk-kw">await</span> dio.post&lt;<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt;&gt;(
+        <span class="tk-str">&#39;/uploads&#39;</span>,
+        data: form,
+        cancelToken: _cancelToken,
+        onSendProgress: (sent, total) {
+          <span class="tk-kw">if</span> (total &gt; <span class="tk-num">0</span>) progress.value = sent / total;
+        },
+      );
+      <span class="tk-kw">return</span> res.data?[<span class="tk-str">&#39;url&#39;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>?;
+    } <span class="tk-kw">on</span> <span class="tk-type">DioException</span> <span class="tk-kw">catch</span> (e) {
+      <span class="tk-kw">if</span> (e.type == <span class="tk-type">DioExceptionType</span>.cancel) <span class="tk-kw">return</span> <span class="tk-kw">null</span>; <span class="tk-com">// người dùng huỷ: không phải lỗi</span>
+      <span class="tk-kw">rethrow</span>;
+    }
+  }
+
+  <span class="tk-kw">void</span> cancel() =&gt; _cancelToken?.cancel(<span class="tk-str">&#39;người dùng huỷ&#39;</span>);
+}
+
+<span class="tk-com">// UI: chỉ thanh tiến độ rebuild</span>
+<span class="tk-type">ValueListenableBuilder</span>&lt;double&gt;(
+  valueListenable: controller.progress,
+  builder: (_, value, __) =&gt; <span class="tk-type">LinearProgressIndicator</span>(value: value),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q32.html">App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu trong DB đổi, và bản cập nhật sau thêm cột mới vào bảng <code>orders</code> cho người dùng đang có dữ liệu. Bạn dùng <code>watch()</code>, <code>schemaVersion</code> và <code>MigrationStrategy</code> thế nào, và kiểm thử migration ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Drift sinh code type-safe từ khai báo bảng và query. <code>select(table).watch()</code> trả về một <code>Stream</code> phát lại kết quả mỗi khi bảng liên quan bị ghi (insert, update, delete), nên UI chỉ cần <code>StreamBuilder</code> hoặc provider bọc stream mà không phải tự làm mới; cẩn thận query nặng vì stream chạy lại mỗi lần bảng đổi, nên dùng <code>where</code> hẹp và index. Ghi nhiều dòng thì gom trong <code>transaction</code> hoặc <code>batch</code> để nhanh và atomic. Về migration: tăng <code>schemaVersion</code> và khai báo <code>MigrationStrategy(onUpgrade: (m, from, to) async { if (from &lt; 2) await m.addColumn(orders, orders.note); })</code>; dùng <code>onCreate: (m) =&gt; m.createAll()</code> cho cài mới và <code>beforeOpen</code> để bật <code>PRAGMA foreign_keys = ON</code>. Cột NOT NULL thêm mới cần giá trị mặc định cho các dòng cũ. Kiểm thử bằng công cụ schema của Drift (<code>dart run drift_dev schema dump</code> lưu schema của từng version, rồi <code>SchemaVerifier</code> tạo DB ở version cũ, chạy migration và so với schema mong đợi); thiếu đường nâng cấp hay làm mất dữ liệu người dùng chỉ lộ ra sau khi phát hành. Cho DB chạy ở isolate nền (<code>NativeDatabase.createInBackground</code>) để query nặng không chặn UI, và đừng xoá DB khi migration lỗi nếu đó là dữ liệu của người dùng.</div>
+        <pre class="code-block"><code><span class="tk-ann">@DriftDatabase</span>(tables: [<span class="tk-type">Orders</span>])
+<span class="tk-kw">class</span> <span class="tk-type">AppDatabase</span> <span class="tk-kw">extends</span> _$<span class="tk-type">AppDatabase</span> {
+  <span class="tk-type">AppDatabase</span>(<span class="tk-kw">super</span>.e);
+
+  <span class="tk-ann">@override</span>
+  int <span class="tk-kw">get</span> schemaVersion =&gt; <span class="tk-num">2</span>;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">MigrationStrategy</span> <span class="tk-kw">get</span> migration =&gt; <span class="tk-type">MigrationStrategy</span>(
+    onCreate: (m) =&gt; m.createAll(),
+    onUpgrade: (m, from, to) <span class="tk-kw">async</span> {
+      <span class="tk-kw">if</span> (from &lt; <span class="tk-num">2</span>) {
+        <span class="tk-kw">await</span> m.addColumn(orders, orders.note); <span class="tk-com">// cột mới phải nullable hoặc có default cho dữ liệu cũ</span>
+      }
+    },
+    beforeOpen: (details) <span class="tk-kw">async</span> {
+      <span class="tk-kw">await</span> customStatement(<span class="tk-str">&#39;PRAGMA foreign_keys = ON&#39;</span>);
+    },
+  );
+
+  <span class="tk-com">// UI tự cập nhật: stream phát lại mỗi khi bảng orders bị ghi</span>
+  <span class="tk-type">Stream</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Order</span>&gt;&gt; watchOpenOrders() =&gt;
+      (select(orders)..where((o) =&gt; o.status.equals(<span class="tk-str">&#39;open&#39;</span>))).watch();
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d25-2.html">Khi nào chọn Drift, Isar hay Hive thay vì SharedPreferences?</a></h3>
       <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
@@ -957,6 +1588,42 @@
 <section id="native">
   <div class="section-head"><h2>Native &amp; Platform</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/native/">Mọi rank →</a></div>
   <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q33.html">Bạn tích hợp push bằng Firebase Cloud Messaging trong Flutter: hiện thông báo khi app đang mở, xử lý khi người dùng bấm thông báo lúc app đang chạy nền hoặc đã bị tắt, và xử lý tin nhắn khi app ở background. Những chỗ nào Android và iOS khác nhau?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>firebase_messaging</code> cung cấp: <code>onMessage</code> (stream, khi app ở foreground), <code>onMessageOpenedApp</code> (người dùng bấm thông báo khi app ở background), <code>getInitialMessage()</code> (người dùng bấm thông báo khi app đã bị tắt, gọi một lần lúc khởi động) và <code>FirebaseMessaging.onBackgroundMessage(handler)</code> cho tin nhắn data khi app ở background hoặc terminated; handler phải là hàm top-level (hoặc static) có <code>@pragma(&#39;vm:entry-point&#39;)</code> vì chạy trong isolate riêng và có thể chưa có gì được khởi tạo (cần <code>Firebase.initializeApp()</code> trong đó). Tin nhắn có khối <code>notification</code>: khi ở background hệ thống tự hiện; khi foreground trên Android không tự hiện (cần <code>flutter_local_notifications</code> kèm <code>AndroidNotificationChannel</code> để hiện), còn trên iOS bật <code>setForegroundNotificationPresentationOptions(alert: true, sound: true)</code> thì hiện. Tin nhắn chỉ có <code>data</code> luôn đi vào handler nên app tự quyết định hiển thị. Điều hướng khi bấm: lấy <code>message.data</code> rồi chuyển cho router hay deep link; với app bị tắt phải chờ app khởi tạo xong (đăng nhập, router) rồi mới điều hướng. Android 13 trở lên cần xin quyền <code>POST_NOTIFICATIONS</code> (<code>requestPermission()</code>); iOS cần xin quyền và cấu hình APNs (tải key APNs lên Firebase, bật capability Push Notifications và Background Modes). Token lấy bằng <code>getToken()</code> và lắng nghe <code>onTokenRefresh</code> để gửi lại lên server. Silent push trên iOS bị throttle và không đảm bảo tới nên đừng dùng cho việc bắt buộc.</div>
+        <pre class="code-block"><code><span class="tk-ann">@pragma</span>(<span class="tk-str">&#39;vm:entry-point&#39;</span>) <span class="tk-com">// handler chạy trong isolate riêng: phải là hàm top-level</span>
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; _onBackgroundMessage(<span class="tk-type">RemoteMessage</span> message) <span class="tk-kw">async</span> {
+  <span class="tk-kw">await</span> <span class="tk-type">Firebase</span>.initializeApp();
+  <span class="tk-com">// xử lý tin nhắn data, ví dụ lưu vào DB cục bộ</span>
+}
+
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; setupPush(<span class="tk-type">GoRouter</span> router) <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> fcm = <span class="tk-type">FirebaseMessaging</span>.instance;
+  <span class="tk-kw">await</span> fcm.requestPermission(); <span class="tk-com">// Android 13+ và iOS cần xin quyền</span>
+  <span class="tk-type">FirebaseMessaging</span>.onBackgroundMessage(_onBackgroundMessage);
+
+  <span class="tk-kw">await</span> fcm.setForegroundNotificationPresentationOptions(alert: <span class="tk-kw">true</span>, sound: <span class="tk-kw">true</span>); <span class="tk-com">// iOS: hiện khi foreground</span>
+
+  <span class="tk-type">FirebaseMessaging</span>.onMessage.listen(showLocalNotification); <span class="tk-com">// Android foreground: tự hiện bằng flutter_local_notifications</span>
+  <span class="tk-type">FirebaseMessaging</span>.onMessageOpenedApp.listen((m) =&gt; _open(router, m)); <span class="tk-com">// bấm khi app ở background</span>
+
+  <span class="tk-kw">final</span> initial = <span class="tk-kw">await</span> fcm.getInitialMessage(); <span class="tk-com">// bấm khi app đã bị tắt</span>
+  <span class="tk-kw">if</span> (initial != <span class="tk-kw">null</span>) _open(router, initial);
+
+  fcm.onTokenRefresh.listen(tokenRepo.upload); <span class="tk-com">// token đổi: gửi lại lên server</span>
+}
+
+<span class="tk-kw">void</span> _open(<span class="tk-type">GoRouter</span> router, <span class="tk-type">RemoteMessage</span> m) {
+  <span class="tk-kw">final</span> orderId = m.data[<span class="tk-str">&#39;orderId&#39;</span>];
+  <span class="tk-kw">if</span> (orderId != <span class="tk-kw">null</span>) router.go(<span class="tk-str">&#39;/orders/$orderId&#39;</span>);
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
     <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d15-1.html">3 loại Channel (MethodChannel, EventChannel, BasicMessageChannel) khác nhau thế nào?</a></h3>
       <details class="reveal">
@@ -1013,6 +1680,21 @@
       <div class="model-answer">
         <div class="answer-text">Ảnh được decode theo kích thước gốc: một ảnh 4000×3000 hiển thị trong thumbnail 100px vẫn chiếm khoảng 48MB bitmap, nên hãy truyền <code>cacheWidth</code>/<code>cacheHeight</code> (hoặc <code>ResizeImage</code>) để decode đúng kích thước hiển thị (nhân với <code>devicePixelRatio</code>). <code>Image.network</code> chỉ cache trong bộ nhớ (<code>ImageCache</code>, mặc định 1000 ảnh/100MB), nên dùng <code>cached_network_image</code> để có thêm cache trên disk, placeholder và không tải lại khi cuộn qua lại. Kết hợp <code>ListView.builder</code> để chỉ build item gần viewport, ưu tiên server trả thumbnail đúng kích thước, và kiểm tra bằng DevTools (tab Memory, tùy chọn highlight oversized images).</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q37.html">Bản release Android đang nặng 60MB và PM yêu cầu giảm xuống dưới 30MB. Bạn phân tích kích thước app Flutter bằng <code>--analyze-size</code> và giảm bằng những cách nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đo trước khi tối ưu: <code>flutter build apk --analyze-size</code> (hoặc <code>appbundle</code>, <code>ios</code>) tạo file phân tích kích thước theo package và thư viện, mở bằng công cụ App Size của DevTools để thấy phần nào lớn (engine, code Dart, asset, font, native library). Phần đầu tiên là cách phân phối: build <code>appbundle</code> (AAB) để Play phân phối APK theo ABI, mật độ màn hình và ngôn ngữ của từng máy; còn với APK phát trực tiếp thì dùng <code>--split-per-abi</code>. Giảm code: bỏ package không dùng hoặc trùng chức năng (mỗi package kéo theo cả dependency và native library), tránh kéo nguyên thư viện lớn khi chỉ dùng một phần, bật <code>--obfuscate --split-debug-info</code> để giảm kích thước symbol, và để <code>--tree-shake-icons</code> (mặc định ở release, lỗi nếu tạo <code>IconData</code> động không <code>const</code>) loại icon không dùng. Giảm tài nguyên: nén ảnh (WebP, AVIF), bỏ ảnh độ phân giải thừa, dùng SVG hoặc vẽ bằng code cho icon đơn giản, chỉ đóng gói các font và weight thật sự dùng (hoặc subset font), và tải tài nguyên lớn lúc chạy thay vì đóng gói. Với module ít dùng có thể dùng deferred components (Android) để tải theo yêu cầu. Cũng kiểm tra các native library lớn do plugin kéo vào (ML, video) và các ABI bạn phải hỗ trợ. Đặt ngân sách kích thước trong CI để cảnh báo khi một PR làm tăng nhiều, và nhớ so sánh kích thước tải xuống (download size ở store) chứ không chỉ kích thước cài đặt.</div>
+        <pre class="code-block"><code>flutter build appbundle --release --obfuscate --split-debug-info=build/symbols --analyze-size
+# <span class="tk-type">M</span>ở file *-code-size-analysis_*.json trong <span class="tk-type">DevTools</span> &gt; <span class="tk-type">App</span> <span class="tk-type">Size</span> để xem phần nào lớn nhất
+
+# <span class="tk-type">APK</span> phát trực tiếp (không qua <span class="tk-type">Play</span>): tách theo <span class="tk-type">ABI</span>
+flutter build apk --release --split-per-abi</code></pre>
         
       </div>
     </details>
@@ -1109,6 +1791,38 @@ test(<span class="tk-str">&#39;load todos từ repository&#39;</span>, () <span 
   expect(todos, hasLength(<span class="tk-num">1</span>));
   verify(() =&gt; repo.fetchAll()).called(<span class="tk-num">1</span>);
 });</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/mid-q39.html">Team muốn kiểm thử luồng &#39;đăng nhập, thêm vào giỏ, thanh toán&#39; chạy trên thiết bị hoặc emulator. Viết <code>integration_test</code> thế nào, nó khác widget test ở đâu, và xử lý hộp thoại quyền của hệ điều hành cùng tính flaky ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>integration_test</code> chạy toàn bộ app (không phải một widget riêng) trên thiết bị hoặc emulator: khai báo trong <code>dev_dependencies</code>, đặt file ở <code>integration_test/</code>, bắt đầu bằng <code>IntegrationTestWidgetsFlutterBinding.ensureInitialized()</code>, gọi <code>app.main()</code> hoặc <code>tester.pumpWidget(MyApp())</code>, rồi dùng cùng API với widget test (<code>find</code>, <code>tap</code>, <code>enterText</code>, <code>pumpAndSettle</code>) và chạy bằng <code>flutter test integration_test -d &lt;device&gt;</code>. Khác widget test ở chỗ nó chạy trên engine và nền tảng thật (plugin thật, platform channel thật, hiệu năng thật) nên chậm và tốn kém hơn, chỉ nên phủ vài luồng sống còn. Để ổn định: tìm bằng <code>Key</code> hoặc <code>find.bySemanticsLabel</code> thay vì text dễ đổi; thay backend thật bằng server giả hoặc môi trường staging có dữ liệu cố định (qua <code>dart-define</code> hoặc DI override); <code>pumpAndSettle</code> có thể treo nếu có animation lặp vô hạn (spinner) nên dùng <code>pump(duration)</code> hoặc chờ theo điều kiện bằng vòng <code>pump</code> kèm timeout; reset state (đăng xuất, xoá DB) giữa các test. Hộp thoại quyền và UI native của hệ điều hành nằm ngoài Flutter nên <code>integration_test</code> không điều khiển được: dùng <code>patrol</code> (có native automation) hoặc cấp quyền trước bằng <code>adb shell pm grant</code> hay cấu hình simulator. Cũng có thể đo hiệu năng bằng <code>binding.traceAction</code> và chạy trên Firebase Test Lab hoặc device farm trong CI. Test flaky cần bị cách ly và có người sửa, không retry vô hạn.</div>
+        <pre class="code-block"><code><span class="tk-com">// integration_test/checkout_flow_test.dart</span>
+<span class="tk-kw">void</span> main() {
+  <span class="tk-type">IntegrationTestWidgetsFlutterBinding</span>.ensureInitialized();
+
+  testWidgets(<span class="tk-str">&#39;đăng nhập, thêm vào giỏ và thanh toán thành công&#39;</span>, (tester) <span class="tk-kw">async</span> {
+    app.main(); <span class="tk-com">// chạy toàn bộ app, backend giả chọn qua dart-define</span>
+    <span class="tk-kw">await</span> tester.pumpAndSettle();
+
+    <span class="tk-kw">await</span> tester.enterText(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;email&#39;</span>)), <span class="tk-str">&#39;an@example.com&#39;</span>);
+    <span class="tk-kw">await</span> tester.enterText(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;password&#39;</span>)), <span class="tk-str">&#39;123456&#39;</span>);
+    <span class="tk-kw">await</span> tester.tap(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;login-button&#39;</span>)));
+    <span class="tk-kw">await</span> tester.pumpAndSettle();
+
+    <span class="tk-kw">await</span> tester.tap(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;add-to-cart-1&#39;</span>)));
+    <span class="tk-kw">await</span> tester.pump(<span class="tk-kw">const</span> <span class="tk-type">Duration</span>(milliseconds: <span class="tk-num">500</span>)); <span class="tk-com">// không pumpAndSettle nếu có spinner lặp vô hạn</span>
+
+    <span class="tk-kw">await</span> tester.tap(find.byKey(<span class="tk-kw">const</span> <span class="tk-type">Key</span>(<span class="tk-str">&#39;checkout-button&#39;</span>)));
+    <span class="tk-kw">await</span> tester.pumpAndSettle();
+    expect(find.text(<span class="tk-str">&#39;Đặt hàng thành công&#39;</span>), findsOneWidget);
+  });
+}
+<span class="tk-com">// Chạy: flutter test integration_test/checkout_flow_test.dart -d emulator-5554</span></code></pre>
         
       </div>
     </details>

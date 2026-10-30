@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Networking &amp; Storage — Mobile Interview</title>
-<meta name="description" content="13 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
+<meta name="description" content="18 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/data/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Networking &amp; Storage — Mobile Interview">
-<meta property="og:description" content="13 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
+<meta property="og:description" content="18 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/data/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Networking &amp; Storage</h1>
-  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 12 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 12 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -64,6 +64,7 @@
     <li><a href="../../../../s/jun-q25.html">Khi nào nên dùng json_serializable thay vì tự viết fromJson/toJson? Cần thiết lập những gì?</a></li>
     <li><a href="../../../../s/jun-q26.html">Dùng package http, khi server trả 404 hoặc 500 thì http.get có ném exception không? Nên xử lý thế nào?</a></li>
     <li><a href="../../../../s/jun-q27.html">API trả về một mảng JSON. Parse thành List&lt;User&gt; thế nào cho đúng kiểu, và lỗi kiểu nào hay gặp?</a></li>
+    <li><a href="../../../../s/jun-q31.html">Khi nào dùng shared_preferences trong Flutter? Cách đọc, ghi thế nào, và những giới hạn cần nhớ (bất đồng bộ, kiểu dữ liệu, không dùng cho dữ liệu nhạy cảm hay dữ liệu lớn)?</a></li>
     <li><a href="../../../../s/jun-m33.html">Gán thẳng một list lấy từ jsonDecode cho biến List&lt;String&gt;: đoạn code sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m34.html">Phát biểu nào SAI về shared_preferences?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m35.html">Dùng dio với cấu hình mặc định, server trả về status 404. await dio.get(...) sẽ thế nào?</a> <span class="tag">Quiz</span></li>
@@ -74,6 +75,9 @@
   <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> Flutter Middle</h2><a class="section-sub" href="../../../../phong-van/flutter/middle/">Mọi chủ đề Middle →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/mid-q19.html">freezed + json_serializable giúp gì so với viết tay model và fromJson/toJson?</a></li>
+    <li><a href="../../../../s/mid-q30.html">Danh sách bài viết dùng infinite scroll nhưng đôi khi tải trùng một trang, bài viết bị lặp sau khi pull-to-refresh, và khi lỗi mạng giữa chừng thì không tải tiếp được. Bạn thiết kế phân trang phía client thế nào (offset hay cursor, trạng thái, phát hiện cuối danh sách, loại trùng)?</a></li>
+    <li><a href="../../../../s/mid-q31.html">Cần upload ảnh (vài MB) từ điện thoại lên server, có thanh tiến độ, cho phép huỷ, và không làm tràn bộ nhớ. Bạn dùng Dio với FormData, onSendProgress và CancelToken thế nào, và xử lý các lỗi hay gặp ra sao?</a></li>
+    <li><a href="../../../../s/mid-q32.html">App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu trong DB đổi, và bản cập nhật sau thêm cột mới vào bảng orders cho người dùng đang có dữ liệu. Bạn dùng watch(), schemaVersion và MigrationStrategy thế nào, và kiểm thử migration ra sao?</a></li>
     <li><a href="../../../../s/d25-2.html">Khi nào chọn Drift, Isar hay Hive thay vì SharedPreferences?</a></li>
     <li><a href="../../../../s/d27-1.html">Interceptor trong Dio dùng để làm gì? Cho hai ví dụ.</a></li>
     <li><a href="../../../../s/mid-m36.html">Sau khi thêm interceptor dưới đây, mọi request đều treo, không bao giờ trả về. Vì sao?</a> <span class="tag">Quiz</span></li>
@@ -83,6 +87,7 @@
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> Flutter Senior</h2><a class="section-sub" href="../../../../phong-van/flutter/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
+    <li><a href="../../../../s/sen-q27.html">Bảng messages trong SQLite (Drift) đã lên hàng triệu dòng: mở màn hình chat chậm vài giây, UI đứng khi import dữ liệu, và có yêu cầu mới là mã hoá database. Bạn tối ưu SQLite ở quy mô này thế nào (index, query, transaction, isolate, WAL, mã hoá)?</a></li>
     <li><a href="../../../../s/d25-1.html">&#39;Offline-first&#39; nghĩa là gì trong thiết kế app?</a></li>
     <li><a href="../../../../s/d25-3.html">&#39;Optimistic UI update&#39; là gì? Rủi ro của cách tiếp cận này?</a></li>
     <li><a href="../../../../s/d25-4.html">Nêu một chiến lược phổ biến để giải quyết conflict khi đồng bộ dữ liệu hai chiều?</a></li>

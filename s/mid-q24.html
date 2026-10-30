@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle: Các design token riêng của app (màu thành công, màu cảnh báo, khoảng cách)…</title>
+<meta name="description" content="ThemeExtension&lt;T&gt; cho phép gắn dữ liệu tuỳ biến vào ThemeData và lấy ra qua Theme.of(context).extension&lt;AppColors&gt;(), thay vì rải hằng số màu khắp app. Class…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q24.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: Các design token riêng của app (màu thành công, màu cảnh báo, khoảng cách)…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-q24.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Các design token riêng của app (màu thành công,…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q24.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Các design token riêng của app (màu thành công,…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/widget/">Widget &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Các design token riêng của app (màu thành công, màu cảnh báo, khoảng cách) không nằm trong <code>ColorScheme</code> của Material. Làm sao thêm chúng vào theme bằng <code>ThemeExtension</code>, hỗ trợ dark mode, và lưu lựa chọn sáng/tối của người dùng?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ThemeExtension&lt;T&gt;</code> cho phép gắn dữ liệu tuỳ biến vào <code>ThemeData</code> và lấy ra qua <code>Theme.of(context).extension&lt;AppColors&gt;()</code>, thay vì rải hằng số màu khắp app. Class extension phải cài <code>copyWith</code> và <code>lerp</code> (để chuyển theme có animation mượt). Khai báo hai bản (sáng và tối) rồi gắn vào <code>ThemeData(extensions: [...])</code> của <code>theme</code> và <code>darkTheme</code>. Với Material 3, dùng <code>ColorScheme.fromSeed(seedColor:, brightness:)</code> để sinh bảng màu nhất quán và chỉ thêm extension cho phần nằm ngoài scheme. Chọn chế độ bằng <code>MaterialApp(themeMode: ThemeMode.system | light | dark)</code>; muốn người dùng đổi và nhớ lựa chọn thì giữ <code>ThemeMode</code> trong một notifier (Riverpod, Provider, Cubit), lưu bằng <code>shared_preferences</code> và đọc lúc khởi động để không nháy sai theme khi mở app. Giữ API gọn bằng extension trên <code>BuildContext</code> (<code>context.appColors.success</code>). Đừng hard-code màu trong widget, và kiểm tra cả hai theme (golden test sáng và tối) cùng độ tương phản.</div>
+        <pre class="code-block"><code><span class="tk-ann">@immutable</span>
+<span class="tk-kw">class</span> <span class="tk-type">AppColors</span> <span class="tk-kw">extends</span> <span class="tk-type">ThemeExtension</span>&lt;<span class="tk-type">AppColors</span>&gt; {
+  <span class="tk-kw">const</span> <span class="tk-type">AppColors</span>({<span class="tk-kw">required</span> <span class="tk-kw">this</span>.success, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.warning});
+  <span class="tk-kw">final</span> <span class="tk-type">Color</span> success;
+  <span class="tk-kw">final</span> <span class="tk-type">Color</span> warning;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">AppColors</span> copyWith({<span class="tk-type">Color</span>? success, <span class="tk-type">Color</span>? warning}) =&gt;
+      <span class="tk-type">AppColors</span>(success: success ?? <span class="tk-kw">this</span>.success, warning: warning ?? <span class="tk-kw">this</span>.warning);
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">AppColors</span> lerp(<span class="tk-type">ThemeExtension</span>&lt;<span class="tk-type">AppColors</span>&gt;? other, double t) {
+    <span class="tk-kw">if</span> (other <span class="tk-kw">is</span>! <span class="tk-type">AppColors</span>) <span class="tk-kw">return</span> <span class="tk-kw">this</span>;
+    <span class="tk-kw">return</span> <span class="tk-type">AppColors</span>(
+      success: <span class="tk-type">Color</span>.lerp(success, other.success, t)!,
+      warning: <span class="tk-type">Color</span>.lerp(warning, other.warning, t)!,
+    );
+  }
+}
+
+<span class="tk-kw">extension</span> <span class="tk-type">AppThemeX</span> <span class="tk-kw">on</span> <span class="tk-type">BuildContext</span> {
+  <span class="tk-type">AppColors</span> <span class="tk-kw">get</span> appColors =&gt; <span class="tk-type">Theme</span>.of(<span class="tk-kw">this</span>).<span class="tk-kw">extension</span>&lt;<span class="tk-type">AppColors</span>&gt;()!;
+}
+
+<span class="tk-type">MaterialApp</span>(
+  themeMode: themeMode, <span class="tk-com">// đọc từ notifier, lưu bằng shared_preferences</span>
+  theme: <span class="tk-type">ThemeData</span>(
+    colorScheme: <span class="tk-type">ColorScheme</span>.fromSeed(seedColor: <span class="tk-type">Colors</span>.indigo),
+    extensions: <span class="tk-kw">const</span> [<span class="tk-type">AppColors</span>(success: <span class="tk-type">Color</span>(0xFF2E7D32), warning: <span class="tk-type">Color</span>(0xFFED6C02))],
+  ),
+  darkTheme: <span class="tk-type">ThemeData</span>(
+    colorScheme: <span class="tk-type">ColorScheme</span>.fromSeed(seedColor: <span class="tk-type">Colors</span>.indigo, brightness: <span class="tk-type">Brightness</span>.dark),
+    extensions: <span class="tk-kw">const</span> [<span class="tk-type">AppColors</span>(success: <span class="tk-type">Color</span>(0xFF66BB6A), warning: <span class="tk-type">Color</span>(0xFFFFA726))],
+  ),
+  home: <span class="tk-kw">const</span> <span class="tk-type">HomePage</span>(),
+)</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q24">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q23.html"><span class="muted small">← Câu trước</span><span>App cần làm mới dữ liệu khi người dùng quay lại từ background và tạm dừng timer…</span></a>
+  <a class="pager-next" href="../s/mid-q25.html"><span class="muted small">Câu sau →</span><span>Khách hàng yêu cầu app hỗ trợ người dùng TalkBack và VoiceOver. Flutter xây dựn…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Widget &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/flutter/chu-de/widget/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q06.html">Implicit animation và explicit animation khác nhau thế nào? Khi nào chọn loại nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q07.html">vsync/TickerProvider trong AnimationController để làm gì? Khi nào dùng SingleTickerProviderStateMixin, khi nào dùng TickerProviderStateMixin?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q08.html">Bạn thiết lập đa ngôn ngữ cho app Flutter bằng intl + ARB như thế nào? Xử lý tham số và số nhiều ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q23.html">App cần làm mới dữ liệu khi người dùng quay lại từ background và tạm dừng timer khi app ra nền. AppLifecycleState và WidgetsBindingObserver hoạt động thế nào, và AppLifecycleListener khác gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q25.html">Khách hàng yêu cầu app hỗ trợ người dùng TalkBack và VoiceOver. Flutter xây dựng cây accessibility (semantics) thế nào, bạn thêm nhãn và gộp nội dung ra sao, và kiểm tra tự động những gì (vùng chạm, độ tương phản)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q26.html">Một thẻ vừa có onTap vừa có onDoubleTap bị trễ phản hồi khi chạm, và một item vuốt ngang đặt trong PageView hay ListView thì lúc nhận lúc không. Gesture arena của Flutter giải quyết xung đột cử chỉ thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle: Danh sách bài viết dùng infinite scroll nhưng đôi khi tải trùng một trang,…</title>
+<meta name="description" content="Chia trạng thái rõ ràng: danh sách items, nextCursor (hoặc page), cờ isLoadingMore, hasMore và error riêng cho lần tải thêm. Phát hiện gần cuối bằng ScrollCo…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q30.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: Danh sách bài viết dùng infinite scroll nhưng đôi khi tải trùng một trang,…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-q30.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Danh sách bài viết dùng infinite scroll nhưng đ…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q30.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Danh sách bài viết dùng infinite scroll nhưng đ…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Danh sách bài viết dùng infinite scroll nhưng đôi khi tải trùng một trang, bài viết bị lặp sau khi pull-to-refresh, và khi lỗi mạng giữa chừng thì không tải tiếp được. Bạn thiết kế phân trang phía client thế nào (offset hay cursor, trạng thái, phát hiện cuối danh sách, loại trùng)?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chia trạng thái rõ ràng: danh sách <code>items</code>, <code>nextCursor</code> (hoặc <code>page</code>), cờ <code>isLoadingMore</code>, <code>hasMore</code> và <code>error</code> riêng cho lần tải thêm. Phát hiện gần cuối bằng <code>ScrollController</code> (<code>position.pixels &gt;= position.maxScrollExtent - 300</code>) hoặc <code>NotificationListener&lt;ScrollNotification&gt;</code>, hoặc kích hoạt khi <code>itemBuilder</code> dựng tới item gần cuối; trước khi gọi API luôn kiểm tra <code>isLoadingMore</code> và <code>hasMore</code> để không tải trùng. Dùng cursor (id hoặc thời điểm của item cuối) thay vì offset/page khi dữ liệu thay đổi liên tục: offset dễ làm lặp hoặc sót item khi có bài mới chèn vào đầu. Pull-to-refresh (<code>RefreshIndicator</code>) thì reset cursor và thay toàn bộ danh sách, đồng thời bỏ qua các request tải thêm đang bay (gắn một mã phiên bản) để kết quả cũ không bị nối vào danh sách mới. Loại trùng theo id khi nối trang (dùng <code>Map</code> hoặc <code>Set</code>) phòng khi server trả trùng. Khi lỗi lúc tải thêm: giữ nguyên danh sách và hiện một dòng &#39;Thử lại&#39; ở cuối, đừng thay cả màn hình bằng lỗi; đặt <code>itemCount: items.length + (hasMore ? 1 : 0)</code> để dòng cuối là spinner hoặc nút thử lại. Có thể dùng package <code>infinite_scroll_pagination</code>, hoặc để Riverpod/Bloc giữ state phân trang và UI chỉ phát sự kiện <code>loadMore</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">PostListController</span> <span class="tk-kw">extends</span> <span class="tk-type">ChangeNotifier</span> {
+  <span class="tk-kw">final</span> _items = &lt;<span class="tk-type">String</span>, <span class="tk-type">Post</span>&gt;{}; <span class="tk-com">// theo id: tự loại bài trùng</span>
+  <span class="tk-type">String</span>? _cursor;
+  bool hasMore = <span class="tk-kw">true</span>;
+  bool isLoadingMore = <span class="tk-kw">false</span>;
+  <span class="tk-type">Object</span>? error;
+  int _generation = <span class="tk-num">0</span>; <span class="tk-com">// tăng khi refresh để bỏ kết quả của request cũ</span>
+
+  <span class="tk-type">List</span>&lt;<span class="tk-type">Post</span>&gt; <span class="tk-kw">get</span> items =&gt; _items.values.toList();
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; loadMore() <span class="tk-kw">async</span> {
+    <span class="tk-kw">if</span> (isLoadingMore || !hasMore) <span class="tk-kw">return</span>;
+    isLoadingMore = <span class="tk-kw">true</span>;
+    error = <span class="tk-kw">null</span>;
+    notifyListeners();
+    <span class="tk-kw">final</span> gen = _generation;
+    <span class="tk-kw">try</span> {
+      <span class="tk-kw">final</span> page = <span class="tk-kw">await</span> api.fetchPosts(cursor: _cursor, limit: <span class="tk-num">20</span>);
+      <span class="tk-kw">if</span> (gen != _generation) <span class="tk-kw">return</span>; <span class="tk-com">// đã refresh trong lúc chờ: bỏ kết quả cũ</span>
+      <span class="tk-kw">for</span> (<span class="tk-kw">final</span> p <span class="tk-kw">in</span> page.items) {
+        _items[p.id] = p;
+      }
+      _cursor = page.nextCursor;
+      hasMore = page.nextCursor != <span class="tk-kw">null</span>;
+    } <span class="tk-kw">catch</span> (e) {
+      <span class="tk-kw">if</span> (gen == _generation) error = e; <span class="tk-com">// giữ danh sách cũ, chỉ hiện nút thử lại ở cuối</span>
+    } <span class="tk-kw">finally</span> {
+      <span class="tk-kw">if</span> (gen == _generation) isLoadingMore = <span class="tk-kw">false</span>;
+      notifyListeners();
+    }
+  }
+
+  <span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; refresh() {
+    _generation++;
+    _items.clear();
+    _cursor = <span class="tk-kw">null</span>;
+    hasMore = <span class="tk-kw">true</span>;
+    isLoadingMore = <span class="tk-kw">false</span>;
+    <span class="tk-kw">return</span> loadMore();
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q30">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q29.html"><span class="muted small">← Câu trước</span><span>App cần chạy tốt trên điện thoại, máy tính bảng và máy gập: điện thoại dùng tha…</span></a>
+  <a class="pager-next" href="../s/mid-q31.html"><span class="muted small">Câu sau →</span><span>Cần upload ảnh (vài MB) từ điện thoại lên server, có thanh tiến độ, cho phép hu…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/flutter/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q19.html">freezed + json_serializable giúp gì so với viết tay model và fromJson/toJson?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q31.html">Cần upload ảnh (vài MB) từ điện thoại lên server, có thanh tiến độ, cho phép huỷ, và không làm tràn bộ nhớ. Bạn dùng Dio với FormData, onSendProgress và CancelToken thế nào, và xử lý các lỗi hay gặp ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q32.html">App dùng SQLite qua Drift: danh sách giỏ hàng cần tự cập nhật khi dữ liệu trong DB đổi, và bản cập nhật sau thêm cột mới vào bảng orders cho người dùng đang có dữ liệu. Bạn dùng watch(), schemaVersion và MigrationStrategy thế nào, và kiểm thử migration ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d25-2.html">Khi nào chọn Drift, Isar hay Hive thay vì SharedPreferences?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d27-1.html">Interceptor trong Dio dùng để làm gì? Cho hai ví dụ.</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-m36.html">Sau khi thêm interceptor dưới đây, mọi request đều treo, không bao giờ trả về. Vì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

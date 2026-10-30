@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Dart — Mobile Interview</title>
-<meta name="description" content="26 câu hỏi phỏng vấn Flutter về Dart từ Fresher đến Senior, có đáp án mẫu và 26 câu quiz trắc nghiệm.">
+<meta name="description" content="33 câu hỏi phỏng vấn Flutter về Dart từ Fresher đến Senior, có đáp án mẫu và 26 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/dart/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Dart — Mobile Interview">
-<meta property="og:description" content="26 câu hỏi phỏng vấn Flutter về Dart từ Fresher đến Senior, có đáp án mẫu và 26 câu quiz trắc nghiệm.">
+<meta property="og:description" content="33 câu hỏi phỏng vấn Flutter về Dart từ Fresher đến Senior, có đáp án mẫu và 26 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/dart/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Dart</h1>
-  <p class="subtitle">26 câu hỏi kèm đáp án mẫu và 26 câu quiz về Dart, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">33 câu hỏi kèm đáp án mẫu và 26 câu quiz về Dart, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -62,6 +62,10 @@
     <li><a href="../../../../s/fre-q08.html">Collection if, collection for và spread operator ... giúp gì khi viết UI Flutter?</a></li>
     <li><a href="../../../../s/fre-q09.html">Dấu gạch dưới _ ở đầu tên biến, hàm hay class có ý nghĩa gì trong Dart?</a></li>
     <li><a href="../../../../s/fre-q10.html">File pubspec.yaml dùng để làm gì? Ký hiệu ^2.1.0 trong phần dependencies nghĩa là gì?</a></li>
+    <li><a href="../../../../s/fre-q40.html">map, where, fold và any/every trên List dùng để làm gì? Vì sao kết quả của list.map(...) thường cần thêm .toList()?</a></li>
+    <li><a href="../../../../s/fre-q41.html">enum trong Dart dùng khi nào? Enum nâng cao (enhanced enum) chứa field và method thế nào, và switch trên enum có lợi gì?</a></li>
+    <li><a href="../../../../s/fre-q45.html">static dùng khi nào, và nên tổ chức hằng số dùng chung như màu, khoảng cách, tên route trong Dart thế nào? static const khác static final ra sao?</a></li>
+    <li><a href="../../../../s/fre-q46.html">Trong Dart, Exception và Error khác nhau thế nào? Khi nào nên tự tạo class exception riêng, và có nên bắt Error không?</a></li>
     <li><a href="../../../../s/d01-1.html">Sự khác biệt giữa final và const? Khi nào nên dùng cái nào?</a></li>
     <li><a href="../../../../s/d01-4.html">Toán tử ??, ??= và ?. khác nhau thế nào?</a></li>
     <li><a href="../../../../s/fre-m01.html">Đoạn code khai báo biến bằng var dưới đây cho kết quả gì?</a> <span class="tag">Quiz</span></li>
@@ -109,11 +113,19 @@
     <li><a href="../../../../s/mid-q01.html">Vì sao sealed class kết hợp switch expression là cách tốt để mô hình hóa UI state (loading/success/error)?</a></li>
     <li><a href="../../../../s/mid-q02.html">Record và pattern trong Dart 3 giải quyết vấn đề gì? Khi nào nên dùng record thay vì tạo class?</a></li>
     <li><a href="../../../../s/mid-q03.html">Các class modifier interface, base, final, sealed trong Dart 3 khác nhau thế nào? Khi nào dùng?</a></li>
+    <li><a href="../../../../s/mid-q21.html">Hai hàm cùng nhận int là getUser(int userId) và getOrder(int orderId) nên rất dễ truyền nhầm id. Extension type của Dart 3.3 giải quyết việc này thế nào, và nó khác một class bọc thông thường ở điểm nào?</a></li>
     <li><a href="../../../../s/mid-m01.html">Đoạn code sau in ra gì (theo thứ tự từng dòng)?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m02.html">Kết quả của đoạn code dùng extension type sau?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m03.html">Bạn viết một package và muốn class Logger được phép extends ở package khác nhưng cấm implements (để sau này thêm method không làm vỡ code người dùng). Dùng modifier nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m04.html">Điều gì xảy ra với đoạn code sau?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m05.html">Đoạn code sau chạy thế nào?</a> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> Flutter Senior</h2><a class="section-sub" href="../../../../phong-van/flutter/senior/">Mọi chủ đề Senior →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/sen-q16.html">Vì sao Flutter có hot reload ở debug mà bản release thì không, và vì sao app Flutter không dùng được reflection (dart:mirrors) mà phải dùng sinh code? Dart chạy ở chế độ JIT và AOT khác nhau thế nào, và hệ quả với kích thước, startup và bảo mật ra sao?</a></li>
+    <li><a href="../../../../s/sen-q17.html">Đoạn code List&lt;num&gt; nums = &lt;int&gt;[1, 2]; nums.add(1.5); compile được nhưng crash lúc chạy với TypeError. Vì sao generic của Dart là covariant, từ khoá covariant giải quyết gì, và gặp lỗi tương tự trong code Flutter thế nào?</a></li>
   </ul>
 </section>
 <section>

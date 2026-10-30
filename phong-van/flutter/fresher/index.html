@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Flutter Fresher (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<title>Câu hỏi phỏng vấn Flutter Fresher (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · flutter · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Fresher</h1>
-  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/flutter/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -62,12 +62,13 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#dart">Dart</a> <span class="count">12</span></li>
+    <li><a href="#dart">Dart</a> <span class="count">16</span></li>
     <li><a href="#async">Async &amp; Isolate</a> <span class="count">2</span></li>
-    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">8</span></li>
-    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">6</span></li>
+    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">12</span></li>
+    <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">9</span></li>
     <li><a href="#state">State Management</a> <span class="count">2</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">4</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
     <li><a href="#native">Native &amp; Platform</a> <span class="count">1</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
@@ -235,6 +236,118 @@ print(name?.length ?? <span class="tk-num">0</span>);  <span class="tk-com">// a
       <div class="model-answer">
         <div class="answer-text"><code>pubspec.yaml</code> mô tả project: tên, version, ràng buộc SDK, các package phụ thuộc (<code>dependencies</code>, <code>dev_dependencies</code>) và khai báo assets, fonts. <code>^2.1.0</code> (caret syntax) nghĩa là chấp nhận từ <code>2.1.0</code> đến dưới <code>3.0.0</code>, tức các bản không phá vỡ API theo semantic versioning; riêng bản <code>0.x</code> như <code>^0.13.0</code> chỉ cho phép tới dưới <code>0.14.0</code>. Sau khi sửa file thì chạy <code>flutter pub get</code> (hoặc dùng <code>flutter pub add tên_package</code>), phiên bản thực tế được khóa lại trong <code>pubspec.lock</code>.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q40.html"><code>map</code>, <code>where</code>, <code>fold</code> và <code>any</code>/<code>every</code> trên <code>List</code> dùng để làm gì? Vì sao kết quả của <code>list.map(...)</code> thường cần thêm <code>.toList()</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>map</code> biến mỗi phần tử thành một giá trị khác (ví dụ danh sách model thành danh sách widget), <code>where</code> giữ lại các phần tử thoả điều kiện, <code>fold</code> gộp cả danh sách thành một giá trị với giá trị khởi đầu (tổng tiền giỏ hàng), <code>any</code> kiểm tra có ít nhất một phần tử thoả, <code>every</code> kiểm tra tất cả đều thoả. <code>map</code> và <code>where</code> trả về <code>Iterable</code> lười (lazy): phép biến đổi chỉ chạy khi bạn duyệt, và chạy lại ở mỗi lần duyệt; muốn có <code>List</code> thật (để dùng index, <code>length</code> nhanh, hoặc truyền vào <code>children:</code>) thì gọi <code>.toList()</code>. Cẩn thận <code>list.where(...).first</code> ném lỗi nếu không có phần tử nào, nên dùng <code>firstWhere(..., orElse: ...)</code> hoặc <code>firstOrNull</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> prices = [<span class="tk-num">120000</span>, <span class="tk-num">50000</span>, <span class="tk-num">80000</span>];
+
+<span class="tk-kw">final</span> total = prices.fold&lt;int&gt;(<span class="tk-num">0</span>, (sum, p) =&gt; sum + p);     <span class="tk-com">// 250000</span>
+<span class="tk-kw">final</span> expensive = prices.where((p) =&gt; p &gt; <span class="tk-num">60000</span>).toList();  <span class="tk-com">// [120000, 80000]</span>
+<span class="tk-kw">final</span> labels = prices.map((p) =&gt; <span class="tk-str">&#39;$p ₫&#39;</span>).toList();          <span class="tk-com">// List&lt;String&gt;</span>
+print(prices.any((p) =&gt; p &gt; <span class="tk-num">100000</span>));  <span class="tk-com">// true</span>
+print(prices.every((p) =&gt; p &gt; <span class="tk-num">10000</span>)); <span class="tk-com">// true</span>
+
+<span class="tk-com">// Iterable lười: phép map chạy lại ở mỗi lần duyệt nếu không gọi toList()</span>
+<span class="tk-kw">final</span> lazy = prices.map((p) {
+  print(<span class="tk-str">&#39;tính $p&#39;</span>);
+  <span class="tk-kw">return</span> p * <span class="tk-num">2</span>;
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q41.html"><code>enum</code> trong Dart dùng khi nào? Enum nâng cao (enhanced enum) chứa field và method thế nào, và <code>switch</code> trên enum có lợi gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>enum</code> mô tả một tập giá trị cố định như trạng thái đơn hàng, thay cho chuỗi hay số &#39;ma thuật&#39; dễ gõ sai. Từ Dart 2.17, enum có thể có field <code>final</code>, constructor <code>const</code>, method và getter, nên gắn luôn nhãn hiển thị hay màu vào từng giá trị. Mọi enum có sẵn <code>values</code> (danh sách tất cả giá trị), <code>name</code> (tên dạng chuỗi) và <code>index</code>. Khi <code>switch</code> trên enum (statement hay expression), compiler yêu cầu xử lý đủ mọi giá trị, thêm giá trị mới mà quên xử lý là lỗi compile, an toàn hơn so với <code>if</code> theo chuỗi. Đọc từ JSON thì dùng <code>Status.values.byName(raw)</code> (ném lỗi nếu giá trị lạ) hoặc tự viết hàm chuyển đổi kèm giá trị mặc định cho dữ liệu chưa biết.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">OrderStatus</span> {
+  pending(<span class="tk-str">&#39;Chờ xác nhận&#39;</span>, <span class="tk-type">Colors</span>.orange),
+  shipping(<span class="tk-str">&#39;Đang giao&#39;</span>, <span class="tk-type">Colors</span>.blue),
+  done(<span class="tk-str">&#39;Hoàn tất&#39;</span>, <span class="tk-type">Colors</span>.green);
+
+  <span class="tk-kw">const</span> <span class="tk-type">OrderStatus</span>(<span class="tk-kw">this</span>.label, <span class="tk-kw">this</span>.color);
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> label;
+  <span class="tk-kw">final</span> <span class="tk-type">Color</span> color;
+}
+
+<span class="tk-type">String</span> describe(<span class="tk-type">OrderStatus</span> s) =&gt; <span class="tk-kw">switch</span> (s) {
+  <span class="tk-type">OrderStatus</span>.pending =&gt; <span class="tk-str">&#39;Đơn đang chờ&#39;</span>,
+  <span class="tk-type">OrderStatus</span>.shipping =&gt; <span class="tk-str">&#39;Đơn đang trên đường&#39;</span>,
+  <span class="tk-type">OrderStatus</span>.done =&gt; <span class="tk-str">&#39;Đơn đã giao&#39;</span>,
+}; <span class="tk-com">// thiếu một giá trị là lỗi compile</span>
+
+<span class="tk-kw">final</span> status = <span class="tk-type">OrderStatus</span>.values.byName(<span class="tk-str">&#39;shipping&#39;</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q45.html"><code>static</code> dùng khi nào, và nên tổ chức hằng số dùng chung như màu, khoảng cách, tên route trong Dart thế nào? <code>static const</code> khác <code>static final</code> ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thành viên <code>static</code> thuộc về class chứ không thuộc từng instance: gọi trực tiếp <code>AppColors.primary</code> mà không cần tạo object, và chỉ có một bản dùng chung. Hằng số dùng chung nên khai báo là <code>static const</code> (giá trị biết ngay lúc compile, như <code>Color</code>, số, chuỗi) hoặc <code>static final</code> (giá trị chỉ biết lúc chạy, được tính một lần rồi không đổi, ví dụ <code>DateTime.now()</code>). Gom hằng số vào một class không cần khởi tạo; từ Dart 3 viết <code>abstract final class AppSpacing { static const double md = 16; }</code> để không ai tạo instance hay kế thừa nó nhầm. Dùng <code>const</code> giúp các widget như <code>const SizedBox(height: AppSpacing.md)</code> được tạo sẵn và tái sử dụng, nên giảm rebuild. Tránh lạm dụng <code>static</code> cho state có thể thay đổi (trạng thái toàn cục) vì khó test và dễ gây lỗi khó thấy.</div>
+        <pre class="code-block"><code><span class="tk-kw">abstract</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">AppColors</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> primary = <span class="tk-type">Color</span>(0xFF1E88E5);
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> danger = <span class="tk-type">Color</span>(0xFFD32F2F);
+}
+
+<span class="tk-kw">abstract</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">AppSpacing</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> double sm = <span class="tk-num">8</span>;
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> double md = <span class="tk-num">16</span>;
+}
+
+<span class="tk-kw">abstract</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Routes</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> home = <span class="tk-str">&#39;/&#39;</span>;
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> productDetail = <span class="tk-str">&#39;/products/:id&#39;</span>;
+}
+
+<span class="tk-com">// static final: tính một lần lúc chạy, sau đó không đổi</span>
+<span class="tk-kw">class</span> <span class="tk-type">AppInfo</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">final</span> <span class="tk-type">DateTime</span> startedAt = <span class="tk-type">DateTime</span>.now();
+}
+
+<span class="tk-kw">const</span> gap = <span class="tk-type">SizedBox</span>(height: <span class="tk-type">AppSpacing</span>.md);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q46.html">Trong Dart, <code>Exception</code> và <code>Error</code> khác nhau thế nào? Khi nào nên tự tạo class exception riêng, và có nên bắt <code>Error</code> không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Exception</code> mô tả tình huống bất thường có thể xảy ra khi chương trình vẫn đúng và nên được xử lý: mất mạng, file không tồn tại, dữ liệu sai định dạng (<code>FormatException</code>, <code>TimeoutException</code>, <code>SocketException</code>). <code>Error</code> báo lỗi lập trình (bug) mà đáng lẽ không bao giờ xảy ra, như <code>RangeError</code>, <code>StateError</code>, <code>TypeError</code>, <code>UnimplementedError</code>; thường không nên bắt để &#39;giấu&#39; lỗi mà phải sửa code, chỉ bắt ở tầng ngoài cùng để ghi log (crash report). Dart cho phép <code>throw</code> bất kỳ object nào nhưng quy ước là chỉ ném <code>Exception</code> hoặc <code>Error</code>. Tự tạo exception riêng (ví dụ <code>InsufficientBalanceException implements Exception</code>) khi muốn phân biệt lỗi nghiệp vụ để UI xử lý khác nhau, kèm thông tin để hiển thị hay log. Khi bắt, dùng <code>on</code> với kiểu cụ thể (<code>on SocketException catch (e)</code>) thay vì <code>catch (e)</code> bắt tất cả, và dùng <code>rethrow</code> nếu chỉ muốn ghi log rồi để lỗi đi tiếp.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">InsufficientBalanceException</span> <span class="tk-kw">implements</span> <span class="tk-type">Exception</span> {
+  <span class="tk-type">InsufficientBalanceException</span>(<span class="tk-kw">this</span>.needed);
+  <span class="tk-kw">final</span> int needed;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">String</span> toString() =&gt; <span class="tk-str">&#39;Số dư không đủ, cần thêm $needed ₫&#39;</span>;
+}
+
+<span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; pay(int amount) <span class="tk-kw">async</span> {
+  <span class="tk-kw">if</span> (balance &lt; amount) <span class="tk-kw">throw</span> <span class="tk-type">InsufficientBalanceException</span>(amount - balance);
+  <span class="tk-com">// ...</span>
+}
+
+<span class="tk-kw">try</span> {
+  <span class="tk-kw">await</span> pay(<span class="tk-num">500000</span>);
+} <span class="tk-kw">on</span> <span class="tk-type">InsufficientBalanceException</span> <span class="tk-kw">catch</span> (e) {
+  showMessage(e.toString()); <span class="tk-com">// lỗi nghiệp vụ: báo cho user</span>
+} <span class="tk-kw">on</span> <span class="tk-type">SocketException</span> {
+  showMessage(<span class="tk-str">&#39;Mất kết nối, vui lòng thử lại&#39;</span>);
+}
+<span class="tk-com">// RangeError, StateError... là bug: để lộ ra và sửa code, đừng nuốt</span></code></pre>
         
       </div>
     </details>
@@ -432,6 +545,111 @@ print(name?.length ?? <span class="tk-num">0</span>);  <span class="tk-com">// a
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q36.html"><code>ListView</code>, <code>ListView.builder</code> và <code>ListView.separated</code> khác nhau thế nào? Khi nào dùng loại nào để hiển thị danh sách?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>ListView(children: [...])</code> dựng sẵn toàn bộ widget con ngay lập tức, nên chỉ hợp với danh sách ngắn và cố định như vài mục trong màn cài đặt. <code>ListView.builder</code> dựng item theo yêu cầu: chỉ các item đang (hoặc sắp) hiện trên màn hình mới được tạo qua <code>itemBuilder(context, index)</code>, nên hợp với danh sách dài hoặc dữ liệu lấy từ API; cần truyền <code>itemCount</code> để biết có bao nhiêu mục. <code>ListView.separated</code> giống <code>builder</code> nhưng có thêm <code>separatorBuilder</code> để chèn đường kẻ giữa các mục mà không phải tự thêm vào từng item. Mỗi item thường dùng <code>ListTile</code> (có sẵn <code>leading</code>, <code>title</code>, <code>subtitle</code>, <code>trailing</code> và <code>onTap</code>). Nếu dữ liệu có thể thêm, xoá hoặc đổi thứ tự thì cho mỗi item một <code>key</code> ổn định như <code>ValueKey(item.id)</code>.</div>
+        <pre class="code-block"><code><span class="tk-type">ListView</span>.separated(
+  itemCount: products.length,
+  separatorBuilder: (_, __) =&gt; <span class="tk-kw">const</span> <span class="tk-type">Divider</span>(height: <span class="tk-num">1</span>),
+  itemBuilder: (context, index) {
+    <span class="tk-kw">final</span> p = products[index];
+    <span class="tk-kw">return</span> <span class="tk-type">ListTile</span>(
+      key: <span class="tk-type">ValueKey</span>(p.id),
+      leading: <span class="tk-kw">const</span> <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.shopping_bag),
+      title: <span class="tk-type">Text</span>(p.name),
+      subtitle: <span class="tk-type">Text</span>(<span class="tk-str">&#39;${p.price} ₫&#39;</span>),
+      onTap: () =&gt; openDetail(p),
+    );
+  },
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q39.html">Hiển thị hộp thoại xác nhận, bottom sheet và thông báo ngắn (<code>SnackBar</code>) trong Flutter thế nào? Làm sao nhận được kết quả người dùng chọn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>showDialog&lt;T&gt;</code> mở một hộp thoại (thường là <code>AlertDialog</code>) và trả về <code>Future&lt;T?&gt;</code> hoàn tất khi dialog đóng; đóng bằng <code>Navigator.pop(context, giáTrị)</code> thì giá trị đó là kết quả, còn bấm ra ngoài thì kết quả là <code>null</code>, nên hãy <code>await</code> rồi so sánh <code>== true</code>. <code>showModalBottomSheet&lt;T&gt;</code> hoạt động tương tự cho bottom sheet. <code>SnackBar</code> hiện qua <code>ScaffoldMessenger.of(context).showSnackBar(...)</code>, hợp để báo kết quả ngắn và có thể kèm <code>SnackBarAction</code> (ví dụ &#39;Hoàn tác&#39;). Sau mỗi <code>await</code>, widget có thể đã bị gỡ khỏi cây, nên kiểm tra <code>if (!context.mounted) return;</code> trước khi dùng <code>context</code> tiếp (lint <code>use_build_context_synchronously</code> nhắc điều này). Không dùng dialog cho nội dung dài hoặc nhiều bước, hãy dùng một màn hình riêng.</div>
+        <pre class="code-block"><code><span class="tk-type">Future</span>&lt;<span class="tk-kw">void</span>&gt; confirmDelete(<span class="tk-type">BuildContext</span> context) <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> ok = <span class="tk-kw">await</span> showDialog&lt;bool&gt;(
+    context: context,
+    builder: (ctx) =&gt; <span class="tk-type">AlertDialog</span>(
+      title: <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Xoá sản phẩm?&#39;</span>),
+      content: <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Thao tác này không thể hoàn tác.&#39;</span>),
+      actions: [
+        <span class="tk-type">TextButton</span>(onPressed: () =&gt; <span class="tk-type">Navigator</span>.pop(ctx, <span class="tk-kw">false</span>), child: <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Huỷ&#39;</span>)),
+        <span class="tk-type">FilledButton</span>(onPressed: () =&gt; <span class="tk-type">Navigator</span>.pop(ctx, <span class="tk-kw">true</span>), child: <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Xoá&#39;</span>)),
+      ],
+    ),
+  );
+  <span class="tk-kw">if</span> (ok != <span class="tk-kw">true</span> || !context.mounted) <span class="tk-kw">return</span>; <span class="tk-com">// bấm ra ngoài thì ok == null</span>
+  <span class="tk-type">ScaffoldMessenger</span>.of(context).showSnackBar(<span class="tk-kw">const</span> <span class="tk-type">SnackBar</span>(content: <span class="tk-type">Text</span>(<span class="tk-str">&#39;Đã xoá&#39;</span>)));
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q42.html">Làm sao thêm font tuỳ chỉnh và một file dữ liệu JSON vào app Flutter, đặt font mặc định cho cả app và đọc file JSON lúc chạy? Vì sao sửa <code>pubspec.yaml</code> xong mà font hay file vẫn không được nhận?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Font: đặt file <code>.ttf</code> hoặc <code>.otf</code> trong dự án và khai báo trong mục <code>fonts:</code> của <code>pubspec.yaml</code> với <code>family</code> cùng danh sách <code>asset</code> kèm <code>weight</code> và <code>style</code> cho từng biến thể (Regular, Bold, Italic); sau đó dùng <code>TextStyle(fontFamily: &#39;Inter&#39;, fontWeight: FontWeight.w700)</code> hoặc đặt font mặc định cho cả app bằng <code>ThemeData(fontFamily: &#39;Inter&#39;)</code>. Dữ liệu tĩnh như JSON cấu hình thì khai báo trong <code>assets:</code> rồi đọc lúc chạy bằng <code>rootBundle.loadString(&#39;assets/data/config.json&#39;)</code> (bất đồng bộ) và <code>jsonDecode</code>. Các lỗi hay gặp: YAML nhạy cảm với thụt lề (dùng 2 dấu cách, không dùng tab) nên sai một cấp là Flutter không nhận; tên <code>family</code> trong code không khớp với <code>pubspec.yaml</code>; đường dẫn sai chữ hoa chữ thường gây lỗi trên Android và Linux dù chạy được trên macOS; và thiếu một biến thể (không khai báo bản Bold thì Flutter tự &#39;làm đậm giả&#39;, nhìn xấu hơn). Sau khi sửa <code>pubspec.yaml</code> hãy chạy <code>flutter pub get</code> rồi chạy lại app (hot restart hoặc chạy lại hẳn) vì tài nguyên mới không có hiệu lực chỉ bằng hot reload. Font có dung lượng đáng kể (nhất là font tiếng Việt đầy đủ dấu) nên chỉ đóng gói các weight thật sự dùng, hoặc dùng package <code>google_fonts</code> (tải lúc chạy và cache) khi chấp nhận phụ thuộc mạng ở lần đầu.</div>
+        <pre class="code-block"><code># pubspec.yaml
+flutter:
+  assets:
+    - assets/data/config.json
+  fonts:
+    - family: <span class="tk-type">Inter</span>
+      fonts:
+        - asset: assets/fonts/<span class="tk-type">Inter</span>-<span class="tk-type">Regular</span>.ttf
+        - asset: assets/fonts/<span class="tk-type">Inter</span>-<span class="tk-type">Bold</span>.ttf
+          weight: <span class="tk-num">700</span>
+        - asset: assets/fonts/<span class="tk-type">Inter</span>-<span class="tk-type">Italic</span>.ttf
+          style: italic
+
+<span class="tk-com">// Font mặc định cho cả app</span>
+<span class="tk-type">MaterialApp</span>(theme: <span class="tk-type">ThemeData</span>(fontFamily: <span class="tk-str">&#39;Inter&#39;</span>), home: <span class="tk-kw">const</span> <span class="tk-type">HomePage</span>());
+
+<span class="tk-com">// Đọc file JSON đã khai báo trong assets</span>
+<span class="tk-type">Future</span>&lt;<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt;&gt; loadConfig() <span class="tk-kw">async</span> {
+  <span class="tk-kw">final</span> raw = <span class="tk-kw">await</span> rootBundle.loadString(<span class="tk-str">&#39;assets/data/config.json&#39;</span>);
+  <span class="tk-kw">return</span> jsonDecode(raw) <span class="tk-kw">as</span> <span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q48.html">Cách ẩn một widget có điều kiện: dùng <code>if</code>, <code>Visibility</code>, <code>Opacity</code> hay <code>Offstage</code> khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>if (cond) Widget()</code> trong danh sách <code>children</code> (collection if) bỏ hẳn widget khỏi cây khi điều kiện sai: không chiếm chỗ, không tốn tài nguyên, nhưng state của nó bị mất khi ẩn. <code>Visibility(visible: ...)</code> mặc định cũng thay bằng <code>SizedBox.shrink()</code>; muốn giữ chỗ và state thì đặt <code>maintainSize</code>, <code>maintainState</code>, <code>maintainAnimation</code> thành <code>true</code> (phải bật đủ các cờ đi kèm). <code>Opacity(opacity: 0)</code> chỉ làm trong suốt nhưng widget vẫn nằm trong cây, vẫn chiếm chỗ, vẫn được vẽ và vẫn nhận chạm, nên không dùng để &#39;ẩn&#39; nút; cần hiệu ứng mờ dần thì dùng <code>AnimatedOpacity</code> hoặc <code>FadeTransition</code>. <code>Offstage(offstage: true)</code> giữ state và vẫn build widget nhưng không vẽ, không chiếm chỗ và không nhận chạm, hợp khi cần ẩn tạm mà giữ state (ví dụ trang đã tải). <code>IgnorePointer</code> chặn chạm nhưng vẫn hiển thị. Hãy chọn theo ba câu hỏi: có cần giữ chỗ không, có cần giữ state không, và có cần tiếp tục build không.</div>
+        <pre class="code-block"><code><span class="tk-type">Column</span>(
+  children: [
+    <span class="tk-kw">if</span> (isLoggedIn) <span class="tk-kw">const</span> <span class="tk-type">WelcomeBanner</span>(), <span class="tk-com">// sai điều kiện: widget không tồn tại trong cây</span>
+
+    <span class="tk-type">Visibility</span>(
+      visible: hasUnread,
+      maintainSize: <span class="tk-kw">true</span>, <span class="tk-com">// giữ chỗ để layout không nhảy</span>
+      maintainAnimation: <span class="tk-kw">true</span>,
+      maintainState: <span class="tk-kw">true</span>,
+      child: <span class="tk-kw">const</span> <span class="tk-type">Badge</span>(label: <span class="tk-type">Text</span>(<span class="tk-str">&#39;3&#39;</span>)),
+    ),
+
+    <span class="tk-type">Offstage</span>(offstage: !showDetail, child: <span class="tk-kw">const</span> <span class="tk-type">ExpensiveDetail</span>()), <span class="tk-com">// giữ state, không vẽ, không chiếm chỗ</span>
+  ],
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="layout">
@@ -508,6 +726,74 @@ print(name?.length ?? <span class="tk-num">0</span>);  <span class="tk-com">// a
       <div class="model-answer">
         <div class="answer-text"><code>Container</code> là widget đa năng gộp padding, margin, màu nền, <code>decoration</code> (bo góc, viền, shadow), kích thước và căn chỉnh. <code>SizedBox</code> chỉ để đặt kích thước cố định hoặc tạo khoảng trống (ví dụ <code>SizedBox(height: 16)</code> giữa hai widget), còn <code>Padding</code> chỉ thêm khoảng đệm quanh con. Khi chỉ cần một chức năng thì nên dùng widget chuyên biệt vì gọn hơn và dùng được <code>const</code>; lưu ý <code>Container</code> không cho truyền đồng thời <code>color</code> và <code>decoration</code>, phải đặt màu bên trong <code>BoxDecoration</code>.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q37.html">Màn hình đăng ký có nhiều ô nhập, khi bàn phím hiện lên thì che mất ô phía dưới hoặc báo lỗi overflow sọc vàng đen. <code>resizeToAvoidBottomInset</code> và <code>SingleChildScrollView</code> giải quyết việc này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi bàn phím hiện lên, <code>Scaffold</code> mặc định co phần thân lại (<code>resizeToAvoidBottomInset: true</code>) để nội dung nằm phía trên bàn phím. Nếu nội dung là một <code>Column</code> cao hơn phần còn lại thì xuất hiện lỗi overflow, vì <code>Column</code> không tự cuộn. Cách sửa chuẩn là bọc form trong <code>SingleChildScrollView</code> để người dùng cuộn được khi không đủ chỗ; khi đó Flutter còn tự cuộn tới ô đang được focus. <code>resizeToAvoidBottomInset: false</code> chỉ nên dùng khi muốn thân màn hình đứng yên (ví dụ có ảnh nền) và bạn tự xử lý khoảng trống bằng <code>MediaQuery.viewInsetsOf(context).bottom</code>. Đừng tắt resize chỉ để &#39;hết lỗi&#39; mà không xử lý, vì khi đó bàn phím sẽ che mất ô nhập. Form rất dài cũng có thể dùng <code>ListView</code> thay cho <code>SingleChildScrollView</code>.</div>
+        <pre class="code-block"><code><span class="tk-type">Scaffold</span>(
+  appBar: <span class="tk-type">AppBar</span>(title: <span class="tk-kw">const</span> <span class="tk-type">Text</span>(<span class="tk-str">&#39;Đăng ký&#39;</span>)),
+  body: <span class="tk-type">SafeArea</span>(
+    child: <span class="tk-type">SingleChildScrollView</span>(
+      padding: <span class="tk-kw">const</span> <span class="tk-type">EdgeInsets</span>.all(<span class="tk-num">16</span>),
+      child: <span class="tk-type">Column</span>(
+        children: [
+          <span class="tk-kw">const</span> <span class="tk-type">TextField</span>(decoration: <span class="tk-type">InputDecoration</span>(labelText: <span class="tk-str">&#39;Họ tên&#39;</span>)),
+          <span class="tk-kw">const</span> <span class="tk-type">SizedBox</span>(height: <span class="tk-num">12</span>),
+          <span class="tk-kw">const</span> <span class="tk-type">TextField</span>(decoration: <span class="tk-type">InputDecoration</span>(labelText: <span class="tk-str">&#39;Email&#39;</span>)),
+          <span class="tk-com">// ...nhiều ô nhập khác: khi bàn phím hiện, người dùng cuộn được</span>
+        ],
+      ),
+    ),
+  ),
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q43.html">Một hàng các thẻ tag (chip) bị lỗi tràn ngang khi dùng <code>Row</code> vì có quá nhiều thẻ. <code>Wrap</code> khác <code>Row</code> thế nào và khi nào dùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Row</code> xếp các con trên một hàng duy nhất và không tự xuống dòng; nếu tổng chiều rộng vượt quá không gian thì báo lỗi overflow. <code>Wrap</code> xếp các con theo hàng và tự xuống dòng khi hết chỗ, nên hợp với danh sách chip, tag, bộ lọc có số lượng và độ dài không biết trước. Khoảng cách chỉnh bằng <code>spacing</code> (giữa các con trên cùng hàng) và <code>runSpacing</code> (giữa các hàng); <code>alignment</code> và <code>runAlignment</code> dùng để căn lề. <code>Wrap</code> không cuộn và không lazy: mọi con được dựng ngay, nên chỉ hợp với số lượng nhỏ (vài chục); danh sách rất dài cần <code>ListView</code> hay <code>GridView.builder</code>. Đổi <code>direction: Axis.vertical</code> để xếp theo cột. Nếu muốn một hàng cuộn ngang thay vì xuống dòng, dùng <code>SingleChildScrollView(scrollDirection: Axis.horizontal, child: Row(...))</code> hoặc <code>ListView</code> ngang.</div>
+        <pre class="code-block"><code><span class="tk-type">Wrap</span>(
+  spacing: <span class="tk-num">8</span>, <span class="tk-com">// khoảng cách giữa các chip trên cùng hàng</span>
+  runSpacing: <span class="tk-num">8</span>, <span class="tk-com">// khoảng cách giữa các hàng</span>
+  children: [
+    <span class="tk-kw">for</span> (<span class="tk-kw">final</span> tag <span class="tk-kw">in</span> tags) <span class="tk-type">Chip</span>(label: <span class="tk-type">Text</span>(tag)),
+  ],
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q44.html"><code>Center</code>, <code>Align</code>, <code>AspectRatio</code>, <code>FittedBox</code> và <code>ClipRRect</code> dùng để làm gì? Cho ví dụ khi nào chọn từng widget.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Center</code> đặt con ở giữa không gian của cha; <code>Align</code> linh hoạt hơn với <code>alignment</code> (như <code>Alignment.bottomRight</code>) cùng <code>widthFactor</code>/<code>heightFactor</code>. <code>AspectRatio(aspectRatio: 16 / 9)</code> ép con theo tỉ lệ rộng/cao, hợp với ảnh bìa hay video cần giữ tỉ lệ khi màn hình đổi kích thước. <code>FittedBox</code> co hoặc phóng con để vừa với không gian của cha theo <code>fit</code> (như <code>BoxFit.scaleDown</code>), hợp khi text hay icon không được tràn, ví dụ số tiền dài trong một ô cố định. <code>ClipRRect(borderRadius: ...)</code> cắt nội dung con theo góc bo, thường dùng để bo ảnh; nếu chỉ cần bo nền thì <code>Container</code> với <code>BoxDecoration(borderRadius:)</code> nhẹ hơn vì không phải cắt (clip). Clip làm tốn thêm chi phí vẽ nên đừng clip khi không cần, đặc biệt trong danh sách dài.</div>
+        <pre class="code-block"><code><span class="tk-type">AspectRatio</span>(
+  aspectRatio: <span class="tk-num">16</span> / <span class="tk-num">9</span>,
+  child: <span class="tk-type">ClipRRect</span>(
+    borderRadius: <span class="tk-type">BorderRadius</span>.circular(<span class="tk-num">12</span>),
+    child: <span class="tk-type">Image</span>.network(cover, fit: <span class="tk-type">BoxFit</span>.cover),
+  ),
+)
+
+<span class="tk-type">SizedBox</span>(
+  width: <span class="tk-num">80</span>,
+  child: <span class="tk-type">FittedBox</span>(
+    fit: <span class="tk-type">BoxFit</span>.scaleDown, <span class="tk-com">// số tiền dài thì tự co nhỏ lại thay vì tràn ra ngoài</span>
+    child: <span class="tk-type">Text</span>(<span class="tk-str">&#39;$amount ₫&#39;</span>),
+  ),
+)</code></pre>
         
       </div>
     </details>
@@ -591,6 +877,56 @@ onPressed: () =&gt; <span class="tk-type">Navigator</span>.pop(context, <span cl
   <span class="tk-type">MaterialPageRoute</span>(builder: (_) =&gt; <span class="tk-kw">const</span> <span class="tk-type">HomePage</span>()),
   (route) =&gt; <span class="tk-kw">false</span>,
 );</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q38.html">Làm sao tạo thanh điều hướng dưới cùng với 3 tab, và giữ nguyên trạng thái (vị trí cuộn, chữ đã nhập) của mỗi tab khi chuyển qua lại?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>NavigationBar</code> (Material 3; <code>BottomNavigationBar</code> là bản cũ) trong <code>Scaffold.bottomNavigationBar</code>, lưu chỉ số tab đang chọn trong một biến <code>int _index</code> của <code>State</code> và gọi <code>setState</code> trong <code>onDestinationSelected</code>. Nếu chỉ viết <code>body: pages[_index]</code> thì mỗi lần đổi tab, widget của tab cũ bị huỷ nên mất state (vị trí cuộn, chữ đã gõ). <code>IndexedStack(index: _index, children: pages)</code> giữ tất cả tab cùng sống trong cây widget và chỉ hiện tab đang chọn, nên state được giữ nguyên; đổi lại cả ba tab được build ngay từ đầu và tiếp tục chiếm bộ nhớ. Với app nhiều tab hoặc mỗi tab có điều hướng riêng, các package như <code>go_router</code> (<code>StatefulShellRoute</code>) xử lý việc này tốt hơn.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _HomeShellState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">HomeShell</span>&gt; {
+  int _index = <span class="tk-num">0</span>;
+  <span class="tk-kw">static</span> <span class="tk-kw">const</span> _pages = [<span class="tk-type">FeedPage</span>(), <span class="tk-type">SearchPage</span>(), <span class="tk-type">ProfilePage</span>()];
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">Scaffold</span>(
+      body: <span class="tk-type">IndexedStack</span>(index: _index, children: _pages), <span class="tk-com">// giữ state của các tab</span>
+      bottomNavigationBar: <span class="tk-type">NavigationBar</span>(
+        selectedIndex: _index,
+        onDestinationSelected: (i) =&gt; setState(() =&gt; _index = i),
+        destinations: <span class="tk-kw">const</span> [
+          <span class="tk-type">NavigationDestination</span>(icon: <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.home), label: <span class="tk-str">&#39;Trang chủ&#39;</span>),
+          <span class="tk-type">NavigationDestination</span>(icon: <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.search), label: <span class="tk-str">&#39;Tìm kiếm&#39;</span>),
+          <span class="tk-type">NavigationDestination</span>(icon: <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.person), label: <span class="tk-str">&#39;Tài khoản&#39;</span>),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q47.html">Một dự án Flutter mới có những thư mục chính nào, và bạn dùng các lệnh <code>flutter</code> nào hằng ngày? Khi nào <code>flutter clean</code> giúp được?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>lib/</code> chứa code Dart của app (điểm vào là <code>main.dart</code>); <code>android/</code> và <code>ios/</code> là project native của từng nền tảng (cấu hình quyền, icon, signing, Gradle, Xcode); <code>test/</code> chứa test; <code>pubspec.yaml</code> khai báo dependency, asset và font; <code>analysis_options.yaml</code> cấu hình lint. Các thư mục <code>build/</code> và <code>.dart_tool/</code> được sinh tự động và không commit. Các lệnh hay dùng: <code>flutter doctor</code> kiểm tra môi trường, <code>flutter devices</code> xem thiết bị, <code>flutter run</code> chạy app, <code>flutter pub get</code> và <code>flutter pub add &lt;package&gt;</code> quản lý package, <code>flutter analyze</code> kiểm tra lỗi và lint, <code>dart format .</code> định dạng code, <code>flutter test</code> chạy test, <code>flutter build apk</code> hoặc <code>flutter build ipa</code> đóng gói bản release. <code>flutter clean</code> xoá <code>build/</code> và cache build, nên hữu ích khi có lỗi lạ sau khi đổi dependency, đổi cấu hình native, nâng Flutter, hoặc khi Gradle hay CocoaPods bị kẹt; sau đó chạy lại <code>flutter pub get</code>. Đừng chạy <code>flutter clean</code> như phản xạ cho mọi lỗi vì build đầu tiên sau đó rất lâu; hãy đọc thông báo lỗi trước.</div>
+        <pre class="code-block"><code>flutter doctor                        # kiểm tra môi trường (<span class="tk-type">SDK</span>, <span class="tk-type">Android</span> <span class="tk-type">Studio</span>, <span class="tk-type">Xcode</span>)
+flutter pub add dio                   # thêm package vào pubspec.yaml
+flutter analyze                       # lỗi và lint
+flutter test                          # chạy toàn bộ test
+flutter clean &amp;&amp; flutter pub <span class="tk-kw">get</span>      # khi build lỗi lạ sau khi đổi dependency hoặc cấu hình native</code></pre>
         
       </div>
     </details>

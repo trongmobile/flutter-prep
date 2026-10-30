@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle: Form đăng ký có nhiều TextField: bấm Enter trên bàn phím phải nhảy sang ô t…</title>
+<meta name="description" content="Mỗi ô nhập có một FocusNode; TextInputAction.next đổi nút Enter thành &#39;Tiếp&#39; và onSubmitted/onFieldSubmitted chuyển focus bằng FocusScope.of(context).nextFoc…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q40.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: Form đăng ký có nhiều TextField: bấm Enter trên bàn phím phải nhảy sang ô t…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-q40.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Form đăng ký có nhiều TextField: bấm Enter trên…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q40.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Form đăng ký có nhiều TextField: bấm Enter trên…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/widget/">Widget &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Form đăng ký có nhiều <code>TextField</code>: bấm Enter trên bàn phím phải nhảy sang ô tiếp theo, ô cuối thì gửi form, chạm ra ngoài thì ẩn bàn phím, và khi validate sai thì phải focus vào ô lỗi. Bạn quản lý focus bằng <code>FocusNode</code>, <code>TextInputAction</code> và <code>onTapOutside</code> thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi ô nhập có một <code>FocusNode</code>; <code>TextInputAction.next</code> đổi nút Enter thành &#39;Tiếp&#39; và <code>onSubmitted</code>/<code>onFieldSubmitted</code> chuyển focus bằng <code>FocusScope.of(context).nextFocus()</code> (đi theo thứ tự traversal mặc định) hoặc <code>requestFocus</code> tới một node cụ thể; ô cuối đặt <code>TextInputAction.done</code> và gọi hàm gửi. <code>FocusNode</code> do bạn tạo phải tạo một lần trong <code>initState</code> và <code>dispose()</code> trong <code>dispose</code>, giống <code>TextEditingController</code>. Ẩn bàn phím khi chạm ra ngoài: <code>TextField(onTapOutside: (_) =&gt; FocusManager.instance.primaryFocus?.unfocus())</code> (có từ Flutter 3.7), hoặc bọc cả màn hình bằng <code>GestureDetector(onTap: () =&gt; FocusScope.of(context).unfocus())</code>. Khi validate sai, tìm ô lỗi đầu tiên rồi <code>focusNode.requestFocus()</code> (Flutter tự cuộn tới ô đang focus trong vùng cuộn) hoặc <code>Scrollable.ensureVisible(context, ...)</code>; <code>Form</code> với <code>autovalidateMode</code> hiện lỗi sau khi người dùng tương tác và <code>FormState.validate()</code> trả về <code>bool</code>. <code>autofocus: true</code> hợp cho ô đầu của màn đơn giản nhưng đừng dùng ở mọi màn vì bàn phím bật lên bất ngờ. Dùng <code>AutofillGroup</code> và <code>autofillHints</code> (như <code>AutofillHints.email</code>) để hệ điều hành gợi ý email hay mật khẩu. Khi thứ tự tab tự nhiên không đúng (bàn phím cứng, web, desktop) thì dùng <code>FocusTraversalGroup</code> kèm <code>OrderedTraversalPolicy</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> _SignUpFormState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">SignUpForm</span>&gt; {
+  <span class="tk-kw">final</span> _formKey = <span class="tk-type">GlobalKey</span>&lt;<span class="tk-type">FormState</span>&gt;();
+  <span class="tk-kw">final</span> _emailFocus = <span class="tk-type">FocusNode</span>();
+  <span class="tk-kw">final</span> _passwordFocus = <span class="tk-type">FocusNode</span>();
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-kw">void</span> dispose() {
+    _emailFocus.dispose(); <span class="tk-com">// FocusNode phải được dispose</span>
+    _passwordFocus.dispose();
+    <span class="tk-kw">super</span>.dispose();
+  }
+
+  <span class="tk-kw">void</span> _submit() {
+    <span class="tk-kw">if</span> (!_formKey.currentState!.validate()) {
+      <span class="tk-com">// Minh hoạ: thực tế tìm ô lỗi đầu tiên rồi requestFocus, Flutter tự cuộn tới ô đang focus</span>
+      _emailFocus.requestFocus();
+      <span class="tk-kw">return</span>;
+    }
+    <span class="tk-com">// gửi form...</span>
+  }
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">Form</span>(
+      key: _formKey,
+      child: <span class="tk-type">Column</span>(
+        children: [
+          <span class="tk-type">TextFormField</span>(
+            focusNode: _emailFocus,
+            textInputAction: <span class="tk-type">TextInputAction</span>.next, <span class="tk-com">// Enter chuyển sang ô kế tiếp</span>
+            keyboardType: <span class="tk-type">TextInputType</span>.emailAddress,
+            autofillHints: <span class="tk-kw">const</span> [<span class="tk-type">AutofillHints</span>.email],
+            onFieldSubmitted: (_) =&gt; _passwordFocus.requestFocus(),
+            onTapOutside: (_) =&gt; <span class="tk-type">FocusManager</span>.instance.primaryFocus?.unfocus(), <span class="tk-com">// chạm ra ngoài thì ẩn bàn phím</span>
+          ),
+          <span class="tk-type">TextFormField</span>(
+            focusNode: _passwordFocus,
+            obscureText: <span class="tk-kw">true</span>,
+            textInputAction: <span class="tk-type">TextInputAction</span>.done, <span class="tk-com">// ô cuối: Enter gửi form</span>
+            onFieldSubmitted: (_) =&gt; _submit(),
+            onTapOutside: (_) =&gt; <span class="tk-type">FocusManager</span>.instance.primaryFocus?.unfocus(),
+          ),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q40">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q39.html"><span class="muted small">← Câu trước</span><span>Team muốn kiểm thử luồng &#39;đăng nhập, thêm vào giỏ, thanh toán&#39; chạy trên thiết…</span></a>
+  <a class="pager-next" href="../s/d02-2.html"><span class="muted small">Câu sau →</span><span>Microtask queue và Event queue khác nhau thế nào? Cái nào ưu tiên hơn?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Widget &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/flutter/chu-de/widget/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q06.html">Implicit animation và explicit animation khác nhau thế nào? Khi nào chọn loại nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q07.html">vsync/TickerProvider trong AnimationController để làm gì? Khi nào dùng SingleTickerProviderStateMixin, khi nào dùng TickerProviderStateMixin?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q08.html">Bạn thiết lập đa ngôn ngữ cho app Flutter bằng intl + ARB như thế nào? Xử lý tham số và số nhiều ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q23.html">App cần làm mới dữ liệu khi người dùng quay lại từ background và tạm dừng timer khi app ra nền. AppLifecycleState và WidgetsBindingObserver hoạt động thế nào, và AppLifecycleListener khác gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q24.html">Các design token riêng của app (màu thành công, màu cảnh báo, khoảng cách) không nằm trong ColorScheme của Material. Làm sao thêm chúng vào theme bằng ThemeExtension, hỗ trợ dark mode, và lưu lựa chọn sáng/tối của người dùng?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q25.html">Khách hàng yêu cầu app hỗ trợ người dùng TalkBack và VoiceOver. Flutter xây dựng cây accessibility (semantics) thế nào, bạn thêm nhãn và gộp nội dung ra sao, và kiểm tra tự động những gì (vùng chạm, độ tương phản)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Kiến trúc &amp; DI — Mobile Interview</title>
-<meta name="description" content="20 câu hỏi phỏng vấn Flutter về Kiến trúc &amp; DI từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta name="description" content="26 câu hỏi phỏng vấn Flutter về Kiến trúc &amp; DI từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/arch/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Kiến trúc &amp; DI — Mobile Interview">
-<meta property="og:description" content="20 câu hỏi phỏng vấn Flutter về Kiến trúc &amp; DI từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta property="og:description" content="26 câu hỏi phỏng vấn Flutter về Kiến trúc &amp; DI từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/arch/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,12 +47,19 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Kiến trúc &amp; DI</h1>
-  <p class="subtitle">20 câu hỏi kèm đáp án mẫu và 9 câu quiz về Kiến trúc &amp; DI, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">26 câu hỏi kèm đáp án mẫu và 9 câu quiz về Kiến trúc &amp; DI, xếp theo rank từ Fresher đến Senior.</p>
 </header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/fre-q47.html">Một dự án Flutter mới có những thư mục chính nào, và bạn dùng các lệnh flutter nào hằng ngày? Khi nào flutter clean giúp được?</a></li>
+  </ul>
+</section>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> Flutter Middle</h2><a class="section-sub" href="../../../../phong-van/flutter/middle/">Mọi chủ đề Middle →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/mid-q16.html">Lỗi từ Dio (timeout, 401, 500) nên được xử lý ở layer nào và trả lên trên dưới dạng gì?</a></li>
+    <li><a href="../../../../s/mid-q38.html">App cần chạy với ba môi trường (dev, staging, production) có API URL, application id và icon khác nhau, cài song song được trên một máy. Bạn cấu hình thế nào bằng flavor và --dart-define-from-file, và nên hay không nên đặt gì vào đó?</a></li>
     <li><a href="../../../../s/d12-1.html">3 layer chính trong Clean Architecture áp dụng cho Flutter?</a></li>
     <li><a href="../../../../s/d12-4.html">UseCase là gì, tại sao cần nó khi đã có Repository?</a></li>
     <li><a href="../../../../s/d12-5.html">Model (DTO) và Entity khác nhau ở điểm nào?</a></li>
@@ -70,6 +77,10 @@
   <ul class="link-list">
     <li><a href="../../../../s/sen-q09.html">Pub workspaces (Dart 3.6+) giải quyết vấn đề gì trong một monorepo Flutter, và nó kết hợp với Melos ra sao?</a></li>
     <li><a href="../../../../s/sen-q10.html">Trong codebase 30+ dev, làm sao enforce các rule kiến trúc (feature không import nội bộ feature khác, domain không phụ thuộc data) thay vì chỉ trông vào code review?</a></li>
+    <li><a href="../../../../s/sen-q21.html">App 4 năm tuổi dùng Provider và ChangeNotifier rải rác (hàng trăm class), team muốn chuyển sang Riverpod (hoặc Bloc) mà không dừng làm tính năng. Bạn lập lộ trình migration tăng dần thế nào, và rủi ro lớn nhất là gì?</a></li>
+    <li><a href="../../../../s/sen-q22.html">App có 15 feature, mỗi team sở hữu một feature package; toàn bộ route đang nằm trong một file router.dart khổng lồ, tham số truyền bằng chuỗi (&#39;/orders/$id&#39;) nên sai là lỗi runtime, và feature A không được import trực tiếp feature B. Bạn thiết kế navigation ở quy mô này thế nào với go_router?</a></li>
+    <li><a href="../../../../s/sen-q23.html">Công ty có 4 app Flutter dùng chung một design system, nhưng mỗi app tự copy widget và màu rồi lệch nhau. Bạn xây design system thành package dùng chung thế nào (token, component, tài liệu, kiểm thử, versioning)?</a></li>
+    <li><a href="../../../../s/sen-q24.html">Team chuyển sang phát hành nhỏ và thường xuyên, muốn mọi tính năng lớn nằm sau feature flag, có thể tắt khẩn cấp và chạy A/B test. Bạn thiết kế hệ thống flag và remote config phía Flutter thế nào để không biến thành nợ kỹ thuật?</a></li>
     <li><a href="../../../../s/d12-2.html">&#39;Dependency Rule&#39; trong Clean Architecture nghĩa là gì?</a></li>
     <li><a href="../../../../s/d12-3.html">Vì sao Domain layer không nên import package Flutter hay Dio?</a></li>
     <li><a href="../../../../s/d13-1.html">Constructor Injection và Service Locator khác nhau thế nào về testability?</a></li>

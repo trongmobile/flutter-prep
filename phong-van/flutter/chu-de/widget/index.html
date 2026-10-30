@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Widget &amp; Lifecycle — Mobile Interview</title>
-<meta name="description" content="30 câu hỏi phỏng vấn Flutter về Widget &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta name="description" content="41 câu hỏi phỏng vấn Flutter về Widget &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/widget/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Widget &amp; Lifecycle — Mobile Interview">
-<meta property="og:description" content="30 câu hỏi phỏng vấn Flutter về Widget &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta property="og:description" content="41 câu hỏi phỏng vấn Flutter về Widget &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/widget/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Widget &amp; Lifecycle</h1>
-  <p class="subtitle">30 câu hỏi kèm đáp án mẫu và 18 câu quiz về Widget &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">41 câu hỏi kèm đáp án mẫu và 18 câu quiz về Widget &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -60,6 +60,10 @@
     <li><a href="../../../../s/fre-q18.html">Cách hiển thị ảnh từ assets và từ internet trong Flutter?</a></li>
     <li><a href="../../../../s/fre-q19.html">Làm sao cấu hình theme chung cho toàn app và lấy màu từ theme bên trong widget?</a></li>
     <li><a href="../../../../s/fre-q20.html">GestureDetector và InkWell khác nhau thế nào?</a></li>
+    <li><a href="../../../../s/fre-q36.html">ListView, ListView.builder và ListView.separated khác nhau thế nào? Khi nào dùng loại nào để hiển thị danh sách?</a></li>
+    <li><a href="../../../../s/fre-q39.html">Hiển thị hộp thoại xác nhận, bottom sheet và thông báo ngắn (SnackBar) trong Flutter thế nào? Làm sao nhận được kết quả người dùng chọn?</a></li>
+    <li><a href="../../../../s/fre-q42.html">Làm sao thêm font tuỳ chỉnh và một file dữ liệu JSON vào app Flutter, đặt font mặc định cho cả app và đọc file JSON lúc chạy? Vì sao sửa pubspec.yaml xong mà font hay file vẫn không được nhận?</a></li>
+    <li><a href="../../../../s/fre-q48.html">Cách ẩn một widget có điều kiện: dùng if, Visibility, Opacity hay Offstage khác nhau thế nào?</a></li>
     <li><a href="../../../../s/fre-m15.html">Cách đúng để disable một ElevatedButton (hiển thị màu xám, không bấm được) là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/fre-m16.html">Widget nào KHÔNG còn tồn tại trong Flutter 3 hiện nay?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/fre-m17.html">Trong State của một màn hình có TextField, nên gọi _controller.dispose() cho TextEditingController ở đâu?</a> <span class="tag">Quiz</span></li>
@@ -95,6 +99,13 @@
     <li><a href="../../../../s/mid-q06.html">Implicit animation và explicit animation khác nhau thế nào? Khi nào chọn loại nào?</a></li>
     <li><a href="../../../../s/mid-q07.html">vsync/TickerProvider trong AnimationController để làm gì? Khi nào dùng SingleTickerProviderStateMixin, khi nào dùng TickerProviderStateMixin?</a></li>
     <li><a href="../../../../s/mid-q08.html">Bạn thiết lập đa ngôn ngữ cho app Flutter bằng intl + ARB như thế nào? Xử lý tham số và số nhiều ra sao?</a></li>
+    <li><a href="../../../../s/mid-q23.html">App cần làm mới dữ liệu khi người dùng quay lại từ background và tạm dừng timer khi app ra nền. AppLifecycleState và WidgetsBindingObserver hoạt động thế nào, và AppLifecycleListener khác gì?</a></li>
+    <li><a href="../../../../s/mid-q24.html">Các design token riêng của app (màu thành công, màu cảnh báo, khoảng cách) không nằm trong ColorScheme của Material. Làm sao thêm chúng vào theme bằng ThemeExtension, hỗ trợ dark mode, và lưu lựa chọn sáng/tối của người dùng?</a></li>
+    <li><a href="../../../../s/mid-q25.html">Khách hàng yêu cầu app hỗ trợ người dùng TalkBack và VoiceOver. Flutter xây dựng cây accessibility (semantics) thế nào, bạn thêm nhãn và gộp nội dung ra sao, và kiểm tra tự động những gì (vùng chạm, độ tương phản)?</a></li>
+    <li><a href="../../../../s/mid-q26.html">Một thẻ vừa có onTap vừa có onDoubleTap bị trễ phản hồi khi chạm, và một item vuốt ngang đặt trong PageView hay ListView thì lúc nhận lúc không. Gesture arena của Flutter giải quyết xung đột cử chỉ thế nào?</a></li>
+    <li><a href="../../../../s/mid-q27.html">Bạn muốn ảnh sản phẩm &#39;bay&#39; mượt từ danh sách sang màn chi tiết (Hero), đồng thời đổi hiệu ứng chuyển trang (fade, slide) cho một số màn khi dùng go_router. Làm thế nào, và Hero hay lỗi ở đâu?</a></li>
+    <li><a href="../../../../s/mid-q28.html">App có TabBarView mà mỗi tab là một danh sách cuộn; chuyển tab qua lại thì mất vị trí cuộn và phải tải lại dữ liệu. AutomaticKeepAliveClientMixin, PageStorageKey và IndexedStack giải quyết thế nào, và đánh đổi ra sao?</a></li>
+    <li><a href="../../../../s/mid-q40.html">Form đăng ký có nhiều TextField: bấm Enter trên bàn phím phải nhảy sang ô tiếp theo, ô cuối thì gửi form, chạm ra ngoài thì ẩn bàn phím, và khi validate sai thì phải focus vào ô lỗi. Bạn quản lý focus bằng FocusNode, TextInputAction và onTapOutside thế nào?</a></li>
     <li><a href="../../../../s/d04-1.html">Widget tree, Element tree, RenderObject tree khác nhau thế nào?</a></li>
     <li><a href="../../../../s/d04-2.html">Vì sao Widget là immutable? Điều này ảnh hưởng gì đến hiệu năng?</a></li>
     <li><a href="../../../../s/d04-4.html">Element khi nào bị dispose và tạo lại hoàn toàn thay vì chỉ update?</a></li>

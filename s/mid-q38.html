@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Flutter Middle: App cần chạy với ba môi trường (dev, staging, production) có API URL, appli…</title>
+<meta name="description" content="Có hai lớp. Lớp native (flavor): Android dùng productFlavors (applicationIdSuffix, tên app, icon, google-services.json riêng), iOS dùng scheme và build confi…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-q38.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle: App cần chạy với ba môi trường (dev, staging, production) có API URL, appli…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Flutter theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-q38.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"App cần chạy với ba môi trường (dev, staging, p…","item":"https://trongmobile.github.io/flutter-prep/s/mid-q38.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">App cần chạy với ba môi trường (dev, staging, p…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App cần chạy với ba môi trường (dev, staging, production) có API URL, application id và icon khác nhau, cài song song được trên một máy. Bạn cấu hình thế nào bằng flavor và <code>--dart-define-from-file</code>, và nên hay không nên đặt gì vào đó?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có hai lớp. Lớp native (flavor): Android dùng <code>productFlavors</code> (<code>applicationIdSuffix</code>, tên app, icon, <code>google-services.json</code> riêng), iOS dùng scheme và build configuration kèm <code>xcconfig</code>; chạy bằng <code>flutter run --flavor dev</code>. Lớp Dart: truyền cấu hình lúc build bằng <code>--dart-define-from-file=config/dev.json</code> (hoặc nhiều <code>--dart-define=KEY=value</code>) và đọc bằng <code>String.fromEnvironment(&#39;API_URL&#39;)</code>; lưu ý các hàm <code>fromEnvironment</code> phải được gọi với <code>const</code> thì giá trị mới được thay lúc compile. Có thể dùng <code>appFlavor</code> (tên flavor đọc lúc chạy) để chọn cấu hình. Gói các giá trị vào một class <code>AppConfig</code> tạo một lần ở <code>main()</code> rồi inject, thay vì rải <code>fromEnvironment</code> khắp app. Nên để vào đây: URL, tên môi trường, cờ bật tắt log, id dịch vụ analytics theo môi trường. Không nên để secret thật (khoá thanh toán, khoá quản trị) vì giá trị <code>--dart-define</code> nằm trong binary nên trích xuất được, secret phải ở backend. Giữ file cấu hình theo môi trường trong repo (không có secret), còn giá trị riêng của CI đặt qua biến môi trường của pipeline. Đừng quên phần phụ trợ theo flavor: bundle id khác nhau thì cần Firebase app riêng, domain deep link riêng và push token riêng. Các công cụ như <code>flutter_flavorizr</code> giúp sinh cấu hình native, nhưng vẫn cần kiểm tra lại build release của từng flavor.</div>
+        <pre class="code-block"><code><span class="tk-com">// config/dev.json: {&quot;API_URL&quot;: &quot;https://dev.api.shop.vn&quot;, &quot;ENV&quot;: &quot;dev&quot;, &quot;ENABLE_LOGS&quot;: &quot;true&quot;}</span>
+<span class="tk-com">// Chạy: flutter run --flavor dev --dart-define-from-file=config/dev.json</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">AppConfig</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">AppConfig</span>({<span class="tk-kw">required</span> <span class="tk-kw">this</span>.apiUrl, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.env, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.enableLogs});
+
+  <span class="tk-com">// fromEnvironment phải được gọi với const thì giá trị mới được thay lúc compile</span>
+  <span class="tk-kw">factory</span> <span class="tk-type">AppConfig</span>.fromEnvironment() =&gt; <span class="tk-kw">const</span> <span class="tk-type">AppConfig</span>(
+    apiUrl: <span class="tk-type">String</span>.fromEnvironment(<span class="tk-str">&#39;API_URL&#39;</span>, defaultValue: <span class="tk-str">&#39;https://api.shop.vn&#39;</span>),
+    env: <span class="tk-type">String</span>.fromEnvironment(<span class="tk-str">&#39;ENV&#39;</span>, defaultValue: <span class="tk-str">&#39;production&#39;</span>),
+    enableLogs: bool.fromEnvironment(<span class="tk-str">&#39;ENABLE_LOGS&#39;</span>),
+  );
+
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> apiUrl;
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> env;
+  <span class="tk-kw">final</span> bool enableLogs;
+}
+
+<span class="tk-kw">void</span> main() {
+  <span class="tk-kw">final</span> config = <span class="tk-type">AppConfig</span>.fromEnvironment(); <span class="tk-com">// tạo một lần rồi inject, không rải fromEnvironment khắp app</span>
+  runApp(<span class="tk-type">App</span>(config: config));
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-q38">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-q37.html"><span class="muted small">← Câu trước</span><span>Bản release Android đang nặng 60MB và PM yêu cầu giảm xuống dưới 30MB. Bạn phân…</span></a>
+  <a class="pager-next" href="../s/mid-q39.html"><span class="muted small">Câu sau →</span><span>Team muốn kiểm thử luồng &#39;đăng nhập, thêm vào giỏ, thanh toán&#39; chạy trên thiết…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/flutter/chu-de/arch/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q16.html">Lỗi từ Dio (timeout, 401, 500) nên được xử lý ở layer nào và trả lên trên dưới dạng gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d12-1.html">3 layer chính trong Clean Architecture áp dụng cho Flutter?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d12-4.html">UseCase là gì, tại sao cần nó khi đã có Repository?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d12-5.html">Model (DTO) và Entity khác nhau ở điểm nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d13-2.html">registerSingleton, registerFactory, registerLazySingleton trong GetIt khác nhau ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d13-3.html">Injectable (code generation) giải quyết vấn đề gì so với đăng ký GetIt thủ công?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>
