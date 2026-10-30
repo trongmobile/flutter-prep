@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior (25 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="25 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<title>Câu hỏi phỏng vấn Android Senior (37 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="37 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior (25 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="25 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior (37 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="37 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · android · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Android Senior</h1>
-  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 25 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/android/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -63,15 +63,19 @@
   <h2 class="side-title">Mục lục</h2>
   <ul>
     <li><a href="#java">Java &amp; JVM</a> <span class="count">4</span></li>
-    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">1</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">1</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
+    <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">3</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">2</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">2</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">1</span></li>
+    <li><a href="#background">Background &amp; Service</a> <span class="count">1</span></li>
     <li><a href="#build">Gradle &amp; Build</a> <span class="count">3</span></li>
-    <li><a href="#perf">Performance</a> <span class="count">4</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">5</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#security">Security</a> <span class="count">3</span></li>
-    <li><a href="#design">System Design</a> <span class="count">3</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">4</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">3</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -165,6 +169,93 @@
     </li>
   </ol>
 </section>
+<section id="coroutines">
+  <div class="section-head"><h2>Coroutines &amp; Flow</h2><a class="section-sub" href="../../../phong-van/android/chu-de/coroutines/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q26.html">Repository có đoạn <code>try { api.fetchProfile() } catch (e: Exception) { ... }</code> (hoặc <code>runCatching</code>) chạy trong coroutine của ViewModel. Sau khi user rời màn hình, log vẫn báo lỗi huỷ coroutine và đôi khi coroutine còn chạy tiếp sang bước sau. Vì sao, và bạn xử lý việc huỷ coroutine đúng cách thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Huỷ coroutine là hợp tác: <code>cancel()</code> chỉ chuyển Job sang trạng thái cancelling, còn các suspend function chuẩn (<code>delay</code>, <code>withContext</code>, hàm suspend của Retrofit hay Room…) kiểm tra trạng thái này và ném <code>CancellationException</code> để coroutine được unwind. <code>catch (e: Exception)</code> hay <code>runCatching</code> bắt luôn ngoại lệ đó và coi như lỗi thường, nên coroutine chạy tiếp các dòng sau <code>catch</code> cho tới lần suspend kế tiếp (lúc đó mới bị ném lại), đủ thời gian để emit state lỗi hoặc ghi DB sai trong khi scope đã bị huỷ. Cách đúng: bắt ngoại lệ cụ thể (<code>IOException</code>, <code>HttpException</code>), hoặc nếu bắt rộng thì phải ném lại <code>CancellationException</code> trước. Vòng lặp tính toán không có điểm suspend thì không bao giờ tự bị huỷ giữa chừng, cần kiểm tra bằng <code>ensureActive()</code> hoặc <code>yield()</code>. Việc dọn dẹp cần chạy cả khi đã bị huỷ (đóng file, báo server) thì đặt trong <code>finally</code> và bọc phần suspend bằng <code>withContext(NonCancellable)</code>, nếu không lời gọi suspend đầu tiên trong <code>finally</code> lại ném tiếp. <code>runCatching</code> cũng nuốt cancellation nên nhiều team viết helper riêng để ném lại nó.</div>
+        <pre class="code-block"><code><span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> loadProfile(): <span class="tk-type">Result</span>&lt;<span class="tk-type">Profile</span>&gt; =
+  <span class="tk-kw">try</span> {
+    <span class="tk-type">Result</span>.success(api.fetchProfile())
+  } <span class="tk-kw">catch</span> (e: <span class="tk-type">CancellationException</span>) {
+    <span class="tk-kw">throw</span> e <span class="tk-com">// bắt buộc ném lại, nếu không coroutine đã bị huỷ vẫn chạy tiếp</span>
+  } <span class="tk-kw">catch</span> (e: <span class="tk-type">IOException</span>) {
+    <span class="tk-type">Result</span>.failure(e)
+  }
+
+<span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> compressAll(files: <span class="tk-type">List</span>&lt;<span class="tk-type">File</span>&gt;) {
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">for</span> (f <span class="tk-kw">in</span> files) {
+      currentCoroutineContext().ensureActive() <span class="tk-com">// vòng lặp CPU không có điểm suspend sẵn</span>
+      compress(f)
+    }
+  } <span class="tk-kw">finally</span> {
+    withContext(<span class="tk-type">NonCancellable</span>) { api.reportStopped() } <span class="tk-com">// dọn dẹp vẫn chạy khi đã bị huỷ</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q27.html">Màn hình dashboard tải song song profile, feed và quảng cáo bằng <code>async</code>. Quảng cáo lỗi thì chỉ cần ẩn khối quảng cáo, nhưng thực tế lỗi đó làm cả màn hình báo lỗi và hai request còn lại bị huỷ. Giải thích cách exception lan truyền trong coroutine, bạn thiết kế lại thế nào, và <code>CoroutineExceptionHandler</code> có giúp được không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với structured concurrency, con thất bại thì huỷ cha, cha huỷ mọi con còn lại rồi ném lỗi ra cho nơi gọi, nên ba <code>async</code> trong cùng một <code>coroutineScope</code> (hay trong <code>viewModelScope.launch</code>) đi chung số phận. Muốn lỗi của một nhánh không lan lên thì dùng <code>supervisorScope</code> hoặc <code>SupervisorJob</code>: lỗi của con không huỷ cha và các con khác. Nhưng với <code>async</code>, ngoại lệ được giữ trong <code>Deferred</code> và chỉ ném ra ở <code>await()</code>, nên vẫn phải <code>try/catch</code> quanh <code>await()</code> của nhánh không quan trọng (nhớ ném lại <code>CancellationException</code>), còn nhánh bắt buộc như profile thì để lỗi lan lên bình thường. <code>CoroutineExceptionHandler</code> không phải là <code>catch</code>: nó chỉ được gọi cho exception chưa được xử lý ở root coroutine tạo bằng <code>launch</code>, không có tác dụng khi gắn vào <code>async</code> hay coroutine con (con luôn chuyển lỗi lên cha), và khi nó chạy thì coroutine đã kết thúc rồi nên chỉ dùng để ghi log hoặc báo lỗi cuối cùng. Một bẫy khác: <code>launch(SupervisorJob())</code> không tạo supervisor cho scope mà thay luôn Job cha của coroutine đó, làm nó mất liên kết với scope nên không còn bị huỷ khi scope bị huỷ.</div>
+        <pre class="code-block"><code><span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> loadDashboard(): <span class="tk-type">Dashboard</span> = supervisorScope {
+  <span class="tk-kw">val</span> profile = async { profileRepo.load() }
+  <span class="tk-kw">val</span> feed = async { feedRepo.load() }
+  <span class="tk-kw">val</span> ads = async { adsRepo.load() }
+
+  <span class="tk-type">Dashboard</span>(
+    profile = profile.await(), <span class="tk-com">// thiếu thì không hiển thị được: để lỗi ném ra ngoài</span>
+    feed = feed.await(),
+    ads = <span class="tk-kw">try</span> {
+      ads.await()
+    } <span class="tk-kw">catch</span> (e: <span class="tk-type">Exception</span>) { <span class="tk-com">// quảng cáo lỗi thì chỉ ẩn khối này</span>
+      <span class="tk-kw">if</span> (e <span class="tk-kw">is</span> <span class="tk-type">CancellationException</span>) <span class="tk-kw">throw</span> e
+      <span class="tk-kw">null</span>
+    },
+  )
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q28.html">Bạn cần bọc API vị trí dạng callback (<code>FusedLocationProviderClient</code>) thành <code>Flow</code> để nhiều màn hình dùng chung, không rò rỉ listener và không chạy khi app ở background. Bạn dùng <code>callbackFlow</code>, <code>stateIn</code> và thu thập ở UI thế nào, và <code>SharingStarted.WhileSubscribed(5_000)</code> giải quyết điều gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>callbackFlow</code> chuyển callback thành Flow lạnh: đăng ký listener trong block và bắt buộc kết thúc bằng <code>awaitClose { gỡ listener }</code>, thiếu thì <code>callbackFlow</code> ném <code>IllegalStateException</code>. Phát giá trị bằng <code>trySend</code> (không suspend nên gọi được trong callback); channel bên trong có buffer, nên với dữ liệu kiểu &#39;giá trị mới nhất&#39; như vị trí hãy chọn chính sách khi consumer chậm bằng <code>conflate()</code> hoặc <code>buffer(onBufferOverflow = DROP_OLDEST)</code>. Flow lạnh sẽ đăng ký lại listener cho mỗi collector, nên chia sẻ bằng <code>stateIn</code>/<code>shareIn</code> ở scope của repository với <code>SharingStarted.WhileSubscribed(5_000)</code>: có subscriber đầu tiên thì mới chạy upstream, khi subscriber cuối đi mất thì chờ 5 giây rồi mới dừng. Khoảng chờ đó đủ để xoay màn hình hay chuyển tab nhanh không phải kết nối lại, còn khi app thật sự xuống nền thì GPS được tắt. Ở UI thu thập bằng <code>collectAsStateWithLifecycle()</code> trong Compose hoặc <code>repeatOnLifecycle(STARTED)</code> trong View; <code>collectAsState()</code> hay <code>lifecycleScope.launch { collect }</code> không gắn với lifecycle của app nên vẫn thu thập khi ở nền và giữ upstream chạy mãi.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> <span class="tk-type">FusedLocationProviderClient</span>.locationUpdates(request: <span class="tk-type">LocationRequest</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">Location</span>&gt; = callbackFlow {
+  <span class="tk-kw">val</span> callback = <span class="tk-kw">object</span> : <span class="tk-type">LocationCallback</span>() {
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onLocationResult(result: <span class="tk-type">LocationResult</span>) {
+      result.lastLocation?.let { trySend(it) } <span class="tk-com">// không suspend, gọi được trong callback</span>
+    }
+  }
+  requestLocationUpdates(request, callback, <span class="tk-type">Looper</span>.getMainLooper())
+  awaitClose { removeLocationUpdates(callback) } <span class="tk-com">// collector bị huỷ thì gỡ listener</span>
+}.conflate() <span class="tk-com">// chỉ cần vị trí mới nhất</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">LocationRepository</span>(client: <span class="tk-type">FusedLocationProviderClient</span>, request: <span class="tk-type">LocationRequest</span>, scope: <span class="tk-type">CoroutineScope</span>) {
+  <span class="tk-kw">val</span> location: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">Location</span>?&gt; = client.locationUpdates(request)
+    .stateIn(scope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-kw">null</span>)
+}
+
+<span class="tk-com">// UI (Compose): dừng thu thập khi app xuống dưới STARTED</span>
+<span class="tk-kw">val</span> location <span class="tk-kw">by</span> repo.location.collectAsStateWithLifecycle()</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
 <section id="components">
   <div class="section-head"><h2>Activity, Fragment &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/android/chu-de/components/">Mọi rank →</a></div>
   <ol class="qa-list">
@@ -187,6 +278,31 @@
 
   <span class="tk-kw">fun</span> onNoteChange(<span class="tk-kw">value</span>: <span class="tk-type">String</span>) { savedState[<span class="tk-str">&quot;note&quot;</span>] = <span class="tk-kw">value</span> }
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q32.html">Google Play yêu cầu nâng <code>targetSdk</code> hằng năm. Khi nâng lên các bản gần đây (35, 36), những behavior change nào dễ làm vỡ app nhất, và bạn quản lý việc nâng <code>targetSdk</code> thế nào để không dồn thành một đợt lớn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi đọc phần behavior changes của từng API level và chia thành thay đổi áp dụng cho mọi app với thay đổi chỉ áp dụng khi nâng <code>targetSdk</code>. Với target 35, edge-to-edge bị bắt buộc: nội dung vẽ dưới status bar và navigation bar, nên layout nào dựa vào việc hệ thống tự chừa chỗ sẽ bị đè, cần xử lý <code>WindowInsets</code> (<code>enableEdgeToEdge()</code>, <code>Scaffold</code>/<code>safeDrawingPadding</code> trong Compose, <code>ViewCompat.setOnApplyWindowInsetsListener</code> với View). App có thư viện native còn phải hỗ trợ page size 16KB (Play yêu cầu từ 1/11/2025 cho app target Android 15 trở lên): các file <code>.so</code> phải căn lề 16KB, NDK r28 trở lên làm đúng theo mặc định và AGP 8.5.1 trở lên lo phần zip-align. Với target 36, predictive back được bật mặc định nên <code>onBackPressed()</code> và <code>KEYCODE_BACK</code> không còn được gọi, phải chuyển sang <code>OnBackPressedCallback</code>/<code>BackHandler</code>; trên màn hình lớn (từ 600dp) hệ thống bỏ qua khoá hướng xoay và giới hạn tỉ lệ khung hình, nên layout phải thích ứng bằng window size class. Về quy trình: nâng <code>compileSdk</code> trước vì không đổi hành vi lúc chạy, rồi thử <code>targetSdk</code> mới trên nhánh riêng với thiết bị hoặc emulator của bản mới, bật từng thay đổi bằng App Compatibility Changes trong Developer options để biết cái nào làm vỡ, sau đó staged rollout. Bắt đầu ngay khi có bản beta thay vì đợi sát hạn của Play.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">MainActivity</span> : <span class="tk-type">ComponentActivity</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate(savedInstanceState: <span class="tk-type">Bundle</span>?) {
+    enableEdgeToEdge() <span class="tk-com">// target 35 bắt buộc vẽ dưới system bars, nên chủ động xử lý</span>
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState)
+    setContent {
+      <span class="tk-type">Scaffold</span>(modifier = <span class="tk-type">Modifier</span>.fillMaxSize()) { innerPadding -&gt;
+        <span class="tk-com">// insets đi qua innerPadding: nội dung không bị status bar hay thanh điều hướng đè lên</span>
+        <span class="tk-type">AppContent</span>(<span class="tk-type">Modifier</span>.padding(innerPadding))
+      }
+    }
+  }
+}
+
+<span class="tk-com">// Target 36: onBackPressed() không còn được gọi, dùng BackHandler / OnBackPressedCallback</span>
+<span class="tk-type">BackHandler</span>(enabled = hasUnsavedChanges) { showDiscardDialog = <span class="tk-kw">true</span> }</code></pre>
         
       </div>
     </details>
@@ -217,6 +333,51 @@
   <span class="tk-kw">val</span> colors: <span class="tk-type">AppColors</span>
     <span class="tk-ann">@Composable</span> <span class="tk-kw">get</span>() = <span class="tk-type">LocalAppColors</span>.current
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q29.html">Layout Inspector cho thấy <code>ProductCard</code> bị recompose mỗi khi cuộn <code>LazyColumn</code> dù dữ liệu của item không đổi, và báo cáo của Compose compiler đánh dấu tham số <code>tags: List&lt;String&gt;</code> là unstable. Giải thích cơ chế skipping, strong skipping mode, và các cách bạn giảm recomposition thừa?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Compose bỏ qua (skip) một composable khi mọi tham số đều không đổi so với lần recompose trước. Tham số kiểu stable được so sánh bằng <code>equals</code>; <code>List&lt;T&gt;</code> của Kotlin là interface không đảm bảo bất biến nên compiler coi là unstable. Từ Kotlin 2.0.20, strong skipping mode bật mặc định: composable có tham số unstable vẫn skip được nhưng so sánh bằng instance (<code>===</code>), và lambda capture giá trị unstable cũng được tự <code>remember</code>. Hệ quả là nếu list là instance mới mỗi lần, ví dụ <code>.map { }</code> ngay trong composable hoặc ViewModel emit list mới cho mỗi thay đổi nhỏ, thì mọi item vẫn recompose dù nội dung y hệt. Cách xử lý: map sang UI model một lần ở ViewModel và giữ nguyên instance khi dữ liệu không đổi; đánh dấu data class UI là <code>@Immutable</code>/<code>@Stable</code> và dùng <code>ImmutableList</code> của <code>kotlinx.collections.immutable</code> (hoặc khai báo stability configuration file cho class của thư viện); với giá trị đổi liên tục như scroll offset hay animation thì đọc state bên trong lambda của modifier (<code>Modifier.offset { }</code>, <code>graphicsLayer { }</code>) hoặc qua <code>derivedStateOf</code>, để chỉ phase layout/draw chạy lại chứ không recompose. Đo bằng Compose compiler reports/metrics và recomposition counts của Layout Inspector, rồi đo lại bằng Macrobenchmark; đừng tối ưu mù vì mỗi lần skip cũng tốn một phép so sánh.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Immutable</span>
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">ProductUi</span>(<span class="tk-kw">val</span> id: <span class="tk-type">String</span>, <span class="tk-kw">val</span> name: <span class="tk-type">String</span>, <span class="tk-kw">val</span> tags: <span class="tk-type">ImmutableList</span>&lt;<span class="tk-type">String</span>&gt;)
+
+<span class="tk-com">// ViewModel: map một lần khi dữ liệu đổi, không map lại trong composable</span>
+<span class="tk-kw">val</span> products: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">ImmutableList</span>&lt;<span class="tk-type">ProductUi</span>&gt;&gt; = repo.products
+  .map { list -&gt; list.map { it.toUi() }.toImmutableList() }
+  .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), persistentListOf())
+
+<span class="tk-com">// Đọc state trong lambda của modifier: chỉ phase layout chạy lại, không recompose</span>
+<span class="tk-type">Box</span>(<span class="tk-type">Modifier</span>.offset { <span class="tk-type">IntOffset</span>(<span class="tk-num">0</span>, -listState.firstVisibleItemScrollOffset / <span class="tk-num">2</span>) })</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/android/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q33.html">Marketing muốn gửi link <code>https://shop.vn/order/123</code> mở thẳng màn chi tiết đơn hàng, kể cả khi app chưa chạy và user chưa đăng nhập. Bạn triển khai deep link thế nào cho đúng và an toàn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi dùng App Links (HTTPS) thay vì custom scheme: custom scheme có thể bị app khác đăng ký trùng để chặn link, còn App Links được xác minh qua file <code>assetlinks.json</code> đặt ở <code>/.well-known/</code> của domain (chứa package name và fingerprint chứng chỉ ký, nhớ thêm cả fingerprint của Play App Signing) cùng <code>android:autoVerify=&quot;true&quot;</code> trong intent-filter; xác minh thành công thì link mở thẳng app không hiện hộp chọn. Kiểm tra bằng <code>adb shell pm get-app-links &lt;package&gt;</code> và <code>pm verify-app-links --re-verify &lt;package&gt;</code>. Về điều hướng, Navigation Compose khai báo <code>deepLinks</code> cho từng destination và dựng back stack theo nav graph để back về màn hình cha thay vì thoát app; phải xử lý cả cold start (intent trong <code>onCreate</code>) lẫn app đang chạy (<code>onNewIntent</code>). Link là input không đáng tin: validate tham số (id đúng định dạng), không dùng dữ liệu trong link để thực hiện hành động nhạy cảm, và server phải kiểm tra quyền sở hữu đơn hàng. Chưa đăng nhập thì giữ đích đến trong state (<code>SavedStateHandle</code>/ViewModel), đưa user qua màn đăng nhập rồi điều hướng tiếp thay vì làm mất ý định của họ. Activity nhận link phải <code>exported</code>, nên đó là bề mặt tấn công: nó chỉ nên điều phối, không chứa logic nhạy cảm.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-kw">&lt;activity</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;.MainActivity&quot;</span> <span class="tk-type">android:exported</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;intent-filter</span> <span class="tk-type">android:autoVerify</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;action</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.action.VIEW&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.DEFAULT&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;data</span> <span class="tk-type">android:scheme</span>=<span class="tk-str">&quot;https&quot;</span> <span class="tk-type">android:host</span>=<span class="tk-str">&quot;shop.vn&quot;</span> <span class="tk-type">android:pathPrefix</span>=<span class="tk-str">&quot;/order&quot;</span> <span class="tk-kw">/&gt;</span>
+  <span class="tk-kw">&lt;/intent-filter</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/activity</span><span class="tk-kw">&gt;</span>
+<span class="tk-com">&lt;!-- Server phải trả https://shop.vn/.well-known/assetlinks.json chứa package name
+     và SHA-256 fingerprint của chứng chỉ ký (gồm cả khoá của Play App Signing) --&gt;</span></code></pre>
         
       </div>
     </details>
@@ -265,6 +426,117 @@
 <span class="tk-kw">class</span> <span class="tk-type">FakeFeatureFlags</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> overrides: <span class="tk-type">Map</span>&lt;<span class="tk-type">Flag</span>, <span class="tk-type">Boolean</span>&gt;) : <span class="tk-type">FeatureFlags</span> {
   <span class="tk-kw">override</span> <span class="tk-kw">fun</span> isEnabled(flag: <span class="tk-type">Flag</span>) = overrides[flag] ?: flag.default
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q30.html">Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar hay điều hướng. Team dùng <code>SharedFlow</code>/<code>Channel</code> và gặp lỗi: xoay màn hình thì snackbar hiện lại, hoặc sự kiện bị mất khi app đang ở background. Bạn thiết kế việc xử lý sự kiện UI thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hướng được Google khuyến nghị là coi sự kiện như một phần của state: ViewModel đặt &#39;thông báo đang chờ hiển thị&#39; vào UI state, UI hiển thị xong thì gọi <code>onMessageShown()</code> để ViewModel xoá nó đi. Vì state luôn được giữ, sự kiện không mất khi UI chưa ở trạng thái STARTED, và sau khi đã tiêu thụ (xoá khỏi state) thì xoay màn hình không làm nó hiện lại; mỗi message nên có id riêng để hai thông báo giống nhau liên tiếp không bị gộp thành một. Các cách còn lại đều có điểm yếu: kiểu <code>SingleLiveEvent</code> phát lại khi có observer mới hoặc chỉ giao cho một observer; <code>SharedFlow</code> không replay thì mất sự kiện lúc không có subscriber; <code>Channel</code> kèm <code>receiveAsFlow()</code> giữ sự kiện tới khi có người nhận và chỉ giao một lần, nhưng nếu collector bị huỷ đúng lúc vừa nhận (ví dụ UI rời STARTED) thì sự kiện vẫn có thể mất, nên không phải bảo đảm tuyệt đối. Điều hướng cũng nên là kết quả của state (ví dụ <code>navigateTo: Route?</code>) hoặc được UI quyết định qua callback. Tôi dùng state cho mọi thứ phải tới tay user (lỗi thanh toán, điều hướng sau khi tạo đơn) và chỉ dùng Channel cho hiệu ứng &#39;bắn rồi quên&#39; như rung hay âm thanh.</div>
+        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">UiMessage</span>(<span class="tk-kw">val</span> text: <span class="tk-type">String</span>, <span class="tk-kw">val</span> id: <span class="tk-type">String</span> = <span class="tk-type">UUID</span>.randomUUID().toString())
+
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">CheckoutUiState</span>(
+  <span class="tk-kw">val</span> items: <span class="tk-type">List</span>&lt;<span class="tk-type">ItemUi</span>&gt; = emptyList(),
+  <span class="tk-kw">val</span> message: <span class="tk-type">UiMessage</span>? = <span class="tk-kw">null</span>, <span class="tk-com">// sự kiện đang chờ UI hiển thị</span>
+)
+
+<span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">OrderRepository</span>) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> _state = <span class="tk-type">MutableStateFlow</span>(<span class="tk-type">CheckoutUiState</span>())
+  <span class="tk-kw">val</span> state: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">CheckoutUiState</span>&gt; = _state.asStateFlow()
+
+  <span class="tk-kw">fun</span> onPay() = viewModelScope.launch {
+    repo.pay().onFailure {
+      _state.update { s -&gt; s.copy(message = <span class="tk-type">UiMessage</span>(<span class="tk-str">&quot;Thanh toán thất bại&quot;</span>)) }
+    }
+  }
+
+  <span class="tk-kw">fun</span> onMessageShown() = _state.update { it.copy(message = <span class="tk-kw">null</span>) } <span class="tk-com">// đã hiển thị thì xoá khỏi state</span>
+}
+
+<span class="tk-com">// Compose</span>
+state.message?.let { msg -&gt;
+  <span class="tk-type">LaunchedEffect</span>(msg.id) {
+    snackbarHostState.showSnackbar(msg.text)
+    viewModel.onMessageShown()
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="data">
+  <div class="section-head"><h2>Networking &amp; Storage</h2><a class="section-sub" href="../../../phong-van/android/chu-de/data/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q34.html">Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng mới) cho app có vài triệu user đang ở nhiều phiên bản cũ khác nhau. Bạn viết và kiểm thử migration thế nào, và vì sao <code>fallbackToDestructiveMigration</code> nguy hiểm?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi lần đổi schema phải tăng <code>version</code> và có đường nâng cấp từ mọi version cũ còn người dùng, vì user có thể nhảy từ bản rất cũ lên thẳng bản mới nhất. Thay đổi đơn giản (thêm cột, thêm bảng, đổi tên) dùng <code>AutoMigration</code> kèm <code>exportSchema = true</code> và commit thư mục schema JSON vào git để Room có bản so sánh; thay đổi phức tạp như tách bảng hay chuyển dữ liệu thì viết <code>Migration</code> bằng SQL. Cột NOT NULL mới phải có <code>DEFAULT</code> để các dòng cũ hợp lệ, và entity phải khai báo <code>@ColumnInfo(defaultValue = ...)</code> cho khớp, nếu không Room báo schema sai khi validate. SQLite trên máy cũ không hỗ trợ xoá hay đổi kiểu cột tuỳ ý, nên đổi lớn thường theo cách tạo bảng mới, copy dữ liệu, xoá bảng cũ, đổi tên. Tôi theo kiểu expand–contract: bản này thêm bảng mới và copy dữ liệu, giữ nguyên cột cũ; bản sau khi chắc chắn mới xoá cột cũ. Kiểm thử bằng <code>MigrationTestHelper</code>: tạo DB ở version cũ, chèn dữ liệu, chạy <code>runMigrationsAndValidate</code> rồi kiểm tra dữ liệu, và test cả chuỗi nhiều bước. <code>fallbackToDestructiveMigration()</code> xoá sạch dữ liệu local khi thiếu đường nâng cấp; với cache thì chấp nhận được, nhưng với dữ liệu chỉ có trên máy (nháp, outbox chưa đồng bộ) thì là mất dữ liệu của user và bạn chỉ biết sau khi đã release. Migration chạy ở lần truy cập DB đầu tiên nên phải nhanh, đo với dữ liệu thật lớn và đảm bảo lần mở đó không nằm trên main thread.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Database</span>(
+  entities = [<span class="tk-type">OrderEntity</span>::<span class="tk-kw">class</span>, <span class="tk-type">OrderNoteEntity</span>::<span class="tk-kw">class</span>],
+  version = <span class="tk-num">3</span>,
+  exportSchema = <span class="tk-kw">true</span>, <span class="tk-com">// commit thư mục schema vào git để Room so sánh và test migration</span>
+)
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">AppDatabase</span> : <span class="tk-type">RoomDatabase</span>()
+
+<span class="tk-kw">val</span> <span class="tk-type">MIGRATION_2_3</span> = <span class="tk-kw">object</span> : <span class="tk-type">Migration</span>(<span class="tk-num">2</span>, <span class="tk-num">3</span>) {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> migrate(db: <span class="tk-type">SupportSQLiteDatabase</span>) {
+    <span class="tk-com">// Cột NOT NULL mới phải có DEFAULT thì các dòng cũ mới hợp lệ</span>
+    db.execSQL(<span class="tk-str">&quot;ALTER TABLE orders ADD COLUMN status TEXT NOT NULL DEFAULT &#39;PENDING&#39;&quot;</span>)
+    <span class="tk-com">// Expand: tạo bảng mới và copy dữ liệu, giữ nguyên cột note, bản sau mới xoá</span>
+    db.execSQL(<span class="tk-str">&quot;CREATE TABLE IF NOT EXISTS order_notes (orderId TEXT NOT NULL, body TEXT NOT NULL, PRIMARY KEY(orderId))&quot;</span>)
+    db.execSQL(<span class="tk-str">&quot;INSERT INTO order_notes (orderId, body) SELECT id, note FROM orders WHERE note IS NOT NULL&quot;</span>)
+  }
+}
+
+<span class="tk-ann">@Test</span>
+<span class="tk-kw">fun</span> migrate2To3_keepsNotes() {
+  helper.createDatabase(<span class="tk-type">TEST_DB</span>, <span class="tk-num">2</span>).apply {
+    execSQL(<span class="tk-str">&quot;INSERT INTO orders (id, note) VALUES (&#39;a1&#39;, &#39;giao giờ hành chính&#39;)&quot;</span>)
+    close()
+  }
+  <span class="tk-kw">val</span> db = helper.runMigrationsAndValidate(<span class="tk-type">TEST_DB</span>, <span class="tk-num">3</span>, <span class="tk-kw">true</span>, <span class="tk-type">MIGRATION_2_3</span>) <span class="tk-com">// so với schema đã export</span>
+  db.query(<span class="tk-str">&quot;SELECT body FROM order_notes WHERE orderId = &#39;a1&#39;&quot;</span>).use {
+    assertTrue(it.moveToFirst() &amp;&amp; it.getString(<span class="tk-num">0</span>) == <span class="tk-str">&quot;giao giờ hành chính&quot;</span>)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="background">
+  <div class="section-head"><h2>Background &amp; Service</h2><a class="section-sub" href="../../../phong-van/android/chu-de/background/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q31.html">App cần ba việc: đồng bộ dữ liệu định kỳ, nhắc lịch đúng giờ, và tải file lớn do user bấm. Với các giới hạn chạy nền của Android hiện nay, bạn chọn cơ chế nào cho từng việc và cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đồng bộ định kỳ dùng WorkManager (<code>PeriodicWorkRequest</code> tối thiểu 15 phút, constraint mạng, backoff, unique work) và chấp nhận hệ thống dời lịch khi Doze hay App Standby, không hứa độ chính xác về thời gian. Lời nhắc cần đúng giờ dùng <code>AlarmManager</code> với <code>setExactAndAllowWhileIdle</code>, nhưng cần quyền <code>SCHEDULE_EXACT_ALARM</code>: từ Android 14 quyền này bị từ chối mặc định với app mới cài (target 13 trở lên), nên phải kiểm tra <code>canScheduleExactAlarms()</code> và dẫn user tới màn cài đặt; <code>USE_EXACT_ALARM</code> chỉ hợp lệ cho app báo thức hay lịch theo chính sách của Play. Nhắc &#39;khoảng 9h&#39; thì dùng inexact alarm hoặc WorkManager là đủ. Việc tải do user chủ động trước đây hay dùng foreground service <code>dataSync</code>, nhưng từ Android 14 foreground service phải khai báo type và quyền tương ứng, từ Android 12 không được khởi chạy foreground service từ background trừ các ngoại lệ, và Android 15 giới hạn <code>dataSync</code> khoảng 6 giờ mỗi 24 giờ. Với Android 14 trở lên, việc tải do user khởi tạo nên dùng user-initiated data transfer job (JobScheduler với <code>setUserInitiated(true)</code>, quyền <code>RUN_USER_INITIATED_JOBS</code>, bắt buộc có notification và network constraint), còn việc ngắn có thể dùng WorkManager với <code>setExpedited</code>. Mọi worker phải idempotent và resume được vì hệ thống có thể dừng bất cứ lúc nào.</div>
+        <pre class="code-block"><code><span class="tk-com">// Nhắc lịch: chỉ dùng exact alarm khi được cấp quyền</span>
+<span class="tk-kw">val</span> alarmManager = context.getSystemService(<span class="tk-type">AlarmManager</span>::<span class="tk-kw">class</span>.java)
+<span class="tk-kw">if</span> (alarmManager.canScheduleExactAlarms()) {
+  alarmManager.setExactAndAllowWhileIdle(<span class="tk-type">AlarmManager</span>.<span class="tk-type">RTC_WAKEUP</span>, remindAtMillis, pendingIntent)
+} <span class="tk-kw">else</span> {
+  context.startActivity(<span class="tk-type">Intent</span>(<span class="tk-type">Settings</span>.<span class="tk-type">ACTION_REQUEST_SCHEDULE_EXACT_ALARM</span>)) <span class="tk-com">// hoặc hạ xuống inexact</span>
+}
+
+<span class="tk-com">// Tải file do user bấm (Android 14+): lên lịch ngay khi user thao tác, khi app đang hiển thị</span>
+<span class="tk-kw">val</span> job = <span class="tk-type">JobInfo</span>.<span class="tk-type">Builder</span>(<span class="tk-type">DOWNLOAD_JOB_ID</span>, <span class="tk-type">ComponentName</span>(context, <span class="tk-type">DownloadJobService</span>::<span class="tk-kw">class</span>.java))
+  .setUserInitiated(<span class="tk-kw">true</span>) <span class="tk-com">// việc user chủ động: được ưu tiên và không bị giới hạn như job nền thường</span>
+  .setRequiredNetworkType(<span class="tk-type">JobInfo</span>.<span class="tk-type">NETWORK_TYPE_ANY</span>) <span class="tk-com">// bắt buộc phải có network constraint</span>
+  .setEstimatedNetworkBytes(<span class="tk-num">0</span>, fileSizeBytes)
+  .build()
+context.getSystemService(<span class="tk-type">JobScheduler</span>::<span class="tk-kw">class</span>.java).schedule(job)
+<span class="tk-com">// Trong DownloadJobService.onStartJob phải gọi setNotification(...) để hiện tiến độ</span></code></pre>
         
       </div>
     </details>
@@ -392,6 +664,34 @@ dependencies {
       <span class="tk-kw">is</span> <span class="tk-type">FeedItemUi</span>.<span class="tk-type">Carousel</span> -&gt; <span class="tk-type">CarouselRow</span>(item)
     }
   }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q35.html">Android vitals báo ANR rate của app vượt ngưỡng xấu, nhưng trên máy dev chưa bao giờ tái hiện được. Bạn điều tra thế nào, và những nguyên nhân ANR khó thấy là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">ANR xảy ra khi main thread không phản hồi đúng hạn: input dispatch quá khoảng 5 giây, <code>BroadcastReceiver</code> chạy quá khoảng 10 giây (broadcast foreground; 60 giây với broadcast nền), hoặc service không xử lý xong hay không gọi <code>startForeground</code> kịp. Điều tra bắt đầu từ dữ liệu thật: Android vitals trong Play Console nhóm ANR theo stack trace và loại (input, broadcast, service), cho biết thiết bị và phiên bản OS tập trung; trong app, <code>ApplicationExitInfo</code> (API 30 trở lên) với <code>REASON_ANR</code> kèm <code>traceInputStream</code> là thread dump lúc xảy ra, có thể upload lên Crashlytics hay Sentry ở lần mở app sau; ở bản debug dùng StrictMode để bắt I/O trên main thread. Khi đọc thread dump, xem main thread đang <code>BLOCKED</code> chờ lock do thread nào giữ, đang đứng ở một binder call tới process khác, hay chờ <code>Future.get()</code>. Các nguyên nhân khó thấy: lock contention với thread nền giữ lock lâu; <code>SharedPreferences.apply()</code> tưởng bất đồng bộ nhưng khi Activity dừng hay service kết thúc, hệ thống chờ ghi xong (<code>QueuedWork.waitToFinish</code>), nên file lớn hoặc ghi dồn sẽ chặn main, nên chuyển sang DataStore; process bị khởi động chỉ để nhận broadcast mà <code>Application.onCreate</code> nặng, vì thời gian khởi tạo cũng tính vào hạn của receiver; binder call đồng bộ tới process chậm; deadlock; máy yếu thiếu CPU. Sửa nguyên nhân gốc rồi theo dõi ANR rate qua các bản.</div>
+        <pre class="code-block"><code><span class="tk-com">// Chạy lúc app khởi động: gửi thread dump của lần ANR trước lên hệ thống báo lỗi (API 30+)</span>
+<span class="tk-kw">val</span> am = context.getSystemService(<span class="tk-type">ActivityManager</span>::<span class="tk-kw">class</span>.java)
+am.getHistoricalProcessExitReasons(context.packageName, <span class="tk-num">0</span>, <span class="tk-num">5</span>)
+  .filter { it.reason == <span class="tk-type">ApplicationExitInfo</span>.<span class="tk-type">REASON_ANR</span> }
+  .forEach { info -&gt;
+    <span class="tk-kw">val</span> trace = info.traceInputStream?.bufferedReader()?.use { it.readText() }
+    reporter.log(<span class="tk-str">&quot;ANR&quot;</span>, info.description, trace)
+  }
+
+<span class="tk-com">// Bản debug: phát hiện I/O trên main thread ngay khi dev chạy</span>
+<span class="tk-kw">if</span> (<span class="tk-type">BuildConfig</span>.<span class="tk-type">DEBUG</span>) {
+  <span class="tk-type">StrictMode</span>.setThreadPolicy(
+    <span class="tk-type">StrictMode</span>.<span class="tk-type">ThreadPolicy</span>.<span class="tk-type">Builder</span>()
+      .detectDiskReads().detectDiskWrites().detectNetwork()
+      .penaltyLog()
+      .build(),
+  )
 }</code></pre>
         
       </div>
@@ -547,6 +847,30 @@ dependencies {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q36.html">Bạn được giao thiết kế một SDK Android nội bộ (thanh toán hoặc analytics) dùng cho 5 app của công ty, mỗi app có team riêng và lịch phát hành khác nhau. Những quyết định thiết kế nào quan trọng nhất để SDK dễ nâng cấp và không gây phiền cho app tích hợp?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thứ nhất là bề mặt API: nhỏ, ổn định và chủ động ẩn đi. Bật Kotlin explicit API mode để mọi khai báo public phải ghi rõ, dùng <code>internal</code> cho phần còn lại, và thêm binary-compatibility-validator (<code>apiCheck</code>) vào CI để mọi thay đổi API public hiện ra trong diff và bị review. Theo semver: thêm tuỳ chọn là bản minor, đổi hoặc xoá là major sau một thời gian <code>@Deprecated</code>. Kotlin có vài bẫy tương thích nhị phân: thêm tham số (kể cả có giá trị mặc định) vào hàm public là tương thích nguồn nhưng làm vỡ binary, nên cần giữ overload cũ hoặc dùng <code>@JvmOverloads</code> từ đầu; <code>data class</code> public dễ vỡ vì <code>copy</code> và <code>componentN</code> đổi theo constructor. Thứ hai là dependency: không lộ thư viện nặng hay dễ xung đột (OkHttp, Gson, Coroutines) ra API public, dùng <code>implementation</code> và chỉ dùng <code>api</code> khi kiểu đó thật sự nằm trong chữ ký public; ít dependency và minSdk thấp. Thứ ba là cách tích hợp: khởi tạo tường minh qua <code>Sdk.init(context, config)</code> hoặc App Startup thay vì giấu trong <code>ContentProvider</code> làm chậm startup của host app; SDK tự quản lý thread, không chặn main thread, không làm crash app host (bắt lỗi nội bộ) và bật tắt được log. Thứ tư là đóng gói: AAR kèm consumer ProGuard rules để host bật R8 không phải tự viết keep rule, và manifest không tự thêm permission thừa. Cuối cùng là tài liệu, app mẫu, changelog, và ma trận test chạy với nhiều phiên bản AGP, Kotlin, OkHttp.</div>
+        <pre class="code-block"><code><span class="tk-com">// build.gradle.kts của module SDK</span>
+kotlin {
+  explicitApi() <span class="tk-com">// mọi khai báo public phải ghi rõ visibility và kiểu trả về</span>
+}
+
+android {
+  defaultConfig {
+    consumerProguardFiles(<span class="tk-str">&quot;consumer-rules.pro&quot;</span>) <span class="tk-com">// app host bật R8 không phải tự viết keep rule</span>
+  }
+}
+
+dependencies {
+  implementation(libs.okhttp) <span class="tk-com">// không lộ OkHttp ra API public của SDK</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="soft">
@@ -569,6 +893,17 @@ dependencies {
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Tôi nói bằng ngôn ngữ của business thay vì &#39;công nghệ mới hay hơn&#39;: thời gian làm một màn hình mới hiện nay, số bug UI lặp lại, khó tuyển người, và rủi ro nếu tiếp tục giữ nguyên. Đề xuất là migrate tăng dần chứ không viết lại toàn bộ: màn hình mới viết bằng Compose, màn hình cũ chỉ chuyển khi đằng nào cũng phải sửa lớn, hai bên chung sống qua <code>ComposeView</code> và <code>AndroidView</code>. Bắt đầu bằng pilot có time-box trên một màn hình ít rủi ro, đo trước và sau (thời gian phát triển, kích thước app, startup, jank), nhớ thêm Baseline Profile vì Compose là thư viện đi kèm app, không được hệ thống compile sẵn như framework View. Chuẩn bị nền: design system bằng Compose, guideline và reviewer có kinh nghiệm. Cuối cùng thống nhất với PM tỉ lệ capacity mỗi sprint và mốc đánh giá lại, để có thể dừng nếu không hiệu quả.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q37.html">Đang ở giữa dự án 3 tháng (làm lại luồng thanh toán) thì bạn nhận ra tiến độ chậm khoảng 30% so với kế hoạch, trong khi ngày ra mắt gắn với chiến dịch marketing đã công bố. Bạn xử lý thế nào, đặc biệt là cách báo cho các bên liên quan?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Việc đầu tiên là báo sớm thay vì cố bù trong im lặng, nhưng đi kèm số liệu và phương án chứ không chỉ báo tin xấu. Tôi dành vài giờ tìm nguyên nhân thật: ước lượng sai do thiếu thông tin, requirement thay đổi, backend trễ, hay nợ kỹ thuật ở phần cũ, vì mỗi loại có cách xử lý khác nhau. Sau đó dựng lại kế hoạch theo phần việc còn lại, có khoảng ước lượng (tốt nhất, khả dĩ, xấu nhất) thay vì một con số, rồi đưa cho PM các lựa chọn kèm đánh đổi rõ ràng: cắt phạm vi (bản đầu chỉ có luồng cốt lõi, các phương thức thanh toán phụ ra sau), dời ngày, thêm người (nhớ định luật Brooks: thêm người giữa chừng thường làm chậm hơn trong ngắn hạn), hoặc giảm chất lượng (tôi không khuyến nghị với thanh toán). Đề xuất dựa trên tiêu chí đo được như rủi ro tài chính và mức cam kết của chiến dịch. Song song giảm rủi ro kỹ thuật: đặt bản ra mắt sau feature flag và staged rollout để tách ngày marketing khỏi ngày bật cho toàn bộ user, làm phần rủi ro nhất trước (tích hợp cổng thanh toán, sau đó mới tới UI), và cập nhật tiến độ ngắn mỗi tuần. Sau dự án, họp rút kinh nghiệm: vì sao ước lượng lệch, lần sau thêm buffer và chia mốc nhỏ sớm hơn.</div>
         
         
       </div>

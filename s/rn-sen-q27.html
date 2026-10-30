@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Team muốn bật React Compiler cho app RN và đề xuất xoá hết useMemo, us…</title>
+<meta name="description" content="React Compiler là một plugin Babel phân tích component và hook lúc build rồi tự thêm memoization ở mức chi tiết (từng giá trị, từng JSX element), kể cả sau c…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q27.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Team muốn bật React Compiler cho app RN và đề xuất xoá hết useMemo, us…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q27.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Team muốn bật React Compiler cho app RN và đề x…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q27.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Team muốn bật React Compiler cho app RN và đề x…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/react/">React &amp; Hooks</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Team muốn bật React Compiler cho app RN và đề xuất xoá hết <code>useMemo</code>, <code>useCallback</code>, <code>memo</code> trong codebase. Compiler làm gì, nó đòi hỏi gì ở code, và bạn đưa nó vào dự án đang chạy thế nào cho an toàn?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React Compiler là một plugin Babel phân tích component và hook lúc build rồi tự thêm memoization ở mức chi tiết (từng giá trị, từng JSX element), kể cả sau các nhánh điều kiện mà <code>useMemo</code> viết tay không làm được. Nó chỉ an toàn khi code tuân thủ Rules of React: render phải thuần (không sửa props, state hay biến ngoài trong lúc render, không đọc ref khi render) và hook gọi đúng quy tắc. Khi phát hiện chỗ vi phạm rõ ràng, compiler bỏ qua (không compile) component đó chứ không cố sửa, nhưng nó không phát hiện hết mọi vi phạm, nên code sai quy tắc vẫn có thể được compile và chạy sai; vì vậy cần test, không nên tin tuyệt đối. Kế hoạch đưa vào: chạy <code>npx react-compiler-healthcheck</code> để biết tỉ lệ component tương thích, bật lint của compiler (đã tích hợp trong bản mới của <code>eslint-plugin-react-hooks</code>) để sửa các vi phạm, rồi bật dần: dùng <code>compilationMode: &#39;annotation&#39;</code> và gắn directive <code>&#39;use memo&#39;</code> cho vài màn quan trọng, hoặc bật toàn bộ và dùng <code>&#39;use no memo&#39;</code> để loại trừ component có vấn đề. Với Expo thì bật bằng <code>experiments.reactCompiler</code> trong cấu hình app. Đo trước và sau bằng React DevTools Profiler (component được compile hiện nhãn &#39;Memo ✨&#39;) cùng số lần render, thay vì tin rằng nó nhanh hơn. Đừng vội xoá <code>useMemo</code>/<code>useCallback</code> đang có: để lại không hại và đôi khi còn dùng làm dependency của effect, chỉ là không cần viết mới. Compiler không thay cho thiết kế đúng: state đặt quá cao, list không ảo hoá hay tính toán nặng trong render vẫn là vấn đề.</div>
+        <pre class="code-block"><code><span class="tk-com">// babel.config.js (project bare)</span>
+module.exports = {
+  presets: [<span class="tk-str">&#39;module:@react-native/babel-preset&#39;</span>],
+  plugins: [
+    <span class="tk-com">// phải đứng đầu danh sách plugin; chế độ annotation: chỉ compile component có &#39;use memo&#39;</span>
+    [<span class="tk-str">&#39;babel-plugin-react-compiler&#39;</span>, { compilationMode: <span class="tk-str">&#39;annotation&#39;</span> }],
+  ],
+};
+
+<span class="tk-com">// Component bật compiler riêng lẻ</span>
+<span class="tk-kw">function</span> <span class="tk-type">OrderSummary</span>({ order }: { order: <span class="tk-type">Order</span> }) {
+  <span class="tk-str">&#39;use memo&#39;</span>;
+  <span class="tk-com">// Compiler tự memo kết quả này, không cần viết useMemo</span>
+  <span class="tk-kw">const</span> total = order.items.reduce((sum, i) =&gt; sum + i.price * i.qty, <span class="tk-num">0</span>);
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{formatMoney(total)}&lt;/<span class="tk-type">Text</span>&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q27">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q26.html"><span class="muted small">← Câu trước</span><span>Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm bị khựng khi gõ: mỗi ký tự làm…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q28.html"><span class="muted small">Câu sau →</span><span>Backend đổi trường price từ number sang string (&quot;199000.00&quot;) mà không báo, app…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề React &amp; Hooks</h2><a class="section-sub" href="../phong-van/react-native/chu-de/react/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q26.html">Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm bị khựng khi gõ: mỗi ký tự làm cả list render lại và TextInput giật. Ngoài debounce, bạn dùng useDeferredValue hay useTransition (concurrent rendering) thế nào trong React Native, và điều kiện để chúng thật sự có tác dụng là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m09.html">Team dùng useTransition để giữ ô tìm kiếm mượt khi lọc list lớn nhưng không thấy khác biệt nào. App vẫn chạy kiến trúc cũ. Giải thích nào đúng?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m10.html">Sau khi bật React Compiler cho app RN, phát biểu nào đúng?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q08.html">Props và state khác nhau thế nào? Component con có được sửa props mà nó nhận không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q09.html">Vì sao gọi setCount(count + 1) ba lần liên tiếp trong một handler mà count chỉ tăng 1? Sửa thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q10.html">JSX là gì? Kể vài quy tắc JSX hay bị viết sai, đặc biệt khi dùng trong React Native.</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

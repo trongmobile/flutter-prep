@@ -85,10 +85,10 @@
   <ul class="link-list">
     <li><a href="../s/ios-sen-q05.html">Bạn cần một ImageCache dùng chung cho cả app: đọc rất nhiều từ cellForRowAt trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng actor, @MainActor hay lock? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
     <li><a href="../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q26.html">Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API refresh token 10 lần, khiến server xoay vòng refresh token và các lần sau thất bại (user bị đăng xuất). Bạn dùng actor để bảo đảm chỉ refresh một lần thế nào, và reentrancy của actor ảnh hưởng ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q27.html">Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await, dưới dạng for await location in tracker.updates(). Bạn bọc bằng AsyncStream thế nào, và cần để ý gì về huỷ, buffer và vòng đời?</a> <span class="rank-tag rank-purple">Senior</span></li>
     <li><a href="../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/ios-sen-m11.html">Vòng lặp sau đẩy 500 block tải file vào global queue, mỗi block gọi mạng đồng bộ. Điều gì dễ xảy ra?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/ios-sen-m12.html">Trong một hàm async, dev dùng DispatchSemaphore để chờ một Task khác xong nhằm &#39;biến async thành sync&#39;. Rủi ro lớn nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

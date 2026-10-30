@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Sau khi release, Sentry báo crash-free session 99.6% nhưng nhiều user…</title>
+<meta name="description" content="Lỗi trong RN thuộc ba nhóm, mỗi nhóm có đường bắt riêng. Một: lỗi lúc render hay lifecycle của React, được ErrorBoundary bắt; ErrorBoundary không bắt lỗi tro…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q34.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Sau khi release, Sentry báo crash-free session 99.6% nhưng nhiều user…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q34.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Sau khi release, Sentry báo crash-free session…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q34.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Sau khi release, Sentry báo crash-free session…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/tooling/">Expo, Build &amp; Release</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Sau khi release, Sentry báo crash-free session 99.6% nhưng nhiều user phàn nàn &#39;app tự tắt&#39; mà không có lỗi tương ứng; đội đã bọc <code>ErrorBoundary</code> ở root nhưng vẫn có màn hình trắng. Hệ thống xử lý lỗi của RN gồm những tầng nào, và bạn thiết kế việc quan sát lỗi thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lỗi trong RN thuộc ba nhóm, mỗi nhóm có đường bắt riêng. Một: lỗi lúc render hay lifecycle của React, được <code>ErrorBoundary</code> bắt; ErrorBoundary không bắt lỗi trong event handler, <code>setTimeout</code>, Promise hay async, nên nhiều lỗi JS không đi qua đây. Hai: lỗi JS không được bắt (uncaught exception) đi tới <code>ErrorUtils.setGlobalHandler</code> (Sentry hay Crashlytics gắn handler ở đây); lỗi fatal ở bản release làm app thoát, còn ở dev thì hiện LogBox; unhandled promise rejection mặc định chỉ cảnh báo ở dev nên SDK như Sentry cài thêm hook để ghi nhận. Ba: crash native (lỗi trong thư viện native, OOM, bị kill vì memory, ANR trên Android, watchdog trên iOS) không có JS stack và JS không bắt được vì process đã chết; cần SDK native (Sentry, Crashlytics) cùng các nguồn như Android vitals, Xcode Organizer, MetricKit. Vì vậy &#39;app tự tắt&#39; mà không có lỗi tương ứng thường là OOM hay jetsam hoặc ANR, còn màn hình trắng thường do lỗi render ở nơi không có ErrorBoundary hoặc lỗi nằm ngay trong fallback. Thiết kế: nhiều <code>ErrorBoundary</code> theo vùng (root, từng màn, từng widget quan trọng) với fallback có nút thử lại; thêm breadcrumb (điều hướng, request, hành động của user), gắn đúng release, dist và source map, theo dõi crash-free users chứ không chỉ session, và đặt cảnh báo theo ngưỡng; lỗi nhẹ như API fail thì ghi ở mức handled kèm context. Kiểm chứng bằng cách giả lập từng loại lỗi (ném lỗi trong handler, Promise reject, crash native) trên bản staging để biết SDK bắt được chưa.</div>
+        <pre class="code-block"><code><span class="tk-com">// Lỗi JS không bắt được (event handler, setTimeout...): Sentry/Crashlytics gắn handler này</span>
+<span class="tk-kw">const</span> defaultHandler = <span class="tk-type">ErrorUtils</span>.getGlobalHandler();
+<span class="tk-type">ErrorUtils</span>.setGlobalHandler((error, isFatal) =&gt; {
+  logger.captureException(error, { fatal: isFatal });
+  defaultHandler(error, isFatal); <span class="tk-com">// vẫn giữ hành vi mặc định (fatal thì app thoát)</span>
+});
+
+<span class="tk-com">// Lỗi render: ErrorBoundary theo từng vùng, không chỉ ở root</span>
+<span class="tk-kw">class</span> <span class="tk-type">SectionBoundary</span> <span class="tk-kw">extends</span> <span class="tk-type">React</span>.<span class="tk-type">Component</span>&lt;
+  { name: <span class="tk-kw">string</span>; children: <span class="tk-type">React</span>.<span class="tk-type">ReactNode</span> },
+  { failed: <span class="tk-kw">boolean</span> }
+&gt; {
+  state = { failed: <span class="tk-kw">false</span> };
+
+  <span class="tk-kw">static</span> getDerivedStateFromError() {
+    <span class="tk-kw">return</span> { failed: <span class="tk-kw">true</span> };
+  }
+
+  componentDidCatch(error: <span class="tk-type">Error</span>, info: <span class="tk-type">React</span>.<span class="tk-type">ErrorInfo</span>) {
+    logger.captureException(error, { section: <span class="tk-kw">this</span>.props.name, componentStack: info.componentStack });
+  }
+
+  render() {
+    <span class="tk-kw">return</span> <span class="tk-kw">this</span>.state.failed ? (
+      &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Thử lại&quot;</span> onPress={() =&gt; <span class="tk-kw">this</span>.setState({ failed: <span class="tk-kw">false</span> })} /&gt;
+    ) : (
+      <span class="tk-kw">this</span>.props.children
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q34">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q33.html"><span class="muted small">← Câu trước</span><span>Team cần bọc một SDK native nội bộ (đọc thẻ NFC, Bluetooth) thành module cho RN…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q35.html"><span class="muted small">Câu sau →</span><span>Công ty muốn biến app RN thành một &#39;super app&#39;: các nhóm khác nhau (ví, đặt xe,…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Expo, Build &amp; Release</h2><a class="section-sub" href="../phong-van/react-native/chu-de/tooling/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q13.html">Sau khi App Center/CodePush ngừng hoạt động, team chuyển sang EAS Update. runtimeVersion dùng để làm gì, và cấu hình sai thì hậu quả là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q14.html">Crash report từ production trên Sentry chỉ hiện stack trace kiểu index.android.bundle:1:284731. Vì sao, và quy trình release cần làm gì để đọc được?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q15.html">Team đang commit thư mục ios/ và android/, sửa tay rất nhiều, và mỗi lần nâng React Native mất cả tuần. Bạn có đề xuất chuyển sang Continuous Native Generation (Expo prebuild) không? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m25.html">Bản 2.4.0 (cấu hình dưới) thêm react-native-maps và đã lên store. Sau đó team đẩy một bản EAS Update có dùng thư viện này. User còn ở bản 2.3.0 sẽ thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m26.html">Bản iOS mới đang phát hành theo phased release 7 ngày trên App Store. Trong thời gian đó, user muốn có bản mới ngay thì sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m27.html">Về chính sách của App Store và Google Play đối với OTA update cho app React Native, phát biểu nào chính xác nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

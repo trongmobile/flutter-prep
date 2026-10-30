@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await,…</title>
+<meta name="description" content="AsyncStream chuyển nguồn sự kiện kiểu delegate thành một chuỗi bất đồng bộ: tạo bằng AsyncStream.makeStream(of:bufferingPolicy:) để lấy cả stream lẫn continu…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q27.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await,…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q27.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Bạn cần dùng CLLocationManager (callback qua de…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q27.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn cần dùng CLLocationManager (callback qua de…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/concurrency/">Concurrency</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn cần dùng <code>CLLocationManager</code> (callback qua delegate) trong code <code>async/await</code>, dưới dạng <code>for await location in tracker.updates()</code>. Bạn bọc bằng <code>AsyncStream</code> thế nào, và cần để ý gì về huỷ, buffer và vòng đời?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>AsyncStream</code> chuyển nguồn sự kiện kiểu delegate thành một chuỗi bất đồng bộ: tạo bằng <code>AsyncStream.makeStream(of:bufferingPolicy:)</code> để lấy cả stream lẫn continuation, gọi <code>continuation.yield(value)</code> từ callback (an toàn từ thread bất kỳ) và <code>continuation.finish()</code> khi nguồn kết thúc. Điểm quan trọng nhất là dọn dẹp: gán <code>continuation.onTermination</code> để dừng <code>startUpdatingLocation()</code> khi consumer thoát vòng lặp, <code>Task</code> bị huỷ hay stream kết thúc; thiếu bước này GPS chạy mãi và tốn pin. Về buffer, mặc định là <code>.unbounded</code>; với dữ liệu kiểu &#39;giá trị mới nhất&#39; như vị trí nên dùng <code>.bufferingNewest(1)</code> để consumer chậm không làm bộ nhớ phình ra, còn sự kiện không được bỏ sót (log, tin nhắn) thì giữ <code>.unbounded</code> hoặc giới hạn có chủ đích. <code>AsyncStream</code> là unicast: nhiều consumer sẽ tranh nhau từng phần tử chứ không mỗi nơi nhận một bản, nên muốn chia sẻ cho nhiều nơi cần tạo stream riêng cho từng người đăng ký hoặc dùng Combine/<code>AsyncChannel</code> của swift-async-algorithms. Nguồn có thể lỗi thì dùng <code>AsyncThrowingStream</code>. Vòng <code>for await</code> nên chạy trong <code>Task</code> gắn với vòng đời UI (<code>.task { }</code> của SwiftUI tự huỷ khi view biến mất) để không tạo task mồ côi. Cuối cùng, tránh retain cycle giữa delegate, continuation và closure <code>onTermination</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">LocationTracker</span>: <span class="tk-type">NSObject</span>, <span class="tk-type">CLLocationManagerDelegate</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> manager = <span class="tk-type">CLLocationManager</span>()
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> continuation: <span class="tk-type">AsyncStream</span>&lt;<span class="tk-type">CLLocation</span>&gt;.<span class="tk-type">Continuation</span>?
+
+  <span class="tk-kw">func</span> updates() -&gt; <span class="tk-type">AsyncStream</span>&lt;<span class="tk-type">CLLocation</span>&gt; {
+    <span class="tk-kw">let</span> (stream, continuation) = <span class="tk-type">AsyncStream</span>.makeStream(
+      of: <span class="tk-type">CLLocation</span>.<span class="tk-kw">self</span>,
+      bufferingPolicy: .bufferingNewest(<span class="tk-num">1</span>) <span class="tk-com">// chỉ cần vị trí mới nhất</span>
+    )
+    <span class="tk-kw">self</span>.continuation = continuation
+    manager.delegate = <span class="tk-kw">self</span>
+    manager.startUpdatingLocation()
+    continuation.onTermination = { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] _ <span class="tk-kw">in</span>
+      <span class="tk-kw">self</span>?.manager.stopUpdatingLocation() <span class="tk-com">// consumer thoát hoặc bị huỷ thì tắt GPS</span>
+    }
+    <span class="tk-kw">return</span> stream
+  }
+
+  <span class="tk-kw">func</span> locationManager(_ manager: <span class="tk-type">CLLocationManager</span>, didUpdateLocations locations: [<span class="tk-type">CLLocation</span>]) {
+    locations.forEach { continuation?.yield($<span class="tk-num">0</span>) }
+  }
+}
+
+<span class="tk-com">// SwiftUI: .task tự huỷ khi view biến mất, kéo theo onTermination</span>
+.task {
+  <span class="tk-kw">for</span> <span class="tk-kw">await</span> location <span class="tk-kw">in</span> tracker.updates() { model.update(location) }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q27">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q26.html"><span class="muted small">← Câu trước</span><span>Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q28.html"><span class="muted small">Câu sau →</span><span>Code review thấy let repositories: [any Repository] rải khắp nơi và một người đ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Concurrency</h2><a class="section-sub" href="../phong-van/ios/chu-de/concurrency/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q05.html">Bạn cần một ImageCache dùng chung cho cả app: đọc rất nhiều từ cellForRowAt trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng actor, @MainActor hay lock? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q06.html">Code cũ dùng DispatchSemaphore trên main thread để chờ kết quả từ một queue .utility, và Xcode báo cảnh báo priority inversion. Vấn đề là gì và sửa thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q26.html">Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API refresh token 10 lần, khiến server xoay vòng refresh token và các lần sau thất bại (user bị đăng xuất). Bạn dùng actor để bảo đảm chỉ refresh một lần thế nào, và reentrancy của actor ảnh hưởng ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

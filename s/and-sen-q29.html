@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn…</title>
+<meta name="description" content="Compose bỏ qua (skip) một composable khi mọi tham số đều không đổi so với lần recompose trước. Tham số kiểu stable được so sánh bằng equals; List&lt;T&gt; của Kotl…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Layout Inspector cho thấy ProductCard bị recomp…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Layout Inspector cho thấy ProductCard bị recomp…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Layout Inspector cho thấy <code>ProductCard</code> bị recompose mỗi khi cuộn <code>LazyColumn</code> dù dữ liệu của item không đổi, và báo cáo của Compose compiler đánh dấu tham số <code>tags: List&lt;String&gt;</code> là unstable. Giải thích cơ chế skipping, strong skipping mode, và các cách bạn giảm recomposition thừa?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Compose bỏ qua (skip) một composable khi mọi tham số đều không đổi so với lần recompose trước. Tham số kiểu stable được so sánh bằng <code>equals</code>; <code>List&lt;T&gt;</code> của Kotlin là interface không đảm bảo bất biến nên compiler coi là unstable. Từ Kotlin 2.0.20, strong skipping mode bật mặc định: composable có tham số unstable vẫn skip được nhưng so sánh bằng instance (<code>===</code>), và lambda capture giá trị unstable cũng được tự <code>remember</code>. Hệ quả là nếu list là instance mới mỗi lần, ví dụ <code>.map { }</code> ngay trong composable hoặc ViewModel emit list mới cho mỗi thay đổi nhỏ, thì mọi item vẫn recompose dù nội dung y hệt. Cách xử lý: map sang UI model một lần ở ViewModel và giữ nguyên instance khi dữ liệu không đổi; đánh dấu data class UI là <code>@Immutable</code>/<code>@Stable</code> và dùng <code>ImmutableList</code> của <code>kotlinx.collections.immutable</code> (hoặc khai báo stability configuration file cho class của thư viện); với giá trị đổi liên tục như scroll offset hay animation thì đọc state bên trong lambda của modifier (<code>Modifier.offset { }</code>, <code>graphicsLayer { }</code>) hoặc qua <code>derivedStateOf</code>, để chỉ phase layout/draw chạy lại chứ không recompose. Đo bằng Compose compiler reports/metrics và recomposition counts của Layout Inspector, rồi đo lại bằng Macrobenchmark; đừng tối ưu mù vì mỗi lần skip cũng tốn một phép so sánh.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Immutable</span>
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">ProductUi</span>(<span class="tk-kw">val</span> id: <span class="tk-type">String</span>, <span class="tk-kw">val</span> name: <span class="tk-type">String</span>, <span class="tk-kw">val</span> tags: <span class="tk-type">ImmutableList</span>&lt;<span class="tk-type">String</span>&gt;)
+
+<span class="tk-com">// ViewModel: map một lần khi dữ liệu đổi, không map lại trong composable</span>
+<span class="tk-kw">val</span> products: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">ImmutableList</span>&lt;<span class="tk-type">ProductUi</span>&gt;&gt; = repo.products
+  .map { list -&gt; list.map { it.toUi() }.toImmutableList() }
+  .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), persistentListOf())
+
+<span class="tk-com">// Đọc state trong lambda của modifier: chỉ phase layout chạy lại, không recompose</span>
+<span class="tk-type">Box</span>(<span class="tk-type">Modifier</span>.offset { <span class="tk-type">IntOffset</span>(<span class="tk-num">0</span>, -listState.firstVisibleItemScrollOffset / <span class="tk-num">2</span>) })</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q29">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q28.html"><span class="muted small">← Câu trước</span><span>Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Flow đ…</span></a>
+  <a class="pager-next" href="../s/and-sen-q30.html"><span class="muted small">Câu sau →</span><span>Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar hay…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q15.html">Bạn xây design system bằng Compose cho 5 team cùng dùng thế nào để UI nhất quán mà không làm chậm tốc độ phát triển?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m23.html">Bạn viết AppButton cho design system mà 5 team dùng chung. Theo Compose API guidelines, component nên nhận Modifier thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m24.html">ViewModel sửa trực tiếp items rồi gán lại chính instance cũ vào MutableStateFlow. Điều gì có thể xảy ra trên UI Compose?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m25.html">Feed có nhiều RecyclerView ngang lồng trong một RecyclerView dọc; profiler cho thấy liên tục inflate ViewHolder mới khi cuộn. Cách cải thiện hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q18.html">dp, sp và px khác nhau thế nào? Vì sao cỡ chữ nên dùng sp?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q19.html">Khi nào dùng LinearLayout, khi nào dùng ConstraintLayout? layout_weight hoạt động thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Bottom sheet kéo thả của bạn bị giật khi JS thread bận (ví dụ lúc list…</title>
+<meta name="description" content="Với Animated của core, animation chỉ mượt khi dùng useNativeDriver: true và chỉ cho một số thuộc tính (transform, opacity); còn gesture thì phải đi qua JS để…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q31.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Bottom sheet kéo thả của bạn bị giật khi JS thread bận (ví dụ lúc list…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q31.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Bottom sheet kéo thả của bạn bị giật khi JS thr…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q31.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bottom sheet kéo thả của bạn bị giật khi JS thr…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/animation/">Animation &amp; Gesture</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bottom sheet kéo thả của bạn bị giật khi JS thread bận (ví dụ lúc list phía sau đang render), dù đã dùng <code>Animated</code> của core. Bạn dựng lại bằng Reanimated và Gesture Handler thế nào để animation chạy mượt, và những bẫy khi chuyển logic sang UI thread là gì?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với <code>Animated</code> của core, animation chỉ mượt khi dùng <code>useNativeDriver: true</code> và chỉ cho một số thuộc tính (transform, opacity); còn gesture thì phải đi qua JS để cập nhật giá trị, nên JS bận là kéo bị trễ. Reanimated cho viết worklet: hàm JS được biên dịch để chạy thẳng trên UI thread; <code>useSharedValue</code> là giá trị chia sẻ giữa hai thread, còn <code>useAnimatedStyle</code> ánh xạ giá trị đó thành style và cập nhật view mà không cần render lại React. Gesture Handler (API <code>Gesture.Pan()</code>) chạy các callback <code>onStart</code>/<code>onChange</code>/<code>onEnd</code> cũng dưới dạng worklet, nên cả chuỗi &#39;chạm → tính toán → cập nhật vị trí&#39; nằm trên UI thread và không bị ảnh hưởng khi JS thread bận. Khi thả tay dùng <code>withSpring</code> hay <code>withDecay</code> để chuyển động nối tiếp theo vận tốc. Muốn gọi lại phần JS (đóng sheet, <code>setState</code>, analytics) thì dùng <code>runOnJS</code> (ở Reanimated 4 mới dần chuyển sang <code>scheduleOnRN</code> của <code>react-native-worklets</code>) và chỉ gọi lúc kết thúc, không gọi mỗi frame. Các bẫy: đọc <code>sharedValue.value</code> từ JS thread là một lời gọi đồng bộ sang UI thread nên tránh làm thường xuyên; worklet chỉ thấy giá trị biến capture lúc nó được tạo (không tự cập nhật theo state React sau đó) nên giá trị thay đổi phải truyền qua shared value; capture object lớn vào worklet làm tốn chi phí sao chép; và animate thuộc tính layout (<code>height</code>, <code>top</code>) kích hoạt layout mỗi frame, đắt hơn <code>transform</code> hay <code>opacity</code> nhiều. Cuối cùng phải kiểm tra trên build release và máy Android yếu, vì dev mode làm worklet chậm hơn thực tế.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> <span class="tk-type">SNAP_OPEN</span> = <span class="tk-num">0</span>;
+<span class="tk-kw">const</span> <span class="tk-type">SNAP_CLOSED</span> = <span class="tk-num">400</span>;
+
+<span class="tk-kw">function</span> <span class="tk-type">BottomSheet</span>({ onClose, children }: { onClose: () =&gt; <span class="tk-kw">void</span>; children: <span class="tk-type">React</span>.<span class="tk-type">ReactNode</span> }) {
+  <span class="tk-kw">const</span> translateY = useSharedValue(<span class="tk-type">SNAP_CLOSED</span>);
+  <span class="tk-kw">const</span> startY = useSharedValue(<span class="tk-num">0</span>);
+
+  useEffect(() =&gt; {
+    translateY.value = withSpring(<span class="tk-type">SNAP_OPEN</span>); <span class="tk-com">// mở sheet</span>
+  }, [translateY]);
+
+  <span class="tk-kw">const</span> pan = <span class="tk-type">Gesture</span>.<span class="tk-type">Pan</span>()
+    .onStart(() =&gt; {
+      startY.value = translateY.value; <span class="tk-com">// chạy trên UI thread</span>
+    })
+    .onChange((e) =&gt; {
+      translateY.value = <span class="tk-type">Math</span>.max(<span class="tk-type">SNAP_OPEN</span>, startY.value + e.translationY);
+    })
+    .onEnd((e) =&gt; {
+      <span class="tk-kw">const</span> shouldClose = translateY.value &gt; <span class="tk-type">SNAP_CLOSED</span> / <span class="tk-num">2</span> || e.velocityY &gt; <span class="tk-num">800</span>;
+      translateY.value = withSpring(
+        shouldClose ? <span class="tk-type">SNAP_CLOSED</span> : <span class="tk-type">SNAP_OPEN</span>,
+        { velocity: e.velocityY },
+        (finished) =&gt; {
+          <span class="tk-kw">if</span> (finished &amp;&amp; shouldClose) runOnJS(onClose)(); <span class="tk-com">// chỉ gọi sang JS một lần khi xong</span>
+        },
+      );
+    });
+
+  <span class="tk-kw">const</span> style = useAnimatedStyle(() =&gt; ({ transform: [{ translateY: translateY.value }] }));
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">GestureDetector</span> gesture={pan}&gt;
+      &lt;<span class="tk-type">Animated</span>.<span class="tk-type">View</span> style={[styles.sheet, style]}&gt;{children}&lt;/<span class="tk-type">Animated</span>.<span class="tk-type">View</span>&gt;
+    &lt;/<span class="tk-type">GestureDetector</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q31">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q30.html"><span class="muted small">← Câu trước</span><span>App RN dùng React Navigation, link shop://order/123 (hoặc universal link) cần m…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q32.html"><span class="muted small">Câu sau →</span><span>Team chuyển danh sách từ FlatList sang FlashList để cuộn mượt hơn, nhưng sau đó…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Animation &amp; Gesture</h2><a class="section-sub" href="../phong-van/react-native/chu-de/animation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-m23.html">Mỗi card trong list mở rộng bằng Reanimated như dưới. Khi nhiều card cùng animate, phát biểu nào đúng nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m24.html">Dùng Gesture Handler cùng Reanimated, callback onEnd của gesture (chạy dưới dạng worklet trên UI thread) gọi thẳng setScore của React. Điều gì xảy ra?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-q34.html">Làm hiệu ứng mờ dần (fade-in) cho thẻ khi màn hình mở. Bạn viết const opacity = new Animated.Value(0) thẳng trong thân component, nhưng mỗi lần state đổi thì thẻ lại nhấp nháy và chạy lại từ đầu. Vì sao, và viết thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-mid-q15.html">Animated với useNativeDriver: true khác false thế nào? Vì sao animate height lại báo lỗi khi bật native driver?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q16.html">Reanimated chạy animation &#39;trên UI thread&#39; nghĩa là gì? Shared value và worklet khác useState và hàm JS thường ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q17.html">Làm swipe-to-delete hay bottom sheet kéo theo tay, vì sao nên dùng react-native-gesture-handler kết hợp Reanimated thay vì PanResponder?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

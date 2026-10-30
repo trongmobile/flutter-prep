@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Backend đổi trường price từ number sang string (&quot;199000.00&quot;) mà không…</title>
+<meta name="description" content="TypeScript chỉ kiểm tra lúc biên dịch và kiểu bị xoá hoàn toàn khi chạy; (await res.json()) as Product chỉ là lời hứa của dev với compiler, còn dữ liệu thật…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q28.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Backend đổi trường price từ number sang string (&quot;199000.00&quot;) mà không…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q28.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Backend đổi trường price từ number sang string…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q28.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Backend đổi trường price từ number sang string…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/js/">JavaScript &amp; TypeScript</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Backend đổi trường <code>price</code> từ <code>number</code> sang <code>string</code> (<code>&quot;199000.00&quot;</code>) mà không báo, app RN crash ở <code>price.toFixed(0)</code> dù TypeScript build xanh với <code>strict</code> bật hết. Vì sao, và bạn thiết kế lớp dữ liệu từ API thế nào để không lặp lại?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">TypeScript chỉ kiểm tra lúc biên dịch và kiểu bị xoá hoàn toàn khi chạy; <code>(await res.json()) as Product</code> chỉ là lời hứa của dev với compiler, còn dữ liệu thật đến từ mạng thì không ai kiểm tra. Nguyên tắc: các biên của hệ thống (API, deep link, storage, native module, push payload) là nơi dữ liệu không đáng tin. Coi <code>res.json()</code> là <code>unknown</code> rồi parse bằng schema chạy lúc runtime (Zod, Valibot, ArkType), và suy ra kiểu TypeScript từ chính schema (<code>z.infer</code>) để chỉ có một nguồn sự thật. Parse ở một chỗ duy nhất (API client), phần còn lại của app chỉ nhận kiểu đã được xác thực; khi sai schema thì lỗi hiện ngay ở biên với thông báo rõ ràng và được log lên Sentry kèm endpoint, thay vì crash ngẫu nhiên ở màn hình xa. Cân nhắc độ nghiêm ngặt: trường quan trọng thì fail cứng hoặc có fallback hợp lý, trường phụ thì dùng <code>.catch(giá trị mặc định)</code> để một trường lạ không làm hỏng cả màn hình; và đo chi phí parse trên máy yếu, vì validate hàng nghìn phần tử tốn JS thread (có thể chỉ validate các trường cần dùng). Về lâu dài nên giảm lệch từ gốc: sinh type và client từ OpenAPI hay GraphQL schema (<code>openapi-typescript</code>, GraphQL Codegen), thêm contract test ở CI của backend, dùng <code>unknown</code> thay vì <code>any</code>, và bật lint hạn chế ép kiểu bừa bằng <code>as</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { z } <span class="tk-kw">from</span> <span class="tk-str">&#39;zod&#39;</span>;
+
+<span class="tk-kw">const</span> <span class="tk-type">ProductSchema</span> = z.object({
+  id: z.<span class="tk-kw">string</span>(),
+  name: z.<span class="tk-kw">string</span>(),
+  price: z.coerce.<span class="tk-kw">number</span>(), <span class="tk-com">// backend lúc trả number lúc trả string: chuẩn hoá về number ở biên</span>
+  imageUrl: z.<span class="tk-kw">string</span>().url().nullable().<span class="tk-kw">catch</span>(<span class="tk-kw">null</span>), <span class="tk-com">// trường phụ: sai thì dùng null, không làm hỏng cả màn hình</span>
+});
+<span class="tk-kw">export</span> <span class="tk-kw">type</span> <span class="tk-type">Product</span> = z.<span class="tk-kw">infer</span>&lt;<span class="tk-kw">typeof</span> <span class="tk-type">ProductSchema</span>&gt;; <span class="tk-com">// kiểu sinh từ schema, một nguồn sự thật</span>
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> fetchProduct(id: <span class="tk-kw">string</span>): <span class="tk-type">Promise</span>&lt;<span class="tk-type">Product</span>&gt; {
+  <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">`${API_URL}/products/${id}`</span>);
+  <span class="tk-kw">const</span> json: <span class="tk-kw">unknown</span> = <span class="tk-kw">await</span> res.json(); <span class="tk-com">// không tin dữ liệu từ mạng</span>
+  <span class="tk-kw">const</span> parsed = <span class="tk-type">ProductSchema</span>.safeParse(json);
+  <span class="tk-kw">if</span> (!parsed.success) {
+    reportToSentry(parsed.error, { endpoint: <span class="tk-str">&#39;products/:id&#39;</span> }); <span class="tk-com">// lỗi hợp đồng API lộ ra ngay ở biên</span>
+    <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">ApiContractError</span>(<span class="tk-str">&#39;products/:id&#39;</span>, parsed.error);
+  }
+  <span class="tk-kw">return</span> parsed.data;
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q28">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q27.html"><span class="muted small">← Câu trước</span><span>Team muốn bật React Compiler cho app RN và đề xuất xoá hết useMemo, useCallback…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q29.html"><span class="muted small">Câu sau →</span><span>Bạn dùng TanStack Query (React Query) cho app RN và cần cho phép user thao tác…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề JavaScript &amp; TypeScript</h2><a class="section-sub" href="../phong-van/react-native/chu-de/js/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-m11.html">Một thư viện cũ đọc source của hàm để suy ra tên tham số. Trên bản release chạy Hermes, lệnh console.log dưới đây in ra gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m12.html">Module dưới đây cache kết quả theo object product để khỏi tính lại. Sau vài giờ dùng app, memory tăng dần. Cách sửa hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m13.html">Lớp API client dùng withTimeout dưới đây để báo lỗi nếu server không trả lời sau 5 giây. Khi timeout xảy ra, request fetch ra sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q01.html">var, let và const khác nhau thế nào? Khai báo object bằng const thì có sửa được thuộc tính không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q02.html">Closure là gì? Cho một ví dụ closure bạn gặp khi viết code thực tế.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q03.html">this trong JavaScript được xác định thế nào? Arrow function khác function thường ở điểm nào về this?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

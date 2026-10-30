@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview</title>
-<meta name="description" content="16 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta name="description" content="18 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview">
-<meta property="og:description" content="16 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta property="og:description" content="18 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Concurrency</h1>
-  <p class="subtitle">16 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
@@ -93,6 +93,8 @@
     <li><a href="../../../../s/ios-sen-q05.html">Bạn cần một ImageCache dùng chung cho cả app: đọc rất nhiều từ cellForRowAt trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng actor, @MainActor hay lock? Đánh đổi là gì?</a></li>
     <li><a href="../../../../s/ios-sen-q06.html">Code cũ dùng DispatchSemaphore trên main thread để chờ kết quả từ một queue .utility, và Xcode báo cảnh báo priority inversion. Vấn đề là gì và sửa thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a></li>
+    <li><a href="../../../../s/ios-sen-q26.html">Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API refresh token 10 lần, khiến server xoay vòng refresh token và các lần sau thất bại (user bị đăng xuất). Bạn dùng actor để bảo đảm chỉ refresh một lần thế nào, và reentrancy của actor ảnh hưởng ra sao?</a></li>
+    <li><a href="../../../../s/ios-sen-q27.html">Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await, dưới dạng for await location in tracker.updates(). Bạn bọc bằng AsyncStream thế nào, và cần để ý gì về huỷ, buffer và vòng đời?</a></li>
     <li><a href="../../../../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m11.html">Vòng lặp sau đẩy 500 block tải file vào global queue, mỗi block gọi mạng đồng bộ. Điều gì dễ xảy ra?</a> <span class="tag">Quiz</span></li>

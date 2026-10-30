@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: App RN 5 năm tuổi dùng Redux cổ điển (connect, saga, hơn 200 reducer,…</title>
+<meta name="description" content="Việc đầu tiên là phân loại state, vì nhiều thứ trong Redux thật ra là server state (dữ liệu API cần cache, refetch, invalidate), mảng này RTK Query hay TanSt…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q37.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: App RN 5 năm tuổi dùng Redux cổ điển (connect, saga, hơn 200 reducer,…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q37.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"App RN 5 năm tuổi dùng Redux cổ điển (connect,…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q37.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App RN 5 năm tuổi dùng Redux cổ điển (connect,…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/state/">State Management</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App RN 5 năm tuổi dùng Redux cổ điển (<code>connect</code>, saga, hơn 200 reducer, dữ liệu API nằm chung với state UI). Team muốn chuyển sang RTK Query hoặc React Query kết hợp Zustand mà không viết lại cả app. Bạn lập lộ trình và chọn công cụ thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Việc đầu tiên là phân loại state, vì nhiều thứ trong Redux thật ra là server state (dữ liệu API cần cache, refetch, invalidate), mảng này RTK Query hay TanStack Query làm tốt hơn nhiều so với reducer và saga viết tay; phần còn lại là client state (đăng nhập, theme, giỏ hàng nháp, state UI phức tạp) cần một store nhỏ gọn. Nếu app đã dùng Redux thì tiến hoá trong cùng hệ sinh thái rẻ hơn: Redux Toolkit (<code>createSlice</code>, <code>configureStore</code>) tương thích với reducer cũ (gộp được vào cùng store), và RTK Query dùng chung store và devtools; chuyển sang TanStack Query cộng Zustand thì nhẹ hơn nhưng phải chạy hai hệ thống song song trong thời gian dài. Tôi chọn theo nỗi đau thực tế: đau nhất là boilerplate và cache API thì RTK Query, còn team muốn bỏ hẳn Redux thì TanStack Query cho server state và Zustand cho phần còn lại. Lộ trình kiểu strangler, không dừng việc làm tính năng: feature mới viết bằng kiến trúc mới, feature cũ chỉ chuyển khi đằng nào cũng phải sửa lớn; ưu tiên những nơi gây đau nhất (list hay bị stale, loading và error lặp lại khắp nơi). Bước kỹ thuật: bọc truy cập state bằng custom hook và selector, thay <code>connect</code> bằng hook trước (giữ nguyên store), chuyển saga gọi API thành query hoặc mutation, xoá reducer khi không còn ai đọc. Kiểm soát bằng lint cấm code mới import từ module cũ, đếm số file còn dùng kiến trúc cũ như một chỉ số tiến độ, và viết test theo hành vi (không test chi tiết reducer) để refactor an toàn. Tránh tranh luận công cụ kéo dài: viết một ADR ngắn, thử trên một feature thật rồi quyết định.</div>
+        <pre class="code-block"><code><span class="tk-com">// Bước 1: giữ nguyên reducer cũ, gắn thêm RTK Query vào cùng store (chưa động tới feature cũ)</span>
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> ordersApi = createApi({
+  reducerPath: <span class="tk-str">&#39;ordersApi&#39;</span>,
+  baseQuery: fetchBaseQuery({ baseUrl: <span class="tk-type">API_URL</span> }),
+  tagTypes: [<span class="tk-str">&#39;Order&#39;</span>],
+  endpoints: (build) =&gt; ({
+    getOrders: build.query&lt;<span class="tk-type">Order</span>[], <span class="tk-kw">void</span>&gt;({
+      query: () =&gt; <span class="tk-str">&#39;/orders&#39;</span>,
+      providesTags: [<span class="tk-str">&#39;Order&#39;</span>],
+    }),
+    completeOrder: build.mutation&lt;<span class="tk-kw">void</span>, <span class="tk-kw">string</span>&gt;({
+      query: (id) =&gt; ({ url: <span class="tk-str">`/orders/${id}/complete`</span>, method: <span class="tk-str">&#39;POST&#39;</span> }),
+      invalidatesTags: [<span class="tk-str">&#39;Order&#39;</span>], <span class="tk-com">// tự refetch danh sách, thay cho saga và reducer viết tay</span>
+    }),
+  }),
+});
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> store = configureStore({
+  reducer: { ...legacyReducers, [ordersApi.reducerPath]: ordersApi.reducer }, <span class="tk-com">// legacyReducers: các reducer hiện có</span>
+  middleware: (getDefault) =&gt; getDefault().concat(sagaMiddleware, ordersApi.middleware),
+});</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q37">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q36.html"><span class="muted small">← Câu trước</span><span>Thư viện native quan trọng của app (ví dụ thư viện scanner hay bản đồ) không cò…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề State Management</h2><a class="section-sub" href="../phong-van/react-native/chu-de/state/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-m14.html">App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài MB) xuống AsyncStorage. Thời gian từ lúc mở app tới màn đầu tiên tăng dần theo dung lượng dữ liệu. Hướng sửa phù hợp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q34.html">Khi nào chỉ cần useState, khi nào nên dùng Context hoặc thư viện như Redux Toolkit, Zustand?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q07.html">Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q26.html">Màn hình giỏ hàng đang có bốn useState riêng (items, coupon, loading, error), mỗi thao tác phải gọi 2–3 hàm set liền nhau và thỉnh thoảng quên reset error. Khi nào nên chuyển sang useReducer, và nó khác useState thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-mid-q01.html">Trong createSlice bạn viết state.items.push(...) ngay trong reducer. Vì sao như vậy không phá nguyên tắc immutable của Redux, và cách viết này có bẫy gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q02.html">Dự án đang gọi API bằng createAsyncThunk và tự lưu loading/error/data vào slice. Chuyển sang RTK Query được lợi gì, và làm sao để danh sách tự làm mới sau khi tạo bài viết mới?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

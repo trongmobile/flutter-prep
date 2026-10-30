@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API…</title>
+<meta name="description" content="Actor chỉ bảo đảm không có hai đoạn code chạy đồng thời trên state của nó, chứ không bảo đảm tính nguyên tử qua điểm await: khi một hàm của actor suspend ở a…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Nhiều request song song cùng nhận 401 khi acces…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Nhiều request song song cùng nhận 401 khi acces…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/concurrency/">Concurrency</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API refresh token 10 lần, khiến server xoay vòng refresh token và các lần sau thất bại (user bị đăng xuất). Bạn dùng <code>actor</code> để bảo đảm chỉ refresh một lần thế nào, và reentrancy của actor ảnh hưởng ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Actor chỉ bảo đảm không có hai đoạn code chạy đồng thời trên state của nó, chứ không bảo đảm tính nguyên tử qua điểm <code>await</code>: khi một hàm của actor suspend ở <code>await</code>, actor được giải phóng để xử lý lời gọi khác (reentrancy), và khi quay lại thì state có thể đã đổi. Viết <code>if token.isExpired { token = try await api.refresh() }</code> thì 10 lời gọi cùng thấy token hết hạn trước khi lần refresh nào xong, nên gọi API 10 lần. Cách đúng là lưu chính công việc đang chạy: actor giữ <code>refreshTask: Task&lt;Token, Error&gt;?</code>; ai thấy task đã tồn tại thì <code>await task.value</code> để chờ chung, người đầu tiên tạo task và gán vào biến trước khi <code>await</code> (đoạn đồng bộ này không bị chen ngang), rồi xoá sau khi xong. Sau mỗi <code>await</code> cũng phải kiểm tra lại điều kiện thay vì giả định state còn nguyên. Task thất bại thì mọi bên đang chờ nhận cùng lỗi, và phải xoá <code>refreshTask</code> để lần sau thử lại được. Lưu ý về huỷ: task tạo bằng <code>Task { }</code> là unstructured nên không bị huỷ theo caller đầu tiên, hợp với việc dùng chung nhưng nên có timeout riêng. Kỹ thuật này dùng cho mọi việc &#39;chỉ làm một lần&#39; như tải trùng một URL hay khởi tạo database.</div>
+        <pre class="code-block"><code><span class="tk-kw">actor</span> <span class="tk-type">TokenStore</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> token: <span class="tk-type">Token</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> refreshTask: <span class="tk-type">Task</span>&lt;<span class="tk-type">Token</span>, <span class="tk-type">Error</span>&gt;?
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> api: <span class="tk-type">AuthAPI</span>
+
+  <span class="tk-kw">init</span>(token: <span class="tk-type">Token</span>, api: <span class="tk-type">AuthAPI</span>) {
+    <span class="tk-kw">self</span>.token = token
+    <span class="tk-kw">self</span>.api = api
+  }
+
+  <span class="tk-kw">func</span> validToken() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Token</span> {
+    <span class="tk-kw">if</span> <span class="tk-kw">let</span> refreshTask { <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> refreshTask.value } <span class="tk-com">// đang có người refresh: chờ chung</span>
+    <span class="tk-kw">if</span> !token.isExpired { <span class="tk-kw">return</span> token }
+
+    <span class="tk-kw">let</span> task = <span class="tk-type">Task</span> { <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.refresh(using: token.refreshToken) }
+    refreshTask = task <span class="tk-com">// gán trước khi await: đoạn đồng bộ này không bị actor khác chen vào</span>
+    <span class="tk-kw">defer</span> { refreshTask = <span class="tk-kw">nil</span> } <span class="tk-com">// thành công hay lỗi đều xoá để lần sau thử lại được</span>
+    token = <span class="tk-kw">try</span> <span class="tk-kw">await</span> task.value
+    <span class="tk-kw">return</span> token
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q26">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q25.html"><span class="muted small">← Câu trước</span><span>Một bạn junior liên tục để lọt retain cycle và force unwrap, PR nào cũng phải s…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q27.html"><span class="muted small">Câu sau →</span><span>Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await,…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Concurrency</h2><a class="section-sub" href="../phong-van/ios/chu-de/concurrency/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q05.html">Bạn cần một ImageCache dùng chung cho cả app: đọc rất nhiều từ cellForRowAt trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng actor, @MainActor hay lock? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q06.html">Code cũ dùng DispatchSemaphore trên main thread để chờ kết quả từ một queue .utility, và Xcode báo cảnh báo priority inversion. Vấn đề là gì và sửa thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q27.html">Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await, dưới dạng for await location in tracker.updates(). Bạn bọc bằng AsyncStream thế nào, và cần để ý gì về huỷ, buffer và vòng đời?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

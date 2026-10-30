@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng…</title>
+<meta name="description" content="Mỗi lần đổi schema phải tăng version và có đường nâng cấp từ mọi version cũ còn người dùng, vì user có thể nhảy từ bản rất cũ lên thẳng bản mới nhất. Thay đổ…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q34.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q34.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Bạn cần đổi schema Room (thêm cột NOT NULL, tác…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q34.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn cần đổi schema Room (thêm cột NOT NULL, tác…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng mới) cho app có vài triệu user đang ở nhiều phiên bản cũ khác nhau. Bạn viết và kiểm thử migration thế nào, và vì sao <code>fallbackToDestructiveMigration</code> nguy hiểm?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi lần đổi schema phải tăng <code>version</code> và có đường nâng cấp từ mọi version cũ còn người dùng, vì user có thể nhảy từ bản rất cũ lên thẳng bản mới nhất. Thay đổi đơn giản (thêm cột, thêm bảng, đổi tên) dùng <code>AutoMigration</code> kèm <code>exportSchema = true</code> và commit thư mục schema JSON vào git để Room có bản so sánh; thay đổi phức tạp như tách bảng hay chuyển dữ liệu thì viết <code>Migration</code> bằng SQL. Cột NOT NULL mới phải có <code>DEFAULT</code> để các dòng cũ hợp lệ, và entity phải khai báo <code>@ColumnInfo(defaultValue = ...)</code> cho khớp, nếu không Room báo schema sai khi validate. SQLite trên máy cũ không hỗ trợ xoá hay đổi kiểu cột tuỳ ý, nên đổi lớn thường theo cách tạo bảng mới, copy dữ liệu, xoá bảng cũ, đổi tên. Tôi theo kiểu expand–contract: bản này thêm bảng mới và copy dữ liệu, giữ nguyên cột cũ; bản sau khi chắc chắn mới xoá cột cũ. Kiểm thử bằng <code>MigrationTestHelper</code>: tạo DB ở version cũ, chèn dữ liệu, chạy <code>runMigrationsAndValidate</code> rồi kiểm tra dữ liệu, và test cả chuỗi nhiều bước. <code>fallbackToDestructiveMigration()</code> xoá sạch dữ liệu local khi thiếu đường nâng cấp; với cache thì chấp nhận được, nhưng với dữ liệu chỉ có trên máy (nháp, outbox chưa đồng bộ) thì là mất dữ liệu của user và bạn chỉ biết sau khi đã release. Migration chạy ở lần truy cập DB đầu tiên nên phải nhanh, đo với dữ liệu thật lớn và đảm bảo lần mở đó không nằm trên main thread.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Database</span>(
+  entities = [<span class="tk-type">OrderEntity</span>::<span class="tk-kw">class</span>, <span class="tk-type">OrderNoteEntity</span>::<span class="tk-kw">class</span>],
+  version = <span class="tk-num">3</span>,
+  exportSchema = <span class="tk-kw">true</span>, <span class="tk-com">// commit thư mục schema vào git để Room so sánh và test migration</span>
+)
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">AppDatabase</span> : <span class="tk-type">RoomDatabase</span>()
+
+<span class="tk-kw">val</span> <span class="tk-type">MIGRATION_2_3</span> = <span class="tk-kw">object</span> : <span class="tk-type">Migration</span>(<span class="tk-num">2</span>, <span class="tk-num">3</span>) {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> migrate(db: <span class="tk-type">SupportSQLiteDatabase</span>) {
+    <span class="tk-com">// Cột NOT NULL mới phải có DEFAULT thì các dòng cũ mới hợp lệ</span>
+    db.execSQL(<span class="tk-str">&quot;ALTER TABLE orders ADD COLUMN status TEXT NOT NULL DEFAULT &#39;PENDING&#39;&quot;</span>)
+    <span class="tk-com">// Expand: tạo bảng mới và copy dữ liệu, giữ nguyên cột note, bản sau mới xoá</span>
+    db.execSQL(<span class="tk-str">&quot;CREATE TABLE IF NOT EXISTS order_notes (orderId TEXT NOT NULL, body TEXT NOT NULL, PRIMARY KEY(orderId))&quot;</span>)
+    db.execSQL(<span class="tk-str">&quot;INSERT INTO order_notes (orderId, body) SELECT id, note FROM orders WHERE note IS NOT NULL&quot;</span>)
+  }
+}
+
+<span class="tk-ann">@Test</span>
+<span class="tk-kw">fun</span> migrate2To3_keepsNotes() {
+  helper.createDatabase(<span class="tk-type">TEST_DB</span>, <span class="tk-num">2</span>).apply {
+    execSQL(<span class="tk-str">&quot;INSERT INTO orders (id, note) VALUES (&#39;a1&#39;, &#39;giao giờ hành chính&#39;)&quot;</span>)
+    close()
+  }
+  <span class="tk-kw">val</span> db = helper.runMigrationsAndValidate(<span class="tk-type">TEST_DB</span>, <span class="tk-num">3</span>, <span class="tk-kw">true</span>, <span class="tk-type">MIGRATION_2_3</span>) <span class="tk-com">// so với schema đã export</span>
+  db.query(<span class="tk-str">&quot;SELECT body FROM order_notes WHERE orderId = &#39;a1&#39;&quot;</span>).use {
+    assertTrue(it.moveToFirst() &amp;&amp; it.getString(<span class="tk-num">0</span>) == <span class="tk-str">&quot;giao giờ hành chính&quot;</span>)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q34">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q33.html"><span class="muted small">← Câu trước</span><span>Marketing muốn gửi link https://shop.vn/order/123 mở thẳng màn chi tiết đơn hàn…</span></a>
+  <a class="pager-next" href="../s/and-sen-q35.html"><span class="muted small">Câu sau →</span><span>Android vitals báo ANR rate của app vượt ngưỡng xấu, nhưng trên máy dev chưa ba…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-fre-q24.html">SharedPreferences dùng để lưu gì? commit() và apply() khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q36.html">App Android gọi API REST cần chuẩn bị gì? Vì sao gọi http:// hoặc localhost của máy dev lại không được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-jun-q18.html">Dùng Retrofit với hàm suspend, khi server trả 401 hoặc 500 thì chuyện gì xảy ra? Bạn tổ chức xử lý lỗi mạng thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q19.html">Thiết lập Room cơ bản gồm những thành phần nào? Vì sao gọi DAO đồng bộ trên main thread thì app crash?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q20.html">Vì sao Google khuyến nghị chuyển từ SharedPreferences sang DataStore? Khi dùng Preferences DataStore cần tránh lỗi gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q30.html">Đơn hàng có nhiều dòng sản phẩm. Làm sao để Room trả về một Order kèm danh sách OrderItem chỉ với một lần gọi DAO, và vì sao không khai báo thẳng List&lt;OrderItem&gt; trong entity Order?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

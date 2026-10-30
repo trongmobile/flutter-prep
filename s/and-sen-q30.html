@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar…</title>
+<meta name="description" content="Hướng được Google khuyến nghị là coi sự kiện như một phần của state: ViewModel đặt &#39;thông báo đang chờ hiển thị&#39; vào UI state, UI hiển thị xong thì gọi onMes…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Trong MVVM, ViewModel cần báo cho UI các sự kiệ…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Trong MVVM, ViewModel cần báo cho UI các sự kiệ…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar hay điều hướng. Team dùng <code>SharedFlow</code>/<code>Channel</code> và gặp lỗi: xoay màn hình thì snackbar hiện lại, hoặc sự kiện bị mất khi app đang ở background. Bạn thiết kế việc xử lý sự kiện UI thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hướng được Google khuyến nghị là coi sự kiện như một phần của state: ViewModel đặt &#39;thông báo đang chờ hiển thị&#39; vào UI state, UI hiển thị xong thì gọi <code>onMessageShown()</code> để ViewModel xoá nó đi. Vì state luôn được giữ, sự kiện không mất khi UI chưa ở trạng thái STARTED, và sau khi đã tiêu thụ (xoá khỏi state) thì xoay màn hình không làm nó hiện lại; mỗi message nên có id riêng để hai thông báo giống nhau liên tiếp không bị gộp thành một. Các cách còn lại đều có điểm yếu: kiểu <code>SingleLiveEvent</code> phát lại khi có observer mới hoặc chỉ giao cho một observer; <code>SharedFlow</code> không replay thì mất sự kiện lúc không có subscriber; <code>Channel</code> kèm <code>receiveAsFlow()</code> giữ sự kiện tới khi có người nhận và chỉ giao một lần, nhưng nếu collector bị huỷ đúng lúc vừa nhận (ví dụ UI rời STARTED) thì sự kiện vẫn có thể mất, nên không phải bảo đảm tuyệt đối. Điều hướng cũng nên là kết quả của state (ví dụ <code>navigateTo: Route?</code>) hoặc được UI quyết định qua callback. Tôi dùng state cho mọi thứ phải tới tay user (lỗi thanh toán, điều hướng sau khi tạo đơn) và chỉ dùng Channel cho hiệu ứng &#39;bắn rồi quên&#39; như rung hay âm thanh.</div>
+        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">UiMessage</span>(<span class="tk-kw">val</span> text: <span class="tk-type">String</span>, <span class="tk-kw">val</span> id: <span class="tk-type">String</span> = <span class="tk-type">UUID</span>.randomUUID().toString())
+
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">CheckoutUiState</span>(
+  <span class="tk-kw">val</span> items: <span class="tk-type">List</span>&lt;<span class="tk-type">ItemUi</span>&gt; = emptyList(),
+  <span class="tk-kw">val</span> message: <span class="tk-type">UiMessage</span>? = <span class="tk-kw">null</span>, <span class="tk-com">// sự kiện đang chờ UI hiển thị</span>
+)
+
+<span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">OrderRepository</span>) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> _state = <span class="tk-type">MutableStateFlow</span>(<span class="tk-type">CheckoutUiState</span>())
+  <span class="tk-kw">val</span> state: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">CheckoutUiState</span>&gt; = _state.asStateFlow()
+
+  <span class="tk-kw">fun</span> onPay() = viewModelScope.launch {
+    repo.pay().onFailure {
+      _state.update { s -&gt; s.copy(message = <span class="tk-type">UiMessage</span>(<span class="tk-str">&quot;Thanh toán thất bại&quot;</span>)) }
+    }
+  }
+
+  <span class="tk-kw">fun</span> onMessageShown() = _state.update { it.copy(message = <span class="tk-kw">null</span>) } <span class="tk-com">// đã hiển thị thì xoá khỏi state</span>
+}
+
+<span class="tk-com">// Compose</span>
+state.message?.let { msg -&gt;
+  <span class="tk-type">LaunchedEffect</span>(msg.id) {
+    snackbarHostState.showSnackbar(msg.text)
+    viewModel.onMessageShown()
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q30">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q29.html"><span class="muted small">← Câu trước</span><span>Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn dù d…</span></a>
+  <a class="pager-next" href="../s/and-sen-q31.html"><span class="muted small">Câu sau →</span><span>App cần ba việc: đồng bộ dữ liệu định kỳ, nhắc lịch đúng giờ, và tải file lớn d…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/android/chu-de/arch/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q12.html">App có khoảng 20 feature module. Bạn đặt quy tắc phụ thuộc giữa các module thế nào? Feature A cần mở màn hình của feature B thì làm sao để A không phụ thuộc B?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q14.html">Team chuyển sang trunk-based development và muốn mọi tính năng lớn đều nằm sau feature flag. Bạn thiết kế hệ thống flag phía Android thế nào để không biến thành nợ kỹ thuật?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m26.html">:feature:cart cần mở màn hình chi tiết của :feature:product. Cách nào giữ đúng quy tắc phụ thuộc giữa các module?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m27.html">Giá trị mới của flag new_checkout từ Remote Config được fetch xong khi user đang ở giữa luồng thanh toán cũ. Cách áp dụng nào an toàn nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m28.html">Trong Clean Architecture nhiều module, :core:domain chứa use case và interface UserRepository. Quan hệ phụ thuộc nào hợp lệ?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-q31.html">Dependency Injection khác gì việc tự tạo UserRepository() bên trong ViewModel? Với Hilt, cần những annotation tối thiểu nào để ViewModel nhận được repository, và thiếu annotation nào thì app crash?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

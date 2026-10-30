@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: App RN dùng React Navigation, link shop://order/123 (hoặc universal li…</title>
+<meta name="description" content="Khai báo linking cho NavigationContainer với prefixes và config ánh xạ đường dẫn sang route (OrderDetail: &#39;order/:id&#39;, kèm parse để ép kiểu tham số); React N…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q30.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: App RN dùng React Navigation, link shop://order/123 (hoặc universal li…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q30.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"App RN dùng React Navigation, link shop://order…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q30.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App RN dùng React Navigation, link shop://order…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App RN dùng React Navigation, link <code>shop://order/123</code> (hoặc universal link) cần mở màn chi tiết đơn khi app đang tắt, và nếu user chưa đăng nhập thì phải đăng nhập xong mới vào đúng màn đó. Bạn cấu hình deep link, luồng đăng nhập và back stack thế nào, và các bẫy chính là gì?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khai báo <code>linking</code> cho <code>NavigationContainer</code> với <code>prefixes</code> và <code>config</code> ánh xạ đường dẫn sang route (<code>OrderDetail: &#39;order/:id&#39;</code>, kèm <code>parse</code> để ép kiểu tham số); React Navigation xử lý cả cold start (<code>getInitialURL</code>) lẫn khi app đang chạy (<code>subscribe</code>). Với luồng đăng nhập, cách tự nhiên là điều kiện hoá màn hình theo trạng thái: chưa đăng nhập chỉ render nhóm màn Auth, đăng nhập xong thì render nhóm màn chính (từ React Navigation 7.1 có <code>Stack.Protected</code> với prop <code>guard</code>, Expo Router cũng có <code>Stack.Protected</code>). Nhưng link tới màn chưa tồn tại trong navigator thì bị bỏ qua, nên tôi chủ động giữ link đích: nếu chưa đăng nhập, <code>getInitialURL</code> (và <code>subscribe</code> cho lúc app đang chạy) lưu URL vào store rồi trả về <code>null</code>, sau khi đăng nhập thì điều hướng bằng chính <code>linking.config</code> qua <code>useLinkTo()</code>. Back stack: deep link chỉ dựng đúng màn đích; muốn nút back về danh sách đơn thay vì thoát app thì cấu hình <code>initialRouteName</code> cho navigator lồng nhau hoặc tuỳ biến <code>getStateFromPath</code> để dựng stack đầy đủ. Các bẫy: universal link và app link chỉ mở app khi xác minh domain đúng (<code>apple-app-site-association</code>, <code>assetlinks.json</code>), còn custom scheme thì app khác có thể đăng ký trùng; mọi tham số trong link là input không đáng tin nên phải validate và server phải kiểm tra quyền; link tới ID không tồn tại phải ra một màn lỗi hợp lý thay vì crash. Với Expo Router, mỗi file là một route nên deep link tự khớp với cấu trúc thư mục.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> linking: <span class="tk-type">LinkingOptions</span>&lt;<span class="tk-type">RootParamList</span>&gt; = {
+  prefixes: [<span class="tk-str">&#39;shop://&#39;</span>, <span class="tk-str">&#39;https://shop.vn&#39;</span>],
+  config: {
+    screens: {
+      <span class="tk-type">Orders</span>: { screens: { <span class="tk-type">OrderDetail</span>: { path: <span class="tk-str">&#39;order/:id&#39;</span>, parse: { id: <span class="tk-type">String</span> } } } },
+    },
+  },
+  <span class="tk-kw">async</span> getInitialURL() {
+    <span class="tk-kw">const</span> url = <span class="tk-kw">await</span> <span class="tk-type">Linking</span>.getInitialURL();
+    <span class="tk-kw">if</span> (url &amp;&amp; !authStore.getState().isLoggedIn) {
+      authStore.getState().setPendingUrl(url); <span class="tk-com">// chưa đăng nhập: giữ lại link đích</span>
+      <span class="tk-kw">return</span> <span class="tk-kw">null</span>; <span class="tk-com">// vào màn hình đầu như bình thường</span>
+    }
+    <span class="tk-kw">return</span> url;
+  },
+  <span class="tk-com">// subscribe() cho lúc app đang chạy xử lý tương tự</span>
+};
+
+<span class="tk-kw">function</span> useResumePendingLink() {
+  <span class="tk-kw">const</span> linkTo = useLinkTo();
+  <span class="tk-kw">const</span> { isLoggedIn, pendingUrl, setPendingUrl } = useAuth();
+  useEffect(() =&gt; {
+    <span class="tk-kw">if</span> (isLoggedIn &amp;&amp; pendingUrl) {
+      linkTo(toPath(pendingUrl)); <span class="tk-com">// toPath: bỏ prefix, còn &#39;/order/123&#39;, rồi dùng chính linking.config ở trên</span>
+      setPendingUrl(<span class="tk-kw">null</span>);
+    }
+  }, [isLoggedIn, pendingUrl, linkTo, setPendingUrl]);
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q30">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q29.html"><span class="muted small">← Câu trước</span><span>Bạn dùng TanStack Query (React Query) cho app RN và cần cho phép user thao tác…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q31.html"><span class="muted small">Câu sau →</span><span>Bottom sheet kéo thả của bạn bị giật khi JS thread bận (ví dụ lúc list phía sau…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/react-native/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q20.html">Trong stack navigator của React Navigation, navigate, push, goBack và popToTop khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q21.html">Truyền dữ liệu sang màn hình khác bằng params thế nào? Nên truyền cả object sản phẩm hay chỉ truyền id?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q35.html">Cài React Navigation cần những gì? NavigationContainer, navigator và screen liên hệ thế nào, khi nào dùng Stack, Tab, Drawer?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q15.html">App có bottom tab (Home, Đơn hàng, Tài khoản). Khi mở màn hình Chi tiết sản phẩm từ tab Home thì tab bar vẫn hiện bên dưới, trong khi thiết kế yêu cầu ẩn. Bạn tổ chức navigator thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q16.html">Marketing muốn gửi link myshop://product/42 để mở thẳng màn hình chi tiết sản phẩm. Bạn cấu hình deep link với React Navigation thế nào, và có bẫy gì khi người dùng bấm back từ màn hình đó?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q17.html">Người dùng rời tab Giỏ hàng sang tab khác thêm sản phẩm rồi quay lại, nhưng Giỏ hàng vẫn hiện dữ liệu cũ dù đã gọi API trong useEffect. Vì sao, và dùng useFocusEffect thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>
