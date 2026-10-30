@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior: Android vitals báo ANR rate của app vượt ngưỡng xấu, nhưng trên máy dev chư…</title>
-<meta name="description" content="ANR xảy ra khi main thread không phản hồi đúng hạn: input dispatch quá khoảng 5 giây, BroadcastReceiver chạy quá khoảng 10 giây (broadcast foreground; 60 giâ…">
+<title>Câu hỏi phỏng vấn Android Senior: Android vitals báo app có &#39;excessive wakeups&#39; và &#39;stuck partial wake locks&#39;…</title>
+<meta name="description" content="Pin hao chủ yếu do app giữ thiết bị hoặc radio hoạt động khi không cần. Các thủ phạm hay gặp: wake lock giữ quá lâu hoặc quên release (stuck partial wake loc…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q35.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Android vitals báo ANR rate của app vượt ngưỡng xấu, nhưng trên máy dev chư…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Android vitals báo app có &#39;excessive wakeups&#39; và &#39;stuck partial wake locks&#39;…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q35.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Android vitals báo ANR rate của app vượt ngưỡng…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q35.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Android vitals báo app có 'excessive wakeups' v…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q35.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,35 +41,42 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Android vitals báo ANR rate của app vượt ngưỡng…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Android vitals báo app có &#39;excessive wakeups&#39; v…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/perf/">Performance</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Android vitals báo ANR rate của app vượt ngưỡng xấu, nhưng trên máy dev chưa bao giờ tái hiện được. Bạn điều tra thế nào, và những nguyên nhân ANR khó thấy là gì?</h1>
+  <h1 class="question-title">Android vitals báo app có &#39;excessive wakeups&#39; và &#39;stuck partial wake locks&#39;, và review than app hao pin dù user ít dùng. Bạn điều tra và giảm mức tiêu thụ pin thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">ANR xảy ra khi main thread không phản hồi đúng hạn: input dispatch quá khoảng 5 giây, <code>BroadcastReceiver</code> chạy quá khoảng 10 giây (broadcast foreground; 60 giây với broadcast nền), hoặc service không xử lý xong hay không gọi <code>startForeground</code> kịp. Điều tra bắt đầu từ dữ liệu thật: Android vitals trong Play Console nhóm ANR theo stack trace và loại (input, broadcast, service), cho biết thiết bị và phiên bản OS tập trung; trong app, <code>ApplicationExitInfo</code> (API 30 trở lên) với <code>REASON_ANR</code> kèm <code>traceInputStream</code> là thread dump lúc xảy ra, có thể upload lên Crashlytics hay Sentry ở lần mở app sau; ở bản debug dùng StrictMode để bắt I/O trên main thread. Khi đọc thread dump, xem main thread đang <code>BLOCKED</code> chờ lock do thread nào giữ, đang đứng ở một binder call tới process khác, hay chờ <code>Future.get()</code>. Các nguyên nhân khó thấy: lock contention với thread nền giữ lock lâu; <code>SharedPreferences.apply()</code> tưởng bất đồng bộ nhưng khi Activity dừng hay service kết thúc, hệ thống chờ ghi xong (<code>QueuedWork.waitToFinish</code>), nên file lớn hoặc ghi dồn sẽ chặn main, nên chuyển sang DataStore; process bị khởi động chỉ để nhận broadcast mà <code>Application.onCreate</code> nặng, vì thời gian khởi tạo cũng tính vào hạn của receiver; binder call đồng bộ tới process chậm; deadlock; máy yếu thiếu CPU. Sửa nguyên nhân gốc rồi theo dõi ANR rate qua các bản.</div>
-        <pre class="code-block"><code><span class="tk-com">// Chạy lúc app khởi động: gửi thread dump của lần ANR trước lên hệ thống báo lỗi (API 30+)</span>
-<span class="tk-kw">val</span> am = context.getSystemService(<span class="tk-type">ActivityManager</span>::<span class="tk-kw">class</span>.java)
-am.getHistoricalProcessExitReasons(context.packageName, <span class="tk-num">0</span>, <span class="tk-num">5</span>)
-  .filter { it.reason == <span class="tk-type">ApplicationExitInfo</span>.<span class="tk-type">REASON_ANR</span> }
-  .forEach { info -&gt;
-    <span class="tk-kw">val</span> trace = info.traceInputStream?.bufferedReader()?.use { it.readText() }
-    reporter.log(<span class="tk-str">&quot;ANR&quot;</span>, info.description, trace)
-  }
+        <div class="answer-text">Pin hao chủ yếu do app giữ thiết bị hoặc radio hoạt động khi không cần. Các thủ phạm hay gặp: wake lock giữ quá lâu hoặc quên release (stuck partial wake lock); alarm đánh thức máy quá dày (excessive wakeups), như <code>setExactAndAllowWhileIdle</code> hay alarm lặp chu kỳ ngắn dùng để polling; job nền hay <code>PeriodicWorkRequest</code> quá thường hoặc thiếu constraint; cập nhật vị trí liên tục với độ chính xác cao; sensor, Bluetooth scan hay GPS bị quên huỷ đăng ký; foreground service chạy suốt; và nhiều lần gọi mạng nhỏ lẻ, vì radio di động giữ ở trạng thái tốn điện một lúc sau mỗi lần truyền nên 10 request rải rác tốn hơn nhiều so với một lần gom lại. Điều tra: Android vitals trong Play Console cho biết loại vấn đề, phiên bản và dòng máy bị ảnh hưởng; trên máy thật dùng <code>adb shell dumpsys batterystats</code> rồi Battery Historian để xem wake lock, alarm, job và mạng theo thời gian, thêm Perfetto/System Trace khi cần chi tiết hơn. Cách giảm: bỏ polling và dùng push (FCM) khi server có dữ liệu mới; dồn việc nền vào WorkManager với constraint (mạng, <code>setRequiresBatteryNotLow</code>) và chu kỳ dài để hệ thống tự gộp; wake lock luôn có timeout và release trong <code>finally</code>; vị trí dùng <code>PRIORITY_BALANCED_POWER_ACCURACY</code>, khoảng thời gian dài kèm <code>setMaxUpdateDelayMillis</code> để gom theo lô, và huỷ ngay khi không cần; nhả sensor ở <code>onStop</code>; gom các request mạng và prefetch theo lô. Tôn trọng Doze và App Standby thay vì cố vượt qua (không xin bỏ tối ưu pin trừ khi tính năng thật sự cần), đặt ngân sách pin cho từng tính năng và theo dõi chỉ số này sau mỗi bản phát hành.</div>
+        <pre class="code-block"><code><span class="tk-com">// Wake lock: luôn có timeout và release trong finally</span>
+<span class="tk-kw">val</span> wakeLock = context.getSystemService(<span class="tk-type">PowerManager</span>::<span class="tk-kw">class</span>.java)
+  .newWakeLock(<span class="tk-type">PowerManager</span>.<span class="tk-type">PARTIAL_WAKE_LOCK</span>, <span class="tk-str">&quot;shop:sync&quot;</span>)
+wakeLock.acquire(<span class="tk-num">10</span> * <span class="tk-num">60</span> * 1000L)
+<span class="tk-kw">try</span> {
+  doSync()
+} <span class="tk-kw">finally</span> {
+  <span class="tk-kw">if</span> (wakeLock.isHeld) wakeLock.release()
+}
 
-<span class="tk-com">// Bản debug: phát hiện I/O trên main thread ngay khi dev chạy</span>
-<span class="tk-kw">if</span> (<span class="tk-type">BuildConfig</span>.<span class="tk-type">DEBUG</span>) {
-  <span class="tk-type">StrictMode</span>.setThreadPolicy(
-    <span class="tk-type">StrictMode</span>.<span class="tk-type">ThreadPolicy</span>.<span class="tk-type">Builder</span>()
-      .detectDiskReads().detectDiskWrites().detectNetwork()
-      .penaltyLog()
+<span class="tk-com">// Vị trí: độ chính xác vừa đủ, khoảng dài, gom theo lô thay vì đánh thức liên tục</span>
+<span class="tk-kw">val</span> request = <span class="tk-type">LocationRequest</span>.<span class="tk-type">Builder</span>(<span class="tk-type">Priority</span>.<span class="tk-type">PRIORITY_BALANCED_POWER_ACCURACY</span>, 60_000)
+  .setMinUpdateIntervalMillis(30_000)
+  .setMaxUpdateDelayMillis(<span class="tk-num">5</span> * 60_000) <span class="tk-com">// cho phép hệ thống gom nhiều vị trí rồi giao một lần</span>
+  .build()
+
+<span class="tk-com">// Việc nền: để hệ thống gộp và chỉ chạy khi điều kiện thuận lợi</span>
+<span class="tk-kw">val</span> sync = <span class="tk-type">PeriodicWorkRequestBuilder</span>&lt;<span class="tk-type">SyncWorker</span>&gt;(<span class="tk-num">6</span>, <span class="tk-type">TimeUnit</span>.<span class="tk-type">HOURS</span>)
+  .setConstraints(
+    <span class="tk-type">Constraints</span>.<span class="tk-type">Builder</span>()
+      .setRequiredNetworkType(<span class="tk-type">NetworkType</span>.<span class="tk-type">UNMETERED</span>)
+      .setRequiresBatteryNotLow(<span class="tk-kw">true</span>)
       .build(),
   )
-}</code></pre>
+  .build()</code></pre>
         
       </div>
     </details>

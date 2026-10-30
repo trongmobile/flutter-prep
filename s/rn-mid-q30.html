@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Middle: Tính năng quét mã cần camera và tính năng gửi ảnh cần thư viện ảnh. Tr…</title>
+<meta name="description" content="Quyền phải được khai báo phía native trước: iOS cần chuỗi mô tả trong Info.plist (NSCameraUsageDescription...), Android cần &lt;uses-permission&gt; trong Manifest…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-q30.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle: Tính năng quét mã cần camera và tính năng gửi ảnh cần thư viện ảnh. Tr…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-mid-q30.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"Tính năng quét mã cần camera và tính năng gửi ả…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-q30.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Tính năng quét mã cần camera và tính năng gửi ả…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/native/">Native &amp; New Architecture</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Tính năng quét mã cần camera và tính năng gửi ảnh cần thư viện ảnh. Trên Android quyền được cấp, nhưng iOS trả về <code>blocked</code>, và user đã từ chối một lần thì không bao giờ thấy hộp thoại nữa. Bạn xin và xử lý quyền trong React Native thế nào (khai báo native, các trạng thái, luồng UX)?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Quyền phải được khai báo phía native trước: iOS cần chuỗi mô tả trong <code>Info.plist</code> (<code>NSCameraUsageDescription</code>...), Android cần <code>&lt;uses-permission&gt;</code> trong Manifest (với Expo thì khai báo qua <code>app.json</code> hoặc config plugin của từng thư viện như <code>expo-camera</code>). Trong code dùng thư viện có API thống nhất: <code>expo-camera</code> (<code>useCameraPermissions</code>), <code>expo-image-picker</code> hay <code>react-native-permissions</code> (<code>check</code>, <code>request</code> trả <code>granted</code>, <code>denied</code>, <code>blocked</code>, <code>limited</code>, <code>unavailable</code>). Ý nghĩa: <code>denied</code> là chưa xin hoặc vừa bị từ chối nhưng còn xin lại được (Android); <code>blocked</code> là bị chặn vĩnh viễn (iOS sau lần từ chối đầu, hoặc Android khi user chọn &#39;Don&#39;t ask again&#39;) và chỉ mở Settings (<code>Linking.openSettings()</code>) mới đổi được; <code>limited</code> là iOS chỉ cấp một phần ảnh; <code>unavailable</code> là thiết bị không có tính năng đó. Luồng tốt: kiểm tra trạng thái trước, chỉ xin khi user thực hiện hành động cần quyền kèm giải thích ngắn trước hộp thoại hệ thống, nếu <code>blocked</code> thì hiện hướng dẫn cùng nút mở Settings, và luôn có phương án dự phòng (chọn ảnh bằng picker hệ thống không cần quyền thư viện, nhập mã thủ công). Kiểm tra lại quyền khi app quay về foreground (<code>AppState</code> thành <code>active</code>) vì user có thể đổi trong Settings. Bẫy: Android 13 trở lên tách quyền ảnh và video (<code>READ_MEDIA_IMAGES</code>) khỏi <code>READ_EXTERNAL_STORAGE</code>, Android 14 thêm lựa chọn chỉ cấp một phần ảnh; thông báo (<code>POST_NOTIFICATIONS</code>) cũng phải xin lúc chạy từ Android 13; và khai báo thừa quyền có thể bị store hỏi hoặc từ chối. Với <code>react-native-permissions</code> trên iOS phải bật đúng nhóm quyền trong Podfile (<code>setup_permissions</code>) để không kéo thêm quyền không dùng.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">ScannerScreen</span>() {
+  <span class="tk-kw">const</span> [permission, requestPermission] = useCameraPermissions(); <span class="tk-com">// expo-camera</span>
+
+  <span class="tk-kw">if</span> (!permission) <span class="tk-kw">return</span> &lt;<span class="tk-type">Splash</span> /&gt;; <span class="tk-com">// đang kiểm tra trạng thái</span>
+
+  <span class="tk-kw">if</span> (!permission.granted) {
+    <span class="tk-kw">return</span> (
+      &lt;<span class="tk-type">View</span> style={styles.center}&gt;
+        &lt;<span class="tk-type">Text</span>&gt;<span class="tk-type">C</span>ần quyền camera để quét mã <span class="tk-type">QR</span>.&lt;/<span class="tk-type">Text</span>&gt;
+        {permission.canAskAgain ? (
+          &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Cho phép&quot;</span> onPress={requestPermission} /&gt; <span class="tk-com">// còn xin lại được: hiện hộp thoại hệ thống</span>
+        ) : (
+          &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Mở Cài đặt&quot;</span> onPress={() =&gt; <span class="tk-type">Linking</span>.openSettings()} /&gt; <span class="tk-com">// bị chặn vĩnh viễn</span>
+        )}
+        &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Nhập mã thủ công&quot;</span> onPress={openManualEntry} /&gt; {<span class="tk-com">/* phương án dự phòng */</span>}
+      &lt;/<span class="tk-type">View</span>&gt;
+    );
+  }
+
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">CameraView</span> style={{ flex: <span class="tk-num">1</span> }} onBarcodeScanned={onScan} /&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q30">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-q29.html"><span class="muted small">← Câu trước</span><span>App hiển thị ngày giờ lệch 7 tiếng ở một số máy, new Date(&#39;2025-03-01 10:00&#39;) c…</span></a>
+  <a class="pager-next" href="../s/rn-mid-q31.html"><span class="muted small">Câu sau →</span><span>Mở app thấy màn hình trắng chớp giữa splash và màn đầu tiên, font đổi sau một n…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; New Architecture</h2><a class="section-sub" href="../phong-van/react-native/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-q18.html">Bạn cần viết một Turbo Native Module đọc mức pin cho cả Android và iOS. Các bước với Codegen là gì, và được lợi gì so với native module kiểu cũ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q19.html">Native module cần đẩy sự kiện liên tục lên JS (vị trí GPS, tiến độ tải file). Bạn làm thế nào ở cả hai phía, và cần chú ý gì để không rò rỉ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q20.html">Khi nào cần viết Fabric Native Component thay vì Turbo Native Module? Props và event của component được khai báo thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q32.html">Màn thanh toán của cổng thanh toán được mở trong react-native-webview: cần nhận kết quả từ trang web về app, chặn trang chuyển hướng sang domain lạ, và không để trang web gọi vào app tuỳ tiện. Bạn tích hợp WebView và giao tiếp hai chiều thế nào, cần chú ý bảo mật gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m31.html">Trong file spec của Turbo Native Module, TurboModuleRegistry.getEnforcing khác TurboModuleRegistry.get ở điểm nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-mid-m32.html">Đã cấu hình codegenConfig với jsSrcsDir đúng thư mục, nhưng Codegen không sinh gì cho module có spec tên BatterySpec.ts. Nguyên nhân hợp lý nhất?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

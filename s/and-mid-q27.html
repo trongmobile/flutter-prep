@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Middle: Ô tìm kiếm gọi API mỗi lần gõ, kết quả của từ khoá cũ đôi khi về sau và đè…</title>
+<meta name="description" content="Giữ query trong một MutableStateFlow rồi biến đổi: debounce(300) chờ user ngừng gõ rồi mới phát, map { it.trim() }, distinctUntilChanged() bỏ lần phát trùng,…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q27.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: Ô tìm kiếm gọi API mỗi lần gõ, kết quả của từ khoá cũ đôi khi về sau và đè…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-q27.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"Ô tìm kiếm gọi API mỗi lần gõ, kết quả của từ k…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q27.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Ô tìm kiếm gọi API mỗi lần gõ, kết quả của từ k…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/coroutines/">Coroutines &amp; Flow</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Ô tìm kiếm gọi API mỗi lần gõ, kết quả của từ khoá cũ đôi khi về sau và đè lên kết quả mới, đồng thời app gửi quá nhiều request. Bạn dựng pipeline Flow thế nào với <code>debounce</code>, <code>distinctUntilChanged</code>, <code>flatMapLatest</code>, và nó khác <code>flatMapConcat</code>/<code>flatMapMerge</code> ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Giữ query trong một <code>MutableStateFlow</code> rồi biến đổi: <code>debounce(300)</code> chờ user ngừng gõ rồi mới phát, <code>map { it.trim() }</code>, <code>distinctUntilChanged()</code> bỏ lần phát trùng, sau đó <code>flatMapLatest { q -&gt; repo.search(q) }</code>. Mỗi query mới sẽ huỷ flow bên trong của query trước, nên kết quả cũ không bao giờ đè lên kết quả mới. Hai biến thể còn lại không có tính chất này: <code>flatMapMerge</code> chạy các flow song song và phát theo thứ tự hoàn thành, <code>flatMapConcat</code> chạy lần lượt nên phải chờ hết từ khoá cũ mới tới từ khoá mới. Query rỗng nên xử lý riêng (trả trạng thái nhàn rỗi hoặc gợi ý) thay vì gọi API. Bắt lỗi bên trong <code>flatMapLatest</code> (<code>catch</code> ngay trên flow con) để một lần lỗi không làm hỏng cả pipeline, vì lỗi thoát ra ngoài sẽ kết thúc flow và ô tìm kiếm ngừng hoạt động. Kết thúc bằng <code>stateIn(viewModelScope, WhileSubscribed(5_000), initial)</code> để UI collect. Khi test <code>debounce</code>, dùng thời gian ảo của <code>runTest</code> (<code>advanceTimeBy</code>) chứ không <code>delay</code> thật.</div>
+        <pre class="code-block"><code><span class="tk-ann">@OptIn</span>(<span class="tk-type">FlowPreview</span>::<span class="tk-kw">class</span>, <span class="tk-type">ExperimentalCoroutinesApi</span>::<span class="tk-kw">class</span>)
+<span class="tk-kw">class</span> <span class="tk-type">SearchViewModel</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">SearchRepository</span>) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> query = <span class="tk-type">MutableStateFlow</span>(<span class="tk-str">&quot;&quot;</span>)
+
+  <span class="tk-kw">val</span> results: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">SearchUiState</span>&gt; = query
+    .debounce(<span class="tk-num">300</span>) <span class="tk-com">// chờ user ngừng gõ</span>
+    .map { it.trim() }
+    .distinctUntilChanged()
+    .flatMapLatest { q -&gt; <span class="tk-com">// query mới huỷ request của query cũ</span>
+      <span class="tk-kw">if</span> (q.isEmpty()) {
+        flowOf(<span class="tk-type">SearchUiState</span>.<span class="tk-type">Idle</span>)
+      } <span class="tk-kw">else</span> {
+        flow { emit(<span class="tk-type">SearchUiState</span>.<span class="tk-type">Success</span>(repo.search(q))) }
+          .onStart { emit(<span class="tk-type">SearchUiState</span>.<span class="tk-type">Loading</span>) }
+          .<span class="tk-kw">catch</span> { emit(<span class="tk-type">SearchUiState</span>.<span class="tk-type">Error</span>(it.message)) } <span class="tk-com">// lỗi chỉ nằm trong nhánh này</span>
+      }
+    }
+    .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-type">SearchUiState</span>.<span class="tk-type">Idle</span>)
+
+  <span class="tk-kw">fun</span> onQueryChange(text: <span class="tk-type">String</span>) { query.<span class="tk-kw">value</span> = text }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q27">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q26.html"><span class="muted small">← Câu trước</span><span>Màn Home cần ghép dữ liệu từ ba nguồn Flow độc lập (user, orders từ Room, setti…</span></a>
+  <a class="pager-next" href="../s/and-mid-q28.html"><span class="muted small">Câu sau →</span><span>Nút &#39;Lên đầu&#39; chỉ hiện khi LazyColumn đã cuộn qua item thứ 3, nhưng viết val sh…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Coroutines &amp; Flow</h2><a class="section-sub" href="../phong-van/android/chu-de/coroutines/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q01.html">Màn Home tải song song banner và danh sách gợi ý bằng hai async trong coroutineScope. Chỉ cần API gợi ý lỗi là cả màn hình báo lỗi, banner cũng mất. Vì sao, và sửa thế nào để khối nào lỗi thì chỉ khối đó lỗi?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q02.html">Bạn gọi job.cancel() nhưng coroutine vẫn tiếp tục chạy: log vẫn in, file vẫn được ghi. Những nguyên nhân thường gặp là gì và xử lý thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q03.html">ViewModel cần báo cho UI các sự kiện một lần như hiện Snackbar hay điều hướng sau khi lưu thành công. Dùng StateFlow, SharedFlow hay Channel? Mỗi cách có bẫy gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q04.html">Vì sao nhiều codebase viết stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), UiState.Loading)? Con số 5000 có ý nghĩa gì, và so với Eagerly/Lazily thì sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q05.html">Bạn cần bọc một API dạng listener (vd. ConnectivityManager.NetworkCallback) thành Flow. Viết bằng callbackFlow thế nào và cần lưu ý gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q26.html">Màn Home cần ghép dữ liệu từ ba nguồn Flow độc lập (user, orders từ Room, settings từ DataStore) thành một UiState. Bạn dùng combine, zip hay merge, và những chi tiết nào (giá trị đầu tiên, lỗi, giá trị trùng) hay gây lỗi?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior: Màn hình dashboard tải song song profile, feed và quảng cáo bằng async. Quả…</title>
-<meta name="description" content="Với structured concurrency, con thất bại thì huỷ cha, cha huỷ mọi con còn lại rồi ném lỗi ra cho nơi gọi, nên ba async trong cùng một coroutineScope (hay tro…">
+<title>Câu hỏi phỏng vấn Android Senior: Một dev viết flow { withContext(Dispatchers.IO) { emit(readConfig()) } } và…</title>
+<meta name="description" content="Flow có hai bất biến. Context preservation: phần thu thập luôn chạy trong context của collector, nên không được emit từ một context khác (như withContext bên…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q27.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Màn hình dashboard tải song song profile, feed và quảng cáo bằng async. Quả…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Một dev viết flow { withContext(Dispatchers.IO) { emit(readConfig()) } } và…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q27.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Màn hình dashboard tải song song profile, feed…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q27.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Một dev viết flow { withContext(Dispatchers.IO)…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q27.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,41 +41,43 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình dashboard tải song song profile, feed…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Một dev viết flow { withContext(Dispatchers.IO)…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/coroutines/">Coroutines &amp; Flow</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Màn hình dashboard tải song song profile, feed và quảng cáo bằng <code>async</code>. Quảng cáo lỗi thì chỉ cần ẩn khối quảng cáo, nhưng thực tế lỗi đó làm cả màn hình báo lỗi và hai request còn lại bị huỷ. Giải thích cách exception lan truyền trong coroutine, bạn thiết kế lại thế nào, và <code>CoroutineExceptionHandler</code> có giúp được không?</h1>
+  <h1 class="question-title">Một dev viết <code>flow { withContext(Dispatchers.IO) { emit(readConfig()) } }</code> và app crash với <code>IllegalStateException: Flow invariant is violated</code>. Ngoài ra <code>.catch { }</code> đặt ở cuối pipeline không bắt được lỗi ném trong <code>collect</code>. Giải thích hai bất biến của Flow (context preservation, exception transparency) và cách viết đúng?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Với structured concurrency, con thất bại thì huỷ cha, cha huỷ mọi con còn lại rồi ném lỗi ra cho nơi gọi, nên ba <code>async</code> trong cùng một <code>coroutineScope</code> (hay trong <code>viewModelScope.launch</code>) đi chung số phận. Muốn lỗi của một nhánh không lan lên thì dùng <code>supervisorScope</code> hoặc <code>SupervisorJob</code>: lỗi của con không huỷ cha và các con khác. Nhưng với <code>async</code>, ngoại lệ được giữ trong <code>Deferred</code> và chỉ ném ra ở <code>await()</code>, nên vẫn phải <code>try/catch</code> quanh <code>await()</code> của nhánh không quan trọng (nhớ ném lại <code>CancellationException</code>), còn nhánh bắt buộc như profile thì để lỗi lan lên bình thường. <code>CoroutineExceptionHandler</code> không phải là <code>catch</code>: nó chỉ được gọi cho exception chưa được xử lý ở root coroutine tạo bằng <code>launch</code>, không có tác dụng khi gắn vào <code>async</code> hay coroutine con (con luôn chuyển lỗi lên cha), và khi nó chạy thì coroutine đã kết thúc rồi nên chỉ dùng để ghi log hoặc báo lỗi cuối cùng. Một bẫy khác: <code>launch(SupervisorJob())</code> không tạo supervisor cho scope mà thay luôn Job cha của coroutine đó, làm nó mất liên kết với scope nên không còn bị huỷ khi scope bị huỷ.</div>
-        <pre class="code-block"><code><span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> loadDashboard(): <span class="tk-type">Dashboard</span> = supervisorScope {
-  <span class="tk-kw">val</span> profile = async { profileRepo.load() }
-  <span class="tk-kw">val</span> feed = async { feedRepo.load() }
-  <span class="tk-kw">val</span> ads = async { adsRepo.load() }
+        <div class="answer-text">Flow có hai bất biến. Context preservation: phần thu thập luôn chạy trong context của collector, nên không được <code>emit</code> từ một context khác (như <code>withContext</code> bên trong <code>flow { }</code>), nếu không sẽ ném <code>IllegalStateException</code>. Muốn upstream chạy ở dispatcher khác thì dùng <code>flowOn(Dispatchers.IO)</code>: nó chỉ ảnh hưởng các operator và block phía trên nó, tạo thêm một coroutine và channel (buffer) giữa upstream và downstream, còn collector vẫn ở context ban đầu; nếu cần phát từ nhiều coroutine hoặc callback thì dùng <code>channelFlow</code>/<code>callbackFlow</code>. Exception transparency: flow không được che lỗi của downstream. Operator <code>catch</code> chỉ bắt exception xảy ra ở upstream của nó; lỗi ném trong <code>collect { }</code> hoặc ở <code>onEach</code> đặt sau <code>catch</code> không bị bắt, muốn bắt thì đặt <code>onEach</code> trước <code>catch</code> hoặc bọc <code>try/catch</code> quanh <code>collect</code>. Vì vậy cũng đừng tự <code>try/catch</code> bọc lời gọi <code>emit()</code> trong <code>flow { }</code>, nó sẽ nuốt luôn lỗi của downstream. Với retry, <code>retry</code>/<code>retryWhen</code> chỉ chạy lại upstream; hãy lọc đúng loại lỗi (không retry 4xx hay <code>CancellationException</code>) và đặt <code>delay</code> backoff trong <code>retryWhen</code>. Nhớ rằng flow là cold: mỗi collector chạy lại block, và nên kiểm thử bằng Turbine.</div>
+        <pre class="code-block"><code><span class="tk-com">// Sai: emit từ context khác -&gt; IllegalStateException (Flow invariant is violated)</span>
+<span class="tk-kw">fun</span> readConfig(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">Config</span>&gt; = flow {
+  withContext(<span class="tk-type">Dispatchers</span>.<span class="tk-type">IO</span>) { emit(parse(file.readText())) }
+}
 
-  <span class="tk-type">Dashboard</span>(
-    profile = profile.await(), <span class="tk-com">// thiếu thì không hiển thị được: để lỗi ném ra ngoài</span>
-    feed = feed.await(),
-    ads = <span class="tk-kw">try</span> {
-      ads.await()
-    } <span class="tk-kw">catch</span> (e: <span class="tk-type">Exception</span>) { <span class="tk-com">// quảng cáo lỗi thì chỉ ẩn khối này</span>
-      <span class="tk-kw">if</span> (e <span class="tk-kw">is</span> <span class="tk-type">CancellationException</span>) <span class="tk-kw">throw</span> e
-      <span class="tk-kw">null</span>
-    },
-  )
-}</code></pre>
+<span class="tk-com">// Đúng: flowOn chỉ đổi context của phần upstream</span>
+<span class="tk-kw">fun</span> readConfig(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">Config</span>&gt; = flow { emit(parse(file.readText())) }.flowOn(<span class="tk-type">Dispatchers</span>.<span class="tk-type">IO</span>)
+
+repo.observe()
+  .map { it.toUi() }
+  .onEach { analytics.track(it) } <span class="tk-com">// nằm trước catch nên lỗi ở đây vẫn bị catch bên dưới bắt</span>
+  .retryWhen { cause, attempt -&gt;
+    <span class="tk-kw">val</span> retry = cause <span class="tk-kw">is</span> <span class="tk-type">IOException</span> &amp;&amp; attempt &lt; <span class="tk-num">3</span>
+    <span class="tk-kw">if</span> (retry) delay(1_000L shl attempt.toInt()) <span class="tk-com">// backoff tăng dần</span>
+    retry
+  }
+  .<span class="tk-kw">catch</span> { emit(<span class="tk-type">UiState</span>.<span class="tk-type">Error</span>(it)) } <span class="tk-com">// chỉ bắt lỗi phía trên nó</span>
+  .collect { render(it) } <span class="tk-com">// lỗi ném ở đây KHÔNG bị catch phía trên bắt</span></code></pre>
         
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q27">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/and-sen-q26.html"><span class="muted small">← Câu trước</span><span>Repository có đoạn try { api.fetchProfile() } catch (e: Exception) { ... } (hoặ…</span></a>
-  <a class="pager-next" href="../s/and-sen-q28.html"><span class="muted small">Câu sau →</span><span>Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Flow đ…</span></a>
+  <a href="../s/and-sen-q26.html"><span class="muted small">← Câu trước</span><span>Repository giữ cache mutableMapOf&lt;String, User&gt;() và nhiều coroutine cùng đọc g…</span></a>
+  <a class="pager-next" href="../s/and-sen-q28.html"><span class="muted small">Câu sau →</span><span>Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ,…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp Android Senior</h2>
@@ -88,12 +90,12 @@
 <section>
   <div class="section-head"><h2>Cùng chủ đề Coroutines &amp; Flow</h2><a class="section-sub" href="../phong-van/android/chu-de/coroutines/">Xem tất cả →</a></div>
   <ul class="link-list">
-    <li><a href="../s/and-sen-q26.html">Repository có đoạn try { api.fetchProfile() } catch (e: Exception) { ... } (hoặc runCatching) chạy trong coroutine của ViewModel. Sau khi user rời màn hình, log vẫn báo lỗi huỷ coroutine và đôi khi coroutine còn chạy tiếp sang bước sau. Vì sao, và bạn xử lý việc huỷ coroutine đúng cách thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
-    <li><a href="../s/and-sen-q28.html">Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Flow để nhiều màn hình dùng chung, không rò rỉ listener và không chạy khi app ở background. Bạn dùng callbackFlow, stateIn và thu thập ở UI thế nào, và SharingStarted.WhileSubscribed(5_000) giải quyết điều gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q26.html">Repository giữ cache mutableMapOf&lt;String, User&gt;() và nhiều coroutine cùng đọc ghi: thỉnh thoảng có ConcurrentModificationException hoặc mất cập nhật. Vì sao dùng coroutines không tự làm code thread-safe, và bạn bảo vệ state dùng chung thế nào (Mutex, limitedParallelism(1), atomics)? Bẫy của Mutex là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
     <li><a href="../s/and-jun-q14.html">Màn hình chi tiết cần gọi hai API độc lập (thông tin sản phẩm và đánh giá). Bạn dùng launch hay async để gọi song song? Hai builder này khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-q15.html">Hàm suspend có tự chạy ở background thread không? Nên đặt withContext(Dispatchers.IO) ở tầng nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-q16.html">viewModelScope, lifecycleScope và GlobalScope khác nhau thế nào? Vì sao không nên dùng GlobalScope để gọi API của một màn hình?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-q17.html">Dự án đang chuyển từ LiveData sang StateFlow. Hai cái khác nhau ở những điểm nào cần lưu ý?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-mid-q01.html">Màn Home tải song song banner và danh sách gợi ý bằng hai async trong coroutineScope. Chỉ cần API gợi ý lỗi là cả màn hình báo lỗi, banner cũng mất. Vì sao, và sửa thế nào để khối nào lỗi thì chỉ khối đó lỗi?</a> <span class="rank-tag rank-amber">Middle</span></li>
   </ul>
 </section>
 </main>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt lỗi khắp nơi, hàm trả Optional để…</title>
+<meta name="description" content="throws là cách mặc định cho hàm có thể thất bại: lỗi là giá trị conform Error (thường là enum có associated value), caller buộc phải xử lý bằng do/catch, try…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q26.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt lỗi khắp nơi, hàm trả Optional để…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q26.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt l…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q26.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt l…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Codebase trộn nhiều kiểu xử lý lỗi: <code>try?</code> nuốt lỗi khắp nơi, hàm trả <code>Optional</code> để báo thất bại, completion <code>(Result&lt;T, Error&gt;) -&gt; Void</code>, và <code>fatalError</code> ở chỗ không chắc. Bạn chuẩn hoá xử lý lỗi trong Swift thế nào: <code>throws</code>, <code>Result</code>, typed throws, <code>LocalizedError</code>, và khi nào dùng <code>try?</code>, <code>try!</code>?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>throws</code> là cách mặc định cho hàm có thể thất bại: lỗi là giá trị conform <code>Error</code> (thường là enum có associated value), caller buộc phải xử lý bằng <code>do/catch</code>, <code>try?</code> hoặc truyền tiếp (<code>rethrows</code> cho hàm nhận closure có thể throw); với async/await, lỗi đi qua <code>await</code> rất tự nhiên nên <code>async throws</code> thay phần lớn completion handler. <code>Result&lt;Success, Failure&gt;</code> hợp khi cần lưu hay truyền kết quả như một giá trị (callback cũ, lưu trong state), chuyển qua lại bằng <code>Result { try ... }</code> và <code>.get()</code>. Từ Swift 6 có typed throws (<code>throws(ParseError)</code>) cho phép khai báo kiểu lỗi cụ thể để caller <code>catch</code> đầy đủ mà không cần ép kiểu; nên dùng ở tầng nội bộ có tập lỗi đóng, còn API công khai hay tầng có nhiều nguồn lỗi thường vẫn dùng <code>throws</code> thường để dễ tiến hoá. <code>try?</code> biến lỗi thành <code>nil</code> nên mất thông tin: chỉ dùng khi thất bại thật sự không quan trọng (cache, dọn dẹp), không dùng để nuốt lỗi của việc người dùng đang chờ. <code>try!</code> và <code>fatalError</code> dành cho lỗi lập trình (invariant bị vi phạm), không dùng cho lỗi môi trường như mạng, file, dữ liệu server. Thiết kế lỗi: mỗi tầng có kiểu lỗi riêng với ý nghĩa nghiệp vụ và map lỗi tầng dưới lên (<code>URLError</code> thành <code>PaymentError.network</code>); conform <code>LocalizedError</code> để có <code>errorDescription</code> thân thiện cho UI thay vì lộ thông điệp kỹ thuật. Luôn xử lý <code>CancellationError</code> riêng vì huỷ không phải lỗi cần báo user, và tránh <code>catch</code> rỗng, ít nhất phải log lại.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">PaymentError</span>: <span class="tk-type">LocalizedError</span> {
+  <span class="tk-kw">case</span> insufficientFunds(needed: <span class="tk-type">Decimal</span>)
+  <span class="tk-kw">case</span> cardDeclined
+  <span class="tk-kw">case</span> network(<span class="tk-type">URLError</span>)
+
+  <span class="tk-kw">var</span> errorDescription: <span class="tk-type">String</span>? { <span class="tk-com">// thông điệp thân thiện cho UI</span>
+    <span class="tk-kw">switch</span> <span class="tk-kw">self</span> {
+    <span class="tk-kw">case</span> .insufficientFunds(<span class="tk-kw">let</span> needed): <span class="tk-str">&quot;Số dư không đủ, cần thêm \(needed) ₫&quot;</span>
+    <span class="tk-kw">case</span> .cardDeclined: <span class="tk-str">&quot;Thẻ bị từ chối&quot;</span>
+    <span class="tk-kw">case</span> .network: <span class="tk-str">&quot;Mất kết nối, vui lòng thử lại&quot;</span>
+    }
+  }
+}
+
+<span class="tk-com">// Tầng dưới map lỗi kỹ thuật sang lỗi có ý nghĩa nghiệp vụ</span>
+<span class="tk-kw">func</span> pay(_ order: <span class="tk-type">Order</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Receipt</span> {
+  <span class="tk-kw">do</span> {
+    <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.charge(order)
+  } <span class="tk-kw">catch</span> <span class="tk-kw">let</span> error as <span class="tk-type">URLError</span> <span class="tk-kw">where</span> error.code != .cancelled {
+    <span class="tk-kw">throw</span> <span class="tk-type">PaymentError</span>.network(error)
+  }
+}
+
+<span class="tk-com">// Typed throws (Swift 6): caller catch đầy đủ, không cần ép kiểu</span>
+<span class="tk-kw">func</span> parse(_ raw: <span class="tk-type">String</span>) <span class="tk-kw">throws</span>(<span class="tk-type">ParseError</span>) -&gt; <span class="tk-type">Order</span> { <span class="tk-com">/* ... */</span> }
+
+<span class="tk-kw">do</span> {
+  <span class="tk-kw">let</span> receipt = <span class="tk-kw">try</span> <span class="tk-kw">await</span> pay(order)
+  show(receipt)
+} <span class="tk-kw">catch</span> <span class="tk-kw">is</span> <span class="tk-type">CancellationError</span> {
+  <span class="tk-com">// user thoát màn hình: không phải lỗi, không hiện gì</span>
+} <span class="tk-kw">catch</span> {
+  show(error.localizedDescription)
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q26">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q25.html"><span class="muted small">← Câu trước</span><span>App SwiftUI cần mở thẳng màn chi tiết đơn hàng khi user bấm universal link http…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q27.html"><span class="muted small">Câu sau →</span><span>Màn SwiftUI gọi API trong .onAppear và bị gọi lại mỗi lần quay về từ màn con; .…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q12.html">Trong code review bạn thấy func makeRepository() -&gt; any UserRepository ở chỗ này và func render(_ shape: some Shape) ở chỗ khác. some và any khác nhau thế nào, khi nào chọn cái nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q13.html">Array, Dictionary của Swift là value type nhưng gán qua lại rất rẻ nhờ copy-on-write. Nếu bạn tự viết một struct bọc storage là class (vd. một buffer lớn), làm sao để nó cũng có copy-on-write?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q14.html">Bạn muốn các property như volume, progress luôn bị giới hạn trong một khoảng giá trị mà không phải lặp code ở từng setter. Viết property wrapper thế nào, và projectedValue (truy cập qua $) dùng để làm gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q29.html">App hiển thị giờ đặt hàng lệch 7 tiếng ở một số máy, DateFormatter tạo trong cellForRow làm cuộn chậm, và giá tiền hiện 1,000.00 thay vì 1.000 ₫ trên máy đặt ngôn ngữ khác. Bạn xử lý Date, DateFormatter, Locale và TimeZone đúng thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q30.html">Một protocol có extension cung cấp implementation mặc định. Struct conform ghi đè method đó, nhưng khi gọi qua biến kiểu protocol thì lại chạy bản mặc định trong extension chứ không phải bản của struct. Vì sao, và static dispatch khác dynamic dispatch thế nào trong Swift?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m12.html">Với var a = [1, 2, 3], tiếp theo var b = a rồi b.append(4): buffer phần tử của Array thực sự bị copy khi nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

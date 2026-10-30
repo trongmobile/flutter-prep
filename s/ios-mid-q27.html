@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: Màn SwiftUI gọi API trong .onAppear và bị gọi lại mỗi lần quay về từ màn con; .…</title>
+<meta name="description" content=".onAppear chạy mỗi lần view xuất hiện trong hierarchy (cả khi quay lại từ màn push lên trên hoặc đổi tab) và là đồng bộ, nên muốn gọi API phải tự tạo Task, v…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q27.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Màn SwiftUI gọi API trong .onAppear và bị gọi lại mỗi lần quay về từ màn con; .…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q27.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Màn SwiftUI gọi API trong .onAppear và bị gọi l…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q27.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn SwiftUI gọi API trong .onAppear và bị gọi l…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swiftui/">SwiftUI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Màn SwiftUI gọi API trong <code>.onAppear</code> và bị gọi lại mỗi lần quay về từ màn con; <code>.onChange(of:)</code> thì bắn hay không bắn lúc mở màn hình, và app muốn dừng polling khi vào background. <code>.onAppear</code>, <code>.task</code>, <code>.task(id:)</code>, <code>.onChange</code> và <code>scenePhase</code> khác nhau thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>.onAppear</code> chạy mỗi lần view xuất hiện trong hierarchy (cả khi quay lại từ màn push lên trên hoặc đổi tab) và là đồng bộ, nên muốn gọi API phải tự tạo <code>Task</code>, và task đó không bị huỷ khi view biến mất. <code>.task { }</code> chạy closure async khi view xuất hiện và tự huỷ khi view biến mất; <code>.task(id: value)</code> còn tự huỷ và chạy lại khi <code>value</code> đổi, hợp cho việc tải theo tham số. Cả hai chạy lại mỗi lần view xuất hiện lại, nên muốn &#39;chỉ tải một lần&#39; phải có cờ hoặc kiểm tra dữ liệu đã có trong model. <code>.onChange(of:)</code> bắn khi giá trị đổi; từ iOS 17 closure nhận <code>(oldValue, newValue)</code> hoặc không tham số, và mặc định không bắn lúc đầu trừ khi truyền <code>initial: true</code>; bản một tham số cũ đã deprecated. Trong closure đừng sửa chính state đang theo dõi để tránh vòng lặp cập nhật. <code>@Environment(\.scenePhase)</code> cho biết scene đang <code>.active</code>, <code>.inactive</code> hay <code>.background</code>: dùng nó để dừng polling, lưu nháp khi sang <code>.background</code> và làm mới khi về <code>.active</code>. Lưu ý <code>onAppear</code>/<code>onDisappear</code> không phản ánh việc app vào background. Một mẹo gọn: đặt vòng polling trong <code>.task(id: scenePhase)</code> và <code>guard scenePhase == .active</code>, nó tự dừng khi vào nền, chạy lại khi quay về, và tự huỷ khi view biến mất.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">OrderScreen</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@Environment</span>(\.scenePhase) <span class="tk-kw">private</span> <span class="tk-kw">var</span> scenePhase
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> model = <span class="tk-type">OrderModel</span>()
+  <span class="tk-kw">let</span> orderID: <span class="tk-type">String</span>
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+    <span class="tk-type">OrderContent</span>(model: model)
+      .task(id: orderID) { <span class="tk-com">// tự huỷ và chạy lại khi orderID đổi, tự huỷ khi view biến mất</span>
+        <span class="tk-kw">await</span> model.load(orderID)
+      }
+      .task(id: scenePhase) { <span class="tk-com">// chạy lại mỗi khi scenePhase đổi</span>
+        <span class="tk-kw">guard</span> scenePhase == .active <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// vào background thì dừng polling</span>
+        <span class="tk-kw">while</span> !<span class="tk-type">Task</span>.isCancelled {
+          <span class="tk-kw">try</span>? <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: .seconds(<span class="tk-num">30</span>))
+          <span class="tk-kw">await</span> model.refreshStatus()
+        }
+      }
+      .onChange(of: scenePhase) { _, phase <span class="tk-kw">in</span> <span class="tk-com">// iOS 17: closure (giá trị cũ, giá trị mới)</span>
+        <span class="tk-kw">if</span> phase == .background { model.saveDraft() }
+      }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q27">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q26.html"><span class="muted small">← Câu trước</span><span>Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt lỗi khắp nơi, hàm trả Optional để…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q28.html"><span class="muted small">Câu sau →</span><span>Bạn gọi withAnimation { isExpanded.toggle() } nhưng view mới xuất hiện bị nhảy…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề SwiftUI</h2><a class="section-sub" href="../phong-van/ios/chu-de/swiftui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q09.html">Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù text nằm trong @State của view con. Nguyên nhân liên quan tới identity của view là gì, và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q10.html">Team chuyển ViewModel từ ObservableObject + @Published sang macro @Observable. Cơ chế cập nhật view khác gì, và @StateObject, @ObservedObject, @EnvironmentObject được thay bằng gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q11.html">View cha cần biết chiều cao thực tế của một view con (để làm header co giãn hoặc căn các cột bằng nhau). GeometryReader và PreferenceKey phối hợp thế nào, và vì sao không nên bọc cả màn hình trong GeometryReader?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q28.html">Bạn gọi withAnimation { isExpanded.toggle() } nhưng view mới xuất hiện bị nhảy vào chứ không animate, còn .animation(.easeInOut) đặt ở cuối chain làm cả màn hình animate lung tung. Giải thích animation tường minh và ngầm định, transition, và matchedGeometryEffect?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m20.html">CounterView(start: 0) đang hiển thị, sau đó view cha render lại với start bằng 10 (identity không đổi). Text hiển thị gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m21.html">Mỗi lần bấm Toggle layout, giá trị đếm mà CounterView lưu trong @State của nó sẽ thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

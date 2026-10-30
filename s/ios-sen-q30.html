@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior: UICollectionView của màn hình chat thỉnh thoảng crash với lỗi Invalid update: i…</title>
-<meta name="description" content="Lỗi đó có nguyên nhân gốc là số item trong data source không khớp với những gì bạn khai báo trong batch update: khi dữ liệu đổi từ nhiều luồng hay giữa lúc a…">
+<title>Câu hỏi phỏng vấn iOS Senior: Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn đượ…</title>
+<meta name="description" content="Diffable data source so sánh các snapshot bằng identifier (Hashable): identifier mới là item được thêm, identifier biến mất là item bị xoá, identifier còn ng…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q30.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: UICollectionView của màn hình chat thỉnh thoảng crash với lỗi Invalid update: i…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn đượ…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q30.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"UICollectionView của màn hình chat thỉnh thoảng…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q30.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Màn chat đã dùng UICollectionViewDiffableDataSo…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q30.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,17 +41,17 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">UICollectionView của màn hình chat thỉnh thoảng…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn chat đã dùng UICollectionViewDiffableDataSo…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title"><code>UICollectionView</code> của màn hình chat thỉnh thoảng crash với lỗi <code>Invalid update: invalid number of items in section 0</code> khi tin nhắn đến liên tục cùng lúc với sửa hay xoá tin, dù đã dùng <code>performBatchUpdates</code>. Bạn xử lý bằng <code>UICollectionViewDiffableDataSource</code> thế nào, và có bẫy gì về identity?</h1>
+  <h1 class="question-title">Màn chat đã dùng <code>UICollectionViewDiffableDataSource</code>, nhưng khi một tin nhắn được sửa thì cell nhấp nháy và mất vị trí cuộn, và thỉnh thoảng crash vì identifier trùng. Identifier của snapshot nên là gì, và <code>reloadItems</code> khác <code>reconfigureItems</code> thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Lỗi đó có nguyên nhân gốc là số item trong data source không khớp với những gì bạn khai báo trong batch update: khi dữ liệu đổi từ nhiều luồng hay giữa lúc animation đang chạy, bạn phải tự tính chính xác từng index <code>insert/delete/move</code>. Diffable data source đổi cách làm: bạn mô tả trạng thái đích bằng một snapshot (<code>NSDiffableDataSourceSnapshot</code>), hệ thống tự tính diff và animate, nên không còn lệch index; mỗi lần dữ liệu đổi chỉ cần dựng snapshot mới rồi <code>apply</code>, có thể gọi từ background queue miễn là luôn dùng đúng một queue nhất quán. Điểm quan trọng là identifier: nó phải là <code>Hashable</code> định danh thực thể (id ổn định), không phải toàn bộ nội dung. Nếu dùng nguyên struct <code>Message</code> làm identifier thì khi tin nhắn được sửa, nội dung đổi nên hash đổi và snapshot hiểu đó là một item bị xoá cộng một item mới (cell nhấp nháy, mất vị trí cuộn). Hãy dùng <code>Message.ID</code> làm identifier và lấy dữ liệu hiện tại từ một nguồn riêng trong cell registration; khi nội dung đổi nhưng id giữ nguyên thì gọi <code>reconfigureItems</code> (iOS 15 trở lên): nó cập nhật chính cell đang hiển thị, nhẹ hơn <code>reloadItems</code> vốn dựng lại cell mới. Identifier trùng nhau trong cùng một snapshot sẽ crash, nên phải đảm bảo id duy nhất. Dùng <code>animatingDifferences: false</code> cho lần tải đầu hoặc khi dữ liệu thay đổi quá lớn.</div>
+        <div class="answer-text">Diffable data source so sánh các snapshot bằng identifier (<code>Hashable</code>): identifier mới là item được thêm, identifier biến mất là item bị xoá, identifier còn nguyên là cùng một item (có thể đã di chuyển). Vì vậy identifier phải định danh thực thể (id ổn định), không phải toàn bộ nội dung. Nếu dùng nguyên struct <code>Message</code> làm identifier thì khi tin được sửa, nội dung đổi nên hash đổi và snapshot hiểu đó là một item bị xoá cộng một item mới (cell nhấp nháy, mất vị trí cuộn); và các identifier phải duy nhất trong cùng một snapshot, trùng là crash. Hãy dùng <code>Message.ID</code> làm identifier và lấy dữ liệu hiện tại từ một nguồn riêng trong cell registration. Khi nội dung đổi nhưng id giữ nguyên thì phải báo cho data source biết, vì snapshot thấy identifier không đổi nên mặc định không cập nhật cell: <code>reloadItems</code> dựng lại cell (dequeue một cell mới), còn <code>reconfigureItems</code> (iOS 15 trở lên) cập nhật chính cell đang hiển thị, rẻ hơn và giữ nguyên trạng thái tạm thời của cell. <code>apply</code> có thể gọi từ background queue miễn là luôn dùng nhất quán một queue; dùng <code>animatingDifferences: false</code> cho lần tải đầu hoặc khi dữ liệu thay đổi quá lớn. Với dữ liệu đổi dồn dập, gom thay đổi (debounce hoặc áp dụng theo lô) thay vì apply cho từng sự kiện.</div>
         <pre class="code-block"><code><span class="tk-kw">private</span> <span class="tk-kw">var</span> messages: [<span class="tk-type">Message</span>.<span class="tk-type">ID</span>: <span class="tk-type">Message</span>] = [:] <span class="tk-com">// nguồn dữ liệu hiện tại</span>
 
 <span class="tk-kw">private</span> <span class="tk-kw">lazy</span> <span class="tk-kw">var</span> registration = <span class="tk-type">UICollectionView</span>.<span class="tk-type">CellRegistration</span>&lt;<span class="tk-type">MessageCell</span>, <span class="tk-type">Message</span>.<span class="tk-type">ID</span>&gt; { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] cell, _, id <span class="tk-kw">in</span>
@@ -76,8 +76,8 @@
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q30">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/ios-sen-q29.html"><span class="muted small">← Câu trước</span><span>Màn hình SwiftUI có ViewModel tải dữ liệu từ API. Mỗi khi view cha cập nhật (đổ…</span></a>
-  <a class="pager-next" href="../s/ios-sen-q31.html"><span class="muted small">Câu sau →</span><span>Link https://shop.vn/order/123 cần mở thẳng màn chi tiết đơn hàng, kể cả khi ap…</span></a>
+  <a href="../s/ios-sen-q29.html"><span class="muted small">← Câu trước</span><span>Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ,…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q31.html"><span class="muted small">Câu sau →</span><span>App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tá…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp iOS Senior</h2>
@@ -90,12 +90,12 @@
 <section>
   <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
   <ul class="link-list">
+    <li><a href="../s/ios-sen-q31.html">App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tái dùng một MKMapView đã có trong màn SwiftUI. Bạn nhúng hai chiều thế nào, và những bẫy về vòng đời, kích thước và state là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
     <li><a href="../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a> <span class="rank-tag rank-green">Fresher</span></li>
     <li><a href="../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
     <li><a href="../s/ios-fre-q12.html">UITableViewDataSource và UITableViewDelegate khác nhau thế nào? Để hiển thị một danh sách đơn giản cần cài đặt những method nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
     <li><a href="../s/ios-fre-q13.html">@IBOutlet và @IBAction là gì? Vì sao đổi tên một biến outlet xong thì app crash với lỗi &quot;this class is not key value coding-compliant for the key…&quot;?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/ios-fre-q14.html">Dựng UI bằng storyboard, xib hay viết code khác nhau thế nào? Dự án nhiều người cùng làm thì bạn chọn cách nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
   </ul>
 </section>
 </main>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: Team lưu mọi thứ vào UserDefaults: cờ onboarding, danh sách sản phẩm yêu thích…</title>
+<meta name="description" content="UserDefaults dành cho cấu hình nhỏ dạng key-value (cờ, lựa chọn của user, phiên bản schema): nó được nạp vào bộ nhớ khi truy cập đầu tiên, nên nhét dữ liệu l…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q36.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Team lưu mọi thứ vào UserDefaults: cờ onboarding, danh sách sản phẩm yêu thích…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q36.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Team lưu mọi thứ vào UserDefaults: cờ onboardin…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q36.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Team lưu mọi thứ vào UserDefaults: cờ onboardin…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Team lưu mọi thứ vào <code>UserDefaults</code>: cờ onboarding, danh sách sản phẩm yêu thích vài nghìn phần tử và cả ảnh nhỏ dạng <code>Data</code>; app khởi động chậm dần. Nên lưu gì ở <code>UserDefaults</code>/<code>@AppStorage</code>, gì ở file, Keychain hay database, và những bẫy nào cần biết?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>UserDefaults</code> dành cho cấu hình nhỏ dạng key-value (cờ, lựa chọn của user, phiên bản schema): nó được nạp vào bộ nhớ khi truy cập đầu tiên, nên nhét dữ liệu lớn vào đó làm chậm khởi động và tốn memory. Dữ liệu có cấu trúc hoặc lớn (danh sách yêu thích, cache) nên vào file trong Application Support hoặc Caches (mã hoá <code>Codable</code> ra JSON, đặt <code>completeFileProtection</code> nếu nhạy cảm), hoặc vào database (SwiftData, Core Data, SQLite) khi cần truy vấn. Bí mật (token, mật khẩu) vào Keychain, không bao giờ vào <code>UserDefaults</code> vì đó là plist không mã hoá và nằm trong bản backup. <code>@AppStorage</code> trong SwiftUI là wrapper của <code>UserDefaults</code> tự cập nhật view khi giá trị đổi, chỉ hỗ trợ kiểu đơn giản (<code>Bool</code>, <code>Int</code>, <code>Double</code>, <code>String</code>, <code>URL</code>, <code>Data</code>, và <code>RawRepresentable</code> với raw value đơn giản), không dùng cho object phức tạp. Các bẫy: key là chuỗi nên dễ gõ sai, hãy gom key vào một chỗ; giá trị chưa có trả về <code>nil</code>, 0 hoặc false nên cần giá trị mặc định rõ ràng (<code>register(defaults:)</code>); app và extension (widget) muốn chia sẻ phải dùng <code>UserDefaults(suiteName:)</code> với App Group chứ không phải <code>.standard</code>; và khi đổi cấu trúc dữ liệu đã lưu nên có <code>schemaVersion</code> để migrate. Muốn đồng bộ giá trị nhỏ qua iCloud thì dùng <code>NSUbiquitousKeyValueStore</code>. Cuối cùng nhớ rằng <code>UserDefaults</code> bị xoá khi gỡ app, còn item Keychain thì có thể còn lại.</div>
+        <pre class="code-block"><code><span class="tk-com">// Cờ và lựa chọn nhỏ: @AppStorage, gom key về một chỗ để khỏi gõ sai</span>
+<span class="tk-kw">enum</span> <span class="tk-type">Keys</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> hasSeenOnboarding = <span class="tk-str">&quot;hasSeenOnboarding&quot;</span>
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> sortOrder = <span class="tk-str">&quot;favorites.sortOrder&quot;</span>
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">SettingsView</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@AppStorage</span>(<span class="tk-type">Keys</span>.hasSeenOnboarding) <span class="tk-kw">private</span> <span class="tk-kw">var</span> hasSeenOnboarding = <span class="tk-kw">false</span>
+  <span class="tk-ann">@AppStorage</span>(<span class="tk-type">Keys</span>.sortOrder) <span class="tk-kw">private</span> <span class="tk-kw">var</span> sortOrder: <span class="tk-type">SortOrder</span> = .recent <span class="tk-com">// enum có raw value String hoặc Int</span>
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+    <span class="tk-type">Toggle</span>(<span class="tk-str">&quot;Đã xem hướng dẫn&quot;</span>, isOn: $hasSeenOnboarding)
+  }
+}
+
+<span class="tk-com">// Dữ liệu lớn: ghi file thay vì nhét vào UserDefaults</span>
+<span class="tk-kw">func</span> saveFavorites(_ favorites: [<span class="tk-type">Product</span>]) <span class="tk-kw">throws</span> {
+  <span class="tk-kw">let</span> url = <span class="tk-kw">try</span> <span class="tk-type">FileManager</span>.<span class="tk-kw">default</span>
+    .url(<span class="tk-kw">for</span>: .applicationSupportDirectory, <span class="tk-kw">in</span>: .userDomainMask, appropriateFor: <span class="tk-kw">nil</span>, create: <span class="tk-kw">true</span>)
+    .appendingPathComponent(<span class="tk-str">&quot;favorites.json&quot;</span>)
+  <span class="tk-kw">try</span> <span class="tk-type">JSONEncoder</span>().encode(favorites).write(to: url, options: [.atomic, .completeFileProtection])
+}
+
+<span class="tk-com">// Chia sẻ với widget: UserDefaults trong App Group, không phải .standard</span>
+<span class="tk-kw">let</span> shared = <span class="tk-type">UserDefaults</span>(suiteName: <span class="tk-str">&quot;group.vn.shop.app&quot;</span>)</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q36">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q35.html"><span class="muted small">← Câu trước</span><span>Test cho tầng networking đang gọi server thật nên chậm và flaky; bạn muốn test…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q37.html"><span class="muted small">Câu sau →</span><span>Bạn thêm đăng nhập bằng Face ID/Touch ID: gọi LAContext.evaluatePolicy, thành c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/ios/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q18.html">Bạn import vài nghìn record từ API vào Core Data và UI bị giật. Chuyển sang background context thế nào cho đúng, và làm sao để viewContext thấy dữ liệu mới?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q19.html">Dự án mới target iOS 17 trở lên, team phân vân giữa SwiftData và Core Data. Bạn cân nhắc những gì trước khi chọn?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q20.html">Bạn cần cache ảnh avatar trong app. NSCache, Dictionary và URLCache khác nhau thế nào, và bạn kết hợp chúng ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m31.html">Bạn fetch Order trong background context của Core Data rồi cần hiển thị nó trên main thread. Cách làm đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m32.html">Điểm nào đúng về NSCache khi dùng làm cache ảnh trong RAM?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m33.html">Cần import hàng nghìn bản ghi vào SwiftData mà không làm đứng UI. Cách nào đúng?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

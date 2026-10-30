@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Middle: App dùng React Navigation với TypeScript nhưng navigation.navigate(&#39;Or…</title>
+<meta name="description" content="Định nghĩa một ParamList cho mỗi navigator (map tên route sang kiểu params, undefined nếu không có), truyền nó làm generic cho createNativeStackNavigator&lt;Roo…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-q34.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle: App dùng React Navigation với TypeScript nhưng navigation.navigate(&#39;Or…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-mid-q34.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"App dùng React Navigation với TypeScript nhưng…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-q34.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">App dùng React Navigation với TypeScript nhưng…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App dùng React Navigation với TypeScript nhưng <code>navigation.navigate(&#39;OrderDetail&#39;, { id })</code> hay bị sai tên màn hoặc thiếu params mà chỉ lỗi lúc chạy; điều hướng từ tab sang màn nằm sâu trong một stack khác thì báo <code>The action &#39;NAVIGATE&#39; ... was not handled</code>. Bạn định kiểu navigation và xử lý navigator lồng nhau thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Định nghĩa một <code>ParamList</code> cho mỗi navigator (map tên route sang kiểu params, <code>undefined</code> nếu không có), truyền nó làm generic cho <code>createNativeStackNavigator&lt;RootStackParamList&gt;()</code> và dùng <code>NativeStackScreenProps&lt;RootStackParamList, &#39;OrderDetail&#39;&gt;</code> cho props của màn; khi đó <code>route.params.id</code> có kiểu và <code>navigate(&#39;OrderDetail&#39;, { id })</code> bị TypeScript báo nếu sai tên hay thiếu params. Muốn <code>useNavigation()</code> có kiểu mà không phải gán generic mỗi lần thì khai báo toàn cục <code>ReactNavigation.RootParamList</code> mở rộng từ <code>RootStackParamList</code>. Với navigator lồng nhau (stack bọc tab bọc stack), params của màn con không nằm trong <code>RootStackParamList</code> mà trong list của navigator con; dùng <code>NavigatorScreenParams&lt;TabParamList&gt;</code> để mô tả màn cha nhận params cho navigator con, và <code>CompositeScreenProps</code> hoặc <code>CompositeNavigationProp</code> để màn con gọi được cả hành động của navigator cha. Điều hướng sâu bằng <code>navigate(&#39;Main&#39;, { screen: &#39;Orders&#39;, params: { screen: &#39;OrderDetail&#39;, params: { id } } })</code>; lỗi &#39;was not handled&#39; xảy ra khi navigator chứa màn đích chưa được mount (tab chưa render, hoặc màn nằm trong nhóm có điều kiện như chưa đăng nhập), nên phải đảm bảo navigator đó đã tồn tại hoặc điều hướng theo đúng cấp. Params phải serializable và nhỏ (id, không phải object lớn hay hàm) để deep link, state restoration và nút back hoạt động; dữ liệu chi tiết tải lại theo id. Lưu ý <code>navigate</code> không nhân đôi màn đang ở trên cùng stack, còn <code>push</code> luôn thêm một màn mới. Với Expo Router, kiểu của route được sinh tự động (<code>typedRoutes</code>) nên phần lớn bước định kiểu thủ công này không còn cần thiết.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">OrdersStackParamList</span> = {
+  <span class="tk-type">OrderList</span>: <span class="tk-kw">undefined</span>;
+  <span class="tk-type">OrderDetail</span>: { id: <span class="tk-kw">string</span> }; <span class="tk-com">// params phải serializable: truyền id, không truyền object lớn</span>
+};
+
+<span class="tk-kw">type</span> <span class="tk-type">TabParamList</span> = {
+  <span class="tk-type">Home</span>: <span class="tk-kw">undefined</span>;
+  <span class="tk-type">Orders</span>: <span class="tk-type">NavigatorScreenParams</span>&lt;<span class="tk-type">OrdersStackParamList</span>&gt;; <span class="tk-com">// tab Orders chứa một stack con</span>
+};
+
+<span class="tk-kw">type</span> <span class="tk-type">RootStackParamList</span> = {
+  <span class="tk-type">Login</span>: <span class="tk-kw">undefined</span>;
+  <span class="tk-type">Main</span>: <span class="tk-type">NavigatorScreenParams</span>&lt;<span class="tk-type">TabParamList</span>&gt;;
+};
+
+<span class="tk-com">// Khai báo toàn cục: useNavigation() có kiểu mà không cần gán generic mỗi lần</span>
+<span class="tk-kw">declare</span> global {
+  <span class="tk-kw">namespace</span> <span class="tk-type">ReactNavigation</span> {
+    <span class="tk-kw">interface</span> <span class="tk-type">RootParamList</span> <span class="tk-kw">extends</span> <span class="tk-type">RootStackParamList</span> {}
+  }
+}
+
+<span class="tk-com">// Màn nằm sâu: kiểu bao gồm cả navigator cha</span>
+<span class="tk-kw">type</span> <span class="tk-type">Props</span> = <span class="tk-type">CompositeScreenProps</span>&lt;
+  <span class="tk-type">NativeStackScreenProps</span>&lt;<span class="tk-type">OrdersStackParamList</span>, <span class="tk-str">&#39;OrderDetail&#39;</span>&gt;,
+  <span class="tk-type">BottomTabScreenProps</span>&lt;<span class="tk-type">TabParamList</span>&gt;
+&gt;;
+
+<span class="tk-com">// Điều hướng từ nơi bất kỳ tới màn sâu</span>
+navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span class="tk-str">&#39;Orders&#39;</span>, params: { screen: <span class="tk-str">&#39;OrderDetail&#39;</span>, params: { id } } });</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q34">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-q33.html"><span class="muted small">← Câu trước</span><span>App cần hỗ trợ tiếng Việt và tiếng Anh, tự chọn theo ngôn ngữ máy nhưng user đổ…</span></a>
+  <a class="pager-next" href="../s/rn-mid-q35.html"><span class="muted small">Câu sau →</span><span>Tính năng chạy tốt khi debug nhưng crash hoặc hành xử khác ở bản release: ảnh k…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/react-native/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-q09.html">Sau khi đăng nhập, app gọi navigation.navigate(&#39;Home&#39;), nhưng bấm back trên Android lại quay về màn Login; đăng xuất xong cũng có thể back vào màn cần đăng nhập. Bạn tổ chức auth flow với React Navigation thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m08.html">Stack gốc có màn Main chứa Bottom Tab, header hiển thị là header của stack. Trong màn Orders của tab, gọi navigation.setOptions({ title: &#39;Đơn hàng&#39; }) nhưng tiêu đề header không đổi. Vì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q20.html">Trong stack navigator của React Navigation, navigate, push, goBack và popToTop khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q21.html">Truyền dữ liệu sang màn hình khác bằng params thế nào? Nên truyền cả object sản phẩm hay chỉ truyền id?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q35.html">Cài React Navigation cần những gì? NavigationContainer, navigator và screen liên hệ thế nào, khi nào dùng Stack, Tab, Drawer?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q15.html">App có bottom tab (Home, Đơn hàng, Tài khoản). Khi mở màn hình Chi tiết sản phẩm từ tab Home thì tab bar vẫn hiện bên dưới, trong khi thiết kế yêu cầu ẩn. Bạn tổ chức navigator thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

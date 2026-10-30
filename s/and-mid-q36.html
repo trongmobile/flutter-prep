@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Middle: Sau khi thêm một thư viện mới, build lỗi Duplicate class kotlin.collections…</title>
+<meta name="description" content="Khi cùng một thư viện được kéo vào với nhiều phiên bản, Gradle mặc định chọn phiên bản cao nhất trong số được yêu cầu (không phải phiên bản khai báo đầu tiên…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q36.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: Sau khi thêm một thư viện mới, build lỗi Duplicate class kotlin.collections…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-q36.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"Sau khi thêm một thư viện mới, build lỗi Duplic…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q36.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Sau khi thêm một thư viện mới, build lỗi Duplic…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/build/">Gradle &amp; Build</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Sau khi thêm một thư viện mới, build lỗi <code>Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found in modules ...</code>, hoặc app crash <code>NoSuchMethodError</code> ở bản chạy thật vì hai thư viện kéo hai phiên bản OkHttp khác nhau. Gradle chọn phiên bản dependency thế nào, và bạn chẩn đoán, xử lý xung đột ra sao (<code>dependencyInsight</code>, BOM, <code>constraints</code>, <code>exclude</code>)?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi cùng một thư viện được kéo vào với nhiều phiên bản, Gradle mặc định chọn phiên bản cao nhất trong số được yêu cầu (không phải phiên bản khai báo đầu tiên); đa số thư viện tương thích ngược nên thường ổn. Vấn đề xuất hiện khi thư viện A cần API đã bị gỡ ở phiên bản mới (<code>NoSuchMethodError</code>, <code>ClassNotFoundException</code> lúc chạy), hoặc khi hai artifact khác tên chứa cùng class (lỗi <code>Duplicate class</code>, ví dụ <code>kotlin-stdlib-jdk7</code> và <code>jdk8</code> đã được gộp vào <code>kotlin-stdlib</code> từ Kotlin 1.8 nhưng thư viện cũ vẫn kéo chúng). Chẩn đoán: <code>./gradlew :app:dependencies --configuration releaseRuntimeClasspath</code> xem cả cây; <code>./gradlew :app:dependencyInsight --dependency okhttp --configuration releaseRuntimeClasspath</code> cho biết ai yêu cầu phiên bản nào và vì sao Gradle chọn phiên bản đang dùng. Cách xử lý: ưu tiên nâng thư viện gây xung đột lên bản đồng bộ; dùng BOM (<code>platform(&quot;...:okhttp-bom:...&quot;)</code>, <code>compose-bom</code>, <code>firebase-bom</code>) để các artifact cùng họ có phiên bản khớp nhau và bỏ số phiên bản ở từng dòng; ép phiên bản bằng <code>constraints { ... because(&quot;...&quot;) }</code> (rõ ràng, có ghi lý do) hoặc <code>strictly</code> trong version nếu thật sự phải khoá; <code>exclude(group, module)</code> để loại artifact trùng class. Tránh <code>resolutionStrategy.force</code> rải rác vì che giấu vấn đề. Gom phiên bản vào version catalog để cả team dùng chung, và dùng Renovate hoặc Dependabot để nâng cấp có kế hoạch. Sau khi sửa, build lại bản release (có R8) và chạy test, vì xung đột có thể chỉ lộ ra lúc chạy.</div>
+        <pre class="code-block"><code><span class="tk-com">// build.gradle.kts của app</span>
+dependencies {
+  <span class="tk-com">// BOM: các artifact cùng họ có phiên bản khớp nhau, các dòng dưới không cần ghi version</span>
+  implementation(platform(<span class="tk-str">&quot;com.squareup.okhttp3:okhttp-bom:4.12.0&quot;</span>))
+  implementation(<span class="tk-str">&quot;com.squareup.okhttp3:okhttp&quot;</span>)
+  implementation(<span class="tk-str">&quot;com.squareup.okhttp3:logging-interceptor&quot;</span>)
+
+  <span class="tk-com">// Ép phiên bản có lý do rõ ràng, thay vì force rải rác</span>
+  constraints {
+    implementation(<span class="tk-str">&quot;com.squareup.okio:okio:3.9.0&quot;</span>) {
+      because(<span class="tk-str">&quot;SDK analytics kéo okio 2.x, gây NoSuchMethodError với OkHttp 4.12&quot;</span>)
+    }
+  }
+
+  <span class="tk-com">// Loại artifact trùng class với kotlin-stdlib</span>
+  implementation(libs.legacy.sdk) {
+    exclude(group = <span class="tk-str">&quot;org.jetbrains.kotlin&quot;</span>, module = <span class="tk-str">&quot;kotlin-stdlib-jdk7&quot;</span>)
+    exclude(group = <span class="tk-str">&quot;org.jetbrains.kotlin&quot;</span>, module = <span class="tk-str">&quot;kotlin-stdlib-jdk8&quot;</span>)
+  }
+}
+
+<span class="tk-com">// Xem ai yêu cầu phiên bản nào, và vì sao Gradle chọn phiên bản đang dùng:</span>
+<span class="tk-com">// ./gradlew :app:dependencyInsight --dependency okio --configuration releaseRuntimeClasspath</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q36">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q35.html"><span class="muted small">← Câu trước</span><span>Review PR thấy: Activity khai báo android:exported=&quot;true&quot; không cần thiết, Pend…</span></a>
+  <a class="pager-next" href="../s/and-mid-q37.html"><span class="muted small">Câu sau →</span><span>Bạn thêm animation mở rộng thẻ và đổi màu trong Compose; dùng animateDpAsState…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Gradle &amp; Build</h2><a class="section-sub" href="../phong-van/android/chu-de/build/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-fre-q25.html">APK và AAB khác nhau thế nào? Vì sao Google Play yêu cầu AAB?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q37.html">compileSdk, targetSdk và minSdk khác nhau thế nào? Mỗi giá trị ảnh hưởng gì đến app?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-jun-q33.html">Team cần ba môi trường dev, staging, prod với base URL khác nhau và muốn cài song song trên cùng một máy. buildTypes và productFlavors khác nhau thế nào, bạn cấu hình ra sao?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-sen-q09.html">Trong dự án multi-module, api và implementation khác nhau thế nào? Vì sao lạm dụng api vừa làm build chậm vừa làm kiến trúc lỏng lẻo?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q10.html">CI build mất 15 phút, build incremental trên máy dev cũng chậm. Với codebase khoảng 50 module, bạn tối ưu Gradle theo hướng nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q11.html">Bản release parse JSON ra object toàn field null rồi crash, trong khi bản debug chạy bình thường. Bạn nghi R8 — điều tra và xử lý thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

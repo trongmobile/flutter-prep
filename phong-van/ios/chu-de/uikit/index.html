@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle — Mobile Interview</title>
-<meta name="description" content="14 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta name="description" content="17 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle — Mobile Interview">
-<meta property="og:description" content="14 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta property="og:description" content="17 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle</h1>
-  <p class="subtitle">14 câu hỏi kèm đáp án mẫu và 18 câu quiz về UIKit &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">17 câu hỏi kèm đáp án mẫu và 18 câu quiz về UIKit &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -88,6 +88,8 @@
   <ul class="link-list">
     <li><a href="../../../../s/ios-mid-q21.html">Bạn đổi constant của một constraint rồi gọi UIView.animate, nhưng view nhảy ngay sang vị trí mới mà không có animation. Giải thích layout cycle và cách sửa; setNeedsLayout khác layoutIfNeeded thế nào?</a></li>
     <li><a href="../../../../s/ios-mid-q22.html">Nút &quot;đóng&quot; được đặt lệch một nửa ra ngoài bounds của view cha (cha đã tắt clipsToBounds), phần lòi ra ngoài bấm không ăn. Vì sao, và hit-testing với responder chain hoạt động thế nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q31.html">Danh sách tải avatar bất đồng bộ: cuộn nhanh thì ảnh hiện sai chỗ (avatar của dòng khác), nhấp nháy, và cell được dùng lại vẫn hiện ảnh cũ trong chốc lát. Vì sao, và bạn xử lý cell reuse thế nào (prepareForReuse, huỷ request, kiểm tra identity)?</a></li>
+    <li><a href="../../../../s/ios-mid-q32.html">Bạn present một màn hình chọn bộ lọc dạng bottom sheet từ UIKit: cần dừng ở nửa màn hình, kéo lên được toàn màn hình, chặn user vuốt đóng khi form còn dữ liệu chưa lưu, và biết khi nào sheet đóng để làm mới danh sách. Bạn dùng UISheetPresentationController, isModalInPresentation và UIAdaptivePresentationControllerDelegate thế nào?</a></li>
     <li><a href="../../../../s/ios-mid-m27.html">Bạn gán heightConstraint.constant = 300 rồi viết UIView.animate(withDuration: 0.3) { self.view.setNeedsLayout() }. Kết quả là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m28.html">Đồng hồ đếm ngược tạo bằng Timer.scheduledTimer(withTimeInterval:repeats:block:) đứng yên mỗi khi user kéo UIScrollView, thả tay mới chạy tiếp. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m29.html">Một UIButton nằm lệch một nửa ra ngoài bounds của view cha, cha đặt clipsToBounds = false. Chạm vào phần nút nằm ngoài cha thì sao?</a> <span class="tag">Quiz</span></li>
@@ -97,7 +99,8 @@
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
-    <li><a href="../../../../s/ios-sen-q30.html">UICollectionView của màn hình chat thỉnh thoảng crash với lỗi Invalid update: invalid number of items in section 0 khi tin nhắn đến liên tục cùng lúc với sửa hay xoá tin, dù đã dùng performBatchUpdates. Bạn xử lý bằng UICollectionViewDiffableDataSource thế nào, và có bẫy gì về identity?</a></li>
+    <li><a href="../../../../s/ios-sen-q30.html">Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn được sửa thì cell nhấp nháy và mất vị trí cuộn, và thỉnh thoảng crash vì identifier trùng. Identifier của snapshot nên là gì, và reloadItems khác reconfigureItems thế nào?</a></li>
+    <li><a href="../../../../s/ios-sen-q31.html">App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tái dùng một MKMapView đã có trong màn SwiftUI. Bạn nhúng hai chiều thế nào, và những bẫy về vòng đời, kích thước và state là gì?</a></li>
     <li><a href="../../../../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>

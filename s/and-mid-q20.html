@@ -74,11 +74,11 @@
   <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/android/chu-de/testing/">Xem tất cả →</a></div>
   <ul class="link-list">
     <li><a href="../s/and-mid-q19.html">Unit test cho ViewModel dùng viewModelScope.launch và repository chạy trên Dispatchers.IO hay lỗi liên quan tới Main dispatcher hoặc pass/fail chập chờn. Vì sao, và cách viết test đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q33.html">Test ViewModel có val state = repo.items.map { ... }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Loading): assertEquals(Success(...), vm.state.value) luôn fail vì state vẫn là Loading. Vì sao, và bạn test Flow, StateFlow với Turbine và runTest thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q34.html">Bạn muốn test tầng data chạy thật sự: Retrofit gọi đúng endpoint, parse JSON, xử lý 401, và DAO Room trả đúng dữ liệu. Làm sao test Retrofit mà không chạm server thật, test DAO nhanh, và loại test này bắt được những lỗi gì mà mock repository không bắt được?</a> <span class="rank-tag rank-amber">Middle</span></li>
     <li><a href="../s/and-mid-m38.html">Test dưới đây chạy bằng runTest mặc định. Hai lệnh println in ra gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/and-mid-m39.html">Đã cài MainDispatcherRule; state là StateFlow có giá trị ban đầu UiState.Idle. Test Turbine dưới đây pass hay fail?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/and-mid-m40.html">Test Espresso thỉnh thoảng fail vì dữ liệu tải bằng coroutine trên Dispatchers.IO chưa về lúc assert. Cách xử lý đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-jun-q25.html">Viết unit test JUnit cho class CheckoutCalculator phụ thuộc CouponRepository (đọc mã giảm giá từ server). Bạn cấu trúc test và thay thế dependency thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-jun-q35.html">Khi nào đặt test ở src/test, khi nào ở src/androidTest? Viết một UI test Compose cơ bản cho màn đăng nhập thế nào, và vì sao UI test hay chập chờn?</a> <span class="rank-tag rank-blue">Junior</span></li>
   </ul>
 </section>
 </main>

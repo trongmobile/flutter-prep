@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Middle: Danh sách sản phẩm dùng &lt;Image source={{ uri }} /&gt; của core: ảnh nhấp…</title>
+<meta name="description" content="Ảnh remote không có kích thước biết trước khi tải, nên bắt buộc phải đặt width và height (hoặc aspectRatio) trong style, nếu không ảnh có kích thước 0 và khô…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-q26.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle: Danh sách sản phẩm dùng &lt;Image source={{ uri }} /&gt; của core: ảnh nhấp…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-mid-q26.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"Danh sách sản phẩm dùng \u003cImage source={{ uri }}…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-q26.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Danh sách sản phẩm dùng &lt;Image source={{ uri }}…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/components/">Component &amp; Styling</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Danh sách sản phẩm dùng <code>&lt;Image source={{ uri }} /&gt;</code> của core: ảnh nhấp nháy khi cuộn lại, không có placeholder, và đôi khi không hiện vì thiếu kích thước. Bạn xử lý ảnh remote thế nào, và <code>expo-image</code> khác <code>Image</code> của core ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ảnh remote không có kích thước biết trước khi tải, nên bắt buộc phải đặt <code>width</code> và <code>height</code> (hoặc <code>aspectRatio</code>) trong style, nếu không ảnh có kích thước 0 và không hiện. <code>Image</code> của core có cache nhưng hạn chế: hành vi cache phụ thuộc nền tảng (iOS có prop <code>cache</code> như <code>force-cache</code>, Android dùng Fresco), không có placeholder hay chuyển cảnh mượt, và trong list ảnh bị tải lại khi view được tái sử dụng nên nhấp nháy. <code>expo-image</code> (dùng được cả trong project bare) bổ sung: cache bộ nhớ và đĩa với chính sách rõ ràng (<code>cachePolicy=&quot;memory-disk&quot;</code>), <code>placeholder</code> (blurhash hoặc thumbhash sinh từ server) kèm <code>transition</code> để mờ dần khi ảnh thật về, <code>contentFit</code> thay cho <code>resizeMode</code>, hỗ trợ WebP, AVIF, SVG và ảnh động, <code>priority</code> để ưu tiên ảnh trong màn hình, và <code>recyclingKey</code> để list tái chế view (FlashList) không hiện nhầm ảnh của item trước trong lúc ảnh mới đang tải. Tối ưu thêm: để server hoặc CDN trả đúng kích thước theo nhu cầu (kích thước hiển thị nhân <code>PixelRatio</code>) thay vì ảnh gốc, ưu tiên WebP, và prefetch ảnh sắp hiện bằng <code>Image.prefetch</code>. Ảnh có ý nghĩa cần <code>accessibilityLabel</code>; xử lý <code>onError</code> bằng ảnh dự phòng. Ảnh cục bộ <code>require(&#39;./a.png&#39;)</code> đã biết sẵn kích thước và nằm trong bundle nên không gặp các vấn đề này.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { <span class="tk-type">Image</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;expo-image&#39;</span>;
+
+<span class="tk-kw">function</span> <span class="tk-type">ProductImage</span>({ product }: { product: <span class="tk-type">Product</span> }) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Image</span>
+      source={{ uri: <span class="tk-str">`${product.imageUrl}?w=${PixelRatio.getPixelSizeForLayoutSize(120)}`</span> }} <span class="tk-com">// CDN trả đúng kích thước</span>
+      placeholder={{ blurhash: product.blurhash }} <span class="tk-com">// hiện ngay khi ảnh thật chưa về</span>
+      transition={<span class="tk-num">200</span>}
+      contentFit=<span class="tk-str">&quot;cover&quot;</span>
+      cachePolicy=<span class="tk-str">&quot;memory-disk&quot;</span>
+      recyclingKey={product.id} <span class="tk-com">// list tái chế view: không hiện nhầm ảnh của item trước</span>
+      style={{ width: <span class="tk-num">120</span>, height: <span class="tk-num">120</span>, borderRadius: <span class="tk-num">8</span> }} <span class="tk-com">// ảnh remote bắt buộc có kích thước</span>
+      accessibilityLabel={product.name}
+    /&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-q26">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-q25.html"><span class="muted small">← Câu trước</span><span>Bạn mô hình hoá trạng thái tải dữ liệu của màn hình bằng TypeScript thế nào để…</span></a>
+  <a class="pager-next" href="../s/rn-mid-q27.html"><span class="muted small">Câu sau →</span><span>Component dùng useSelector((state) =&gt; state.orders.items.filter((o) =&gt; o.status…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Component &amp; Styling</h2><a class="section-sub" href="../phong-van/react-native/chu-de/components/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-q33.html">App cần hỗ trợ tiếng Việt và tiếng Anh, tự chọn theo ngôn ngữ máy nhưng user đổi được trong app; có câu &#39;Bạn có 1 tin nhắn&#39; và &#39;Bạn có 5 tin nhắn&#39; (số nhiều), và vài thị trường cần RTL. Bạn dựng i18n trong React Native thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-fre-q14.html">View, Text, Image trong React Native được hiển thị ra sao trên máy? Vì sao ảnh tải từ URL không hiện dù link đúng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q15.html">ScrollView và FlatList khác nhau thế nào? Khi nào dùng cái nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q16.html">Style trong React Native khác CSS trên web ở điểm nào? Vì sao nên dùng StyleSheet.create thay vì viết style inline?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q17.html">Flexbox trong React Native khác Flexbox của CSS trên web ở những điểm nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q18.html">Button, TouchableOpacity và Pressable khác nhau thế nào? Làm nút bấm theo thiết kế riêng thì dùng gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

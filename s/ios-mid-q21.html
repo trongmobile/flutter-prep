@@ -78,11 +78,11 @@ bottomConstraint.constant = keyboardHeight
   <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
   <ul class="link-list">
     <li><a href="../s/ios-mid-q22.html">Nút &quot;đóng&quot; được đặt lệch một nửa ra ngoài bounds của view cha (cha đã tắt clipsToBounds), phần lòi ra ngoài bấm không ăn. Vì sao, và hit-testing với responder chain hoạt động thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q31.html">Danh sách tải avatar bất đồng bộ: cuộn nhanh thì ảnh hiện sai chỗ (avatar của dòng khác), nhấp nháy, và cell được dùng lại vẫn hiện ảnh cũ trong chốc lát. Vì sao, và bạn xử lý cell reuse thế nào (prepareForReuse, huỷ request, kiểm tra identity)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q32.html">Bạn present một màn hình chọn bộ lọc dạng bottom sheet từ UIKit: cần dừng ở nửa màn hình, kéo lên được toàn màn hình, chặn user vuốt đóng khi form còn dữ liệu chưa lưu, và biết khi nào sheet đóng để làm mới danh sách. Bạn dùng UISheetPresentationController, isModalInPresentation và UIAdaptivePresentationControllerDelegate thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
     <li><a href="../s/ios-mid-m27.html">Bạn gán heightConstraint.constant = 300 rồi viết UIView.animate(withDuration: 0.3) { self.view.setNeedsLayout() }. Kết quả là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/ios-mid-m28.html">Đồng hồ đếm ngược tạo bằng Timer.scheduledTimer(withTimeInterval:repeats:block:) đứng yên mỗi khi user kéo UIScrollView, thả tay mới chạy tiếp. Cách sửa đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/ios-mid-m29.html">Một UIButton nằm lệch một nửa ra ngoài bounds của view cha, cha đặt clipsToBounds = false. Chạm vào phần nút nằm ngoài cha thì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/ios-mid-m30.html">Gọi UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) có tác dụng gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a> <span class="rank-tag rank-green">Fresher</span></li>
   </ul>
 </section>
 </main>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior: Marketing muốn gửi link https://shop.vn/order/123 mở thẳng màn chi tiết đơn…</title>
-<meta name="description" content="Tôi dùng App Links (HTTPS) thay vì custom scheme: custom scheme có thể bị app khác đăng ký trùng để chặn link, còn App Links được xác minh qua file assetlink…">
+<title>Câu hỏi phỏng vấn Android Senior: App có bottom navigation 4 tab, mỗi tab có back stack riêng. User mở chi ti…</title>
+<meta name="description" content="Navigation hỗ trợ nhiều back stack: khi chuyển tab, navigate kèm popUpTo(startDestination) { saveState = true }, launchSingleTop = true và restoreState = tru…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q33.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Marketing muốn gửi link https://shop.vn/order/123 mở thẳng màn chi tiết đơn…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: App có bottom navigation 4 tab, mỗi tab có back stack riêng. User mở chi ti…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q33.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Marketing muốn gửi link https://shop.vn/order/1…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q33.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"App có bottom navigation 4 tab, mỗi tab có back…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q33.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,27 +41,36 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Marketing muốn gửi link https://shop.vn/order/1…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App có bottom navigation 4 tab, mỗi tab có back…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Marketing muốn gửi link <code>https://shop.vn/order/123</code> mở thẳng màn chi tiết đơn hàng, kể cả khi app chưa chạy và user chưa đăng nhập. Bạn triển khai deep link thế nào cho đúng và an toàn?</h1>
+  <h1 class="question-title">App có bottom navigation 4 tab, mỗi tab có back stack riêng. User mở chi tiết trong tab Feed, chuyển sang tab Profile rồi quay lại thì phải thấy đúng màn chi tiết cũ. Ngoài ra màn Chọn địa chỉ cần trả kết quả về màn Checkout. Bạn cấu hình Navigation Compose thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Tôi dùng App Links (HTTPS) thay vì custom scheme: custom scheme có thể bị app khác đăng ký trùng để chặn link, còn App Links được xác minh qua file <code>assetlinks.json</code> đặt ở <code>/.well-known/</code> của domain (chứa package name và fingerprint chứng chỉ ký, nhớ thêm cả fingerprint của Play App Signing) cùng <code>android:autoVerify=&quot;true&quot;</code> trong intent-filter; xác minh thành công thì link mở thẳng app không hiện hộp chọn. Kiểm tra bằng <code>adb shell pm get-app-links &lt;package&gt;</code> và <code>pm verify-app-links --re-verify &lt;package&gt;</code>. Về điều hướng, Navigation Compose khai báo <code>deepLinks</code> cho từng destination và dựng back stack theo nav graph để back về màn hình cha thay vì thoát app; phải xử lý cả cold start (intent trong <code>onCreate</code>) lẫn app đang chạy (<code>onNewIntent</code>). Link là input không đáng tin: validate tham số (id đúng định dạng), không dùng dữ liệu trong link để thực hiện hành động nhạy cảm, và server phải kiểm tra quyền sở hữu đơn hàng. Chưa đăng nhập thì giữ đích đến trong state (<code>SavedStateHandle</code>/ViewModel), đưa user qua màn đăng nhập rồi điều hướng tiếp thay vì làm mất ý định của họ. Activity nhận link phải <code>exported</code>, nên đó là bề mặt tấn công: nó chỉ nên điều phối, không chứa logic nhạy cảm.</div>
-        <pre class="code-block" data-lang="XML"><code><span class="tk-kw">&lt;activity</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;.MainActivity&quot;</span> <span class="tk-type">android:exported</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
-  <span class="tk-kw">&lt;intent-filter</span> <span class="tk-type">android:autoVerify</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
-    <span class="tk-kw">&lt;action</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.action.VIEW&quot;</span> <span class="tk-kw">/&gt;</span>
-    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.DEFAULT&quot;</span> <span class="tk-kw">/&gt;</span>
-    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="tk-kw">/&gt;</span>
-    <span class="tk-kw">&lt;data</span> <span class="tk-type">android:scheme</span>=<span class="tk-str">&quot;https&quot;</span> <span class="tk-type">android:host</span>=<span class="tk-str">&quot;shop.vn&quot;</span> <span class="tk-type">android:pathPrefix</span>=<span class="tk-str">&quot;/order&quot;</span> <span class="tk-kw">/&gt;</span>
-  <span class="tk-kw">&lt;/intent-filter</span><span class="tk-kw">&gt;</span>
-<span class="tk-kw">&lt;/activity</span><span class="tk-kw">&gt;</span>
-<span class="tk-com">&lt;!-- Server phải trả https://shop.vn/.well-known/assetlinks.json chứa package name
-     và SHA-256 fingerprint của chứng chỉ ký (gồm cả khoá của Play App Signing) --&gt;</span></code></pre>
+        <div class="answer-text">Navigation hỗ trợ nhiều back stack: khi chuyển tab, <code>navigate</code> kèm <code>popUpTo(startDestination) { saveState = true }</code>, <code>launchSingleTop = true</code> và <code>restoreState = true</code>. <code>saveState</code> lưu back stack (cùng state <code>rememberSaveable</code> của các entry) của tab đang rời, <code>restoreState</code> khôi phục nó khi quay lại; thiếu <code>restoreState</code> thì tab luôn về màn đầu, thiếu <code>saveState</code> thì stack cũ bị bỏ, còn <code>launchSingleTop</code> tránh đẩy thêm một bản sao khi bấm lại tab đang chọn. Mỗi tab nên là một nested graph hoặc route gốc có start destination riêng. State UI như vị trí cuộn muốn sống qua việc đổi tab cần <code>rememberSaveable</code> hoặc <code>rememberLazyListState</code> (đã có saver); ViewModel gắn với entry nên hãy đặt state quan trọng vào <code>SavedStateHandle</code>. Trả kết quả giữa các màn: màn Chọn địa chỉ ghi vào <code>previousBackStackEntry?.savedStateHandle</code> rồi <code>popBackStack()</code>, màn Checkout đọc <code>getStateFlow</code>. Kết quả nằm trong <code>SavedStateHandle</code> nên sống cả qua process death, vì thế chỉ truyền thứ lưu được vào Bundle (id chứ không phải object lớn). Cũng tránh truyền <code>NavController</code> xuống sâu trong cây composable: hoist thành callback (<code>onOpenOrder</code>, <code>onBack</code>) để màn dễ test và tái sử dụng. Tránh tạo <code>NavHost</code> riêng cho từng tab trừ khi các tab thật sự độc lập, vì mất khả năng điều hướng chéo và deep link tập trung.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> <span class="tk-type">NavController</span>.navigateToTab(route: <span class="tk-type">Any</span>) {
+  navigate(route) {
+    popUpTo(graph.findStartDestination().id) { saveState = <span class="tk-kw">true</span> } <span class="tk-com">// lưu back stack của tab đang rời</span>
+    launchSingleTop = <span class="tk-kw">true</span> <span class="tk-com">// bấm lại tab đang chọn không đẩy thêm màn</span>
+    restoreState = <span class="tk-kw">true</span> <span class="tk-com">// quay lại tab thì khôi phục stack và state cũ</span>
+  }
+}
+
+<span class="tk-com">// Màn Chọn địa chỉ trả kết quả về màn trước đó</span>
+navController.previousBackStackEntry?.savedStateHandle?.<span class="tk-kw">set</span>(<span class="tk-str">&quot;addressId&quot;</span>, address.id)
+navController.popBackStack()
+
+<span class="tk-com">// Màn Checkout: nhận kết quả, sống cả qua process death vì nằm trong SavedStateHandle</span>
+composable&lt;<span class="tk-type">CheckoutRoute</span>&gt; { entry -&gt;
+  <span class="tk-kw">val</span> addressId <span class="tk-kw">by</span> entry.savedStateHandle
+    .getStateFlow&lt;<span class="tk-type">String</span>?&gt;(<span class="tk-str">&quot;addressId&quot;</span>, <span class="tk-kw">null</span>)
+    .collectAsStateWithLifecycle()
+  <span class="tk-type">CheckoutScreen</span>(addressId = addressId)
+}</code></pre>
         
       </div>
     </details>

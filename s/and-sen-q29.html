@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior: Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn…</title>
-<meta name="description" content="Compose bỏ qua (skip) một composable khi mọi tham số đều không đổi so với lần recompose trước. Tham số kiểu stable được so sánh bằng equals; List&lt;T&gt; của Kotl…">
+<title>Câu hỏi phỏng vấn Android Senior: App xử lý lỗi không nhất quán: chỗ ném HttpException lên tận UI, chỗ catch…</title>
+<meta name="description" content="Lỗi cũng là một phần hợp đồng của API mỗi tầng. Tầng data bắt lỗi kỹ thuật (IOException, HttpException, SerializationException, SQLiteException) và ánh xạ sa…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: App xử lý lỗi không nhất quán: chỗ ném HttpException lên tận UI, chỗ catch…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Layout Inspector cho thấy ProductCard bị recomp…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"App xử lý lỗi không nhất quán: chỗ ném HttpExce…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q29.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,35 +41,53 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Layout Inspector cho thấy ProductCard bị recomp…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App xử lý lỗi không nhất quán: chỗ ném HttpExce…</span>
 </nav>
 
 <article class="card question-page rank-purple">
-  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Layout Inspector cho thấy <code>ProductCard</code> bị recompose mỗi khi cuộn <code>LazyColumn</code> dù dữ liệu của item không đổi, và báo cáo của Compose compiler đánh dấu tham số <code>tags: List&lt;String&gt;</code> là unstable. Giải thích cơ chế skipping, strong skipping mode, và các cách bạn giảm recomposition thừa?</h1>
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App xử lý lỗi không nhất quán: chỗ ném <code>HttpException</code> lên tận UI, chỗ <code>catch (e: Exception)</code> rồi hiện &#39;Có lỗi xảy ra&#39;, chỗ trả <code>null</code>. Bạn thiết kế mô hình lỗi xuyên các tầng data, domain và UI thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Compose bỏ qua (skip) một composable khi mọi tham số đều không đổi so với lần recompose trước. Tham số kiểu stable được so sánh bằng <code>equals</code>; <code>List&lt;T&gt;</code> của Kotlin là interface không đảm bảo bất biến nên compiler coi là unstable. Từ Kotlin 2.0.20, strong skipping mode bật mặc định: composable có tham số unstable vẫn skip được nhưng so sánh bằng instance (<code>===</code>), và lambda capture giá trị unstable cũng được tự <code>remember</code>. Hệ quả là nếu list là instance mới mỗi lần, ví dụ <code>.map { }</code> ngay trong composable hoặc ViewModel emit list mới cho mỗi thay đổi nhỏ, thì mọi item vẫn recompose dù nội dung y hệt. Cách xử lý: map sang UI model một lần ở ViewModel và giữ nguyên instance khi dữ liệu không đổi; đánh dấu data class UI là <code>@Immutable</code>/<code>@Stable</code> và dùng <code>ImmutableList</code> của <code>kotlinx.collections.immutable</code> (hoặc khai báo stability configuration file cho class của thư viện); với giá trị đổi liên tục như scroll offset hay animation thì đọc state bên trong lambda của modifier (<code>Modifier.offset { }</code>, <code>graphicsLayer { }</code>) hoặc qua <code>derivedStateOf</code>, để chỉ phase layout/draw chạy lại chứ không recompose. Đo bằng Compose compiler reports/metrics và recomposition counts của Layout Inspector, rồi đo lại bằng Macrobenchmark; đừng tối ưu mù vì mỗi lần skip cũng tốn một phép so sánh.</div>
-        <pre class="code-block"><code><span class="tk-ann">@Immutable</span>
-<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">ProductUi</span>(<span class="tk-kw">val</span> id: <span class="tk-type">String</span>, <span class="tk-kw">val</span> name: <span class="tk-type">String</span>, <span class="tk-kw">val</span> tags: <span class="tk-type">ImmutableList</span>&lt;<span class="tk-type">String</span>&gt;)
+        <div class="answer-text">Lỗi cũng là một phần hợp đồng của API mỗi tầng. Tầng data bắt lỗi kỹ thuật (<code>IOException</code>, <code>HttpException</code>, <code>SerializationException</code>, <code>SQLiteException</code>) và ánh xạ sang lỗi có ý nghĩa với miền nghiệp vụ, ví dụ <code>sealed interface AppError</code> gồm <code>NoConnection</code>, <code>Unauthorized</code>, <code>NotFound</code>, <code>Validation(fields)</code>, <code>Server(code)</code>; tầng trên không biết Retrofit hay Room. Phân biệt lỗi dự kiến (hết mạng, nhập sai, 404) và lỗi lập trình: lỗi dự kiến được mô hình hoá thành giá trị trả về (sealed class kiểu <code>Success</code>/<code>Failure</code>) buộc caller phải xử lý; lỗi lập trình (<code>IllegalStateException</code>, bug) cứ để ném lên và ghi lại, không nuốt. Không dùng exception để điều khiển luồng, và nhớ ném lại <code>CancellationException</code>. Dùng sealed type riêng thay vì <code>kotlin.Result</code>, vì lỗi trong <code>Result</code> chỉ là <code>Throwable</code> không có kiểu. UI không hiển thị thông điệp kỹ thuật: ViewModel map <code>AppError</code> sang chuỗi resource có i18n kèm hành động phù hợp (thử lại với <code>NoConnection</code>, đăng nhập lại với <code>Unauthorized</code>). Với lỗi server có body nghiệp vụ, parse <code>errorBody()</code> thành <code>Validation</code> để hiện lỗi theo từng ô. Retry chỉ cho lỗi tạm thời và request idempotent. Xử lý 401 tập trung ở <code>Authenticator</code> thay vì rải ở từng màn, còn log gắn <code>cause</code> và request id nhưng không chứa dữ liệu nhạy cảm.</div>
+        <pre class="code-block"><code><span class="tk-kw">sealed</span> <span class="tk-kw">interface</span> <span class="tk-type">AppError</span> {
+  <span class="tk-kw">data</span> <span class="tk-kw">object</span> <span class="tk-type">NoConnection</span> : <span class="tk-type">AppError</span>
+  <span class="tk-kw">data</span> <span class="tk-kw">object</span> <span class="tk-type">Unauthorized</span> : <span class="tk-type">AppError</span>
+  <span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">Validation</span>(<span class="tk-kw">val</span> fields: <span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-type">String</span>&gt;) : <span class="tk-type">AppError</span>
+  <span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">Server</span>(<span class="tk-kw">val</span> code: <span class="tk-type">Int</span>) : <span class="tk-type">AppError</span>
+}
 
-<span class="tk-com">// ViewModel: map một lần khi dữ liệu đổi, không map lại trong composable</span>
-<span class="tk-kw">val</span> products: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">ImmutableList</span>&lt;<span class="tk-type">ProductUi</span>&gt;&gt; = repo.products
-  .map { list -&gt; list.map { it.toUi() }.toImmutableList() }
-  .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), persistentListOf())
+<span class="tk-kw">sealed</span> <span class="tk-kw">interface</span> <span class="tk-type">Outcome</span>&lt;<span class="tk-kw">out</span> <span class="tk-type">T</span>&gt; {
+  <span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">Success</span>&lt;<span class="tk-type">T</span>&gt;(<span class="tk-kw">val</span> <span class="tk-kw">value</span>: <span class="tk-type">T</span>) : <span class="tk-type">Outcome</span>&lt;<span class="tk-type">T</span>&gt;
+  <span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">Failure</span>(<span class="tk-kw">val</span> error: <span class="tk-type">AppError</span>) : <span class="tk-type">Outcome</span>&lt;<span class="tk-type">Nothing</span>&gt;
+}
 
-<span class="tk-com">// Đọc state trong lambda của modifier: chỉ phase layout chạy lại, không recompose</span>
-<span class="tk-type">Box</span>(<span class="tk-type">Modifier</span>.offset { <span class="tk-type">IntOffset</span>(<span class="tk-num">0</span>, -listState.firstVisibleItemScrollOffset / <span class="tk-num">2</span>) })</code></pre>
+<span class="tk-com">// Chỉ bắt lỗi dự kiến; lỗi lập trình không bị nuốt, cứ để ném lên và ghi lại</span>
+<span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> &lt;<span class="tk-type">T</span>&gt; safeCall(block: <span class="tk-kw">suspend</span> () -&gt; <span class="tk-type">T</span>): <span class="tk-type">Outcome</span>&lt;<span class="tk-type">T</span>&gt; = <span class="tk-kw">try</span> {
+  <span class="tk-type">Outcome</span>.<span class="tk-type">Success</span>(block())
+} <span class="tk-kw">catch</span> (e: <span class="tk-type">CancellationException</span>) {
+  <span class="tk-kw">throw</span> e
+} <span class="tk-kw">catch</span> (e: <span class="tk-type">IOException</span>) {
+  <span class="tk-type">Outcome</span>.<span class="tk-type">Failure</span>(<span class="tk-type">AppError</span>.<span class="tk-type">NoConnection</span>)
+} <span class="tk-kw">catch</span> (e: <span class="tk-type">HttpException</span>) {
+  <span class="tk-type">Outcome</span>.<span class="tk-type">Failure</span>(
+    <span class="tk-kw">when</span> (e.code()) {
+      <span class="tk-num">401</span> -&gt; <span class="tk-type">AppError</span>.<span class="tk-type">Unauthorized</span>
+      <span class="tk-num">422</span> -&gt; <span class="tk-type">AppError</span>.<span class="tk-type">Validation</span>(parseFieldErrors(e))
+      <span class="tk-kw">else</span> -&gt; <span class="tk-type">AppError</span>.<span class="tk-type">Server</span>(e.code())
+    },
+  )
+}</code></pre>
         
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q29">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/and-sen-q28.html"><span class="muted small">← Câu trước</span><span>Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Flow đ…</span></a>
-  <a class="pager-next" href="../s/and-sen-q30.html"><span class="muted small">Câu sau →</span><span>Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar hay…</span></a>
+  <a href="../s/and-sen-q28.html"><span class="muted small">← Câu trước</span><span>Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ,…</span></a>
+  <a class="pager-next" href="../s/and-sen-q30.html"><span class="muted small">Câu sau →</span><span>Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay lệc…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp Android Senior</h2>
@@ -80,14 +98,14 @@
   </div>
 </section>
 <section>
-  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/android/chu-de/arch/">Xem tất cả →</a></div>
   <ul class="link-list">
-    <li><a href="../s/and-sen-q15.html">Bạn xây design system bằng Compose cho 5 team cùng dùng thế nào để UI nhất quán mà không làm chậm tốc độ phát triển?</a> <span class="rank-tag rank-purple">Senior</span></li>
-    <li><a href="../s/and-sen-m23.html">Bạn viết AppButton cho design system mà 5 team dùng chung. Theo Compose API guidelines, component nên nhận Modifier thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-sen-m24.html">ViewModel sửa trực tiếp items rồi gán lại chính instance cũ vào MutableStateFlow. Điều gì có thể xảy ra trên UI Compose?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-sen-m25.html">Feed có nhiều RecyclerView ngang lồng trong một RecyclerView dọc; profiler cho thấy liên tục inflate ViewHolder mới khi cuộn. Cách cải thiện hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-fre-q18.html">dp, sp và px khác nhau thế nào? Vì sao cỡ chữ nên dùng sp?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/and-fre-q19.html">Khi nào dùng LinearLayout, khi nào dùng ConstraintLayout? layout_weight hoạt động thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-sen-q12.html">App có khoảng 20 feature module. Bạn đặt quy tắc phụ thuộc giữa các module thế nào? Feature A cần mở màn hình của feature B thì làm sao để A không phụ thuộc B?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q14.html">Team chuyển sang trunk-based development và muốn mọi tính năng lớn đều nằm sau feature flag. Bạn thiết kế hệ thống flag phía Android thế nào để không biến thành nợ kỹ thuật?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m26.html">:feature:cart cần mở màn hình chi tiết của :feature:product. Cách nào giữ đúng quy tắc phụ thuộc giữa các module?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m27.html">Giá trị mới của flag new_checkout từ Remote Config được fetch xong khi user đang ở giữa luồng thanh toán cũ. Cách áp dụng nào an toàn nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m28.html">Trong Clean Architecture nhiều module, :core:domain chứa use case và interface UserRepository. Quan hệ phụ thuộc nào hợp lệ?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-q31.html">Dependency Injection khác gì việc tự tạo UserRepository() bên trong ViewModel? Với Hilt, cần những annotation tối thiểu nào để ViewModel nhận được repository, và thiếu annotation nào thì app crash?</a> <span class="rank-tag rank-blue">Junior</span></li>
   </ul>
 </section>
 </main>

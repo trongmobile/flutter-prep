@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior: Link https://shop.vn/order/123 cần mở thẳng màn chi tiết đơn hàng, kể cả khi ap…</title>
-<meta name="description" content="Custom scheme (shop://) không được xác thực: app khác có thể đăng ký cùng scheme để chặn link, và nếu chưa cài app thì link chết. Universal Links dùng HTTPS:…">
+<title>Câu hỏi phỏng vấn iOS Senior: App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tá…</title>
+<meta name="description" content="SwiftUI trong UIKit: bọc view bằng UIHostingController, thêm làm child view controller đúng quy trình (addChild, thêm view kèm constraint, didMove(toParent:)…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q31.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Link https://shop.vn/order/123 cần mở thẳng màn chi tiết đơn hàng, kể cả khi ap…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tá…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q31.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Link https://shop.vn/order/123 cần mở thẳng màn…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q31.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"App UIKit lớn muốn viết màn mới bằng SwiftUI và…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q31.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,48 +41,53 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Link https://shop.vn/order/123 cần mở thẳng màn…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App UIKit lớn muốn viết màn mới bằng SwiftUI và…</span>
 </nav>
 
 <article class="card question-page rank-purple">
-  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Link <code>https://shop.vn/order/123</code> cần mở thẳng màn chi tiết đơn hàng, kể cả khi app đang tắt hoặc user chưa đăng nhập. Bạn triển khai Universal Links và điều hướng thế nào, và vì sao không dùng custom URL scheme cho việc này?</h1>
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tái dùng một <code>MKMapView</code> đã có trong màn SwiftUI. Bạn nhúng hai chiều thế nào, và những bẫy về vòng đời, kích thước và state là gì?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Custom scheme (<code>shop://</code>) không được xác thực: app khác có thể đăng ký cùng scheme để chặn link, và nếu chưa cài app thì link chết. Universal Links dùng HTTPS: domain phải phục vụ file <code>apple-app-site-association</code> (không có đuôi, <code>Content-Type: application/json</code>, không được redirect) tại <code>/.well-known/</code> liệt kê <code>appIDs</code> và các <code>components</code> được phép, còn app khai báo Associated Domains <code>applinks:shop.vn</code>. Chưa cài app thì link mở trang web bình thường, đó là fallback tự nhiên. Về code, app nhận URL ở hai thời điểm: cold start (URL nằm trong <code>connectionOptions.userActivities</code> của <code>scene(_:willConnectTo:options:)</code>, hoặc <code>onOpenURL</code> với SwiftUI App) và khi app đang chạy (<code>scene(_:continue:)</code>). Tôi gom về một <code>Router</code> duy nhất: parse URL thành enum route đã validate (<code>.order(id:)</code>), không rải logic parse; nếu app chưa sẵn sàng (chưa đăng nhập, đang tải cấu hình) thì lưu <code>pendingLink</code>, và chỉ điều hướng khi sẵn sàng. Dùng <code>NavigationStack</code> với <code>NavigationPath</code> (hoặc Coordinator) để dựng đúng back stack (Home → Đơn hàng → Chi tiết) thay vì chỉ push màn đích. Link là input không đáng tin: validate tham số, và server phải kiểm tra quyền xem đơn hàng. Test bằng <code>xcrun simctl openurl booted &lt;url&gt;</code>. Cần biết thêm: nếu user từng chọn mở link bằng Safari hoặc gõ URL vào thanh địa chỉ thì hệ thống mở web chứ không mở app, và file <code>apple-app-site-association</code> được cache qua CDN của Apple nên sửa file có thể chưa có hiệu lực ngay.</div>
-        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">DeepLink</span>: <span class="tk-type">Equatable</span> {
-  <span class="tk-kw">case</span> order(id: <span class="tk-type">String</span>)
+        <div class="answer-text">SwiftUI trong UIKit: bọc view bằng <code>UIHostingController</code>, thêm làm child view controller đúng quy trình (<code>addChild</code>, thêm <code>view</code> kèm constraint, <code>didMove(toParent:)</code>) hoặc push thẳng vào <code>UINavigationController</code>; trong cell dùng <code>UIHostingConfiguration</code> (iOS 16 trở lên) để dựng nội dung cell bằng SwiftUI mà vẫn được collection view tái chế. Về kích thước, hosting controller tính kích thước theo nội dung SwiftUI, với self-sizing và Auto Layout cần để ý <code>sizingOptions</code> (iOS 16), và view bên trong không tự nhận safe area hay navigation bar giống màn SwiftUI thuần. Truyền dữ liệu: model <code>@Observable</code> hay <code>ObservableObject</code> do UIKit giữ và đưa vào <code>rootView</code>, còn sự kiện đi ngược bằng closure, để view controller hoặc coordinator vẫn là chủ sở hữu điều hướng. UIKit trong SwiftUI: dùng <code>UIViewRepresentable</code> hay <code>UIViewControllerRepresentable</code>; <code>makeUIView</code> chỉ chạy một lần khi view được tạo, <code>updateUIView</code> chạy mỗi khi state SwiftUI đổi nên phải idempotent và so sánh trước khi cập nhật (đặt lại vùng nhìn của bản đồ mỗi lần SwiftUI render sẽ giật); delegate và target-action đi qua <code>Coordinator</code> (tạo bởi <code>makeCoordinator()</code>), và dọn dẹp ở <code>dismantleUIView</code>. Chiến lược: không viết lại big bang; có design system dùng chung token (màu, font) cho cả hai framework, màn mới bằng SwiftUI, màn cũ chỉ chuyển khi đằng nào cũng phải sửa lớn; test các khác biệt như bàn phím và navigation bar trên nhiều phiên bản iOS, và đo launch time cùng memory vì hosting có chi phí khởi tạo.</div>
+        <pre class="code-block"><code><span class="tk-com">// SwiftUI trong UIKit: nhúng đúng quy trình child view controller</span>
+<span class="tk-kw">let</span> host = <span class="tk-type">UIHostingController</span>(rootView: <span class="tk-type">OrderSummaryView</span>(model: model))
+addChild(host)
+host.view.translatesAutoresizingMaskIntoConstraints = <span class="tk-kw">false</span>
+view.addSubview(host.view)
+<span class="tk-type">NSLayoutConstraint</span>.activate([
+  host.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+  host.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+  host.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+  host.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+])
+host.didMove(toParent: <span class="tk-kw">self</span>)
 
-  <span class="tk-kw">init</span>?(url: <span class="tk-type">URL</span>) {
-    <span class="tk-kw">let</span> parts = url.pathComponents.filter { $<span class="tk-num">0</span> != <span class="tk-str">&quot;/&quot;</span> }
-    <span class="tk-kw">guard</span> url.host == <span class="tk-str">&quot;shop.vn&quot;</span>, parts.count == <span class="tk-num">2</span>, parts[<span class="tk-num">0</span>] == <span class="tk-str">&quot;order&quot;</span>,
-          parts[<span class="tk-num">1</span>].allSatisfy(\.isNumber) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> } <span class="tk-com">// validate đầu vào</span>
-    <span class="tk-kw">self</span> = .order(id: parts[<span class="tk-num">1</span>])
+<span class="tk-com">// UIKit trong SwiftUI: makeUIView chạy một lần, updateUIView chạy mỗi khi state đổi</span>
+<span class="tk-kw">struct</span> <span class="tk-type">StoreMap</span>: <span class="tk-type">UIViewRepresentable</span> {
+  <span class="tk-kw">var</span> center: <span class="tk-type">CLLocationCoordinate2D</span>
+
+  <span class="tk-kw">func</span> makeUIView(context: <span class="tk-type">Context</span>) -&gt; <span class="tk-type">MKMapView</span> {
+    <span class="tk-kw">let</span> map = <span class="tk-type">MKMapView</span>()
+    map.delegate = context.coordinator
+    <span class="tk-kw">return</span> map
   }
-}
 
-<span class="tk-ann">@Observable</span>
-<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Router</span> {
-  <span class="tk-kw">var</span> path = <span class="tk-type">NavigationPath</span>()
-  <span class="tk-kw">var</span> isLoggedIn = <span class="tk-kw">false</span>
-  <span class="tk-kw">var</span> pendingLink: <span class="tk-type">DeepLink</span>?
-
-  <span class="tk-kw">func</span> handle(_ link: <span class="tk-type">DeepLink</span>) {
-    <span class="tk-kw">guard</span> isLoggedIn <span class="tk-kw">else</span> { pendingLink = link; <span class="tk-kw">return</span> } <span class="tk-com">// đăng nhập xong mới điều hướng</span>
-    <span class="tk-kw">switch</span> link {
-    <span class="tk-kw">case</span> .order(<span class="tk-kw">let</span> id):
-      path = <span class="tk-type">NavigationPath</span>()
-      path.append(<span class="tk-type">Route</span>.orderList) <span class="tk-com">// dựng back stack: Home -&gt; Đơn hàng -&gt; Chi tiết</span>
-      path.append(<span class="tk-type">Route</span>.orderDetail(id: id))
-    }
+  <span class="tk-kw">func</span> updateUIView(_ map: <span class="tk-type">MKMapView</span>, context: <span class="tk-type">Context</span>) {
+    <span class="tk-com">// So sánh trước khi cập nhật để không đặt lại vùng nhìn mỗi lần SwiftUI render</span>
+    <span class="tk-kw">let</span> last = context.coordinator.lastCenter
+    <span class="tk-kw">guard</span> last?.latitude != center.latitude || last?.longitude != center.longitude <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    context.coordinator.lastCenter = center
+    map.setCenter(center, animated: <span class="tk-kw">true</span>)
   }
-}
 
-<span class="tk-com">// Trong App: .onOpenURL xử lý cả cold start lẫn khi app đang chạy</span>
-<span class="tk-type">RootView</span>().onOpenURL { url <span class="tk-kw">in</span>
-  <span class="tk-kw">if</span> <span class="tk-kw">let</span> link = <span class="tk-type">DeepLink</span>(url: url) { router.handle(link) }
+  <span class="tk-kw">func</span> makeCoordinator() -&gt; <span class="tk-type">Coordinator</span> { <span class="tk-type">Coordinator</span>() }
+
+  <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Coordinator</span>: <span class="tk-type">NSObject</span>, <span class="tk-type">MKMapViewDelegate</span> {
+    <span class="tk-kw">var</span> lastCenter: <span class="tk-type">CLLocationCoordinate2D</span>?
+  }
 }</code></pre>
         
       </div>
@@ -90,8 +95,8 @@
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q31">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/ios-sen-q30.html"><span class="muted small">← Câu trước</span><span>UICollectionView của màn hình chat thỉnh thoảng crash với lỗi Invalid update: i…</span></a>
-  <a class="pager-next" href="../s/ios-sen-q32.html"><span class="muted small">Câu sau →</span><span>App dùng Core Data, thỉnh thoảng crash EXC_BAD_ACCESS hoặc báo truy cập NSManag…</span></a>
+  <a href="../s/ios-sen-q30.html"><span class="muted small">← Câu trước</span><span>Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn đượ…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q32.html"><span class="muted small">Câu sau →</span><span>App có 40 endpoint, mỗi chỗ tự dựng URLRequest và tự retry khác nhau; khi serve…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp iOS Senior</h2>
@@ -102,14 +107,14 @@
   </div>
 </section>
 <section>
-  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/ios/chu-de/navigation/">Xem tất cả →</a></div>
+  <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
   <ul class="link-list">
-    <li><a href="../s/ios-sen-m21.html">Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/ios-fre-q19.html">Trong UIKit, push một màn hình bằng UINavigationController và present modal khác nhau thế nào? Đóng mỗi loại ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/ios-fre-q20.html">Muốn truyền productId sang màn hình chi tiết, rồi gửi kết quả chỉnh sửa ngược về màn hình trước, bạn làm thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/ios-jun-q20.html">Màn danh sách dùng segue showDetail để mở màn chi tiết, màn này được nhúng trong một UINavigationController trên storyboard. Trong prepare(for:sender:) bạn viết segue.destination as! ProductDetailViewController và app crash. Vì sao, và truyền dữ liệu qua segue thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/ios-jun-q21.html">Khi chuyển từ NavigationView sang NavigationStack, cách điều hướng bằng NavigationLink(value:) kết hợp .navigationDestination(for:) có lợi gì so với NavigationLink(destination:) kiểu cũ?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/ios-jun-q34.html">Màn danh sách SwiftUI có @State var selected: Product? và @State var showDetail = false; bấm một dòng thì gán selected = product; showDetail = true, còn sheet viết .sheet(isPresented: $showDetail) { DetailView(product: selected!) }. Thỉnh thoảng sheet hiện sản phẩm cũ hoặc crash vì nil. Vì sao, và .sheet(item:) giải quyết thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-sen-q30.html">Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn được sửa thì cell nhấp nháy và mất vị trí cuộn, và thỉnh thoảng crash vì identifier trùng. Identifier của snapshot nên là gì, và reloadItems khác reconfigureItems thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q12.html">UITableViewDataSource và UITableViewDelegate khác nhau thế nào? Để hiển thị một danh sách đơn giản cần cài đặt những method nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q13.html">@IBOutlet và @IBAction là gì? Vì sao đổi tên một biến outlet xong thì app crash với lỗi &quot;this class is not key value coding-compliant for the key…&quot;?</a> <span class="rank-tag rank-green">Fresher</span></li>
   </ul>
 </section>
 </main>

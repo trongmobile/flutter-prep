@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Senior: Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm bị khựng khi gõ: mỗi k…</title>
-<meta name="description" content="Gốc vấn đề là cập nhật gấp (giá trị trong ô nhập) và cập nhật nặng (lọc, render list) có cùng mức ưu tiên, nên render list chặn JS thread và TextInput bị trễ…">
+<title>Câu hỏi phỏng vấn React Native Senior: Bạn tự viết một store nhỏ (object ở module-level kèm subscribe) và cho…</title>
+<meta name="description" content="Khi render có thể bị ngắt rồi tiếp tục (concurrent), một store nằm ngoài React có thể đổi giữa chừng một lần render: component trước đọc giá trị cũ, componen…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q26.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm bị khựng khi gõ: mỗi k…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Bạn tự viết một store nhỏ (object ở module-level kèm subscribe) và cho…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q26.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q26.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Bạn tự viết một store nhỏ (object ở module-leve…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q26.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,40 +41,52 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn tự viết một store nhỏ (object ở module-leve…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/react/">React &amp; Hooks</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Ô tìm kiếm lọc một danh sách vài nghìn sản phẩm bị khựng khi gõ: mỗi ký tự làm cả list render lại và <code>TextInput</code> giật. Ngoài debounce, bạn dùng <code>useDeferredValue</code> hay <code>useTransition</code> (concurrent rendering) thế nào trong React Native, và điều kiện để chúng thật sự có tác dụng là gì?</h1>
+  <h1 class="question-title">Bạn tự viết một store nhỏ (object ở module-level kèm <code>subscribe</code>) và cho component đọc nó bằng <code>useEffect</code> + <code>useState</code>. Với concurrent rendering của React 18, thỉnh thoảng hai component cùng màn hình hiện hai giá trị khác nhau của cùng store (tearing). <code>useSyncExternalStore</code> giải quyết gì, quy tắc bắt buộc của nó là gì, và vì sao Redux, Zustand dùng nó?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Gốc vấn đề là cập nhật gấp (giá trị trong ô nhập) và cập nhật nặng (lọc, render list) có cùng mức ưu tiên, nên render list chặn JS thread và <code>TextInput</code> bị trễ. <code>useDeferredValue(query)</code> trả về một bản &#39;trễ&#39; của giá trị: React render ngay với query cũ để ô nhập phản hồi tức thì, rồi render lại ở ưu tiên thấp với query mới ở nền; nếu có ký tự mới được gõ trong lúc render dở thì lần render đó bị bỏ và làm lại với giá trị mới nhất. <code>useTransition</code> (hoặc <code>startTransition</code>) đánh dấu một lần <code>setState</code> là không khẩn cấp và cho <code>isPending</code> để làm mờ UI trong lúc chờ. Khác debounce: debounce trì hoãn cố định kể cả khi máy nhanh và không làm render bớt chặn, còn deferred value tự thích nghi theo tốc độ máy và có thể ngắt giữa chừng. Điều kiện: concurrent rendering chỉ có đầy đủ trên New Architecture (Fabric, mặc định từ RN 0.76) với React 18 trở lên; phần render nặng phải nằm trong cây con nhận giá trị trễ, và component đó cần <code>memo</code> để khi giá trị trễ chưa đổi thì nó không render lại. Transition không làm việc nặng nhẹ đi, chỉ đổi thứ tự ưu tiên, nên vẫn cần tối ưu thật: ảo hoá list, <code>useMemo</code> cho bước lọc, hoặc lọc ở server khi dữ liệu lớn.</div>
-        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">ProductSearch</span>({ products }: { products: <span class="tk-type">Product</span>[] }) {
-  <span class="tk-kw">const</span> [query, setQuery] = useState(<span class="tk-str">&#39;&#39;</span>);
-  <span class="tk-kw">const</span> deferredQuery = useDeferredValue(query); <span class="tk-com">// bản trễ: render ở ưu tiên thấp, có thể bị bỏ giữa chừng</span>
-  <span class="tk-kw">const</span> isStale = query !== deferredQuery;
+        <div class="answer-text">Khi render có thể bị ngắt rồi tiếp tục (concurrent), một store nằm ngoài React có thể đổi giữa chừng một lần render: component trước đọc giá trị cũ, component sau đọc giá trị mới, và màn hình hiện trạng thái không nhất quán (tearing). Mẫu <code>useEffect</code> + <code>useState</code> còn có khoảng hở giữa lúc render và lúc effect subscribe nên có thể lỡ một thay đổi. <code>useSyncExternalStore(subscribe, getSnapshot)</code> là API dành cho store bên ngoài: React gọi <code>getSnapshot</code> lúc render và kiểm tra lại trước khi commit; nếu giá trị đã đổi thì render lại đồng bộ, để mọi component trong một lần commit thấy cùng một snapshot. Quy tắc bắt buộc: <code>getSnapshot</code> phải trả về giá trị ổn định, cùng một tham chiếu khi store chưa đổi; nếu mỗi lần gọi lại trả object mới (như <code>() =&gt; ({ ...state })</code> hay <code>.filter</code> trong selector) thì React cảnh báo và có thể render lặp vô hạn. <code>subscribe</code> cũng phải ổn định (khai báo ngoài component hoặc bọc <code>useCallback</code>), nếu không sẽ unsubscribe rồi subscribe lại ở mỗi render. Selector nên trả primitive hoặc một phần state đã có sẵn, để chỉ re-render khi đúng phần đó đổi. Đó là lý do react-redux (v8 trở lên) và Zustand dùng nó bên dưới. Đánh đổi: cập nhật qua <code>useSyncExternalStore</code> luôn đồng bộ nên không hưởng lợi từ transition. Hiếm khi cần tự viết store, nhưng hiểu cơ chế này giúp chọn đúng thư viện và dùng cho các nguồn ngoài React như <code>Appearance</code>, <code>Dimensions</code>, <code>NetInfo</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Listener</span> = () =&gt; <span class="tk-kw">void</span>;
 
-  <span class="tk-kw">return</span> (
-    &lt;<span class="tk-type">View</span> style={{ flex: <span class="tk-num">1</span> }}&gt;
-      &lt;<span class="tk-type">TextInput</span> value={query} onChangeText={setQuery} placeholder=<span class="tk-str">&quot;Tìm sản phẩm&quot;</span> /&gt;
-      &lt;<span class="tk-type">View</span> style={{ flex: <span class="tk-num">1</span>, opacity: isStale ? <span class="tk-num">0.6</span> : <span class="tk-num">1</span> }}&gt;
-        &lt;<span class="tk-type">ProductList</span> products={products} query={deferredQuery} /&gt;
-      &lt;/<span class="tk-type">View</span>&gt;
-    &lt;/<span class="tk-type">View</span>&gt;
-  );
+<span class="tk-kw">function</span> createCounterStore() {
+  <span class="tk-kw">let</span> state = { count: <span class="tk-num">0</span> };
+  <span class="tk-kw">const</span> listeners = <span class="tk-kw">new</span> <span class="tk-type">Set</span>&lt;<span class="tk-type">Listener</span>&gt;();
+  <span class="tk-kw">return</span> {
+    getState: () =&gt; state, <span class="tk-com">// cùng một tham chiếu khi chưa đổi</span>
+    increment() {
+      state = { count: state.count + <span class="tk-num">1</span> }; <span class="tk-com">// đổi thì tạo object mới</span>
+      listeners.forEach((l) =&gt; l());
+    },
+    subscribe(listener: <span class="tk-type">Listener</span>) {
+      listeners.add(listener);
+      <span class="tk-kw">return</span> () =&gt; listeners.<span class="tk-kw">delete</span>(listener);
+    },
+  };
 }
 
-<span class="tk-com">// memo để khi query (bản trễ) chưa đổi thì list không render lại</span>
-<span class="tk-kw">const</span> <span class="tk-type">ProductList</span> = memo(<span class="tk-kw">function</span> <span class="tk-type">ProductList</span>({ products, query }: { products: <span class="tk-type">Product</span>[]; query: <span class="tk-kw">string</span> }) {
-  <span class="tk-kw">const</span> filtered = useMemo(
-    () =&gt; products.filter((p) =&gt; p.name.toLowerCase().includes(query.toLowerCase())),
-    [products, query],
+<span class="tk-kw">const</span> store = createCounterStore();
+
+<span class="tk-kw">function</span> useCount() {
+  <span class="tk-com">// subscribe ổn định, getSnapshot trả về primitive nên không render thừa</span>
+  <span class="tk-kw">return</span> useSyncExternalStore(store.subscribe, () =&gt; store.getState().count);
+}
+
+<span class="tk-com">// Nguồn ngoài React: chế độ sáng/tối của hệ thống</span>
+<span class="tk-kw">function</span> useColorScheme() {
+  <span class="tk-kw">return</span> useSyncExternalStore(
+    (onChange) =&gt; {
+      <span class="tk-kw">const</span> sub = <span class="tk-type">Appearance</span>.addChangeListener(onChange);
+      <span class="tk-kw">return</span> () =&gt; sub.remove();
+    },
+    () =&gt; <span class="tk-type">Appearance</span>.getColorScheme(),
   );
-  <span class="tk-kw">return</span> &lt;<span class="tk-type">FlatList</span> data={filtered} renderItem={({ item }) =&gt; &lt;<span class="tk-type">ProductRow</span> product={item} /&gt;} /&gt;;
-});</code></pre>
+}</code></pre>
         
       </div>
     </details>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Middle: Push FCM hiện bình thường khi app đóng nhưng khi app đang mở thì không thấy…</title>
+<meta name="description" content="FCM có hai loại payload. Notification message (có khối notification): khi app ở background hệ thống tự hiện thông báo, còn khi app ở foreground thì không tự…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q32.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: Push FCM hiện bình thường khi app đóng nhưng khi app đang mở thì không thấy…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-q32.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"Push FCM hiện bình thường khi app đóng nhưng kh…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q32.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Push FCM hiện bình thường khi app đóng nhưng kh…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/background/">Background &amp; Service</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Push FCM hiện bình thường khi app đóng nhưng khi app đang mở thì không thấy thông báo, bấm vào thông báo không mở đúng màn hình, và trên Android 13 máy mới cài app không nhận được push nào. Giải thích notification message và data message, channel, quyền, và cách xử lý khi bấm thông báo?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">FCM có hai loại payload. Notification message (có khối <code>notification</code>): khi app ở background hệ thống tự hiện thông báo, còn khi app ở foreground thì không tự hiện mà gọi <code>onMessageReceived</code> để app tự xử lý; bấm vào thông báo mở launcher Activity kèm data trong <code>extras</code>. Data message (chỉ có <code>data</code>) luôn đi vào <code>onMessageReceived</code>, cả foreground lẫn background, nên app toàn quyền quyết định nội dung và điều hướng nhưng phải tự dựng thông báo bằng <code>NotificationCompat</code>. Từ Android 8 mọi thông báo phải thuộc một <code>NotificationChannel</code> đã tạo trước, nếu không sẽ không hiện, và user tắt channel thì app không thể ép bật lại. Từ Android 13 cần xin runtime permission <code>POST_NOTIFICATIONS</code>; chưa có quyền thì không có thông báo nào, nên hãy xin lúc có ngữ cảnh hợp lý chứ không phải ngay lần mở đầu. Để bấm mở đúng màn hình, gắn <code>PendingIntent</code> trỏ tới Activity hoặc deep link, bắt buộc có <code>FLAG_IMMUTABLE</code> (hoặc <code>FLAG_MUTABLE</code> khi thật sự cần sửa intent) từ Android 12. <code>onNewToken</code> được gọi khi token đổi và phải gửi token mới lên server. <code>onMessageReceived</code> chỉ có vài chục giây để làm việc nên việc dài giao cho WorkManager, và chỉ message có <code>priority: high</code> mới đánh thức được máy khi Doze.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">AppMessagingService</span> : <span class="tk-type">FirebaseMessagingService</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onNewToken(token: <span class="tk-type">String</span>) {
+    tokenRepo.enqueueUpload(token) <span class="tk-com">// token đổi: gửi lên server (qua WorkManager)</span>
+  }
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onMessageReceived(message: <span class="tk-type">RemoteMessage</span>) {
+    <span class="tk-kw">val</span> orderId = message.<span class="tk-kw">data</span>[<span class="tk-str">&quot;orderId&quot;</span>] ?: <span class="tk-kw">return</span>
+    <span class="tk-kw">val</span> intent = <span class="tk-type">Intent</span>(<span class="tk-type">Intent</span>.<span class="tk-type">ACTION_VIEW</span>, <span class="tk-str">&quot;https://shop.vn/orders/$orderId&quot;</span>.toUri(), <span class="tk-kw">this</span>, <span class="tk-type">MainActivity</span>::<span class="tk-kw">class</span>.java)
+    <span class="tk-kw">val</span> pending = <span class="tk-type">PendingIntent</span>.getActivity(
+      <span class="tk-kw">this</span>,
+      orderId.hashCode(),
+      intent,
+      <span class="tk-type">PendingIntent</span>.<span class="tk-type">FLAG_IMMUTABLE</span> or <span class="tk-type">PendingIntent</span>.<span class="tk-type">FLAG_UPDATE_CURRENT</span>,
+    )
+    <span class="tk-kw">val</span> notification = <span class="tk-type">NotificationCompat</span>.<span class="tk-type">Builder</span>(<span class="tk-kw">this</span>, <span class="tk-type">CHANNEL_ORDERS</span>) <span class="tk-com">// channel phải được tạo trước</span>
+      .setSmallIcon(<span class="tk-type">R</span>.drawable.ic_notification)
+      .setContentTitle(message.<span class="tk-kw">data</span>[<span class="tk-str">&quot;title&quot;</span>])
+      .setContentText(message.<span class="tk-kw">data</span>[<span class="tk-str">&quot;body&quot;</span>])
+      .setContentIntent(pending)
+      .setAutoCancel(<span class="tk-kw">true</span>)
+      .build()
+    <span class="tk-com">// Android 13+: chỉ hiện khi đã được cấp POST_NOTIFICATIONS</span>
+    <span class="tk-type">NotificationManagerCompat</span>.from(<span class="tk-kw">this</span>).notify(orderId.hashCode(), notification)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q32">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q31.html"><span class="muted small">← Câu trước</span><span>App báo &#39;request treo mãi&#39; trên mạng yếu, và HttpLoggingInterceptor mức BODY cò…</span></a>
+  <a class="pager-next" href="../s/and-mid-q33.html"><span class="muted small">Câu sau →</span><span>Test ViewModel có val state = repo.items.map { ... }.stateIn(viewModelScope, Sh…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Background &amp; Service</h2><a class="section-sub" href="../phong-van/android/chu-de/background/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q14.html">Người dùng chụp ảnh và bấm Gửi khi đang mất mạng; ảnh phải được upload chắc chắn kể cả khi họ tắt app. Bạn thiết kế với WorkManager thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q15.html">Khi nào bạn chọn foreground service thay vì WorkManager? Các bản Android gần đây đặt ra những ràng buộc gì khi dùng foreground service?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-m30.html">Mỗi lần người dùng sửa ghi chú, app enqueue unique work tên &quot;sync-note-42&quot;. Bạn chỉ muốn đồng bộ bản mới nhất: work cũ đang chờ hoặc đang chạy bị huỷ và thay bằng work mới. Dùng ExistingWorkPolicy nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m31.html">App đặt nhắc nhở bằng AlarmManager.setExact(). Khi thiết bị đang ở chế độ Doze, alarm này sẽ thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m32.html">Vì sao Worker được enqueue với setExpedited(...) nên override getForegroundInfo()?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q17.html">Service có tự chạy trên background thread không? Viết code tải file ngay trong onStartCommand có vấn đề gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

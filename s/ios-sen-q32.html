@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior: App dùng Core Data, thỉnh thoảng crash EXC_BAD_ACCESS hoặc báo truy cập NSManag…</title>
-<meta name="description" content="Core Data không thread-safe theo object: mỗi NSManagedObjectContext gắn với một queue riêng của nó và mọi truy cập context cùng các NSManagedObject của nó ph…">
+<title>Câu hỏi phỏng vấn iOS Senior: App có 40 endpoint, mỗi chỗ tự dựng URLRequest và tự retry khác nhau; khi serve…</title>
+<meta name="description" content="Tôi gom về một APIClient mỏng: endpoint mô tả bằng type (path, method, body, kiểu response Decodable), một URLSession dùng chung với cấu hình rõ ràng (timeou…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q32.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: App dùng Core Data, thỉnh thoảng crash EXC_BAD_ACCESS hoặc báo truy cập NSManag…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: App có 40 endpoint, mỗi chỗ tự dựng URLRequest và tự retry khác nhau; khi serve…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q32.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"App dùng Core Data, thỉnh thoảng crash EXC_BAD_…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q32.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"App có 40 endpoint, mỗi chỗ tự dựng URLRequest…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q32.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,33 +41,47 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App dùng Core Data, thỉnh thoảng crash EXC_BAD_…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App có 40 endpoint, mỗi chỗ tự dựng URLRequest…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">App dùng Core Data, thỉnh thoảng crash <code>EXC_BAD_ACCESS</code> hoặc báo truy cập <code>NSManagedObject</code> từ sai queue, và import 50.000 bản ghi từ server làm UI đứng vài giây. Bạn tổ chức concurrency của Core Data thế nào?</h1>
+  <h1 class="question-title">App có 40 endpoint, mỗi chỗ tự dựng <code>URLRequest</code> và tự retry khác nhau; khi server quá tải (429/503) app còn làm nó tệ hơn bằng cách retry dồn dập. Bạn thiết kế tầng networking thế nào: cấu hình <code>URLSession</code>, chính sách retry và backoff, idempotency, đo lường?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Core Data không thread-safe theo object: mỗi <code>NSManagedObjectContext</code> gắn với một queue riêng của nó và mọi truy cập context cùng các <code>NSManagedObject</code> của nó phải nằm trong <code>perform</code>/<code>performAndWait</code>; <code>NSManagedObject</code> không được truyền giữa context hay thread, chỉ truyền <code>NSManagedObjectID</code> (hoặc struct DTO) rồi tải lại bằng <code>object(with:)</code> ở context đích. Mô hình tôi dùng: <code>viewContext</code> (main queue) chỉ để đọc cho UI qua <code>NSFetchedResultsController</code> hoặc <code>@FetchRequest</code>, với <code>automaticallyMergesChangesFromParent = true</code>; mọi việc ghi (import, sync) chạy ở background context từ <code>performBackgroundTask</code> hoặc <code>newBackgroundContext()</code>, save ở đó rồi thay đổi tự merge lên <code>viewContext</code>. Với import lớn: xử lý theo từng batch (khoảng 500–1000 bản ghi, save rồi <code>reset()</code> context để nhả object), tìm bản ghi trùng bằng một lần fetch theo tập id thay vì fetch từng dòng, và dùng <code>NSBatchInsertRequest</code> (iOS 13 trở lên) để ghi thẳng xuống store mà không tạo <code>NSManagedObject</code>, nhanh hơn nhiều lần. Đổi lại batch request bỏ qua context nên phải tự báo cho <code>viewContext</code> biết bằng <code>resultType = .objectIDs</code> rồi <code>NSManagedObjectContext.mergeChanges(fromRemoteContextSave:into:)</code>. Đặt <code>mergePolicy</code> phù hợp cho context ghi để xử lý xung đột. Để bắt lỗi sớm, bật launch argument <code>-com.apple.CoreData.ConcurrencyDebug 1</code> để crash ngay lúc truy cập sai queue. Với SwiftData, tương đương là <code>@ModelActor</code>, và <code>ModelContext</code> cũng không thread-safe nên truyền <code>PersistentIdentifier</code> thay vì model giữa các nơi.</div>
-        <pre class="code-block"><code><span class="tk-kw">func</span> importOrders(_ dtos: [<span class="tk-type">OrderDTO</span>]) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> {
-  <span class="tk-kw">try</span> <span class="tk-kw">await</span> container.performBackgroundTask { context <span class="tk-kw">in</span>
-    <span class="tk-kw">for</span> chunk <span class="tk-kw">in</span> dtos.chunked(into: <span class="tk-num">1000</span>) { <span class="tk-com">// chunked: helper tự viết</span>
-      <span class="tk-kw">let</span> rows = chunk.map { [<span class="tk-str">&quot;id&quot;</span>: $<span class="tk-num">0</span>.id, <span class="tk-str">&quot;total&quot;</span>: $<span class="tk-num">0</span>.total, <span class="tk-str">&quot;status&quot;</span>: $<span class="tk-num">0</span>.status] }
-      <span class="tk-kw">let</span> request = <span class="tk-type">NSBatchInsertRequest</span>(entity: <span class="tk-type">OrderEntity</span>.entity(), objects: rows)
-      request.resultType = .objectIDs
-      <span class="tk-kw">let</span> result = <span class="tk-kw">try</span> context.execute(request) as? <span class="tk-type">NSBatchInsertResult</span>
+        <div class="answer-text">Tôi gom về một <code>APIClient</code> mỏng: endpoint mô tả bằng type (path, method, body, kiểu response <code>Decodable</code>), một <code>URLSession</code> dùng chung với cấu hình rõ ràng (<code>timeoutIntervalForRequest</code>, <code>waitsForConnectivity</code>, <code>httpMaximumConnectionsPerHost</code>, cache policy), và pipeline các bước tách riêng: gắn auth (refresh khi 401 chỉ một lần), logging có che dữ liệu nhạy cảm, kiểm tra status code, decode. Retry là một chính sách chứ không phải thói quen: chỉ retry lỗi tạm thời (<code>URLError</code> kiểu timeout hay mất kết nối, 5xx, 429), không retry các 4xx khác; chỉ tự retry method idempotent (GET, PUT, DELETE), còn POST cần gửi kèm idempotency key để server chống trùng. Dùng exponential backoff có jitter (ngẫu nhiên hoá) để hàng nghìn client không retry đồng loạt, tôn trọng header <code>Retry-After</code> của 429 và 503, giới hạn số lần và tổng thời gian, và dừng ngay khi <code>Task</code> bị huỷ. Các request trùng (nhiều màn cùng xin một resource) nên gộp qua cache các task đang chạy. Tránh retry amplification: nếu SDK hay tầng khác cũng retry thì nhân hệ số số lần gọi lên server, nên chỉ một tầng được retry. Đo lường bằng <code>URLSessionTaskMetrics</code> (DNS, TLS, từng pha), gắn request id để đối chiếu log server. Về test, tầng trên phụ thuộc protocol <code>APIClient</code>, còn client được test bằng <code>URLProtocol</code> stub kèm đồng hồ giả để kiểm tra backoff mà không phải chờ thật.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">RetryPolicy</span> {
+  <span class="tk-kw">var</span> maxAttempts = <span class="tk-num">3</span>
+  <span class="tk-kw">var</span> baseDelay: <span class="tk-type">Duration</span> = .milliseconds(<span class="tk-num">500</span>)
 
-      <span class="tk-kw">if</span> <span class="tk-kw">let</span> ids = result?.result as? [<span class="tk-type">NSManagedObjectID</span>] {
-        <span class="tk-com">// Batch request bỏ qua context: phải tự báo cho viewContext để UI cập nhật</span>
-        <span class="tk-type">NSManagedObjectContext</span>.mergeChanges(
-          fromRemoteContextSave: [<span class="tk-type">NSInsertedObjectsKey</span>: ids],
-          into: [<span class="tk-kw">self</span>.container.viewContext]
-        )
-      }
+  <span class="tk-kw">func</span> shouldRetry(status: <span class="tk-type">Int</span>, method: <span class="tk-type">String</span>) -&gt; <span class="tk-type">Bool</span> {
+    <span class="tk-kw">let</span> idempotent = [<span class="tk-str">&quot;GET&quot;</span>, <span class="tk-str">&quot;PUT&quot;</span>, <span class="tk-str">&quot;DELETE&quot;</span>].contains(method)
+    <span class="tk-kw">return</span> idempotent &amp;&amp; (status == <span class="tk-num">429</span> || (<span class="tk-num">500</span>...<span class="tk-num">599</span>).contains(status))
+  }
+
+  <span class="tk-kw">func</span> delay(attempt: <span class="tk-type">Int</span>, retryAfter: <span class="tk-type">Duration</span>?) -&gt; <span class="tk-type">Duration</span> {
+    <span class="tk-kw">if</span> <span class="tk-kw">let</span> retryAfter { <span class="tk-kw">return</span> retryAfter } <span class="tk-com">// server bảo chờ bao lâu thì chờ đúng vậy</span>
+    <span class="tk-kw">let</span> exponential = baseDelay * (<span class="tk-num">1</span> &lt;&lt; (attempt - <span class="tk-num">1</span>))
+    <span class="tk-kw">return</span> exponential * <span class="tk-type">Double</span>.random(<span class="tk-kw">in</span>: <span class="tk-num">0.5</span>...<span class="tk-num">1.5</span>) <span class="tk-com">// jitter: tránh mọi client retry cùng lúc</span>
+  }
+}
+
+<span class="tk-kw">func</span> send&lt;<span class="tk-type">T</span>: <span class="tk-type">Decodable</span>&gt;(_ endpoint: <span class="tk-type">Endpoint</span>&lt;<span class="tk-type">T</span>&gt;) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">T</span> {
+  <span class="tk-kw">var</span> attempt = <span class="tk-num">1</span>
+  <span class="tk-kw">while</span> <span class="tk-kw">true</span> {
+    <span class="tk-com">// Task bị huỷ thì data(for:) và Task.sleep đều throw, vòng lặp tự thoát</span>
+    <span class="tk-kw">let</span> (data, response) = <span class="tk-kw">try</span> <span class="tk-kw">await</span> session.data(<span class="tk-kw">for</span>: endpoint.urlRequest())
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> http = response as? <span class="tk-type">HTTPURLResponse</span> <span class="tk-kw">else</span> { <span class="tk-kw">throw</span> <span class="tk-type">APIError</span>.invalidResponse }
+    <span class="tk-kw">if</span> (<span class="tk-num">200</span>..&lt;<span class="tk-num">300</span>).contains(http.statusCode) { <span class="tk-kw">return</span> <span class="tk-kw">try</span> decoder.decode(<span class="tk-type">T</span>.<span class="tk-kw">self</span>, from: data) }
+
+    <span class="tk-kw">guard</span> attempt &lt; policy.maxAttempts, policy.shouldRetry(status: http.statusCode, method: endpoint.method) <span class="tk-kw">else</span> {
+      <span class="tk-kw">throw</span> <span class="tk-type">APIError</span>.http(status: http.statusCode, body: data)
     }
+    <span class="tk-kw">let</span> retryAfter = http.value(forHTTPHeaderField: <span class="tk-str">&quot;Retry-After&quot;</span>).flatMap(<span class="tk-type">Double</span>.<span class="tk-kw">init</span>).map { <span class="tk-type">Duration</span>.seconds($<span class="tk-num">0</span>) }
+    <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: policy.delay(attempt: attempt, retryAfter: retryAfter))
+    attempt += <span class="tk-num">1</span>
   }
 }</code></pre>
         
@@ -76,7 +90,7 @@
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q32">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/ios-sen-q31.html"><span class="muted small">← Câu trước</span><span>Link https://shop.vn/order/123 cần mở thẳng màn chi tiết đơn hàng, kể cả khi ap…</span></a>
+  <a href="../s/ios-sen-q31.html"><span class="muted small">← Câu trước</span><span>App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tá…</span></a>
   <a class="pager-next" href="../s/ios-sen-q33.html"><span class="muted small">Câu sau →</span><span>Bạn xây luồng mua gói đăng ký (subscription) bằng StoreKit 2. Làm sao để không…</span></a>
 </nav>
 <section class="card next-steps">

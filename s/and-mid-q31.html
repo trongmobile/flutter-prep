@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Middle: App báo &#39;request treo mãi&#39; trên mạng yếu, và HttpLoggingInterceptor mức BOD…</title>
+<meta name="description" content="OkHttp có bốn loại timeout: connectTimeout (dựng kết nối TCP/TLS), readTimeout và writeTimeout (khoảng chờ giữa hai lần có dữ liệu, không phải tổng thời gian…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q31.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: App báo &#39;request treo mãi&#39; trên mạng yếu, và HttpLoggingInterceptor mức BOD…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-q31.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"App báo 'request treo mãi' trên mạng yếu, và Ht…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q31.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">App báo &#39;request treo mãi&#39; trên mạng yếu, và Ht…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App báo &#39;request treo mãi&#39; trên mạng yếu, và <code>HttpLoggingInterceptor</code> mức BODY còn xuất hiện cả ở bản release, lộ token trong log. Bạn cấu hình OkHttp thế nào: các loại timeout, application interceptor và network interceptor, cache?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">OkHttp có bốn loại timeout: <code>connectTimeout</code> (dựng kết nối TCP/TLS), <code>readTimeout</code> và <code>writeTimeout</code> (khoảng chờ giữa hai lần có dữ liệu, không phải tổng thời gian) và <code>callTimeout</code> (tổng thời gian cả lời gọi, gồm retry, redirect và đọc body). Mặc định connect, read, write là 10 giây còn <code>callTimeout</code> không giới hạn, nên trên mạng yếu một response chảy nhỏ giọt có thể treo rất lâu; hãy đặt <code>callTimeout</code> hợp lý. Về interceptor: application interceptor (<code>addInterceptor</code>) chạy một lần cho mỗi lời gọi, thấy request gốc và response cuối cùng (sau redirect, retry), hợp cho header auth, logging và đo thời gian ở mức ứng dụng; network interceptor (<code>addNetworkInterceptor</code>) chạy cho từng request thực sự đi qua mạng (mỗi lần redirect, và không chạy khi trúng cache), thấy các header thật như <code>Accept-Encoding</code>. Logging chỉ gắn khi <code>BuildConfig.DEBUG</code>, mức BODY không bao giờ ở release, và dùng <code>redactHeader(&quot;Authorization&quot;)</code>. <code>Cache(directory, size)</code> làm OkHttp tuân theo <code>Cache-Control</code> và <code>ETag</code> của server (request có điều kiện trả 304), chỉ hiệu quả khi server trả header đúng; cần offline thật sự thì dùng Room. Dùng chung một <code>OkHttpClient</code> cho cả app (connection pool, thread pool) và <code>newBuilder()</code> khi cần biến thể. Với Retrofit, hàm suspend trả <code>T</code> sẽ ném <code>HttpException</code> cho 4xx/5xx và <code>IOException</code> khi mất mạng hoặc timeout; trả <code>Response&lt;T&gt;</code> nếu muốn tự đọc mã trạng thái.</div>
+        <pre class="code-block"><code><span class="tk-kw">val</span> client = <span class="tk-type">OkHttpClient</span>.<span class="tk-type">Builder</span>()
+  .connectTimeout(<span class="tk-num">10</span>, <span class="tk-type">TimeUnit</span>.<span class="tk-type">SECONDS</span>)
+  .readTimeout(<span class="tk-num">20</span>, <span class="tk-type">TimeUnit</span>.<span class="tk-type">SECONDS</span>)
+  .callTimeout(<span class="tk-num">30</span>, <span class="tk-type">TimeUnit</span>.<span class="tk-type">SECONDS</span>) <span class="tk-com">// tổng thời gian cả lời gọi, gồm retry và redirect</span>
+  .cache(<span class="tk-type">Cache</span>(<span class="tk-type">File</span>(context.cacheDir, <span class="tk-str">&quot;http&quot;</span>), 20L * <span class="tk-num">1024</span> * <span class="tk-num">1024</span>))
+  .addInterceptor(<span class="tk-type">AuthInterceptor</span>(tokenStore)) <span class="tk-com">// application interceptor: chạy một lần mỗi lời gọi</span>
+  .apply {
+    <span class="tk-kw">if</span> (<span class="tk-type">BuildConfig</span>.<span class="tk-type">DEBUG</span>) {
+      addInterceptor(
+        <span class="tk-type">HttpLoggingInterceptor</span>().apply {
+          level = <span class="tk-type">HttpLoggingInterceptor</span>.<span class="tk-type">Level</span>.<span class="tk-type">BODY</span>
+          redactHeader(<span class="tk-str">&quot;Authorization&quot;</span>) <span class="tk-com">// không bao giờ log token</span>
+        },
+      )
+    }
+  }
+  .build()</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q31">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q30.html"><span class="muted small">← Câu trước</span><span>Màn danh sách có hàng chục nghìn sản phẩm tải theo trang, cần xem được khi offl…</span></a>
+  <a class="pager-next" href="../s/and-mid-q32.html"><span class="muted small">Câu sau →</span><span>Push FCM hiện bình thường khi app đóng nhưng khi app đang mở thì không thấy thô…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q17.html">Bạn thêm cột avatar_url vào bảng users của Room và tăng version database. Bản release lên, một số người dùng bị crash ngay khi mở app. Vì sao, và quy trình migration đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q18.html">Access token hết hạn, nhiều request song song cùng nhận 401. Bạn dùng OkHttp Interceptor hay Authenticator để refresh token, và làm sao để chỉ refresh một lần?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q30.html">Màn danh sách có hàng chục nghìn sản phẩm tải theo trang, cần xem được khi offline và không mất vị trí cuộn khi xoay máy. Bạn dùng Paging 3 thế nào (PagingSource, cachedIn, LoadState, RemoteMediator)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-m35.html">Bạn muốn interceptor log thấy cả các request redirect và header Accept-Encoding: gzip mà OkHttp tự thêm vào. Đăng ký interceptor bằng cách nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m36.html">Trong Paging 3 kiểu offline-first với RemoteMediator, UI thực sự đọc dữ liệu từ đâu?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-m37.html">DAO có @Query(&quot;SELECT * FROM users WHERE id = :id&quot;) fun observeUser(id: Long): Flow&lt;User?&gt;. Khi nào Flow này emit lại?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

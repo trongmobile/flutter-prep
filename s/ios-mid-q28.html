@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: Bạn gọi withAnimation { isExpanded.toggle() } nhưng view mới xuất hiện bị nhảy…</title>
+<meta name="description" content="SwiftUI animate sự khác biệt giữa hai lần render của các thuộc tính có thể nội suy. Animation ngầm định: .animation(_:value:) gắn vào một view chỉ animate kh…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q28.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Bạn gọi withAnimation { isExpanded.toggle() } nhưng view mới xuất hiện bị nhảy…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q28.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Bạn gọi withAnimation { isExpanded.toggle() } n…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q28.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn gọi withAnimation { isExpanded.toggle() } n…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swiftui/">SwiftUI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn gọi <code>withAnimation { isExpanded.toggle() }</code> nhưng view mới xuất hiện bị nhảy vào chứ không animate, còn <code>.animation(.easeInOut)</code> đặt ở cuối chain làm cả màn hình animate lung tung. Giải thích animation tường minh và ngầm định, <code>transition</code>, và <code>matchedGeometryEffect</code>?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SwiftUI animate sự khác biệt giữa hai lần render của các thuộc tính có thể nội suy. Animation ngầm định: <code>.animation(_:value:)</code> gắn vào một view chỉ animate khi <code>value</code> đổi và chỉ ảnh hưởng thuộc tính của view đó cùng các con; bản không có <code>value</code> (<code>.animation(.easeInOut)</code>) đã bị deprecated vì animate mọi thứ đổi bên dưới, gây hiệu ứng ngoài ý muốn. Animation tường minh: <code>withAnimation { state.toggle() }</code> animate mọi thay đổi do state đó gây ra trong cây view, tức kiểm soát theo nguyên nhân, hợp khi một hành động làm đổi nhiều view. View được thêm hoặc xoá khỏi cây (nhánh <code>if</code>) không có giá trị để nội suy nên cần <code>.transition(.opacity)</code>, <code>.move</code>, <code>.scale</code> hoặc <code>.asymmetric</code>, và transition chỉ chạy khi thay đổi nằm trong một animation (<code>withAnimation</code> hoặc modifier <code>.animation</code> đặt ở view cha còn tồn tại, vì đặt ngay trên view đang bị xoá thì modifier biến mất cùng view). Animation trong list cần identity ổn định (<code>id</code>), nếu không view bị tạo mới thay vì di chuyển. <code>matchedGeometryEffect(id:in:)</code> cùng một <code>@Namespace</code> làm hai view ở hai chỗ khác nhau (ảnh nhỏ thành ảnh lớn) trông như một view di chuyển, tại mỗi thời điểm chỉ một view tồn tại. <code>Animatable</code> và <code>animatableData</code> để animate dữ liệu tuỳ biến như thuộc tính riêng của một <code>Shape</code>. Animate <code>frame</code> hay layout đắt hơn <code>opacity</code> hoặc <code>offset</code>, và có thể tắt tạm animation bằng <code>.transaction { $0.animation = nil }</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">ExpandableRow</span>: <span class="tk-type">View</span> {
+  <span class="tk-kw">let</span> card: <span class="tk-type">Card</span>
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> isExpanded = <span class="tk-kw">false</span>
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+    <span class="tk-type">VStack</span>(alignment: .leading) {
+      <span class="tk-type">HStack</span> {
+        <span class="tk-type">Text</span>(card.title)
+        <span class="tk-type">Spacer</span>()
+        <span class="tk-type">Image</span>(systemName: <span class="tk-str">&quot;chevron.down&quot;</span>)
+          .rotationEffect(.degrees(isExpanded ? <span class="tk-num">180</span> : <span class="tk-num">0</span>))
+          .animation(.easeInOut(duration: <span class="tk-num">0.2</span>), value: isExpanded) <span class="tk-com">// ngầm định: chỉ animate khi isExpanded đổi</span>
+      }
+      .contentShape(<span class="tk-type">Rectangle</span>())
+      .onTapGesture {
+        withAnimation(.easeInOut(duration: <span class="tk-num">0.35</span>)) { isExpanded.toggle() } <span class="tk-com">// tường minh: mọi thay đổi do hành động này</span>
+      }
+
+      <span class="tk-kw">if</span> isExpanded {
+        <span class="tk-type">CardDetail</span>(card: card)
+          .transition(.opacity.combined(with: .move(edge: .top))) <span class="tk-com">// view được thêm vào hoặc xoá đi cần transition</span>
+      }
+    }
+    .clipped()
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q28">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q27.html"><span class="muted small">← Câu trước</span><span>Màn SwiftUI gọi API trong .onAppear và bị gọi lại mỗi lần quay về từ màn con; .…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q29.html"><span class="muted small">Câu sau →</span><span>App hiển thị giờ đặt hàng lệch 7 tiếng ở một số máy, DateFormatter tạo trong ce…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề SwiftUI</h2><a class="section-sub" href="../phong-van/ios/chu-de/swiftui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q09.html">Form nhập liệu bị mất hết text đã gõ mỗi khi bật/tắt trạng thái loading, dù text nằm trong @State của view con. Nguyên nhân liên quan tới identity của view là gì, và sửa thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q10.html">Team chuyển ViewModel từ ObservableObject + @Published sang macro @Observable. Cơ chế cập nhật view khác gì, và @StateObject, @ObservedObject, @EnvironmentObject được thay bằng gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q11.html">View cha cần biết chiều cao thực tế của một view con (để làm header co giãn hoặc căn các cột bằng nhau). GeometryReader và PreferenceKey phối hợp thế nào, và vì sao không nên bọc cả màn hình trong GeometryReader?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q27.html">Màn SwiftUI gọi API trong .onAppear và bị gọi lại mỗi lần quay về từ màn con; .onChange(of:) thì bắn hay không bắn lúc mở màn hình, và app muốn dừng polling khi vào background. .onAppear, .task, .task(id:), .onChange và scenePhase khác nhau thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m20.html">CounterView(start: 0) đang hiển thị, sau đó view cha render lại với start bằng 10 (identity không đổi). Text hiển thị gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m21.html">Mỗi lần bấm Toggle layout, giá trị đếm mà CounterView lưu trong @State của nó sẽ thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

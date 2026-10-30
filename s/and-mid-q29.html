@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Middle: Hai Fragment trong cùng một flow cần chia sẻ danh sách sản phẩm đã chọn, và…</title>
+<meta name="description" content="ViewModel sống theo ViewModelStoreOwner sở hữu nó và chỉ bị xoá khi owner bị huỷ thật, không phải khi xoay màn hình. Scope Fragment (by viewModels()) dành ch…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q29.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: Hai Fragment trong cùng một flow cần chia sẻ danh sách sản phẩm đã chọn, và…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-q29.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"Hai Fragment trong cùng một flow cần chia sẻ da…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q29.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Hai Fragment trong cùng một flow cần chia sẻ da…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/components/">Activity, Fragment &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Hai Fragment trong cùng một flow cần chia sẻ danh sách sản phẩm đã chọn, và một ViewModel cần <code>productId</code> lúc khởi tạo mà bạn không biết truyền thế nào. ViewModel có những phạm vi nào (Activity, Fragment, nav graph), và truyền tham số bằng <code>SavedStateHandle</code> hay Factory?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">ViewModel sống theo <code>ViewModelStoreOwner</code> sở hữu nó và chỉ bị xoá khi owner bị huỷ thật, không phải khi xoay màn hình. Scope Fragment (<code>by viewModels()</code>) dành cho state riêng của một màn; scope Activity (<code>by activityViewModels()</code>) để chia sẻ giữa các Fragment nhưng sống quá lâu và dễ lẫn state của các flow khác nhau trong cùng Activity; scope nav graph (<code>hiltNavGraphViewModels(R.id.checkout_graph)</code>, hoặc <code>getBackStackEntry</code> trong Compose) hợp nhất cho một flow nhiều màn như checkout, vì nó sống đến khi rời graph. Đừng giữ <code>View</code>, <code>Context</code> hay Activity bên trong ViewModel. Về tham số: argument của destination tự có trong <code>SavedStateHandle</code>, nên với Hilt ViewModel chỉ cần <code>savedStateHandle[&quot;productId&quot;]</code> (hoặc <code>toRoute&lt;T&gt;()</code> với type-safe navigation), và giá trị này còn sống qua process death. Tham số không nằm trong arguments (cấu hình, object phức tạp) thì dùng <code>@AssistedInject</code>/assisted factory hoặc tự viết <code>ViewModelProvider.Factory</code> (<code>viewModelFactory { initializer { ... } }</code>). Đừng khởi tạo ViewModel bằng constructor trực tiếp (<code>MyViewModel(...)</code>), vì khi đó nó không gắn với store và bị tạo lại mỗi lần.</div>
+        <pre class="code-block"><code><span class="tk-ann">@HiltViewModel</span>
+<span class="tk-kw">class</span> <span class="tk-type">ProductViewModel</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+  savedStateHandle: <span class="tk-type">SavedStateHandle</span>,
+  repo: <span class="tk-type">ProductRepository</span>,
+) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-com">// Argument của destination tự có trong SavedStateHandle, sống qua process death</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> route = savedStateHandle.toRoute&lt;<span class="tk-type">ProductRoute</span>&gt;()
+
+  <span class="tk-kw">val</span> product = repo.observe(route.productId)
+    .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-kw">null</span>)
+}
+
+<span class="tk-com">// Fragment: các màn của cùng flow checkout dùng chung một ViewModel (scope nav graph)</span>
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> checkoutVm: <span class="tk-type">CheckoutViewModel</span> <span class="tk-kw">by</span> hiltNavGraphViewModels(<span class="tk-type">R</span>.id.checkout_graph)
+
+<span class="tk-com">// Activity-scoped: chỉ dùng khi state thật sự thuộc cả Activity</span>
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> sharedVm: <span class="tk-type">MainViewModel</span> <span class="tk-kw">by</span> activityViewModels()</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q29">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q28.html"><span class="muted small">← Câu trước</span><span>Nút &#39;Lên đầu&#39; chỉ hiện khi LazyColumn đã cuộn qua item thứ 3, nhưng viết val sh…</span></a>
+  <a class="pager-next" href="../s/and-mid-q30.html"><span class="muted small">Câu sau →</span><span>Màn danh sách có hàng chục nghìn sản phẩm tải theo trang, cần xem được khi offl…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Activity, Fragment &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/android/chu-de/components/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q06.html">Collect StateFlow từ ViewModel bằng lifecycleScope.launch { flow.collect { ... } } trong Activity có vấn đề gì? repeatOnLifecycle và collectAsStateWithLifecycle giải quyết ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-m11.html">Luồng checkout gồm ba màn (giỏ hàng, địa chỉ, thanh toán) nằm trong nested graph checkout của cùng một Activity. Ba màn cần dùng chung state, và state phải được giải phóng khi người dùng rời khỏi luồng. Nên lấy ViewModel theo scope nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q12.html">Kể tên 4 thành phần chính (app component) của một ứng dụng Android và vai trò của từng thành phần.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q13.html">File AndroidManifest.xml dùng để làm gì? Muốn một Activity hiện icon ở launcher thì khai báo thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q14.html">Kể các callback chính trong vòng đời Activity. Từ màn A mở màn B (B che kín A) rồi bấm Back thì thứ tự gọi thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q15.html">Explicit intent và implicit intent khác nhau thế nào? Khi dùng implicit intent cần cẩn thận điều gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

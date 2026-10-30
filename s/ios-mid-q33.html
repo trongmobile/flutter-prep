@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: App cần hỗ trợ tiếng Việt và tiếng Anh, sau này có thể thêm tiếng Ả Rập. Bạn tổ…</title>
+<meta name="description" content="Từ Xcode 15, String Catalog (.xcstrings) thay Localizable.strings và .stringsdict: một file chứa mọi chuỗi cùng bản dịch, Xcode tự thu thập chuỗi từ code (St…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q33.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: App cần hỗ trợ tiếng Việt và tiếng Anh, sau này có thể thêm tiếng Ả Rập. Bạn tổ…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q33.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"App cần hỗ trợ tiếng Việt và tiếng Anh, sau này…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q33.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">App cần hỗ trợ tiếng Việt và tiếng Anh, sau này…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/platform/">App lifecycle &amp; Platform</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App cần hỗ trợ tiếng Việt và tiếng Anh, sau này có thể thêm tiếng Ả Rập. Bạn tổ chức localization thế nào: String Catalog, số nhiều (plural), định dạng theo locale, layout RTL, và những lỗi nào hay gặp (ghép chuỗi bằng tay, chữ bị cắt)?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Từ Xcode 15, String Catalog (<code>.xcstrings</code>) thay <code>Localizable.strings</code> và <code>.stringsdict</code>: một file chứa mọi chuỗi cùng bản dịch, Xcode tự thu thập chuỗi từ code (<code>String(localized:)</code>, <code>Text(&quot;...&quot;)</code> của SwiftUI dùng <code>LocalizedStringKey</code>, <code>NSLocalizedString</code>) và hiện trạng thái dịch của từng ngôn ngữ. Nên dùng key có ý nghĩa kèm <code>comment</code> để người dịch hiểu ngữ cảnh. Không ghép chuỗi bằng tay (<code>&quot;Bạn có &quot; + n + &quot; tin nhắn&quot;</code>) vì thứ tự từ khác nhau giữa các ngôn ngữ; dùng interpolation hoặc placeholder (<code>&quot;%lld tin nhắn&quot;</code>) để người dịch sắp xếp lại. Số nhiều: String Catalog hỗ trợ các biến thể theo số (<code>one</code>, <code>other</code>, và <code>few</code>, <code>many</code> với tiếng Nga hay Ả Rập); tiếng Việt chỉ cần <code>other</code> nhưng vẫn nên khai báo đúng để mở rộng. Số, ngày, tiền dùng <code>FormatStyle</code> hoặc formatter theo <code>Locale</code> thay vì tự định dạng. RTL: dùng <code>leading</code>/<code>trailing</code> thay cho <code>left</code>/<code>right</code> trong Auto Layout và SwiftUI để layout tự đảo, ảnh có hướng (mũi tên) thì lật bằng <code>imageFlippedForRightToLeftLayoutDirection()</code>. Bắt lỗi sớm bằng Pseudolanguage trong scheme (Accented, Double-Length, Right-to-Left) để thấy chuỗi bị cắt, chuỗi ghép tay hay chuỗi quên dịch, và thử Dynamic Type lớn vì chuỗi dài làm vỡ layout cố định (dùng <code>numberOfLines = 0</code>, stack view). Từ iOS 13, user chọn được ngôn ngữ riêng cho từng app trong Settings nên thường không cần tự làm màn đổi ngôn ngữ trong app, và nên tránh ép <code>Bundle</code> đổi ngôn ngữ lúc chạy. Chuỗi do server trả về cần cơ chế riêng theo <code>Accept-Language</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// Key mô tả kèm comment cho người dịch; interpolation để người dịch sắp xếp lại thứ tự từ</span>
+<span class="tk-kw">let</span> title = <span class="tk-type">String</span>(
+  localized: <span class="tk-str">&quot;inbox.unread_count \(count)&quot;</span>,
+  comment: <span class="tk-str">&quot;Số tin nhắn chưa đọc, hiện ở tiêu đề hộp thư&quot;</span>
+)
+
+<span class="tk-com">// SwiftUI: chuỗi literal là LocalizedStringKey, các dạng số nhiều khai báo trong String Catalog</span>
+<span class="tk-type">Text</span>(<span class="tk-str">&quot;cart.item_count \(items.count)&quot;</span>)
+
+<span class="tk-com">// Số, ngày, tiền theo Locale của user thay vì tự định dạng</span>
+<span class="tk-type">Text</span>(order.total, format: .currency(code: <span class="tk-str">&quot;VND&quot;</span>))
+<span class="tk-type">Text</span>(order.createdAt, format: .dateTime.day().month().hour().minute())
+
+<span class="tk-com">// Không ghép chuỗi bằng tay: thứ tự từ khác nhau giữa các ngôn ngữ</span>
+<span class="tk-com">// let bad = &quot;Bạn có &quot; + String(count) + &quot; tin nhắn&quot;</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q33">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q32.html"><span class="muted small">← Câu trước</span><span>Bạn present một màn hình chọn bộ lọc dạng bottom sheet từ UIKit: cần dừng ở nửa…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q34.html"><span class="muted small">Câu sau →</span><span>Tính năng chọn ảnh cần quyền Photos, tính năng cửa hàng gần đây cần quyền vị tr…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề App lifecycle &amp; Platform</h2><a class="section-sub" href="../phong-van/ios/chu-de/platform/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q34.html">Tính năng chọn ảnh cần quyền Photos, tính năng cửa hàng gần đây cần quyền vị trí. User từ chối một lần là tính năng &#39;câm&#39;, và có người chỉ cấp quyền ảnh &#39;đã chọn&#39; (limited) hoặc vị trí gần đúng. Bạn thiết kế luồng xin quyền và xử lý các trạng thái thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-fre-q23.html">AppDelegate và SceneDelegate khác nhau thế nào? Vì sao từ iOS 13 lại có thêm SceneDelegate?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q24.html">File Info.plist dùng để làm gì? Kể vài key quan trọng bạn hay phải sửa.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q25.html">Bundle identifier là gì? Version và build number khác nhau thế nào khi đẩy bản mới lên TestFlight?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q35.html">Certificate, App ID và provisioning profile liên quan với nhau thế nào? Vì sao app chạy được trên simulator nhưng lên máy thật lại báo lỗi signing?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q36.html">Swift Package Manager, CocoaPods và Carthage khác nhau thế nào? Dự án mới bạn chọn cái nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

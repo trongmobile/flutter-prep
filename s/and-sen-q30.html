@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior: Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar…</title>
-<meta name="description" content="Hướng được Google khuyến nghị là coi sự kiện như một phần của state: ViewModel đặt &#39;thông báo đang chờ hiển thị&#39; vào UI state, UI hiển thị xong thì gọi onMes…">
+<title>Câu hỏi phỏng vấn Android Senior: Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay…</title>
+<meta name="description" content="KMP chia sẻ code Kotlin giữa các nền tảng nhưng vẫn giữ UI native (hoặc dùng Compose Multiplatform nếu muốn chia sẻ cả UI), nên là cách giảm trùng logic mà k…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Trong MVVM, ViewModel cần báo cho UI các sự kiệ…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Công ty có app Android (Kotlin) và iOS (Swift),…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q30.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,51 +41,37 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Trong MVVM, ViewModel cần báo cho UI các sự kiệ…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Công ty có app Android (Kotlin) và iOS (Swift),…</span>
 </nav>
 
 <article class="card question-page rank-purple">
-  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Trong MVVM, ViewModel cần báo cho UI các sự kiện một lần như hiện snackbar hay điều hướng. Team dùng <code>SharedFlow</code>/<code>Channel</code> và gặp lỗi: xoay màn hình thì snackbar hiện lại, hoặc sự kiện bị mất khi app đang ở background. Bạn thiết kế việc xử lý sự kiện UI thế nào?</h1>
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/kotlin/">Kotlin</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay lệch nhau (tính giá, validate, mô hình dữ liệu). CTO hỏi có nên dùng Kotlin Multiplatform (KMP). Bạn đánh giá và triển khai thử thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Hướng được Google khuyến nghị là coi sự kiện như một phần của state: ViewModel đặt &#39;thông báo đang chờ hiển thị&#39; vào UI state, UI hiển thị xong thì gọi <code>onMessageShown()</code> để ViewModel xoá nó đi. Vì state luôn được giữ, sự kiện không mất khi UI chưa ở trạng thái STARTED, và sau khi đã tiêu thụ (xoá khỏi state) thì xoay màn hình không làm nó hiện lại; mỗi message nên có id riêng để hai thông báo giống nhau liên tiếp không bị gộp thành một. Các cách còn lại đều có điểm yếu: kiểu <code>SingleLiveEvent</code> phát lại khi có observer mới hoặc chỉ giao cho một observer; <code>SharedFlow</code> không replay thì mất sự kiện lúc không có subscriber; <code>Channel</code> kèm <code>receiveAsFlow()</code> giữ sự kiện tới khi có người nhận và chỉ giao một lần, nhưng nếu collector bị huỷ đúng lúc vừa nhận (ví dụ UI rời STARTED) thì sự kiện vẫn có thể mất, nên không phải bảo đảm tuyệt đối. Điều hướng cũng nên là kết quả của state (ví dụ <code>navigateTo: Route?</code>) hoặc được UI quyết định qua callback. Tôi dùng state cho mọi thứ phải tới tay user (lỗi thanh toán, điều hướng sau khi tạo đơn) và chỉ dùng Channel cho hiệu ứng &#39;bắn rồi quên&#39; như rung hay âm thanh.</div>
-        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">UiMessage</span>(<span class="tk-kw">val</span> text: <span class="tk-type">String</span>, <span class="tk-kw">val</span> id: <span class="tk-type">String</span> = <span class="tk-type">UUID</span>.randomUUID().toString())
-
-<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">CheckoutUiState</span>(
-  <span class="tk-kw">val</span> items: <span class="tk-type">List</span>&lt;<span class="tk-type">ItemUi</span>&gt; = emptyList(),
-  <span class="tk-kw">val</span> message: <span class="tk-type">UiMessage</span>? = <span class="tk-kw">null</span>, <span class="tk-com">// sự kiện đang chờ UI hiển thị</span>
-)
-
-<span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">OrderRepository</span>) : <span class="tk-type">ViewModel</span>() {
-  <span class="tk-kw">private</span> <span class="tk-kw">val</span> _state = <span class="tk-type">MutableStateFlow</span>(<span class="tk-type">CheckoutUiState</span>())
-  <span class="tk-kw">val</span> state: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">CheckoutUiState</span>&gt; = _state.asStateFlow()
-
-  <span class="tk-kw">fun</span> onPay() = viewModelScope.launch {
-    repo.pay().onFailure {
-      _state.update { s -&gt; s.copy(message = <span class="tk-type">UiMessage</span>(<span class="tk-str">&quot;Thanh toán thất bại&quot;</span>)) }
-    }
-  }
-
-  <span class="tk-kw">fun</span> onMessageShown() = _state.update { it.copy(message = <span class="tk-kw">null</span>) } <span class="tk-com">// đã hiển thị thì xoá khỏi state</span>
+        <div class="answer-text">KMP chia sẻ code Kotlin giữa các nền tảng nhưng vẫn giữ UI native (hoặc dùng Compose Multiplatform nếu muốn chia sẻ cả UI), nên là cách giảm trùng logic mà không bỏ native. Tôi bắt đầu từ vấn đề cần giải: logic lệch hay tốc độ ra tính năng; rồi xét kỹ năng của team (dev iOS có chịu đọc Kotlin không, ai review code chung) và hệ sinh thái thư viện (Ktor, kotlinx.serialization, kotlinx-datetime, SQLDelight hoặc Room bản KMP, Koin). Chia sẻ dần từ dưới lên: module <code>shared</code> chứa domain, repository và network; UI vẫn là Compose/SwiftUI; phần phụ thuộc nền tảng (keychain, file, analytics) khai báo bằng interface do mỗi bên cài đặt hoặc <code>expect/actual</code>. Phía iOS nhận XCFramework qua SPM hoặc CocoaPods. Điểm đau cần biết: Kotlin được bridge qua Objective-C nên generic, sealed class và <code>suspend</code>/<code>Flow</code> mất ngữ nghĩa ở Swift (cần SKIE hoặc lớp bọc), build phải qua cả Gradle lẫn Xcode nên chậm hơn, debug xuyên ngôn ngữ khó hơn, và phụ thuộc vào công cụ của JetBrains. Triển khai thử: chọn một module ít UI nhưng logic phức tạp (tính giá, validate), đặt tiêu chí đo được (thời gian làm tính năng, số bug lệch hai nền tảng, kích thước binary, phản hồi của dev iOS) và tiêu chí dừng. Không migrate code cũ hàng loạt: giữ nguyên, chỉ viết tính năng mới trên <code>shared</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// commonMain: logic dùng chung, phụ thuộc interface thay vì API của nền tảng</span>
+<span class="tk-kw">interface</span> <span class="tk-type">SecureStorage</span> {
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> <span class="tk-kw">get</span>(key: <span class="tk-type">String</span>): <span class="tk-type">String</span>?
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> put(key: <span class="tk-type">String</span>, <span class="tk-kw">value</span>: <span class="tk-type">String</span>)
 }
 
-<span class="tk-com">// Compose</span>
-state.message?.let { msg -&gt;
-  <span class="tk-type">LaunchedEffect</span>(msg.id) {
-    snackbarHostState.showSnackbar(msg.text)
-    viewModel.onMessageShown()
+<span class="tk-kw">class</span> <span class="tk-type">SessionRepository</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> api: <span class="tk-type">AuthApi</span>, <span class="tk-kw">private</span> <span class="tk-kw">val</span> storage: <span class="tk-type">SecureStorage</span>) {
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> login(email: <span class="tk-type">String</span>, password: <span class="tk-type">String</span>) {
+    storage.put(<span class="tk-str">&quot;token&quot;</span>, api.login(email, password))
   }
-}</code></pre>
+}
+<span class="tk-com">// androidMain: SecureStorage dùng Keystore và DataStore</span>
+<span class="tk-com">// iosMain: SecureStorage dùng Keychain (viết bằng Kotlin hoặc inject từ phía Swift)</span></code></pre>
         
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q30">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/and-sen-q29.html"><span class="muted small">← Câu trước</span><span>Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn dù d…</span></a>
+  <a href="../s/and-sen-q29.html"><span class="muted small">← Câu trước</span><span>App xử lý lỗi không nhất quán: chỗ ném HttpException lên tận UI, chỗ catch (e:…</span></a>
   <a class="pager-next" href="../s/and-sen-q31.html"><span class="muted small">Câu sau →</span><span>App cần ba việc: đồng bộ dữ liệu định kỳ, nhắc lịch đúng giờ, và tải file lớn d…</span></a>
 </nav>
 <section class="card next-steps">
@@ -97,14 +83,14 @@ state.message?.let { msg -&gt;
   </div>
 </section>
 <section>
-  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/android/chu-de/arch/">Xem tất cả →</a></div>
+  <div class="section-head"><h2>Cùng chủ đề Kotlin</h2><a class="section-sub" href="../phong-van/android/chu-de/kotlin/">Xem tất cả →</a></div>
   <ul class="link-list">
-    <li><a href="../s/and-sen-q12.html">App có khoảng 20 feature module. Bạn đặt quy tắc phụ thuộc giữa các module thế nào? Feature A cần mở màn hình của feature B thì làm sao để A không phụ thuộc B?</a> <span class="rank-tag rank-purple">Senior</span></li>
-    <li><a href="../s/and-sen-q14.html">Team chuyển sang trunk-based development và muốn mọi tính năng lớn đều nằm sau feature flag. Bạn thiết kế hệ thống flag phía Android thế nào để không biến thành nợ kỹ thuật?</a> <span class="rank-tag rank-purple">Senior</span></li>
-    <li><a href="../s/and-sen-m26.html">:feature:cart cần mở màn hình chi tiết của :feature:product. Cách nào giữ đúng quy tắc phụ thuộc giữa các module?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-sen-m27.html">Giá trị mới của flag new_checkout từ Remote Config được fetch xong khi user đang ở giữa luồng thanh toán cũ. Cách áp dụng nào an toàn nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-sen-m28.html">Trong Clean Architecture nhiều module, :core:domain chứa use case và interface UserRepository. Quan hệ phụ thuộc nào hợp lệ?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-jun-q31.html">Dependency Injection khác gì việc tự tạo UserRepository() bên trong ViewModel? Với Hilt, cần những annotation tối thiểu nào để ViewModel nhận được repository, và thiếu annotation nào thì app crash?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-fre-q01.html">val và var khác nhau thế nào? Khai báo val list = mutableListOf(1, 2) rồi gọi list.add(3) có được không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q02.html">Kotlin chống NullPointerException bằng cách nào? Giải thích ?., ?: và !! qua ví dụ.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q03.html">data class trong Kotlin tự sinh ra những gì? Khi nào nên dùng nó?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q04.html">when trong Kotlin khác switch của Java ở những điểm nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q05.html">List và MutableList trong Kotlin khác nhau thế nào? Các hàm như filter, map có sửa list gốc không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q06.html">Extension function là gì? Nó có thực sự thêm method vào class gốc không?</a> <span class="rank-tag rank-green">Fresher</span></li>
   </ul>
 </section>
 </main>

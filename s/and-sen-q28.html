@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior: Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Fl…</title>
-<meta name="description" content="callbackFlow chuyển callback thành Flow lạnh: đăng ký listener trong block và bắt buộc kết thúc bằng awaitClose { gỡ listener }, thiếu thì callbackFlow ném I…">
+<title>Câu hỏi phỏng vấn Android Senior: Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết…</title>
+<meta name="description" content="Compose có ba phase: composition, layout (đo rồi đặt vị trí) và drawing. Ở phase layout, mỗi child chỉ được đo tối đa một lần (single-pass measurement): pare…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q28.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Fl…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q28.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Bạn cần bọc API vị trí dạng callback (FusedLoca…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q28.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Design system cần một TagFlow xếp các chip theo…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q28.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,42 +41,58 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn cần bọc API vị trí dạng callback (FusedLoca…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Design system cần một TagFlow xếp các chip theo…</span>
 </nav>
 
 <article class="card question-page rank-purple">
-  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/coroutines/">Coroutines &amp; Flow</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Bạn cần bọc API vị trí dạng callback (<code>FusedLocationProviderClient</code>) thành <code>Flow</code> để nhiều màn hình dùng chung, không rò rỉ listener và không chạy khi app ở background. Bạn dùng <code>callbackFlow</code>, <code>stateIn</code> và thu thập ở UI thế nào, và <code>SharingStarted.WhileSubscribed(5_000)</code> giải quyết điều gì?</h1>
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Design system cần một <code>TagFlow</code> xếp các chip theo hàng và xuống dòng khi hết chỗ, cùng một bố cục đặt vạch ngăn cao bằng item cao nhất trong hàng. Compose đo layout theo quy tắc nào, bạn viết <code>Layout</code> tuỳ biến thế nào, và intrinsic measurements dùng khi nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text"><code>callbackFlow</code> chuyển callback thành Flow lạnh: đăng ký listener trong block và bắt buộc kết thúc bằng <code>awaitClose { gỡ listener }</code>, thiếu thì <code>callbackFlow</code> ném <code>IllegalStateException</code>. Phát giá trị bằng <code>trySend</code> (không suspend nên gọi được trong callback); channel bên trong có buffer, nên với dữ liệu kiểu &#39;giá trị mới nhất&#39; như vị trí hãy chọn chính sách khi consumer chậm bằng <code>conflate()</code> hoặc <code>buffer(onBufferOverflow = DROP_OLDEST)</code>. Flow lạnh sẽ đăng ký lại listener cho mỗi collector, nên chia sẻ bằng <code>stateIn</code>/<code>shareIn</code> ở scope của repository với <code>SharingStarted.WhileSubscribed(5_000)</code>: có subscriber đầu tiên thì mới chạy upstream, khi subscriber cuối đi mất thì chờ 5 giây rồi mới dừng. Khoảng chờ đó đủ để xoay màn hình hay chuyển tab nhanh không phải kết nối lại, còn khi app thật sự xuống nền thì GPS được tắt. Ở UI thu thập bằng <code>collectAsStateWithLifecycle()</code> trong Compose hoặc <code>repeatOnLifecycle(STARTED)</code> trong View; <code>collectAsState()</code> hay <code>lifecycleScope.launch { collect }</code> không gắn với lifecycle của app nên vẫn thu thập khi ở nền và giữ upstream chạy mãi.</div>
-        <pre class="code-block"><code><span class="tk-kw">fun</span> <span class="tk-type">FusedLocationProviderClient</span>.locationUpdates(request: <span class="tk-type">LocationRequest</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">Location</span>&gt; = callbackFlow {
-  <span class="tk-kw">val</span> callback = <span class="tk-kw">object</span> : <span class="tk-type">LocationCallback</span>() {
-    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onLocationResult(result: <span class="tk-type">LocationResult</span>) {
-      result.lastLocation?.let { trySend(it) } <span class="tk-com">// không suspend, gọi được trong callback</span>
+        <div class="answer-text">Compose có ba phase: composition, layout (đo rồi đặt vị trí) và drawing. Ở phase layout, mỗi child chỉ được đo tối đa một lần (single-pass measurement): parent đưa <code>Constraints</code> xuống, child trả về <code>Placeable</code> đã đo, rồi parent đặt vị trí; đo một child hai lần ném exception. Quy tắc này giữ độ phức tạp layout tuyến tính ngay cả khi lồng sâu, khác hệ thống View vốn có thể đo nhiều lần. Viết <code>Layout(content) { measurables, constraints -&gt; ... layout(width, height) { placeable.placeRelative(x, y) } }</code>: đo từng measurable bằng <code>measure(constraints.copy(minWidth = 0))</code>, cộng dồn vị trí x, vượt <code>maxWidth</code> thì xuống hàng, rồi khai báo kích thước tổng. Khi parent cần biết kích thước &#39;tự nhiên&#39; của con trước khi đo thật (vạch ngăn cao bằng item cao nhất trong <code>Row</code>) thì dùng intrinsic measurements: <code>Modifier.height(IntrinsicSize.Min)</code> hỏi trước <code>minIntrinsicHeight</code> của các con rồi mới đo thật với constraints cố định; nó tốn thêm một lượt đo nên chỉ dùng khi cần. <code>SubcomposeLayout</code> (nền của <code>LazyColumn</code>, <code>BoxWithConstraints</code>) cho compose con ngay lúc layout nên đắt, tránh đặt trong từng item. Tận dụng phase: đọc state ở layout hay draw (<code>Modifier.layout</code>, <code>offset { }</code>, <code>drawBehind</code>) thì chỉ phase đó chạy lại, không recompose. Thư viện foundation đã có <code>FlowRow</code>, nên chỉ tự viết khi cần hành vi đặc biệt.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">TagFlow</span>(modifier: <span class="tk-type">Modifier</span> = <span class="tk-type">Modifier</span>, spacing: <span class="tk-type">Dp</span> = <span class="tk-num">8</span>.dp, content: <span class="tk-ann">@Composable</span> () -&gt; <span class="tk-type">Unit</span>) {
+  <span class="tk-type">Layout</span>(content = content, modifier = modifier) { measurables, constraints -&gt;
+    <span class="tk-kw">val</span> gap = spacing.roundToPx()
+    <span class="tk-com">// Mỗi con chỉ được đo một lần</span>
+    <span class="tk-kw">val</span> placeables = measurables.map { it.measure(constraints.copy(minWidth = <span class="tk-num">0</span>, minHeight = <span class="tk-num">0</span>)) }
+
+    <span class="tk-kw">val</span> positions = <span class="tk-type">ArrayList</span>&lt;<span class="tk-type">IntOffset</span>&gt;(placeables.size)
+    <span class="tk-kw">var</span> x = <span class="tk-num">0</span>
+    <span class="tk-kw">var</span> y = <span class="tk-num">0</span>
+    <span class="tk-kw">var</span> rowHeight = <span class="tk-num">0</span>
+    <span class="tk-kw">for</span> (p <span class="tk-kw">in</span> placeables) {
+      <span class="tk-kw">if</span> (x &gt; <span class="tk-num">0</span> &amp;&amp; x + p.width &gt; constraints.maxWidth) { <span class="tk-com">// hết chỗ: xuống hàng</span>
+        x = <span class="tk-num">0</span>
+        y += rowHeight + gap
+        rowHeight = <span class="tk-num">0</span>
+      }
+      positions += <span class="tk-type">IntOffset</span>(x, y)
+      x += p.width + gap
+      rowHeight = maxOf(rowHeight, p.height)
+    }
+    layout(constraints.maxWidth, y + rowHeight) {
+      placeables.forEachIndexed { i, p -&gt; p.placeRelative(positions[i]) }
     }
   }
-  requestLocationUpdates(request, callback, <span class="tk-type">Looper</span>.getMainLooper())
-  awaitClose { removeLocationUpdates(callback) } <span class="tk-com">// collector bị huỷ thì gỡ listener</span>
-}.conflate() <span class="tk-com">// chỉ cần vị trí mới nhất</span>
-
-<span class="tk-kw">class</span> <span class="tk-type">LocationRepository</span>(client: <span class="tk-type">FusedLocationProviderClient</span>, request: <span class="tk-type">LocationRequest</span>, scope: <span class="tk-type">CoroutineScope</span>) {
-  <span class="tk-kw">val</span> location: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">Location</span>?&gt; = client.locationUpdates(request)
-    .stateIn(scope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-kw">null</span>)
 }
 
-<span class="tk-com">// UI (Compose): dừng thu thập khi app xuống dưới STARTED</span>
-<span class="tk-kw">val</span> location <span class="tk-kw">by</span> repo.location.collectAsStateWithLifecycle()</code></pre>
+<span class="tk-com">// Intrinsic: vạch ngăn cao bằng item cao nhất trong Row</span>
+<span class="tk-type">Row</span>(<span class="tk-type">Modifier</span>.height(<span class="tk-type">IntrinsicSize</span>.<span class="tk-type">Min</span>)) {
+  <span class="tk-type">Text</span>(<span class="tk-str">&quot;Trái&quot;</span>)
+  <span class="tk-type">VerticalDivider</span>()
+  <span class="tk-type">Text</span>(<span class="tk-str">&quot;Phải\nnhiều dòng&quot;</span>)
+}</code></pre>
         
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q28">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/and-sen-q27.html"><span class="muted small">← Câu trước</span><span>Màn hình dashboard tải song song profile, feed và quảng cáo bằng async. Quảng c…</span></a>
-  <a class="pager-next" href="../s/and-sen-q29.html"><span class="muted small">Câu sau →</span><span>Layout Inspector cho thấy ProductCard bị recompose mỗi khi cuộn LazyColumn dù d…</span></a>
+  <a href="../s/and-sen-q27.html"><span class="muted small">← Câu trước</span><span>Một dev viết flow { withContext(Dispatchers.IO) { emit(readConfig()) } } và app…</span></a>
+  <a class="pager-next" href="../s/and-sen-q29.html"><span class="muted small">Câu sau →</span><span>App xử lý lỗi không nhất quán: chỗ ném HttpException lên tận UI, chỗ catch (e:…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp Android Senior</h2>
@@ -87,14 +103,14 @@
   </div>
 </section>
 <section>
-  <div class="section-head"><h2>Cùng chủ đề Coroutines &amp; Flow</h2><a class="section-sub" href="../phong-van/android/chu-de/coroutines/">Xem tất cả →</a></div>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
   <ul class="link-list">
-    <li><a href="../s/and-sen-q26.html">Repository có đoạn try { api.fetchProfile() } catch (e: Exception) { ... } (hoặc runCatching) chạy trong coroutine của ViewModel. Sau khi user rời màn hình, log vẫn báo lỗi huỷ coroutine và đôi khi coroutine còn chạy tiếp sang bước sau. Vì sao, và bạn xử lý việc huỷ coroutine đúng cách thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
-    <li><a href="../s/and-sen-q27.html">Màn hình dashboard tải song song profile, feed và quảng cáo bằng async. Quảng cáo lỗi thì chỉ cần ẩn khối quảng cáo, nhưng thực tế lỗi đó làm cả màn hình báo lỗi và hai request còn lại bị huỷ. Giải thích cách exception lan truyền trong coroutine, bạn thiết kế lại thế nào, và CoroutineExceptionHandler có giúp được không?</a> <span class="rank-tag rank-purple">Senior</span></li>
-    <li><a href="../s/and-jun-q14.html">Màn hình chi tiết cần gọi hai API độc lập (thông tin sản phẩm và đánh giá). Bạn dùng launch hay async để gọi song song? Hai builder này khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-jun-q15.html">Hàm suspend có tự chạy ở background thread không? Nên đặt withContext(Dispatchers.IO) ở tầng nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-jun-q16.html">viewModelScope, lifecycleScope và GlobalScope khác nhau thế nào? Vì sao không nên dùng GlobalScope để gọi API của một màn hình?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-jun-q17.html">Dự án đang chuyển từ LiveData sang StateFlow. Hai cái khác nhau ở những điểm nào cần lưu ý?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-sen-q15.html">Bạn xây design system bằng Compose cho 5 team cùng dùng thế nào để UI nhất quán mà không làm chậm tốc độ phát triển?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m23.html">Bạn viết AppButton cho design system mà 5 team dùng chung. Theo Compose API guidelines, component nên nhận Modifier thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m24.html">ViewModel sửa trực tiếp items rồi gán lại chính instance cũ vào MutableStateFlow. Điều gì có thể xảy ra trên UI Compose?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m25.html">Feed có nhiều RecyclerView ngang lồng trong một RecyclerView dọc; profiler cho thấy liên tục inflate ViewHolder mới khi cuộn. Cách cải thiện hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q18.html">dp, sp và px khác nhau thế nào? Vì sao cỡ chữ nên dùng sp?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q19.html">Khi nào dùng LinearLayout, khi nào dùng ConstraintLayout? layout_weight hoạt động thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
   </ul>
 </section>
 </main>

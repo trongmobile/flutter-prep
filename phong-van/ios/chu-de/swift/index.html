@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Swift — Mobile Interview</title>
-<meta name="description" content="20 câu hỏi phỏng vấn iOS về Swift từ Fresher đến Senior, có đáp án mẫu và 25 câu quiz trắc nghiệm.">
+<meta name="description" content="23 câu hỏi phỏng vấn iOS về Swift từ Fresher đến Senior, có đáp án mẫu và 25 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swift/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Swift — Mobile Interview">
-<meta property="og:description" content="20 câu hỏi phỏng vấn iOS về Swift từ Fresher đến Senior, có đáp án mẫu và 25 câu quiz trắc nghiệm.">
+<meta property="og:description" content="23 câu hỏi phỏng vấn iOS về Swift từ Fresher đến Senior, có đáp án mẫu và 25 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swift/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Swift</h1>
-  <p class="subtitle">20 câu hỏi kèm đáp án mẫu và 25 câu quiz về Swift, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">23 câu hỏi kèm đáp án mẫu và 25 câu quiz về Swift, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -98,6 +98,9 @@
     <li><a href="../../../../s/ios-mid-q12.html">Trong code review bạn thấy func makeRepository() -&gt; any UserRepository ở chỗ này và func render(_ shape: some Shape) ở chỗ khác. some và any khác nhau thế nào, khi nào chọn cái nào?</a></li>
     <li><a href="../../../../s/ios-mid-q13.html">Array, Dictionary của Swift là value type nhưng gán qua lại rất rẻ nhờ copy-on-write. Nếu bạn tự viết một struct bọc storage là class (vd. một buffer lớn), làm sao để nó cũng có copy-on-write?</a></li>
     <li><a href="../../../../s/ios-mid-q14.html">Bạn muốn các property như volume, progress luôn bị giới hạn trong một khoảng giá trị mà không phải lặp code ở từng setter. Viết property wrapper thế nào, và projectedValue (truy cập qua $) dùng để làm gì?</a></li>
+    <li><a href="../../../../s/ios-mid-q26.html">Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt lỗi khắp nơi, hàm trả Optional để báo thất bại, completion (Result&lt;T, Error&gt;) -&gt; Void, và fatalError ở chỗ không chắc. Bạn chuẩn hoá xử lý lỗi trong Swift thế nào: throws, Result, typed throws, LocalizedError, và khi nào dùng try?, try!?</a></li>
+    <li><a href="../../../../s/ios-mid-q29.html">App hiển thị giờ đặt hàng lệch 7 tiếng ở một số máy, DateFormatter tạo trong cellForRow làm cuộn chậm, và giá tiền hiện 1,000.00 thay vì 1.000 ₫ trên máy đặt ngôn ngữ khác. Bạn xử lý Date, DateFormatter, Locale và TimeZone đúng thế nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q30.html">Một protocol có extension cung cấp implementation mặc định. Struct conform ghi đè method đó, nhưng khi gọi qua biến kiểu protocol thì lại chạy bản mặc định trong extension chứ không phải bản của struct. Vì sao, và static dispatch khác dynamic dispatch thế nào trong Swift?</a></li>
     <li><a href="../../../../s/ios-mid-m12.html">Với var a = [1, 2, 3], tiếp theo var b = a rồi b.append(4): buffer phần tử của Array thực sự bị copy khi nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m13.html">Hàm makeIcon trả về some View với hai nhánh return như dưới. Compiler xử lý thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m14.html">Hàm sau kết thúc chuỗi operator bằng .eraseToAnyPublisher() và khai báo kiểu trả về AnyPublisher&lt;[Item], Never&gt;. Mục đích chính của việc này là gì?</a> <span class="tag">Quiz</span></li>
@@ -111,7 +114,7 @@
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
-    <li><a href="../../../../s/ios-sen-q28.html">Code review thấy let repositories: [any Repository] rải khắp nơi và một người đề xuất đổi hết sang generic some Repository hoặc &lt;R: Repository&gt;. some và any khác nhau thế nào, chi phí của existential ra sao, và khi nào bạn chọn loại nào?</a></li>
+    <li><a href="../../../../s/ios-sen-q28.html">Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phiên bản Xcode khác nhau. Sau khi nâng Xcode, app tích hợp báo module được biên dịch bằng phiên bản Swift khác, và việc thêm một case vào enum public của SDK làm vỡ các app tích hợp. Bạn xử lý thế nào?</a></li>
   </ul>
 </section>
 <section>

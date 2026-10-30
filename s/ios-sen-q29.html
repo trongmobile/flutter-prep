@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior: Màn hình SwiftUI có ViewModel tải dữ liệu từ API. Mỗi khi view cha cập nhật (đổ…</title>
-<meta name="description" content="View của SwiftUI là struct nhẹ và bị dựng lại liên tục theo state của cha; state thật sống ở chỗ khác do SwiftUI quản lý, gắn với identity của view trong cây…">
+<title>Câu hỏi phỏng vấn iOS Senior: Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ,…</title>
+<meta name="description" content="Layout của SwiftUI có ba bước: parent đề xuất một kích thước cho con (ProposedViewSize), con tự chọn kích thước của mình (có thể khác đề xuất), rồi parent đặ…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q29.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Màn hình SwiftUI có ViewModel tải dữ liệu từ API. Mỗi khi view cha cập nhật (đổ…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ,…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q29.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Màn hình SwiftUI có ViewModel tải dữ liệu từ AP…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q29.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Design system cần một TagFlow xếp các chip theo…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q29.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,48 +41,74 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình SwiftUI có ViewModel tải dữ liệu từ AP…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Design system cần một TagFlow xếp các chip theo…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/swiftui/">SwiftUI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Màn hình SwiftUI có ViewModel tải dữ liệu từ API. Mỗi khi view cha cập nhật (đổi tab rồi quay lại, hoặc cha có bộ đếm thời gian), ViewModel của màn con bị tạo lại, mất dữ liệu và gọi lại API. Nguyên nhân là gì, và quyền sở hữu state (<code>@State</code>, <code>@StateObject</code>, <code>@ObservedObject</code>, <code>@Observable</code>) được khai báo đúng thế nào?</h1>
+  <h1 class="question-title">Design system cần một <code>TagFlow</code> xếp các chip theo hàng và xuống dòng khi hết chỗ, và một hàng nút có chiều rộng bằng nút rộng nhất. Layout của SwiftUI hoạt động theo quy tắc nào, và bạn viết container tuỳ biến bằng protocol <code>Layout</code> thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">View của SwiftUI là struct nhẹ và bị dựng lại liên tục theo state của cha; state thật sống ở chỗ khác do SwiftUI quản lý, gắn với identity của view trong cây. <code>@ObservedObject</code> chỉ quan sát một object do bên ngoài giữ: viết <code>@ObservedObject var vm = DetailViewModel()</code> thì mỗi lần cha dựng lại struct sẽ tạo một ViewModel mới nên mất state. <code>@StateObject</code> (iOS 14 trở lên) khiến SwiftUI giữ object suốt vòng đời view và chỉ chạy autoclosure khởi tạo một lần; quy tắc là view sở hữu ViewModel thì dùng <code>@StateObject</code>, view chỉ được truyền vào thì dùng <code>@ObservedObject</code>. Với <code>@Observable</code> (iOS 17), view sở hữu thì dùng <code>@State var model = Model()</code>, view nhận từ ngoài thì chỉ cần <code>let</code>/<code>var</code> thường (hoặc <code>@Bindable</code> khi cần binding). Bẫy: <code>@State</code> không có autoclosure như <code>@StateObject</code>, nên <code>Model()</code> được khởi tạo lại mỗi lần struct view được dựng (bản mới bị bỏ đi nhưng <code>init</code> vẫn chạy), vì vậy <code>init</code> của model phải nhẹ và không gọi API; việc tải đặt ở <code>.task { }</code>, mà <code>.task</code> chạy lại mỗi lần view xuất hiện nên cần cờ <code>loaded</code> hoặc kiểm tra dữ liệu đã có. Nguyên nhân thứ hai là identity: đổi <code>id</code>, <code>if/else</code> trả hai view khác nhau, hay <code>ForEach</code> với id không ổn định đều khiến SwiftUI coi là view mới và reset state, nên cần giữ identity ổn định và dùng modifier điều kiện thay cho nhánh <code>if</code> khi muốn giữ state.</div>
-        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">OrderListScreen</span>: <span class="tk-type">View</span> {
-  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> model = <span class="tk-type">OrderListModel</span>() <span class="tk-com">// view sở hữu: giữ suốt vòng đời, init phải nhẹ</span>
+        <div class="answer-text">Layout của SwiftUI có ba bước: parent đề xuất một kích thước cho con (<code>ProposedViewSize</code>), con tự chọn kích thước của mình (có thể khác đề xuất), rồi parent đặt con vào vị trí. Đề xuất có thể là <code>nil</code> (kích thước lý tưởng của view), <code>0</code> (nhỏ nhất) hoặc <code>.infinity</code> (lớn nhất), nhờ đó parent hỏi được kích thước tự nhiên, nhỏ nhất và lớn nhất của một view. Protocol <code>Layout</code> (iOS 16 trở lên) cho phép tự viết container theo đúng quy trình đó: <code>sizeThatFits(proposal:subviews:cache:)</code> trả kích thước của container và <code>placeSubviews(in:proposal:subviews:cache:)</code> đặt từng subview bằng <code>place(at:anchor:proposal:)</code>. <code>subviews[i].sizeThatFits(...)</code> hỏi con kích thước ứng với một đề xuất và có thể gọi nhiều lần với các đề xuất khác nhau, nhưng mỗi lần đều tốn chi phí nên dùng <code>cache</code> (<code>makeCache</code>, <code>updateCache</code>) để lưu kết quả đã đo giữa <code>sizeThatFits</code> và <code>placeSubviews</code>. Với hàng nút bằng nhau, hỏi từng con theo đề xuất <code>.unspecified</code>, lấy chiều rộng lớn nhất rồi đề xuất đúng chiều rộng đó cho mọi con. Con có thể truyền thông tin riêng cho layout (độ ưu tiên, nhãn) qua <code>LayoutValueKey</code>. <code>AnyLayout</code> cho phép đổi giữa hai layout (ngang hay dọc theo Dynamic Type) mà vẫn giữ identity nên state và animation của view không bị mất. <code>ViewThatFits</code> chọn view đầu tiên vừa chỗ, hợp khi chỉ cần một phương án dự phòng. Đừng dùng <code>GeometryReader</code> kèm <code>PreferenceKey</code> để tự ghép kích thước khi <code>Layout</code> giải quyết được, vì chúng thêm một lượt layout và dễ gây vòng lặp cập nhật.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">TagFlow</span>: <span class="tk-type">Layout</span> {
+  <span class="tk-kw">var</span> spacing: <span class="tk-type">CGFloat</span> = <span class="tk-num">8</span>
 
-  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
-    <span class="tk-type">List</span>(model.orders) { <span class="tk-type">OrderRow</span>(order: $<span class="tk-num">0</span>) }
-      .task { <span class="tk-kw">await</span> model.loadIfNeeded() } <span class="tk-com">// không gọi API trong init</span>
+  <span class="tk-kw">func</span> sizeThatFits(proposal: <span class="tk-type">ProposedViewSize</span>, subviews: <span class="tk-type">Subviews</span>, cache: <span class="tk-kw">inout</span> ()) -&gt; <span class="tk-type">CGSize</span> {
+    arrange(<span class="tk-kw">in</span>: proposal.width ?? .infinity, subviews: subviews).size
+  }
+
+  <span class="tk-kw">func</span> placeSubviews(<span class="tk-kw">in</span> bounds: <span class="tk-type">CGRect</span>, proposal: <span class="tk-type">ProposedViewSize</span>, subviews: <span class="tk-type">Subviews</span>, cache: <span class="tk-kw">inout</span> ()) {
+    <span class="tk-kw">let</span> result = arrange(<span class="tk-kw">in</span>: bounds.width, subviews: subviews)
+    <span class="tk-kw">for</span> (subview, origin) <span class="tk-kw">in</span> zip(subviews, result.origins) {
+      subview.place(at: <span class="tk-type">CGPoint</span>(x: bounds.minX + origin.x, y: bounds.minY + origin.y), proposal: .unspecified)
+    }
+  }
+
+  <span class="tk-com">// Tính vị trí các chip; có thể lưu vào cache để tránh tính hai lần</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">func</span> arrange(<span class="tk-kw">in</span> width: <span class="tk-type">CGFloat</span>, subviews: <span class="tk-type">Subviews</span>) -&gt; (size: <span class="tk-type">CGSize</span>, origins: [<span class="tk-type">CGPoint</span>]) {
+    <span class="tk-kw">var</span> origins: [<span class="tk-type">CGPoint</span>] = []
+    <span class="tk-kw">var</span> x: <span class="tk-type">CGFloat</span> = <span class="tk-num">0</span>
+    <span class="tk-kw">var</span> y: <span class="tk-type">CGFloat</span> = <span class="tk-num">0</span>
+    <span class="tk-kw">var</span> rowHeight: <span class="tk-type">CGFloat</span> = <span class="tk-num">0</span>
+    <span class="tk-kw">var</span> maxX: <span class="tk-type">CGFloat</span> = <span class="tk-num">0</span>
+    <span class="tk-kw">for</span> subview <span class="tk-kw">in</span> subviews {
+      <span class="tk-kw">let</span> size = subview.sizeThatFits(.unspecified) <span class="tk-com">// kích thước tự nhiên của chip</span>
+      <span class="tk-kw">if</span> x &gt; <span class="tk-num">0</span> &amp;&amp; x + size.width &gt; width { <span class="tk-com">// hết chỗ: xuống hàng</span>
+        x = <span class="tk-num">0</span>
+        y += rowHeight + spacing
+        rowHeight = <span class="tk-num">0</span>
+      }
+      origins.append(<span class="tk-type">CGPoint</span>(x: x, y: y))
+      x += size.width + spacing
+      maxX = max(maxX, x - spacing)
+      rowHeight = max(rowHeight, size.height)
+    }
+    <span class="tk-kw">return</span> (<span class="tk-type">CGSize</span>(width: maxX, height: y + rowHeight), origins)
   }
 }
 
-<span class="tk-ann">@Observable</span>
-<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">OrderListModel</span> {
-  <span class="tk-kw">var</span> orders: [<span class="tk-type">Order</span>] = []
-  <span class="tk-kw">private</span> <span class="tk-kw">var</span> loaded = <span class="tk-kw">false</span>
-
-  <span class="tk-kw">func</span> loadIfNeeded() <span class="tk-kw">async</span> {
-    <span class="tk-kw">guard</span> !loaded <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// .task chạy lại mỗi lần view xuất hiện</span>
-    orders = (<span class="tk-kw">try</span>? <span class="tk-kw">await</span> <span class="tk-type">OrderAPI</span>.fetchOrders()) ?? []
-    loaded = <span class="tk-kw">true</span>
-  }
+<span class="tk-com">// Dùng như một container bình thường</span>
+<span class="tk-type">TagFlow</span>(spacing: <span class="tk-num">8</span>) {
+  <span class="tk-type">ForEach</span>(tags) { <span class="tk-type">TagChip</span>($<span class="tk-num">0</span>) }
 }
 
-<span class="tk-com">// iOS 16 trở xuống dùng ObservableObject:</span>
-<span class="tk-com">// view sở hữu dùng @StateObject, view được truyền vào dùng @ObservedObject</span></code></pre>
+<span class="tk-com">// Đổi layout theo Dynamic Type mà vẫn giữ identity và animation</span>
+<span class="tk-ann">@Environment</span>(\.dynamicTypeSize) <span class="tk-kw">private</span> <span class="tk-kw">var</span> typeSize
+<span class="tk-kw">let</span> layout = typeSize.isAccessibilitySize ? <span class="tk-type">AnyLayout</span>(<span class="tk-type">VStackLayout</span>()) : <span class="tk-type">AnyLayout</span>(<span class="tk-type">HStackLayout</span>())
+layout {
+  <span class="tk-type">Text</span>(<span class="tk-str">&quot;Giá&quot;</span>)
+  <span class="tk-type">Text</span>(<span class="tk-str">&quot;1.000 ₫&quot;</span>)
+}</code></pre>
         
       </div>
     </details>
   <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q29">Luyện câu này trong app</a></div>
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
-  <a href="../s/ios-sen-q28.html"><span class="muted small">← Câu trước</span><span>Code review thấy let repositories: [any Repository] rải khắp nơi và một người đ…</span></a>
-  <a class="pager-next" href="../s/ios-sen-q30.html"><span class="muted small">Câu sau →</span><span>UICollectionView của màn hình chat thỉnh thoảng crash với lỗi Invalid update: i…</span></a>
+  <a href="../s/ios-sen-q28.html"><span class="muted small">← Câu trước</span><span>Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phi…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q30.html"><span class="muted small">Câu sau →</span><span>Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn đượ…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp iOS Senior</h2>

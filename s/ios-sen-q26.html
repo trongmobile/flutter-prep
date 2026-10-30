@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior: Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API…</title>
-<meta name="description" content="Actor chỉ bảo đảm không có hai đoạn code chạy đồng thời trên state của nó, chứ không bảo đảm tính nguyên tử qua điểm await: khi một hàm của actor suspend ở a…">
+<title>Câu hỏi phỏng vấn iOS Senior: Một service cũ dùng DispatchSemaphore.wait() bên trong hàm async để chờ callbac…</title>
+<meta name="description" content="Swift Concurrency chạy task trên cooperative thread pool có số thread xấp xỉ số core CPU, thay vì mỗi tác vụ một thread như GCD. Giả định nền tảng là task kh…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Một service cũ dùng DispatchSemaphore.wait() bên trong hàm async để chờ callbac…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Nhiều request song song cùng nhận 401 khi acces…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Một service cũ dùng DispatchSemaphore.wait() bê…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q26.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,37 +41,40 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Nhiều request song song cùng nhận 401 khi acces…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Một service cũ dùng DispatchSemaphore.wait() bê…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/concurrency/">Concurrency</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Nhiều request song song cùng nhận 401 khi access token hết hạn, và app gọi API refresh token 10 lần, khiến server xoay vòng refresh token và các lần sau thất bại (user bị đăng xuất). Bạn dùng <code>actor</code> để bảo đảm chỉ refresh một lần thế nào, và reentrancy của actor ảnh hưởng ra sao?</h1>
+  <h1 class="question-title">Một service cũ dùng <code>DispatchSemaphore.wait()</code> bên trong hàm <code>async</code> để chờ callback, và app thỉnh thoảng treo hoàn toàn dù CPU rất rảnh. Thread pool của Swift Concurrency hoạt động thế nào, vì sao chặn thread trong code async nguy hiểm, và <code>Task { }</code> khác <code>Task.detached</code> ra sao?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text">Actor chỉ bảo đảm không có hai đoạn code chạy đồng thời trên state của nó, chứ không bảo đảm tính nguyên tử qua điểm <code>await</code>: khi một hàm của actor suspend ở <code>await</code>, actor được giải phóng để xử lý lời gọi khác (reentrancy), và khi quay lại thì state có thể đã đổi. Viết <code>if token.isExpired { token = try await api.refresh() }</code> thì 10 lời gọi cùng thấy token hết hạn trước khi lần refresh nào xong, nên gọi API 10 lần. Cách đúng là lưu chính công việc đang chạy: actor giữ <code>refreshTask: Task&lt;Token, Error&gt;?</code>; ai thấy task đã tồn tại thì <code>await task.value</code> để chờ chung, người đầu tiên tạo task và gán vào biến trước khi <code>await</code> (đoạn đồng bộ này không bị chen ngang), rồi xoá sau khi xong. Sau mỗi <code>await</code> cũng phải kiểm tra lại điều kiện thay vì giả định state còn nguyên. Task thất bại thì mọi bên đang chờ nhận cùng lỗi, và phải xoá <code>refreshTask</code> để lần sau thử lại được. Lưu ý về huỷ: task tạo bằng <code>Task { }</code> là unstructured nên không bị huỷ theo caller đầu tiên, hợp với việc dùng chung nhưng nên có timeout riêng. Kỹ thuật này dùng cho mọi việc &#39;chỉ làm một lần&#39; như tải trùng một URL hay khởi tạo database.</div>
-        <pre class="code-block"><code><span class="tk-kw">actor</span> <span class="tk-type">TokenStore</span> {
-  <span class="tk-kw">private</span> <span class="tk-kw">var</span> token: <span class="tk-type">Token</span>
-  <span class="tk-kw">private</span> <span class="tk-kw">var</span> refreshTask: <span class="tk-type">Task</span>&lt;<span class="tk-type">Token</span>, <span class="tk-type">Error</span>&gt;?
-  <span class="tk-kw">private</span> <span class="tk-kw">let</span> api: <span class="tk-type">AuthAPI</span>
-
-  <span class="tk-kw">init</span>(token: <span class="tk-type">Token</span>, api: <span class="tk-type">AuthAPI</span>) {
-    <span class="tk-kw">self</span>.token = token
-    <span class="tk-kw">self</span>.api = api
+        <div class="answer-text">Swift Concurrency chạy task trên cooperative thread pool có số thread xấp xỉ số core CPU, thay vì mỗi tác vụ một thread như GCD. Giả định nền tảng là task không chặn thread: khi <code>await</code>, task suspend và thread được trả lại cho task khác. Nếu trong hàm async bạn gọi API chặn như <code>DispatchSemaphore.wait()</code>, <code>DispatchQueue.sync</code> chờ kết quả từ task khác hay <code>Thread.sleep</code>, bạn chiếm mất một thread của pool; vài task như vậy đủ chiếm hết pool, và task cần chạy để <code>signal</code> semaphore không còn thread nào để chạy, thế là deadlock (treo mà CPU rảnh). Cách sửa là <code>withCheckedContinuation</code> để chờ callback mà không chặn thread, hoặc đưa việc blocking bắt buộc (I/O đồng bộ của thư viện C) sang một queue GCD riêng rồi await qua continuation. Để phát hiện, chạy với biến môi trường <code>LIBDISPATCH_COOPERATIVE_POOL_STRICT=1</code> (thu pool còn một thread) để lộ các chỗ chặn. Về <code>Task { }</code> và <code>Task.detached</code>: <code>Task { }</code> là task không có cấu trúc nhưng thừa hưởng context nơi tạo (actor isolation, priority, task-local), nên <code>Task { }</code> trong hàm <code>@MainActor</code> mà làm việc CPU nặng vẫn chiếm main thread; <code>Task.detached</code> không thừa hưởng gì, chạy ngoài actor, nhưng cũng không bị huỷ theo task cha nên phải tự quản lý. Swift 6.2 thêm <code>@concurrent</code> để đánh dấu hàm async luôn chạy ngoài actor của caller, giúp rõ ràng hơn việc nặng chạy ở đâu.</div>
+        <pre class="code-block"><code><span class="tk-com">// Sai: chiếm một thread của cooperative pool, vài task như vậy là pool cạn thread và treo</span>
+<span class="tk-kw">func</span> loadConfig() <span class="tk-kw">async</span> -&gt; <span class="tk-type">Config</span> {
+  <span class="tk-kw">let</span> semaphore = <span class="tk-type">DispatchSemaphore</span>(value: <span class="tk-num">0</span>)
+  <span class="tk-kw">var</span> result: <span class="tk-type">Config</span>!
+  legacy.load { config <span class="tk-kw">in</span>
+    result = config
+    semaphore.signal()
   }
+  semaphore.wait() <span class="tk-com">// chặn thread</span>
+  <span class="tk-kw">return</span> result
+}
 
-  <span class="tk-kw">func</span> validToken() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Token</span> {
-    <span class="tk-kw">if</span> <span class="tk-kw">let</span> refreshTask { <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> refreshTask.value } <span class="tk-com">// đang có người refresh: chờ chung</span>
-    <span class="tk-kw">if</span> !token.isExpired { <span class="tk-kw">return</span> token }
-
-    <span class="tk-kw">let</span> task = <span class="tk-type">Task</span> { <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.refresh(using: token.refreshToken) }
-    refreshTask = task <span class="tk-com">// gán trước khi await: đoạn đồng bộ này không bị actor khác chen vào</span>
-    <span class="tk-kw">defer</span> { refreshTask = <span class="tk-kw">nil</span> } <span class="tk-com">// thành công hay lỗi đều xoá để lần sau thử lại được</span>
-    token = <span class="tk-kw">try</span> <span class="tk-kw">await</span> task.value
-    <span class="tk-kw">return</span> token
+<span class="tk-com">// Đúng: suspend, thread được trả lại cho pool</span>
+<span class="tk-kw">func</span> loadConfig() <span class="tk-kw">async</span> -&gt; <span class="tk-type">Config</span> {
+  <span class="tk-kw">await</span> withCheckedContinuation { continuation <span class="tk-kw">in</span>
+    legacy.load { continuation.resume(returning: $<span class="tk-num">0</span>) }
   }
+}
+
+<span class="tk-ann">@MainActor</span>
+<span class="tk-kw">func</span> onTap() {
+  <span class="tk-type">Task</span> { heavyCompute() }          <span class="tk-com">// thừa hưởng MainActor: vẫn chiếm main thread</span>
+  <span class="tk-type">Task</span>.detached { heavyCompute() } <span class="tk-com">// không thừa hưởng actor: chạy ngoài main, tự quản lý việc huỷ</span>
 }</code></pre>
         
       </div>

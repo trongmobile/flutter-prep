@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: Bạn present một màn hình chọn bộ lọc dạng bottom sheet từ UIKit: cần dừng ở nửa…</title>
+<meta name="description" content="Từ iOS 15, view controller present kiểu .pageSheet có sheetPresentationController để cấu hình bottom sheet: detents khai báo các điểm dừng (.medium(), .large…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q32.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Bạn present một màn hình chọn bộ lọc dạng bottom sheet từ UIKit: cần dừng ở nửa…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q32.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Bạn present một màn hình chọn bộ lọc dạng botto…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q32.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn present một màn hình chọn bộ lọc dạng botto…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn present một màn hình chọn bộ lọc dạng bottom sheet từ UIKit: cần dừng ở nửa màn hình, kéo lên được toàn màn hình, chặn user vuốt đóng khi form còn dữ liệu chưa lưu, và biết khi nào sheet đóng để làm mới danh sách. Bạn dùng <code>UISheetPresentationController</code>, <code>isModalInPresentation</code> và <code>UIAdaptivePresentationControllerDelegate</code> thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Từ iOS 15, view controller present kiểu <code>.pageSheet</code> có <code>sheetPresentationController</code> để cấu hình bottom sheet: <code>detents</code> khai báo các điểm dừng (<code>.medium()</code>, <code>.large()</code>, và <code>.custom</code> từ iOS 16 để chiều cao theo nội dung), <code>prefersGrabberVisible</code> hiện thanh kéo, <code>selectedDetentIdentifier</code> chọn điểm dừng ban đầu, <code>largestUndimmedDetentIdentifier</code> cho phép tương tác với nội dung phía sau khi sheet ở điểm dừng nhỏ. Muốn chặn vuốt đóng khi form chưa lưu thì đặt <code>isModalInPresentation = true</code> (cập nhật động theo trạng thái form); khi đó vuốt xuống không đóng mà chỉ gọi <code>presentationControllerDidAttemptToDismiss(_:)</code>, nơi hiện hộp thoại xác nhận bỏ thay đổi. Để biết khi nào sheet đóng: <code>presentationControllerDidDismiss(_:)</code> của <code>UIAdaptivePresentationControllerDelegate</code> chỉ được gọi khi user đóng bằng thao tác vuốt, còn đóng bằng code (<code>dismiss(animated:)</code>, nút Xong) thì không, nên cần gom mọi đường đóng về một closure <code>onFinish</code> để không bỏ sót; <code>viewWillDisappear</code> không đáng tin vì cũng chạy khi có màn khác present chồng lên. Trên iPad hoặc cửa sổ lớn sheet có thể hiển thị dạng popover hay form sheet nên đừng giả định toàn màn hình. Trong SwiftUI, ý tưởng tương ứng là <code>.sheet</code> kèm <code>.presentationDetents([.medium, .large])</code> và <code>.interactiveDismissDisabled(isDirty)</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">FilterViewController</span>: <span class="tk-type">UIViewController</span>, <span class="tk-type">UIAdaptivePresentationControllerDelegate</span> {
+  <span class="tk-kw">var</span> onFinish: (() -&gt; <span class="tk-type">Void</span>)? <span class="tk-com">// gom mọi đường đóng sheet về một chỗ</span>
+
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> hasUnsavedChanges = <span class="tk-kw">false</span> {
+    <span class="tk-kw">didSet</span> { isModalInPresentation = hasUnsavedChanges } <span class="tk-com">// chặn vuốt đóng khi form chưa lưu</span>
+  }
+
+  <span class="tk-kw">override</span> <span class="tk-kw">func</span> viewDidLoad() {
+    <span class="tk-kw">super</span>.viewDidLoad()
+    <span class="tk-kw">if</span> <span class="tk-kw">let</span> sheet = sheetPresentationController {
+      sheet.detents = [.medium(), .large()]
+      sheet.prefersGrabberVisible = <span class="tk-kw">true</span>
+      sheet.largestUndimmedDetentIdentifier = .medium <span class="tk-com">// vẫn thao tác được nội dung phía sau ở nửa màn hình</span>
+    }
+    presentationController?.delegate = <span class="tk-kw">self</span>
+  }
+
+  <span class="tk-com">// Bị chặn bởi isModalInPresentation: vuốt xuống chỉ báo &#39;đã cố đóng&#39;</span>
+  <span class="tk-kw">func</span> presentationControllerDidAttemptToDismiss(_ presentationController: <span class="tk-type">UIPresentationController</span>) {
+    showDiscardAlert { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] <span class="tk-kw">in</span>
+      <span class="tk-kw">self</span>?.dismiss(animated: <span class="tk-kw">true</span>)
+      <span class="tk-kw">self</span>?.onFinish?()
+    }
+  }
+
+  <span class="tk-com">// Chỉ được gọi khi user đóng bằng vuốt, không gọi khi đóng bằng code</span>
+  <span class="tk-kw">func</span> presentationControllerDidDismiss(_ presentationController: <span class="tk-type">UIPresentationController</span>) {
+    onFinish?()
+  }
+
+  <span class="tk-ann">@objc</span> <span class="tk-kw">private</span> <span class="tk-kw">func</span> doneTapped() {
+    dismiss(animated: <span class="tk-kw">true</span>) { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] <span class="tk-kw">in</span> <span class="tk-kw">self</span>?.onFinish?() }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q32">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q31.html"><span class="muted small">← Câu trước</span><span>Danh sách tải avatar bất đồng bộ: cuộn nhanh thì ảnh hiện sai chỗ (avatar của d…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q33.html"><span class="muted small">Câu sau →</span><span>App cần hỗ trợ tiếng Việt và tiếng Anh, sau này có thể thêm tiếng Ả Rập. Bạn tổ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q21.html">Bạn đổi constant của một constraint rồi gọi UIView.animate, nhưng view nhảy ngay sang vị trí mới mà không có animation. Giải thích layout cycle và cách sửa; setNeedsLayout khác layoutIfNeeded thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q22.html">Nút &quot;đóng&quot; được đặt lệch một nửa ra ngoài bounds của view cha (cha đã tắt clipsToBounds), phần lòi ra ngoài bấm không ăn. Vì sao, và hit-testing với responder chain hoạt động thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q31.html">Danh sách tải avatar bất đồng bộ: cuộn nhanh thì ảnh hiện sai chỗ (avatar của dòng khác), nhấp nháy, và cell được dùng lại vẫn hiện ảnh cũ trong chốc lát. Vì sao, và bạn xử lý cell reuse thế nào (prepareForReuse, huỷ request, kiểm tra identity)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m27.html">Bạn gán heightConstraint.constant = 300 rồi viết UIView.animate(withDuration: 0.3) { self.view.setNeedsLayout() }. Kết quả là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m28.html">Đồng hồ đếm ngược tạo bằng Timer.scheduledTimer(withTimeInterval:repeats:block:) đứng yên mỗi khi user kéo UIScrollView, thả tay mới chạy tiếp. Cách sửa đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m29.html">Một UIButton nằm lệch một nửa ra ngoài bounds của view cha, cha đặt clipsToBounds = false. Chạm vào phần nút nằm ngoài cha thì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a></p>
+</footer>
+</body>
+</html>

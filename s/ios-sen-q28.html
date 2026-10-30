@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior: Code review thấy let repositories: [any Repository] rải khắp nơi và một người đ…</title>
-<meta name="description" content="some P (opaque type) là một kiểu cụ thể duy nhất mà compiler biết nhưng ẩn với bên gọi, nên compiler có thể chuyên biệt hoá (specialize), gọi trực tiếp và in…">
+<title>Câu hỏi phỏng vấn iOS Senior: Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phi…</title>
+<meta name="description" content="Mặc định module Swift không ổn định giữa các phiên bản compiler: file .swiftmodule mô tả API phụ thuộc vào compiler đã build ra nó nên bản compiler khác khôn…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q28.html">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Code review thấy let repositories: [any Repository] rải khắp nơi và một người đ…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phi…">
 <meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q28.html">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../css/styles.css">
 <script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
 <script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Code review thấy let repositories: [any Reposit…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q28.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Team phát hành SDK nội bộ dưới dạng XCFramework…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q28.html"}]}</script>
 </head>
 <body>
 <header class="topbar">
@@ -41,31 +41,35 @@
 </header>
 <main class="page static-page">
 <nav class="crumbs" aria-label="Breadcrumb">
-  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Code review thấy let repositories: [any Reposit…</span>
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Team phát hành SDK nội bộ dưới dạng XCFramework…</span>
 </nav>
 
 <article class="card question-page rank-purple">
   <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Câu hỏi phỏng vấn</span></div>
-  <h1 class="question-title">Code review thấy <code>let repositories: [any Repository]</code> rải khắp nơi và một người đề xuất đổi hết sang generic <code>some Repository</code> hoặc <code>&lt;R: Repository&gt;</code>. <code>some</code> và <code>any</code> khác nhau thế nào, chi phí của existential ra sao, và khi nào bạn chọn loại nào?</h1>
+  <h1 class="question-title">Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phiên bản Xcode khác nhau. Sau khi nâng Xcode, app tích hợp báo module được biên dịch bằng phiên bản Swift khác, và việc thêm một case vào enum public của SDK làm vỡ các app tích hợp. Bạn xử lý thế nào?</h1>
   <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
   <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
-        <div class="answer-text"><code>some P</code> (opaque type) là một kiểu cụ thể duy nhất mà compiler biết nhưng ẩn với bên gọi, nên compiler có thể chuyên biệt hoá (specialize), gọi trực tiếp và inline. Generic <code>&lt;R: P&gt;</code> tương tự nhưng do bên gọi chọn kiểu. <code>any P</code> (existential) là một cái hộp chứa giá trị của bất kỳ kiểu nào conform <code>P</code>, quyết định lúc chạy: giá trị lưu trong existential container (vùng đệm inline cỡ ba word, lớn hơn thì cấp phát heap) cùng con trỏ metadata và witness table, mọi lời gọi method đi qua witness table (dynamic dispatch) nên khó inline và tốn chi phí cấp phát, copy khi giá trị lớn. Vì vậy với code nóng (vòng lặp, parse, render) ưu tiên generic hoặc <code>some</code>; <code>any</code> đúng chỗ khi thật sự cần tính dị thể: mảng chứa nhiều kiểu khác nhau, dependency chọn lúc chạy (mock khi test, đổi implementation theo feature flag), hay protocol có associated type nhưng chấp nhận dùng qua primary associated type (<code>any Collection&lt;Int&gt;</code>). Từ Swift 5.7, protocol có associated type dùng được như <code>any</code>; có thể bật upcoming feature <code>ExistentialAny</code> để compiler bắt buộc viết <code>any</code> cho rõ. Đừng vì sợ <code>any</code> mà biến cả codebase thành generic: tham số kiểu lan khắp nơi, build chậm, code khó đọc, trong khi chi phí dynamic dispatch hiếm khi là nút thắt so với I/O hay layout, nên hãy đo trước. Lưu ý <code>some</code> làm kiểu trả về thì không thể trả về hai kiểu khác nhau theo <code>if</code>.</div>
-        <pre class="code-block"><code><span class="tk-kw">protocol</span> <span class="tk-type">Repository</span> { <span class="tk-kw">func</span> load() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; [<span class="tk-type">Item</span>] }
+        <div class="answer-text">Mặc định module Swift không ổn định giữa các phiên bản compiler: file <code>.swiftmodule</code> mô tả API phụ thuộc vào compiler đã build ra nó nên bản compiler khác không import được. Khi phân phối binary phải bật library evolution (<code>BUILD_LIBRARY_FOR_DISTRIBUTION = YES</code>, tức <code>-enable-library-evolution</code>): compiler sinh thêm <code>.swiftinterface</code>, một dạng text ổn định được build lại phía người dùng, nên binary dùng được với compiler mới hơn. Đổi lại compiler phải chừa chỗ cho việc API tiến hoá, nên một số truy cập đi gián tiếp và chậm hơn một chút. Nó cũng quyết định quy tắc nâng cấp API tương thích: enum public không <code>@frozen</code> được coi là &#39;có thể thêm case&#39;, người dùng bắt buộc viết <code>@unknown default</code> khi <code>switch</code> nên thêm case không làm vỡ nguồn; <code>@frozen</code> là lời hứa layout không đổi (nhanh hơn nhưng sau này không thêm case hay field được). <code>@inlinable</code> và <code>@usableFromInline</code> đưa thân hàm vào interface để người dùng inline, nhưng sau đó implementation bị đóng đinh vì đã nằm trong binary của client, nên chỉ dùng cho hot path. <code>open</code> cho phép subclass và override ở ngoài module nên khoá hợp đồng chặt hơn nhiều so với <code>public</code>; mặc định chọn <code>public</code> và <code>final</code>. Ngoài việc nhớ cờ, cần chạy <code>swift-api-digester</code> trên CI để phát hiện thay đổi API làm vỡ tương thích, đóng gói XCFramework đủ slice thiết bị và simulator, kèm dSYM và Privacy Manifest nếu SDK dùng API thuộc diện phải khai báo.</div>
+        <pre class="code-block"><code><span class="tk-com">// Build: xcodebuild archive ... BUILD_LIBRARY_FOR_DISTRIBUTION=YES SKIP_INSTALL=NO</span>
 
-<span class="tk-com">// Generic: compiler chuyên biệt hoá cho từng kiểu cụ thể, gọi trực tiếp, inline được</span>
-<span class="tk-kw">func</span> syncAll&lt;<span class="tk-type">R</span>: <span class="tk-type">Repository</span>&gt;(_ repo: <span class="tk-type">R</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Int</span> {
-  <span class="tk-kw">try</span> <span class="tk-kw">await</span> repo.load().count
+<span class="tk-kw">public</span> <span class="tk-kw">enum</span> <span class="tk-type">PaymentError</span>: <span class="tk-type">Error</span> { <span class="tk-com">// không @frozen: sau này được phép thêm case</span>
+  <span class="tk-kw">case</span> declined
+  <span class="tk-kw">case</span> network
 }
 
-<span class="tk-com">// any: chọn implementation lúc chạy, đổi lại là dispatch qua witness table</span>
-<span class="tk-kw">struct</span> <span class="tk-type">AppEnvironment</span> {
-  <span class="tk-kw">var</span> repository: <span class="tk-kw">any</span> <span class="tk-type">Repository</span> <span class="tk-com">// bản thật khi chạy, mock khi test</span>
+<span class="tk-com">// Phía app dùng SDK: bắt buộc @unknown default với enum không @frozen</span>
+<span class="tk-kw">switch</span> error {
+<span class="tk-kw">case</span> .declined: showDeclined()
+<span class="tk-kw">case</span> .network: showRetry()
+<span class="tk-ann">@unknown</span> <span class="tk-kw">default</span>: showGenericError() <span class="tk-com">// case mới ở bản SDK sau không làm vỡ nguồn</span>
 }
 
-<span class="tk-com">// some: ẩn kiểu cụ thể nhưng chỉ được có một kiểu duy nhất</span>
-<span class="tk-kw">func</span> makeRepository() -&gt; <span class="tk-kw">some</span> <span class="tk-type">Repository</span> { <span class="tk-type">RemoteRepository</span>() }</code></pre>
+<span class="tk-ann">@frozen</span> <span class="tk-kw">public</span> <span class="tk-kw">struct</span> <span class="tk-type">Money</span> { <span class="tk-com">// hứa layout không đổi: nhanh hơn nhưng không thể thêm field</span>
+  <span class="tk-kw">public</span> <span class="tk-kw">var</span> amount: <span class="tk-type">Int</span>
+  <span class="tk-kw">public</span> <span class="tk-kw">var</span> currency: <span class="tk-type">String</span>
+}</code></pre>
         
       </div>
     </details>
@@ -73,7 +77,7 @@
 </article>
 <nav class="pager" aria-label="Câu trước, câu sau">
   <a href="../s/ios-sen-q27.html"><span class="muted small">← Câu trước</span><span>Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await,…</span></a>
-  <a class="pager-next" href="../s/ios-sen-q29.html"><span class="muted small">Câu sau →</span><span>Màn hình SwiftUI có ViewModel tải dữ liệu từ API. Mỗi khi view cha cập nhật (đổ…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q29.html"><span class="muted small">Câu sau →</span><span>Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ,…</span></a>
 </nav>
 <section class="card next-steps">
   <h2>Ôn tiếp iOS Senior</h2>

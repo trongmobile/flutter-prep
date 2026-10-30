@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Coroutines &amp; Flow — Mobile Interview</title>
-<meta name="description" content="12 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta name="description" content="13 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/coroutines/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Coroutines &amp; Flow — Mobile Interview">
-<meta property="og:description" content="12 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta property="og:description" content="13 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/coroutines/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Coroutines &amp; Flow</h1>
-  <p class="subtitle">12 câu hỏi kèm đáp án mẫu và 16 câu quiz về Coroutines &amp; Flow, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 16 câu quiz về Coroutines &amp; Flow, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> Android Junior</h2><a class="section-sub" href="../../../../phong-van/android/junior/">Mọi chủ đề Junior →</a></div>
@@ -72,6 +72,8 @@
     <li><a href="../../../../s/and-mid-q03.html">ViewModel cần báo cho UI các sự kiện một lần như hiện Snackbar hay điều hướng sau khi lưu thành công. Dùng StateFlow, SharedFlow hay Channel? Mỗi cách có bẫy gì?</a></li>
     <li><a href="../../../../s/and-mid-q04.html">Vì sao nhiều codebase viết stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), UiState.Loading)? Con số 5000 có ý nghĩa gì, và so với Eagerly/Lazily thì sao?</a></li>
     <li><a href="../../../../s/and-mid-q05.html">Bạn cần bọc một API dạng listener (vd. ConnectivityManager.NetworkCallback) thành Flow. Viết bằng callbackFlow thế nào và cần lưu ý gì?</a></li>
+    <li><a href="../../../../s/and-mid-q26.html">Màn Home cần ghép dữ liệu từ ba nguồn Flow độc lập (user, orders từ Room, settings từ DataStore) thành một UiState. Bạn dùng combine, zip hay merge, và những chi tiết nào (giá trị đầu tiên, lỗi, giá trị trùng) hay gây lỗi?</a></li>
+    <li><a href="../../../../s/and-mid-q27.html">Ô tìm kiếm gọi API mỗi lần gõ, kết quả của từ khoá cũ đôi khi về sau và đè lên kết quả mới, đồng thời app gửi quá nhiều request. Bạn dựng pipeline Flow thế nào với debounce, distinctUntilChanged, flatMapLatest, và nó khác flatMapConcat/flatMapMerge ra sao?</a></li>
     <li><a href="../../../../s/and-mid-m01.html">Người dùng thoát màn hình (ViewModel bị clear) khi syncAll() mới chạy được 5 giây trong tổng 30 giây. Coroutine dưới đây sẽ thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m02.html">Scope có CoroutineExceptionHandler, còn coroutine lỗi được tạo bằng async. Chương trình in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m03.html">Coroutine bị cancel trong lúc delay(1_000) và khối finally có gọi một hàm suspend. Output là gì?</a> <span class="tag">Quiz</span></li>
@@ -87,9 +89,8 @@
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> Android Senior</h2><a class="section-sub" href="../../../../phong-van/android/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
-    <li><a href="../../../../s/and-sen-q26.html">Repository có đoạn try { api.fetchProfile() } catch (e: Exception) { ... } (hoặc runCatching) chạy trong coroutine của ViewModel. Sau khi user rời màn hình, log vẫn báo lỗi huỷ coroutine và đôi khi coroutine còn chạy tiếp sang bước sau. Vì sao, và bạn xử lý việc huỷ coroutine đúng cách thế nào?</a></li>
-    <li><a href="../../../../s/and-sen-q27.html">Màn hình dashboard tải song song profile, feed và quảng cáo bằng async. Quảng cáo lỗi thì chỉ cần ẩn khối quảng cáo, nhưng thực tế lỗi đó làm cả màn hình báo lỗi và hai request còn lại bị huỷ. Giải thích cách exception lan truyền trong coroutine, bạn thiết kế lại thế nào, và CoroutineExceptionHandler có giúp được không?</a></li>
-    <li><a href="../../../../s/and-sen-q28.html">Bạn cần bọc API vị trí dạng callback (FusedLocationProviderClient) thành Flow để nhiều màn hình dùng chung, không rò rỉ listener và không chạy khi app ở background. Bạn dùng callbackFlow, stateIn và thu thập ở UI thế nào, và SharingStarted.WhileSubscribed(5_000) giải quyết điều gì?</a></li>
+    <li><a href="../../../../s/and-sen-q26.html">Repository giữ cache mutableMapOf&lt;String, User&gt;() và nhiều coroutine cùng đọc ghi: thỉnh thoảng có ConcurrentModificationException hoặc mất cập nhật. Vì sao dùng coroutines không tự làm code thread-safe, và bạn bảo vệ state dùng chung thế nào (Mutex, limitedParallelism(1), atomics)? Bẫy của Mutex là gì?</a></li>
+    <li><a href="../../../../s/and-sen-q27.html">Một dev viết flow { withContext(Dispatchers.IO) { emit(readConfig()) } } và app crash với IllegalStateException: Flow invariant is violated. Ngoài ra .catch { } đặt ở cuối pipeline không bắt được lỗi ném trong collect. Giải thích hai bất biến của Flow (context preservation, exception transparency) và cách viết đúng?</a></li>
   </ul>
 </section>
 <section>
