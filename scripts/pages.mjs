@@ -5,10 +5,11 @@
 //   phong-van/<track>/                   một nền tảng: các rank, các chủ đề
 //   phong-van/<track>/<rank>/            toàn bộ câu hỏi của một rank kèm đáp án
 //   phong-van/<track>/chu-de/<topic>/    câu hỏi theo chủ đề
+//   quyen-rieng-tu/                      chính sách quyền riêng tư
 //   sitemap.xml                          danh sách trang gửi cho Google Search Console
 // Đáp án nằm trong <details> (bấm để xem) để người đọc tự trả lời trước; Google vẫn đọc được.
 import { RANKS, TRACKS, getRank, getTrack, loadAllTracks } from "../data/index.js";
-import { SITE_URL } from "../js/config.js";
+import { GITHUB_URL, SITE_URL } from "../js/config.js";
 import { escapeHtml as esc, fmt, codeOf, docHtml } from "../js/utils.js";
 
 const plain = (s) => String(s).replace(/`/g, "").replace(/\s+/g, " ").trim();
@@ -84,7 +85,7 @@ ${body(base)}
 </main>
 <footer class="footer">
   <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
-  <p><a href="${base}phong-van/">Câu hỏi phỏng vấn</a> · <a href="${base}#/">Ôn luyện miễn phí</a> · <a href="${base}#/community">Cộng đồng &amp; góp ý</a></p>
+  <p><a href="${base}phong-van/">Câu hỏi phỏng vấn</a> · <a href="${base}#/">Ôn luyện miễn phí</a> · <a href="${base}#/community">Cộng đồng &amp; góp ý</a> · <a href="${base}quyen-rieng-tu/">Quyền riêng tư</a></p>
 </footer>
 </body>
 </html>
@@ -390,6 +391,116 @@ function hubPage(all) {
   });
 }
 
+// ---------- Chính sách quyền riêng tư ----------
+// Nội dung phải khớp với những gì site thật sự làm (js/store.js, js/leaderboard.js, js/analytics.js,
+// js/community.js, js/views/interview.js). Đổi cách thu thập dữ liệu hoặc thêm dịch vụ bên thứ ba thì sửa ở đây.
+const PRIVACY_UPDATED = "3/11/2026";
+
+function privacyPage() {
+  const path = "quyen-rieng-tu/index.html";
+  const ext = (href, text) => `<a href="${href}" target="_blank" rel="noopener">${text}</a>`;
+  return layout(path, {
+    title: "Chính sách quyền riêng tư — Mobile Interview",
+    description:
+      "Mobile Interview lưu và gửi dữ liệu gì: tiến độ học nằm trên trình duyệt của bạn, bảng xếp hạng chỉ nhận biệt danh và điểm, thống kê lượt xem không dùng cookie.",
+    ogImage: "og.png",
+    crumbs: [{ name: "Quyền riêng tư", path: "quyen-rieng-tu/" }],
+    body: (base) => `
+<div class="prose">
+<header class="view-head">
+  <h1>Chính sách quyền riêng tư</h1>
+  <p class="subtitle">Cập nhật lần cuối: ${PRIVACY_UPDATED}. Trang này nói rõ site lưu và gửi đi dữ liệu nào, để ở đâu, và bạn xoá được bằng cách nào.</p>
+</header>
+<section>
+  <h2>Tóm tắt</h2>
+  <ul>
+    <li>Không cần đăng ký. Site không hỏi email, số điện thoại hay tên thật của bạn.</li>
+    <li>Tiến độ học (câu đã thuộc, lịch ôn, lịch sử quiz) lưu ngay trên trình duyệt của bạn và không gửi lên máy chủ nào.</li>
+    <li>Chỉ khi bạn tự đặt biệt danh và nộp bài <em>Thi thử</em> đề chuẩn, biệt danh và điểm mới được gửi lên bảng xếp hạng công khai.</li>
+    <li>Ghi âm khi <em>Phỏng vấn thử</em> chỉ nằm trong trình duyệt của bạn, không được tải lên.</li>
+    <li>Site không đặt cookie và không bán dữ liệu cá nhân.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Dữ liệu lưu trên thiết bị của bạn</h2>
+  <p>Site lưu các thông tin sau trong bộ nhớ của trình duyệt (<code>localStorage</code>). Chủ site không truy cập được chúng.</p>
+  <ul>
+    <li>Câu hỏi bạn đánh dấu <em>Đã thuộc</em> / <em>Cần ôn lại</em> và lịch ôn tập ngắt quãng.</li>
+    <li>Lịch sử quiz và phỏng vấn thử, các ngày bạn đã học (để tính chuỗi ngày), các ngày đã hoàn thành trong lộ trình.</li>
+    <li>Tuỳ chọn giao diện (sáng/tối, nền tảng đang chọn).</li>
+    <li>Mã người chơi (chuỗi ngẫu nhiên do trình duyệt tự sinh) và biệt danh, nếu bạn từng đặt biệt danh cho bảng xếp hạng.</li>
+    <li>Bản lưu tạm dữ liệu trang Cộng đồng và Việc làm đọc từ GitHub, để tải nhanh hơn.</li>
+  </ul>
+  <p>Site cũng lưu bản sao các file của trang (và font chữ) trong bộ nhớ đệm của trình duyệt để bạn cài như app và học được khi offline.</p>
+  <p>Nút <em>Sao lưu</em> ở mục Tiến độ tạo một file JSON ngay trên máy bạn. File này không đi đâu cả, bạn tự giữ.</p>
+</section>
+
+<section>
+  <h2>Bảng xếp hạng</h2>
+  <p>Khi bạn đặt biệt danh hoặc nộp bài <em>Thi thử</em> đề chuẩn, trình duyệt gửi tới máy chủ ${ext("https://supabase.com", "Supabase")}:</p>
+  <ul>
+    <li>mã người chơi và biệt danh;</li>
+    <li>nền tảng, rank, số câu đúng, tổng số câu, thời gian làm bài và thời điểm nộp.</li>
+  </ul>
+  <p>Biệt danh, điểm và thời gian làm bài hiện công khai trên bảng xếp hạng, ai cũng xem được. Hãy dùng biệt danh không liên quan tới tên thật và đừng đưa thông tin nhạy cảm vào đó. Mã người chơi không hiển thị công khai.</p>
+  <p>Site không lưu địa chỉ IP trong dữ liệu của bảng xếp hạng. Như mọi máy chủ web, nhà cung cấp hạ tầng có thể ghi nhật ký kỹ thuật theo chính sách của họ (${ext("https://supabase.com/privacy", "Supabase")}). Nếu bạn không đặt biệt danh và không nộp bài thi, không có gì được gửi đi.</p>
+</section>
+
+<section>
+  <h2>Phỏng vấn thử và micro</h2>
+  <p>Trình duyệt chỉ hỏi quyền dùng micro khi bạn bật ghi âm. Bản ghi nằm trong bộ nhớ của tab để bạn nghe lại và tự chấm. Nó không được tải lên máy chủ, không lưu vào <code>localStorage</code> và mất khi bạn đóng hoặc tải lại trang. Nếu muốn giữ, bạn bấm <em>Tải bản ghi</em> để lưu file về máy. Bạn có thể thu hồi quyền micro bất cứ lúc nào trong cài đặt trình duyệt.</p>
+</section>
+
+<section>
+  <h2>Dịch vụ bên thứ ba</h2>
+  <ul>
+    <li><strong>GoatCounter</strong> đếm lượt xem trang (${ext("https://interview.goatcounter.com", "thống kê công khai")}). Dịch vụ này không đặt cookie và không lưu địa chỉ IP của bạn. Nó ghi các thông tin kỹ thuật cơ bản như trang đã xem, trang giới thiệu, loại trình duyệt, hệ điều hành, kích thước màn hình và quốc gia. Xem ${ext("https://www.goatcounter.com/privacy", "chính sách của GoatCounter")}.</li>
+    <li><strong>Google Fonts</strong> cung cấp font chữ. Khi tải font, Google nhận địa chỉ IP và thông tin trình duyệt của bạn. Xem ${ext("https://policies.google.com/privacy", "chính sách của Google")}.</li>
+    <li><strong>GitHub</strong> lưu trữ site (GitHub Pages) và cung cấp dữ liệu cho trang Cộng đồng, Việc làm. Trình duyệt của bạn gọi thẳng tới <code>api.github.com</code>, nên GitHub nhận địa chỉ IP của bạn. Khi bạn gửi đóng góp, bạn dùng tài khoản GitHub của mình và nội dung đó công khai trên GitHub; câu hỏi được duyệt hiển thị tên GitHub của người đóng góp. Xem ${ext("https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement", "chính sách của GitHub")}.</li>
+    <li><strong>Supabase</strong> lưu dữ liệu bảng xếp hạng, như ở mục trên.</li>
+    <li>Các liên kết ra ngoài (ITviec, TopCV, VietnamWorks, LinkedIn, tài liệu chính thức...) dẫn tới trang của bên khác, họ có chính sách riêng.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Cookie</h2>
+  <p>Mobile Interview không tự đặt cookie. Các dịch vụ bên thứ ba ở trên hoạt động theo chính sách của họ.</p>
+</section>
+
+<section>
+  <h2>Quyền của bạn và cách xoá dữ liệu</h2>
+  <ul>
+    <li><strong>Dữ liệu trên máy:</strong> vào mục Tiến độ, bấm <em>Xoá toàn bộ tiến độ</em>. Nút này giữ lại mã người chơi và biệt danh. Muốn xoá hết, hãy xoá dữ liệu trang (site data) của site này trong cài đặt trình duyệt.</li>
+    <li><strong>Biệt danh và điểm trên bảng xếp hạng:</strong> gửi yêu cầu qua ${ext(`${GITHUB_URL}/issues/new/choose`, "GitHub Issues")} kèm biệt danh của bạn, mình sẽ xoá biệt danh và toàn bộ điểm đi kèm.</li>
+    <li><strong>Bộ nhớ đệm offline:</strong> xoá cùng dữ liệu trang trong trình duyệt.</li>
+    <li>Bạn cũng có các quyền theo quy định pháp luật Việt Nam về bảo vệ dữ liệu cá nhân, như yêu cầu truy cập, chỉnh sửa hoặc xoá dữ liệu của mình. Gửi yêu cầu qua cùng kênh trên.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Bảo mật</h2>
+  <p>Site chạy qua HTTPS. Bảng dữ liệu của bảng xếp hạng bật khoá truy cập theo hàng (RLS) và trình duyệt chỉ gọi được vài hàm đã mở sẵn, không đọc hay ghi trực tiếp vào bảng. Không hệ thống nào an toàn tuyệt đối, vì vậy hãy tránh đưa thông tin nhạy cảm vào biệt danh.</p>
+</section>
+
+<section>
+  <h2>Trẻ em</h2>
+  <p>Site dành cho người học lập trình và đi phỏng vấn. Site không chủ ý thu thập thông tin của trẻ em dưới 16 tuổi.</p>
+</section>
+
+<section>
+  <h2>Thay đổi chính sách</h2>
+  <p>Khi site đổi cách thu thập dữ liệu hoặc thêm dịch vụ bên thứ ba, trang này sẽ được cập nhật và ngày ở đầu trang đổi theo. Lịch sử thay đổi xem trong ${ext(`${GITHUB_URL}/commits/main/scripts/pages.mjs`, "kho mã nguồn")}.</p>
+</section>
+
+<section>
+  <h2>Liên hệ</h2>
+  <p>Câu hỏi, góp ý hoặc yêu cầu về dữ liệu: ${ext(`${GITHUB_URL}/issues/new/choose`, "mở một issue trên GitHub")} hoặc dùng mục <a href="${base}#/community">Cộng đồng</a> của site.</p>
+</section>
+</div>`,
+  });
+}
+
 function sitemap(paths) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -425,6 +536,7 @@ export async function allPages() {
     }
   }
   pages.push({ path: "phong-van/index.html", content: hubPage(all) });
+  pages.push({ path: "quyen-rieng-tu/index.html", content: privacyPage() });
   // Hub trước, câu lẻ sau: Google ưu tiên các URL đầu sitemap khi mới index.
   const order = (p) => (p.startsWith("phong-van/") ? 0 : 1);
   const listed = ["", ...pages.map((p) => p.path).sort((a, b) => order(a) - order(b))];
@@ -433,4 +545,4 @@ export async function allPages() {
 }
 
 // Thư mục chỉ chứa trang sinh tự động: file .html không có trong allPages() sẽ bị xoá.
-export const GENERATED_DIRS = ["s", "phong-van"];
+export const GENERATED_DIRS = ["s", "phong-van", "quyen-rieng-tu"];

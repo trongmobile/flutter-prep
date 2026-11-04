@@ -46,6 +46,7 @@ manifest.webmanifest    thông tin PWA (tên, icon, shortcut)
 assets/                 icon app, og.png (preview trang chủ), og-<track>.png (preview trang chia sẻ)
 s/<id>.html             trang tĩnh từng câu: link chia sẻ + trang cho Google (sinh bởi scripts/build-pages.mjs)
 phong-van/              trang tổng hợp tĩnh theo nền tảng / rank / chủ đề (SEO)
+quyen-rieng-tu/         chính sách quyền riêng tư (sinh bởi scripts/pages.mjs, sửa nội dung ở privacyPage())
 sitemap.xml             danh sách trang tĩnh, gửi cho Google Search Console
 js/config.js            repo GitHub dùng cho trang Cộng đồng, Supabase cho bảng xếp hạng
 js/leaderboard.js       gọi API bảng xếp hạng (Supabase RPC), luật đề chuẩn, kiểm tra biệt danh
