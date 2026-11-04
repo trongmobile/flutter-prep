@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Junior: App SwiftUI có AuthService cần dùng ở nhiều màn nằm sâu trong cây view; truyền…</title>
+<meta name="description" content="Environment truyền giá trị xuống cây con một cách ngầm. @EnvironmentObject đọc một ObservableObject do view cha gọi .environmentObject(_:); quên inject thì k…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: App SwiftUI có AuthService cần dùng ở nhiều màn nằm sâu trong cây view; truyền…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-q45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"App SwiftUI có AuthService cần dùng ở nhiều màn…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">App SwiftUI có AuthService cần dùng ở nhiều màn…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/swiftui/">SwiftUI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App SwiftUI có <code>AuthService</code> cần dùng ở nhiều màn nằm sâu trong cây view; truyền qua từng <code>init</code> thì rườm rà, còn chuyển sang <code>@EnvironmentObject</code> thì có màn Preview crash với &#39;No ObservableObject of type AuthService found&#39;. <code>@EnvironmentObject</code>, <code>@Environment</code> với model <code>@Observable</code> và <code>EnvironmentKey</code> khác nhau thế nào, và khi nào nên truyền tham số trực tiếp?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Environment truyền giá trị xuống cây con một cách ngầm. <code>@EnvironmentObject</code> đọc một <code>ObservableObject</code> do view cha gọi <code>.environmentObject(_:)</code>; quên inject thì không có lỗi compile mà crash lúc chạy, thường lộ ra ở <code>#Preview</code>, hoặc ở view bọc trong <code>UIHostingController</code> tự tạo vì nó là gốc của một cây mới, không thừa hưởng environment. Từ iOS 17, model <code>@Observable</code> đưa vào bằng <code>.environment(model)</code> và đọc bằng <code>@Environment(AuthService.self)</code>; cũng crash nếu thiếu, trừ khi khai báo kiểu optional (<code>AuthService?</code>) thì nhận <code>nil</code>. Giá trị thông thường (cấu hình, theme, service qua protocol) dùng <code>EnvironmentKey</code> tự định nghĩa kèm <code>defaultValue</code> rồi mở rộng <code>EnvironmentValues</code>: không crash vì có sẵn giá trị mặc định, và ghi đè được trong preview hay test bằng <code>.environment(\.key, value)</code>; từ Xcode 16 macro <code>@Entry</code> viết gọn phần này. Chỉ nên đưa vào environment thứ thật sự cắt ngang nhiều tầng (người dùng hiện tại, theme, router); màn chỉ cần một hai dependency thì truyền qua <code>init</code> cho tường minh, test dễ và compiler bắt thiếu. Với <code>ObservableObject</code>, mọi thay đổi <code>@Published</code> đều làm view đọc nó vẽ lại, nên đừng nhét một &#39;god object&#39; vào environment.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Observable</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">AuthService</span> {
+  <span class="tk-kw">var</span> user: <span class="tk-type">User</span>?
+}
+
+<span class="tk-ann">@main</span>
+<span class="tk-kw">struct</span> <span class="tk-type">ShopApp</span>: <span class="tk-type">App</span> {
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> auth = <span class="tk-type">AuthService</span>()
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">Scene</span> {
+    <span class="tk-type">WindowGroup</span> { <span class="tk-type">RootView</span>().environment(auth) }
+  }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">ProfileView</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@Environment</span>(<span class="tk-type">AuthService</span>.<span class="tk-kw">self</span>) <span class="tk-kw">private</span> <span class="tk-kw">var</span> auth   <span class="tk-com">// thiếu .environment(auth) ở trên thì crash</span>
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> { <span class="tk-type">Text</span>(auth.user?.name ?? <span class="tk-str">&quot;Khách&quot;</span>) }
+}
+
+<span class="tk-com">// Giá trị thường: custom key có defaultValue nên không crash</span>
+<span class="tk-kw">struct</span> <span class="tk-type">AppConfig</span>: <span class="tk-type">Sendable</span> { <span class="tk-kw">var</span> baseURL: <span class="tk-type">URL</span> }
+
+<span class="tk-kw">private</span> <span class="tk-kw">struct</span> <span class="tk-type">AppConfigKey</span>: <span class="tk-type">EnvironmentKey</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> defaultValue = <span class="tk-type">AppConfig</span>(baseURL: <span class="tk-type">URL</span>(string: <span class="tk-str">&quot;https://api.example.com&quot;</span>)!)
+}
+
+<span class="tk-kw">extension</span> <span class="tk-type">EnvironmentValues</span> {
+  <span class="tk-kw">var</span> appConfig: <span class="tk-type">AppConfig</span> {
+    <span class="tk-kw">get</span> { <span class="tk-kw">self</span>[<span class="tk-type">AppConfigKey</span>.<span class="tk-kw">self</span>] }
+    <span class="tk-kw">set</span> { <span class="tk-kw">self</span>[<span class="tk-type">AppConfigKey</span>.<span class="tk-kw">self</span>] = newValue }
+  }
+}
+<span class="tk-com">// Preview: ProfileView().environment(AuthService()).environment(\.appConfig, staging)</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q44.html"><span class="muted small">← Câu trước</span><span>QA báo app bật Dark Mode thì chữ đen trên nền đen ở vài màn, viền vẽ bằng layer…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q46.html"><span class="muted small">Câu sau →</span><span>Màn danh sách đơn hàng SwiftUI cần kéo để làm mới, ô tìm kiếm trên thanh điều h…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề SwiftUI</h2><a class="section-sub" href="../phong-van/ios/chu-de/swiftui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q17.html">Màn hình SwiftUI khai báo @ObservedObject var viewModel = ProfileViewModel(), thỉnh thoảng dữ liệu đang nhập bị reset và API bị gọi lại khi view cha cập nhật. Vì sao? Khi nào dùng @StateObject?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q18.html">Bạn tách một nút bật/tắt yêu thích ra view con, nhưng bấm ở view con thì view cha không hề biết. Dùng @Binding giải quyết thế nào, và vì sao không dùng @State ở view con?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q19.html">Danh sách todo dùng ForEach(todos.indices, id: \.self) hoặc ForEach(names, id: \.self). Khi xoá hoặc chèn phần tử thì animation sai, trạng thái của row này nhảy sang row khác. Vì sao?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q46.html">Màn danh sách đơn hàng SwiftUI cần kéo để làm mới, ô tìm kiếm trên thanh điều hướng và vuốt dòng để xoá. Bạn dùng .refreshable, .searchable, .swipeActions thế nào, và vì sao spinner của pull-to-refresh hay quay mãi hoặc biến mất quá sớm?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-m29.html">User đã có property id, nhưng List(users) vẫn báo lỗi compile. Cách sửa gọn nhất là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m30.html">Một view khai báo @EnvironmentObject var cart: CartStore nhưng không view tổ tiên nào gọi .environmentObject(...) với CartStore. Điều gì xảy ra khi view được hiển thị?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

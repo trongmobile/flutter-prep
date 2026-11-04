@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Middle (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<title>Câu hỏi phỏng vấn iOS Middle (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · ios · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Middle</h1>
-  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/ios/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -62,17 +62,20 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#swift">Swift</a> <span class="count">6</span></li>
+    <li><a href="#swift">Swift</a> <span class="count">7</span></li>
     <li><a href="#memory">Memory &amp; ARC</a> <span class="count">1</span></li>
     <li><a href="#concurrency">Concurrency</a> <span class="count">7</span></li>
-    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">4</span></li>
+    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">5</span></li>
     <li><a href="#swiftui">SwiftUI</a> <span class="count">5</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">4</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">5</span></li>
     <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">2</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
-    <li><a href="#security">Security</a> <span class="count">1</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">2</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">4</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">2</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -246,6 +249,39 @@ print(g.hello())   <span class="tk-com">// &quot;Chào bạn&quot;: requirement,
 print(g.goodbye()) <span class="tk-com">// &quot;Tạm biệt (mặc định)&quot;: theo kiểu khai báo, bỏ qua bản của Person</span>
 print(p.goodbye()) <span class="tk-com">// &quot;Hẹn gặp lại&quot;: biến có kiểu Person</span></code></pre>
         
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q45.html">Đồng nghiệp hỏi <code>@ViewBuilder</code> thực chất là gì mà trong <code>VStack { ... }</code> viết được nhiều view liền nhau, có cả <code>if</code>/<code>switch</code> mà không cần <code>return</code>. Result builder hoạt động thế nào, và bạn tự viết một DSL nhỏ (vd. dựng menu) ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>@resultBuilder</code> là một type có các static method; compiler biến chuỗi câu lệnh trong closure thành các lời gọi tới chúng. <code>buildBlock</code> gom các thành phần thành một giá trị, <code>buildExpression</code> (tuỳ chọn) chuyển kiểu từng biểu thức, <code>buildOptional</code> xử lý <code>if</code> không có <code>else</code>, <code>buildEither(first:)</code> và <code>buildEither(second:)</code> xử lý <code>if/else</code> và <code>switch</code>, <code>buildArray</code> xử lý <code>for ... in</code>, <code>buildLimitedAvailability</code> xử lý <code>if #available</code>, <code>buildFinalResult</code> đổi kết quả trung gian thành kiểu cuối. <code>@ViewBuilder</code> là result builder của SwiftUI: nhiều view liền nhau thành <code>TupleView</code>, <code>if/else</code> thành <code>_ConditionalContent</code>, nhờ vậy SwiftUI giữ được cấu trúc view để diff. Giới hạn đến từ cách builder cụ thể được khai báo chứ không phải từ Swift: <code>buildBlock</code> có số tham số cố định nên một closure <code>@ViewBuilder</code> từng chỉ nhận tối đa 10 view con trực tiếp; gặp lỗi này thì bọc bớt vào <code>Group</code> hoặc tách subview. Khi tự viết DSL, mỗi dạng câu lệnh cần overload tương ứng: thiếu <code>buildOptional</code> thì <code>if</code> không có <code>else</code> không biên dịch được, thiếu <code>buildEither</code> thì <code>if/else</code> cũng vậy. Lỗi biên dịch bên trong block thường hiện thành thông báo khó hiểu, nên khi gặp hãy tách từng phần ra kiểm tra.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">MenuItem</span> { <span class="tk-kw">let</span> title: <span class="tk-type">String</span> }
+
+<span class="tk-ann">@resultBuilder</span>
+<span class="tk-kw">enum</span> <span class="tk-type">MenuBuilder</span> {
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildExpression(_ item: <span class="tk-type">MenuItem</span>) -&gt; [<span class="tk-type">MenuItem</span>] { [item] }        <span class="tk-com">// mỗi dòng MenuItem(...)</span>
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildBlock(_ parts: [<span class="tk-type">MenuItem</span>]...) -&gt; [<span class="tk-type">MenuItem</span>] { parts.flatMap { $<span class="tk-num">0</span> } }
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildOptional(_ items: [<span class="tk-type">MenuItem</span>]?) -&gt; [<span class="tk-type">MenuItem</span>] { items ?? [] } <span class="tk-com">// if không có else</span>
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildEither(first items: [<span class="tk-type">MenuItem</span>]) -&gt; [<span class="tk-type">MenuItem</span>] { items }      <span class="tk-com">// if/else, switch</span>
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildEither(second items: [<span class="tk-type">MenuItem</span>]) -&gt; [<span class="tk-type">MenuItem</span>] { items }
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildArray(_ groups: [[<span class="tk-type">MenuItem</span>]]) -&gt; [<span class="tk-type">MenuItem</span>] { groups.flatMap { $<span class="tk-num">0</span> } } <span class="tk-com">// for ... in</span>
+}
+
+<span class="tk-kw">func</span> makeMenu(<span class="tk-ann">@MenuBuilder</span> _ content: () -&gt; [<span class="tk-type">MenuItem</span>]) -&gt; [<span class="tk-type">MenuItem</span>] { content() }
+
+<span class="tk-kw">let</span> isAdmin = <span class="tk-kw">true</span>
+<span class="tk-kw">let</span> tags = [<span class="tk-str">&quot;Khuyến mãi&quot;</span>, <span class="tk-str">&quot;Mới về&quot;</span>]
+
+<span class="tk-kw">let</span> menu = makeMenu {
+    <span class="tk-type">MenuItem</span>(title: <span class="tk-str">&quot;Trang chủ&quot;</span>)
+    <span class="tk-kw">if</span> isAdmin { <span class="tk-type">MenuItem</span>(title: <span class="tk-str">&quot;Quản trị&quot;</span>) }
+    <span class="tk-kw">for</span> tag <span class="tk-kw">in</span> tags { <span class="tk-type">MenuItem</span>(title: tag) }
+}
+<span class="tk-com">// menu.map(\.title) == [&quot;Trang chủ&quot;, &quot;Quản trị&quot;, &quot;Khuyến mãi&quot;, &quot;Mới về&quot;]</span></code></pre>
+        <p class="doc-link"><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.swift.org ↗</a></p>
       </div>
     </details>
     </li>
@@ -527,6 +563,55 @@ bottomConstraint.constant = keyboardHeight
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q47.html">Bạn dựng view vòng tròn tiến độ tự vẽ bằng <code>draw(_:)</code>. Mỗi lần dữ liệu đổi là giật, và sau khi xoay máy hình bị kéo giãn hoặc sai kích thước. <code>draw(_:)</code> khác <code>CAShapeLayer</code> thế nào về hiệu năng, <code>setNeedsDisplay</code> và <code>setNeedsLayout</code> dùng khi nào, và <code>intrinsicContentSize</code> để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>draw(_:)</code> vẽ bằng Core Graphics trên CPU vào một bitmap làm backing store của layer, nên tốn bộ nhớ theo kích thước view nhân scale², và mỗi lần vẽ lại là rasterize lại cả vùng bị đánh dấu: nếu dữ liệu đổi liên tục hay có animation thì rất tốn. <code>CAShapeLayer</code>/<code>CALayer</code> để Core Animation render path trực tiếp: đổi <code>path</code>, <code>strokeEnd</code>, <code>fillColor</code> không phải vẽ lại bitmap và animate được. Chọn <code>draw(_:)</code> cho nội dung phức tạp, ít đổi; chọn layer cho hình học động. Trong <code>draw</code> chỉ vẽ phần giao với <code>rect</code>, không tạo gradient hay font mỗi lần, và không bao giờ tự gọi <code>draw</code>. <code>setNeedsDisplay()</code> báo cần vẽ lại nội dung ở chu kỳ vẽ kế tiếp (nhiều lần gọi chỉ gộp thành một); <code>setNeedsLayout()</code> báo cần chạy lại <code>layoutSubviews()</code>, nơi đặt frame cho view con và layer con. Đổi <code>bounds</code> không tự gọi <code>draw</code> trừ khi <code>contentMode = .redraw</code>, vì vậy xoay máy xong hình bị kéo giãn là lỗi quen thuộc. Layer tự thêm bằng code không theo Auto Layout: phải cập nhật <code>frame</code> và path trong <code>layoutSubviews()</code> chứ không phải trong <code>init</code>, và bọc bằng <code>CATransaction.setDisableActions(true)</code> để tránh animation ngầm khi layout. <code>intrinsicContentSize</code> cho Auto Layout biết kích thước tự nhiên của nội dung để view không cần constraint width/height; khi nội dung đổi thì gọi <code>invalidateIntrinsicContentSize()</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">ProgressRingView</span>: <span class="tk-type">UIView</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> track = <span class="tk-type">CAShapeLayer</span>()
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> ring = <span class="tk-type">CAShapeLayer</span>()
+
+    <span class="tk-kw">var</span> progress: <span class="tk-type">CGFloat</span> = <span class="tk-num">0</span> {
+        <span class="tk-kw">didSet</span> { ring.strokeEnd = progress } <span class="tk-com">// đổi thuộc tính layer: không vẽ lại bitmap, tự animate ngầm</span>
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">init</span>(frame: <span class="tk-type">CGRect</span>) {
+        <span class="tk-kw">super</span>.<span class="tk-kw">init</span>(frame: frame)
+        <span class="tk-kw">for</span> layer <span class="tk-kw">in</span> [track, ring] {
+            layer.fillColor = <span class="tk-type">UIColor</span>.clear.cgColor
+            layer.lineWidth = <span class="tk-num">8</span>
+            <span class="tk-kw">self</span>.layer.addSublayer(layer)
+        }
+        track.strokeColor = <span class="tk-type">UIColor</span>.systemGray5.cgColor
+        ring.strokeColor = <span class="tk-type">UIColor</span>.systemBlue.cgColor
+        ring.lineCap = .round
+        ring.strokeEnd = <span class="tk-num">0</span>
+    }
+
+    <span class="tk-kw">required</span> <span class="tk-kw">init</span>?(coder: <span class="tk-type">NSCoder</span>) { fatalError(<span class="tk-str">&quot;init(coder:) has not been implemented&quot;</span>) }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">func</span> layoutSubviews() { <span class="tk-com">// đặt lại frame và path mỗi khi bounds đổi (xoay máy, đổi size)</span>
+        <span class="tk-kw">super</span>.layoutSubviews()
+        <span class="tk-type">CATransaction</span>.begin()
+        <span class="tk-type">CATransaction</span>.setDisableActions(<span class="tk-kw">true</span>)
+        <span class="tk-kw">let</span> radius = min(bounds.width, bounds.height) / <span class="tk-num">2</span> - <span class="tk-num">4</span>
+        <span class="tk-kw">let</span> path = <span class="tk-type">UIBezierPath</span>(arcCenter: <span class="tk-type">CGPoint</span>(x: bounds.midX, y: bounds.midY), radius: radius,
+                                startAngle: -.pi / <span class="tk-num">2</span>, endAngle: <span class="tk-num">1.5</span> * .pi, clockwise: <span class="tk-kw">true</span>)
+        <span class="tk-kw">for</span> layer <span class="tk-kw">in</span> [track, ring] {
+            layer.frame = bounds
+            layer.path = path.cgPath
+        }
+        <span class="tk-type">CATransaction</span>.commit()
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">var</span> intrinsicContentSize: <span class="tk-type">CGSize</span> { <span class="tk-type">CGSize</span>(width: <span class="tk-num">64</span>, height: <span class="tk-num">64</span>) }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/quartzcore/cashapelayer" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="swiftui">
@@ -698,6 +783,45 @@ bottomConstraint.constant = keyboardHeight
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q44.html">App SwiftUI có luồng nhiều màn (danh sách → chi tiết → đánh giá) dùng <code>NavigationStack(path:)</code>. Bạn cần nút &quot;Về trang chủ&quot; pop hết về root từ màn sâu và khôi phục đúng chồng màn khi app bị hệ thống kill. <code>NavigationPath</code> khác mảng <code>[Route]</code> ở điểm nào, và bẫy khi trộn nhiều kiểu destination là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>NavigationPath</code> là collection type-erased: append được các giá trị <code>Hashable</code> thuộc nhiều kiểu khác nhau (<code>Product</code>, <code>Order</code>, <code>Route</code>...), và mỗi kiểu cần đúng một <code>.navigationDestination(for:)</code> tương ứng. Mảng <code>[Route]</code> với <code>Route</code> là enum thì type-safe, đọc được nội dung (<code>path.last</code>, kiểm tra &quot;đang ở màn nào&quot;, assert trong test) nên thường là lựa chọn mặc định; chỉ dùng <code>NavigationPath</code> khi thật sự cần trộn nhiều kiểu. Pop về root bằng code là gán lại path rỗng (<code>path = []</code>, hoặc <code>path.removeLast(path.count)</code> với <code>NavigationPath</code>); pop một màn là <code>removeLast()</code>. Để nút &quot;Về trang chủ&quot; hoạt động từ màn sâu, truyền binding hoặc một router <code>@Observable</code> xuống, đừng để mỗi màn tự giữ path. Khôi phục khi app bị kill: nếu <code>Route</code> là <code>Codable</code> thì encode cả mảng ra <code>Data</code> lưu vào <code>@SceneStorage</code> rồi decode lúc khởi tạo; với <code>NavigationPath</code> dùng <code>path.codable</code> (trả về <code>nil</code> nếu có kiểu nào không <code>Codable</code>). Chỉ lưu ID thay vì cả model để dữ liệu cũ không bị khôi phục sai. Bẫy hay gặp: thiếu <code>navigationDestination</code> cho một kiểu thì không push được màn đó (chỉ có cảnh báo trong console); đặt <code>navigationDestination</code> bên trong container lazy như <code>List</code> hay <code>LazyVStack</code> có thể không được nạp, nên gắn ở root view của stack; và <code>NavigationPath</code> không cho đọc phần tử bên trong nên khó debug hơn mảng.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">Route</span>: <span class="tk-type">Hashable</span>, <span class="tk-type">Codable</span> {
+    <span class="tk-kw">case</span> detail(productID: <span class="tk-type">String</span>)
+    <span class="tk-kw">case</span> review(productID: <span class="tk-type">String</span>)
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">RootView</span>: <span class="tk-type">View</span> {
+    <span class="tk-ann">@SceneStorage</span>(<span class="tk-str">&quot;nav.path&quot;</span>) <span class="tk-kw">private</span> <span class="tk-kw">var</span> savedPath: <span class="tk-type">Data</span>?
+    <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> path: [<span class="tk-type">Route</span>] = []
+
+    <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+        <span class="tk-type">NavigationStack</span>(path: $path) {
+            <span class="tk-type">ProductList</span>(onGoHome: { path = [] }) <span class="tk-com">// pop về root bằng cách gán mảng rỗng</span>
+                .navigationDestination(<span class="tk-kw">for</span>: <span class="tk-type">Route</span>.<span class="tk-kw">self</span>) { route <span class="tk-kw">in</span>
+                    <span class="tk-kw">switch</span> route {
+                    <span class="tk-kw">case</span> .detail(<span class="tk-kw">let</span> id): <span class="tk-type">ProductDetail</span>(id: id)
+                    <span class="tk-kw">case</span> .review(<span class="tk-kw">let</span> id): <span class="tk-type">ReviewForm</span>(id: id)
+                    }
+                }
+        }
+        .task { <span class="tk-com">// khôi phục chồng màn cũ khi view xuất hiện</span>
+            <span class="tk-kw">if</span> <span class="tk-kw">let</span> savedPath, <span class="tk-kw">let</span> restored = <span class="tk-kw">try</span>? <span class="tk-type">JSONDecoder</span>().decode([<span class="tk-type">Route</span>].<span class="tk-kw">self</span>, from: savedPath) {
+                path = restored
+            }
+        }
+        .onChange(of: path) { _, newPath <span class="tk-kw">in</span>
+            savedPath = <span class="tk-kw">try</span>? <span class="tk-type">JSONEncoder</span>().encode(newPath)
+        }
+    }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/swiftui/navigationpath" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="arch">
@@ -732,6 +856,56 @@ bottomConstraint.constant = keyboardHeight
       <div class="model-answer">
         <div class="answer-text">Chia theo tầng: module nền như <code>Networking</code>, <code>DesignSystem</code>, <code>Models</code> không phụ thuộc feature nào; mỗi feature là một target riêng chỉ phụ thuộc module nền; app target là nơi duy nhất import mọi feature và lắp ráp chúng. Để feature gọi nhau, tách phần interface (protocol như <code>ProductDetailBuilding</code> hoặc enum route) ra một module nhẹ dùng chung, implementation nằm trong feature, rồi app target inject implementation lúc khởi tạo. Nhờ vậy dependency graph một chiều, không vòng, sửa một feature chỉ build lại module đó và những module phụ thuộc nó, mỗi feature có thể có demo app và test riêng. Chỉ đánh dấu <code>public</code> phần API thật sự cần lộ, còn lại để <code>internal</code> mặc định để giữ ranh giới giữa các module.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q46.html">ViewModel có <code>isLoading</code>, <code>items</code>, <code>error</code> là ba property riêng nên UI thỉnh thoảng hiện cả spinner lẫn thông báo lỗi, hoặc danh sách cũ cùng màn lỗi. Bạn tái cấu trúc thế nào, và xử lý sự kiện một lần như alert hay điều hướng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gốc vấn đề là ba property độc lập cho phép tổ hợp vô nghĩa như <code>isLoading == true</code> cùng <code>error != nil</code>, và mọi chỗ trong code phải nhớ tự reset hai biến còn lại. Hãy mô hình hoá các trạng thái hợp lệ bằng một enum, ví dụ <code>idle</code>, <code>loading</code>, <code>loaded(items)</code>, <code>failed(message)</code>: compiler loại tổ hợp sai, view chỉ cần <code>switch</code> một lần, và mọi chuyển trạng thái nằm ở một chỗ trong ViewModel (view gửi action, ViewModel đổi state). Nếu cần giữ danh sách cũ khi đang refresh hay khi lỗi thì đừng nhét vào <code>loading</code> làm mất dữ liệu: dùng struct <code>{ items, phase }</code> hoặc <code>loaded(items, isRefreshing:)</code>. Sự kiện một lần như alert, toast, điều hướng không nên là state sống lâu vì xoay máy hay quay lại màn sẽ hiện lại. Có hai cách: biến chúng thành state có vòng đời rõ ràng (vd. <code>alert: AlertInfo?</code> gắn với <code>.alert(item:)</code>, view gán <code>nil</code> khi user đóng; điều hướng thì ghi vào path/route), hoặc dùng <code>AsyncStream</code> cho sự kiện kiểu bắn-rồi-quên, chấp nhận mất sự kiện nếu lúc đó không ai lắng nghe. Đánh đổi: enum lồng nhiều tầng khó đọc nên giữ phẳng, và cho state conform <code>Equatable</code> để test dễ (<code>#expect(states == [.loading, .loaded(items)])</code>).</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">LoadState</span>&lt;<span class="tk-type">Value</span>&gt; {
+    <span class="tk-kw">case</span> idle
+    <span class="tk-kw">case</span> loading
+    <span class="tk-kw">case</span> loaded(<span class="tk-type">Value</span>)
+    <span class="tk-kw">case</span> failed(<span class="tk-type">String</span>)
+}
+
+<span class="tk-ann">@MainActor</span> <span class="tk-ann">@Observable</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">OrdersViewModel</span> {
+    <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> state: <span class="tk-type">LoadState</span>&lt;[<span class="tk-type">Order</span>]&gt; = .idle
+    <span class="tk-kw">var</span> alert: <span class="tk-type">AlertInfo</span>? <span class="tk-com">// sự kiện một lần: view gán nil khi user đóng</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> repository: <span class="tk-type">OrderRepository</span>
+
+    <span class="tk-kw">init</span>(repository: <span class="tk-type">OrderRepository</span>) { <span class="tk-kw">self</span>.repository = repository }
+
+    <span class="tk-kw">func</span> load() <span class="tk-kw">async</span> {
+        <span class="tk-kw">if</span> <span class="tk-kw">case</span> .loading = state { <span class="tk-kw">return</span> } <span class="tk-com">// chặn load chồng nhau</span>
+        state = .loading
+        <span class="tk-kw">do</span> {
+            state = .loaded(<span class="tk-kw">try</span> <span class="tk-kw">await</span> repository.fetchOrders())
+        } <span class="tk-kw">catch</span> {
+            state = .failed(error.localizedDescription)
+        }
+    }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">OrdersScreen</span>: <span class="tk-type">View</span> {
+    <span class="tk-ann">@State</span> <span class="tk-kw">var</span> viewModel: <span class="tk-type">OrdersViewModel</span>
+
+    <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+        <span class="tk-type">Group</span> {
+            <span class="tk-kw">switch</span> viewModel.state {
+            <span class="tk-kw">case</span> .idle, .loading: <span class="tk-type">ProgressView</span>()
+            <span class="tk-kw">case</span> .loaded(<span class="tk-kw">let</span> orders): <span class="tk-type">OrderList</span>(orders: orders)
+            <span class="tk-kw">case</span> .failed(<span class="tk-kw">let</span> message): <span class="tk-type">ErrorView</span>(message: message, retry: { <span class="tk-type">Task</span> { <span class="tk-kw">await</span> viewModel.load() } })
+            }
+        }
+        .task { <span class="tk-kw">await</span> viewModel.load() }
+    }
+}</code></pre>
         
       </div>
     </details>
@@ -822,6 +996,45 @@ bottomConstraint.constant = keyboardHeight
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q48.html">Bạn thêm thuộc tính non-optional vào entity Core Data (hoặc đổi tên thuộc tính trong model SwiftData) rồi chạy lại: app crash khi mở vì không load được store, và có người &quot;chữa cháy&quot; bằng cách xoá store khiến tester mất sạch dữ liệu. Migration hoạt động thế nào, và bạn làm đúng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Store trên đĩa gắn với một phiên bản model. Nếu sửa trực tiếp model đã phát hành mà không cung cấp đường migrate thì hệ thống không mở nổi store cũ và báo lỗi lúc load (Core Data: <code>loadPersistentStores</code> trả error, code mẫu thường <code>fatalError</code> ở đó nên app crash); tệ hơn là cách chữa cháy bằng xoá store, user mất dữ liệu. Cách đúng là giữ nguyên các phiên bản đã phát hành và thêm phiên bản model mới (Core Data: Editor &gt; Add Model Version rồi đặt làm current; SwiftData: một <code>VersionedSchema</code> mới). Lightweight migration (tự suy ra) đủ cho thay đổi đơn giản: thêm thuộc tính có giá trị mặc định hoặc optional, xoá thuộc tính, đổi tên (khai báo <code>renamingIdentifier</code> ở Core Data, <code>@Attribute(originalName:)</code> ở SwiftData). Khi phải biến đổi dữ liệu (tách entity, tính giá trị từ cột cũ, đổi kiểu) thì cần mapping model kèm <code>NSEntityMigrationPolicy</code>, hoặc staged migration của Core Data (<code>NSStagedMigrationManager</code>) trộn các bước lightweight và custom; SwiftData dùng <code>SchemaMigrationPlan</code> với <code>MigrationStage.lightweight</code> hoặc <code>.custom(...)</code>. User có thể nhảy từ v1 lên v4 nên phải kiểm thử cả đường đi nhiều bước. Cách test: giữ file sqlite thật của từng phiên bản cũ làm fixture trong test bundle, copy ra thư mục tạm, mở bằng container mới rồi kiểm tra dữ liệu, chạy trong CI. Store lớn mà migrate trên main thread lúc khởi động có thể bị watchdog kill, nên cần migrate sớm có hiển thị tiến độ, và sao lưu file store (kèm <code>-wal</code>, <code>-shm</code>) trước khi migrate.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">SchemaV1</span>: <span class="tk-type">VersionedSchema</span> {
+    <span class="tk-kw">static</span> <span class="tk-kw">let</span> versionIdentifier = <span class="tk-type">Schema</span>.<span class="tk-type">Version</span>(<span class="tk-num">1</span>, <span class="tk-num">0</span>, <span class="tk-num">0</span>)
+    <span class="tk-kw">static</span> <span class="tk-kw">var</span> models: [<span class="tk-kw">any</span> <span class="tk-type">PersistentModel</span>.<span class="tk-type">Type</span>] { [<span class="tk-type">Order</span>.<span class="tk-kw">self</span>] }
+
+    <span class="tk-ann">@Model</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Order</span> {
+        <span class="tk-kw">var</span> title: <span class="tk-type">String</span>
+        <span class="tk-kw">init</span>(title: <span class="tk-type">String</span>) { <span class="tk-kw">self</span>.title = title }
+    }
+}
+
+<span class="tk-kw">enum</span> <span class="tk-type">SchemaV2</span>: <span class="tk-type">VersionedSchema</span> {
+    <span class="tk-kw">static</span> <span class="tk-kw">let</span> versionIdentifier = <span class="tk-type">Schema</span>.<span class="tk-type">Version</span>(<span class="tk-num">2</span>, <span class="tk-num">0</span>, <span class="tk-num">0</span>)
+    <span class="tk-kw">static</span> <span class="tk-kw">var</span> models: [<span class="tk-kw">any</span> <span class="tk-type">PersistentModel</span>.<span class="tk-type">Type</span>] { [<span class="tk-type">Order</span>.<span class="tk-kw">self</span>] }
+
+    <span class="tk-ann">@Model</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Order</span> {
+        <span class="tk-ann">@Attribute</span>(originalName: <span class="tk-str">&quot;title&quot;</span>) <span class="tk-kw">var</span> name: <span class="tk-type">String</span> <span class="tk-com">// đổi tên: lightweight</span>
+        <span class="tk-kw">var</span> note: <span class="tk-type">String</span> = <span class="tk-str">&quot;&quot;</span>                              <span class="tk-com">// thêm cột mới có giá trị mặc định</span>
+        <span class="tk-kw">init</span>(name: <span class="tk-type">String</span>) { <span class="tk-kw">self</span>.name = name }
+    }
+}
+
+<span class="tk-kw">enum</span> <span class="tk-type">OrderMigrationPlan</span>: <span class="tk-type">SchemaMigrationPlan</span> {
+    <span class="tk-kw">static</span> <span class="tk-kw">var</span> schemas: [<span class="tk-kw">any</span> <span class="tk-type">VersionedSchema</span>.<span class="tk-type">Type</span>] { [<span class="tk-type">SchemaV1</span>.<span class="tk-kw">self</span>, <span class="tk-type">SchemaV2</span>.<span class="tk-kw">self</span>] }
+    <span class="tk-kw">static</span> <span class="tk-kw">var</span> stages: [<span class="tk-type">MigrationStage</span>] {
+        [.lightweight(fromVersion: <span class="tk-type">SchemaV1</span>.<span class="tk-kw">self</span>, toVersion: <span class="tk-type">SchemaV2</span>.<span class="tk-kw">self</span>)]
+    }
+}
+
+<span class="tk-com">// let container = try ModelContainer(for: SchemaV2.Order.self, migrationPlan: OrderMigrationPlan.self)</span></code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/swiftdata/schemamigrationplan" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="platform">
@@ -889,6 +1102,50 @@ bottomConstraint.constant = keyboardHeight
 config.selectionLimit = <span class="tk-num">1</span>
 config.filter = .images
 present(<span class="tk-type">PHPickerViewController</span>(configuration: config), animated: <span class="tk-kw">true</span>)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q38.html">Bản cập nhật mới của app nặng gần 180MB, user phàn nàn tải chậm qua 4G và PM yêu cầu giảm kích thước. Bạn đo xem phần nào chiếm dung lượng bằng cách nào, và App Thinning, asset catalog cùng các thư viện bên thứ ba ảnh hưởng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết phân biệt kích thước tải về (đã nén) với kích thước cài đặt, và nhớ App Store tính theo từng thiết bị chứ không có một con số chung. Slicing trong App Thinning chỉ gửi cho mỗi máy kiến trúc CPU và asset phù hợp (đúng @2x/@3x), nhưng chỉ áp dụng với ảnh và data nằm trong asset catalog; file ảnh bỏ rời trong bundle thì máy nào cũng phải tải đủ. Bitcode đã bị Apple loại bỏ từ Xcode 14 nên không còn là công cụ giảm size. Cách đo: Archive, rồi Distribute App và chọn xuất App Thinning (all compatible device variants) để có App Thinning Size Report cho từng biến thể thiết bị; bật Write Link Map File để xem symbol nào nặng; theo dõi kích thước giữa các build trong App Store Connect. Cách giảm: chuyển ảnh vào asset catalog, dùng vector (PDF/SVG) hoặc SF Symbols thay cho nhiều bản PNG; video, âm thanh, font, model ML lớn thì tải từ server sau khi cài (hoặc On-Demand Resources) thay vì nhét vào bundle; bản Release bật Dead Code Stripping, Strip Linked Product, Strip Swift Symbols và optimization <code>-Osize</code>; xoá asset và code không dùng. Thư viện bên thứ ba là thủ phạm hay gặp: SDK quảng cáo, analytics hay framework dynamic được nhúng vào app đều cộng thẳng vào bundle, còn link static thường được dead-strip tốt hơn; thử gỡ từng SDK rồi so lại báo cáo kích thước để biết cái nào đáng ngờ.</div>
+        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/xcode/reducing-your-app-s-size" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q39.html">Review trên App Store than app hao pin dù user ít dùng, và Xcode Organizer cũng báo mức tiêu thụ năng lượng cao. Bạn điều tra thế nào, và giảm tiêu thụ ở vị trí, mạng và tác vụ nền ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Pin hao chủ yếu do app giữ CPU, GPS và radio mạng hoạt động khi không cần. Điều tra: Energy gauge trong Debug Navigator của Xcode cho cái nhìn nhanh; Instruments (Energy Log, và Power Profiler ở Xcode mới) đo trên máy thật; Organizer và MetricKit cho số liệu từ user thật (thời gian dùng vị trí, CPU nền, mạng). Vị trí thường là thủ phạm lớn nhất: đặt <code>desiredAccuracy</code> thấp nhất đủ dùng (vài trăm mét chứ không phải <code>kCLLocationAccuracyBest</code>), thêm <code>distanceFilter</code>, dùng <code>startMonitoringSignificantLocationChanges</code> hoặc region monitoring khi chỉ cần biết user di chuyển; <code>allowsBackgroundLocationUpdates</code> chỉ bật khi tính năng thật sự cần theo dõi nền (kèm Background Mode và giải thích với user), và luôn <code>stopUpdatingLocation()</code> khi xong. Mạng: thay polling bằng push (APNs), gom các request nhỏ thành một lần vì radio di động còn giữ trạng thái tốn điện một lúc sau mỗi lần truyền, tải nền dùng <code>URLSession</code> background với <code>isDiscretionary</code> để hệ thống chọn lúc có điện và Wi-Fi. Việc nền định kỳ dùng BGTaskScheduler thay vì giữ app sống bằng <code>beginBackgroundTask</code> kéo dài; <code>Timer</code> đặt <code>tolerance</code> để hệ thống gộp các lần đánh thức. Cuối cùng, tôn trọng Low Power Mode (<code>ProcessInfo.isLowPowerModeEnabled</code>, thông báo <code>NSProcessInfoPowerStateDidChange</code>) bằng cách giảm tần suất đồng bộ, tắt prefetch và animation nặng.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">TrackingService</span>: <span class="tk-type">NSObject</span>, <span class="tk-type">CLLocationManagerDelegate</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> manager = <span class="tk-type">CLLocationManager</span>()
+
+    <span class="tk-kw">func</span> startCoarseTracking() {
+        manager.delegate = <span class="tk-kw">self</span>
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters <span class="tk-com">// chỉ cần độ chính xác vừa đủ</span>
+        manager.distanceFilter = <span class="tk-num">200</span>                               <span class="tk-com">// bỏ qua dịch chuyển nhỏ</span>
+        manager.pausesLocationUpdatesAutomatically = <span class="tk-kw">true</span>          <span class="tk-com">// tự tạm dừng khi user đứng yên</span>
+        manager.startUpdatingLocation()
+    }
+
+    <span class="tk-kw">func</span> stop() { manager.stopUpdatingLocation() } <span class="tk-com">// luôn dừng khi xong việc</span>
+}
+
+<span class="tk-com">// Hạ tần suất đồng bộ khi user bật Low Power Mode (syncInterval là cấu hình của scheduler)</span>
+<span class="tk-type">NotificationCenter</span>.<span class="tk-kw">default</span>.addObserver(forName: .<span class="tk-type">NSProcessInfoPowerStateDidChange</span>, object: <span class="tk-kw">nil</span>, queue: .main) { _ <span class="tk-kw">in</span>
+    syncInterval = <span class="tk-type">ProcessInfo</span>.processInfo.isLowPowerModeEnabled ? <span class="tk-num">900</span> : <span class="tk-num">120</span>
+}</code></pre>
         
       </div>
     </details>
@@ -982,6 +1239,65 @@ present(<span class="tk-type">PHPickerViewController</span>(configuration: confi
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q49.html">ViewModel có <code>debounce</code> 300ms cho ô search, logic &quot;mã giảm giá hết hạn cuối ngày&quot; và retry tối đa 3 lần với delay tăng dần. Test hiện dùng <code>Thread.sleep</code> hoặc expectation chờ vài giây nên chậm và đôi khi fail, còn test hết hạn pass ở máy dev nhưng fail ở CI đặt múi giờ khác. Bạn viết lại test thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gốc rễ là code gọi thẳng các nguồn không điều khiển được: <code>Date()</code>, <code>Task.sleep</code>, <code>Timer</code>, <code>UUID()</code>, <code>Calendar.current</code>/<code>TimeZone.current</code>. Giải pháp là inject chúng ở ranh giới ViewModel hay service. Thời điểm: nhận <code>now: () -&gt; Date</code> rồi test trả một mốc cố định. Chờ đợi: nhận <code>any Clock&lt;Duration&gt;</code> (production dùng <code>ContinuousClock()</code>) và gọi <code>clock.sleep(for:)</code>; test dùng clock giả có <code>advance(by:)</code> (thư viện <code>swift-clocks</code> của Point-Free có sẵn <code>TestClock</code>) để debounce 300ms chạy xong trong mili-giây thay vì chờ thật. Retry với delay tăng dần thì nhận một closure <code>sleep</code> và assert danh sách delay đã được yêu cầu, không chờ thật. Lịch: đừng dùng <code>.current</code>; cố định <code>Calendar</code> với <code>timeZone</code> và <code>Locale</code> rõ ràng, nếu không test pass ở máy dev nhưng fail ở CI đặt múi giờ khác. Test các mốc biên như 23:59:59 và 00:00:00, cả ngày chuyển DST nếu app có thị trường dùng DST. <code>UUID()</code> gọi trực tiếp trong code cũng nên thành <code>makeID: () -&gt; UUID</code>. Đừng inject mọi thứ ở mọi tầng, chỉ ở nơi logic thật sự phụ thuộc thời gian; còn <code>Thread.sleep</code> hay expectation chờ vài giây trong test chỉ che lấp vấn đề, làm CI chậm và flaky.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">CouponValidator</span> {
+    <span class="tk-kw">var</span> now: () -&gt; <span class="tk-type">Date</span> = <span class="tk-type">Date</span>.<span class="tk-kw">init</span>
+    <span class="tk-kw">var</span> calendar: <span class="tk-type">Calendar</span>
+
+    <span class="tk-com">// Mã dùng được hết ngày lastValidDay theo múi giờ của `calendar`</span>
+    <span class="tk-kw">func</span> isExpired(_ coupon: <span class="tk-type">Coupon</span>) -&gt; <span class="tk-type">Bool</span> {
+        <span class="tk-kw">let</span> startOfDay = calendar.startOfDay(<span class="tk-kw">for</span>: coupon.lastValidDay)
+        <span class="tk-kw">guard</span> <span class="tk-kw">let</span> nextDay = calendar.date(byAdding: .day, value: <span class="tk-num">1</span>, to: startOfDay) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">true</span> }
+        <span class="tk-kw">return</span> now() &gt;= nextDay
+    }
+}
+
+<span class="tk-ann">@Test</span> <span class="tk-kw">func</span> couponExpiresAtEndOfDay() {
+    <span class="tk-kw">var</span> cal = <span class="tk-type">Calendar</span>(identifier: .gregorian)
+    cal.timeZone = <span class="tk-type">TimeZone</span>(identifier: <span class="tk-str">&quot;Asia/Ho_Chi_Minh&quot;</span>)! <span class="tk-com">// cố định, không phụ thuộc máy chạy test</span>
+    <span class="tk-kw">let</span> lastDay = cal.date(from: <span class="tk-type">DateComponents</span>(year: <span class="tk-num">2026</span>, month: <span class="tk-num">3</span>, day: <span class="tk-num">1</span>))!
+    <span class="tk-kw">let</span> justBefore = cal.date(from: <span class="tk-type">DateComponents</span>(year: <span class="tk-num">2026</span>, month: <span class="tk-num">3</span>, day: <span class="tk-num">1</span>, hour: <span class="tk-num">23</span>, minute: <span class="tk-num">59</span>, second: <span class="tk-num">59</span>))!
+    <span class="tk-kw">let</span> midnight = cal.date(from: <span class="tk-type">DateComponents</span>(year: <span class="tk-num">2026</span>, month: <span class="tk-num">3</span>, day: <span class="tk-num">2</span>))!
+    <span class="tk-kw">let</span> coupon = <span class="tk-type">Coupon</span>(lastValidDay: lastDay)
+
+    #expect(!<span class="tk-type">CouponValidator</span>(now: { justBefore }, calendar: cal).isExpired(coupon))
+    #expect(<span class="tk-type">CouponValidator</span>(now: { midnight }, calendar: cal).isExpired(coupon))
+}
+
+<span class="tk-com">// Retry: nhận closure sleep thay vì gọi Task.sleep thật</span>
+<span class="tk-kw">func</span> retry&lt;<span class="tk-type">T</span>&gt;(maxAttempts: <span class="tk-type">Int</span> = <span class="tk-num">3</span>,
+              sleep: (<span class="tk-type">Duration</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Void</span> = { <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: $<span class="tk-num">0</span>) },
+              _ operation: () <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">T</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">T</span> {
+    <span class="tk-kw">var</span> attempt = <span class="tk-num">0</span>
+    <span class="tk-kw">while</span> <span class="tk-kw">true</span> {
+        <span class="tk-kw">do</span> { <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> operation() } <span class="tk-kw">catch</span> {
+            attempt += <span class="tk-num">1</span>
+            <span class="tk-kw">if</span> attempt &gt;= maxAttempts { <span class="tk-kw">throw</span> error }
+            <span class="tk-kw">try</span> <span class="tk-kw">await</span> sleep(.seconds(<span class="tk-num">1</span> &lt;&lt; (attempt - <span class="tk-num">1</span>))) <span class="tk-com">// 1s, 2s, ...</span>
+        }
+    }
+}
+
+<span class="tk-ann">@Test</span> <span class="tk-kw">func</span> retryBacksOffWithoutWaiting() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> {
+    <span class="tk-kw">var</span> delays: [<span class="tk-type">Duration</span>] = []
+    <span class="tk-kw">var</span> calls = <span class="tk-num">0</span>
+    <span class="tk-kw">let</span> value = <span class="tk-kw">try</span> <span class="tk-kw">await</span> retry(sleep: { delays.append($<span class="tk-num">0</span>) }) {
+        calls += <span class="tk-num">1</span>
+        <span class="tk-kw">if</span> calls &lt; <span class="tk-num">3</span> { <span class="tk-kw">throw</span> <span class="tk-type">URLError</span>(.timedOut) }
+        <span class="tk-kw">return</span> <span class="tk-str">&quot;ok&quot;</span>
+    }
+    #expect(value == <span class="tk-str">&quot;ok&quot;</span>)
+    #expect(delays == [.seconds(<span class="tk-num">1</span>), .seconds(<span class="tk-num">2</span>)]) <span class="tk-com">// kiểm tra delay đã yêu cầu, test chạy tức thì</span>
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/swift/clock" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -1025,6 +1341,164 @@ present(<span class="tk-type">PHPickerViewController</span>(configuration: confi
   <span class="tk-kw">return</span> data
 }</code></pre>
         <p class="doc-link"><a href="https://developer.apple.com/documentation/localauthentication" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q50.html">App có đăng nhập Google và Facebook, bị App Review từ chối vì chưa có Sign in with Apple. Khi nào Apple bắt buộc, bạn tích hợp thế nào, xử lý email ẩn (relay) ra sao, và cần kiểm tra gì khi mở lại app hoặc khi user xoá tài khoản?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Guideline 4.8 (Login Services) yêu cầu app dùng đăng nhập bên thứ ba hay mạng xã hội cho tài khoản chính phải cung cấp thêm một lựa chọn đăng nhập hạn chế thu thập dữ liệu ở mức tên và email, cho phép ẩn email và không theo dõi khi chưa có sự đồng ý; Sign in with Apple là lựa chọn phổ biến nhất đáp ứng điều đó. Có vài ngoại lệ (app chỉ dùng tài khoản riêng của mình, app doanh nghiệp/giáo dục...), và chính sách có thể đổi nên cần đọc bản mới. Tích hợp: tạo request từ <code>ASAuthorizationAppleIDProvider</code>, đặt <code>requestedScopes</code> và <code>nonce</code>, chạy <code>ASAuthorizationController</code> (SwiftUI có sẵn <code>SignInWithAppleButton</code>). Credential có <code>user</code> là ID ổn định theo team để làm khoá tài khoản, <code>identityToken</code> (JWT) và <code>authorizationCode</code> gửi cho backend để xác minh và đổi token, còn <code>email</code>, <code>fullName</code> chỉ trả về ở lần cấp quyền đầu tiên nên phải gửi lưu ngay, lần sau là <code>nil</code>. Email có thể là địa chỉ relay dạng <code>...@privaterelay.appleid.com</code>: muốn gửi mail tới đó thì phải đăng ký domain gửi trong tài khoản developer. Mỗi lần mở app, gọi <code>credentialState(forUserID:)</code> và lắng nghe <code>credentialRevokedNotification</code> để đăng xuất khi user thu hồi quyền trong Settings. Khi user xoá tài khoản (Guideline 5.1.1(v) bắt buộc app cho xoá ngay trong app), backend phải thu hồi token Sign in with Apple qua REST API <code>revoke</code>.</div>
+        <pre class="code-block"><code><span class="tk-type">SignInWithAppleButton</span>(.signIn) { request <span class="tk-kw">in</span>
+    request.requestedScopes = [.fullName, .email]
+    request.nonce = sha256(rawNonce) <span class="tk-com">// chống replay; backend kiểm tra lại nonce trong identityToken</span>
+} onCompletion: { result <span class="tk-kw">in</span>
+    <span class="tk-kw">guard</span> <span class="tk-kw">case</span> .success(<span class="tk-kw">let</span> auth) = result,
+          <span class="tk-kw">let</span> credential = auth.credential as? <span class="tk-type">ASAuthorizationAppleIDCredential</span>,
+          <span class="tk-kw">let</span> tokenData = credential.identityToken,
+          <span class="tk-kw">let</span> idToken = <span class="tk-type">String</span>(data: tokenData, encoding: .utf8) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+
+    <span class="tk-com">// email và fullName chỉ có ở lần đầu: gửi lên server lưu ngay</span>
+    <span class="tk-type">Task</span> {
+        <span class="tk-kw">try</span>? <span class="tk-kw">await</span> api.signInWithApple(
+            userID: credential.user,
+            idToken: idToken,
+            authorizationCode: credential.authorizationCode,
+            email: credential.email,
+            fullName: credential.fullName
+        )
+    }
+}
+
+<span class="tk-com">// Mỗi lần mở app: user có thể đã thu hồi quyền trong Settings</span>
+<span class="tk-kw">func</span> checkAppleCredential(userID: <span class="tk-type">String</span>) <span class="tk-kw">async</span> {
+    <span class="tk-kw">let</span> state = <span class="tk-kw">try</span>? <span class="tk-kw">await</span> <span class="tk-type">ASAuthorizationAppleIDProvider</span>().credentialState(forUserID: userID)
+    <span class="tk-kw">if</span> state == .revoked || state == .notFound { signOut() }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/authenticationservices/implementing-user-authentication-with-sign-in-with-apple" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q40.html">QA báo màn thanh toán thỉnh thoảng tạo hai đơn trùng: user bấm &quot;Đặt hàng&quot; hai lần liền, hoặc mạng rớt giữa chừng nên app tưởng thất bại, user bấm lại trong khi server thật ra đã nhận đơn đầu. Bạn thiết kế phía client và API thế nào để không tạo đơn trùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cần hai lớp bảo vệ. Ở UI: chuyển state sang <code>submitting</code> ngay trên main actor trước khi <code>await</code> và chặn gọi lại ngay trong ViewModel (<code>guard</code>), không chỉ disable nút, vì lời gọi có thể đến từ nhiều nguồn như callback của Apple Pay hay bấm đúp nhanh trước khi UI kịp vẽ lại. Nhưng chặn UI chưa đủ: khi timeout hay mất mạng giữa chừng, client không biết server đã tạo đơn chưa, tức có kết quả thứ ba là &quot;chưa rõ&quot; chứ không chỉ thành công hay thất bại (lỗi 5xx cũng nên coi là chưa chắc). Lời giải là idempotency key: client sinh một UUID cho mỗi ý định đặt hàng và gửi trong header (vd. <code>Idempotency-Key</code>); server lưu key cùng kết quả, gặp lại cùng key thì trả đúng đơn cũ thay vì tạo mới. Retry (tự động hay user bấm lại) luôn dùng lại key đó; chỉ sinh key mới khi giỏ hàng hoặc thông tin thanh toán thay đổi. Trạng thái &quot;chưa rõ&quot; nên hiện &quot;đang xác nhận đơn&quot; và cho thử lại hoặc tra cứu trạng thái đơn, đừng báo thất bại. Lưu key cùng payload đang chờ cục bộ để app bị kill vẫn đối soát được khi mở lại. Đừng tự retry POST không có idempotency, và nhớ cổng thanh toán phía sau cũng cần nhận cùng khoá để không trừ tiền hai lần.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">CheckoutState</span>: <span class="tk-type">Equatable</span> {
+    <span class="tk-kw">case</span> editing
+    <span class="tk-kw">case</span> submitting
+    <span class="tk-kw">case</span> unknown                  <span class="tk-com">// timeout/mất mạng: chưa biết server đã tạo đơn hay chưa</span>
+    <span class="tk-kw">case</span> placed(orderID: <span class="tk-type">String</span>)
+    <span class="tk-kw">case</span> failed(<span class="tk-type">String</span>)
+}
+
+<span class="tk-ann">@MainActor</span> <span class="tk-ann">@Observable</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span> {
+    <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> state: <span class="tk-type">CheckoutState</span> = .editing
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> idempotencyKey = <span class="tk-type">UUID</span>().uuidString <span class="tk-com">// một &quot;ý định đặt hàng&quot; = một key</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> api: <span class="tk-type">OrderAPI</span>
+
+    <span class="tk-kw">init</span>(api: <span class="tk-type">OrderAPI</span>) { <span class="tk-kw">self</span>.api = api }
+
+    <span class="tk-kw">func</span> placeOrder(_ cart: <span class="tk-type">Cart</span>) <span class="tk-kw">async</span> {
+        <span class="tk-kw">guard</span> state != .submitting <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// chặn bấm lần hai ngay tại ViewModel</span>
+        state = .submitting
+        <span class="tk-kw">do</span> {
+            <span class="tk-kw">let</span> order = <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.createOrder(cart, idempotencyKey: idempotencyKey)
+            state = .placed(orderID: order.id)
+        } <span class="tk-kw">catch</span> <span class="tk-kw">let</span> error as <span class="tk-type">URLError</span> <span class="tk-kw">where</span> error.code == .timedOut || error.code == .networkConnectionLost {
+            state = .unknown <span class="tk-com">// KHÔNG đổi key: bấm lại sẽ gửi cùng key, server trả lại đơn cũ nếu đã tạo</span>
+        } <span class="tk-kw">catch</span> {
+            state = .failed(error.localizedDescription)
+        }
+    }
+
+    <span class="tk-kw">func</span> cartChanged() { <span class="tk-com">// giỏ hàng đổi = ý định mới = key mới</span>
+        idempotencyKey = <span class="tk-type">UUID</span>().uuidString
+        state = .editing
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q41.html">Màn theo dõi đơn giao hàng cần hiện trạng thái và vị trí shipper gần như realtime. Bạn chọn polling, WebSocket hay push? Vòng đời foreground/background, mất mạng và tiết kiệm pin xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chọn theo tần suất cập nhật và ngữ cảnh. Polling đơn giản, hợp khi dữ liệu đổi chậm (hàng chục giây), nhưng tốn pin và mạng nếu interval ngắn; chỉ poll khi màn đang mở, có backoff khi dữ liệu không đổi. WebSocket (<code>URLSessionWebSocketTask</code>) hợp cho luồng cập nhật liên tục khi màn đang mở: một kết nối, độ trễ thấp. Bạn phải tự lo heartbeat (<code>sendPing</code>), reconnect với exponential backoff kèm jitter, và sau mỗi lần nối lại phải lấy lại trạng thái hiện tại bằng REST vì có thể đã lỡ message. Push (APNs) hợp cho mốc quan trọng khi app không chạy (&quot;shipper đã tới&quot;); silent push không đảm bảo tới và bị giới hạn tần suất nên không dùng làm kênh realtime. Live Activity (ActivityKit) hợp cho trải nghiệm theo dõi đơn ngay trên màn hình khoá, cập nhật qua push. Vòng đời: mở socket khi màn xuất hiện, đóng khi màn biến mất hoặc app vào background (hệ thống sẽ treo app và socket chết lặng lẽ), mở lại khi quay về foreground rồi đồng bộ lại. Dùng <code>NWPathMonitor</code> để biết khi nào có mạng trở lại thay vì retry mù, và giới hạn tần suất vẽ lại marker trên bản đồ (1–2 giây) để đỡ tốn CPU.</div>
+        <pre class="code-block"><code><span class="tk-ann">@MainActor</span> <span class="tk-ann">@Observable</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">TrackingViewModel</span> {
+    <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> status: <span class="tk-type">OrderStatus</span>?
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> socket: <span class="tk-type">URLSessionWebSocketTask</span>?
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> loop: <span class="tk-type">Task</span>&lt;<span class="tk-type">Void</span>, <span class="tk-type">Never</span>&gt;?
+
+    <span class="tk-kw">func</span> start(url: <span class="tk-type">URL</span>) {
+        loop = <span class="tk-type">Task</span> { [<span class="tk-kw">weak</span> <span class="tk-kw">self</span>] <span class="tk-kw">in</span>
+            <span class="tk-kw">var</span> attempt = <span class="tk-num">0</span>
+            <span class="tk-kw">while</span> !<span class="tk-type">Task</span>.isCancelled {
+                <span class="tk-kw">guard</span> <span class="tk-kw">let</span> <span class="tk-kw">self</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+                <span class="tk-kw">let</span> socket = <span class="tk-type">URLSession</span>.shared.webSocketTask(with: url)
+                <span class="tk-kw">self</span>.socket = socket
+                socket.resume()
+                <span class="tk-kw">do</span> {
+                    <span class="tk-kw">while</span> <span class="tk-kw">true</span> {
+                        <span class="tk-kw">let</span> message = <span class="tk-kw">try</span> <span class="tk-kw">await</span> socket.receive()
+                        attempt = <span class="tk-num">0</span>
+                        <span class="tk-kw">if</span> <span class="tk-kw">case</span> .string(<span class="tk-kw">let</span> text) = message { <span class="tk-kw">self</span>.apply(text) }
+                    }
+                } <span class="tk-kw">catch</span> {
+                    <span class="tk-kw">if</span> <span class="tk-type">Task</span>.isCancelled { <span class="tk-kw">return</span> }
+                    attempt += <span class="tk-num">1</span>
+                    <span class="tk-kw">let</span> delay = <span class="tk-type">Double</span>(min(<span class="tk-num">30</span>, <span class="tk-num">1</span> &lt;&lt; min(attempt, <span class="tk-num">5</span>))) + .random(<span class="tk-kw">in</span>: <span class="tk-num">0</span>...<span class="tk-num">1</span>) <span class="tk-com">// backoff + jitter</span>
+                    <span class="tk-kw">try</span>? <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: .seconds(delay))
+                    <span class="tk-kw">await</span> <span class="tk-kw">self</span>.refreshFromREST() <span class="tk-com">// có thể đã lỡ message trong lúc mất kết nối</span>
+                }
+            }
+        }
+    }
+
+    <span class="tk-kw">func</span> stop() { <span class="tk-com">// gọi khi màn biến mất hoặc app vào background</span>
+        loop?.cancel()
+        socket?.cancel(with: .goingAway, reason: <span class="tk-kw">nil</span>) <span class="tk-com">// receive() đang chờ sẽ ném lỗi để vòng lặp thoát</span>
+    }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/foundation/urlsessionwebsockettask" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q42.html">Bạn review PR đầu tiên của một bạn junior: ViewController dài 600 dòng gọi API trực tiếp, force unwrap khắp nơi và <code>[weak self]</code> rải bừa. Bạn review thế nào để PR tốt lên mà bạn ấy vẫn học được và không nản?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bắt đầu từ mô tả PR và chạy thử, chưa đọc diff ngay; PR quá lớn thì đề nghị tách. Checklist của mình: đúng yêu cầu và các trạng thái loading/empty/error, mất mạng, xoay máy; nguy cơ crash (force unwrap, index ngoài mảng); retain cycle và thread (UI phải ở main); kiến trúc (logic nằm đâu, có test được không); test đi kèm; tên gọi và khả năng đọc; hiệu năng ở chỗ nóng như cell hay <code>body</code>. Phân loại comment: blocking (bug, crash, sai kiến trúc) và gợi ý nhỏ gắn tiền tố <code>nit:</code>; style thì để SwiftLint/SwiftFormat tự bắt, đừng bắt người review làm việc của máy. Với PR sai kiến trúc, đừng viết lại hộ và đừng để 30 comment qua lại: nêu vấn đề ở mức nguyên tắc (&quot;ViewController biết cả networking nên khó test&quot;) kèm một ví dụ nhỏ, và nếu lớn thì gọi pair 15–20 phút. Khi sát deadline, chấp nhận merge bản đủ tốt kèm ticket refactor ghi rõ phạm vi, tách phần bắt buộc sửa khỏi phần để học dần. Giọng điệu nên hỏi thay vì ra lệnh (&quot;nếu API lỗi thì màn này hiện gì?&quot;) và khen điểm làm tốt một cách cụ thể. Phản hồi trong ngày để PR không bị treo. Nếu một lỗi lặp lại ở nhiều PR, ghi nó vào checklist hay tài liệu của team; thước đo mentoring tốt là số vòng review giảm dần theo thời gian.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-mid-q43.html">Bản 5.2 đang phát hành theo phased release được hai ngày thì crash-free rate tụt từ 99,7% xuống 98,9% và review 1 sao tăng. Trên iOS không có nút rollback bản đã lên App Store. Bạn xử lý thế nào trong vài giờ đầu và sau đó?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Việc đầu tiên là chặn thiệt hại lan rộng: tạm dừng phased release trong App Store Connect (có thể dừng tối đa 30 ngày). Lưu ý user đã cập nhật vẫn giữ bản 5.2, và ai tự vào App Store cập nhật thủ công vẫn tải được, nên đây chỉ làm chậm đà phát tán. Song song, tìm nguyên nhân: lọc Crashlytics hoặc Xcode Organizer theo version, gom theo stack trace (cần dSYM để symbolicate), đối chiếu với thay đổi trong bản như PR hay SDK mới, thiết bị và phiên bản iOS bị ảnh hưởng, luồng người dùng. Vì không rollback được, &quot;rollback&quot; thực tế là tắt tính năng từ xa: nếu tính năng nghi ngờ nằm sau feature flag hay remote config thì tắt ngay từ server, đây là lý do thay đổi rủi ro lớn nên đi cùng flag trước khi phát hành. Nếu không có flag thì làm hotfix 5.2.1: sửa tối thiểu, tái hiện và test đúng luồng lỗi, rồi gửi App Review kèm yêu cầu Expedited Review và nêu rõ ảnh hưởng (dùng có chừng mực). Cân nhắc cơ chế buộc cập nhật theo phiên bản tối thiểu, chỉ cho lỗi nghiêm trọng. Giao tiếp: báo sớm PM, support và stakeholder bằng số liệu, trạng thái và ETA ước lượng, chuẩn bị câu trả lời cho CS. Sau khi ổn định, viết post-mortem ngắn không đổ lỗi: nguyên nhân gốc, vì sao test và QA không bắt được, và hành động phòng ngừa như cảnh báo crash theo ngưỡng cho bản mới, giữ phased release, flag cho thay đổi rủi ro.</div>
+        
+        
       </div>
     </details>
     </li>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Testing &amp; CI/CD — Mobile Interview</title>
-<meta name="description" content="7 câu hỏi phỏng vấn iOS về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta name="description" content="11 câu hỏi phỏng vấn iOS về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/testing/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Testing &amp; CI/CD — Mobile Interview">
-<meta property="og:description" content="7 câu hỏi phỏng vấn iOS về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta property="og:description" content="11 câu hỏi phỏng vấn iOS về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/testing/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,12 +47,20 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Testing &amp; CI/CD</h1>
-  <p class="subtitle">7 câu hỏi kèm đáp án mẫu và 9 câu quiz về Testing &amp; CI/CD, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">11 câu hỏi kèm đáp án mẫu và 9 câu quiz về Testing &amp; CI/CD, xếp theo rank từ Fresher đến Senior.</p>
 </header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-fre-q47.html">Cách debug cơ bản trong Xcode: breakpoint, po trong lldb, print khác os.Logger thế nào? Exception breakpoint dùng khi nào và đọc crash log đơn giản ra sao?</a></li>
+    <li><a href="../../../../s/ios-fre-q48.html">Viết unit test cơ bản bằng XCTest thế nào? @testable import, setUp và các hàm XCTAssert... dùng ra sao, và vì sao test hàm thuần dễ hơn test cả ViewController?</a></li>
+  </ul>
+</section>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/ios-jun-q25.html">Bạn viết unit test cho hàm fetchUser(completion:) chạy bất đồng bộ; test luôn pass dù cố tình sửa cho kết quả sai. Vì sao, và viết lại bằng XCTest thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q48.html">QA viết UI test đăng nhập bằng XCUITest với app.buttons[&quot;Đăng nhập&quot;].tap(): chạy trên máy dev thì pass, trên CI thì fail ngẫu nhiên, và đổi app sang tiếng Anh thì vỡ hết. Bạn viết UI test ổn định thế nào, và khi nào nên chọn UI test thay vì unit test?</a></li>
     <li><a href="../../../../s/ios-jun-m39.html">Trong một subclass XCTestCase, hàm func checkLoginWithWrongPassword() không bao giờ chạy khi bấm Cmd+U. Vì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m40.html">Hai test cùng tăng một stored property count của test case rồi kiểm tra bằng 1. Kết quả khi chạy cả hai là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
@@ -63,6 +71,7 @@
     <li><a href="../../../../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm load() async gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a></li>
     <li><a href="../../../../s/ios-mid-q24.html">Swift Testing (@Test, #expect) khác XCTest ở những điểm nào? Dự án đang có vài trăm test XCTest thì có nên chuyển hết không?</a></li>
     <li><a href="../../../../s/ios-mid-q35.html">Test cho tầng networking đang gọi server thật nên chậm và flaky; bạn muốn test cả URLSession thật (header, decode, retry) mà không chạm mạng. URLProtocol stub hoạt động thế nào, và nó khác mock bằng protocol ra sao?</a></li>
+    <li><a href="../../../../s/ios-mid-q49.html">ViewModel có debounce 300ms cho ô search, logic &quot;mã giảm giá hết hạn cuối ngày&quot; và retry tối đa 3 lần với delay tăng dần. Test hiện dùng Thread.sleep hoặc expectation chờ vài giây nên chậm và đôi khi fail, còn test hết hạn pass ở máy dev nhưng fail ở CI đặt múi giờ khác. Bạn viết lại test thế nào?</a></li>
     <li><a href="../../../../s/ios-mid-m37.html">Trong Swift Testing, #expect và #require khác nhau thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m38.html">Trong func testUpload() async, bạn cần đợi một XCTestExpectation được fulfill từ callback. Cách viết nào đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m39.html">Một suite Swift Testing dùng chung biến static var mockStore mà nhiều test cùng sửa. Chạy riêng từng test thì pass, chạy cả suite thì fail ngẫu nhiên. Nguyên nhân hợp lý nhất?</a> <span class="tag">Quiz</span></li>

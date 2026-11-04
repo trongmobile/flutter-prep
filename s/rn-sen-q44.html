@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu kh…</title>
+<meta name="description" content="Chính sách store đổi theo thời gian nên luôn đối chiếu tài liệu hiện hành; ở mức khái niệm thì thế này. Phía Apple: từ 2024 app và SDK bên thứ ba phải có Pri…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q44.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu kh…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q44.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"App RN sắp lên store thì bị Apple từ chối vì Pr…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q44.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App RN sắp lên store thì bị Apple từ chối vì Pr…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/security/">Security</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu khai báo &quot;required reason API&quot;, còn Google Play nhắc form Data safety không khớp với hành vi thực tế của các SDK. Bạn xử lý và đưa quyền riêng tư vào quy trình phát triển thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chính sách store đổi theo thời gian nên luôn đối chiếu tài liệu hiện hành; ở mức khái niệm thì thế này. Phía Apple: từ 2024 app và SDK bên thứ ba phải có Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>) khai báo dữ liệu thu thập cùng mục đích, các domain dùng để theo dõi, và việc dùng &quot;required reason API&quot; (nhóm API dễ bị lạm dụng để fingerprint như thời gian của file, <code>UserDefaults</code>, dung lượng đĩa, thời gian khởi động hệ thống), mỗi API kèm lý do hợp lệ trong danh sách của Apple. App RN dính nhiều vì lõi RN và các thư viện (AsyncStorage, file system...) dùng những API này; template RN đã có manifest cho app, nhưng bạn phải nâng thư viện lên bản có manifest riêng và bổ sung phần thiếu (Expo cho khai báo qua app config). Xcode có &quot;Generate Privacy Report&quot; khi archive để gộp manifest của mọi SDK và dò chỗ thiếu. Phía Google Play: form Data safety phải phản ánh đúng dữ liệu app và SDK thu thập hay chia sẻ (analytics, crash, quảng cáo), kèm yêu cầu cho xoá tài khoản; Android 13 trở lên cần khai báo quyền <code>AD_ID</code> nếu dùng mã quảng cáo. ATT chỉ cần khi bạn &quot;theo dõi&quot; (liên kết dữ liệu với dữ liệu của bên khác cho quảng cáo hoặc chia sẻ với data broker); hỏi khi không cần là thừa, và đừng chặn tính năng nếu user từ chối. Cách làm bền: kiểm kê SDK (thu gì, vì sao, gửi tới đâu), thu thập tối thiểu và tắt những gì không cần, có người duyệt mỗi lần thêm hoặc nâng SDK, kiểm tra tự động manifest cùng quyền Android sau merge trong CI, và nhớ nghĩa vụ pháp lý như GDPR hay Nghị định 13/2023/NĐ-CP ở Việt Nam khi có người dùng ở đó.</div>
+        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/bundleresources/privacy-manifest-files" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q44">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q43.html"><span class="muted small">← Câu trước</span><span>Một dev thêm thư viện mới chỉ vì thấy &quot;nhiều sao&quot; trên GitHub; tuần sau tin tức…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q45.html"><span class="muted small">Câu sau →</span><span>Công ty có 4 team RN, mỗi team tự viết Button, Input, typography riêng nên UI l…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Security</h2><a class="section-sub" href="../phong-van/react-native/chu-de/security/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q16.html">Một dev đặt secret key của cổng thanh toán vào .env và đọc qua react-native-config, lập luận rằng Hermes đã biên dịch ra bytecode nên không ai đọc được. Bạn phản hồi thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q17.html">Bạn triển khai SSL pinning cho app RN thế nào, và cần chuẩn bị gì để pinning không &#39;khoá&#39; toàn bộ user khi server đổi chứng chỉ?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q18.html">Khách hàng (một ví điện tử) yêu cầu app RN phải &#39;chặn máy root/jailbreak và chống sửa app&#39;. Bạn thiết kế lớp bảo vệ này thế nào cho thực tế?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q43.html">Một dev thêm thư viện mới chỉ vì thấy &quot;nhiều sao&quot; trên GitHub; tuần sau tin tức nói một package phổ biến trên npm vừa bị chèn mã độc vào bản phát hành mới. Bạn rà lại và thiết lập quy trình để chuỗi cung ứng dependency (npm lẫn native) của app RN an toàn hơn thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m31.html">Một PR lưu refresh token bằng MMKV có bật mã hoá, với encryptionKey là một chuỗi hằng số viết thẳng trong code JS. Nhận xét nào chính xác nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m32.html">App pin bằng CertificatePinner của OkHttp (Android) và TrustKit (iOS), chỉ với một hash là public key của certificate hiện tại. Infra thay certificate mới với key pair mới. Điều gì xảy ra?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: SwiftUI — Mobile Interview</title>
-<meta name="description" content="16 câu hỏi phỏng vấn iOS về SwiftUI từ Fresher đến Senior, có đáp án mẫu và 22 câu quiz trắc nghiệm.">
+<meta name="description" content="20 câu hỏi phỏng vấn iOS về SwiftUI từ Fresher đến Senior, có đáp án mẫu và 22 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swiftui/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: SwiftUI — Mobile Interview">
-<meta property="og:description" content="16 câu hỏi phỏng vấn iOS về SwiftUI từ Fresher đến Senior, có đáp án mẫu và 22 câu quiz trắc nghiệm.">
+<meta property="og:description" content="20 câu hỏi phỏng vấn iOS về SwiftUI từ Fresher đến Senior, có đáp án mẫu và 22 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/swiftui/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: SwiftUI</h1>
-  <p class="subtitle">16 câu hỏi kèm đáp án mẫu và 22 câu quiz về SwiftUI, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">20 câu hỏi kèm đáp án mẫu và 22 câu quiz về SwiftUI, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -58,6 +58,7 @@
     <li><a href="../../../../s/ios-fre-q18.html">Vì sao trong SwiftUI thứ tự modifier lại quan trọng? .padding().background(.yellow) và .background(.yellow).padding() khác nhau thế nào?</a></li>
     <li><a href="../../../../s/ios-fre-q32.html">some View trong var body: some View nghĩa là gì? Vì sao không viết thẳng View làm kiểu trả về được?</a></li>
     <li><a href="../../../../s/ios-fre-q33.html">Hiển thị danh sách trong SwiftUI bằng List và ForEach thế nào? Identifiable dùng để làm gì?</a></li>
+    <li><a href="../../../../s/ios-fre-q44.html">Trong SwiftUI, $name khác name thế nào? Vì sao TextField cần $name còn Text thì chỉ cần name?</a></li>
     <li><a href="../../../../s/ios-fre-m20.html">Đoạn code SwiftUI sau có vấn đề gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m21.html">Với đoạn code sau, vùng nền xanh trông thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m22.html">Trong ZStack { Color.black; Image(&quot;avatar&quot;); Text(&quot;Online&quot;) }, view nào hiển thị trên cùng?</a> <span class="tag">Quiz</span></li>
@@ -73,6 +74,8 @@
     <li><a href="../../../../s/ios-jun-q17.html">Màn hình SwiftUI khai báo @ObservedObject var viewModel = ProfileViewModel(), thỉnh thoảng dữ liệu đang nhập bị reset và API bị gọi lại khi view cha cập nhật. Vì sao? Khi nào dùng @StateObject?</a></li>
     <li><a href="../../../../s/ios-jun-q18.html">Bạn tách một nút bật/tắt yêu thích ra view con, nhưng bấm ở view con thì view cha không hề biết. Dùng @Binding giải quyết thế nào, và vì sao không dùng @State ở view con?</a></li>
     <li><a href="../../../../s/ios-jun-q19.html">Danh sách todo dùng ForEach(todos.indices, id: \.self) hoặc ForEach(names, id: \.self). Khi xoá hoặc chèn phần tử thì animation sai, trạng thái của row này nhảy sang row khác. Vì sao?</a></li>
+    <li><a href="../../../../s/ios-jun-q45.html">App SwiftUI có AuthService cần dùng ở nhiều màn nằm sâu trong cây view; truyền qua từng init thì rườm rà, còn chuyển sang @EnvironmentObject thì có màn Preview crash với &#39;No ObservableObject of type AuthService found&#39;. @EnvironmentObject, @Environment với model @Observable và EnvironmentKey khác nhau thế nào, và khi nào nên truyền tham số trực tiếp?</a></li>
+    <li><a href="../../../../s/ios-jun-q46.html">Màn danh sách đơn hàng SwiftUI cần kéo để làm mới, ô tìm kiếm trên thanh điều hướng và vuốt dòng để xoá. Bạn dùng .refreshable, .searchable, .swipeActions thế nào, và vì sao spinner của pull-to-refresh hay quay mãi hoặc biến mất quá sớm?</a></li>
     <li><a href="../../../../s/ios-jun-m29.html">User đã có property id, nhưng List(users) vẫn báo lỗi compile. Cách sửa gọn nhất là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m30.html">Một view khai báo @EnvironmentObject var cart: CartStore nhưng không view tổ tiên nào gọi .environmentObject(...) với CartStore. Điều gì xảy ra khi view được hiển thị?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m31.html">Màn hình mở sheet bằng .sheet(isPresented: $showEdit). Người dùng vuốt xuống để đóng sheet thay vì bấm nút Đóng. Lúc này showEdit có giá trị gì?</a> <span class="tag">Quiz</span></li>
@@ -102,6 +105,7 @@
   <ul class="link-list">
     <li><a href="../../../../s/ios-sen-q04.html">Màn hình SwiftUI có danh sách vài nghìn dòng bị khựng mỗi khi một bộ đếm nhỏ ở header thay đổi. Bạn điều tra và tối ưu thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-q29.html">Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ, và một hàng nút có chiều rộng bằng nút rộng nhất. Layout của SwiftUI hoạt động theo quy tắc nào, và bạn viết container tuỳ biến bằng protocol Layout thế nào?</a></li>
+    <li><a href="../../../../s/ios-sen-q46.html">Sau khi app lên iPad, user báo layout vỡ khi dùng Split View, kéo cửa sổ Stage Manager hoặc xoay máy, còn màn danh sách chỉ là một cột kéo giãn kín màn hình. Bạn thiết kế UI thích ứng cho iPad và đa nhiệm thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-m06.html">Model Todo dưới đây khai báo id là computed property. Điều gì xảy ra với list khi body được tính lại?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m07.html">Màn lịch sử giao dịch hiển thị khoảng 5.000 dòng bằng đoạn code sau, mất vài giây mới hiện và memory tăng vọt. Nguyên nhân chính là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m08.html">Vì sao bọc view trong AnyView tràn lan (hàm trả về AnyView, mọi row đều là AnyView) thường bị khuyên tránh ở màn hình lớn?</a> <span class="tag">Quiz</span></li>

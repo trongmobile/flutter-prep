@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Junior (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
+<title>Câu hỏi phỏng vấn React Native Junior (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · react native · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Junior</h1>
-  <p class="subtitle">Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/react-native/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -62,19 +62,20 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">4</span></li>
-    <li><a href="#react">React &amp; Hooks</a> <span class="count">6</span></li>
-    <li><a href="#components">Component &amp; Styling</a> <span class="count">6</span></li>
+    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">6</span></li>
+    <li><a href="#react">React &amp; Hooks</a> <span class="count">8</span></li>
+    <li><a href="#components">Component &amp; Styling</a> <span class="count">8</span></li>
     <li><a href="#state">State Management</a> <span class="count">2</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">4</span></li>
-    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">3</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">5</span></li>
+    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">4</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">5</span></li>
     <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">1</span></li>
-    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">3</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">4</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">1</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
+    <li><a href="#design">System Design</a> <span class="count">1</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -163,6 +164,64 @@ setProductsError(products.status === <span class="tk-str">&#39;rejected&#39;</sp
 
 <span class="tk-com">// T được suy ra là Country, nên country.dialCode có gợi ý và được kiểm tra kiểu</span>
 &lt;<span class="tk-type">SelectList</span> items={countries} getLabel={(c) =&gt; c.name} onSelect={(country) =&gt; setDial(country.dialCode)} /&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q40.html">Giỏ hàng lưu trong state <code>cart = { items: [...], coupon: {...} }</code>. Bạn viết <code>const next = { ...cart }; next.items[0].qty += 1; setCart(next)</code> thì số lượng đổi nhưng UI không cập nhật đúng chỗ. Vì sao? Shallow copy khác deep copy thế nào, và vì sao <code>JSON.parse(JSON.stringify(x))</code> không phải cách copy an toàn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>{ ...cart }</code> và <code>[...items]</code> chỉ copy một tầng: object ngoài là mới nhưng <code>items</code> bên trong vẫn là cùng một mảng, các phần tử vẫn là object cũ. Sửa <code>next.items[0].qty</code> thực chất là sửa thẳng vào state hiện tại (mutation). React so sánh bằng <code>Object.is</code>, nên <code>React.memo</code>, <code>useMemo</code> hay dependency của effect thấy tham chiếu <code>items</code> không đổi và bỏ qua, còn mọi chỗ khác giữ cùng tham chiếu thì bị đổi ngầm. Quy tắc: mọi tầng nằm trên đường tới chỗ sửa đều phải là bản sao mới, phần còn lại giữ nguyên tham chiếu cũ để component không liên quan không render lại. Deep copy cả cây vừa tốn vừa tạo tham chiếu mới khắp nơi, gây render thừa. <code>JSON.parse(JSON.stringify(x))</code> làm mất <code>undefined</code>, hàm và <code>Symbol</code>, biến <code>Date</code> thành chuỗi, <code>Map</code>/<code>Set</code> thành <code>{}</code>, và ném lỗi khi có vòng tham chiếu. <code>structuredClone</code> giữ được <code>Date</code>/<code>Map</code>/<code>Set</code> nhưng đừng mặc định là có sẵn trong mọi môi trường chạy React Native: kiểm tra phiên bản bạn dùng trước. Thực tế nên giữ state phẳng, cập nhật bằng <code>map</code>/spread, hoặc dùng Immer (<code>produce</code>, Redux Toolkit đã tích hợp sẵn) để viết như sửa trực tiếp mà vẫn bất biến.</div>
+        <pre class="code-block"><code><span class="tk-com">// SAI: spread một tầng, items[0] vẫn là object của state cũ</span>
+<span class="tk-kw">const</span> bad = { ...cart };
+bad.items[<span class="tk-num">0</span>].qty += <span class="tk-num">1</span>;
+setCart(bad);
+
+<span class="tk-com">// ĐÚNG: tạo bản sao mới cho mọi tầng trên đường tới chỗ sửa</span>
+setCart((prev) =&gt; ({
+  ...prev,
+  items: prev.items.map((it) =&gt; (it.id === id ? { ...it, qty: it.qty + <span class="tk-num">1</span> } : it)),
+}));
+
+<span class="tk-com">// Bẫy của JSON: Date thành chuỗi, note và f biến mất</span>
+<span class="tk-type">JSON</span>.parse(<span class="tk-type">JSON</span>.stringify({ at: <span class="tk-kw">new</span> <span class="tk-type">Date</span>(), note: <span class="tk-kw">undefined</span>, f: () =&gt; <span class="tk-num">1</span> }));
+<span class="tk-com">// =&gt; { at: &#39;2025-03-01T10:00:00.000Z&#39; }</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q41.html">Hàm <code>getUser(): Promise&lt;User&gt;</code> dùng <code>(await res.json()) as User</code>, TypeScript build xanh nhưng app crash ở <code>user.address.city</code> vì server trả <code>address: null</code> cho một số tài khoản. Vì sao kiểu khai báo không cứu được bạn? Bạn mô hình hoá response (generic <code>ApiResponse&lt;T&gt;</code>, union) và kiểm tra dữ liệu lúc chạy thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">TypeScript chỉ kiểm tra lúc build, còn dữ liệu từ mạng là dữ liệu lúc chạy: <code>as User</code> chỉ là lời hứa của bạn với compiler, không có gì kiểm tra thật. <code>res.json()</code> trả về <code>Promise&lt;any&gt;</code> nên kiểu sai cứ thế lan vào code mà không ai báo. Cách làm: khai báo kiểu sát thực tế (<code>address: Address | null</code>) và bật <code>strict</code> để compiler buộc xử lý null; coi dữ liệu mạng là <code>unknown</code> rồi kiểm tra bằng schema lúc chạy (Zod, Valibot…) ngay ở biên của app, còn kiểu TypeScript suy ra từ schema (<code>z.infer</code>) nên không bao giờ lệch. Response mô hình hoá bằng discriminated union để mỗi nhánh có đúng dữ liệu của nó; sau <code>if (result.ok)</code> compiler tự thu hẹp kiểu (narrowing) nên không cần ép kiểu. Tránh <code>as</code> và <code>any</code> cho dữ liệu từ ngoài vào; nếu buộc phải kiểm tra thủ công thì viết type guard (<code>function isUser(x: unknown): x is User</code>).</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">ApiResponse</span>&lt;<span class="tk-type">T</span>&gt; =
+  | { ok: <span class="tk-kw">true</span>; data: <span class="tk-type">T</span> }
+  | { ok: <span class="tk-kw">false</span>; error: { code: <span class="tk-kw">string</span>; message: <span class="tk-kw">string</span> } };
+
+<span class="tk-kw">const</span> <span class="tk-type">UserSchema</span> = z.object({
+  id: z.<span class="tk-kw">number</span>(),
+  name: z.<span class="tk-kw">string</span>(),
+  address: z.object({ city: z.<span class="tk-kw">string</span>() }).nullable(),
+});
+<span class="tk-kw">type</span> <span class="tk-type">User</span> = z.<span class="tk-kw">infer</span>&lt;<span class="tk-kw">typeof</span> <span class="tk-type">UserSchema</span>&gt;;
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> getUser(id: <span class="tk-kw">number</span>): <span class="tk-type">Promise</span>&lt;<span class="tk-type">ApiResponse</span>&lt;<span class="tk-type">User</span>&gt;&gt; {
+  <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">`${API}/users/${id}`</span>);
+  <span class="tk-kw">const</span> json: <span class="tk-kw">unknown</span> = <span class="tk-kw">await</span> res.json(); <span class="tk-com">// không tin dữ liệu từ mạng</span>
+  <span class="tk-kw">const</span> parsed = <span class="tk-type">UserSchema</span>.safeParse(json);
+  <span class="tk-kw">return</span> parsed.success
+    ? { ok: <span class="tk-kw">true</span>, data: parsed.data }
+    : { ok: <span class="tk-kw">false</span>, error: { code: <span class="tk-str">&#39;INVALID_RESPONSE&#39;</span>, message: parsed.error.message } };
+}
+
+<span class="tk-kw">const</span> result = <span class="tk-kw">await</span> getUser(<span class="tk-num">1</span>);
+<span class="tk-kw">if</span> (result.ok) {
+  console.log(result.data.address?.city); <span class="tk-com">// chỉ nhánh ok mới có data; address có thể null</span>
+}</code></pre>
         
       </div>
     </details>
@@ -293,6 +352,62 @@ useEffect(() =&gt; () =&gt; {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q38.html">Bạn viết component <code>AppInput</code> bọc <code>TextInput</code> kèm nhãn và viền báo lỗi. Màn hình cha gọi <code>passwordRef.current?.focus()</code> nhưng ref luôn là <code>null</code>, và TypeScript cũng phàn nàn khi truyền <code>ref</code> vào <code>AppInput</code>. Vì sao, xử lý thế nào, và khi nào nên (hay không nên) dùng ref kiểu imperative?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với React 18 trở về trước, <code>ref</code> không phải prop thường: truyền <code>ref</code> vào function component thì bị bỏ qua (kèm cảnh báo), nên phải bọc component bằng <code>forwardRef</code> rồi gắn ref nhận được vào <code>TextInput</code> bên trong. Từ React 19 (React Native 0.78 trở lên), function component nhận <code>ref</code> như một prop bình thường, chỉ cần khai báo <code>ref?: Ref&lt;TextInput&gt;</code> và truyền xuống; <code>forwardRef</code> vẫn chạy nhưng sẽ bị loại dần. Muốn che bớt <code>TextInput</code> và chỉ cho cha gọi vài hàm như <code>focus()</code> hay <code>clear()</code> thì dùng <code>useImperativeHandle</code> để tự định nghĩa &quot;giao diện&quot; của ref. Ref imperative dành cho việc props/state không diễn tả được: focus, cuộn (<code>scrollToIndex</code>), đo layout, điều khiển player. Đừng dùng nó để đổi dữ liệu hay nội dung hiển thị (kiểu <code>ref.current.setValue(...)</code>): luồng dữ liệu bị giấu đi, khó theo dõi và khó test; việc đó thuộc về state và props.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">AppInputProps</span> = <span class="tk-type">TextInputProps</span> &amp; {
+  label: <span class="tk-kw">string</span>;
+  error?: <span class="tk-kw">string</span>;
+  ref?: <span class="tk-type">Ref</span>&lt;<span class="tk-type">TextInput</span>&gt;; <span class="tk-com">// React 19: ref là prop thường</span>
+};
+
+<span class="tk-kw">function</span> <span class="tk-type">AppInput</span>({ label, error, ref, ...rest }: <span class="tk-type">AppInputProps</span>) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">Text</span>&gt;{label}&lt;/<span class="tk-type">Text</span>&gt;
+      &lt;<span class="tk-type">TextInput</span> ref={ref} style={[styles.input, error ? styles.inputError : <span class="tk-kw">null</span>]} {...rest} /&gt;
+      {error ? &lt;<span class="tk-type">Text</span> style={styles.error}&gt;{error}&lt;/<span class="tk-type">Text</span>&gt; : <span class="tk-kw">null</span>}
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}
+
+<span class="tk-com">// Màn hình cha</span>
+<span class="tk-kw">const</span> passwordRef = useRef&lt;<span class="tk-type">TextInput</span>&gt;(<span class="tk-kw">null</span>);
+
+&lt;<span class="tk-type">AppInput</span> label=<span class="tk-str">&quot;Email&quot;</span> returnKeyType=<span class="tk-str">&quot;next&quot;</span> onSubmitEditing={() =&gt; passwordRef.current?.focus()} /&gt;
+&lt;<span class="tk-type">AppInput</span> label=<span class="tk-str">&quot;Mật khẩu&quot;</span> ref={passwordRef} secureTextEntry /&gt;
+
+<span class="tk-com">// React 18: bọc bằng forwardRef&lt;TextInput, AppInputProps&gt;((props, ref) =&gt; ...) rồi gắn ref vào TextInput</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q39.html">QA báo bản debug của màn chi tiết gọi API hai lần và console in <code>mounted</code> hai lần, còn bản release chỉ một lần. Đồng nghiệp đề nghị gỡ <code>&lt;StrictMode&gt;</code> cho hết lỗi. Vì sao có hiện tượng này, nó phơi bày những bug nào, và bạn trả lời đồng nghiệp thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ở development, <code>StrictMode</code> cố ý render mỗi component hai lần và mô phỏng mount → unmount → mount lại một lần, tức là chạy effect, cleanup rồi chạy effect lần nữa. Bản release không làm vậy nên chỉ thấy một lần. Mục đích là buộc code chịu được việc effect bị chạy lại để bắt lỗi sớm: thiếu cleanup (listener, interval, socket bị đăng ký chồng), render có side effect hoặc sửa biến bên ngoài (render phải thuần), và effect gọi API mà không xử lý kết quả của lần chạy đã bị cleanup. Gỡ StrictMode chỉ giấu bug, vì cùng tình huống đó vẫn xảy ra thật khi người dùng vào ra màn hình hoặc khi React ngắt rồi gắn lại component. Cách sửa đúng: thêm cleanup, bỏ qua kết quả của lần chạy cũ bằng cờ <code>ignore</code> (hoặc huỷ request), hoặc để thư viện như TanStack Query lo việc chống request trùng. Việc chỉ nên ghi nhận một lần (như analytics) thì khử trùng ở tầng gọi, theo id màn hình hoặc phiên; đừng trông chờ effect chạy đúng một lần.</div>
+        <pre class="code-block"><code>useEffect(() =&gt; {
+  <span class="tk-com">// StrictMode (dev): effect chạy → cleanup → chạy lại.</span>
+  <span class="tk-com">// Kết quả của lần đầu bị bỏ qua, chỉ lần sau được set vào state.</span>
+  <span class="tk-kw">let</span> ignore = <span class="tk-kw">false</span>;
+
+  api.getProduct(id).then((product) =&gt; {
+    <span class="tk-kw">if</span> (!ignore) setProduct(product);
+  });
+
+  <span class="tk-kw">return</span> () =&gt; {
+    ignore = <span class="tk-kw">true</span>;
+  };
+}, [id]);</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="components">
@@ -412,6 +527,74 @@ useEffect(() =&gt; () =&gt; {
     &lt;/<span class="tk-type">View</span>&gt;
   );
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q42.html">Khi người dùng bật dark mode, nền một số màn vẫn trắng nhưng chữ của <code>TextInput</code> và thư viện bên thứ ba lại chuyển sang trắng nên không đọc được; đổi chế độ lúc app đang chạy thì màn đổi, màn không. Bạn hỗ trợ dark mode trong React Native thế nào: <code>useColorScheme</code>, theme provider, <code>StatusBar</code>, và những bẫy nào hay gặp?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>useColorScheme()</code> của <code>react-native</code> trả về <code>&#39;light&#39;</code>, <code>&#39;dark&#39;</code> (hoặc <code>null</code>) và làm component render lại khi người dùng đổi chế độ hệ thống. Gọi nó ở một nơi duy nhất, thường là <code>ThemeProvider</code>, để chọn bộ màu rồi phát qua Context; component lấy màu theo tên ngữ nghĩa (<code>background</code>, <code>text</code>, <code>border</code>) qua hook <code>useTheme()</code> thay vì hardcode <code>#fff</code>/<code>#000</code>. Bẫy hay gặp: <code>StyleSheet.create</code> ở cấp module chỉ chạy một lần nên màu trong đó không đổi theo theme, hãy tạo style theo theme (hàm <code>makeStyles(theme)</code> kèm <code>useMemo</code>) hoặc đặt màu inline; <code>Appearance.getColorScheme()</code> gọi một lần ở đầu file chỉ là ảnh chụp tại thời điểm đó. Đổi <code>StatusBar</code> theo theme, truyền <code>theme</code> (<code>DefaultTheme</code>/<code>DarkTheme</code> hoặc theme tuỳ chỉnh) cho <code>NavigationContainer</code> để header và tab bar đổi theo, kiểm tra icon và ảnh có nền trong suốt. Với Expo cần đặt <code>userInterfaceStyle</code> là <code>automatic</code> trong app config, nếu không app có thể bị khoá ở giao diện sáng. Muốn cho người dùng chọn Sáng/Tối/Theo hệ thống thì lưu lựa chọn rồi tự quản lý trong Context.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> palettes = {
+  light: { background: <span class="tk-str">&#39;#FFFFFF&#39;</span>, text: <span class="tk-str">&#39;#111111&#39;</span>, border: <span class="tk-str">&#39;#E5E5E5&#39;</span> },
+  dark: { background: <span class="tk-str">&#39;#121212&#39;</span>, text: <span class="tk-str">&#39;#F2F2F2&#39;</span>, border: <span class="tk-str">&#39;#2C2C2C&#39;</span> },
+};
+
+<span class="tk-kw">const</span> <span class="tk-type">ThemeContext</span> = createContext(palettes.light);
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> useTheme = () =&gt; useContext(<span class="tk-type">ThemeContext</span>);
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> <span class="tk-type">ThemeProvider</span>({ children }: { children: <span class="tk-type">ReactNode</span> }) {
+  <span class="tk-kw">const</span> scheme = useColorScheme(); <span class="tk-com">// render lại khi người dùng đổi chế độ hệ thống</span>
+  <span class="tk-kw">const</span> isDark = scheme === <span class="tk-str">&#39;dark&#39;</span>;
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">ThemeContext</span>.<span class="tk-type">Provider</span> value={isDark ? palettes.dark : palettes.light}&gt;
+      &lt;<span class="tk-type">StatusBar</span> barStyle={isDark ? <span class="tk-str">&#39;light-content&#39;</span> : <span class="tk-str">&#39;dark-content&#39;</span>} /&gt;
+      {children}
+    &lt;/<span class="tk-type">ThemeContext</span>.<span class="tk-type">Provider</span>&gt;
+  );
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">Card</span>({ title }: { title: <span class="tk-kw">string</span> }) {
+  <span class="tk-kw">const</span> theme = useTheme();
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span> style={{ backgroundColor: theme.background, borderColor: theme.border }}&gt;
+      &lt;<span class="tk-type">Text</span> style={{ color: theme.text }}&gt;{title}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q43.html">QA báo nút icon &quot;xoá&quot; trong giỏ hàng rất khó bấm, người dùng TalkBack/VoiceOver chỉ nghe &quot;nút&quot; chứ không biết nó làm gì, và khi bật cỡ chữ lớn nhất thì nhãn bị cắt, layout vỡ. Bạn xử lý các vấn đề accessibility cơ bản trong React Native thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với trình đọc màn hình: thêm <code>accessibilityLabel</code> mô tả hành động (&quot;Xoá áo thun khỏi giỏ hàng&quot;), <code>accessibilityRole</code> (<code>button</code>, <code>header</code>, <code>image</code>…) để người dùng biết đó là loại điều khiển gì, <code>accessibilityState</code> (<code>selected</code>, <code>disabled</code>, <code>checked</code>, <code>expanded</code>) cho trạng thái; <code>accessibilityHint</code> chỉ khi kết quả của thao tác không hiển nhiên. Ảnh trang trí thì ẩn đi, còn thẻ gồm nhiều Text thì đặt <code>accessible</code> ở View cha để đọc thành một phần tử. Vùng chạm tối thiểu khoảng 44×44pt (iOS) hay 48×48dp (Android): đừng phóng to icon mà dùng <code>hitSlop</code> hoặc <code>padding</code> để mở rộng vùng bấm, <code>hitSlop</code> không làm đổi layout. Về cỡ chữ, hệ điều hành nhân <code>fontSize</code> theo cài đặt của người dùng; đừng tắt hàng loạt bằng <code>allowFontScaling={false}</code> vì người cần chữ to sẽ không đọc được. Hãy thiết kế layout co giãn: không đặt chiều cao cố định cho vùng chứa chữ, cho phép xuống dòng, và chỉ giới hạn bằng <code>maxFontSizeMultiplier</code> ở chỗ thật sự hẹp như badge hay tab bar. Cuối cùng phải thử bằng TalkBack/VoiceOver thật, và giữ độ tương phản chữ khoảng 4.5:1 trở lên.</div>
+        <pre class="code-block"><code>&lt;<span class="tk-type">Pressable</span>
+  onPress={() =&gt; removeItem(item.id)}
+  accessibilityRole=<span class="tk-str">&quot;button&quot;</span>
+  accessibilityLabel={<span class="tk-str">`Xoá ${item.name} khỏi giỏ hàng`</span>}
+  hitSlop={{ top: <span class="tk-num">12</span>, bottom: <span class="tk-num">12</span>, left: <span class="tk-num">12</span>, right: <span class="tk-num">12</span> }} <span class="tk-com">// icon 24dp nhưng vùng bấm đủ 48dp</span>
+&gt;
+  &lt;<span class="tk-type">TrashIcon</span> width={<span class="tk-num">24</span>} height={<span class="tk-num">24</span>} /&gt;
+&lt;/<span class="tk-type">Pressable</span>&gt;
+
+&lt;<span class="tk-type">Pressable</span>
+  onPress={() =&gt; setTab(<span class="tk-str">&#39;orders&#39;</span>)}
+  accessibilityRole=<span class="tk-str">&quot;tab&quot;</span>
+  accessibilityState={{ selected: tab === <span class="tk-str">&#39;orders&#39;</span> }}
+&gt;
+  &lt;<span class="tk-type">Text</span>&gt;Đơn hàng&lt;/<span class="tk-type">Text</span>&gt;
+&lt;/<span class="tk-type">Pressable</span>&gt;
+
+&lt;<span class="tk-type">Text</span> style={styles.badge} maxFontSizeMultiplier={<span class="tk-num">1.3</span>}&gt;
+  {count}
+&lt;/<span class="tk-type">Text</span>&gt;</code></pre>
         
       </div>
     </details>
@@ -561,6 +744,42 @@ dispatch({ <span class="tk-kw">type</span>: <span class="tk-str">&#39;removed&#3
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q44.html">Interceptor Axios nhận 401 thì cần đưa người dùng về màn Login, nhưng nó nằm ngoài cây component nên không gọi được <code>useNavigation()</code>. Bạn điều hướng từ ngoài component thế nào, và vì sao đôi khi lệnh điều hướng bị bỏ qua hoặc báo lỗi?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dùng <code>createNavigationContainerRef</code> của React Navigation: tạo ref ở một module riêng, truyền vào <code>&lt;NavigationContainer ref={navigationRef}&gt;</code>, rồi gọi ở bất kỳ đâu như <code>navigationRef.navigate(...)</code> hay <code>navigationRef.dispatch(...)</code>. Bẫy lớn nhất là ref chỉ dùng được sau khi <code>NavigationContainer</code> đã mount và navigator đã render: gọi quá sớm (request chạy lúc khởi động, hoặc 401 về khi app đang load) thì lệnh không có tác dụng và console báo lỗi <code>hasn&#39;t been initialized yet</code>. Hãy kiểm tra <code>navigationRef.isReady()</code> trước khi gọi. Khi hết phiên nên reset cả stack bằng <code>CommonActions.reset</code> thay vì <code>navigate(&#39;Login&#39;)</code> để nút back không đưa người dùng về màn cũ chứa dữ liệu của họ. Nhiều request 401 về cùng lúc chỉ nên kích hoạt đăng xuất một lần (dùng cờ). Cách sạch hơn nữa: interceptor chỉ xoá token và cập nhật state đăng nhập, còn cây navigation render có điều kiện (<code>isSignedIn ? &lt;AppStack /&gt; : &lt;AuthStack /&gt;</code>), nên app tự về Login mà không cần ai gọi <code>navigate</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// navigationRef.ts</span>
+<span class="tk-kw">import</span> { createNavigationContainerRef, <span class="tk-type">CommonActions</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;@react-navigation/native&#39;</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> navigationRef = createNavigationContainerRef&lt;<span class="tk-type">RootStackParamList</span>&gt;();
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> resetToLogin() {
+  <span class="tk-kw">if</span> (navigationRef.isReady()) {
+    navigationRef.dispatch(<span class="tk-type">CommonActions</span>.reset({ index: <span class="tk-num">0</span>, routes: [{ name: <span class="tk-str">&#39;Login&#39;</span> }] }));
+  }
+}
+
+<span class="tk-com">// App.tsx</span>
+&lt;<span class="tk-type">NavigationContainer</span> ref={navigationRef}&gt;{<span class="tk-com">/* ... */</span>}&lt;/<span class="tk-type">NavigationContainer</span>&gt;
+
+<span class="tk-com">// api.ts</span>
+<span class="tk-kw">let</span> loggingOut = <span class="tk-kw">false</span>;
+
+api.interceptors.response.use(<span class="tk-kw">undefined</span>, <span class="tk-kw">async</span> (error) =&gt; {
+  <span class="tk-kw">if</span> (error.response?.status === <span class="tk-num">401</span> &amp;&amp; !loggingOut) {
+    loggingOut = <span class="tk-kw">true</span>; <span class="tk-com">// nhiều request 401 cùng lúc chỉ đăng xuất một lần</span>
+    <span class="tk-kw">await</span> clearTokens();
+    resetToLogin();
+    loggingOut = <span class="tk-kw">false</span>;
+  }
+  <span class="tk-kw">return</span> <span class="tk-type">Promise</span>.reject(error);
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="native">
@@ -595,6 +814,35 @@ dispatch({ <span class="tk-kw">type</span>: <span class="tk-str">&#39;removed&#3
       <div class="model-answer">
         <div class="answer-text">App xin quyền thông báo (iOS hiện hộp thoại hệ thống một lần, từ chối rồi chỉ bật lại được trong Cài đặt; Android 13 trở lên cần khai báo và xin quyền runtime <code>POST_NOTIFICATIONS</code>), rồi lấy device token (FCM, hoặc Expo push token nếu dùng Expo) và gửi lên backend gắn với user. Backend gửi qua FCM, iOS đi tiếp qua APNs nên cần cấu hình khoá APNs và capability Push Notifications. Token có thể đổi, nên phải nghe sự kiện làm mới token để đồng bộ lại, và xoá token trên server khi logout. Khi app ở nền hoặc đã đóng, hệ điều hành tự hiện thông báo có khối <code>notification</code>; khi app đang mở thì thư viện chỉ gọi listener (React Native Firebase là <code>onMessage</code>) và bạn phải tự hiện banner hoặc local notification, nên test mới không thấy gì. Bấm vào thông báo thì đọc payload để điều hướng, kết hợp deep link.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q47.html">Nút &quot;Gọi hotline&quot;, &quot;Mở app đối tác&quot; và &quot;Mở cài đặt để cấp quyền&quot; dùng <code>Linking.openURL</code>. Trên iOS <code>Linking.canOpenURL(&#39;someapp://&#39;)</code> luôn trả <code>false</code> dù máy đã cài app đó, còn trên Android 11+ thì bấm nút không có gì xảy ra. Vì sao, và bạn xử lý trường hợp không có app nào mở được link thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Linking.openURL(url)</code> nhờ hệ điều hành mở URL bằng app phù hợp (<code>https:</code>, <code>tel:</code>, <code>mailto:</code> hay scheme riêng) và trả Promise bị reject nếu không có app nào xử lý. <code>canOpenURL</code> bị giới hạn vì quyền riêng tư: trên iOS, với scheme tuỳ chỉnh bạn phải khai báo trong <code>LSApplicationQueriesSchemes</code> của <code>Info.plist</code>, không thì luôn trả <code>false</code>; trên Android 11 trở lên (package visibility) phải khai báo <code>&lt;queries&gt;</code> trong <code>AndroidManifest.xml</code>. Code kiểu <code>if (await canOpenURL(url)) openURL(url)</code> vì vậy âm thầm không làm gì trên máy thật. Cách làm ổn hơn là gọi thẳng <code>openURL</code> trong <code>try/catch</code> và có phương án dự phòng (trang web, link tải app trên store, thông báo rõ ràng); chỉ dùng <code>canOpenURL</code> khi cần ẩn hoặc hiện nút, kèm khai báo đầy đủ. Mở trang cài đặt của chính app (cấp lại quyền sau khi người dùng từ chối) dùng <code>Linking.openSettings()</code>. Thêm vài bẫy: <code>tel:</code> không làm gì trên iOS Simulator hoặc thiết bị không có SIM, nên đừng vội kết luận code sai; nội dung ghép vào <code>mailto:</code> hay query string phải qua <code>encodeURIComponent</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">async</span> <span class="tk-kw">function</span> openWithFallback(url: <span class="tk-kw">string</span>, fallbackUrl: <span class="tk-kw">string</span>) {
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">await</span> <span class="tk-type">Linking</span>.openURL(url); <span class="tk-com">// thử mở thẳng, không chặn bằng canOpenURL</span>
+  } <span class="tk-kw">catch</span> {
+    <span class="tk-kw">await</span> <span class="tk-type">Linking</span>.openURL(fallbackUrl).<span class="tk-kw">catch</span>(() =&gt;
+      <span class="tk-type">Alert</span>.alert(<span class="tk-str">&#39;Không mở được liên kết&#39;</span>, <span class="tk-str">&#39;Máy chưa có ứng dụng phù hợp.&#39;</span>),
+    );
+  }
+}
+
+openWithFallback(<span class="tk-str">&#39;tel:19001234&#39;</span>, <span class="tk-str">&#39;https://shop.vn/lien-he&#39;</span>);
+openWithFallback(<span class="tk-str">&#39;someapp://profile/42&#39;</span>, <span class="tk-str">&#39;https://shop.vn/tai-app-doi-tac&#39;</span>);
+
+<span class="tk-type">Linking</span>.openSettings(); <span class="tk-com">// mở trang cài đặt của chính app</span>
+
+<span class="tk-com">// Chỉ cần khi dùng canOpenURL với scheme riêng:</span>
+<span class="tk-com">// Info.plist: &lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;&lt;array&gt;&lt;string&gt;someapp&lt;/string&gt;&lt;/array&gt;</span>
+<span class="tk-com">// AndroidManifest.xml:</span>
+<span class="tk-com">//   &lt;queries&gt;&lt;intent&gt;&lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;&lt;data android:scheme=&quot;someapp&quot; /&gt;&lt;/intent&gt;&lt;/queries&gt;</span></code></pre>
         
       </div>
     </details>
@@ -686,6 +934,49 @@ api.interceptors.response.use(
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q45.html">Người dùng vào vùng sóng yếu, màn hình quay spinner mãi vì <code>fetch</code> không bao giờ trả về; thoát màn hình giữa chừng thì request vẫn chạy và <code>setState</code> vẫn bị gọi. Bạn thêm timeout và huỷ request thế nào với <code>fetch</code> và Axios, và phân biệt lỗi do huỷ, do timeout với lỗi mạng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>fetch</code> không có tuỳ chọn timeout; nếu mạng treo, Promise có thể chờ rất lâu. Cách chuẩn là <code>AbortController</code>: tạo controller, truyền <code>signal</code> cho <code>fetch</code>, đặt <code>setTimeout(() =&gt; controller.abort(), ms)</code> (nhớ <code>clearTimeout</code> khi xong) và gọi <code>controller.abort()</code> trong cleanup của <code>useEffect</code> để huỷ khi rời màn hình. Axios có sẵn <code>timeout</code> (mili giây) và nhận <code>signal</code> tương tự; <code>CancelToken</code> là cách cũ đã bị loại bỏ dần. Phân biệt lỗi: <code>fetch</code> bị huỷ ném lỗi có <code>name === &#39;AbortError&#39;</code> (do timeout hay do rời màn hình trông giống nhau, nên dùng một cờ <code>timedOut</code> để tách), Axios dùng <code>axios.isCancel(error)</code> cho huỷ chủ động và <code>error.code === &#39;ECONNABORTED&#39;</code> cho timeout, còn mất mạng với <code>fetch</code> là <code>TypeError: Network request failed</code>. Xử lý khác nhau: huỷ chủ động thì im lặng, không hiện lỗi và không <code>setState</code>; timeout hiện &quot;Mạng chậm&quot; kèm nút thử lại; mất mạng hiện thông báo offline. Lưu ý timeout không có nghĩa server chưa xử lý: đừng tự retry mù quáng với thao tác ghi như tạo đơn, cần idempotency key.</div>
+        <pre class="code-block"><code><span class="tk-kw">async</span> <span class="tk-kw">function</span> fetchWithTimeout(url: <span class="tk-kw">string</span>, ms: <span class="tk-kw">number</span>, outer?: <span class="tk-type">AbortSignal</span>) {
+  <span class="tk-kw">const</span> controller = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+  <span class="tk-kw">let</span> timedOut = <span class="tk-kw">false</span>;
+  <span class="tk-kw">const</span> timer = setTimeout(() =&gt; {
+    timedOut = <span class="tk-kw">true</span>;
+    controller.abort();
+  }, ms);
+  outer?.addEventListener(<span class="tk-str">&#39;abort&#39;</span>, () =&gt; controller.abort());
+
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">return</span> <span class="tk-kw">await</span> fetch(url, { signal: controller.signal });
+  } <span class="tk-kw">catch</span> (e) {
+    <span class="tk-kw">if</span> ((e <span class="tk-kw">as</span> <span class="tk-type">Error</span>).name === <span class="tk-str">&#39;AbortError&#39;</span>) {
+      <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(timedOut ? <span class="tk-str">&#39;TIMEOUT&#39;</span> : <span class="tk-str">&#39;CANCELLED&#39;</span>);
+    }
+    <span class="tk-kw">throw</span> e; <span class="tk-com">// lỗi mạng thật: TypeError &#39;Network request failed&#39;</span>
+  } <span class="tk-kw">finally</span> {
+    clearTimeout(timer);
+  }
+}
+
+useEffect(() =&gt; {
+  <span class="tk-kw">const</span> controller = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+
+  fetchWithTimeout(url, 10_000, controller.signal)
+    .then((res) =&gt; res.json())
+    .then(setData)
+    .<span class="tk-kw">catch</span>((e) =&gt; {
+      <span class="tk-kw">if</span> (e.message !== <span class="tk-str">&#39;CANCELLED&#39;</span>) setError(e); <span class="tk-com">// rời màn hình thì không báo lỗi</span>
+    });
+
+  <span class="tk-kw">return</span> () =&gt; controller.abort();
+}, [url]);</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="animation">
@@ -754,6 +1045,17 @@ api.interceptors.response.use(
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q49.html">Lần đầu bạn tự build bản release gửi QA: file Android vẫn ký bằng debug key nên không đưa lên Play Store được, iOS báo thiếu provisioning profile, và một đồng nghiệp lỡ commit file <code>.keystore</code> lên Git. Các bước build release cơ bản cho Android và iOS là gì, và xử lý keystore thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Android: tạo upload keystore một lần bằng <code>keytool</code>, khai báo <code>signingConfigs.release</code> trong <code>android/app/build.gradle</code> và đọc đường dẫn, mật khẩu từ <code>~/.gradle/gradle.properties</code> hoặc biến môi trường trên CI, tuyệt đối không viết vào repo. Template React Native mặc định ký bản release bằng debug keystore nên phải đổi trước khi lên store. Mỗi lần upload phải tăng <code>versionCode</code> (số nguyên) và đặt <code>versionName</code> (hiển thị). Build <code>./gradlew bundleRelease</code> ra AAB cho Play, hoặc <code>assembleRelease</code> ra APK để QA cài trực tiếp. Nên bật Play App Signing để Google giữ khoá ký chính, nhưng vẫn phải sao lưu upload key cẩn thận. Bản release dùng Hermes bytecode; bật R8/ProGuard (<code>enableProguardInReleaseBuilds</code>) thì cần test kỹ vì dễ thiếu rule giữ class cho thư viện native. iOS: cần tài khoản Apple Developer, bundle id, certificate và provisioning profile (cách đơn giản là bật Automatically manage signing trong Xcode), tăng marketing version và build number mỗi lần upload, chọn scheme Release rồi Product → Archive và đẩy lên TestFlight. Với Expo thì <code>eas build</code> quản lý credentials hộ. Keystore đã commit coi như lộ: tạo upload key mới và xin Google đổi trong Play Console, thêm <code>*.keystore</code>/<code>*.jks</code> vào <code>.gitignore</code>; xoá khỏi lịch sử Git không đủ vì các bản clone khác vẫn còn file đó. Riêng <code>debug.keystore</code> của template công khai nên không sao.</div>
+        
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="perf">
@@ -797,6 +1099,35 @@ test(<span class="tk-str">&#39;hiện lỗi khi đăng nhập thất bại&#39;<
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q48.html">PR của bạn đổi một dòng style và CI fail vì 14 snapshot bị lệch; đồng nghiệp bảo cứ chạy <code>jest -u</code> cho qua. Snapshot test khác test hành vi bằng React Native Testing Library ở đâu, khi nào snapshot hữu ích, và vì sao snapshot lớn dần trở nên vô dụng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Snapshot test (<code>toMatchSnapshot</code>) lưu lại cây render lần đầu rồi so với các lần sau: viết nhanh và bắt được thay đổi ngoài ý muốn, nhưng chỉ nói &quot;khác trước&quot; chứ không nói &quot;đúng hay sai&quot;. Đổi style, bọc thêm một <code>View</code>, đổi tên prop đều làm vỡ dù hành vi không đổi. Snapshot cả màn hình tạo ra diff hàng trăm dòng không ai đọc, dẫn tới phản xạ <code>jest -u</code>, và khi có lỗi thật thì nó cũng bị &quot;cập nhật cho qua&quot;. Test hành vi với RNTL kiểm theo cách người dùng thấy và thao tác (<code>getByRole</code>, <code>getByText</code>, <code>press</code>, <code>findBy*</code> để chờ UI): câu hỏi là &quot;bấm Đăng nhập khi email trống thì có báo lỗi không&quot;, nên bền vững khi refactor bên trong. Snapshot hữu ích với output nhỏ, ổn định và ít đổi: kết quả hàm thuần như <code>formatPrice</code>, file cấu hình, một component trình bày nhỏ (icon, badge); dùng <code>toMatchInlineSnapshot</code> để giá trị mong đợi nằm ngay trong test. Quy tắc: snapshot nhỏ, review diff như review code, không bấm cập nhật khi chưa đọc, còn thay đổi hành vi thì viết assertion rõ ràng.</div>
+        <pre class="code-block"><code><span class="tk-com">// Dễ vỡ, ít giá trị: snapshot cả màn hình</span>
+it(<span class="tk-str">&#39;renders&#39;</span>, () =&gt; {
+  expect(render(&lt;<span class="tk-type">CheckoutScreen</span> /&gt;).toJSON()).toMatchSnapshot();
+});
+
+<span class="tk-com">// Kiểm hành vi người dùng thấy</span>
+it(<span class="tk-str">&#39;báo lỗi khi bấm Đăng nhập với email trống&#39;</span>, <span class="tk-kw">async</span> () =&gt; {
+  <span class="tk-kw">const</span> user = userEvent.setup();
+  render(&lt;<span class="tk-type">LoginScreen</span> /&gt;);
+
+  <span class="tk-kw">await</span> user.press(screen.getByRole(<span class="tk-str">&#39;button&#39;</span>, { name: <span class="tk-str">&#39;Đăng nhập&#39;</span> }));
+
+  expect(<span class="tk-kw">await</span> screen.findByText(<span class="tk-str">&#39;Vui lòng nhập email&#39;</span>)).toBeOnTheScreen();
+});
+
+<span class="tk-com">// Snapshot hợp lý: output nhỏ, ổn định, giá trị mong đợi nằm ngay trong test</span>
+it(<span class="tk-str">&#39;format giá&#39;</span>, () =&gt; {
+  expect(formatPrice(<span class="tk-num">1250000</span>)).toMatchInlineSnapshot(<span class="tk-str">`&quot;1.250.000 ₫&quot;`</span>);
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -815,6 +1146,22 @@ test(<span class="tk-str">&#39;hiện lỗi khi đăng nhập thất bại&#39;<
     </li>
   </ol>
 </section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q50.html">Thiết kế màn danh sách sản phẩm có ô tìm kiếm, bộ lọc (danh mục, khoảng giá, sắp xếp) và cuộn vô hạn. Bạn tổ chức state, gọi API và các trạng thái loading/empty/error/offline thế nào, và làm sao khi người dùng vào chi tiết rồi quay lại thì bộ lọc và vị trí cuộn vẫn còn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tách state theo loại. Bộ lọc (<code>query</code>, <code>category</code>, <code>priceRange</code>, <code>sort</code>) là client state của màn, gom vào một object hoặc <code>useReducer</code>, và lưu ở nơi khôi phục được nếu cần (store có persist hoặc route params). Danh sách là server state, khoá theo bộ lọc: TanStack Query <code>useInfiniteQuery</code> với <code>queryKey: [&#39;products&#39;, filters]</code>, hoặc tự viết <code>{ items, cursor, hasMore, status }</code>. Ô tìm kiếm debounce khoảng 300–400ms; khi bộ lọc đổi thì về trang đầu và huỷ request cũ để kết quả cũ không đè kết quả mới. Phân trang theo cursor với <code>onEndReached</code>, cờ <code>isFetchingNextPage</code> chống gọi trùng, loại item trùng theo id. Các trạng thái: lần tải đầu hiện skeleton; đang tải lại thì giữ danh sách cũ kèm chỉ báo nhỏ và có pull-to-refresh; rỗng thì hiện empty state kèm nút &quot;Xoá bộ lọc&quot;; lỗi lần đầu thì có màn lỗi với nút thử lại; lỗi khi tải trang kế thì hiện dòng lỗi ở footer và không xoá dữ liệu đã có; offline thì có banner, vẫn xem được dữ liệu đã cache và tự tải lại khi có mạng. Màn danh sách nằm trong stack nên khi push sang chi tiết nó không bị unmount, state bộ lọc và vị trí cuộn của <code>FlatList</code> còn nguyên; còn khi app bị kill hoặc màn bị unmount (như đổi tab có <code>unmountOnBlur</code>) thì cần persist bộ lọc. Cuối cùng giữ <code>FlatList</code> nhẹ: <code>keyExtractor</code> ổn định, item bọc <code>memo</code>, ảnh có kích thước cố định.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
 <section id="soft">
   <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/soft/">Mọi rank →</a></div>
   <ol class="qa-list">
@@ -824,6 +1171,17 @@ test(<span class="tk-str">&#39;hiện lỗi khi đăng nhập thất bại&#39;<
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">File lock không sửa tay từng dòng: giải quyết <code>package.json</code> trước (giữ dependency của cả hai bên), lấy bản lock của <code>main</code> làm gốc rồi chạy lại <code>yarn install</code> (hoặc <code>npm install</code>) để công cụ tự sinh phần của nhánh bạn, sau đó commit. <code>Podfile.lock</code> làm tương tự bằng <code>pod install</code>. <code>project.pbxproj</code> do Xcode sinh ra và dễ hỏng khi gộp tay, nên nếu chỉ thêm file hay đổi setting thì giữ bản của <code>main</code> rồi thao tác lại trong Xcode, và kiểm tra project vẫn mở và build được. Với conflict ở code, đọc cả hai phía để hiểu ý định của từng người thay vì bấm &quot;Accept mine&quot; cho nhanh; chưa chắc thì hỏi người sửa đoạn đó. Gộp xong phải chạy lại app, lint và test trước khi push. Giảm conflict bằng nhánh sống ngắn, PR nhỏ, thường xuyên cập nhật <code>main</code> về nhánh của mình, tách commit nâng thư viện khỏi commit tính năng; nhánh dùng chung thì không <code>git push --force</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-jun-q46.html">Sau khi phát hành, Sentry báo một lỗi mới tăng nhanh: <code>TypeError: Cannot read property &#39;id&#39; of undefined</code> ở màn Checkout, ảnh hưởng khoảng 3% người dùng. Bạn xử lý thế nào từ lúc nhận cảnh báo đến khi đóng sự cố, và chọn giữa hotfix qua store, OTA hay chờ bản sau ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết đánh giá mức độ: bao nhiêu người dùng, từ bản nào, hệ điều hành và dòng máy nào, có chặn luồng quan trọng như thanh toán không; báo ngay lead và PM thay vì âm thầm sửa. Tiếp theo đọc stack trace: bản release đã minify nên cần source map được upload đúng theo phiên bản (release/dist trong Sentry) mới ra tên file và dòng thật; xem thêm breadcrumbs, thông tin thiết bị và dữ liệu đi kèm. Sau đó tái hiện bằng đúng bản release và đúng điều kiện (dữ liệu server trả về, mạng, quyền), nếu được thì viết test tái hiện luôn. Chọn cách phát hành theo mức khẩn cấp: lỗi thuần JS và app có OTA (ví dụ EAS Update) thì đẩy bản sửa cho một phần nhỏ người dùng, theo dõi rồi mở rộng; lỗi ở phần native hoặc không dùng OTA thì hotfix qua store (Android phát hành theo phần trăm, iOS xin Expedited Review khi thật sự nghiêm trọng); lỗi nhẹ thì đưa vào bản kế tiếp. Nếu có feature flag hoặc remote config thì tắt tính năng để giảm thiệt hại ngay. Sau khi sửa, theo dõi Sentry xem số lỗi giảm thật không, rồi viết post-mortem ngắn: nguyên nhân gốc, vì sao lọt qua review và test, việc phòng ngừa (thêm test, kiểm tra null, cảnh báo sớm). Tập trung vào quy trình, không đổ lỗi cá nhân.</div>
         
         
       </div>

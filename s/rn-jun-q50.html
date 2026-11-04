@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Junior: Thiết kế màn danh sách sản phẩm có ô tìm kiếm, bộ lọc (danh mục, khoản…</title>
+<meta name="description" content="Tách state theo loại. Bộ lọc (query, category, priceRange, sort) là client state của màn, gom vào một object hoặc useReducer, và lưu ở nơi khôi phục được nếu…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-q50.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior: Thiết kế màn danh sách sản phẩm có ô tìm kiếm, bộ lọc (danh mục, khoản…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-jun-q50.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Thiết kế màn danh sách sản phẩm có ô tìm kiếm,…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-q50.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Thiết kế màn danh sách sản phẩm có ô tìm kiếm,…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/design/">System Design</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Thiết kế màn danh sách sản phẩm có ô tìm kiếm, bộ lọc (danh mục, khoảng giá, sắp xếp) và cuộn vô hạn. Bạn tổ chức state, gọi API và các trạng thái loading/empty/error/offline thế nào, và làm sao khi người dùng vào chi tiết rồi quay lại thì bộ lọc và vị trí cuộn vẫn còn?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tách state theo loại. Bộ lọc (<code>query</code>, <code>category</code>, <code>priceRange</code>, <code>sort</code>) là client state của màn, gom vào một object hoặc <code>useReducer</code>, và lưu ở nơi khôi phục được nếu cần (store có persist hoặc route params). Danh sách là server state, khoá theo bộ lọc: TanStack Query <code>useInfiniteQuery</code> với <code>queryKey: [&#39;products&#39;, filters]</code>, hoặc tự viết <code>{ items, cursor, hasMore, status }</code>. Ô tìm kiếm debounce khoảng 300–400ms; khi bộ lọc đổi thì về trang đầu và huỷ request cũ để kết quả cũ không đè kết quả mới. Phân trang theo cursor với <code>onEndReached</code>, cờ <code>isFetchingNextPage</code> chống gọi trùng, loại item trùng theo id. Các trạng thái: lần tải đầu hiện skeleton; đang tải lại thì giữ danh sách cũ kèm chỉ báo nhỏ và có pull-to-refresh; rỗng thì hiện empty state kèm nút &quot;Xoá bộ lọc&quot;; lỗi lần đầu thì có màn lỗi với nút thử lại; lỗi khi tải trang kế thì hiện dòng lỗi ở footer và không xoá dữ liệu đã có; offline thì có banner, vẫn xem được dữ liệu đã cache và tự tải lại khi có mạng. Màn danh sách nằm trong stack nên khi push sang chi tiết nó không bị unmount, state bộ lọc và vị trí cuộn của <code>FlatList</code> còn nguyên; còn khi app bị kill hoặc màn bị unmount (như đổi tab có <code>unmountOnBlur</code>) thì cần persist bộ lọc. Cuối cùng giữ <code>FlatList</code> nhẹ: <code>keyExtractor</code> ổn định, item bọc <code>memo</code>, ảnh có kích thước cố định.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-q50">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-q49.html"><span class="muted small">← Câu trước</span><span>Lần đầu bạn tự build bản release gửi QA: file Android vẫn ký bằng debug key nên…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề System Design</h2><a class="section-sub" href="../phong-van/react-native/chu-de/design/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q50.html">Project React Native mới chỉ có App.tsx, sau vài tuần mọi thứ dồn vào một thư mục components/ hàng chục file và màn hình nào cũng tự gọi fetch. Bạn tổ chức thư mục thế nào, theo loại hay theo tính năng, và tách logic khỏi giao diện ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-mid-q38.html">Màn thanh toán: người dùng bấm &quot;Đặt hàng&quot; hai lần liên tiếp, hoặc bấm một lần nhưng mạng đứt đúng lúc request đã tới server rồi họ bấm lại. Kết quả là hai đơn trùng và bị trừ tiền hai lần. Bạn thiết kế phía app thế nào để không tạo đơn trùng?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q39.html">Màn theo dõi đơn hàng cần hiện trạng thái và vị trí tài xế gần realtime. Bạn chọn polling, WebSocket hay push? Cần xử lý gì khi app xuống nền, khi mạng chập chờn, và làm sao để không hao pin hay rò rỉ kết nối?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-sen-q19.html">Công ty có 3 app RN (khách hàng, tài xế, merchant) dùng chung nhiều UI và logic. Bạn tổ chức monorepo thế nào, và những bẫy riêng của RN trong monorepo là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q20.html">Bạn cần ship cùng một app cho 8 thương hiệu khác nhau (logo, màu, bundle id, vài tính năng riêng). Thiết kế codebase RN thế nào để không thành 8 nhánh git?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q21.html">Thiết kế phía client cho tính năng chat trong app RN: gửi được khi mất mạng, hiển thị tin ngay, không trùng tin, cuộn mượt với lịch sử dài.</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

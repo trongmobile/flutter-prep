@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: Time Profiler cho thấy hàm parse tin nhắn và tính layout chạy hàng chục nghìn l…</title>
+<meta name="description" content="Đo trước, và chỉ trên bản Release chạy máy thật: Debug (-Onone) không inline hay specialize nên số liệu vô nghĩa. Time Profiler với &quot;Invert Call Tree&quot; cho th…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q42.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Time Profiler cho thấy hàm parse tin nhắn và tính layout chạy hàng chục nghìn l…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q42.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Time Profiler cho thấy hàm parse tin nhắn và tí…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q42.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Time Profiler cho thấy hàm parse tin nhắn và tí…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Time Profiler cho thấy hàm parse tin nhắn và tính layout chạy hàng chục nghìn lần mỗi giây, còn <code>swift_retain</code>, <code>swift_release</code> và <code>swift_beginAccess</code> chiếm phần lớn thời gian. Bạn tối ưu code Swift ở hot path thế nào, và đo ra sao để biết chắc mình tối ưu đúng chỗ?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đo trước, và chỉ trên bản Release chạy máy thật: Debug (<code>-Onone</code>) không inline hay specialize nên số liệu vô nghĩa. Time Profiler với &quot;Invert Call Tree&quot; cho thấy hàm tốn nhất, Allocations cho thấy số lần cấp phát; nếu retain/release hoặc <code>swift_allocObject</code> đứng đầu thì đó là ARC traffic và allocation. Các hướng thường hiệu quả: (1) existential <code>any Shape</code> phải đóng hộp giá trị (lớn hơn vùng đệm inline thì cấp phát heap) và gọi qua witness table; generic <code>&lt;S: Shape&gt;</code> hoặc <code>some Shape</code> được specialize nên gọi tĩnh và inline được, nhưng chỉ khi compiler thấy được thân hàm, tức cùng module hoặc có <code>@inlinable</code> (đổi lại thân hàm trở thành một phần ABI công khai, chỉ nên dùng cho code ổn định). (2) Class mặc định gọi method qua vtable; <code>final</code> và <code>private</code> cho phép compiler gọi trực tiếp, và còn có thể giảm các lần kiểm tra exclusivity động (<code>swift_beginAccess</code>) trên property của class. (3) Struct nhỏ toàn kiểu giá trị thì không có refcount, nhưng struct chứa nhiều <code>String</code>, mảng hay tham chiếu class vẫn retain/release từng field mỗi lần copy. (4) Copy-on-write: sửa mảng khi buffer còn được biến khác tham chiếu thì Swift sao chép cả buffer; tránh giữ bản sao thừa và dùng <code>reserveCapacity</code>. (5) Đánh chỉ số <code>String</code> theo ký tự là O(n), nên dùng <code>utf8</code> view hoặc <code>Substring</code>. <code>-Osize</code> thay cho <code>-O</code> giảm kích thước nhờ inline ít hơn nên có thể chậm hơn ở hot path; hãy quyết định theo số đo chứ không theo cảm giác. Bẫy lớn nhất là tối ưu chỗ không nóng và làm code khó đọc.</div>
+        <pre class="code-block"><code><span class="tk-kw">protocol</span> <span class="tk-type">Shape</span> { <span class="tk-kw">func</span> area() -&gt; <span class="tk-type">Double</span> }
+
+<span class="tk-com">// Chậm hơn: existential, mỗi phần tử đóng hộp và gọi qua witness table</span>
+<span class="tk-kw">func</span> total(_ shapes: [<span class="tk-kw">any</span> <span class="tk-type">Shape</span>]) -&gt; <span class="tk-type">Double</span> {
+  shapes.reduce(<span class="tk-num">0</span>) { $<span class="tk-num">0</span> + $<span class="tk-num">1</span>.area() }
+}
+
+<span class="tk-com">// Nhanh hơn khi mọi phần tử cùng kiểu: generic được specialize, gọi tĩnh và inline được</span>
+<span class="tk-kw">func</span> total&lt;<span class="tk-type">S</span>: <span class="tk-type">Shape</span>&gt;(_ shapes: [<span class="tk-type">S</span>]) -&gt; <span class="tk-type">Double</span> {
+  <span class="tk-kw">var</span> sum = <span class="tk-num">0.0</span>
+  <span class="tk-kw">for</span> shape <span class="tk-kw">in</span> shapes { sum += shape.area() }
+  <span class="tk-kw">return</span> sum
+}
+
+<span class="tk-com">// final + private giúp compiler bỏ dynamic dispatch và bớt kiểm tra exclusivity</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">MessageLayouter</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> cache: [<span class="tk-type">Int</span>: <span class="tk-type">CGSize</span>] = [:]
+
+  <span class="tk-kw">func</span> size(<span class="tk-kw">for</span> id: <span class="tk-type">Int</span>) -&gt; <span class="tk-type">CGSize</span> { cache[id, <span class="tk-kw">default</span>: .zero] }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q42">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q41.html"><span class="muted small">← Câu trước</span><span>App có 15 module và mỗi team tự xử lý onOpenURL theo cách riêng nên cùng một li…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q43.html"><span class="muted small">Câu sau →</span><span>Màn hình lưới ảnh tải 500 thumbnail bằng for id in ids { Task { await load(id)…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q28.html">Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phiên bản Xcode khác nhau. Sau khi nâng Xcode, app tích hợp báo module được biên dịch bằng phiên bản Swift khác, và việc thêm một case vào enum public của SDK làm vỡ các app tích hợp. Bạn xử lý thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-fre-q01.html">Optional trong Swift là gì? Có những cách nào để lấy giá trị ra khỏi một Optional, và vì sao nên hạn chế force unwrap !?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q02.html">if let và guard let khác nhau thế nào? Khi nào bạn chọn guard let?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q03.html">Struct và class trong Swift khác nhau thế nào? Vì sao khai báo let với một instance struct thì không sửa được property, còn với class thì vẫn sửa được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q04.html">Enum có associated value là gì? Cho ví dụ dùng switch để hiển thị trạng thái tải dữ liệu của một màn hình.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q05.html">Closure trong Swift là gì? Giải thích cú pháp trailing closure và $0 qua ví dụ filter, map, reduce.</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

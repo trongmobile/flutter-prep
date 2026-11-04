@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Team chuyển sang trunk-based và muốn mọi tính năng lớn nằm sau feature…</title>
+<meta name="description" content="Trước hết phân loại flag vì vòng đời khác nhau: release flag (tạm thời, xoá sau khi bật 100%), kill-switch (vận hành, tồn tại lâu), experiment (A/B). Nguồn g…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q42.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Team chuyển sang trunk-based và muốn mọi tính năng lớn nằm sau feature…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q42.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Team chuyển sang trunk-based và muốn mọi tính n…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q42.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Team chuyển sang trunk-based và muốn mọi tính n…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/design/">System Design</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Team chuyển sang trunk-based và muốn mọi tính năng lớn nằm sau feature flag, kèm kill-switch tắt được trong vài phút mà không cần phát hành bản mới. Bạn thiết kế hệ thống flag/remote config phía app RN thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết phân loại flag vì vòng đời khác nhau: release flag (tạm thời, xoá sau khi bật 100%), kill-switch (vận hành, tồn tại lâu), experiment (A/B). Nguồn giá trị có thể là dịch vụ sẵn có (LaunchDarkly, Firebase Remote Config, GrowthBook...) hoặc endpoint tự dựng; điều quan trọng là cách app tiêu thụ. Một: luôn có giá trị mặc định biên dịch sẵn trong app (tính năng rủi ro mặc định tắt) để app chạy đúng khi mất mạng hoặc server lỗi. Hai: lúc mở app đọc đồng bộ snapshot đã cache (MMKV đọc được đồng bộ) nên render đầu tiên đã ổn định; tải bản mới ở nền với timeout ngắn, không chặn splash. Ba: tránh flicker và trạng thái nửa vời: giá trị mới chỉ áp dụng từ lần mở sau hoặc tại điểm an toàn; riêng kill-switch có hiệu lực ngay và UI phải thoát êm. Bốn: chia rollout theo phần trăm bằng bucket ổn định từ userId (không random mỗi phiên) và theo phiên bản app tối thiểu, vì bản cũ không có code của tính năng; với OTA, code mới đi cùng flag tắt rồi bật sau, nhưng JS vẫn phải tương thích với native hiện có. Năm: kill-switch không được phụ thuộc vào thứ đang hỏng; nếu app crash lúc khởi động nhiều lần liên tiếp thì vào chế độ an toàn dùng giá trị mặc định. Sáu: kiểm soát nợ flag bằng registry có kiểu TypeScript, người sở hữu và ngày hết hạn, CI báo flag quá hạn; gắn các flag đang bật vào crash report để đối chiếu lỗi. Chỉ test hai nhánh của flag quan trọng, đừng nhân tổ hợp.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> <span class="tk-type">DEFAULTS</span> = { newCheckout: <span class="tk-kw">false</span>, killVideoPreload: <span class="tk-kw">false</span> };
+<span class="tk-kw">type</span> <span class="tk-type">FlagName</span> = <span class="tk-kw">keyof</span> <span class="tk-kw">typeof</span> <span class="tk-type">DEFAULTS</span>;
+<span class="tk-kw">const</span> <span class="tk-type">KILL_SWITCHES</span>: <span class="tk-type">FlagName</span>[] = [<span class="tk-str">&#39;killVideoPreload&#39;</span>];
+
+<span class="tk-com">// storage là MMKV (đọc đồng bộ): snapshot đầu tiên có ngay, UI không bị nháy</span>
+<span class="tk-kw">let</span> active: <span class="tk-type">Record</span>&lt;<span class="tk-type">FlagName</span>, <span class="tk-kw">boolean</span>&gt; = { ...<span class="tk-type">DEFAULTS</span>, ...<span class="tk-type">JSON</span>.parse(storage.getString(<span class="tk-str">&#39;flags&#39;</span>) ?? <span class="tk-str">&#39;{}&#39;</span>) };
+<span class="tk-kw">const</span> listeners = <span class="tk-kw">new</span> <span class="tk-type">Set</span>&lt;() =&gt; <span class="tk-kw">void</span>&gt;();
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> refreshFlags(): <span class="tk-type">Promise</span>&lt;<span class="tk-kw">void</span>&gt; {
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">const</span> remote: <span class="tk-type">Partial</span>&lt;<span class="tk-type">Record</span>&lt;<span class="tk-type">FlagName</span>, <span class="tk-kw">boolean</span>&gt;&gt; = <span class="tk-kw">await</span> fetchJson(<span class="tk-type">FLAGS_URL</span>, { timeoutMs: <span class="tk-num">3000</span> });
+    storage.<span class="tk-kw">set</span>(<span class="tk-str">&#39;flags&#39;</span>, <span class="tk-type">JSON</span>.stringify(remote)); <span class="tk-com">// flag thường: áp dụng từ lần mở app sau</span>
+
+    <span class="tk-kw">let</span> changed = <span class="tk-kw">false</span>;
+    <span class="tk-kw">for</span> (<span class="tk-kw">const</span> key <span class="tk-kw">of</span> <span class="tk-type">KILL_SWITCHES</span>) {
+      <span class="tk-kw">const</span> value = remote[key];
+      <span class="tk-kw">if</span> (value !== <span class="tk-kw">undefined</span> &amp;&amp; value !== active[key]) {
+        active = { ...active, [key]: value }; <span class="tk-com">// kill-switch có hiệu lực ngay trong phiên</span>
+        changed = <span class="tk-kw">true</span>;
+      }
+    }
+    <span class="tk-kw">if</span> (changed) listeners.forEach((notify) =&gt; notify());
+  } <span class="tk-kw">catch</span> {
+    <span class="tk-com">// mất mạng hoặc server lỗi: giữ nguyên giá trị cache/mặc định</span>
+  }
+}
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> useFlag(name: <span class="tk-type">FlagName</span>): <span class="tk-kw">boolean</span> {
+  <span class="tk-kw">return</span> useSyncExternalStore(
+    (onChange) =&gt; {
+      listeners.add(onChange);
+      <span class="tk-kw">return</span> () =&gt; listeners.<span class="tk-kw">delete</span>(onChange);
+    },
+    () =&gt; active[name],
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q42">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q41.html"><span class="muted small">← Câu trước</span><span>Đội 12 dev có hai app RN; CI chạy EAS Build mất 35-40 phút mỗi lần và tốn quota…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q43.html"><span class="muted small">Câu sau →</span><span>Một dev thêm thư viện mới chỉ vì thấy &quot;nhiều sao&quot; trên GitHub; tuần sau tin tức…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề System Design</h2><a class="section-sub" href="../phong-van/react-native/chu-de/design/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q19.html">Công ty có 3 app RN (khách hàng, tài xế, merchant) dùng chung nhiều UI và logic. Bạn tổ chức monorepo thế nào, và những bẫy riêng của RN trong monorepo là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q20.html">Bạn cần ship cùng một app cho 8 thương hiệu khác nhau (logo, màu, bundle id, vài tính năng riêng). Thiết kế codebase RN thế nào để không thành 8 nhánh git?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q21.html">Thiết kế phía client cho tính năng chat trong app RN: gửi được khi mất mạng, hiển thị tin ngay, không trùng tin, cuộn mượt với lịch sử dài.</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q22.html">Công ty đang có hai app native riêng (Kotlin và Swift), CTO hỏi có nên chuyển sang React Native không. Bạn đánh giá và đề xuất lộ trình thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q35.html">Công ty muốn biến app RN thành một &#39;super app&#39;: các nhóm khác nhau (ví, đặt xe, mua sắm) tự phát hành mini-app độc lập mà không phải chờ bản phát hành chung của app host. Bạn thiết kế kiến trúc thế nào (tải bundle động, cô lập, version) và rủi ro lớn nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q49.html">Sếp muốn có bản web từ app RN &quot;dùng lại code&quot; để khỏi lập team web riêng. Bạn đánh giá thế nào: khi nào dùng react-native-web/Expo web thì đáng, khi nào không, và tổ chức code ra sao để chia sẻ được phần có giá trị nhất?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: ViewModel có isLoading, items, error là ba property riêng nên UI thỉnh thoảng h…</title>
+<meta name="description" content="Gốc vấn đề là ba property độc lập cho phép tổ hợp vô nghĩa như isLoading == true cùng error != nil, và mọi chỗ trong code phải nhớ tự reset hai biến còn lại.…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q46.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: ViewModel có isLoading, items, error là ba property riêng nên UI thỉnh thoảng h…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q46.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"ViewModel có isLoading, items, error là ba prop…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q46.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">ViewModel có isLoading, items, error là ba prop…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">ViewModel có <code>isLoading</code>, <code>items</code>, <code>error</code> là ba property riêng nên UI thỉnh thoảng hiện cả spinner lẫn thông báo lỗi, hoặc danh sách cũ cùng màn lỗi. Bạn tái cấu trúc thế nào, và xử lý sự kiện một lần như alert hay điều hướng ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gốc vấn đề là ba property độc lập cho phép tổ hợp vô nghĩa như <code>isLoading == true</code> cùng <code>error != nil</code>, và mọi chỗ trong code phải nhớ tự reset hai biến còn lại. Hãy mô hình hoá các trạng thái hợp lệ bằng một enum, ví dụ <code>idle</code>, <code>loading</code>, <code>loaded(items)</code>, <code>failed(message)</code>: compiler loại tổ hợp sai, view chỉ cần <code>switch</code> một lần, và mọi chuyển trạng thái nằm ở một chỗ trong ViewModel (view gửi action, ViewModel đổi state). Nếu cần giữ danh sách cũ khi đang refresh hay khi lỗi thì đừng nhét vào <code>loading</code> làm mất dữ liệu: dùng struct <code>{ items, phase }</code> hoặc <code>loaded(items, isRefreshing:)</code>. Sự kiện một lần như alert, toast, điều hướng không nên là state sống lâu vì xoay máy hay quay lại màn sẽ hiện lại. Có hai cách: biến chúng thành state có vòng đời rõ ràng (vd. <code>alert: AlertInfo?</code> gắn với <code>.alert(item:)</code>, view gán <code>nil</code> khi user đóng; điều hướng thì ghi vào path/route), hoặc dùng <code>AsyncStream</code> cho sự kiện kiểu bắn-rồi-quên, chấp nhận mất sự kiện nếu lúc đó không ai lắng nghe. Đánh đổi: enum lồng nhiều tầng khó đọc nên giữ phẳng, và cho state conform <code>Equatable</code> để test dễ (<code>#expect(states == [.loading, .loaded(items)])</code>).</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">LoadState</span>&lt;<span class="tk-type">Value</span>&gt; {
+    <span class="tk-kw">case</span> idle
+    <span class="tk-kw">case</span> loading
+    <span class="tk-kw">case</span> loaded(<span class="tk-type">Value</span>)
+    <span class="tk-kw">case</span> failed(<span class="tk-type">String</span>)
+}
+
+<span class="tk-ann">@MainActor</span> <span class="tk-ann">@Observable</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">OrdersViewModel</span> {
+    <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> state: <span class="tk-type">LoadState</span>&lt;[<span class="tk-type">Order</span>]&gt; = .idle
+    <span class="tk-kw">var</span> alert: <span class="tk-type">AlertInfo</span>? <span class="tk-com">// sự kiện một lần: view gán nil khi user đóng</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> repository: <span class="tk-type">OrderRepository</span>
+
+    <span class="tk-kw">init</span>(repository: <span class="tk-type">OrderRepository</span>) { <span class="tk-kw">self</span>.repository = repository }
+
+    <span class="tk-kw">func</span> load() <span class="tk-kw">async</span> {
+        <span class="tk-kw">if</span> <span class="tk-kw">case</span> .loading = state { <span class="tk-kw">return</span> } <span class="tk-com">// chặn load chồng nhau</span>
+        state = .loading
+        <span class="tk-kw">do</span> {
+            state = .loaded(<span class="tk-kw">try</span> <span class="tk-kw">await</span> repository.fetchOrders())
+        } <span class="tk-kw">catch</span> {
+            state = .failed(error.localizedDescription)
+        }
+    }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">OrdersScreen</span>: <span class="tk-type">View</span> {
+    <span class="tk-ann">@State</span> <span class="tk-kw">var</span> viewModel: <span class="tk-type">OrdersViewModel</span>
+
+    <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+        <span class="tk-type">Group</span> {
+            <span class="tk-kw">switch</span> viewModel.state {
+            <span class="tk-kw">case</span> .idle, .loading: <span class="tk-type">ProgressView</span>()
+            <span class="tk-kw">case</span> .loaded(<span class="tk-kw">let</span> orders): <span class="tk-type">OrderList</span>(orders: orders)
+            <span class="tk-kw">case</span> .failed(<span class="tk-kw">let</span> message): <span class="tk-type">ErrorView</span>(message: message, retry: { <span class="tk-type">Task</span> { <span class="tk-kw">await</span> viewModel.load() } })
+            }
+        }
+        .task { <span class="tk-kw">await</span> viewModel.load() }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q46">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q45.html"><span class="muted small">← Câu trước</span><span>Đồng nghiệp hỏi @ViewBuilder thực chất là gì mà trong VStack { ... } viết được…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q47.html"><span class="muted small">Câu sau →</span><span>Bạn dựng view vòng tròn tiến độ tự vẽ bằng draw(_:). Mỗi lần dữ liệu đổi là giậ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/ios/chu-de/arch/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q15.html">ViewController của bạn tự push màn tiếp theo và biết quá nhiều về flow (login xong đi đâu, mở từ notification thì vào màn nào). Coordinator giải quyết việc này thế nào, và có bẫy gì về bộ nhớ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q16.html">Mọi service trong app đều được truy cập qua singleton kiểu APIClient.shared, giờ viết unit test cho ViewModel thì không mock được. Bạn refactor theo hướng dependency injection thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q17.html">App bắt đầu lớn, build chậm và các feature import chéo nhau. Bạn chia thành các Swift Package local thế nào, và làm sao để feature Cart mở được màn Product Detail mà không import trực tiếp module của nó?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m34.html">AppCoordinator.showLogin() tạo let login = LoginCoordinator(...) trong hàm, gán login.onFinish = { [weak self] in self?.showHome() } rồi gọi login.start(). Các VC chỉ giữ coordinator bằng weak. Login xong nhưng onFinish không bao giờ được gọi, vì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m35.html">Trong VIPER, thành phần nào chứa code thực hiện điều hướng (tạo module màn tiếp theo rồi push/present)?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m36.html">Theo Clean Architecture, protocol OrderRepository và class RemoteOrderRepository (gọi API) nên đặt ở tầng nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

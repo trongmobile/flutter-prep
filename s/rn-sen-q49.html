@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Sếp muốn có bản web từ app RN &quot;dùng lại code&quot; để khỏi lập team web riê…</title>
+<meta name="description" content="&quot;Dùng lại code&quot; nên tách thành ba lớp có giá trị và rủi ro rất khác nhau. Lớp logic (kiểu dữ liệu, API client, validate, state, hook, quy tắc nghiệp vụ, i18n…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q49.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Sếp muốn có bản web từ app RN &quot;dùng lại code&quot; để khỏi lập team web riê…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q49.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Sếp muốn có bản web từ app RN \"dùng lại code\" đ…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q49.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Sếp muốn có bản web từ app RN &quot;dùng lại code&quot; đ…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/design/">System Design</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Sếp muốn có bản web từ app RN &quot;dùng lại code&quot; để khỏi lập team web riêng. Bạn đánh giá thế nào: khi nào dùng <code>react-native-web</code>/Expo web thì đáng, khi nào không, và tổ chức code ra sao để chia sẻ được phần có giá trị nhất?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">&quot;Dùng lại code&quot; nên tách thành ba lớp có giá trị và rủi ro rất khác nhau. Lớp logic (kiểu dữ liệu, API client, validate, state, hook, quy tắc nghiệp vụ, i18n) chia sẻ gần như miễn phí và lợi nhất; lớp UI mới là chỗ đau. <code>react-native-web</code> ánh xạ <code>View</code>, <code>Text</code>, <code>Pressable</code>, <code>StyleSheet</code> sang DOM và CSS nên hợp với web kiểu ứng dụng (dashboard, công cụ nội bộ sau đăng nhập, PWA, bản xem nhanh) và khi đội đã giỏi RN. Không hợp khi cần SEO và nội dung (trang marketing, blog, danh mục sản phẩm công khai) vì cần render phía server và HTML ngữ nghĩa tốt (Expo Router có static rendering nhưng vẫn phải cân nhắc kỹ), hay khi web phải mượt như web thật. Bẫy thường gặp: kích thước bundle; kỳ vọng của web mà app không có (hover, focus ring, điều hướng bàn phím, chuột phải, bôi chọn text, URL và nút Back của trình duyệt, responsive thật sự thay vì co giãn màn hình điện thoại); accessibility phải ánh xạ đúng role sang HTML; <code>FlatList</code> ảo hoá khác cuộn của trình duyệt; nhiều thư viện native (camera, Keychain, Bluetooth, một số hiệu ứng) không chạy trên web nên cần file <code>.web.ts</code> hoặc <code>Platform.OS</code> làm phương án thay thế. Cấu trúc: monorepo với <code>packages/core</code> thuần TypeScript (cấm import <code>react-native</code> bằng lint để luôn dùng được cả trên web), <code>packages/ui</code> dùng primitive RN kèm file theo nền tảng, <code>apps/mobile</code> và <code>apps/web</code>. Quyết định: web cần SEO thì dựng stack web riêng (Next.js...) chỉ dùng chung <code>core</code>; web kiểu ứng dụng thì RN Web. Đo thực tế bằng kích thước bundle, Lighthouse, kiểm tra accessibility, và dựng thử một màn thật trước khi cam kết.</div>
+        <pre class="code-block"><code><span class="tk-com">// eslint.config.js: packages/core không được phụ thuộc vào nền tảng</span>
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> [
+  {
+    files: [<span class="tk-str">&#39;packages/core/**/*.ts&#39;</span>],
+    rules: { <span class="tk-str">&#39;no-restricted-imports&#39;</span>: [<span class="tk-str">&#39;error&#39;</span>, { patterns: [<span class="tk-str">&#39;react-native*&#39;</span>, <span class="tk-str">&#39;expo*&#39;</span>] }] },
+  },
+];
+
+<span class="tk-com">// share.ts (mobile)</span>
+<span class="tk-kw">import</span> { <span class="tk-type">Share</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> shareLink = (url: <span class="tk-kw">string</span>) =&gt; <span class="tk-type">Share</span>.share({ message: url });
+
+<span class="tk-com">// share.web.ts: bundler chọn file .web.ts khi build web</span>
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> shareLink = <span class="tk-kw">async</span> (url: <span class="tk-kw">string</span>) =&gt; {
+  <span class="tk-kw">if</span> (navigator.share) <span class="tk-kw">await</span> navigator.share({ url });
+  <span class="tk-kw">else</span> <span class="tk-kw">await</span> navigator.clipboard.writeText(url);
+};</code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/workflow/web/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q49">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q48.html"><span class="muted small">← Câu trước</span><span>App bán hàng offline-first cần lưu khoảng 300.000 bản ghi (sản phẩm, đơn nháp)…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q50.html"><span class="muted small">Câu sau →</span><span>Giữa dự án 3 tháng (app RN cho một chiến dịch marketing), bạn nhận ra tiến độ c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề System Design</h2><a class="section-sub" href="../phong-van/react-native/chu-de/design/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q19.html">Công ty có 3 app RN (khách hàng, tài xế, merchant) dùng chung nhiều UI và logic. Bạn tổ chức monorepo thế nào, và những bẫy riêng của RN trong monorepo là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q20.html">Bạn cần ship cùng một app cho 8 thương hiệu khác nhau (logo, màu, bundle id, vài tính năng riêng). Thiết kế codebase RN thế nào để không thành 8 nhánh git?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q21.html">Thiết kế phía client cho tính năng chat trong app RN: gửi được khi mất mạng, hiển thị tin ngay, không trùng tin, cuộn mượt với lịch sử dài.</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q22.html">Công ty đang có hai app native riêng (Kotlin và Swift), CTO hỏi có nên chuyển sang React Native không. Bạn đánh giá và đề xuất lộ trình thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q35.html">Công ty muốn biến app RN thành một &#39;super app&#39;: các nhóm khác nhau (ví, đặt xe, mua sắm) tự phát hành mini-app độc lập mà không phải chờ bản phát hành chung của app host. Bạn thiết kế kiến trúc thế nào (tải bundle động, cô lập, version) và rủi ro lớn nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q42.html">Team chuyển sang trunk-based và muốn mọi tính năng lớn nằm sau feature flag, kèm kill-switch tắt được trong vài phút mà không cần phát hành bản mới. Bạn thiết kế hệ thống flag/remote config phía app RN thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

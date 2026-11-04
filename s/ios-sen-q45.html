@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: Đội chống gian lận phát hiện người dùng chạy bản app bị hook bằng Frida để sửa…</title>
+<meta name="description" content="Nguyên tắc nền: client nằm trong tay kẻ tấn công nên mọi kiểm tra phía client đều có thể bị vượt; mục tiêu thực tế là tăng chi phí tấn công và có tín hiệu để…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Đội chống gian lận phát hiện người dùng chạy bản app bị hook bằng Frida để sửa…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Đội chống gian lận phát hiện người dùng chạy bả…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Đội chống gian lận phát hiện người dùng chạy bả…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/security/">Security</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Đội chống gian lận phát hiện người dùng chạy bản app bị hook bằng Frida để sửa giá và giả vị trí; CTO yêu cầu &quot;chặn máy jailbreak là xong&quot;. Bạn tư vấn thế nào về chống can thiệp trên iOS và nên đặt niềm tin ở đâu?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nguyên tắc nền: client nằm trong tay kẻ tấn công nên mọi kiểm tra phía client đều có thể bị vượt; mục tiêu thực tế là tăng chi phí tấn công và có tín hiệu để phát hiện, còn quyết định quan trọng phải nằm ở server. Bắt đầu bằng mô hình đe doạ: ai tấn công, nhằm gì (sửa giá, lạm dụng khuyến mãi, cào dữ liệu, crack subscription) và thiệt hại bao nhiêu, từ đó mới biết đáng đầu tư tới mức nào. Phát hiện jailbreak (file như Cydia, ghi được ngoài sandbox, dylib lạ qua <code>_dyld_image_count</code>), debugger (<code>sysctl</code> kiểm cờ <code>P_TRACED</code>) hay Frida (port, dylib bị tiêm) đều có thể bị chính các công cụ đó hook và qua mặt, lại có thể báo nhầm với user bình thường. Vì vậy nên coi chúng là tín hiệu rủi ro gửi lên server để chấm điểm, thay vì tự <code>exit(0)</code> làm lộ chỗ kiểm tra. Obfuscation hay mã hoá chuỗi chỉ làm reverse chậm hơn, đổi lại khó debug và khó symbolicate crash. Thứ có giá trị thật nằm ở server: giá, vị trí hợp lệ, điểm thưởng đều tính và kiểm lại ở server, kèm rate limit và phát hiện bất thường. App Attest (<code>DCAppAttestService</code>) cho server bằng chứng được Apple xác nhận rằng một khoá trong Secure Enclave do đúng app của bạn tạo trên thiết bị Apple thật; sau đó mỗi request nhạy cảm kèm assertion có chữ ký và bộ đếm chống replay. DeviceCheck (<code>DCDevice</code>) lưu hai bit cho mỗi thiết bị ở phía Apple, hợp để đánh dấu máy đã nhận ưu đãi. Giới hạn cần nói rõ: App Attest không chứng minh máy không jailbreak hay không bị hook, nó chỉ chứng minh khoá và bản app là hợp lệ.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-type">CryptoKit</span>
+<span class="tk-kw">import</span> <span class="tk-type">DeviceCheck</span>
+
+<span class="tk-com">// Chạy một lần: tạo khoá trong Secure Enclave rồi nhờ Apple chứng thực</span>
+<span class="tk-kw">func</span> attestKey() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; (keyID: <span class="tk-type">String</span>, attestation: <span class="tk-type">Data</span>) {
+  <span class="tk-kw">let</span> service = <span class="tk-type">DCAppAttestService</span>.shared
+  <span class="tk-kw">guard</span> service.isSupported <span class="tk-kw">else</span> { <span class="tk-kw">throw</span> <span class="tk-type">AttestError</span>.unsupported } <span class="tk-com">// simulator, máy không hỗ trợ</span>
+
+  <span class="tk-kw">let</span> keyID = <span class="tk-kw">try</span> <span class="tk-kw">await</span> service.generateKey()
+  <span class="tk-kw">let</span> challenge = <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.fetchAttestChallenge() <span class="tk-com">// server cấp, dùng một lần</span>
+  <span class="tk-kw">let</span> hash = <span class="tk-type">Data</span>(<span class="tk-type">SHA256</span>.hash(data: challenge))
+  <span class="tk-kw">let</span> attestation = <span class="tk-kw">try</span> <span class="tk-kw">await</span> service.attestKey(keyID, clientDataHash: hash)
+  <span class="tk-kw">return</span> (keyID, attestation) <span class="tk-com">// gửi lên server để xác minh với Apple</span>
+}
+
+<span class="tk-com">// Mỗi request nhạy cảm: ký lại nội dung, server kiểm tra chữ ký và bộ đếm</span>
+<span class="tk-kw">func</span> assertion(<span class="tk-kw">for</span> body: <span class="tk-type">Data</span>, keyID: <span class="tk-type">String</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Data</span> {
+  <span class="tk-kw">let</span> hash = <span class="tk-type">Data</span>(<span class="tk-type">SHA256</span>.hash(data: body))
+  <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">DCAppAttestService</span>.shared.generateAssertion(keyID, clientDataHash: hash)
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/devicecheck/establishing-your-app-s-integrity" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q44.html"><span class="muted small">← Câu trước</span><span>Security review yêu cầu giải trình mọi thư viện bên thứ ba trong app, và App St…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q46.html"><span class="muted small">Câu sau →</span><span>Sau khi app lên iPad, user báo layout vỡ khi dùng Split View, kéo cửa sổ Stage…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Security</h2><a class="section-sub" href="../phong-van/ios/chu-de/security/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q17.html">App ngân hàng cần lưu refresh token và một khoá để ký giao dịch, yêu cầu Face ID mỗi lần ký. Bạn lưu trữ trên iOS thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q18.html">Team bảo mật yêu cầu certificate pinning cho API thanh toán. Bạn triển khai thế nào để app không &#39;chết&#39; hàng loạt khi server đổi chứng chỉ?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q44.html">Security review yêu cầu giải trình mọi thư viện bên thứ ba trong app, và App Store Connect vừa gửi email cảnh báo một SDK analytics thiếu Privacy Manifest. Bạn kiểm soát chuỗi cung ứng phụ thuộc của app iOS thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m29.html">Refresh token được lưu vào Keychain như sau. Khi BGAppRefreshTask chạy lúc máy đang khoá và đọc token này thì sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m30.html">Nhận định nào đúng về private key được tạo trong Secure Enclave?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m31.html">Để gọi một API nội bộ cũ chỉ hỗ trợ HTTP, dev thêm cấu hình Info.plist sau và bị reviewer phản đối. Cách thay thế tốt hơn?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Junior: Màn danh sách sản phẩm tải 20 item mỗi trang. Bạn gọi trang tiếp theo trong wil…</title>
+<meta name="description" content="Giữ trạng thái phân trang trong ViewModel: trang hoặc cursor kế tiếp, isLoading, hasMore, lỗi. Điều kiện gọi là guard !isLoading, hasMore, và phải đặt isLoad…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q43.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: Màn danh sách sản phẩm tải 20 item mỗi trang. Bạn gọi trang tiếp theo trong wil…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-q43.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Màn danh sách sản phẩm tải 20 item mỗi trang. B…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q43.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn danh sách sản phẩm tải 20 item mỗi trang. B…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Màn danh sách sản phẩm tải 20 item mỗi trang. Bạn gọi trang tiếp theo trong <code>willDisplay</code> khi cell cuối xuất hiện, nhưng cuộn nhanh thì cùng một trang bị gọi 3 lần, danh sách có item trùng, và khi mạng lỗi thì spinner ở cuối quay mãi. Bạn làm load more đúng cách thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Giữ trạng thái phân trang trong ViewModel: trang hoặc cursor kế tiếp, <code>isLoading</code>, <code>hasMore</code>, lỗi. Điều kiện gọi là <code>guard !isLoading, hasMore</code>, và phải đặt <code>isLoading = true</code> đồng bộ ngay trước khi bắt đầu request: đặt sau <code>await</code> thì hai lần gọi liền nhau vẫn lọt qua. <code>willDisplay</code> được gọi lại mỗi lần cell hiện ra khi cuộn lên xuống nên bắt buộc chống gọi trùng; nên kích hoạt sớm (khi còn cách cuối vài dòng, ví dụ <code>row &gt;= count - 5</code>) để người dùng không phải chờ, hoặc dùng <code>UITableViewDataSourcePrefetching</code> (<code>prefetchRowsAt</code>), cơ chế hệ thống báo trước các dòng sắp hiện. Khi nhận trang mới: nối vào danh sách và loại item trùng theo <code>id</code>, vì phân trang bằng offset có thể lệch khi server thêm hoặc xoá dữ liệu giữa hai lần gọi (cursor ổn định hơn); <code>hasMore</code> lấy từ cursor kế tiếp hoặc từ việc trang trả về đủ <code>pageSize</code>. Footer thể hiện ba trạng thái: spinner khi đang tải, nút &#39;Thử lại&#39; khi lỗi (không tự lặp vô hạn), ẩn khi hết dữ liệu. Pull-to-refresh thì reset về trang đầu và bỏ qua response của lần gọi cũ về muộn, nếu không dữ liệu cũ sẽ đè dữ liệu mới.</div>
+        <pre class="code-block"><code><span class="tk-ann">@MainActor</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">ProductListViewModel</span> {
+  <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> items: [<span class="tk-type">Product</span>] = []
+  <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> loadError: <span class="tk-type">Error</span>?
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> nextPage = <span class="tk-num">1</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> isLoading = <span class="tk-kw">false</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> hasMore = <span class="tk-kw">true</span>
+  <span class="tk-kw">var</span> onChange: (() -&gt; <span class="tk-type">Void</span>)?
+
+  <span class="tk-kw">func</span> loadMoreIfNeeded(currentRow row: <span class="tk-type">Int</span>) <span class="tk-kw">async</span> {
+    <span class="tk-kw">guard</span> !isLoading, hasMore, row &gt;= items.count - <span class="tk-num">5</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    isLoading = <span class="tk-kw">true</span>                    <span class="tk-com">// đặt cờ đồng bộ, trước khi await</span>
+    <span class="tk-kw">defer</span> { isLoading = <span class="tk-kw">false</span> }
+    <span class="tk-kw">do</span> {
+      <span class="tk-kw">let</span> page = <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.products(page: nextPage, size: <span class="tk-num">20</span>)
+      <span class="tk-kw">let</span> known = <span class="tk-type">Set</span>(items.map(\.id))
+      items += page.filter { !known.contains($<span class="tk-num">0</span>.id) }  <span class="tk-com">// bỏ item trùng</span>
+      hasMore = page.count == <span class="tk-num">20</span>
+      nextPage += <span class="tk-num">1</span>
+      loadError = <span class="tk-kw">nil</span>
+    } <span class="tk-kw">catch</span> {
+      loadError = error                 <span class="tk-com">// footer hiện nút &quot;Thử lại&quot;</span>
+    }
+    onChange?()
+  }
+}
+
+<span class="tk-com">// Trong ViewController</span>
+<span class="tk-kw">func</span> tableView(_ tableView: <span class="tk-type">UITableView</span>, willDisplay cell: <span class="tk-type">UITableViewCell</span>,
+               forRowAt indexPath: <span class="tk-type">IndexPath</span>) {
+  <span class="tk-type">Task</span> { <span class="tk-kw">await</span> viewModel.loadMoreIfNeeded(currentRow: indexPath.row) }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q43">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q42.html"><span class="muted small">← Câu trước</span><span>Mất mạng thì màn Home trắng trơn và báo lỗi, dù hôm qua người dùng vừa xem xong…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q44.html"><span class="muted small">Câu sau →</span><span>QA báo app bật Dark Mode thì chữ đen trên nền đen ở vài màn, viền vẽ bằng layer…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q14.html">Màn đăng ký có form dài đặt trong UIScrollView; khi bàn phím hiện lên thì che mất các ô nhập phía dưới và người dùng không cuộn tới được. Bạn xử lý thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q15.html">Cell có label mô tả nhiều dòng nhưng chiều cao cell vẫn cố định, chữ bị cắt. Cần làm gì để self-sizing cell hoạt động?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q16.html">App thỉnh thoảng crash với lỗi Invalid update: invalid number of rows in section 0 khi thêm, xoá item rồi gọi insertRows/deleteRows. Diffable data source giúp gì, dùng thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q32.html">Một hàng cell có titleLabel bên trái và priceLabel bên phải, hai label nối ngang nhau và bám hai mép cell. Tên sản phẩm dài thì giá bị cắt thành …, còn tên ngắn thì lúc label này lúc label kia giãn ra. Content hugging và compression resistance giúp gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q44.html">QA báo app bật Dark Mode thì chữ đen trên nền đen ở vài màn, viền vẽ bằng layer.borderColor không đổi màu theo chế độ, và khi chỉnh cỡ chữ lớn nhất trong Settings thì label bị cắt, các nút chồng lên nhau. Bạn sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-m24.html">Gọi tableView.dequeueReusableCell(withIdentifier: &quot;ProductCell&quot;, for: indexPath) nhưng chưa register class/nib nào và storyboard cũng không có prototype cell tương ứng. Kết quả là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

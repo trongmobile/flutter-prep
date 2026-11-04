@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: App có 15 module và mỗi team tự xử lý onOpenURL theo cách riêng nên cùng một li…</title>
+<meta name="description" content="Tầng xác minh: universal link cần file apple-app-site-association phục vụ qua HTTPS tại /.well-known/ (không redirect, trả JSON), khai appIDs dạng TEAMID.bun…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q41.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: App có 15 module và mỗi team tự xử lý onOpenURL theo cách riêng nên cùng một li…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q41.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"App có 15 module và mỗi team tự xử lý onOpenURL…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q41.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App có 15 module và mỗi team tự xử lý onOpenURL…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/navigation/">Navigation</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App có 15 module và mỗi team tự xử lý <code>onOpenURL</code> theo cách riêng nên cùng một link mở ra hành vi khác nhau; link khuyến mãi <code>https://shop.vn/promo?next=...</code> còn từng bị lợi dụng để mở trang lạ trong WebView. Bạn thiết kế hệ thống universal link và deep link ở quy mô này thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tầng xác minh: universal link cần file <code>apple-app-site-association</code> phục vụ qua HTTPS tại <code>/.well-known/</code> (không redirect, trả JSON), khai <code>appIDs</code> dạng <code>TEAMID.bundleid</code> cùng các <code>components</code> được phép, và app có entitlement Associated Domains <code>applinks:shop.vn</code>. Apple lấy file qua CDN của họ nên sửa file không có hiệu lực tức thì và khó thử trên production; khi phát triển dùng chế độ developer (<code>?mode=developer</code>). Tầng định tuyến: đúng một <code>DeepLinkRouter</code> ở app target; parser thuần chuyển <code>URL</code> thành <code>enum Route</code> có kiểu (dễ unit test hàng trăm URL), mỗi feature module đăng ký handler cho route của mình qua một protocol ở module lõi nên các module không import nhau. Router lo ngữ cảnh: cold start (link tới qua <code>scene(_:willConnectTo:options:)</code> hoặc <code>onOpenURL</code>, phải đợi UI dựng xong), tab và stack hiện tại, và đăng nhập: route cần quyền thì lưu <code>pending</code>, chạy login, xong mới mở, và bỏ pending nếu user huỷ. Bảo mật: mọi thứ trong link là input không đáng tin. Dùng allowlist cho route và domain, validate kiểu và độ dài tham số, chỉ chấp nhận <code>next</code> hay <code>url</code> trỏ về host trong allowlist, và không để link tự kích hoạt hành động nhạy cảm (chuyển tiền, đổi email) mà không hỏi xác nhận. Custom scheme như <code>shop://</code> không được xác minh, app khác có thể đăng ký trùng, nên không dùng cho dữ liệu nhạy cảm. Với deferred deep link (user chưa cài app), iOS không giữ ngữ cảnh qua App Store nên cần dịch vụ attribution hoặc server ghép phiên; tránh đọc clipboard lén vì hệ thống hiện banner và làm mất lòng tin.</div>
+        <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">Route</span>: <span class="tk-type">Equatable</span> {
+  <span class="tk-kw">case</span> order(id: <span class="tk-type">Int</span>)
+  <span class="tk-kw">case</span> promo(code: <span class="tk-type">String</span>)
+
+  <span class="tk-kw">var</span> requiresLogin: <span class="tk-type">Bool</span> {
+    <span class="tk-kw">if</span> <span class="tk-kw">case</span> .order = <span class="tk-kw">self</span> { <span class="tk-kw">return</span> <span class="tk-kw">true</span> }
+    <span class="tk-kw">return</span> <span class="tk-kw">false</span>
+  }
+}
+
+<span class="tk-kw">enum</span> <span class="tk-type">RouteParser</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> allowedHosts: <span class="tk-type">Set</span>&lt;<span class="tk-type">String</span>&gt; = [<span class="tk-str">&quot;shop.vn&quot;</span>, <span class="tk-str">&quot;www.shop.vn&quot;</span>]
+
+  <span class="tk-com">// Hàm thuần: URL vào, Route hoặc nil ra, không side effect nên test được hàng loạt</span>
+  <span class="tk-kw">static</span> <span class="tk-kw">func</span> parse(_ url: <span class="tk-type">URL</span>) -&gt; <span class="tk-type">Route</span>? {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> comps = <span class="tk-type">URLComponents</span>(url: url, resolvingAgainstBaseURL: <span class="tk-kw">false</span>),
+          <span class="tk-kw">let</span> host = comps.host, allowedHosts.contains(host) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+    <span class="tk-kw">let</span> parts = comps.path.split(separator: <span class="tk-str">&quot;/&quot;</span>).map(<span class="tk-type">String</span>.<span class="tk-kw">init</span>)
+
+    <span class="tk-kw">switch</span> parts.first {
+    <span class="tk-kw">case</span> <span class="tk-str">&quot;orders&quot;</span>?:
+      <span class="tk-kw">guard</span> parts.count == <span class="tk-num">2</span>, <span class="tk-kw">let</span> id = <span class="tk-type">Int</span>(parts[<span class="tk-num">1</span>]) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+      <span class="tk-kw">return</span> .order(id: id)
+    <span class="tk-kw">case</span> <span class="tk-str">&quot;promo&quot;</span>?:
+      <span class="tk-kw">let</span> code = comps.queryItems?.first { $<span class="tk-num">0</span>.name == <span class="tk-str">&quot;code&quot;</span> }?.value
+      <span class="tk-kw">guard</span> <span class="tk-kw">let</span> code, code.count &lt;= <span class="tk-num">20</span>, code.allSatisfy({ $<span class="tk-num">0</span>.isLetter || $<span class="tk-num">0</span>.isNumber }) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+      <span class="tk-kw">return</span> .promo(code: code)
+    <span class="tk-kw">default</span>:
+      <span class="tk-kw">return</span> <span class="tk-kw">nil</span>
+    }
+  }
+}
+
+<span class="tk-ann">@MainActor</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">DeepLinkRouter</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> pending: <span class="tk-type">Route</span>?
+  <span class="tk-kw">var</span> isLoggedIn: () -&gt; <span class="tk-type">Bool</span> = { <span class="tk-kw">false</span> }
+  <span class="tk-kw">var</span> <span class="tk-kw">open</span>: (<span class="tk-type">Route</span>) -&gt; <span class="tk-type">Void</span> = { _ <span class="tk-kw">in</span> }
+  <span class="tk-kw">var</span> showLogin: () -&gt; <span class="tk-type">Void</span> = {}
+
+  <span class="tk-kw">func</span> handle(_ url: <span class="tk-type">URL</span>) {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> route = <span class="tk-type">RouteParser</span>.parse(url) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// link lạ thì bỏ qua</span>
+    <span class="tk-kw">if</span> route.requiresLogin &amp;&amp; !isLoggedIn() {
+      pending = route
+      showLogin()
+    } <span class="tk-kw">else</span> {
+      <span class="tk-kw">open</span>(route)
+    }
+  }
+
+  <span class="tk-kw">func</span> didLogin() {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> route = pending <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    pending = <span class="tk-kw">nil</span>
+    <span class="tk-kw">open</span>(route)
+  }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/xcode/supporting-associated-domains" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q41">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q40.html"><span class="muted small">← Câu trước</span><span>App có khoảng 30 màn hình và Resolver.shared.resolve() được gọi rải rác khắp Vi…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q42.html"><span class="muted small">Câu sau →</span><span>Time Profiler cho thấy hàm parse tin nhắn và tính layout chạy hàng chục nghìn l…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/ios/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-m21.html">Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q19.html">Trong UIKit, push một màn hình bằng UINavigationController và present modal khác nhau thế nào? Đóng mỗi loại ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q20.html">Muốn truyền productId sang màn hình chi tiết, rồi gửi kết quả chỉnh sửa ngược về màn hình trước, bạn làm thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q45.html">Điều hướng cơ bản trong SwiftUI: NavigationStack với NavigationLink, .sheet và .fullScreenCover khác nhau thế nào, và đóng màn hình bằng code ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-jun-q20.html">Màn danh sách dùng segue showDetail để mở màn chi tiết, màn này được nhúng trong một UINavigationController trên storyboard. Trong prepare(for:sender:) bạn viết segue.destination as! ProductDetailViewController và app crash. Vì sao, và truyền dữ liệu qua segue thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q21.html">Khi chuyển từ NavigationView sang NavigationStack, cách điều hướng bằng NavigationLink(value:) kết hợp .navigationDestination(for:) có lợi gì so với NavigationLink(destination:) kiểu cũ?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

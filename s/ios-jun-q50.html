@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Junior: Thiết kế màn giỏ hàng: người dùng tăng giảm số lượng liên tục, có thể mất mạng…</title>
+<meta name="description" content="Chỉ có một nguồn sự thật là CartStore (hoặc ViewModel dùng chung) giữ danh sách dòng hàng và số lượng; tổng tiền tính ra từ các dòng chứ không lưu riêng để k…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q50.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: Thiết kế màn giỏ hàng: người dùng tăng giảm số lượng liên tục, có thể mất mạng…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-q50.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Thiết kế màn giỏ hàng: người dùng tăng giảm số…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q50.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Thiết kế màn giỏ hàng: người dùng tăng giảm số…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/design/">System Design</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Thiết kế màn giỏ hàng: người dùng tăng giảm số lượng liên tục, có thể mất mạng giữa chừng, và sản phẩm có thể hết hàng khi đang nằm trong giỏ. Bạn tổ chức state, cập nhật lên server và xử lý lỗi thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chỉ có một nguồn sự thật là <code>CartStore</code> (hoặc ViewModel dùng chung) giữ danh sách dòng hàng và số lượng; tổng tiền tính ra từ các dòng chứ không lưu riêng để khỏi lệch, và badge trên tab hay màn chi tiết cùng quan sát store này. Cập nhật số lượng kiểu optimistic: đổi local ngay cho UI mượt, gửi request nền, thành công thì giữ, lỗi thì rollback về giá trị trước và báo người dùng. Không bắn request cho mỗi lần bấm <code>+</code>: debounce khoảng 300–500ms rồi gửi một lần với số lượng cuối cùng; API nên nhận &#39;đặt số lượng = n&#39; (idempotent) thay vì &#39;+1&#39; để retry không cộng đôi, và chỉ giữ một request đang bay cho mỗi dòng hoặc gắn version để bỏ qua response cũ về muộn. Server là trọng tài: response trả giỏ chuẩn (giá mới, tồn kho, mã giảm giá), client ghi đè lên local và hiện thay đổi rõ ràng: giá đổi, &#39;chỉ còn 2 sản phẩm&#39;, dòng hết hàng bị làm mờ và chặn nút thanh toán. Mất mạng: lưu giỏ xuống đĩa (file <code>Codable</code> hoặc Core Data/SwiftData) để mở app vẫn còn; giữ hàng đợi các thay đổi chưa gửi, tự gửi lại khi có mạng và hiện trạng thái &#39;đang đồng bộ&#39;. Trước khi thanh toán luôn đồng bộ lại và kiểm tra với server. Khách chưa đăng nhập dùng giỏ local, rồi gộp vào giỏ server sau khi đăng nhập. Mỗi trạng thái loading, rỗng, lỗi đều cần có UI riêng.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q50">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q49.html"><span class="muted small">← Câu trước</span><span>Security review của app ví điện tử chỉ ra: token bị print ra console (và vẫn nằ…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề System Design</h2><a class="section-sub" href="../phong-van/ios/chu-de/design/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q40.html">QA báo màn thanh toán thỉnh thoảng tạo hai đơn trùng: user bấm &quot;Đặt hàng&quot; hai lần liền, hoặc mạng rớt giữa chừng nên app tưởng thất bại, user bấm lại trong khi server thật ra đã nhận đơn đầu. Bạn thiết kế phía client và API thế nào để không tạo đơn trùng?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q41.html">Màn theo dõi đơn giao hàng cần hiện trạng thái và vị trí shipper gần như realtime. Bạn chọn polling, WebSocket hay push? Vòng đời foreground/background, mất mạng và tiết kiệm pin xử lý thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-sen-q22.html">Thiết kế phía client cho app chat 1-1 và nhóm: kết nối realtime, lưu trữ, trạng thái tin nhắn và push. Bạn trình bày thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q23.html">Nếu phải tự viết thư viện tải và cache ảnh thay cho Kingfisher hay SDWebImage, bạn thiết kế những thành phần nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q36.html">App cho nhân viên chụp ảnh và quay video hiện trường rồi upload khoảng 200MB mỗi lần, user thường khoá máy hoặc chuyển app ngay sau khi bấm gửi. Bạn thiết kế upload thế nào để nó vẫn hoàn tất, retry được và không mất file?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q49.html">Bạn được giao thiết kế client analytics (SDK nội bộ) cho app iOS: marketing muốn track hàng chục sự kiện, PM lo app bị chậm, không được mất sự kiện khi mất mạng hoặc app bị kill, còn phòng pháp lý yêu cầu tôn trọng đồng ý của người dùng. Bạn thiết kế thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

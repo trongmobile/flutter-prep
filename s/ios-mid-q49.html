@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: ViewModel có debounce 300ms cho ô search, logic &quot;mã giảm giá hết hạn cuối ngày&quot;…</title>
+<meta name="description" content="Gốc rễ là code gọi thẳng các nguồn không điều khiển được: Date(), Task.sleep, Timer, UUID(), Calendar.current/TimeZone.current. Giải pháp là inject chúng ở r…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q49.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: ViewModel có debounce 300ms cho ô search, logic &quot;mã giảm giá hết hạn cuối ngày&quot;…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q49.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"ViewModel có debounce 300ms cho ô search, logic…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q49.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">ViewModel có debounce 300ms cho ô search, logic…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">ViewModel có <code>debounce</code> 300ms cho ô search, logic &quot;mã giảm giá hết hạn cuối ngày&quot; và retry tối đa 3 lần với delay tăng dần. Test hiện dùng <code>Thread.sleep</code> hoặc expectation chờ vài giây nên chậm và đôi khi fail, còn test hết hạn pass ở máy dev nhưng fail ở CI đặt múi giờ khác. Bạn viết lại test thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gốc rễ là code gọi thẳng các nguồn không điều khiển được: <code>Date()</code>, <code>Task.sleep</code>, <code>Timer</code>, <code>UUID()</code>, <code>Calendar.current</code>/<code>TimeZone.current</code>. Giải pháp là inject chúng ở ranh giới ViewModel hay service. Thời điểm: nhận <code>now: () -&gt; Date</code> rồi test trả một mốc cố định. Chờ đợi: nhận <code>any Clock&lt;Duration&gt;</code> (production dùng <code>ContinuousClock()</code>) và gọi <code>clock.sleep(for:)</code>; test dùng clock giả có <code>advance(by:)</code> (thư viện <code>swift-clocks</code> của Point-Free có sẵn <code>TestClock</code>) để debounce 300ms chạy xong trong mili-giây thay vì chờ thật. Retry với delay tăng dần thì nhận một closure <code>sleep</code> và assert danh sách delay đã được yêu cầu, không chờ thật. Lịch: đừng dùng <code>.current</code>; cố định <code>Calendar</code> với <code>timeZone</code> và <code>Locale</code> rõ ràng, nếu không test pass ở máy dev nhưng fail ở CI đặt múi giờ khác. Test các mốc biên như 23:59:59 và 00:00:00, cả ngày chuyển DST nếu app có thị trường dùng DST. <code>UUID()</code> gọi trực tiếp trong code cũng nên thành <code>makeID: () -&gt; UUID</code>. Đừng inject mọi thứ ở mọi tầng, chỉ ở nơi logic thật sự phụ thuộc thời gian; còn <code>Thread.sleep</code> hay expectation chờ vài giây trong test chỉ che lấp vấn đề, làm CI chậm và flaky.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">CouponValidator</span> {
+    <span class="tk-kw">var</span> now: () -&gt; <span class="tk-type">Date</span> = <span class="tk-type">Date</span>.<span class="tk-kw">init</span>
+    <span class="tk-kw">var</span> calendar: <span class="tk-type">Calendar</span>
+
+    <span class="tk-com">// Mã dùng được hết ngày lastValidDay theo múi giờ của `calendar`</span>
+    <span class="tk-kw">func</span> isExpired(_ coupon: <span class="tk-type">Coupon</span>) -&gt; <span class="tk-type">Bool</span> {
+        <span class="tk-kw">let</span> startOfDay = calendar.startOfDay(<span class="tk-kw">for</span>: coupon.lastValidDay)
+        <span class="tk-kw">guard</span> <span class="tk-kw">let</span> nextDay = calendar.date(byAdding: .day, value: <span class="tk-num">1</span>, to: startOfDay) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">true</span> }
+        <span class="tk-kw">return</span> now() &gt;= nextDay
+    }
+}
+
+<span class="tk-ann">@Test</span> <span class="tk-kw">func</span> couponExpiresAtEndOfDay() {
+    <span class="tk-kw">var</span> cal = <span class="tk-type">Calendar</span>(identifier: .gregorian)
+    cal.timeZone = <span class="tk-type">TimeZone</span>(identifier: <span class="tk-str">&quot;Asia/Ho_Chi_Minh&quot;</span>)! <span class="tk-com">// cố định, không phụ thuộc máy chạy test</span>
+    <span class="tk-kw">let</span> lastDay = cal.date(from: <span class="tk-type">DateComponents</span>(year: <span class="tk-num">2026</span>, month: <span class="tk-num">3</span>, day: <span class="tk-num">1</span>))!
+    <span class="tk-kw">let</span> justBefore = cal.date(from: <span class="tk-type">DateComponents</span>(year: <span class="tk-num">2026</span>, month: <span class="tk-num">3</span>, day: <span class="tk-num">1</span>, hour: <span class="tk-num">23</span>, minute: <span class="tk-num">59</span>, second: <span class="tk-num">59</span>))!
+    <span class="tk-kw">let</span> midnight = cal.date(from: <span class="tk-type">DateComponents</span>(year: <span class="tk-num">2026</span>, month: <span class="tk-num">3</span>, day: <span class="tk-num">2</span>))!
+    <span class="tk-kw">let</span> coupon = <span class="tk-type">Coupon</span>(lastValidDay: lastDay)
+
+    #expect(!<span class="tk-type">CouponValidator</span>(now: { justBefore }, calendar: cal).isExpired(coupon))
+    #expect(<span class="tk-type">CouponValidator</span>(now: { midnight }, calendar: cal).isExpired(coupon))
+}
+
+<span class="tk-com">// Retry: nhận closure sleep thay vì gọi Task.sleep thật</span>
+<span class="tk-kw">func</span> retry&lt;<span class="tk-type">T</span>&gt;(maxAttempts: <span class="tk-type">Int</span> = <span class="tk-num">3</span>,
+              sleep: (<span class="tk-type">Duration</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">Void</span> = { <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: $<span class="tk-num">0</span>) },
+              _ operation: () <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">T</span>) <span class="tk-kw">async</span> <span class="tk-kw">throws</span> -&gt; <span class="tk-type">T</span> {
+    <span class="tk-kw">var</span> attempt = <span class="tk-num">0</span>
+    <span class="tk-kw">while</span> <span class="tk-kw">true</span> {
+        <span class="tk-kw">do</span> { <span class="tk-kw">return</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> operation() } <span class="tk-kw">catch</span> {
+            attempt += <span class="tk-num">1</span>
+            <span class="tk-kw">if</span> attempt &gt;= maxAttempts { <span class="tk-kw">throw</span> error }
+            <span class="tk-kw">try</span> <span class="tk-kw">await</span> sleep(.seconds(<span class="tk-num">1</span> &lt;&lt; (attempt - <span class="tk-num">1</span>))) <span class="tk-com">// 1s, 2s, ...</span>
+        }
+    }
+}
+
+<span class="tk-ann">@Test</span> <span class="tk-kw">func</span> retryBacksOffWithoutWaiting() <span class="tk-kw">async</span> <span class="tk-kw">throws</span> {
+    <span class="tk-kw">var</span> delays: [<span class="tk-type">Duration</span>] = []
+    <span class="tk-kw">var</span> calls = <span class="tk-num">0</span>
+    <span class="tk-kw">let</span> value = <span class="tk-kw">try</span> <span class="tk-kw">await</span> retry(sleep: { delays.append($<span class="tk-num">0</span>) }) {
+        calls += <span class="tk-num">1</span>
+        <span class="tk-kw">if</span> calls &lt; <span class="tk-num">3</span> { <span class="tk-kw">throw</span> <span class="tk-type">URLError</span>(.timedOut) }
+        <span class="tk-kw">return</span> <span class="tk-str">&quot;ok&quot;</span>
+    }
+    #expect(value == <span class="tk-str">&quot;ok&quot;</span>)
+    #expect(delays == [.seconds(<span class="tk-num">1</span>), .seconds(<span class="tk-num">2</span>)]) <span class="tk-com">// kiểm tra delay đã yêu cầu, test chạy tức thì</span>
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/swift/clock" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q49">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q48.html"><span class="muted small">← Câu trước</span><span>Bạn thêm thuộc tính non-optional vào entity Core Data (hoặc đổi tên thuộc tính…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q50.html"><span class="muted small">Câu sau →</span><span>App có đăng nhập Google và Facebook, bị App Review từ chối vì chưa có Sign in w…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/ios/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm load() async gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q24.html">Swift Testing (@Test, #expect) khác XCTest ở những điểm nào? Dự án đang có vài trăm test XCTest thì có nên chuyển hết không?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q35.html">Test cho tầng networking đang gọi server thật nên chậm và flaky; bạn muốn test cả URLSession thật (header, decode, retry) mà không chạm mạng. URLProtocol stub hoạt động thế nào, và nó khác mock bằng protocol ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m37.html">Trong Swift Testing, #expect và #require khác nhau thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m38.html">Trong func testUpload() async, bạn cần đợi một XCTestExpectation được fulfill từ callback. Cách viết nào đúng?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m39.html">Một suite Swift Testing dùng chung biến static var mockStore mà nhiều test cùng sửa. Chạy riêng từng test thì pass, chạy cả suite thì fail ngẫu nhiên. Nguyên nhân hợp lý nhất?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

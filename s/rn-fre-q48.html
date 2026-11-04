@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher: App hiện màn hình đỏ TypeError: undefined is not an object (evaluatin…</title>
+<meta name="description" content="Màn hình đỏ (LogBox) hiện khi có lỗi chưa được bắt hoặc console.error, và chỉ có ở bản dev. Đọc từ trên xuống: dòng đầu là loại lỗi cùng thông điệp (ở đây ng…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q48.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: App hiện màn hình đỏ TypeError: undefined is not an object (evaluatin…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-q48.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"App hiện màn hình đỏ TypeError: undefined is no…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q48.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">App hiện màn hình đỏ TypeError: undefined is no…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App hiện màn hình đỏ <code>TypeError: undefined is not an object (evaluating &#39;user.name&#39;)</code>, còn thỉnh thoảng có hộp vàng ở cuối màn hình. Bạn đọc màn hình đỏ thế nào, LogBox đỏ và vàng khác nhau ra sao, và dùng những công cụ debug cơ bản nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Màn hình đỏ (LogBox) hiện khi có lỗi chưa được bắt hoặc <code>console.error</code>, và chỉ có ở bản dev. Đọc từ trên xuống: dòng đầu là loại lỗi cùng thông điệp (ở đây nghĩa là <code>user</code> đang <code>undefined</code> khi truy cập <code>.name</code>), phần Call Stack liệt kê chuỗi hàm; hãy tìm dòng đầu tiên thuộc file của bạn (bỏ qua <code>node_modules</code>) để biết file và số dòng, rồi tự hỏi vì sao biến đó chưa có dữ liệu, thường là do API chưa trả về lúc render lần đầu. Hộp vàng là cảnh báo (<code>console.warn</code> hoặc cảnh báo của React như thiếu <code>key</code>): app vẫn chạy nhưng nên sửa; <code>LogBox.ignoreLogs</code> chỉ ẩn thông báo chứ không sửa lỗi. Dev Menu mở bằng Cmd+D (iOS Simulator), Cmd+M hoặc Ctrl+M (Android Emulator), lắc máy thật hoặc nhấn <code>d</code> trong terminal Metro; từ đó có Reload, bật tắt Fast Refresh và mở DevTools. <code>console.log</code> xem ở tab Console của React Native DevTools (các bản RN cũ hơn còn in ra terminal Metro); trong DevTools còn đặt được breakpoint và có tab Components để xem cây component cùng props, state, hooks hiện tại. Mẹo: đặt log hoặc breakpoint ngay trước dòng lỗi để nhìn giá trị thật thay vì đoán.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">Profile</span>({ userId }: { userId: <span class="tk-kw">string</span> }) {
+  <span class="tk-kw">const</span> [user, setUser] = useState&lt;<span class="tk-type">User</span> | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+  useEffect(() =&gt; {
+    fetchUser(userId).then(setUser);
+  }, [userId]);
+
+  console.log(<span class="tk-str">&#39;Profile render, user =&#39;</span>, user); <span class="tk-com">// lần render đầu in ra null</span>
+
+  <span class="tk-com">// return &lt;Text&gt;{user.name}&lt;/Text&gt;; // lỗi: lúc render đầu user còn null</span>
+  <span class="tk-kw">if</span> (!user) <span class="tk-kw">return</span> &lt;<span class="tk-type">ActivityIndicator</span> /&gt;;
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{user.name}&lt;/<span class="tk-type">Text</span>&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q48">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q47.html"><span class="muted small">← Câu trước</span><span>Dự án React Native mới tạo đã có sẵn Jest. Viết test đầu tiên cho hàm formatPri…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q49.html"><span class="muted small">Câu sau →</span><span>Hãy giới thiệu một dự án React Native bạn đã làm (kể cả app tự học): vì sao bạn…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/react-native/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q47.html">Dự án React Native mới tạo đã có sẵn Jest. Viết test đầu tiên cho hàm formatPrice(120000) thế nào? Vì sao hàm thuần dễ test hơn component, và snapshot test là gì, có hạn chế gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q25.html">Viết test cho màn hình Login bằng Jest và React Native Testing Library: nhập email, bấm Đăng nhập, chờ thông báo lỗi từ API hiện ra. getBy, queryBy và findBy khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q48.html">PR của bạn đổi một dòng style và CI fail vì 14 snapshot bị lệch; đồng nghiệp bảo cứ chạy jest -u cho qua. Snapshot test khác test hành vi bằng React Native Testing Library ở đâu, khi nào snapshot hữu ích, và vì sao snapshot lớn dần trở nên vô dụng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-mid-q23.html">Chạy Jest cho component dùng thư viện có native module (AsyncStorage, camera…) bị lỗi native module là null. Vì sao, và nên mock thế nào cho hợp lý?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q24.html">Team chuẩn bị viết E2E test cho luồng đăng nhập và thanh toán. Bạn chọn Detox hay Maestro, dựa trên tiêu chí nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q37.html">Bạn viết custom hook useOrders dùng TanStack Query và test nó: hook ném lỗi &#39;No QueryClient set&#39;, test thứ hai bị lẫn cache của test đầu, và việc mock API bằng jest.mock cho fetch rất rối. Bạn test hook và API trong RN thế nào với renderHook, wrapper và MSW?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native: Security — Mobile Interview</title>
-<meta name="description" content="4 câu hỏi phỏng vấn React Native về Security từ Fresher đến Senior, có đáp án mẫu và 6 câu quiz trắc nghiệm.">
+<meta name="description" content="8 câu hỏi phỏng vấn React Native về Security từ Fresher đến Senior, có đáp án mẫu và 6 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/security/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native: Security — Mobile Interview">
-<meta property="og:description" content="4 câu hỏi phỏng vấn React Native về Security từ Fresher đến Senior, có đáp án mẫu và 6 câu quiz trắc nghiệm.">
+<meta property="og:description" content="8 câu hỏi phỏng vấn React Native về Security từ Fresher đến Senior, có đáp án mẫu và 6 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/security/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · react native · chủ đề</div>
   <h1>Câu hỏi phỏng vấn React Native: Security</h1>
-  <p class="subtitle">4 câu hỏi kèm đáp án mẫu và 6 câu quiz về Security, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">8 câu hỏi kèm đáp án mẫu và 6 câu quiz về Security, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> React Native Junior</h2><a class="section-sub" href="../../../../phong-van/react-native/junior/">Mọi chủ đề Junior →</a></div>
@@ -57,11 +57,20 @@
   </ul>
 </section>
 <section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> React Native Middle</h2><a class="section-sub" href="../../../../phong-van/react-native/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/rn-mid-q42.html">Đồng nghiệp làm đăng nhập vân tay/Face ID bằng LocalAuthentication.authenticateAsync() (expo-local-authentication): nếu success là true thì đọc token từ AsyncStorage và cho vào app. Reviewer cho rằng cách này yếu. Vì sao, và bạn gắn sinh trắc học với Keychain/Keystore thế nào?</a></li>
+    <li><a href="../../../../s/rn-mid-q43.html">App cần đăng nhập bằng Google hoặc Azure AD (OIDC). Một dev mở trang đăng nhập trong react-native-webview rồi bắt URL redirect để lấy token cho nhanh. Vì sao không nên làm vậy, và làm đúng với Authorization Code + PKCE thế nào?</a></li>
+  </ul>
+</section>
+<section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> React Native Senior</h2><a class="section-sub" href="../../../../phong-van/react-native/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/rn-sen-q16.html">Một dev đặt secret key của cổng thanh toán vào .env và đọc qua react-native-config, lập luận rằng Hermes đã biên dịch ra bytecode nên không ai đọc được. Bạn phản hồi thế nào?</a></li>
     <li><a href="../../../../s/rn-sen-q17.html">Bạn triển khai SSL pinning cho app RN thế nào, và cần chuẩn bị gì để pinning không &#39;khoá&#39; toàn bộ user khi server đổi chứng chỉ?</a></li>
     <li><a href="../../../../s/rn-sen-q18.html">Khách hàng (một ví điện tử) yêu cầu app RN phải &#39;chặn máy root/jailbreak và chống sửa app&#39;. Bạn thiết kế lớp bảo vệ này thế nào cho thực tế?</a></li>
+    <li><a href="../../../../s/rn-sen-q43.html">Một dev thêm thư viện mới chỉ vì thấy &quot;nhiều sao&quot; trên GitHub; tuần sau tin tức nói một package phổ biến trên npm vừa bị chèn mã độc vào bản phát hành mới. Bạn rà lại và thiết lập quy trình để chuỗi cung ứng dependency (npm lẫn native) của app RN an toàn hơn thế nào?</a></li>
+    <li><a href="../../../../s/rn-sen-q44.html">App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu khai báo &quot;required reason API&quot;, còn Google Play nhắc form Data safety không khớp với hành vi thực tế của các SDK. Bạn xử lý và đưa quyền riêng tư vào quy trình phát triển thế nào?</a></li>
     <li><a href="../../../../s/rn-sen-m31.html">Một PR lưu refresh token bằng MMKV có bật mã hoá, với encryptionKey là một chuỗi hằng số viết thẳng trong code JS. Nhận xét nào chính xác nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-sen-m32.html">App pin bằng CertificatePinner của OkHttp (Android) và TrustKit (iOS), chỉ với một hash là public key của certificate hiện tại. Infra thay certificate mới với key pair mới. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-sen-m33.html">App gọi Play Integrity API và nhận về integrity token. Cách dùng token này đúng là gì?</a> <span class="tag">Quiz</span></li>

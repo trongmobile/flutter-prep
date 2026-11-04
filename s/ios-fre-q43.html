@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Fresher: frame và bounds của UIView khác nhau thế nào? Vì sao in view.frame trong viewD…</title>
+<meta name="description" content="frame là vị trí và kích thước của view trong hệ toạ độ của view cha; bounds là kích thước của chính view trong hệ toạ độ riêng, origin mặc định là (0, 0). Ha…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-q43.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher: frame và bounds của UIView khác nhau thế nào? Vì sao in view.frame trong viewD…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-fre-q43.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"frame và bounds của UIView khác nhau thế nào? V…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-q43.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">frame và bounds của UIView khác nhau thế nào? V…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title"><code>frame</code> và <code>bounds</code> của <code>UIView</code> khác nhau thế nào? Vì sao in <code>view.frame</code> trong <code>viewDidLoad</code> ra kích thước sai, và <code>safeAreaLayoutGuide</code> dùng để làm gì?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>frame</code> là vị trí và kích thước của view trong hệ toạ độ của view cha; <code>bounds</code> là kích thước của chính view trong hệ toạ độ riêng, <code>origin</code> mặc định là <code>(0, 0)</code>. Hai giá trị lệch nhau khi view bị transform (xoay hoặc scale: <code>frame</code> là hộp bao ngoài của hình đã xoay, còn <code>bounds</code> không đổi) hoặc khi <code>bounds.origin</code> bị dịch, đó chính là cách <code>UIScrollView</code> cuộn nội dung. Vẽ hoặc căn thứ bên trong view thì dùng <code>bounds</code>; đặt view vào đâu trong cha thì dùng <code>frame</code>. Trong <code>viewDidLoad</code>, view vừa được tải và chưa qua vòng layout nên <code>frame</code>/<code>bounds</code> chỉ là giá trị tạm (theo storyboard hoặc bằng 0 với view tạo bằng code dùng constraint). Muốn đọc kích thước thật, ví dụ bo tròn avatar bằng <code>bounds.width / 2</code>, hãy đặt trong <code>viewDidLayoutSubviews</code> (hàm này chạy nhiều lần nên đừng làm việc nặng). Đừng gán <code>frame</code> cho view đã có constraint vì Auto Layout sẽ ghi đè. Safe area là vùng không bị notch/Dynamic Island, home indicator hay thanh điều hướng che; neo constraint vào <code>view.safeAreaLayoutGuide</code> để nội dung không bị che, còn nền phủ kín màn hình thì vẫn neo vào mép <code>view</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">AvatarViewController</span>: <span class="tk-type">UIViewController</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">let</span> avatarView = <span class="tk-type">UIImageView</span>()
+
+    <span class="tk-kw">override</span> <span class="tk-kw">func</span> viewDidLoad() {
+        <span class="tk-kw">super</span>.viewDidLoad()
+        avatarView.translatesAutoresizingMaskIntoConstraints = <span class="tk-kw">false</span>
+        view.addSubview(avatarView)
+
+        <span class="tk-kw">let</span> guide = view.safeAreaLayoutGuide     <span class="tk-com">// tránh notch và home indicator</span>
+        <span class="tk-type">NSLayoutConstraint</span>.activate([
+            avatarView.topAnchor.constraint(equalTo: guide.topAnchor, constant: <span class="tk-num">16</span>),
+            avatarView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            avatarView.widthAnchor.constraint(equalToConstant: <span class="tk-num">80</span>),
+            avatarView.heightAnchor.constraint(equalTo: avatarView.widthAnchor)
+        ])
+        print(avatarView.bounds.width)           <span class="tk-com">// 0: chưa layout xong</span>
+    }
+
+    <span class="tk-kw">override</span> <span class="tk-kw">func</span> viewDidLayoutSubviews() {
+        <span class="tk-kw">super</span>.viewDidLayoutSubviews()
+        avatarView.layer.cornerRadius = avatarView.bounds.width / <span class="tk-num">2</span>  <span class="tk-com">// 40: đã có kích thước thật</span>
+        avatarView.clipsToBounds = <span class="tk-kw">true</span>
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-q43">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-q42.html"><span class="muted small">← Câu trước</span><span>UICollectionView khác UITableView ở điểm nào? Khi nào bạn chọn cái nào, và UICo…</span></a>
+  <a class="pager-next" href="../s/ios-fre-q44.html"><span class="muted small">Câu sau →</span><span>Trong SwiftUI, $name khác name thế nào? Vì sao TextField cần $name còn Text thì…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q12.html">UITableViewDataSource và UITableViewDelegate khác nhau thế nào? Để hiển thị một danh sách đơn giản cần cài đặt những method nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q13.html">@IBOutlet và @IBAction là gì? Vì sao đổi tên một biến outlet xong thì app crash với lỗi &quot;this class is not key value coding-compliant for the key…&quot;?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q14.html">Dựng UI bằng storyboard, xib hay viết code khác nhau thế nào? Dự án nhiều người cùng làm thì bạn chọn cách nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q30.html">Vì sao UITableView tái sử dụng cell (dequeueReusableCell)? Lỗi nào hay gặp nếu không cấu hình lại cell đầy đủ?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

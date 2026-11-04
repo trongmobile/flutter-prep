@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Middle: Đồng nghiệp hỏi @ViewBuilder thực chất là gì mà trong VStack { ... } viết được…</title>
+<meta name="description" content="@resultBuilder là một type có các static method; compiler biến chuỗi câu lệnh trong closure thành các lời gọi tới chúng. buildBlock gom các thành phần thành…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-q45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle: Đồng nghiệp hỏi @ViewBuilder thực chất là gì mà trong VStack { ... } viết được…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-q45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Đồng nghiệp hỏi @ViewBuilder thực chất là gì mà…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-q45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Đồng nghiệp hỏi @ViewBuilder thực chất là gì mà…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Đồng nghiệp hỏi <code>@ViewBuilder</code> thực chất là gì mà trong <code>VStack { ... }</code> viết được nhiều view liền nhau, có cả <code>if</code>/<code>switch</code> mà không cần <code>return</code>. Result builder hoạt động thế nào, và bạn tự viết một DSL nhỏ (vd. dựng menu) ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>@resultBuilder</code> là một type có các static method; compiler biến chuỗi câu lệnh trong closure thành các lời gọi tới chúng. <code>buildBlock</code> gom các thành phần thành một giá trị, <code>buildExpression</code> (tuỳ chọn) chuyển kiểu từng biểu thức, <code>buildOptional</code> xử lý <code>if</code> không có <code>else</code>, <code>buildEither(first:)</code> và <code>buildEither(second:)</code> xử lý <code>if/else</code> và <code>switch</code>, <code>buildArray</code> xử lý <code>for ... in</code>, <code>buildLimitedAvailability</code> xử lý <code>if #available</code>, <code>buildFinalResult</code> đổi kết quả trung gian thành kiểu cuối. <code>@ViewBuilder</code> là result builder của SwiftUI: nhiều view liền nhau thành <code>TupleView</code>, <code>if/else</code> thành <code>_ConditionalContent</code>, nhờ vậy SwiftUI giữ được cấu trúc view để diff. Giới hạn đến từ cách builder cụ thể được khai báo chứ không phải từ Swift: <code>buildBlock</code> có số tham số cố định nên một closure <code>@ViewBuilder</code> từng chỉ nhận tối đa 10 view con trực tiếp; gặp lỗi này thì bọc bớt vào <code>Group</code> hoặc tách subview. Khi tự viết DSL, mỗi dạng câu lệnh cần overload tương ứng: thiếu <code>buildOptional</code> thì <code>if</code> không có <code>else</code> không biên dịch được, thiếu <code>buildEither</code> thì <code>if/else</code> cũng vậy. Lỗi biên dịch bên trong block thường hiện thành thông báo khó hiểu, nên khi gặp hãy tách từng phần ra kiểm tra.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">MenuItem</span> { <span class="tk-kw">let</span> title: <span class="tk-type">String</span> }
+
+<span class="tk-ann">@resultBuilder</span>
+<span class="tk-kw">enum</span> <span class="tk-type">MenuBuilder</span> {
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildExpression(_ item: <span class="tk-type">MenuItem</span>) -&gt; [<span class="tk-type">MenuItem</span>] { [item] }        <span class="tk-com">// mỗi dòng MenuItem(...)</span>
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildBlock(_ parts: [<span class="tk-type">MenuItem</span>]...) -&gt; [<span class="tk-type">MenuItem</span>] { parts.flatMap { $<span class="tk-num">0</span> } }
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildOptional(_ items: [<span class="tk-type">MenuItem</span>]?) -&gt; [<span class="tk-type">MenuItem</span>] { items ?? [] } <span class="tk-com">// if không có else</span>
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildEither(first items: [<span class="tk-type">MenuItem</span>]) -&gt; [<span class="tk-type">MenuItem</span>] { items }      <span class="tk-com">// if/else, switch</span>
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildEither(second items: [<span class="tk-type">MenuItem</span>]) -&gt; [<span class="tk-type">MenuItem</span>] { items }
+    <span class="tk-kw">static</span> <span class="tk-kw">func</span> buildArray(_ groups: [[<span class="tk-type">MenuItem</span>]]) -&gt; [<span class="tk-type">MenuItem</span>] { groups.flatMap { $<span class="tk-num">0</span> } } <span class="tk-com">// for ... in</span>
+}
+
+<span class="tk-kw">func</span> makeMenu(<span class="tk-ann">@MenuBuilder</span> _ content: () -&gt; [<span class="tk-type">MenuItem</span>]) -&gt; [<span class="tk-type">MenuItem</span>] { content() }
+
+<span class="tk-kw">let</span> isAdmin = <span class="tk-kw">true</span>
+<span class="tk-kw">let</span> tags = [<span class="tk-str">&quot;Khuyến mãi&quot;</span>, <span class="tk-str">&quot;Mới về&quot;</span>]
+
+<span class="tk-kw">let</span> menu = makeMenu {
+    <span class="tk-type">MenuItem</span>(title: <span class="tk-str">&quot;Trang chủ&quot;</span>)
+    <span class="tk-kw">if</span> isAdmin { <span class="tk-type">MenuItem</span>(title: <span class="tk-str">&quot;Quản trị&quot;</span>) }
+    <span class="tk-kw">for</span> tag <span class="tk-kw">in</span> tags { <span class="tk-type">MenuItem</span>(title: tag) }
+}
+<span class="tk-com">// menu.map(\.title) == [&quot;Trang chủ&quot;, &quot;Quản trị&quot;, &quot;Khuyến mãi&quot;, &quot;Mới về&quot;]</span></code></pre>
+        <p class="doc-link"><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.swift.org ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-q45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-q44.html"><span class="muted small">← Câu trước</span><span>App SwiftUI có luồng nhiều màn (danh sách → chi tiết → đánh giá) dùng Navigatio…</span></a>
+  <a class="pager-next" href="../s/ios-mid-q46.html"><span class="muted small">Câu sau →</span><span>ViewModel có isLoading, items, error là ba property riêng nên UI thỉnh thoảng h…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q12.html">Trong code review bạn thấy func makeRepository() -&gt; any UserRepository ở chỗ này và func render(_ shape: some Shape) ở chỗ khác. some và any khác nhau thế nào, khi nào chọn cái nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q13.html">Array, Dictionary của Swift là value type nhưng gán qua lại rất rẻ nhờ copy-on-write. Nếu bạn tự viết một struct bọc storage là class (vd. một buffer lớn), làm sao để nó cũng có copy-on-write?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q14.html">Bạn muốn các property như volume, progress luôn bị giới hạn trong một khoảng giá trị mà không phải lặp code ở từng setter. Viết property wrapper thế nào, và projectedValue (truy cập qua $) dùng để làm gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q26.html">Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt lỗi khắp nơi, hàm trả Optional để báo thất bại, completion (Result&lt;T, Error&gt;) -&gt; Void, và fatalError ở chỗ không chắc. Bạn chuẩn hoá xử lý lỗi trong Swift thế nào: throws, Result, typed throws, LocalizedError, và khi nào dùng try?, try!?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q29.html">App hiển thị giờ đặt hàng lệch 7 tiếng ở một số máy, DateFormatter tạo trong cellForRow làm cuộn chậm, và giá tiền hiện 1,000.00 thay vì 1.000 ₫ trên máy đặt ngôn ngữ khác. Bạn xử lý Date, DateFormatter, Locale và TimeZone đúng thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q30.html">Một protocol có extension cung cấp implementation mặc định. Struct conform ghi đè method đó, nhưng khi gọi qua biến kiểu protocol thì lại chạy bản mặc định trong extension chứ không phải bản của struct. Vì sao, và static dispatch khác dynamic dispatch thế nào trong Swift?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

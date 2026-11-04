@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Junior: Sau khi phát hành, Sentry báo một lỗi mới tăng nhanh: TypeError: Canno…</title>
+<meta name="description" content="Trước hết đánh giá mức độ: bao nhiêu người dùng, từ bản nào, hệ điều hành và dòng máy nào, có chặn luồng quan trọng như thanh toán không; báo ngay lead và PM…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-q46.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior: Sau khi phát hành, Sentry báo một lỗi mới tăng nhanh: TypeError: Canno…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-jun-q46.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Sau khi phát hành, Sentry báo một lỗi mới tăng…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-q46.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Sau khi phát hành, Sentry báo một lỗi mới tăng…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/soft/">Behavioral</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Sau khi phát hành, Sentry báo một lỗi mới tăng nhanh: <code>TypeError: Cannot read property &#39;id&#39; of undefined</code> ở màn Checkout, ảnh hưởng khoảng 3% người dùng. Bạn xử lý thế nào từ lúc nhận cảnh báo đến khi đóng sự cố, và chọn giữa hotfix qua store, OTA hay chờ bản sau ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết đánh giá mức độ: bao nhiêu người dùng, từ bản nào, hệ điều hành và dòng máy nào, có chặn luồng quan trọng như thanh toán không; báo ngay lead và PM thay vì âm thầm sửa. Tiếp theo đọc stack trace: bản release đã minify nên cần source map được upload đúng theo phiên bản (release/dist trong Sentry) mới ra tên file và dòng thật; xem thêm breadcrumbs, thông tin thiết bị và dữ liệu đi kèm. Sau đó tái hiện bằng đúng bản release và đúng điều kiện (dữ liệu server trả về, mạng, quyền), nếu được thì viết test tái hiện luôn. Chọn cách phát hành theo mức khẩn cấp: lỗi thuần JS và app có OTA (ví dụ EAS Update) thì đẩy bản sửa cho một phần nhỏ người dùng, theo dõi rồi mở rộng; lỗi ở phần native hoặc không dùng OTA thì hotfix qua store (Android phát hành theo phần trăm, iOS xin Expedited Review khi thật sự nghiêm trọng); lỗi nhẹ thì đưa vào bản kế tiếp. Nếu có feature flag hoặc remote config thì tắt tính năng để giảm thiệt hại ngay. Sau khi sửa, theo dõi Sentry xem số lỗi giảm thật không, rồi viết post-mortem ngắn: nguyên nhân gốc, vì sao lọt qua review và test, việc phòng ngừa (thêm test, kiểm tra null, cảnh báo sớm). Tập trung vào quy trình, không đổ lỗi cá nhân.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-q46">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-q45.html"><span class="muted small">← Câu trước</span><span>Người dùng vào vùng sóng yếu, màn hình quay spinner mãi vì fetch không bao giờ…</span></a>
+  <a class="pager-next" href="../s/rn-jun-q47.html"><span class="muted small">Câu sau →</span><span>Nút &quot;Gọi hotline&quot;, &quot;Mở app đối tác&quot; và &quot;Mở cài đặt để cấp quyền&quot; dùng Linking.o…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Behavioral</h2><a class="section-sub" href="../phong-van/react-native/chu-de/soft/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q37.html">Bạn merge main vào nhánh feature thì dính conflict ở yarn.lock (hoặc package-lock.json), Podfile.lock và cả project.pbxproj. Bạn xử lý thế nào, và team làm gì để ít gặp conflict kiểu này?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-fre-q49.html">Hãy giới thiệu một dự án React Native bạn đã làm (kể cả app tự học): vì sao bạn chọn React Native, bạn tự làm phần nào, và khó khăn lớn nhất bạn gặp là gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-mid-q40.html">Bạn là middle được giao review PR của một bạn junior: PR 800 dòng, màn hình mới chạy được nhưng logic gọi API nằm lẫn trong component và các useEffect đầy lỗi. Bạn review thế nào, checklist riêng cho React Native gồm gì, và góp ý ra sao để bạn ấy tiến bộ mà không nản?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q41.html">Sáng thứ Hai, Sentry cho thấy crash-free sessions tụt từ 99,5% xuống 96% sau bản phát hành hôm Chủ nhật (có cả một bản OTA đẩy cùng lúc). Bạn xử lý sự cố này thế nào từ phút đầu tới khi đóng sự cố?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-sen-q23.html">Một bản OTA vừa đẩy lên production làm app crash ngay khi mở ở khoảng 20% user. Bạn xử lý sự cố này thế nào, cả lúc đang cháy lẫn sau đó?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q24.html">App đang chạy bản React Native cũ hơn hiện tại nhiều phiên bản, nhưng team sản phẩm không muốn dừng làm tính năng để nâng cấp. Bạn thuyết phục và tổ chức việc này thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

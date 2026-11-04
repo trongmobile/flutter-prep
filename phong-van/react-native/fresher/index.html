@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Fresher (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<title>Câu hỏi phỏng vấn React Native Fresher (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · react native · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Fresher</h1>
-  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/react-native/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -62,14 +62,18 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">10</span></li>
-    <li><a href="#react">React &amp; Hooks</a> <span class="count">8</span></li>
-    <li><a href="#components">Component &amp; Styling</a> <span class="count">8</span></li>
+    <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">11</span></li>
+    <li><a href="#react">React &amp; Hooks</a> <span class="count">10</span></li>
+    <li><a href="#components">Component &amp; Styling</a> <span class="count">10</span></li>
     <li><a href="#state">State Management</a> <span class="count">1</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
-    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">1</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">4</span></li>
+    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">2</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
     <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">3</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">1</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">1</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -284,6 +288,31 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q38.html">Dữ liệu từ API có lúc thiếu <code>address</code>, có lúc <code>discount</code> bằng 0. Viết <code>user.address.city</code> thì crash, còn <code>discount || 10</code> lại cho kết quả sai. Optional chaining <code>?.</code> và nullish coalescing <code>??</code> giải quyết việc này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>?.</code> dừng cả biểu thức và trả về <code>undefined</code> khi gặp <code>null</code>/<code>undefined</code>, thay vì ném <code>TypeError: Cannot read properties of undefined</code>. Dùng được cho thuộc tính <code>user?.address?.city</code>, phần tử <code>items?.[0]</code> và gọi hàm tuỳ chọn <code>onPress?.()</code>. Nó chỉ chặn <code>null</code>/<code>undefined</code>, không che các lỗi khác, và đừng rải <code>?.</code> khắp nơi: với dữ liệu bắt buộc phải có thì nên để lỗi lộ ra hoặc kiểm tra một lần ở biên (ngay sau khi gọi API). <code>??</code> chỉ lấy vế phải khi vế trái là <code>null</code> hoặc <code>undefined</code>, còn <code>||</code> lấy vế phải với mọi giá trị falsy. Vì vậy <code>quantity ?? 1</code> giữ nguyên <code>0</code>, trong khi <code>quantity || 1</code> biến <code>0</code> thành 1; tương tự với chuỗi rỗng <code>&#39;&#39;</code> (người dùng cố ý xoá tên) và <code>false</code> (công tắc đang tắt). Hai toán tử hay đi cùng nhau: <code>user?.nickname ?? &#39;Khách&#39;</code>. Lưu ý không trộn <code>??</code> với <code>||</code> hoặc <code>&amp;&amp;</code> trong một biểu thức mà thiếu ngoặc, vì đó là lỗi cú pháp.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">User</span> = {
+  name: <span class="tk-kw">string</span>;
+  address?: { city?: <span class="tk-kw">string</span> };
+  settings?: { volume?: <span class="tk-kw">number</span>; notifications?: <span class="tk-kw">boolean</span> };
+};
+
+<span class="tk-kw">function</span> summarize(user: <span class="tk-type">User</span>, onDone?: () =&gt; <span class="tk-kw">void</span>) {
+  <span class="tk-kw">const</span> city = user.address?.city ?? <span class="tk-str">&#39;Chưa cập nhật&#39;</span>;
+  <span class="tk-kw">const</span> volume = user.settings?.volume ?? <span class="tk-num">50</span>;      <span class="tk-com">// volume = 0 vẫn giữ 0</span>
+  <span class="tk-kw">const</span> wrong = user.settings?.volume || <span class="tk-num">50</span>;       <span class="tk-com">// volume = 0 bị đổi thành 50</span>
+  <span class="tk-kw">const</span> notify = user.settings?.notifications ?? <span class="tk-kw">true</span>; <span class="tk-com">// false vẫn giữ false</span>
+
+  onDone?.(); <span class="tk-com">// chỉ gọi khi prop được truyền</span>
+  <span class="tk-kw">return</span> { city, volume, wrong, notify };
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="react">
@@ -442,6 +471,67 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       &lt;<span class="tk-type">Button</span> title={<span class="tk-str">`Bấm ${count}`</span>} onPress={() =&gt; setCount(count + <span class="tk-num">1</span>)} /&gt;
       {<span class="tk-com">/* Bọc React.memo: title không đổi nên Child không render lại khi count đổi */</span>}
       &lt;<span class="tk-type">Child</span> title=<span class="tk-str">&quot;Xin chào&quot;</span> /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q39.html">Danh sách todo dùng <code>const [todos, setTodos] = useState&lt;Todo[]&gt;([])</code>. Viết <code>todos.push(newTodo); setTodos(todos);</code> thì giao diện không cập nhật. Vì sao không được sửa state trực tiếp, và cập nhật mảng hay object trong state đúng cách thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">React so sánh state mới với state cũ bằng <code>Object.is</code>, tức so sánh tham chiếu với mảng và object. <code>todos.push(...)</code> sửa ngay mảng cũ rồi truyền lại đúng tham chiếu đó cho <code>setTodos</code>, nên React thấy &quot;không đổi&quot; và bỏ qua lần render. Sửa trực tiếp còn làm hỏng <code>React.memo</code> và các dependency của <code>useEffect</code>, vì chúng cũng dựa vào so sánh tham chiếu. Nguyên tắc: coi state là chỉ đọc, luôn tạo bản sao mới. Với mảng: thêm bằng <code>[...todos, newTodo]</code>, xoá bằng <code>filter</code>, sửa một phần tử bằng <code>map</code> (trả về bản sao của đúng phần tử cần đổi, giữ nguyên các phần tử còn lại). Với object: <code>{ ...user, name: &#39;Bình&#39; }</code>; object lồng nhau phải spread từng tầng: <code>{ ...user, address: { ...user.address, city } }</code>. Spread chỉ là shallow copy nên tầng sâu rất dễ quên; khi cấu trúc lồng quá sâu có thể dùng Immer (Redux Toolkit đã dùng sẵn). Khi giá trị mới phụ thuộc giá trị cũ, nên dùng dạng hàm <code>setTodos((prev) =&gt; ...)</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Todo</span> = { id: <span class="tk-kw">number</span>; title: <span class="tk-kw">string</span>; done: <span class="tk-kw">boolean</span> };
+
+<span class="tk-kw">const</span> [todos, setTodos] = useState&lt;<span class="tk-type">Todo</span>[]&gt;([]);
+
+<span class="tk-com">// SAI: sửa mảng cũ, tham chiếu không đổi nên React bỏ qua lần render</span>
+<span class="tk-com">// todos.push({ id: 1, title: &#39;Học RN&#39;, done: false });</span>
+<span class="tk-com">// setTodos(todos);</span>
+
+<span class="tk-kw">const</span> add = (todo: <span class="tk-type">Todo</span>) =&gt; setTodos((prev) =&gt; [...prev, todo]);
+<span class="tk-kw">const</span> remove = (id: <span class="tk-kw">number</span>) =&gt; setTodos((prev) =&gt; prev.filter((t) =&gt; t.id !== id));
+<span class="tk-kw">const</span> toggle = (id: <span class="tk-kw">number</span>) =&gt;
+  setTodos((prev) =&gt; prev.map((t) =&gt; (t.id === id ? { ...t, done: !t.done } : t)));
+
+<span class="tk-com">// Object lồng nhau: spread từng tầng</span>
+<span class="tk-kw">const</span> [user, setUser] = useState({ name: <span class="tk-str">&#39;An&#39;</span>, address: { city: <span class="tk-str">&#39;Hà Nội&#39;</span> } });
+<span class="tk-kw">const</span> moveTo = (city: <span class="tk-kw">string</span>) =&gt; setUser((u) =&gt; ({ ...u, address: { ...u.address, city } }));</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q40.html">Màn hình có <code>FilterBar</code> (chọn danh mục) và <code>ProductList</code> (hiển thị sản phẩm) là hai component anh em, cả hai cần dùng chung danh mục đang được chọn. State nên đặt ở đâu và hai component trao đổi với nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hai component anh em không truyền dữ liệu trực tiếp cho nhau, vì dữ liệu trong React chảy một chiều từ cha xuống con qua props. Cách làm là &quot;nâng state lên&quot; (lifting state up): đặt <code>useState</code> ở component cha gần nhất của cả hai, truyền giá trị xuống qua props, đồng thời truyền thêm một callback như <code>onSelect</code> để con báo ngược lên. Con gọi callback, cha cập nhật state, cả hai con cùng render lại với giá trị mới, và chỉ có một nguồn sự thật duy nhất. Hai lỗi hay gặp ở người mới: mỗi con giữ một <code>useState</code> riêng rồi cố đồng bộ bằng <code>useEffect</code>, dễ lệch và render thừa; hoặc lưu cả danh sách đã lọc vào state trong khi có thể tính ngay lúc render từ state gốc (<code>PRODUCTS.filter(...)</code>). Cách này đủ dùng khi dữ liệu chỉ đi qua một hai tầng. Chỉ khi phải truyền qua nhiều tầng trung gian không dùng đến, hoặc nhiều màn hình cùng cần, mới cân nhắc Context hay Zustand/Redux.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Category</span> = <span class="tk-str">&#39;all&#39;</span> | <span class="tk-str">&#39;shoes&#39;</span> | <span class="tk-str">&#39;hats&#39;</span>;
+
+<span class="tk-kw">function</span> <span class="tk-type">ProductScreen</span>() {
+  <span class="tk-kw">const</span> [category, setCategory] = useState&lt;<span class="tk-type">Category</span>&gt;(<span class="tk-str">&#39;all&#39;</span>); <span class="tk-com">// state nằm ở cha</span>
+  <span class="tk-kw">const</span> visible = category === <span class="tk-str">&#39;all&#39;</span> ? <span class="tk-type">PRODUCTS</span> : <span class="tk-type">PRODUCTS</span>.filter((p) =&gt; p.category === category);
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">FilterBar</span> selected={category} onSelect={setCategory} /&gt;
+      &lt;<span class="tk-type">ProductList</span> products={visible} /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">FilterBar</span>({ selected, onSelect }: { selected: <span class="tk-type">Category</span>; onSelect: (c: <span class="tk-type">Category</span>) =&gt; <span class="tk-kw">void</span> }) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span> style={{ flexDirection: <span class="tk-str">&#39;row&#39;</span> }}&gt;
+      {([<span class="tk-str">&#39;all&#39;</span>, <span class="tk-str">&#39;shoes&#39;</span>, <span class="tk-str">&#39;hats&#39;</span>] <span class="tk-kw">as</span> <span class="tk-kw">const</span>).map((c) =&gt; (
+        &lt;<span class="tk-type">Pressable</span> key={c} onPress={() =&gt; onSelect(c)}&gt;
+          &lt;<span class="tk-type">Text</span> style={{ fontWeight: c === selected ? <span class="tk-str">&#39;bold&#39;</span> : <span class="tk-str">&#39;normal&#39;</span> }}&gt;{c}&lt;/<span class="tk-type">Text</span>&gt;
+        &lt;/<span class="tk-type">Pressable</span>&gt;
+      ))}
     &lt;/<span class="tk-type">View</span>&gt;
   );
 }</code></pre>
@@ -623,6 +713,73 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q41.html">Bạn cần làm bốn thứ: hộp thoại xác nhận xoá, vòng xoay chờ khi đang tải, công tắc bật thông báo và một popup chọn bộ lọc. <code>Alert</code>, <code>Modal</code>, <code>ActivityIndicator</code> và <code>Switch</code> dùng cho trường hợp nào, và <code>Modal</code> có những bẫy gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Alert.alert(title, message, buttons)</code> gọi hộp thoại native của hệ điều hành, hợp cho xác nhận ngắn. Nút có <code>style: &#39;cancel&#39;</code> hoặc <code>&#39;destructive&#39;</code> (hai kiểu này chủ yếu có tác dụng trên iOS), Android tối đa 3 nút và bấm ra ngoài mặc định không đóng trừ khi đặt <code>cancelable: true</code>; giao diện gần như không tuỳ biến được. <code>Modal</code> thì bạn tự vẽ nội dung và nó hiện chồng lên toàn màn hình, hợp cho popup chọn bộ lọc hay form nhỏ; điều khiển bằng prop <code>visible</code>, thêm <code>transparent</code> nếu muốn thấy nền phía sau mờ. Bẫy lớn nhất: trên Android bắt buộc có <code>onRequestClose</code> để xử lý nút Back; thiếu thì không đóng được và React Native cảnh báo. Ngoài ra <code>Modal</code> nằm trên cùng nên toast hay overlay vẽ ở component khác thường bị che. <code>ActivityIndicator</code> là vòng xoay báo đang tải (<code>size</code>, <code>color</code>, <code>animating</code>), thường hiển thị có điều kiện <code>{loading &amp;&amp; &lt;ActivityIndicator /&gt;}</code>. <code>Switch</code> là công tắc dạng controlled: phải truyền <code>value</code> và cập nhật state trong <code>onValueChange</code>, nếu không công tắc sẽ bật rồi tự nhảy lại trạng thái cũ.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> confirmDelete = (id: <span class="tk-kw">number</span>) =&gt;
+  <span class="tk-type">Alert</span>.alert(<span class="tk-str">&#39;Xoá đơn hàng?&#39;</span>, <span class="tk-str">&#39;Hành động này không thể hoàn tác.&#39;</span>, [
+    { text: <span class="tk-str">&#39;Huỷ&#39;</span>, style: <span class="tk-str">&#39;cancel&#39;</span> },
+    { text: <span class="tk-str">&#39;Xoá&#39;</span>, style: <span class="tk-str">&#39;destructive&#39;</span>, onPress: () =&gt; deleteOrder(id) },
+  ]);
+
+<span class="tk-kw">function</span> <span class="tk-type">FilterModal</span>() {
+  <span class="tk-kw">const</span> [open, setOpen] = useState(<span class="tk-kw">false</span>);
+  <span class="tk-kw">const</span> [notify, setNotify] = useState(<span class="tk-kw">true</span>);
+
+  <span class="tk-kw">return</span> (
+    &lt;&gt;
+      &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Bộ lọc&quot;</span> onPress={() =&gt; setOpen(<span class="tk-kw">true</span>)} /&gt;
+      &lt;<span class="tk-type">Modal</span> visible={open} animationType=<span class="tk-str">&quot;slide&quot;</span> transparent onRequestClose={() =&gt; setOpen(<span class="tk-kw">false</span>)}&gt;
+        &lt;<span class="tk-type">View</span> style={styles.backdrop}&gt;
+          &lt;<span class="tk-type">View</span> style={styles.sheet}&gt;
+            &lt;<span class="tk-type">Switch</span> value={notify} onValueChange={setNotify} /&gt;
+            &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Đóng&quot;</span> onPress={() =&gt; setOpen(<span class="tk-kw">false</span>)} /&gt;
+          &lt;/<span class="tk-type">View</span>&gt;
+        &lt;/<span class="tk-type">View</span>&gt;
+      &lt;/<span class="tk-type">Modal</span>&gt;
+    &lt;/&gt;
+  );
+}
+
+<span class="tk-com">// Khi đang tải</span>
+<span class="tk-com">// {loading &amp;&amp; &lt;ActivityIndicator size=&quot;large&quot; /&gt;}</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q42.html">Màn Danh bạ cần hiển thị các liên hệ theo nhóm chữ cái (A, B, C…) kèm tiêu đề từng nhóm. Dùng <code>SectionList</code> hay <code>FlatList</code>, dữ liệu phải có dạng nào, và <code>stickySectionHeadersEnabled</code> để làm gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>SectionList</code> là phiên bản của <code>FlatList</code> dành cho dữ liệu chia nhóm, cùng cơ chế ảo hoá (chỉ render phần gần màn hình). Dữ liệu truyền qua prop <code>sections</code> là mảng các object dạng <code>{ title, data: Item[] }</code>: tên <code>data</code> là bắt buộc, các trường còn lại như <code>title</code> tự đặt. <code>renderItem</code> vẽ từng dòng, <code>renderSectionHeader</code> nhận <code>{ section }</code> để vẽ tiêu đề nhóm, và <code>keyExtractor</code> trả về key cho item. <code>stickySectionHeadersEnabled</code> làm tiêu đề nhóm dính ở đầu màn hình cho tới khi nhóm sau đẩy nó đi; mặc định chỉ bật trên iOS vì đó là kiểu quen thuộc của nền tảng này. Nếu dữ liệu chỉ có một cấp thì dùng <code>FlatList</code> cho đơn giản; có thể giả lập nhóm bằng <code>FlatList</code> kèm item loại &quot;header&quot; và <code>stickyHeaderIndices</code>, nhưng bạn phải tự trộn dữ liệu và xử lý hai loại item. Dữ liệu từ API thường là mảng phẳng nên cần gom nhóm trước khi đưa vào, và quên đổi sang đúng cấu trúc <code>{ title, data }</code> là lý do thường gặp khiến danh sách trống.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Contact</span> = { id: <span class="tk-kw">string</span>; name: <span class="tk-kw">string</span> };
+<span class="tk-kw">type</span> <span class="tk-type">Group</span> = { title: <span class="tk-kw">string</span>; data: <span class="tk-type">Contact</span>[] };
+
+<span class="tk-com">// Gom mảng phẳng thành các nhóm theo chữ cái đầu</span>
+<span class="tk-kw">function</span> groupByInitial(contacts: <span class="tk-type">Contact</span>[]): <span class="tk-type">Group</span>[] {
+  <span class="tk-kw">const</span> map = <span class="tk-kw">new</span> <span class="tk-type">Map</span>&lt;<span class="tk-kw">string</span>, <span class="tk-type">Contact</span>[]&gt;();
+  <span class="tk-kw">for</span> (<span class="tk-kw">const</span> c <span class="tk-kw">of</span> [...contacts].sort((a, b) =&gt; a.name.localeCompare(b.name))) {
+    <span class="tk-kw">const</span> key = c.name[<span class="tk-num">0</span>].toUpperCase();
+    map.<span class="tk-kw">set</span>(key, [...(map.<span class="tk-kw">get</span>(key) ?? []), c]);
+  }
+  <span class="tk-kw">return</span> [...map].map(([title, data]) =&gt; ({ title, data }));
+}
+
+&lt;<span class="tk-type">SectionList</span>
+  sections={groupByInitial(contacts)}
+  keyExtractor={(item) =&gt; item.id}
+  renderItem={({ item }) =&gt; &lt;<span class="tk-type">Text</span> style={styles.row}&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;}
+  renderSectionHeader={({ section }) =&gt; &lt;<span class="tk-type">Text</span> style={styles.header}&gt;{section.title}&lt;/<span class="tk-type">Text</span>&gt;}
+  stickySectionHeadersEnabled
+/&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="state">
@@ -705,6 +862,50 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q43.html">Màn Chi tiết cần hiện tên sản phẩm làm tiêu đề (chỉ biết sau khi gọi API) và một nút &quot;Chia sẻ&quot; ở bên phải header. Tuỳ biến header với React Navigation thế nào, <code>options</code> khác <code>navigation.setOptions</code> ra sao, và khi nào dùng <code>useNavigation</code>, <code>useRoute</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi <code>Screen</code> có prop <code>options</code> để cấu hình header: <code>title</code>, <code>headerRight</code>, <code>headerLeft</code>, <code>headerShown</code>... Giá trị tĩnh viết thẳng <code>options={{ title: &#39;Chi tiết&#39; }}</code>; giá trị theo params thì truyền hàm <code>options={({ route }) =&gt; ({ title: route.params.name })}</code>. Khi giá trị chỉ có sau khi dữ liệu tải xong, hoặc phụ thuộc state của chính màn hình (nút Lưu bật/tắt theo form), dùng <code>navigation.setOptions({ ... })</code> trong <code>useLayoutEffect</code> hoặc <code>useEffect</code>, và nhớ đưa state vào dependency để <code>headerRight</code> không giữ giá trị cũ. Không gọi <code>setOptions</code> thẳng trong thân component vì đó là side effect lúc render. Component được khai báo làm <code>Screen</code> đã nhận sẵn <code>navigation</code> và <code>route</code> qua props. <code>useNavigation()</code> dành cho component con nằm sâu hơn và không nhận props đó, ví dụ một nút quay lại dùng chung; <code>useRoute()</code> lấy <code>route</code> để đọc params. Cả hai hook chỉ chạy được bên trong cây của <code>NavigationContainer</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Props</span> = <span class="tk-type">NativeStackScreenProps</span>&lt;<span class="tk-type">RootStackParamList</span>, <span class="tk-str">&#39;Detail&#39;</span>&gt;;
+
+<span class="tk-kw">function</span> <span class="tk-type">DetailScreen</span>({ navigation, route }: <span class="tk-type">Props</span>) {
+  <span class="tk-kw">const</span> [product, setProduct] = useState&lt;<span class="tk-type">Product</span> | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+  useEffect(() =&gt; {
+    fetchProduct(route.params.id).then(setProduct);
+  }, [route.params.id]);
+
+  <span class="tk-com">// Tiêu đề và nút phụ thuộc dữ liệu tải sau: dùng setOptions</span>
+  useLayoutEffect(() =&gt; {
+    navigation.setOptions({
+      title: product?.name ?? <span class="tk-str">&#39;Đang tải...&#39;</span>,
+      headerRight: () =&gt; (
+        &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Chia sẻ&quot;</span> disabled={!product} onPress={() =&gt; <span class="tk-type">Share</span>.share({ message: product?.name ?? <span class="tk-str">&#39;&#39;</span> })} /&gt;
+      ),
+    });
+  }, [navigation, product]);
+
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">ProductDetail</span> product={product} /&gt;;
+}
+
+<span class="tk-com">// Giá trị theo params biết ngay: khai báo ở Screen</span>
+&lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span>
+  name=<span class="tk-str">&quot;Detail&quot;</span>
+  component={<span class="tk-type">DetailScreen</span>}
+  options={({ route }) =&gt; ({ title: route.params.name ?? <span class="tk-str">&#39;Chi tiết&#39;</span> })}
+/&gt;
+
+<span class="tk-com">// Component sâu hơn không nhận props navigation</span>
+<span class="tk-kw">function</span> <span class="tk-type">BackButton</span>() {
+  <span class="tk-kw">const</span> navigation = useNavigation();
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Quay lại&quot;</span> onPress={() =&gt; navigation.goBack()} /&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="native">
@@ -717,6 +918,24 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       <div class="model-answer">
         <div class="answer-text">React Native cho phép viết app bằng JavaScript/TypeScript với React, nhưng giao diện được dựng bằng view native thật của hệ điều hành: <code>&lt;View&gt;</code> thành <code>UIView</code> trên iOS và <code>ViewGroup</code> trên Android, <code>&lt;Text&gt;</code> thành <code>UILabel</code>/<code>TextView</code>. Code JS chạy trong một JS engine (Hermes) trên JS thread, tính ra cây UI rồi ra lệnh cho phía native tạo và cập nhật view, còn việc vẽ và cuộn do native đảm nhiệm nên cảm giác gần với app native. Khác app hybrid như Ionic hay Cordova: những app đó chạy giao diện HTML/CSS bên trong WebView và không có component native. Khác Flutter: Flutter tự vẽ mọi pixel bằng engine riêng (Skia/Impeller) và dùng ngôn ngữ Dart, còn React Native dùng component của nền tảng nên giao diện mang sẵn phong cách hệ thống và tận dụng được hệ sinh thái JavaScript/React. Đổi lại phải xử lý khác biệt giữa iOS và Android, và lớp giao tiếp JS với native (New Architecture dùng JSI thay cho bridge bất đồng bộ cũ). Khi cần tính năng native chưa có sẵn thì viết module bằng Swift/Kotlin.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q45.html">Bạn cài một thư viện có code native cho camera, chạy lại app thì màn hình đỏ báo <code>... could not be found. Verify that a module by this name is registered in the native binary</code>. Khi nào phải chạm vào code native trong dự án React Native, autolinking là gì, sau khi cài thư viện native cần làm gì, và vì sao có thư viện không chạy được trong Expo Go?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Phần lớn tính năng chỉ viết bằng JS/TS. Bạn mới phải mở <code>android/</code> hoặc <code>ios/</code> khi cần đổi cấu hình hệ thống (quyền trong <code>AndroidManifest.xml</code> và <code>Info.plist</code>, icon, splash, URL scheme, signing), thêm SDK native chưa có thư viện React Native, hoặc tự viết native module. Thư viện có code native phải được liên kết vào project native; từ RN 0.60 việc đó là autolinking: khi build, CLI quét <code>node_modules</code>, thấy thư viện nào có code native thì tự thêm vào Gradle và CocoaPods, không phải sửa tay. Sau khi cài, iOS cần chạy <code>pod install</code> trong <code>ios/</code>, rồi phải build lại app; chỉ reload JS hay Fast Refresh là không đủ vì file cài đặt (binary) đang chạy chưa chứa module mới, và đó chính là nguyên nhân của lỗi &quot;could not be found&quot;. Expo Go là app dựng sẵn chỉ chứa một tập module native cố định, nên thư viện native ngoài tập đó không có trong Expo Go; khi đó dùng development build (<code>npx expo run:android</code>, <code>npx expo run:ios</code> hoặc EAS Build) cùng <code>expo-dev-client</code>.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-com">&lt;!-- android/app/src/main/AndroidManifest.xml --&gt;</span>
+<span class="tk-kw">&lt;uses-permission</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.permission.CAMERA&quot;</span> <span class="tk-kw">/&gt;</span>
+
+<span class="tk-com">&lt;!-- ios/&lt;TênApp&gt;/Info.plist: thiếu mô tả này thì iOS đóng app ngay khi xin quyền camera --&gt;</span>
+<span class="tk-kw">&lt;key</span><span class="tk-kw">&gt;</span>NSCameraUsageDescription<span class="tk-kw">&lt;/key</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;string</span><span class="tk-kw">&gt;</span>Ứng dụng cần camera để quét mã đơn hàng<span class="tk-kw">&lt;/string</span><span class="tk-kw">&gt;</span>
+
+<span class="tk-com">&lt;!-- Sau khi cài thư viện native: cd ios &amp;&amp; pod install, rồi build lại app (không chỉ reload JS) --&gt;</span></code></pre>
         
       </div>
     </details>
@@ -790,6 +1009,32 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q44.html">Để tạo đơn hàng, app phải gửi <code>POST</code> kèm JSON và token. Bạn chọn method nào cho từng thao tác (xem, tạo, sửa, xoá), các nhóm status code <code>2xx</code>/<code>4xx</code>/<code>5xx</code> báo điều gì, và gửi JSON bằng <code>fetch</code> cần những header nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Method theo ý nghĩa: <code>GET</code> để đọc (không có body, không nên làm thay đổi dữ liệu), <code>POST</code> tạo mới, <code>PUT</code> thay thế toàn bộ tài nguyên, <code>PATCH</code> sửa một phần, <code>DELETE</code> xoá. Status code: <code>2xx</code> là thành công (<code>200 OK</code>, <code>201 Created</code>, <code>204 No Content</code> không có body); <code>4xx</code> là lỗi phía client (<code>400</code> dữ liệu sai, <code>401</code> chưa đăng nhập hoặc token hết hạn, <code>403</code> không đủ quyền, <code>404</code> không tìm thấy, <code>422</code> dữ liệu không hợp lệ); <code>5xx</code> là lỗi phía server, thường nên cho người dùng thử lại sau. Khi gửi JSON bằng <code>fetch</code> bạn cần ba việc: <code>JSON.stringify</code> cho <code>body</code> (truyền thẳng object sẽ thành chuỗi <code>[object Object]</code>), đặt header <code>Content-Type: application/json</code> để server biết cách đọc body (thiếu thì nhiều server trả <code>400</code> hoặc <code>415</code>), và gửi token qua header <code>Authorization: Bearer &lt;token&gt;</code> chứ không đặt trên URL vì URL hay bị ghi log. Với phản hồi <code>204</code> đừng gọi <code>response.json()</code> vì không có body, sẽ ném lỗi parse.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">OrderItem</span> = { productId: <span class="tk-kw">number</span>; qty: <span class="tk-kw">number</span> };
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> createOrder(token: <span class="tk-kw">string</span>, items: <span class="tk-type">OrderItem</span>[]) {
+  <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">`${API_URL}/orders`</span>, {
+    method: <span class="tk-str">&#39;POST&#39;</span>,
+    headers: {
+      <span class="tk-str">&#39;Content-Type&#39;</span>: <span class="tk-str">&#39;application/json&#39;</span>,
+      <span class="tk-type">Authorization</span>: <span class="tk-str">`Bearer ${token}`</span>,
+    },
+    body: <span class="tk-type">JSON</span>.stringify({ items }), <span class="tk-com">// phải stringify, không truyền thẳng object</span>
+  });
+
+  <span class="tk-kw">if</span> (res.status === <span class="tk-num">401</span>) <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(<span class="tk-str">&#39;Phiên đăng nhập hết hạn, hãy đăng nhập lại&#39;</span>);
+  <span class="tk-kw">if</span> (!res.ok) <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(<span class="tk-str">`Không tạo được đơn (HTTP ${res.status})`</span>);
+  <span class="tk-kw">return</span> res.json(); <span class="tk-com">// 201 Created, body là đơn hàng vừa tạo</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="tooling">
@@ -830,6 +1075,170 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
 
 <span class="tk-com">// Tên đăng ký phải khớp với tên mà phía native tìm khi khởi động</span>
 <span class="tk-type">AppRegistry</span>.registerComponent(appName, () =&gt; <span class="tk-type">App</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q46.html">Đồng nghiệp mới viết màn Home: <code>ScrollView</code> với <code>.map()</code> 500 sản phẩm, ảnh gốc rộng 4000px, <code>console.log</code> trong <code>renderItem</code> và toàn bộ state đặt ở <code>App</code>. App giật và nóng máy. Những lỗi hiệu năng cơ bản nào cần sửa trước?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đây là các lỗi hay gặp ở người mới, đều sửa được mà chưa cần công cụ phức tạp. (1) <code>ScrollView</code> kèm <code>.map()</code> tạo cả 500 view ngay từ đầu, nên dùng <code>FlatList</code> để chỉ render phần đang thấy. (2) Ảnh quá lớn: tải ảnh 4000px chỉ để hiện ô 100px làm tốn RAM giải mã, cuộn giật và có thể bị hệ điều hành kill vì hết bộ nhớ; hãy dùng thumbnail đúng kích thước từ server và đặt <code>width</code>/<code>height</code> rõ ràng cho ảnh mạng. (3) Trong danh sách, tránh để <code>renderItem</code> là hàm vô danh viết thẳng trong JSX: định nghĩa nó ngoài component hoặc bọc <code>useCallback</code>, và bọc dòng bằng <code>React.memo</code> để dòng không đổi thì không render lại. (4) <code>console.log</code> dày đặc ở chỗ chạy nhiều (như <code>renderItem</code> hay sự kiện cuộn) làm nghẽn luồng JS; xoá chúng, hoặc loại bỏ khi build production bằng <code>babel-plugin-transform-remove-console</code>. (5) State đặt quá cao (ở <code>App</code> hay ở cha của cả màn hình) khiến mỗi lần gõ phím cả cây render lại; hãy đưa state xuống component dùng nó. Nguyên tắc chung: đo trước khi tối ưu, đo trên bản release, và đừng rải <code>useMemo</code> khắp nơi khi chưa biết chỗ chậm.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> <span class="tk-type">ProductRow</span> = <span class="tk-type">React</span>.memo(<span class="tk-kw">function</span> <span class="tk-type">ProductRow</span>({ item }: { item: <span class="tk-type">Product</span> }) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span> style={styles.row}&gt;
+      {<span class="tk-com">/* ảnh thumbnail đúng kích thước hiển thị, không phải ảnh gốc 4000px */</span>}
+      &lt;<span class="tk-type">Image</span> source={{ uri: item.thumbUrl }} style={styles.thumb} /&gt;
+      &lt;<span class="tk-type">Text</span>&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+});
+
+<span class="tk-com">// Định nghĩa ngoài component để không tạo hàm mới mỗi lần render</span>
+<span class="tk-kw">function</span> renderProduct({ item }: <span class="tk-type">ListRenderItemInfo</span>&lt;<span class="tk-type">Product</span>&gt;) {
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">ProductRow</span> item={item} /&gt;;
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">HomeScreen</span>({ products }: { products: <span class="tk-type">Product</span>[] }) {
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">FlatList</span> data={products} renderItem={renderProduct} keyExtractor={(p) =&gt; <span class="tk-type">String</span>(p.id)} /&gt;;
+}
+
+<span class="tk-kw">const</span> styles = <span class="tk-type">StyleSheet</span>.create({
+  row: { flexDirection: <span class="tk-str">&#39;row&#39;</span>, alignItems: <span class="tk-str">&#39;center&#39;</span>, padding: <span class="tk-num">8</span> },
+  thumb: { width: <span class="tk-num">100</span>, height: <span class="tk-num">100</span>, marginRight: <span class="tk-num">12</span> },
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q47.html">Dự án React Native mới tạo đã có sẵn Jest. Viết test đầu tiên cho hàm <code>formatPrice(120000)</code> thế nào? Vì sao hàm thuần dễ test hơn component, và snapshot test là gì, có hạn chế gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Jest là test runner mặc định của React Native: template có sẵn cấu hình, file test đặt tên <code>*.test.ts(x)</code> hoặc nằm trong <code>__tests__/</code>, chạy bằng <code>npm test</code>. Một test gồm <code>test(&#39;mô tả&#39;, () =&gt; { ... })</code> (hoặc <code>it</code>), nhóm bằng <code>describe</code>, kiểm tra bằng <code>expect(actual).toBe(expected)</code>; <code>toBe</code> so sánh bằng <code>Object.is</code>, còn <code>toEqual</code> so sánh sâu cho object và mảng, <code>toThrow</code> cho lỗi. Hàm thuần (cùng đầu vào luôn ra cùng kết quả, không đụng mạng, thời gian hay state bên ngoài) chỉ cần gọi rồi so kết quả, không phải mock gì; nên tách logic như định dạng tiền, validate email, tính tổng giỏ hàng ra hàm riêng thay vì viết thẳng trong component. Test component phải render, phải mock module native nên nặng hơn nhiều. Snapshot test (<code>toMatchSnapshot()</code>) lưu kết quả render vào file <code>.snap</code> ở lần chạy đầu rồi so sánh ở các lần sau. Hạn chế: chỉ cần đổi UI hợp lệ là vỡ, nên dễ thành thói quen chạy <code>jest -u</code> mà không đọc diff; snapshot lớn rất khó review; và nó không kiểm tra hành vi (bấm nút có làm đúng việc không). Chỉ nên dùng cho đầu ra nhỏ, ổn định.</div>
+        <pre class="code-block"><code><span class="tk-com">// formatPrice.ts</span>
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> formatPrice(value: <span class="tk-kw">number</span>): <span class="tk-kw">string</span> {
+  <span class="tk-kw">const</span> digits = <span class="tk-type">Math</span>.round(value).toString().replace(/\<span class="tk-type">B</span>(?=(\d{<span class="tk-num">3</span>})+(?!\d))/g, <span class="tk-str">&#39;.&#39;</span>);
+  <span class="tk-kw">return</span> <span class="tk-str">`${digits} ₫`</span>;
+}
+
+<span class="tk-com">// formatPrice.test.ts</span>
+<span class="tk-kw">import</span> { formatPrice } <span class="tk-kw">from</span> <span class="tk-str">&#39;./formatPrice&#39;</span>;
+
+describe(<span class="tk-str">&#39;formatPrice&#39;</span>, () =&gt; {
+  test(<span class="tk-str">&#39;thêm dấu chấm ngăn cách hàng nghìn&#39;</span>, () =&gt; {
+    expect(formatPrice(<span class="tk-num">120000</span>)).toBe(<span class="tk-str">&#39;120.000 ₫&#39;</span>);
+  });
+
+  test(<span class="tk-str">&#39;làm tròn số lẻ&#39;</span>, () =&gt; {
+    expect(formatPrice(<span class="tk-num">1999.6</span>)).toBe(<span class="tk-str">&#39;2.000 ₫&#39;</span>);
+  });
+
+  test(<span class="tk-str">&#39;số nhỏ hơn 1000 không có dấu chấm&#39;</span>, () =&gt; {
+    expect(formatPrice(<span class="tk-num">0</span>)).toBe(<span class="tk-str">&#39;0 ₫&#39;</span>);
+  });
+});</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q48.html">App hiện màn hình đỏ <code>TypeError: undefined is not an object (evaluating &#39;user.name&#39;)</code>, còn thỉnh thoảng có hộp vàng ở cuối màn hình. Bạn đọc màn hình đỏ thế nào, LogBox đỏ và vàng khác nhau ra sao, và dùng những công cụ debug cơ bản nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Màn hình đỏ (LogBox) hiện khi có lỗi chưa được bắt hoặc <code>console.error</code>, và chỉ có ở bản dev. Đọc từ trên xuống: dòng đầu là loại lỗi cùng thông điệp (ở đây nghĩa là <code>user</code> đang <code>undefined</code> khi truy cập <code>.name</code>), phần Call Stack liệt kê chuỗi hàm; hãy tìm dòng đầu tiên thuộc file của bạn (bỏ qua <code>node_modules</code>) để biết file và số dòng, rồi tự hỏi vì sao biến đó chưa có dữ liệu, thường là do API chưa trả về lúc render lần đầu. Hộp vàng là cảnh báo (<code>console.warn</code> hoặc cảnh báo của React như thiếu <code>key</code>): app vẫn chạy nhưng nên sửa; <code>LogBox.ignoreLogs</code> chỉ ẩn thông báo chứ không sửa lỗi. Dev Menu mở bằng Cmd+D (iOS Simulator), Cmd+M hoặc Ctrl+M (Android Emulator), lắc máy thật hoặc nhấn <code>d</code> trong terminal Metro; từ đó có Reload, bật tắt Fast Refresh và mở DevTools. <code>console.log</code> xem ở tab Console của React Native DevTools (các bản RN cũ hơn còn in ra terminal Metro); trong DevTools còn đặt được breakpoint và có tab Components để xem cây component cùng props, state, hooks hiện tại. Mẹo: đặt log hoặc breakpoint ngay trước dòng lỗi để nhìn giá trị thật thay vì đoán.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">Profile</span>({ userId }: { userId: <span class="tk-kw">string</span> }) {
+  <span class="tk-kw">const</span> [user, setUser] = useState&lt;<span class="tk-type">User</span> | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+  useEffect(() =&gt; {
+    fetchUser(userId).then(setUser);
+  }, [userId]);
+
+  console.log(<span class="tk-str">&#39;Profile render, user =&#39;</span>, user); <span class="tk-com">// lần render đầu in ra null</span>
+
+  <span class="tk-com">// return &lt;Text&gt;{user.name}&lt;/Text&gt;; // lỗi: lúc render đầu user còn null</span>
+  <span class="tk-kw">if</span> (!user) <span class="tk-kw">return</span> &lt;<span class="tk-type">ActivityIndicator</span> /&gt;;
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{user.name}&lt;/<span class="tk-type">Text</span>&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q50.html">Project React Native mới chỉ có <code>App.tsx</code>, sau vài tuần mọi thứ dồn vào một thư mục <code>components/</code> hàng chục file và màn hình nào cũng tự gọi <code>fetch</code>. Bạn tổ chức thư mục thế nào, theo loại hay theo tính năng, và tách logic khỏi giao diện ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có hai kiểu phổ biến. Theo loại (<code>components/</code>, <code>screens/</code>, <code>hooks/</code>, <code>services/</code>) dễ hiểu với app nhỏ nhưng khi app lớn thì một tính năng nằm rải rác ở nhiều thư mục. Theo tính năng (<code>features/cart/</code>, <code>features/auth/</code>, mỗi thư mục có màn hình, component, hook, API riêng) giúp sửa hay xoá một tính năng chỉ trong một chỗ; thực tế hay kết hợp cả hai: <code>features/*</code> cho phần riêng và <code>components/</code> cho phần dùng chung như Button, Input. Nên đặt code trong <code>src/</code> để <code>android/</code> và <code>ios/</code> gọn, cùng các thư mục <code>api/</code>, <code>navigation/</code>, <code>hooks/</code>, <code>types/</code>, <code>constants/</code> (màu, kích thước, chuỗi hằng). Nguyên tắc tách: component chỉ lo hiển thị (nhận props, trả JSX); logic như gọi API, loading, error, validate đưa vào custom hook (<code>useProducts</code>) và tầng <code>api/</code>. Nhờ vậy màn hình ngắn dễ đọc, hook và hàm gọi API test được riêng, nhiều màn hình dùng lại được. Đừng gọi <code>fetch</code> thẳng trong component, và tránh để feature này import nội bộ của feature khác. Không có cấu trúc đúng duy nhất: chọn kiểu đơn giản, nhất quán trong team, và chỉ tách thêm khi thấy bắt đầu đau. Có thể dùng alias import như <code>@/features/...</code> thay cho <code>../../../</code> (Expo đọc <code>paths</code> trong <code>tsconfig</code>; bản bare cần thêm <code>babel-plugin-module-resolver</code>).</div>
+        <pre class="code-block"><code><span class="tk-com">// src/</span>
+<span class="tk-com">//   features/products/   api.ts, useProducts.ts, ProductListScreen.tsx</span>
+<span class="tk-com">//   components/          Button, Input... dùng chung</span>
+<span class="tk-com">//   navigation/, hooks/, types/, constants/</span>
+
+<span class="tk-com">// features/products/api.ts</span>
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> fetchProducts(): <span class="tk-type">Promise</span>&lt;<span class="tk-type">Product</span>[]&gt; {
+  <span class="tk-kw">const</span> res = <span class="tk-kw">await</span> fetch(<span class="tk-str">`${API_URL}/products`</span>);
+  <span class="tk-kw">if</span> (!res.ok) <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(<span class="tk-str">`HTTP ${res.status}`</span>);
+  <span class="tk-kw">return</span> res.json();
+}
+
+<span class="tk-com">// features/products/useProducts.ts: logic loading/error nằm ở đây</span>
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> useProducts() {
+  <span class="tk-kw">const</span> [data, setData] = useState&lt;<span class="tk-type">Product</span>[]&gt;([]);
+  <span class="tk-kw">const</span> [loading, setLoading] = useState(<span class="tk-kw">true</span>);
+  <span class="tk-kw">const</span> [error, setError] = useState&lt;<span class="tk-kw">string</span> | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+  useEffect(() =&gt; {
+    fetchProducts()
+      .then(setData)
+      .<span class="tk-kw">catch</span>((e: <span class="tk-type">Error</span>) =&gt; setError(e.message))
+      .<span class="tk-kw">finally</span>(() =&gt; setLoading(<span class="tk-kw">false</span>));
+  }, []);
+
+  <span class="tk-kw">return</span> { data, loading, error };
+}
+
+<span class="tk-com">// features/products/ProductListScreen.tsx: chỉ lo hiển thị</span>
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> <span class="tk-type">ProductListScreen</span>() {
+  <span class="tk-kw">const</span> { data, loading, error } = useProducts();
+  <span class="tk-kw">if</span> (loading) <span class="tk-kw">return</span> &lt;<span class="tk-type">ActivityIndicator</span> /&gt;;
+  <span class="tk-kw">if</span> (error) <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{error}&lt;/<span class="tk-type">Text</span>&gt;;
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">FlatList</span> data={data} renderItem={renderProduct} keyExtractor={(p) =&gt; <span class="tk-type">String</span>(p.id)} /&gt;;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q49.html">Hãy giới thiệu một dự án React Native bạn đã làm (kể cả app tự học): vì sao bạn chọn React Native, bạn tự làm phần nào, và khó khăn lớn nhất bạn gặp là gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nhà tuyển dụng muốn biết bạn thực sự làm được gì, nên trả lời theo cấu trúc ngắn trong khoảng hai phút: app làm gì cho ai; công nghệ chính (Expo hay CLI, TypeScript, React Navigation, cách gọi API, cách quản lý state); phần bạn tự làm; một khó khăn cụ thể và cách bạn gỡ; cuối cùng là bài học hoặc điều bạn sẽ làm khác nếu làm lại. Hãy chuẩn bị sẵn một chi tiết kỹ thuật bạn nhớ rõ, ví dụ <code>FlatList</code> tải trùng trang khi cuộn tới cuối, app gọi <code>localhost</code> không được trên Android Emulator, hay bàn phím che nút đăng nhập; nói được nguyên nhân và cách sửa sẽ thuyết phục hơn nhiều so với liệt kê tính năng. Về lý do chọn React Native, câu trả lời tốt nêu lý do thực tế: một codebase cho cả iOS và Android, tận dụng JavaScript/TypeScript và React đã biết, Fast Refresh giúp thử nhanh, hệ sinh thái lớn; và biết đủ hạn chế để không nói quá, như hiệu năng với tác vụ nặng hoặc việc phụ thuộc vào thư viện native. Hãy trung thực về phần nào tự làm, phần nào làm theo hướng dẫn, vì người phỏng vấn sẽ hỏi sâu &quot;vì sao dùng X chứ không phải Y&quot;. Nếu chưa có dự án thật, hãy tự làm một app nhỏ (đọc tin, todo) gọi API thật, chạy được trên cả hai nền tảng và đưa lên GitHub.</div>
+        
         
       </div>
     </details>

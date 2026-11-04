@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Senior (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<title>Câu hỏi phỏng vấn React Native Senior (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · react native · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Senior</h1>
-  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/react-native/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -64,18 +64,18 @@
   <ul>
     <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">1</span></li>
     <li><a href="#react">React &amp; Hooks</a> <span class="count">2</span></li>
-    <li><a href="#components">Component &amp; Styling</a> <span class="count">1</span></li>
+    <li><a href="#components">Component &amp; Styling</a> <span class="count">3</span></li>
     <li><a href="#state">State Management</a> <span class="count">1</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
     <li><a href="#native">Native &amp; New Architecture</a> <span class="count">6</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">1</span></li>
-    <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">1</span></li>
-    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">4</span></li>
-    <li><a href="#perf">Performance</a> <span class="count">6</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
+    <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">2</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">5</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">9</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">1</span></li>
-    <li><a href="#security">Security</a> <span class="count">3</span></li>
-    <li><a href="#design">System Design</a> <span class="count">5</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">4</span></li>
+    <li><a href="#security">Security</a> <span class="count">5</span></li>
+    <li><a href="#design">System Design</a> <span class="count">7</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">5</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -218,6 +218,94 @@ module.exports = {
   getItemType={(item) =&gt; item.kind} <span class="tk-com">// chỉ tái chế giữa các item cùng loại</span>
 /&gt;;</code></pre>
         
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q45.html">Công ty có 4 team RN, mỗi team tự viết <code>Button</code>, <code>Input</code>, typography riêng nên UI lệch nhau và đổi màu thương hiệu phải sửa hàng trăm file. Bạn dựng design system cho RN thế nào, và cân bằng giữa nhất quán với tốc độ của các team ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi tách thành ba việc: token, component và quy trình. Token chia hai tầng: nguyên thuỷ (<code>blue600</code>, <code>space16</code>) và ngữ nghĩa (<code>actionPrimary</code>, <code>textDefault</code>); component chỉ dùng token ngữ nghĩa nên dark mode hay đổi thương hiệu chỉ là đổi ánh xạ, theme lấy qua hook <code>useTheme</code> và có kiểu TypeScript chung để thiếu token là lỗi compile. Component có API nhỏ, có kiểu: <code>variant</code>, <code>size</code> là union chứ không nhận màu tuỳ ý; <code>style</code> chỉ cho phép thuộc tính bố cục (margin, alignSelf) để team không ghi đè ngoại hình; accessibility dựng sẵn (role, state, vùng chạm tối thiểu, <code>testID</code>). Công cụ: Storybook (on-device để thử thao tác thật, bản web để review và chụp ảnh so sánh), mỗi component có story cho từng variant và trạng thái; thư viện style (StyleSheet + theme, Unistyles, NativeWind, Tamagui...) chọn theo chi phí runtime, hỗ trợ dark mode, DX TypeScript và tương thích New Architecture hơn là theo mốt. Quy trình: phát hành như package riêng có semver và changelog (vd. Changesets), đánh dấu <code>@deprecated</code> kèm codemod khi đổi API, khai báo peer dependency (RN, Reanimated) và bảng tương thích. Để DS không thành nút cổ chai: cho component sinh ra trong app của team rồi &quot;thăng hạng&quot; vào DS khi có từ hai team dùng; cung cấp primitive (<code>Box</code>, <code>Text</code>, <code>Stack</code>) để team tự ghép thứ chưa có; lint cảnh báo (không chặn) khi dùng màu hex hay <code>Text</code> thô; đo mức dùng DS (tỷ lệ màn hình dùng component DS) và thời gian từ yêu cầu tới phát hành.</div>
+        <pre class="code-block"><code><span class="tk-com">// Hai tầng token: nguyên thuỷ -&gt; ngữ nghĩa. Component chỉ biết token ngữ nghĩa.</span>
+<span class="tk-kw">export</span> <span class="tk-kw">interface</span> <span class="tk-type">Theme</span> {
+  color: { actionPrimary: <span class="tk-kw">string</span>; onActionPrimary: <span class="tk-kw">string</span>; textDefault: <span class="tk-kw">string</span> };
+  space: { sm: <span class="tk-kw">number</span>; md: <span class="tk-kw">number</span> };
+}
+<span class="tk-kw">const</span> palette = { blue600: <span class="tk-str">&#39;#1D4ED8&#39;</span>, blue300: <span class="tk-str">&#39;#93C5FD&#39;</span>, white: <span class="tk-str">&#39;#FFFFFF&#39;</span>, gray900: <span class="tk-str">&#39;#111827&#39;</span> };
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> lightTheme: <span class="tk-type">Theme</span> = {
+  color: { actionPrimary: palette.blue600, onActionPrimary: palette.white, textDefault: palette.gray900 },
+  space: { sm: <span class="tk-num">8</span>, md: <span class="tk-num">16</span> },
+};
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> darkTheme: <span class="tk-type">Theme</span> = {
+  color: { actionPrimary: palette.blue300, onActionPrimary: palette.gray900, textDefault: palette.white },
+  space: { sm: <span class="tk-num">8</span>, md: <span class="tk-num">16</span> },
+};
+
+<span class="tk-kw">type</span> <span class="tk-type">ButtonProps</span> = {
+  label: <span class="tk-kw">string</span>;
+  onPress: () =&gt; <span class="tk-kw">void</span>;
+  variant?: <span class="tk-str">&#39;primary&#39;</span> | <span class="tk-str">&#39;ghost&#39;</span>; <span class="tk-com">// union, không nhận màu tuỳ ý</span>
+  disabled?: <span class="tk-kw">boolean</span>;
+  testID?: <span class="tk-kw">string</span>;
+  style?: <span class="tk-type">Pick</span>&lt;<span class="tk-type">ViewStyle</span>, <span class="tk-str">&#39;margin&#39;</span> | <span class="tk-str">&#39;marginTop&#39;</span> | <span class="tk-str">&#39;marginBottom&#39;</span> | <span class="tk-str">&#39;alignSelf&#39;</span>&gt;; <span class="tk-com">// chỉ cho chỉnh bố cục</span>
+};
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> <span class="tk-type">Button</span>({ label, onPress, variant = <span class="tk-str">&#39;primary&#39;</span>, disabled, testID, style }: <span class="tk-type">ButtonProps</span>) {
+  <span class="tk-kw">const</span> theme = useTheme();
+  <span class="tk-kw">const</span> primary = variant === <span class="tk-str">&#39;primary&#39;</span>;
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Pressable</span>
+      accessibilityRole=<span class="tk-str">&quot;button&quot;</span>
+      accessibilityState={{ disabled: !!disabled }}
+      disabled={disabled}
+      onPress={onPress}
+      testID={testID}
+      style={[
+        {
+          minHeight: <span class="tk-num">44</span>, <span class="tk-com">// vùng chạm tối thiểu</span>
+          paddingHorizontal: theme.space.md,
+          justifyContent: <span class="tk-str">&#39;center&#39;</span>,
+          borderRadius: <span class="tk-num">8</span>,
+          backgroundColor: primary ? theme.color.actionPrimary : <span class="tk-str">&#39;transparent&#39;</span>,
+          opacity: disabled ? <span class="tk-num">0.5</span> : <span class="tk-num">1</span>,
+        },
+        style,
+      ]}
+    &gt;
+      &lt;<span class="tk-type">Text</span> style={{ color: primary ? theme.color.onActionPrimary : theme.color.actionPrimary }}&gt;{label}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">Pressable</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q46.html">App bị khiếu nại không dùng được với VoiceOver/TalkBack và khi chỉnh cỡ chữ lớn; đội sửa lẻ từng màn nhưng lỗi lại tái phát ở màn khác. Bạn đưa accessibility vào quy trình của một đội 30 dev thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Muốn hết tái phát thì a11y phải là mặc định của hệ thống chứ không phải việc của từng người. Một: dựng vào design system: component có sẵn <code>accessibilityRole</code>, <code>accessibilityState</code>, bắt buộc có label ở nơi cần (nút chỉ có icon), vùng chạm tối thiểu 44pt/48dp (<code>hitSlop</code> khi cần), màu đạt tỷ lệ tương phản và không chỉ dùng màu để truyền thông tin. Hai: tự động hoá phần tự động hoá được: lint (<code>eslint-plugin-react-native-a11y</code>), test component bằng React Native Testing Library truy vấn theo vai trò (<code>getByRole(&#39;button&#39;, { name })</code> vừa kiểm tra phần tử truy cập được vừa kiểm tra nhãn; query này chỉ khớp phần tử accessible nên thiếu <code>accessible</code> thì test hỏng), E2E bằng Maestro/Detox tìm theo text hoặc label. Ba: phần máy không bắt được cần kiểm bằng tay với TalkBack và VoiceOver trên các luồng chính mỗi đợt phát hành (cùng Accessibility Inspector, Accessibility Scanner): gộp thẻ thành một phần tử có nhãn gộp thay vì đọc từng mảnh, thứ tự đọc theo cây view chứ không theo vị trí hiển thị, ẩn nội dung phía sau modal (<code>accessibilityViewIsModal</code> trên iOS, <code>importantForAccessibility</code> trên Android), chuyển focus (<code>AccessibilityInfo.setAccessibilityFocus</code>) hoặc thông báo (<code>announceForAccessibility</code>) sau khi điều hướng hay có lỗi. Bốn: RN mặc định tôn trọng cỡ chữ hệ thống; đừng tắt <code>allowFontScaling</code>, chỉ giới hạn bằng <code>maxFontSizeMultiplier</code> ở chỗ layout thật sự không chịu nổi và thử ở cỡ chữ lớn nhất; với chuyển động thì tôn trọng &quot;giảm chuyển động&quot; (<code>AccessibilityInfo.isReduceMotionEnabled</code>, <code>useReducedMotion</code> của Reanimated). Năm: đưa vào Definition of Done và PR template, bàn giao thiết kế kèm ghi chú a11y, và coi bug a11y có mức độ nghiêm trọng như bug thường.</div>
+        <pre class="code-block"><code><span class="tk-com">// Thẻ sản phẩm: gộp thành một phần tử đọc được, có vai trò và gợi ý</span>
+&lt;<span class="tk-type">Pressable</span>
+  accessible
+  accessibilityRole=<span class="tk-str">&quot;button&quot;</span>
+  accessibilityLabel={<span class="tk-str">`${item.name}, ${formatPrice(item.price)}, ${item.inStock ? &#39;còn hàng&#39; : &#39;hết hàng&#39;}`</span>}
+  accessibilityHint=<span class="tk-str">&quot;Mở chi tiết sản phẩm&quot;</span>
+  onPress={() =&gt; openDetail(item.id)}
+&gt;
+  &lt;<span class="tk-type">Text</span> maxFontSizeMultiplier={<span class="tk-num">1.6</span>} numberOfLines={<span class="tk-num">2</span>}&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;
+  &lt;<span class="tk-type">Text</span>&gt;{formatPrice(item.price)}&lt;/<span class="tk-type">Text</span>&gt;
+&lt;/<span class="tk-type">Pressable</span>&gt;
+
+<span class="tk-com">// Test: tìm theo vai trò và tên, nên hỏng nếu quên nhãn hoặc quên accessible</span>
+it(<span class="tk-str">&#39;nút Thanh toán đọc được và bấm được&#39;</span>, () =&gt; {
+  render(&lt;<span class="tk-type">CartScreen</span> /&gt;);
+  fireEvent.press(screen.getByRole(<span class="tk-str">&#39;button&#39;</span>, { name: <span class="tk-str">&#39;Thanh toán&#39;</span> }));
+  expect(screen.getByText(<span class="tk-str">&#39;Đang chuyển tới thanh toán&#39;</span>)).toBeOnTheScreen();
+});</code></pre>
+        <p class="doc-link"><a href="https://reactnative.dev/docs/accessibility" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -457,6 +545,49 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q48.html">App bán hàng offline-first cần lưu khoảng 300.000 bản ghi (sản phẩm, đơn nháp) và tìm kiếm trên đó. Bản hiện tại lưu một JSON lớn trong AsyncStorage nên mở app chậm vài giây và thỉnh thoảng mất dữ liệu. Bạn chọn giải pháp lưu trữ nào, và xử lý mã hoá, migration, hiệu năng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vấn đề gốc là dùng key-value cho dữ liệu quan hệ: mỗi lần đọc hay ghi phải parse hoặc serialize cả khối JSON trên JS thread, app bị kill giữa lúc ghi dễ hỏng dữ liệu, và không có index. Phân loại theo nhu cầu: AsyncStorage (bất đồng bộ, có giới hạn dung lượng mặc định trên Android) cho vài giá trị nhỏ; MMKV (đồng bộ, nhanh nhờ JSI, có tuỳ chọn mã hoá) rất hợp cho cài đặt, flag, session nhưng vẫn là key-value, không truy vấn được; SQLite (op-sqlite, expo-sqlite) cho dữ liệu hàng trăm nghìn dòng: index, truy vấn có điều kiện và phân trang, giao dịch nguyên tử, tìm kiếm văn bản nếu bật FTS, và SQLCipher khi cần mã hoá cả file (một số thư viện hỗ trợ bản build SQLCipher). WatermelonDB xây trên SQLite với truy vấn quan sát được và nạp lười, hợp danh sách phản ứng theo dữ liệu nhưng thêm lớp model và cấu hình; ORM kiểu Drizzle cho truy vấn có kiểu trên SQLite. Với các CSDL khác (Realm...) hãy kiểm tra tình trạng bảo trì trước khi gắn chặt. Migration: đánh số phiên bản schema (<code>PRAGMA user_version</code>), mỗi bước chạy trong một transaction cùng việc tăng phiên bản, không bao giờ xoá dữ liệu im lặng, và test migrate từ fixture của mọi bản đã phát hành. Hiệu năng: tạo index cho cột tìm kiếm, nhập hàng loạt trong một transaction (nhanh hơn nhiều so với ghi từng dòng), chỉ truy vấn phần cần hiển thị với <code>LIMIT</code> thay vì kéo cả bảng vào mảng JS rồi <code>filter</code>, và để ảnh hay file lớn ở hệ thống file chứ không nhét vào DB.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> * <span class="tk-kw">as</span> <span class="tk-type">SQLite</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;expo-sqlite&#39;</span>;
+
+<span class="tk-kw">const</span> <span class="tk-type">MIGRATIONS</span> = [
+  <span class="tk-str">`CREATE TABLE product (id INTEGER PRIMARY KEY, sku TEXT NOT NULL, name TEXT NOT NULL, price INTEGER NOT NULL);
+   CREATE INDEX idx_product_name ON product(name COLLATE NOCASE);`</span>,
+  <span class="tk-str">&#39;ALTER TABLE product ADD COLUMN barcode TEXT;&#39;</span>,
+];
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> openDb() {
+  <span class="tk-kw">const</span> db = <span class="tk-kw">await</span> <span class="tk-type">SQLite</span>.openDatabaseAsync(<span class="tk-str">&#39;shop.db&#39;</span>);
+  <span class="tk-kw">await</span> db.execAsync(<span class="tk-str">&#39;PRAGMA journal_mode = WAL;&#39;</span>);
+  <span class="tk-kw">const</span> row = <span class="tk-kw">await</span> db.getFirstAsync&lt;{ user_version: <span class="tk-kw">number</span> }&gt;(<span class="tk-str">&#39;PRAGMA user_version&#39;</span>);
+  <span class="tk-kw">for</span> (<span class="tk-kw">let</span> v = row?.user_version ?? <span class="tk-num">0</span>; v &lt; <span class="tk-type">MIGRATIONS</span>.length; v++) {
+    <span class="tk-kw">await</span> db.withTransactionAsync(<span class="tk-kw">async</span> () =&gt; {
+      <span class="tk-kw">await</span> db.execAsync(<span class="tk-type">MIGRATIONS</span>[v]);
+      <span class="tk-kw">await</span> db.execAsync(<span class="tk-str">`PRAGMA user_version = ${v + 1}`</span>); <span class="tk-com">// tăng phiên bản cùng transaction với bước migrate</span>
+    });
+  }
+  <span class="tk-kw">return</span> db;
+}
+
+<span class="tk-com">// Nhập hàng loạt trong một transaction</span>
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> importProducts(db: <span class="tk-type">SQLite</span>.<span class="tk-type">SQLiteDatabase</span>, items: <span class="tk-type">Product</span>[]) {
+  <span class="tk-kw">await</span> db.withTransactionAsync(<span class="tk-kw">async</span> () =&gt; {
+    <span class="tk-kw">for</span> (<span class="tk-kw">const</span> p <span class="tk-kw">of</span> items) {
+      <span class="tk-kw">await</span> db.runAsync(<span class="tk-str">&#39;INSERT OR REPLACE INTO product (id, sku, name, price) VALUES (?, ?, ?, ?)&#39;</span>, [p.id, p.sku, p.name, p.price]);
+    }
+  });
+}
+
+<span class="tk-com">// Chỉ lấy 50 dòng đầu; LIKE khớp đầu chuỗi mới tận dụng được index (tìm giữa chuỗi nên dùng FTS)</span>
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> searchProducts = (db: <span class="tk-type">SQLite</span>.<span class="tk-type">SQLiteDatabase</span>, term: <span class="tk-kw">string</span>) =&gt;
+  db.getAllAsync&lt;<span class="tk-type">Product</span>&gt;(<span class="tk-str">&#39;SELECT id, sku, name, price FROM product WHERE name LIKE ? ORDER BY name LIMIT 50&#39;</span>, [<span class="tk-str">`${term}%`</span>]);</code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/versions/latest/sdk/sqlite/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="animation">
@@ -505,6 +636,30 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
     &lt;/<span class="tk-type">GestureDetector</span>&gt;
   );
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q47.html">Design yêu cầu một loạt hiệu ứng: nút nhún khi bấm, bottom sheet kéo theo tay, animation onboarding xuất từ After Effects, biểu đồ vẽ tuỳ biến cập nhật liên tục và hiệu ứng làm mờ/shader trên ảnh. Bạn chọn công cụ nào cho từng loại, và dùng ngân sách frame để quyết định ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ngân sách là 16,6ms mỗi frame ở 60Hz và 8,3ms ở 120Hz; nếu mỗi frame phải đi qua JS thread (tính toán, <code>setState</code>, bridge) thì bất kỳ việc nặng nào cũng làm rớt frame, nên nguyên tắc là để mỗi frame chạy hoàn toàn trên UI thread. Theo từng loại: nút nhún và hiệu ứng tương tác dùng Reanimated (shared value + <code>useAnimatedStyle</code>) chạy trên UI thread; <code>Animated</code> của core với <code>useNativeDriver: true</code> đủ cho opacity/transform đơn giản nhưng không animate được thuộc tính bố cục. Cử chỉ kéo theo tay: Reanimated + Gesture Handler. Animation do designer làm sẵn (onboarding, loading, empty state): Lottie chạy native, không tốn JS mỗi frame; đổi lại là kích thước file và độ phức tạp (nhiều layer, mask, matte tốn CPU/GPU) nên phải kiểm trên máy yếu, và nó là hình vẽ nên không tương tác sâu được. Vẽ tuỳ biến, biểu đồ thời gian thực, blur, shader: Skia (<code>@shopify/react-native-skia</code>) vẽ bằng GPU và kết hợp được với shared value của Reanimated; đổi lại thêm dung lượng bundle, đường cong học tập, và nội dung vẽ trên canvas không tự có accessibility nên phải bổ sung. Tránh animate thuộc tính bố cục (<code>width</code>, <code>height</code>) vì buộc layout lại mỗi frame, ưu tiên transform và opacity, và tôn trọng &quot;giảm chuyển động&quot; của hệ thống. Đo bằng Perf Monitor (JS FPS so với UI FPS), Perfetto/System Trace để xem frame vượt ngân sách, Instruments Core Animation; thử trên máy yếu lẫn máy 120Hz, ở build release.</div>
+        <pre class="code-block"><code><span class="tk-com">// Nút nhún: shared value được cập nhật và đọc hoàn toàn trên UI thread, không qua JS mỗi frame</span>
+<span class="tk-kw">const</span> scale = useSharedValue(<span class="tk-num">1</span>);
+<span class="tk-kw">const</span> animatedStyle = useAnimatedStyle(() =&gt; ({ transform: [{ scale: scale.value }] }));
+
+&lt;<span class="tk-type">Pressable</span>
+  onPressIn={() =&gt; { scale.value = withSpring(<span class="tk-num">0.96</span>); }}
+  onPressOut={() =&gt; { scale.value = withSpring(<span class="tk-num">1</span>); }}
+  onPress={onPress}
+&gt;
+  &lt;<span class="tk-type">Animated</span>.<span class="tk-type">View</span> style={animatedStyle}&gt;{children}&lt;/<span class="tk-type">Animated</span>.<span class="tk-type">View</span>&gt;
+&lt;/<span class="tk-type">Pressable</span>&gt;
+
+<span class="tk-com">// Animation designer xuất từ After Effects: Lottie chạy native, không tốn JS mỗi frame</span>
+&lt;<span class="tk-type">LottieView</span> source={require(<span class="tk-str">&#39;./onboarding.json&#39;</span>)} autoPlay loop={<span class="tk-kw">false</span>} style={{ width: <span class="tk-num">240</span>, height: <span class="tk-num">240</span> }} /&gt;</code></pre>
         
       </div>
     </details>
@@ -595,6 +750,17 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
   }
 }</code></pre>
         
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q41.html">Đội 12 dev có hai app RN; CI chạy EAS Build mất 35-40 phút mỗi lần và tốn quota, vài dev muốn bỏ EAS để tự dựng bằng Fastlane + GitHub Actions. Bạn đánh giá và rút ngắn thời gian build thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đừng chọn công cụ trước khi đo: tách thời gian build thành từng bước (cài <code>node_modules</code>, <code>pod install</code>, Gradle, <code>xcodebuild</code>/archive, upload) và xem bước nào chiếm nhiều nhất, tỷ lệ cache hit, chi phí mỗi build. EAS Build đổi tiền lấy việc không phải bảo trì: có sẵn máy build, quản lý credential và signing, nối với EAS Update/Submit, dùng được cả cho project bare. Tự dựng (Fastlane + GitHub Actions, Bitrise hoặc Mac mini tự host) cho kiểm soát và cache bền (máy riêng giữ nguyên DerivedData, Gradle cache), nhưng đội phải vá macOS/Xcode, quản lý runner và bí mật; runner macOS thuê theo phút khá đắt. Chọn theo số build mỗi ngày, năng lực vận hành hạ tầng và yêu cầu tuân thủ. Dù chọn cách nào, rút ngắn bằng: không build native cho mọi PR; PR chỉ chạy lint, <code>tsc</code>, Jest (vài phút), còn build native chỉ khi phần native đổi (so mã băm lockfile, <code>Podfile.lock</code>, thư mục <code>android/</code>, <code>ios/</code>, hoặc dùng fingerprint nếu có Expo) và dùng lại build cũ nếu không đổi; cache <code>node_modules</code> theo hash lockfile, <code>Pods/</code> theo <code>Podfile.lock</code>, Gradle cache và build cache; bật ccache cho phần C++ của New Architecture; build QA chỉ một ABI (<code>-PreactNativeArchitectures=arm64-v8a</code>) thay vì cả bốn; chạy Android và iOS song song. Signing và bí mật: keystore, App Store Connect API key, service account Google Play để trong secret manager, chỉ cấp cho nhánh hoặc môi trường được bảo vệ chứ không đưa vào PR từ fork; iOS dùng EAS credentials hoặc Fastlane match. Đo lại p50/p90 thời gian và chi phí trước/sau; nhiều đội dùng EAS cho bản phát hành và CI tự dựng cho kiểm tra PR.</div>
+        
+        <p class="doc-link"><a href="https://docs.expo.dev/build/introduction/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -701,6 +867,100 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q38.html">Mỗi bản phát hành app RN lại bị than &quot;chậm hơn bản trước&quot;, nhưng team chỉ biết khi user phàn nàn và không ai rõ commit nào gây ra. Bạn xây hệ thống quan sát hiệu năng và chặn thoái lui thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cần hai lớp bổ sung nhau. Lớp field (dữ liệu từ user thật): Sentry Performance, Firebase Performance hoặc Datadog RUM cho app start, slow/frozen frame và thời gian hiển thị của vài màn then chốt (tự đặt span từ lúc điều hướng tới khi dữ liệu đầu tiên hiện ra, vì RN không có sẵn một con số TTI chuẩn), cộng Android vitals, Xcode Organizer/MetricKit cho startup, hang, ANR, pin. Luôn cắt theo phiên bản app, dòng máy và p75/p90 chứ không nhìn trung bình, và so bản mới với bản cũ ngay trong lúc phát hành từng phần để dừng sớm. Lớp lab (dữ liệu tái lập được): chạy một kịch bản cố định (mở app, vào danh sách, cuộn, vào chi tiết) trên build release, trên một máy thật tầm trung dành riêng, lặp 10-20 lần rồi lấy median vì nhiễu rất lớn; Flashlight (chạy cùng Maestro) cho điểm CPU/FPS/RAM trên Android, còn Perfetto và Instruments dùng để xem chi tiết khi đã có hồi quy. React Profiler chỉ dùng để tìm render thừa lúc phát triển. Guardrail trong CI: so với baseline của nhánh main bằng ngưỡng tương đối (vd. startup tăng quá 10% thì fail hoặc cảnh báo), không dùng ngưỡng tuyệt đối vì máy CI nhiễu; kèm kiểm tra kích thước bundle như chỉ báo rẻ và đẩy kết quả lên comment của PR. Khi alert nổ, đối chiếu release với các commit trong khoảng đó để tìm thủ phạm.</div>
+        <pre class="code-block"><code><span class="tk-com">// scripts/check-startup.ts: chạy sau benchmark, mỗi file JSON là mảng thời gian startup (ms) của từng lần chạy</span>
+<span class="tk-kw">import</span> { readFileSync } <span class="tk-kw">from</span> <span class="tk-str">&#39;node:fs&#39;</span>;
+
+<span class="tk-kw">const</span> median = (xs: <span class="tk-kw">number</span>[]) =&gt; {
+  <span class="tk-kw">const</span> s = [...xs].sort((a, b) =&gt; a - b);
+  <span class="tk-kw">const</span> mid = <span class="tk-type">Math</span>.floor(s.length / <span class="tk-num">2</span>);
+  <span class="tk-kw">return</span> s.length % <span class="tk-num">2</span> ? s[mid] : (s[mid - <span class="tk-num">1</span>] + s[mid]) / <span class="tk-num">2</span>;
+};
+
+<span class="tk-kw">const</span> baseline = median(<span class="tk-type">JSON</span>.parse(readFileSync(<span class="tk-str">&#39;baseline-main.json&#39;</span>, <span class="tk-str">&#39;utf8&#39;</span>)));
+<span class="tk-kw">const</span> current = median(<span class="tk-type">JSON</span>.parse(readFileSync(<span class="tk-str">&#39;current-pr.json&#39;</span>, <span class="tk-str">&#39;utf8&#39;</span>)));
+<span class="tk-kw">const</span> change = (current - baseline) / baseline;
+
+console.log(<span class="tk-str">`startup median: ${baseline}ms -&gt; ${current}ms (${(change * 100).toFixed(1)}%)`</span>);
+<span class="tk-kw">if</span> (change &gt; <span class="tk-num">0.1</span>) {
+  console.error(<span class="tk-str">&#39;Startup chậm hơn quá 10% so với main&#39;</span>);
+  process.exit(<span class="tk-num">1</span>);
+}</code></pre>
+        <p class="doc-link"><a href="https://reactnative.dev/docs/profiling" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q39.html">Màn báo cáo tải một JSON vài MB (hàng chục nghìn bản ghi) rồi lọc, nhóm và sắp xếp ngay trên JS. Mỗi lần mở, UI đứng khoảng 2 giây, nút Huỷ cũng không bấm được. Bạn có những lựa chọn nào để không làm kẹt JS thread, và chọn theo tiêu chí gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Parse, lọc, sắp xếp và <code>setState</code> đều chạy trên cùng một JS thread, nên việc nặng liên tục sẽ chặn cả xử lý chạm lẫn render. Tôi cân nhắc theo thứ tự: một, có thật sự cần đưa cả đống dữ liệu xuống máy không; lọc, nhóm, phân trang hay tổng hợp ở server là rẻ nhất và giảm luôn mạng lẫn bộ nhớ. Hai, nếu dữ liệu phải nằm ở máy và truy vấn thường xuyên thì đưa vào SQLite (truy vấn không chạy trên JS thread, có index) thay vì giữ mảng khổng lồ trong JS. Ba, chia lô: xử lý vài trăm bản ghi rồi nhường thread bằng <code>setTimeout(0)</code>, UI thở được và huỷ được giữa chừng; đổi lại tổng thời gian dài hơn và code phức tạp hơn. <code>InteractionManager.runAfterInteractions</code> chỉ hoãn việc cho tới sau animation; việc dài 2 giây vẫn chặn 2 giây. Bốn, đẩy sang runtime khác: worklet runtime của <code>react-native-worklets</code> (phần Reanimated tách ra) chạy được hàm JS trên thread riêng, nhưng dữ liệu phải sao chép/serialize qua ranh giới và không dùng được mọi thư viện. Năm, module native hoặc JSI/C++ cho hot path thật sự (parse hay mật mã nặng): nhanh nhất nhưng phải viết và bảo trì code cho hai nền tảng. Chọn theo tần suất, tốc độ tăng của dữ liệu, nhu cầu offline và năng lực native của đội: thường là server/SQLite trước, chia lô cho phần còn lại, native là phương án cuối. Đo bằng Perf Monitor và Hermes sampling profiler trước/sau thay vì đoán.</div>
+        <pre class="code-block"><code><span class="tk-kw">async</span> <span class="tk-kw">function</span> processInChunks&lt;<span class="tk-type">T</span>, <span class="tk-type">R</span>&gt;(
+  items: <span class="tk-type">T</span>[],
+  mapFn: (item: <span class="tk-type">T</span>) =&gt; <span class="tk-type">R</span>,
+  signal: <span class="tk-type">AbortSignal</span>,
+  chunkSize = <span class="tk-num">500</span>,
+): <span class="tk-type">Promise</span>&lt;<span class="tk-type">R</span>[]&gt; {
+  <span class="tk-kw">const</span> out: <span class="tk-type">R</span>[] = [];
+  <span class="tk-kw">for</span> (<span class="tk-kw">let</span> i = <span class="tk-num">0</span>; i &lt; items.length; i += chunkSize) {
+    <span class="tk-kw">if</span> (signal.aborted) <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(<span class="tk-str">&#39;aborted&#39;</span>);
+    <span class="tk-kw">for</span> (<span class="tk-kw">const</span> item <span class="tk-kw">of</span> items.slice(i, i + chunkSize)) out.push(mapFn(item));
+    <span class="tk-kw">await</span> <span class="tk-kw">new</span> <span class="tk-type">Promise</span>&lt;<span class="tk-kw">void</span>&gt;((resolve) =&gt; setTimeout(resolve, <span class="tk-num">0</span>)); <span class="tk-com">// nhường thread cho chạm và render</span>
+  }
+  <span class="tk-kw">return</span> out;
+}
+
+<span class="tk-com">// Trong hàm async: huỷ được khi user bấm Huỷ hoặc rời màn hình</span>
+<span class="tk-kw">const</span> controller = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+<span class="tk-kw">const</span> rows = <span class="tk-kw">await</span> processInChunks(records, toRow, controller.signal);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q40.html">Danh sách thẻ sản phẩm cuộn giật trên Android tầm thấp dù JS thread không bận. Layout Inspector cho thấy mỗi thẻ có 8-10 tầng <code>View</code> lồng nhau, bóng đổ và bo góc đặt ở nhiều lớp. Cây view phức tạp ảnh hưởng hiệu năng ra sao, và bạn đo, giảm nó thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi <code>View</code> của RN thường ứng với một view native (phải tạo, đo, đặt vị trí, vẽ và giữ bộ nhớ); cuộn danh sách liên tục tạo và tái dùng cell nên chi phí nhân lên theo số view mỗi thẻ. React DevTools chỉ cho thấy cây component chứ không phải cây native, nên phải dùng Layout Inspector (Android) hoặc Debug View Hierarchy (Xcode). RN có view flattening: view chỉ dùng để chia layout (không nền, viền, bóng, không bắt sự kiện) bị bỏ khỏi cây native, còn wrapper có style hiển thị thì không; <code>collapsable={false}</code> tắt việc này khi bạn cần <code>measure</code> hoặc animate chính view đó. Fabric áp dụng flattening nhất quán trên hai nền tảng nhưng không dọn hộ các view có style. Chỗ tốn thật sự: bóng đổ nhiều lớp, <code>borderRadius</code> kèm <code>overflow: &#39;hidden&#39;</code> trên container lớn (phải cắt), <code>opacity</code> trên cả nhóm view (có thể cần vẽ ra buffer riêng) và overdraw do nhiều lớp nền đặc chồng nhau. Cách giảm: gộp wrapper (một <code>View</code> mang padding, nền, viền), thay view đệm bằng <code>gap</code>/<code>margin</code>, chỉ đặt bóng ở thẻ ngoài cùng và cho nó nền đặc, bo góc trực tiếp trên <code>Image</code> thay vì cắt cả container. <code>removeClippedSubviews</code> gỡ view ngoài màn hình khỏi cây native nhưng có thể làm nội dung không hiện, chỉ bật khi đo thấy có lợi. Đo bằng: số view và độ sâu trong Layout Inspector, Profile GPU Rendering/Debug GPU Overdraw trên Android, Perfetto để xem frame vượt ngân sách, Instruments (Core Animation: blended layers, offscreen-rendered) trên iOS, luôn trên máy thật tầm thấp và build release.</div>
+        <pre class="code-block"><code><span class="tk-com">// Trước: 5 tầng View chỉ để chia layout; bóng và overflow hidden đặt trên cả thẻ</span>
+&lt;<span class="tk-type">View</span> style={styles.shadow}&gt;
+  &lt;<span class="tk-type">View</span> style={styles.clip}&gt;
+    &lt;<span class="tk-type">View</span> style={styles.row}&gt;
+      &lt;<span class="tk-type">Image</span> source={{ uri: item.image }} style={styles.thumb} /&gt;
+      &lt;<span class="tk-type">View</span> style={styles.info}&gt;
+        &lt;<span class="tk-type">View</span> style={styles.titleBox}&gt;&lt;<span class="tk-type">Text</span>&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;&lt;/<span class="tk-type">View</span>&gt;
+        &lt;<span class="tk-type">View</span> style={styles.priceBox}&gt;&lt;<span class="tk-type">Text</span>&gt;{item.price}&lt;/<span class="tk-type">Text</span>&gt;&lt;/<span class="tk-type">View</span>&gt;
+      &lt;/<span class="tk-type">View</span>&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  &lt;/<span class="tk-type">View</span>&gt;
+&lt;/<span class="tk-type">View</span>&gt;
+
+<span class="tk-com">// Sau: 2 tầng View, nền đặc và bóng ở thẻ ngoài, bo góc trên Image thay vì cắt cả container</span>
+&lt;<span class="tk-type">View</span> style={styles.card}&gt;
+  &lt;<span class="tk-type">Image</span> source={{ uri: item.image }} style={styles.thumb} /&gt;
+  &lt;<span class="tk-type">View</span> style={styles.info}&gt;
+    &lt;<span class="tk-type">Text</span>&gt;{item.name}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;<span class="tk-type">Text</span>&gt;{item.price}&lt;/<span class="tk-type">Text</span>&gt;
+  &lt;/<span class="tk-type">View</span>&gt;
+&lt;/<span class="tk-type">View</span>&gt;
+
+<span class="tk-kw">const</span> styles = <span class="tk-type">StyleSheet</span>.create({
+  <span class="tk-com">// elevation cho Android; iOS dùng shadowColor, shadowOpacity, shadowRadius</span>
+  card: { flexDirection: <span class="tk-str">&#39;row&#39;</span>, gap: <span class="tk-num">12</span>, padding: <span class="tk-num">12</span>, backgroundColor: <span class="tk-str">&#39;#fff&#39;</span>, borderRadius: <span class="tk-num">12</span>, elevation: <span class="tk-num">2</span> },
+  thumb: { width: <span class="tk-num">72</span>, height: <span class="tk-num">72</span>, borderRadius: <span class="tk-num">8</span> },
+  info: { flex: <span class="tk-num">1</span>, gap: <span class="tk-num">4</span> },
+});</code></pre>
+        <p class="doc-link"><a href="https://reactnative.dev/architecture/view-flattening" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="testing">
@@ -774,6 +1034,28 @@ queryClient.setMutationDefaults([<span class="tk-str">&#39;order&#39;</span>, <s
         <div class="answer-text">Trước hết nói rõ với stakeholder: mọi kiểm tra phía client đều có thể bị bypass (Frida, patch bundle), nên client chỉ cung cấp tín hiệu, quyết định cuối cùng nằm ở server. Tôi kết hợp nhiều lớp: thư viện phát hiện root/jailbreak, debugger, hook chạy ở tầng native để gắn cờ rủi ro; attestation của nền tảng — Play Integrity API trên Android, App Attest trên iOS — để server xác minh request đến từ bản app chính hãng trên thiết bị đáng tin, vì kết quả do Google/Apple ký nên client không tự giả được. Server áp dụng chính sách theo mức rủi ro: thiết bị đáng ngờ vẫn xem được số dư nhưng giao dịch lớn cần thêm OTP hoặc sinh trắc học, hoặc chặn hẳn nếu quy định yêu cầu. Token và dữ liệu nhạy cảm lưu trong Keychain/Keystore qua <code>react-native-keychain</code> hoặc <code>expo-secure-store</code>; không log token, tắt dev menu và log debug ở bản release; bật <code>FLAG_SECURE</code> cho màn nhạy cảm trên Android. Obfuscation JS và native chỉ làm tăng chi phí reverse, không phải hàng rào chính.</div>
         
         
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q43.html">Một dev thêm thư viện mới chỉ vì thấy &quot;nhiều sao&quot; trên GitHub; tuần sau tin tức nói một package phổ biến trên npm vừa bị chèn mã độc vào bản phát hành mới. Bạn rà lại và thiết lập quy trình để chuỗi cung ứng dependency (npm lẫn native) của app RN an toàn hơn thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dependency của app RN gồm cả npm (hàng nghìn gói gián tiếp) lẫn native (Pods, Gradle), và việc cài gói có thể chạy mã tuỳ ý, nên coi đây là bề mặt tấn công. Phía npm: commit lockfile và dùng <code>npm ci</code>/<code>yarn --immutable</code>/<code>pnpm install --frozen-lockfile</code> trong CI để không tự nâng phiên bản; xem diff lockfile khi review (gói mới, đổi nguồn, đổi maintainer). <code>npm audit</code> hữu ích nhưng nhiều nhiễu và chỉ biết lỗ hổng đã công bố, không bắt được gói vừa bị chiếm quyền, nên kết hợp <code>npm audit signatures</code> để kiểm tra chữ ký và provenance. Script <code>postinstall</code> chạy ngay trên máy dev và CI (nơi có token), nên bật <code>ignore-scripts</code> mặc định và chỉ cho phép các gói thật sự cần (pnpm bản mới đã chặn script của dependency theo mặc định, kèm danh sách cho phép); cẩn thận typosquatting (tên gần giống) và dependency confusion (dùng scope, registry nội bộ cho gói riêng). Renovate/Dependabot nâng phiên bản theo nhóm qua PR có CI, nên đặt thời gian chờ vài ngày cho bản mới phát hành để cộng đồng kịp phát hiện bản độc hại. Phía native: ghim phiên bản (<code>Podfile.lock</code>, không dùng phiên bản động kiểu <code>+</code> trong Gradle), cân nhắc Gradle dependency verification; khi thêm SDK native thì xem manifest sau khi merge (quyền, service, receiver mới), dữ liệu SDK thu thập, Privacy Manifest và domain nó gọi. Về quy trình: chính sách thêm dependency (ai bảo trì, hoạt động gần đây, kích thước, giấy phép, có hỗ trợ New Architecture không, có code native không), giảm số gói, giữ SBOM để khi có sự cố trả lời nhanh &quot;app nào đang dùng bản nào&quot;. Các vụ như event-stream hay ua-parser-js cho thấy kẻ tấn công nhắm vào maintainer chứ không phải code của bạn.</div>
+        
+        <p class="doc-link"><a href="https://docs.npmjs.com/verifying-registry-signatures" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.npmjs.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q44.html">App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu khai báo &quot;required reason API&quot;, còn Google Play nhắc form Data safety không khớp với hành vi thực tế của các SDK. Bạn xử lý và đưa quyền riêng tư vào quy trình phát triển thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chính sách store đổi theo thời gian nên luôn đối chiếu tài liệu hiện hành; ở mức khái niệm thì thế này. Phía Apple: từ 2024 app và SDK bên thứ ba phải có Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>) khai báo dữ liệu thu thập cùng mục đích, các domain dùng để theo dõi, và việc dùng &quot;required reason API&quot; (nhóm API dễ bị lạm dụng để fingerprint như thời gian của file, <code>UserDefaults</code>, dung lượng đĩa, thời gian khởi động hệ thống), mỗi API kèm lý do hợp lệ trong danh sách của Apple. App RN dính nhiều vì lõi RN và các thư viện (AsyncStorage, file system...) dùng những API này; template RN đã có manifest cho app, nhưng bạn phải nâng thư viện lên bản có manifest riêng và bổ sung phần thiếu (Expo cho khai báo qua app config). Xcode có &quot;Generate Privacy Report&quot; khi archive để gộp manifest của mọi SDK và dò chỗ thiếu. Phía Google Play: form Data safety phải phản ánh đúng dữ liệu app và SDK thu thập hay chia sẻ (analytics, crash, quảng cáo), kèm yêu cầu cho xoá tài khoản; Android 13 trở lên cần khai báo quyền <code>AD_ID</code> nếu dùng mã quảng cáo. ATT chỉ cần khi bạn &quot;theo dõi&quot; (liên kết dữ liệu với dữ liệu của bên khác cho quảng cáo hoặc chia sẻ với data broker); hỏi khi không cần là thừa, và đừng chặn tính năng nếu user từ chối. Cách làm bền: kiểm kê SDK (thu gì, vì sao, gửi tới đâu), thu thập tối thiểu và tắt những gì không cần, có người duyệt mỗi lần thêm hoặc nâng SDK, kiểm tra tự động manifest cùng quyền Android sau merge trong CI, và nhớ nghĩa vụ pháp lý như GDPR hay Nghị định 13/2023/NĐ-CP ở Việt Nam khi có người dùng ở đó.</div>
+        
+        <p class="doc-link"><a href="https://developer.apple.com/documentation/bundleresources/privacy-manifest-files" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -883,6 +1165,79 @@ module.exports = config;</code></pre>
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q42.html">Team chuyển sang trunk-based và muốn mọi tính năng lớn nằm sau feature flag, kèm kill-switch tắt được trong vài phút mà không cần phát hành bản mới. Bạn thiết kế hệ thống flag/remote config phía app RN thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước hết phân loại flag vì vòng đời khác nhau: release flag (tạm thời, xoá sau khi bật 100%), kill-switch (vận hành, tồn tại lâu), experiment (A/B). Nguồn giá trị có thể là dịch vụ sẵn có (LaunchDarkly, Firebase Remote Config, GrowthBook...) hoặc endpoint tự dựng; điều quan trọng là cách app tiêu thụ. Một: luôn có giá trị mặc định biên dịch sẵn trong app (tính năng rủi ro mặc định tắt) để app chạy đúng khi mất mạng hoặc server lỗi. Hai: lúc mở app đọc đồng bộ snapshot đã cache (MMKV đọc được đồng bộ) nên render đầu tiên đã ổn định; tải bản mới ở nền với timeout ngắn, không chặn splash. Ba: tránh flicker và trạng thái nửa vời: giá trị mới chỉ áp dụng từ lần mở sau hoặc tại điểm an toàn; riêng kill-switch có hiệu lực ngay và UI phải thoát êm. Bốn: chia rollout theo phần trăm bằng bucket ổn định từ userId (không random mỗi phiên) và theo phiên bản app tối thiểu, vì bản cũ không có code của tính năng; với OTA, code mới đi cùng flag tắt rồi bật sau, nhưng JS vẫn phải tương thích với native hiện có. Năm: kill-switch không được phụ thuộc vào thứ đang hỏng; nếu app crash lúc khởi động nhiều lần liên tiếp thì vào chế độ an toàn dùng giá trị mặc định. Sáu: kiểm soát nợ flag bằng registry có kiểu TypeScript, người sở hữu và ngày hết hạn, CI báo flag quá hạn; gắn các flag đang bật vào crash report để đối chiếu lỗi. Chỉ test hai nhánh của flag quan trọng, đừng nhân tổ hợp.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> <span class="tk-type">DEFAULTS</span> = { newCheckout: <span class="tk-kw">false</span>, killVideoPreload: <span class="tk-kw">false</span> };
+<span class="tk-kw">type</span> <span class="tk-type">FlagName</span> = <span class="tk-kw">keyof</span> <span class="tk-kw">typeof</span> <span class="tk-type">DEFAULTS</span>;
+<span class="tk-kw">const</span> <span class="tk-type">KILL_SWITCHES</span>: <span class="tk-type">FlagName</span>[] = [<span class="tk-str">&#39;killVideoPreload&#39;</span>];
+
+<span class="tk-com">// storage là MMKV (đọc đồng bộ): snapshot đầu tiên có ngay, UI không bị nháy</span>
+<span class="tk-kw">let</span> active: <span class="tk-type">Record</span>&lt;<span class="tk-type">FlagName</span>, <span class="tk-kw">boolean</span>&gt; = { ...<span class="tk-type">DEFAULTS</span>, ...<span class="tk-type">JSON</span>.parse(storage.getString(<span class="tk-str">&#39;flags&#39;</span>) ?? <span class="tk-str">&#39;{}&#39;</span>) };
+<span class="tk-kw">const</span> listeners = <span class="tk-kw">new</span> <span class="tk-type">Set</span>&lt;() =&gt; <span class="tk-kw">void</span>&gt;();
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> refreshFlags(): <span class="tk-type">Promise</span>&lt;<span class="tk-kw">void</span>&gt; {
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">const</span> remote: <span class="tk-type">Partial</span>&lt;<span class="tk-type">Record</span>&lt;<span class="tk-type">FlagName</span>, <span class="tk-kw">boolean</span>&gt;&gt; = <span class="tk-kw">await</span> fetchJson(<span class="tk-type">FLAGS_URL</span>, { timeoutMs: <span class="tk-num">3000</span> });
+    storage.<span class="tk-kw">set</span>(<span class="tk-str">&#39;flags&#39;</span>, <span class="tk-type">JSON</span>.stringify(remote)); <span class="tk-com">// flag thường: áp dụng từ lần mở app sau</span>
+
+    <span class="tk-kw">let</span> changed = <span class="tk-kw">false</span>;
+    <span class="tk-kw">for</span> (<span class="tk-kw">const</span> key <span class="tk-kw">of</span> <span class="tk-type">KILL_SWITCHES</span>) {
+      <span class="tk-kw">const</span> value = remote[key];
+      <span class="tk-kw">if</span> (value !== <span class="tk-kw">undefined</span> &amp;&amp; value !== active[key]) {
+        active = { ...active, [key]: value }; <span class="tk-com">// kill-switch có hiệu lực ngay trong phiên</span>
+        changed = <span class="tk-kw">true</span>;
+      }
+    }
+    <span class="tk-kw">if</span> (changed) listeners.forEach((notify) =&gt; notify());
+  } <span class="tk-kw">catch</span> {
+    <span class="tk-com">// mất mạng hoặc server lỗi: giữ nguyên giá trị cache/mặc định</span>
+  }
+}
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> useFlag(name: <span class="tk-type">FlagName</span>): <span class="tk-kw">boolean</span> {
+  <span class="tk-kw">return</span> useSyncExternalStore(
+    (onChange) =&gt; {
+      listeners.add(onChange);
+      <span class="tk-kw">return</span> () =&gt; listeners.<span class="tk-kw">delete</span>(onChange);
+    },
+    () =&gt; active[name],
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q49.html">Sếp muốn có bản web từ app RN &quot;dùng lại code&quot; để khỏi lập team web riêng. Bạn đánh giá thế nào: khi nào dùng <code>react-native-web</code>/Expo web thì đáng, khi nào không, và tổ chức code ra sao để chia sẻ được phần có giá trị nhất?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">&quot;Dùng lại code&quot; nên tách thành ba lớp có giá trị và rủi ro rất khác nhau. Lớp logic (kiểu dữ liệu, API client, validate, state, hook, quy tắc nghiệp vụ, i18n) chia sẻ gần như miễn phí và lợi nhất; lớp UI mới là chỗ đau. <code>react-native-web</code> ánh xạ <code>View</code>, <code>Text</code>, <code>Pressable</code>, <code>StyleSheet</code> sang DOM và CSS nên hợp với web kiểu ứng dụng (dashboard, công cụ nội bộ sau đăng nhập, PWA, bản xem nhanh) và khi đội đã giỏi RN. Không hợp khi cần SEO và nội dung (trang marketing, blog, danh mục sản phẩm công khai) vì cần render phía server và HTML ngữ nghĩa tốt (Expo Router có static rendering nhưng vẫn phải cân nhắc kỹ), hay khi web phải mượt như web thật. Bẫy thường gặp: kích thước bundle; kỳ vọng của web mà app không có (hover, focus ring, điều hướng bàn phím, chuột phải, bôi chọn text, URL và nút Back của trình duyệt, responsive thật sự thay vì co giãn màn hình điện thoại); accessibility phải ánh xạ đúng role sang HTML; <code>FlatList</code> ảo hoá khác cuộn của trình duyệt; nhiều thư viện native (camera, Keychain, Bluetooth, một số hiệu ứng) không chạy trên web nên cần file <code>.web.ts</code> hoặc <code>Platform.OS</code> làm phương án thay thế. Cấu trúc: monorepo với <code>packages/core</code> thuần TypeScript (cấm import <code>react-native</code> bằng lint để luôn dùng được cả trên web), <code>packages/ui</code> dùng primitive RN kèm file theo nền tảng, <code>apps/mobile</code> và <code>apps/web</code>. Quyết định: web cần SEO thì dựng stack web riêng (Next.js...) chỉ dùng chung <code>core</code>; web kiểu ứng dụng thì RN Web. Đo thực tế bằng kích thước bundle, Lighthouse, kiểm tra accessibility, và dựng thử một màn thật trước khi cam kết.</div>
+        <pre class="code-block"><code><span class="tk-com">// eslint.config.js: packages/core không được phụ thuộc vào nền tảng</span>
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> [
+  {
+    files: [<span class="tk-str">&#39;packages/core/**/*.ts&#39;</span>],
+    rules: { <span class="tk-str">&#39;no-restricted-imports&#39;</span>: [<span class="tk-str">&#39;error&#39;</span>, { patterns: [<span class="tk-str">&#39;react-native*&#39;</span>, <span class="tk-str">&#39;expo*&#39;</span>] }] },
+  },
+];
+
+<span class="tk-com">// share.ts (mobile)</span>
+<span class="tk-kw">import</span> { <span class="tk-type">Share</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native&#39;</span>;
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> shareLink = (url: <span class="tk-kw">string</span>) =&gt; <span class="tk-type">Share</span>.share({ message: url });
+
+<span class="tk-com">// share.web.ts: bundler chọn file .web.ts khi build web</span>
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> shareLink = <span class="tk-kw">async</span> (url: <span class="tk-kw">string</span>) =&gt; {
+  <span class="tk-kw">if</span> (navigator.share) <span class="tk-kw">await</span> navigator.share({ url });
+  <span class="tk-kw">else</span> <span class="tk-kw">await</span> navigator.clipboard.writeText(url);
+};</code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/workflow/web/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="soft">
@@ -927,6 +1282,17 @@ module.exports = config;</code></pre>
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Tôi bắt đầu bằng việc đánh giá rủi ro cụ thể thay vì cảm tính: thư viện đang chặn việc gì (nâng RN, bật New Architecture, target SDK mới của store), có lỗ hổng bảo mật không, gắn chặt vào code của ta tới mức nào, và chi phí thay thế. Sau đó lập các phương án kèm chi phí và rủi ro: một là vá tại chỗ bằng <code>patch-package</code> hoặc <code>yarn patch</code> để qua vấn đề trước mắt (ngắn hạn, ghi chú rõ trong repo); hai là fork rồi gửi PR ngược lên upstream, hoặc tự duy trì fork nếu cần lâu dài và chấp nhận gánh việc bảo trì; ba là thay bằng thư viện khác đang được bảo trì; bốn là tự viết lớp bọc mỏng quanh API native của hệ điều hành khi tính năng nhỏ (nhất là khi ta chỉ dùng một phần nhỏ của thư viện). Trước khi thay, tôi đặt một lớp adapter (interface do chính ta định nghĩa) quanh thư viện để sau này chỉ sửa một chỗ, và làm một spike chứng minh phương án thay thế đủ tính năng và hiệu năng. Với PM, tôi trình bày bằng hậu quả đo được (không nâng được RN, không đáp ứng yêu cầu của store, tính năng nào bị ảnh hưởng) rồi đề xuất lộ trình nhỏ có mốc rõ ràng, xen vào sprint thay vì xin dừng việc. Về quy trình lâu dài: có tiêu chí chọn thư viện mới (tần suất release, số maintainer, hỗ trợ New Architecture, kích thước, giấy phép, có native code hay không), danh sách dependency nhạy cảm có owner, và kiểm tra định kỳ bằng React Native Directory cùng Renovate hay Dependabot để phát hiện sớm thư viện đang chết dần, thay vì chờ tới lúc nó chặn việc nâng cấp.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q50.html">Giữa dự án 3 tháng (app RN cho một chiến dịch marketing), bạn nhận ra tiến độ chậm khoảng 30% so với kế hoạch trong khi ngày ra mắt đã chốt cùng chiến dịch. Bạn làm gì trong tuần đầu tiên và nói với PM/stakeholder thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Việc đầu tiên là kiểm chứng con số: tính lại phần việc còn lại và tốc độ thực tế của đội, rồi đưa ra khoảng ước lượng kèm mức tin cậy (&quot;80% xong trước ngày X&quot;) thay vì một ngày duy nhất; đồng thời tìm nguyên nhân (scope tăng dần, ẩn số kỹ thuật như module native hay SDK thanh toán, phụ thuộc backend/design, làm lại), vì mỗi nguyên nhân có cách chữa khác nhau. Sau đó báo sớm, bằng số liệu và có phương án chứ không chỉ báo vấn đề: ngày ra mắt đã cố định thì biến số là phạm vi. Cùng PM xếp việc thành bắt buộc / nên có / có thể bỏ và xác định bản tối thiểu mà chiến dịch thật sự cần (thường là luồng chính chứ không phải mọi màn). Phần còn lại ship sau bằng feature flag và OTA (như EAS Update) nếu chỉ là thay đổi JS và không đổi mục đích của app theo chính sách store; việc cần native hoặc SDK mới phải vào bản store trước ngày đóng băng. Thời gian đóng băng code, review của store và phát hành từng phần phải nằm trong lịch chứ không dồn tới sát ngày. Thêm người vào giữa chừng thường làm chậm thêm (chi phí hướng dẫn, phối hợp), chỉ hợp cho phần độc lập; làm thêm giờ kéo dài làm tăng lỗi và crash. Giảm rủi ro bằng cách làm phần nhiều ẩn số nhất trước, cắt phần trau chuốt (animation, tinh chỉnh) và dùng thư viện có sẵn. Cuối cùng ghi quyết định bằng văn bản, cập nhật burn-up hằng tuần kèm các mốc kiểm tra go/no-go, và sau dự án rút kinh nghiệm về cách ước lượng. Mục tiêu quan trọng nhất là không gây bất ngờ cho stakeholder.</div>
         
         
       </div>

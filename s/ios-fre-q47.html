@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Fresher: Cách debug cơ bản trong Xcode: breakpoint, po trong lldb, print khác os.Logger…</title>
+<meta name="description" content="Breakpoint (bấm vào số dòng ở lề) dừng chương trình tại dòng đó để xem biến, rồi dùng Step Over/Into/Out để chạy tiếp từng bước. Breakpoint có thể có điều ki…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-q47.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher: Cách debug cơ bản trong Xcode: breakpoint, po trong lldb, print khác os.Logger…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-fre-q47.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Cách debug cơ bản trong Xcode: breakpoint, po t…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-q47.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Cách debug cơ bản trong Xcode: breakpoint, po t…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Cách debug cơ bản trong Xcode: breakpoint, <code>po</code> trong lldb, <code>print</code> khác <code>os.Logger</code> thế nào? Exception breakpoint dùng khi nào và đọc crash log đơn giản ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Breakpoint (bấm vào số dòng ở lề) dừng chương trình tại dòng đó để xem biến, rồi dùng Step Over/Into/Out để chạy tiếp từng bước. Breakpoint có thể có điều kiện, bỏ qua n lần, hoặc chỉ ghi log rồi tự chạy tiếp (Action cộng Automatically continue) mà không phải sửa code. Khi đang dừng, console lldb cho gõ lệnh: <code>po expr</code> in mô tả object, <code>p</code> in giá trị có kiểu, <code>bt</code> xem call stack. <code>print</code> đơn giản nhưng in mọi thứ ra console, không có mức độ, không lọc được; <code>os.Logger</code> (<code>import os</code>) có mức <code>debug/info/error</code>, lọc theo <code>subsystem</code>/<code>category</code> trong Xcode hoặc Console.app, xem được log cả từ máy thật, và giá trị chuỗi động mặc định bị che khi xem ngoài Xcode trừ khi đánh dấu <code>privacy: .public</code>. Exception breakpoint (Breakpoint navigator, dấu +) dừng ngay tại dòng gây lỗi thay vì chỉ thấy <code>SIGABRT</code> ở <code>main</code> hay <code>AppDelegate</code>, hữu ích với lỗi như <code>unrecognized selector</code> hoặc outlet nối sai. Đọc crash log: xem <code>Exception Type</code> (ví dụ <code>EXC_BAD_ACCESS</code>, hoặc <code>EXC_BREAKPOINT</code> khi force unwrap <code>nil</code>), rồi trong thread có dòng <code>Crashed</code> tìm frame đầu tiên thuộc code của app; log từ bản release chỉ có địa chỉ hex nếu thiếu dSYM.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> os
+
+<span class="tk-kw">private</span> <span class="tk-kw">let</span> logger = <span class="tk-type">Logger</span>(subsystem: <span class="tk-str">&quot;com.example.shop&quot;</span>, category: <span class="tk-str">&quot;checkout&quot;</span>)
+
+<span class="tk-kw">struct</span> <span class="tk-type">CartItem</span> {
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">let</span> price: <span class="tk-type">Int</span>
+}
+
+<span class="tk-kw">func</span> placeOrder(items: [<span class="tk-type">CartItem</span>]) {
+    <span class="tk-com">// print(&quot;placeOrder \(items)&quot;)                        // in hết ra console, không có mức độ, không lọc được</span>
+    logger.info(<span class="tk-str">&quot;Đặt hàng với \(items.count) sản phẩm&quot;</span>)
+
+    <span class="tk-kw">guard</span> !items.isEmpty <span class="tk-kw">else</span> {
+        logger.error(<span class="tk-str">&quot;Giỏ hàng trống khi đặt hàng&quot;</span>)
+        <span class="tk-kw">return</span>
+    }
+
+    <span class="tk-com">// Đặt breakpoint ở dòng dưới, rồi gõ trong lldb:</span>
+    <span class="tk-com">//   po items.map(\.name)</span>
+    <span class="tk-com">//   p items.count</span>
+    <span class="tk-kw">let</span> total = items.reduce(<span class="tk-num">0</span>) { $<span class="tk-num">0</span> + $<span class="tk-num">1</span>.price }
+    logger.debug(<span class="tk-str">&quot;Tổng tiền: \(total, privacy: .public)&quot;</span>)
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-q47">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-q46.html"><span class="muted small">← Câu trước</span><span>FileManager dùng để làm gì? Documents, Caches và tmp khác nhau thế nào, bạn lưu…</span></a>
+  <a class="pager-next" href="../s/ios-fre-q48.html"><span class="muted small">Câu sau →</span><span>Viết unit test cơ bản bằng XCTest thế nào? @testable import, setUp và các hàm X…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/ios/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q48.html">Viết unit test cơ bản bằng XCTest thế nào? @testable import, setUp và các hàm XCTAssert... dùng ra sao, và vì sao test hàm thuần dễ hơn test cả ViewController?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-jun-q25.html">Bạn viết unit test cho hàm fetchUser(completion:) chạy bất đồng bộ; test luôn pass dù cố tình sửa cho kết quả sai. Vì sao, và viết lại bằng XCTest thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q48.html">QA viết UI test đăng nhập bằng XCUITest với app.buttons[&quot;Đăng nhập&quot;].tap(): chạy trên máy dev thì pass, trên CI thì fail ngẫu nhiên, và đổi app sang tiếng Anh thì vỡ hết. Bạn viết UI test ổn định thế nào, và khi nào nên chọn UI test thay vì unit test?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm load() async gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q24.html">Swift Testing (@Test, #expect) khác XCTest ở những điểm nào? Dự án đang có vài trăm test XCTest thì có nên chuyển hết không?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q35.html">Test cho tầng networking đang gọi server thật nên chậm và flaky; bạn muốn test cả URLSession thật (header, decode, retry) mà không chạm mạng. URLProtocol stub hoạt động thế nào, và nó khác mock bằng protocol ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

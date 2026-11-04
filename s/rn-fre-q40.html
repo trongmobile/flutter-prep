@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Fresher: Màn hình có FilterBar (chọn danh mục) và ProductList (hiển thị sản ph…</title>
+<meta name="description" content="Hai component anh em không truyền dữ liệu trực tiếp cho nhau, vì dữ liệu trong React chảy một chiều từ cha xuống con qua props. Cách làm là &quot;nâng state lên&quot;…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-q40.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher: Màn hình có FilterBar (chọn danh mục) và ProductList (hiển thị sản ph…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-q40.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Màn hình có FilterBar (chọn danh mục) và Produc…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-q40.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình có FilterBar (chọn danh mục) và Produc…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/react/">React &amp; Hooks</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Màn hình có <code>FilterBar</code> (chọn danh mục) và <code>ProductList</code> (hiển thị sản phẩm) là hai component anh em, cả hai cần dùng chung danh mục đang được chọn. State nên đặt ở đâu và hai component trao đổi với nhau thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hai component anh em không truyền dữ liệu trực tiếp cho nhau, vì dữ liệu trong React chảy một chiều từ cha xuống con qua props. Cách làm là &quot;nâng state lên&quot; (lifting state up): đặt <code>useState</code> ở component cha gần nhất của cả hai, truyền giá trị xuống qua props, đồng thời truyền thêm một callback như <code>onSelect</code> để con báo ngược lên. Con gọi callback, cha cập nhật state, cả hai con cùng render lại với giá trị mới, và chỉ có một nguồn sự thật duy nhất. Hai lỗi hay gặp ở người mới: mỗi con giữ một <code>useState</code> riêng rồi cố đồng bộ bằng <code>useEffect</code>, dễ lệch và render thừa; hoặc lưu cả danh sách đã lọc vào state trong khi có thể tính ngay lúc render từ state gốc (<code>PRODUCTS.filter(...)</code>). Cách này đủ dùng khi dữ liệu chỉ đi qua một hai tầng. Chỉ khi phải truyền qua nhiều tầng trung gian không dùng đến, hoặc nhiều màn hình cùng cần, mới cân nhắc Context hay Zustand/Redux.</div>
+        <pre class="code-block"><code><span class="tk-kw">type</span> <span class="tk-type">Category</span> = <span class="tk-str">&#39;all&#39;</span> | <span class="tk-str">&#39;shoes&#39;</span> | <span class="tk-str">&#39;hats&#39;</span>;
+
+<span class="tk-kw">function</span> <span class="tk-type">ProductScreen</span>() {
+  <span class="tk-kw">const</span> [category, setCategory] = useState&lt;<span class="tk-type">Category</span>&gt;(<span class="tk-str">&#39;all&#39;</span>); <span class="tk-com">// state nằm ở cha</span>
+  <span class="tk-kw">const</span> visible = category === <span class="tk-str">&#39;all&#39;</span> ? <span class="tk-type">PRODUCTS</span> : <span class="tk-type">PRODUCTS</span>.filter((p) =&gt; p.category === category);
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">FilterBar</span> selected={category} onSelect={setCategory} /&gt;
+      &lt;<span class="tk-type">ProductList</span> products={visible} /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">FilterBar</span>({ selected, onSelect }: { selected: <span class="tk-type">Category</span>; onSelect: (c: <span class="tk-type">Category</span>) =&gt; <span class="tk-kw">void</span> }) {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span> style={{ flexDirection: <span class="tk-str">&#39;row&#39;</span> }}&gt;
+      {([<span class="tk-str">&#39;all&#39;</span>, <span class="tk-str">&#39;shoes&#39;</span>, <span class="tk-str">&#39;hats&#39;</span>] <span class="tk-kw">as</span> <span class="tk-kw">const</span>).map((c) =&gt; (
+        &lt;<span class="tk-type">Pressable</span> key={c} onPress={() =&gt; onSelect(c)}&gt;
+          &lt;<span class="tk-type">Text</span> style={{ fontWeight: c === selected ? <span class="tk-str">&#39;bold&#39;</span> : <span class="tk-str">&#39;normal&#39;</span> }}&gt;{c}&lt;/<span class="tk-type">Text</span>&gt;
+        &lt;/<span class="tk-type">Pressable</span>&gt;
+      ))}
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-q40">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-q39.html"><span class="muted small">← Câu trước</span><span>Danh sách todo dùng const [todos, setTodos] = useState&lt;Todo[]&gt;([]). Viết todos.…</span></a>
+  <a class="pager-next" href="../s/rn-fre-q41.html"><span class="muted small">Câu sau →</span><span>Bạn cần làm bốn thứ: hộp thoại xác nhận xoá, vòng xoay chờ khi đang tải, công t…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề React &amp; Hooks</h2><a class="section-sub" href="../phong-van/react-native/chu-de/react/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q08.html">Props và state khác nhau thế nào? Component con có được sửa props mà nó nhận không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q09.html">Vì sao gọi setCount(count + 1) ba lần liên tiếp trong một handler mà count chỉ tăng 1? Sửa thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q10.html">JSX là gì? Kể vài quy tắc JSX hay bị viết sai, đặc biệt khi dùng trong React Native.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q11.html">Khi render danh sách, key dùng để làm gì? Nên chọn giá trị nào làm key?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q12.html">Có những cách nào để render có điều kiện trong React? Vì sao {count &amp;&amp; &lt;Text&gt;…&lt;/Text&gt;} có thể làm app React Native bị lỗi?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q13.html">Controlled TextInput là gì? Vì sao form đăng nhập thường được làm theo kiểu controlled?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

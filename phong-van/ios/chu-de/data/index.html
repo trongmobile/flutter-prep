@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Networking &amp; Storage — Mobile Interview</title>
-<meta name="description" content="13 câu hỏi phỏng vấn iOS về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
+<meta name="description" content="18 câu hỏi phỏng vấn iOS về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/data/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Networking &amp; Storage — Mobile Interview">
-<meta property="og:description" content="13 câu hỏi phỏng vấn iOS về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
+<meta property="og:description" content="18 câu hỏi phỏng vấn iOS về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/data/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Networking &amp; Storage</h1>
-  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 15 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 15 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -55,6 +55,7 @@
     <li><a href="../../../../s/ios-fre-q21.html">UserDefaults phù hợp để lưu gì? Có nên lưu access token hay mật khẩu vào đó không?</a></li>
     <li><a href="../../../../s/ios-fre-q22.html">Muốn lưu một struct như UserSettings vào UserDefaults thì làm thế nào? Vì sao gán thẳng struct vào lại crash?</a></li>
     <li><a href="../../../../s/ios-fre-q34.html">Gọi API bằng URLSession và giải mã JSON bằng Codable thế nào? Vì sao gọi http:// lại bị chặn?</a></li>
+    <li><a href="../../../../s/ios-fre-q46.html">FileManager dùng để làm gì? Documents, Caches và tmp khác nhau thế nào, bạn lưu file ở đâu, và khi nào nên dùng file thay vì UserDefaults?</a></li>
     <li><a href="../../../../s/ios-fre-m34.html">Key launchCount và userName chưa từng được lưu. UserDefaults.standard.integer(forKey: &quot;launchCount&quot;) và UserDefaults.standard.string(forKey: &quot;userName&quot;) lần lượt trả về gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m35.html">Sau khi đăng nhập, app nhận được access token. Nên lưu token này ở đâu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m36.html">Gán thẳng một struct vào UserDefaults như đoạn code sau thì chạy thế nào?</a> <span class="tag">Quiz</span></li>
@@ -67,6 +68,8 @@
     <li><a href="../../../../s/ios-jun-q12.html">Backend trả price lúc là số 120000, lúc là chuỗi &quot;120000&quot;, còn field tags có khi không có. Bạn viết init(from:) tuỳ biến thế nào?</a></li>
     <li><a href="../../../../s/ios-jun-q13.html">Server trả HTTP 401 hoặc 500 nhưng trong completion của dataTask thì error vẫn là nil, app đem body lỗi đi decode rồi báo lỗi parse khó hiểu. Vì sao, và xử lý thế nào cho đúng?</a></li>
     <li><a href="../../../../s/ios-jun-q31.html">Log của app có nhiều dòng NSURLErrorDomain Code=-999 &quot;cancelled&quot; mỗi khi người dùng rời màn hình hoặc gõ tìm kiếm nhanh, và có chỗ còn hiện cả alert lỗi. Đây là lỗi gì, và bạn map các URLError thường gặp ra thông báo cho người dùng thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q41.html">Tải file PDF 80MB bằng URLSession.shared.downloadTask(with:completionHandler:) rồi mở file trong completion thì lúc được lúc báo file không tồn tại, không có thanh tiến độ, và khi người dùng chuyển sang app khác một lúc thì việc tải dừng luôn. Giải thích và sửa thế nào?</a></li>
+    <li><a href="../../../../s/ios-jun-q42.html">Mất mạng thì màn Home trắng trơn và báo lỗi, dù hôm qua người dùng vừa xem xong. Product muốn mở app là thấy ngay dữ liệu cũ rồi cập nhật khi có mạng. Bạn làm cache-then-network thế nào, và có nên dùng NWPathMonitor để chặn gọi API khi &#39;không có mạng&#39; không?</a></li>
     <li><a href="../../../../s/ios-jun-m17.html">JSON có key age nhưng giá trị là null, còn model khai báo age là Int không optional. JSONDecoder mặc định cho kết quả gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m18.html">Hàm loadProfile() dưới đây được gọi nhưng completion không bao giờ chạy, kể cả khi mất mạng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m19.html">App tải thumbnail sản phẩm từ server, mất thì tải lại được và không cần backup lên iCloud. Nên lưu file vào thư mục nào?</a> <span class="tag">Quiz</span></li>
@@ -82,6 +85,7 @@
     <li><a href="../../../../s/ios-mid-q19.html">Dự án mới target iOS 17 trở lên, team phân vân giữa SwiftData và Core Data. Bạn cân nhắc những gì trước khi chọn?</a></li>
     <li><a href="../../../../s/ios-mid-q20.html">Bạn cần cache ảnh avatar trong app. NSCache, Dictionary và URLCache khác nhau thế nào, và bạn kết hợp chúng ra sao?</a></li>
     <li><a href="../../../../s/ios-mid-q36.html">Team lưu mọi thứ vào UserDefaults: cờ onboarding, danh sách sản phẩm yêu thích vài nghìn phần tử và cả ảnh nhỏ dạng Data; app khởi động chậm dần. Nên lưu gì ở UserDefaults/@AppStorage, gì ở file, Keychain hay database, và những bẫy nào cần biết?</a></li>
+    <li><a href="../../../../s/ios-mid-q48.html">Bạn thêm thuộc tính non-optional vào entity Core Data (hoặc đổi tên thuộc tính trong model SwiftData) rồi chạy lại: app crash khi mở vì không load được store, và có người &quot;chữa cháy&quot; bằng cách xoá store khiến tester mất sạch dữ liệu. Migration hoạt động thế nào, và bạn làm đúng ra sao?</a></li>
     <li><a href="../../../../s/ios-mid-m31.html">Bạn fetch Order trong background context của Core Data rồi cần hiển thị nó trên main thread. Cách làm đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m32.html">Điểm nào đúng về NSCache khi dùng làm cache ảnh trong RAM?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m33.html">Cần import hàng nghìn bản ghi vào SwiftData mà không làm đứng UI. Cách nào đúng?</a> <span class="tag">Quiz</span></li>
@@ -92,6 +96,7 @@
   <ul class="link-list">
     <li><a href="../../../../s/ios-sen-q13.html">App bán hàng cho phép nhân viên tạo đơn khi mất mạng và tự đồng bộ khi có mạng lại. Bạn thiết kế phần sync thế nào để không mất đơn và không tạo đơn trùng?</a></li>
     <li><a href="../../../../s/ios-sen-q32.html">App có 40 endpoint, mỗi chỗ tự dựng URLRequest và tự retry khác nhau; khi server quá tải (429/503) app còn làm nó tệ hơn bằng cách retry dồn dập. Bạn thiết kế tầng networking thế nào: cấu hình URLSession, chính sách retry và backoff, idempotency, đo lường?</a></li>
+    <li><a href="../../../../s/ios-sen-q48.html">Backend đề xuất chuyển từ REST sang GraphQL (hoặc gRPC) &quot;để mobile gọi ít request hơn&quot;. Từ góc nhìn app iOS, bạn đánh giá thế nào về payload, cache, offline, phân trang và việc giữ tương thích với các bản app cũ?</a></li>
     <li><a href="../../../../s/ios-sen-m22.html">App và widget dùng chung store Core Data trong App Group như sau. Widget ghi đơn mới nhưng app đang mở không thấy cập nhật. Cần bổ sung gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m23.html">App cần upload video 500MB và tiếp tục cả khi user chuyển sang app khác. Cấu hình URLSession nào đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m24.html">Hàm đặt hàng sau thỉnh thoảng tạo đơn trùng khi mạng chập chờn, dù server đã nhận đơn đầu tiên. Cách sửa căn bản nhất?</a> <span class="tag">Quiz</span></li>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Junior: Mất mạng thì màn Home trắng trơn và báo lỗi, dù hôm qua người dùng vừa xem xong…</title>
+<meta name="description" content="ViewModel làm theo thứ tự: đọc cache và hiển thị ngay (đánh dấu là dữ liệu cũ), gọi API, thành công thì cập nhật UI và ghi đè cache, thất bại thì giữ nguyên…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q42.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: Mất mạng thì màn Home trắng trơn và báo lỗi, dù hôm qua người dùng vừa xem xong…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-q42.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Mất mạng thì màn Home trắng trơn và báo lỗi, dù…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q42.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Mất mạng thì màn Home trắng trơn và báo lỗi, dù…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Mất mạng thì màn Home trắng trơn và báo lỗi, dù hôm qua người dùng vừa xem xong. Product muốn mở app là thấy ngay dữ liệu cũ rồi cập nhật khi có mạng. Bạn làm cache-then-network thế nào, và có nên dùng <code>NWPathMonitor</code> để chặn gọi API khi &#39;không có mạng&#39; không?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">ViewModel làm theo thứ tự: đọc cache và hiển thị ngay (đánh dấu là dữ liệu cũ), gọi API, thành công thì cập nhật UI và ghi đè cache, thất bại thì giữ nguyên dữ liệu đang có và chỉ báo nhẹ bằng banner hoặc toast; chỉ hiện lỗi toàn màn khi cache cũng trống. Với model <code>Codable</code> nhỏ, cache đơn giản là encode JSON rồi ghi file (<code>write(to:options: .atomic)</code>) vào thư mục Caches; hệ thống có thể xoá thư mục này khi thiếu dung lượng nên dữ liệu bắt buộc phải giữ thì để Application Support, còn dữ liệu lớn cần truy vấn thì dùng Core Data hoặc SwiftData. <code>NWPathMonitor</code> hợp để hiện banner &#39;Đang offline&#39; và tự tải lại khi mạng trở lại (nhớ <code>start(queue:)</code> và về main thread khi đổi UI). Không nên dùng nó làm cổng chặn request: <code>.satisfied</code> chỉ nói có đường mạng, không đảm bảo tới được server (captive portal, Wi-Fi không ra internet), còn <code>.unsatisfied</code> có thể sai tạm thời lúc đổi mạng. Cách đúng là cứ gọi request rồi xử lý <code>URLError</code> (<code>.notConnectedToInternet</code>, <code>.timedOut</code>); nếu muốn request chờ có mạng thay vì lỗi ngay thì đặt <code>waitsForConnectivity = true</code> trong <code>URLSessionConfiguration</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">FeedCache</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> url = <span class="tk-type">URL</span>.cachesDirectory.appending(path: <span class="tk-str">&quot;feed.json&quot;</span>)
+
+  <span class="tk-kw">func</span> load() -&gt; [<span class="tk-type">Post</span>]? {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> data = <span class="tk-kw">try</span>? <span class="tk-type">Data</span>(contentsOf: url) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+    <span class="tk-kw">return</span> <span class="tk-kw">try</span>? <span class="tk-type">JSONDecoder</span>().decode([<span class="tk-type">Post</span>].<span class="tk-kw">self</span>, from: data)
+  }
+
+  <span class="tk-kw">func</span> save(_ posts: [<span class="tk-type">Post</span>]) {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> data = <span class="tk-kw">try</span>? <span class="tk-type">JSONEncoder</span>().encode(posts) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    <span class="tk-kw">try</span>? data.write(to: url, options: .atomic)
+  }
+}
+
+<span class="tk-com">// Trong ViewModel (@MainActor)</span>
+<span class="tk-kw">func</span> refresh() <span class="tk-kw">async</span> {
+  <span class="tk-kw">if</span> <span class="tk-kw">let</span> cached = cache.load() { posts = cached; isStale = <span class="tk-kw">true</span> } <span class="tk-com">// hiện dữ liệu cũ ngay</span>
+  <span class="tk-kw">do</span> {
+    <span class="tk-kw">let</span> fresh = <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.fetchFeed()
+    posts = fresh
+    isStale = <span class="tk-kw">false</span>
+    cache.save(fresh)
+  } <span class="tk-kw">catch</span> <span class="tk-kw">where</span> posts.isEmpty {
+    errorMessage = <span class="tk-str">&quot;Không tải được dữ liệu&quot;</span>  <span class="tk-com">// không có gì để hiện mới báo lỗi toàn màn</span>
+  } <span class="tk-kw">catch</span> {
+    showOfflineBanner = <span class="tk-kw">true</span>                 <span class="tk-com">// đã có dữ liệu cũ thì chỉ báo nhẹ</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q42">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q41.html"><span class="muted small">← Câu trước</span><span>Tải file PDF 80MB bằng URLSession.shared.downloadTask(with:completionHandler:)…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q43.html"><span class="muted small">Câu sau →</span><span>Màn danh sách sản phẩm tải 20 item mỗi trang. Bạn gọi trang tiếp theo trong wil…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/ios/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q11.html">API trả JSON dạng snake_case, có field lúc có lúc không, có field đôi khi là null. Bạn thiết kế model Codable thế nào để decode không vỡ?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q12.html">Backend trả price lúc là số 120000, lúc là chuỗi &quot;120000&quot;, còn field tags có khi không có. Bạn viết init(from:) tuỳ biến thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q13.html">Server trả HTTP 401 hoặc 500 nhưng trong completion của dataTask thì error vẫn là nil, app đem body lỗi đi decode rồi báo lỗi parse khó hiểu. Vì sao, và xử lý thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q31.html">Log của app có nhiều dòng NSURLErrorDomain Code=-999 &quot;cancelled&quot; mỗi khi người dùng rời màn hình hoặc gõ tìm kiếm nhanh, và có chỗ còn hiện cả alert lỗi. Đây là lỗi gì, và bạn map các URLError thường gặp ra thông báo cho người dùng thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q41.html">Tải file PDF 80MB bằng URLSession.shared.downloadTask(with:completionHandler:) rồi mở file trong completion thì lúc được lúc báo file không tồn tại, không có thanh tiến độ, và khi người dùng chuyển sang app khác một lúc thì việc tải dừng luôn. Giải thích và sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-m17.html">JSON có key age nhưng giá trị là null, còn model khai báo age là Int không optional. JSONDecoder mặc định cho kết quả gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview</title>
-<meta name="description" content="18 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta name="description" content="22 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Concurrency — Mobile Interview">
-<meta property="og:description" content="18 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
+<meta property="og:description" content="22 câu hỏi phỏng vấn iOS về Concurrency từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/concurrency/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,8 +47,15 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Concurrency</h1>
-  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">22 câu hỏi kèm đáp án mẫu và 20 câu quiz về Concurrency, xếp theo rank từ Fresher đến Senior.</p>
 </header>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-fre-q38.html">Main thread là gì? Vì sao gọi mạng hay xử lý nặng ngay trên main thread làm giao diện đứng, và DispatchQueue.main.async dùng để làm gì?</a></li>
+    <li><a href="../../../../s/ios-fre-q39.html">async/await trong Swift giải quyết vấn đề gì so với completion handler? Hãy viết lại một hàm tải dữ liệu từ dạng callback sang async throws.</a></li>
+  </ul>
+</section>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
   <ul class="link-list">
@@ -58,6 +65,7 @@
     <li><a href="../../../../s/ios-jun-q10.html">Màn hình Home cần gọi song song 3 API (banner, danh mục, sản phẩm) và chỉ tắt loading khi cả 3 xong. Bạn làm bằng GCD thế nào, cần tránh lỗi gì?</a></li>
     <li><a href="../../../../s/ios-jun-q29.html">Luồng tải ảnh gồm các bước tải về, áp filter rồi lưu cache, và phải huỷ được cả chuỗi khi người dùng rời màn hình. Khi nào bạn chọn OperationQueue thay vì GCD, và gọi cancel() lên một Operation có dừng ngay việc đang chạy không?</a></li>
     <li><a href="../../../../s/ios-jun-q30.html">Bạn viết let user = try await api.fetchUser() trong viewDidLoad và compiler báo &#39;async&#39; call in a function that does not support concurrency. Vì sao, xử lý thế nào, và sau await cập nhật label có cần DispatchQueue.main.async không?</a></li>
+    <li><a href="../../../../s/ios-jun-q40.html">Bộ đếm var downloaded = 0 được tăng từ 100 task chạy song song bằng DispatchQueue.concurrentPerform; kết quả khi 97, khi 100, và thỉnh thoảng app crash ở chỗ append vào mảng dùng chung. Đây là lỗi gì, bạn chứng minh bằng công cụ nào và sửa thế nào?</a></li>
     <li><a href="../../../../s/ios-jun-m12.html">Trong viewDidLoad (main thread), code trộn main.async và global().sync. Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m13.html">Hai lệnh async và một lệnh sync được đưa vào cùng một queue tạo bằng DispatchQueue(label:). Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m14.html">Nhiều thread cùng append vào một biến var results: [Int] dùng chung, ví dụ bên trong DispatchQueue.concurrentPerform. Điều gì có thể xảy ra?</a> <span class="tag">Quiz</span></li>
@@ -95,6 +103,7 @@
     <li><a href="../../../../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a></li>
     <li><a href="../../../../s/ios-sen-q26.html">Một service cũ dùng DispatchSemaphore.wait() bên trong hàm async để chờ callback, và app thỉnh thoảng treo hoàn toàn dù CPU rất rảnh. Thread pool của Swift Concurrency hoạt động thế nào, vì sao chặn thread trong code async nguy hiểm, và Task { } khác Task.detached ra sao?</a></li>
     <li><a href="../../../../s/ios-sen-q27.html">Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await, dưới dạng for await location in tracker.updates(). Bạn bọc bằng AsyncStream thế nào, và cần để ý gì về huỷ, buffer và vòng đời?</a></li>
+    <li><a href="../../../../s/ios-sen-q43.html">Màn hình lưới ảnh tải 500 thumbnail bằng for id in ids { Task { await load(id) } }: app bắn hàng trăm request cùng lúc, rời màn hình vẫn tải tiếp, và lỗi của từng ảnh biến mất không dấu vết. Bạn thiết kế lại bằng structured concurrency thế nào và giới hạn số tác vụ chạy đồng thời ra sao?</a></li>
     <li><a href="../../../../s/ios-sen-m09.html">Delegate của một SDK cũ được tài liệu cam kết luôn gọi trên main thread, nhưng protocol không đánh dấu @MainActor. Trong đoạn code sau, MainActor.assumeIsolated làm gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m10.html">Main thread phải chờ một công việc đang chạy ở QoS thấp. Cơ chế chờ nào khiến hệ thống KHÔNG thể nâng priority cho bên đang làm việc, dẫn tới priority inversion?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m11.html">Vòng lặp sau đẩy 500 block tải file vào global queue, mỗi block gọi mạng đồng bộ. Điều gì dễ xảy ra?</a> <span class="tag">Quiz</span></li>

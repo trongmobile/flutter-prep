@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Junior: QA viết UI test đăng nhập bằng XCUITest với app.buttons[&quot;Đăng nhập&quot;].tap(): chạ…</title>
+<meta name="description" content="XCUITest chạy app thành một process riêng và tìm phần tử qua accessibility. Truy vấn theo chữ hiển thị (đã localize) rất dễ vỡ khi đổi ngôn ngữ hay sửa copy;…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-q48.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior: QA viết UI test đăng nhập bằng XCUITest với app.buttons[&quot;Đăng nhập&quot;].tap(): chạ…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-q48.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"QA viết UI test đăng nhập bằng XCUITest với app…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-q48.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">QA viết UI test đăng nhập bằng XCUITest với app…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">QA viết UI test đăng nhập bằng XCUITest với <code>app.buttons[&quot;Đăng nhập&quot;].tap()</code>: chạy trên máy dev thì pass, trên CI thì fail ngẫu nhiên, và đổi app sang tiếng Anh thì vỡ hết. Bạn viết UI test ổn định thế nào, và khi nào nên chọn UI test thay vì unit test?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">XCUITest chạy app thành một process riêng và tìm phần tử qua accessibility. Truy vấn theo chữ hiển thị (đã localize) rất dễ vỡ khi đổi ngôn ngữ hay sửa copy; hãy đặt <code>accessibilityIdentifier</code> (UIKit: <code>button.accessibilityIdentifier = &quot;login_button&quot;</code>, SwiftUI: <code>.accessibilityIdentifier(&quot;login_button&quot;)</code>) rồi query <code>app.buttons[&quot;login_button&quot;]</code>; identifier không được đọc ra cho người dùng, khác với <code>accessibilityLabel</code>. Nguyên nhân chập chờn chủ yếu là không chờ UI: bước tiếp theo chạy khi màn hình chưa kịp xuất hiện, nhất là trên CI chậm. Dùng <code>element.waitForExistence(timeout:)</code> hay expectation thay vì <code>sleep</code>. Các thực hành khác: <code>continueAfterFailure = false</code> để dừng ngay khi có lỗi đầu tiên; dùng launch arguments hay environment để app chạy với API giả và xoá phiên cũ, tránh phụ thuộc server thật; mỗi test độc lập, không dựa vào thứ tự chạy; tách locator ra Page Object. Chọn loại test: logic, ViewModel, parse JSON, tính toán thì unit test (nhanh, ổn định, viết nhiều); UI test chỉ dành cho vài luồng quan trọng chạy từ đầu đến cuối như đăng nhập, thanh toán, vì chậm, tốn CI và dễ flaky hơn.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">LoginUITests</span>: <span class="tk-type">XCTestCase</span> {
+  <span class="tk-kw">let</span> app = <span class="tk-type">XCUIApplication</span>()
+
+  <span class="tk-kw">override</span> <span class="tk-kw">func</span> setUpWithError() <span class="tk-kw">throws</span> {
+    continueAfterFailure = <span class="tk-kw">false</span>
+    app.launchArguments = [<span class="tk-str">&quot;-uiTesting&quot;</span>]   <span class="tk-com">// app đọc cờ này để dùng API giả, xoá phiên cũ</span>
+    app.launch()
+  }
+
+  <span class="tk-kw">func</span> testLoginSuccess() {
+    <span class="tk-kw">let</span> email = app.textFields[<span class="tk-str">&quot;login_email&quot;</span>]
+    <span class="tk-type">XCTAssertTrue</span>(email.waitForExistence(timeout: <span class="tk-num">5</span>))   <span class="tk-com">// chờ màn hình, không dùng sleep</span>
+    email.tap()
+    email.typeText(<span class="tk-str">&quot;an@example.com&quot;</span>)
+
+    <span class="tk-kw">let</span> password = app.secureTextFields[<span class="tk-str">&quot;login_password&quot;</span>]
+    password.tap()
+    password.typeText(<span class="tk-str">&quot;123456&quot;</span>)
+
+    app.buttons[<span class="tk-str">&quot;login_button&quot;</span>].tap()
+    <span class="tk-type">XCTAssertTrue</span>(app.staticTexts[<span class="tk-str">&quot;home_title&quot;</span>].waitForExistence(timeout: <span class="tk-num">10</span>))
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-q48">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-q47.html"><span class="muted small">← Câu trước</span><span>Push hiện bình thường khi app ở background, nhưng khi app đang mở thì không thấ…</span></a>
+  <a class="pager-next" href="../s/ios-jun-q49.html"><span class="muted small">Câu sau →</span><span>Security review của app ví điện tử chỉ ra: token bị print ra console (và vẫn nằ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/ios/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q25.html">Bạn viết unit test cho hàm fetchUser(completion:) chạy bất đồng bộ; test luôn pass dù cố tình sửa cho kết quả sai. Vì sao, và viết lại bằng XCTest thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-m39.html">Trong một subclass XCTestCase, hàm func checkLoginWithWrongPassword() không bao giờ chạy khi bấm Cmd+U. Vì sao?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-m40.html">Hai test cùng tăng một stored property count của test case rồi kiểm tra bằng 1. Kết quả khi chạy cả hai là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q47.html">Cách debug cơ bản trong Xcode: breakpoint, po trong lldb, print khác os.Logger thế nào? Exception breakpoint dùng khi nào và đọc crash log đơn giản ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q48.html">Viết unit test cơ bản bằng XCTest thế nào? @testable import, setUp và các hàm XCTAssert... dùng ra sao, và vì sao test hàm thuần dễ hơn test cả ViewController?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm load() async gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

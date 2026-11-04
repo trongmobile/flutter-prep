@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Performance — Mobile Interview</title>
-<meta name="description" content="5 câu hỏi phỏng vấn iOS về Performance từ Fresher đến Senior, có đáp án mẫu và 5 câu quiz trắc nghiệm.">
+<meta name="description" content="9 câu hỏi phỏng vấn iOS về Performance từ Fresher đến Senior, có đáp án mẫu và 5 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/perf/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Performance — Mobile Interview">
-<meta property="og:description" content="5 câu hỏi phỏng vấn iOS về Performance từ Fresher đến Senior, có đáp án mẫu và 5 câu quiz trắc nghiệm.">
+<meta property="og:description" content="9 câu hỏi phỏng vấn iOS về Performance từ Fresher đến Senior, có đáp án mẫu và 5 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/perf/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,12 +47,19 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Performance</h1>
-  <p class="subtitle">5 câu hỏi kèm đáp án mẫu và 5 câu quiz về Performance, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 5 câu quiz về Performance, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> iOS Junior</h2><a class="section-sub" href="../../../../phong-van/ios/junior/">Mọi chủ đề Junior →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/ios-jun-q33.html">Card sản phẩm có cornerRadius và bạn thêm bóng đổ. Đặt layer.masksToBounds = true thì bóng biến mất; tắt đi thì bóng hiện nhưng danh sách nhiều card cuộn bị giật. Vì sao, và làm sao để vừa bo góc, vừa có bóng, vừa mượt?</a></li>
+  </ul>
+</section>
+<section>
+  <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> iOS Middle</h2><a class="section-sub" href="../../../../phong-van/ios/middle/">Mọi chủ đề Middle →</a></div>
+  <ul class="link-list">
+    <li><a href="../../../../s/ios-mid-q38.html">Bản cập nhật mới của app nặng gần 180MB, user phàn nàn tải chậm qua 4G và PM yêu cầu giảm kích thước. Bạn đo xem phần nào chiếm dung lượng bằng cách nào, và App Thinning, asset catalog cùng các thư viện bên thứ ba ảnh hưởng ra sao?</a></li>
+    <li><a href="../../../../s/ios-mid-q39.html">Review trên App Store than app hao pin dù user ít dùng, và Xcode Organizer cũng báo mức tiêu thụ năng lượng cao. Bạn điều tra thế nào, và giảm tiêu thụ ở vị trí, mạng và tác vụ nền ra sao?</a></li>
   </ul>
 </section>
 <section>
@@ -62,6 +69,8 @@
     <li><a href="../../../../s/ios-sen-q02.html">App mất gần 3 giây cho cold launch và PM muốn giảm một nửa. Bạn phân tích và tối ưu thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-q03.html">Màn hình gallery hiển thị lưới thumbnail từ ảnh chụp camera và app bị kill vì hết memory. Vì sao, và xử lý thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-q34.html">Crash-free rate của app rất cao, nhưng review trên App Store than &#39;app đơ vài giây&#39; và Xcode Organizer báo hang rate tăng. Bạn tìm các hang xảy ra ở production mà không tái hiện được trên máy dev bằng cách nào?</a></li>
+    <li><a href="../../../../s/ios-sen-q38.html">Mỗi lần phát hành bạn chỉ biết app chậm hơn khi review 1 sao xuất hiện. Bạn xây hệ thống quan sát hiệu năng thế nào để thấy regression về launch, hang và memory trước khi nó tới phần lớn user, và để PR làm chậm app bị chặn ngay trên CI?</a></li>
+    <li><a href="../../../../s/ios-sen-q39.html">Build sạch của app mất 12 phút, build tăng dần vẫn vài chục giây và dev than Xcode đứng ở bước &quot;Compiling Swift source files&quot;. Với codebase Swift lớn, bạn đo, khoanh vùng và giảm thời gian build thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-m01.html">Card trong cell dưới đây làm cuộn giật, và Color Off-screen Rendered tô vàng toàn bộ card. Cách sửa hiệu quả nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m02.html">Ảnh JPEG 4000×3000 pixel nặng 2MB trên đĩa được hiển thị trong UIImageView 100×100 point bằng UIImage(contentsOfFile:), không downsample. Bitmap sau khi decode chiếm khoảng bao nhiêu memory?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-sen-m03.html">Template App Launch của Instruments cho thấy phần lớn thời gian khởi động nằm trước khi main() được gọi. Thay đổi nào có khả năng rút ngắn phần này nhất?</a> <span class="tag">Quiz</span></li>

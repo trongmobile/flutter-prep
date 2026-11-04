@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native: Performance — Mobile Interview</title>
-<meta name="description" content="12 câu hỏi phỏng vấn React Native về Performance từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<meta name="description" content="16 câu hỏi phỏng vấn React Native về Performance từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/perf/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native: Performance — Mobile Interview">
-<meta property="og:description" content="12 câu hỏi phỏng vấn React Native về Performance từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<meta property="og:description" content="16 câu hỏi phỏng vấn React Native về Performance từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/perf/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,11 +47,12 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · react native · chủ đề</div>
   <h1>Câu hỏi phỏng vấn React Native: Performance</h1>
-  <p class="subtitle">12 câu hỏi kèm đáp án mẫu và 14 câu quiz về Performance, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">16 câu hỏi kèm đáp án mẫu và 14 câu quiz về Performance, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> React Native Fresher</h2><a class="section-sub" href="../../../../phong-van/react-native/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
+    <li><a href="../../../../s/rn-fre-q46.html">Đồng nghiệp mới viết màn Home: ScrollView với .map() 500 sản phẩm, ảnh gốc rộng 4000px, console.log trong renderItem và toàn bộ state đặt ở App. App giật và nóng máy. Những lỗi hiệu năng cơ bản nào cần sửa trước?</a></li>
     <li><a href="../../../../s/rn-fre-m31.html">Màn hình cần hiển thị danh sách 5.000 sản phẩm tải từ API. Lựa chọn nào hợp lý nhất?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
@@ -85,6 +86,9 @@
     <li><a href="../../../../s/rn-sen-q09.html">Memory của app tăng dần sau mỗi lần vào ra màn chi tiết sản phẩm, cuối cùng app bị OS kill. Bạn tìm và xử lý leak trong RN thế nào?</a></li>
     <li><a href="../../../../s/rn-sen-q10.html">Feed hiển thị ảnh user upload (ảnh gốc 12MP). Trên Android tầm thấp app hay bị OOM khi cuộn nhanh. Vì sao, và bạn sửa thế nào?</a></li>
     <li><a href="../../../../s/rn-sen-q11.html">Sau một năm, JS bundle của app tăng từ 6MB lên 14MB và startup chậm dần. Bạn phân tích và kiểm soát kích thước bundle thế nào?</a></li>
+    <li><a href="../../../../s/rn-sen-q38.html">Mỗi bản phát hành app RN lại bị than &quot;chậm hơn bản trước&quot;, nhưng team chỉ biết khi user phàn nàn và không ai rõ commit nào gây ra. Bạn xây hệ thống quan sát hiệu năng và chặn thoái lui thế nào?</a></li>
+    <li><a href="../../../../s/rn-sen-q39.html">Màn báo cáo tải một JSON vài MB (hàng chục nghìn bản ghi) rồi lọc, nhóm và sắp xếp ngay trên JS. Mỗi lần mở, UI đứng khoảng 2 giây, nút Huỷ cũng không bấm được. Bạn có những lựa chọn nào để không làm kẹt JS thread, và chọn theo tiêu chí gì?</a></li>
+    <li><a href="../../../../s/rn-sen-q40.html">Danh sách thẻ sản phẩm cuộn giật trên Android tầm thấp dù JS thread không bận. Layout Inspector cho thấy mỗi thẻ có 8-10 tầng View lồng nhau, bóng đổ và bo góc đặt ở nhiều lớp. Cây view phức tạp ảnh hưởng hiệu năng ra sao, và bạn đo, giảm nó thế nào?</a></li>
     <li><a href="../../../../s/rn-sen-m15.html">JS thread bị chặn 2 giây bởi một vòng lặp xử lý dữ liệu. Trong 2 giây đó, thứ nào vẫn hoạt động bình thường?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-sen-m16.html">Component dưới đây được mount, sau đó userId đổi 2 lần rồi component bị unmount (không bật StrictMode). Điều gì xảy ra với các interval?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-sen-m17.html">Ảnh 3000×2000 px được hiển thị trong thumbnail 100×100 dp mà không downsample. Khi decode thành bitmap 4 byte mỗi pixel (ARGB_8888), ảnh chiếm khoảng bao nhiêu RAM?</a> <span class="tag">Quiz</span></li>

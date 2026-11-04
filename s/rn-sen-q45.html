@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Công ty có 4 team RN, mỗi team tự viết Button, Input, typography riêng…</title>
+<meta name="description" content="Tôi tách thành ba việc: token, component và quy trình. Token chia hai tầng: nguyên thuỷ (blue600, space16) và ngữ nghĩa (actionPrimary, textDefault); compone…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Công ty có 4 team RN, mỗi team tự viết Button, Input, typography riêng…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Công ty có 4 team RN, mỗi team tự viết Button,…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Công ty có 4 team RN, mỗi team tự viết Button,…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/components/">Component &amp; Styling</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Công ty có 4 team RN, mỗi team tự viết <code>Button</code>, <code>Input</code>, typography riêng nên UI lệch nhau và đổi màu thương hiệu phải sửa hàng trăm file. Bạn dựng design system cho RN thế nào, và cân bằng giữa nhất quán với tốc độ của các team ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tôi tách thành ba việc: token, component và quy trình. Token chia hai tầng: nguyên thuỷ (<code>blue600</code>, <code>space16</code>) và ngữ nghĩa (<code>actionPrimary</code>, <code>textDefault</code>); component chỉ dùng token ngữ nghĩa nên dark mode hay đổi thương hiệu chỉ là đổi ánh xạ, theme lấy qua hook <code>useTheme</code> và có kiểu TypeScript chung để thiếu token là lỗi compile. Component có API nhỏ, có kiểu: <code>variant</code>, <code>size</code> là union chứ không nhận màu tuỳ ý; <code>style</code> chỉ cho phép thuộc tính bố cục (margin, alignSelf) để team không ghi đè ngoại hình; accessibility dựng sẵn (role, state, vùng chạm tối thiểu, <code>testID</code>). Công cụ: Storybook (on-device để thử thao tác thật, bản web để review và chụp ảnh so sánh), mỗi component có story cho từng variant và trạng thái; thư viện style (StyleSheet + theme, Unistyles, NativeWind, Tamagui...) chọn theo chi phí runtime, hỗ trợ dark mode, DX TypeScript và tương thích New Architecture hơn là theo mốt. Quy trình: phát hành như package riêng có semver và changelog (vd. Changesets), đánh dấu <code>@deprecated</code> kèm codemod khi đổi API, khai báo peer dependency (RN, Reanimated) và bảng tương thích. Để DS không thành nút cổ chai: cho component sinh ra trong app của team rồi &quot;thăng hạng&quot; vào DS khi có từ hai team dùng; cung cấp primitive (<code>Box</code>, <code>Text</code>, <code>Stack</code>) để team tự ghép thứ chưa có; lint cảnh báo (không chặn) khi dùng màu hex hay <code>Text</code> thô; đo mức dùng DS (tỷ lệ màn hình dùng component DS) và thời gian từ yêu cầu tới phát hành.</div>
+        <pre class="code-block"><code><span class="tk-com">// Hai tầng token: nguyên thuỷ -&gt; ngữ nghĩa. Component chỉ biết token ngữ nghĩa.</span>
+<span class="tk-kw">export</span> <span class="tk-kw">interface</span> <span class="tk-type">Theme</span> {
+  color: { actionPrimary: <span class="tk-kw">string</span>; onActionPrimary: <span class="tk-kw">string</span>; textDefault: <span class="tk-kw">string</span> };
+  space: { sm: <span class="tk-kw">number</span>; md: <span class="tk-kw">number</span> };
+}
+<span class="tk-kw">const</span> palette = { blue600: <span class="tk-str">&#39;#1D4ED8&#39;</span>, blue300: <span class="tk-str">&#39;#93C5FD&#39;</span>, white: <span class="tk-str">&#39;#FFFFFF&#39;</span>, gray900: <span class="tk-str">&#39;#111827&#39;</span> };
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> lightTheme: <span class="tk-type">Theme</span> = {
+  color: { actionPrimary: palette.blue600, onActionPrimary: palette.white, textDefault: palette.gray900 },
+  space: { sm: <span class="tk-num">8</span>, md: <span class="tk-num">16</span> },
+};
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> darkTheme: <span class="tk-type">Theme</span> = {
+  color: { actionPrimary: palette.blue300, onActionPrimary: palette.gray900, textDefault: palette.white },
+  space: { sm: <span class="tk-num">8</span>, md: <span class="tk-num">16</span> },
+};
+
+<span class="tk-kw">type</span> <span class="tk-type">ButtonProps</span> = {
+  label: <span class="tk-kw">string</span>;
+  onPress: () =&gt; <span class="tk-kw">void</span>;
+  variant?: <span class="tk-str">&#39;primary&#39;</span> | <span class="tk-str">&#39;ghost&#39;</span>; <span class="tk-com">// union, không nhận màu tuỳ ý</span>
+  disabled?: <span class="tk-kw">boolean</span>;
+  testID?: <span class="tk-kw">string</span>;
+  style?: <span class="tk-type">Pick</span>&lt;<span class="tk-type">ViewStyle</span>, <span class="tk-str">&#39;margin&#39;</span> | <span class="tk-str">&#39;marginTop&#39;</span> | <span class="tk-str">&#39;marginBottom&#39;</span> | <span class="tk-str">&#39;alignSelf&#39;</span>&gt;; <span class="tk-com">// chỉ cho chỉnh bố cục</span>
+};
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> <span class="tk-type">Button</span>({ label, onPress, variant = <span class="tk-str">&#39;primary&#39;</span>, disabled, testID, style }: <span class="tk-type">ButtonProps</span>) {
+  <span class="tk-kw">const</span> theme = useTheme();
+  <span class="tk-kw">const</span> primary = variant === <span class="tk-str">&#39;primary&#39;</span>;
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Pressable</span>
+      accessibilityRole=<span class="tk-str">&quot;button&quot;</span>
+      accessibilityState={{ disabled: !!disabled }}
+      disabled={disabled}
+      onPress={onPress}
+      testID={testID}
+      style={[
+        {
+          minHeight: <span class="tk-num">44</span>, <span class="tk-com">// vùng chạm tối thiểu</span>
+          paddingHorizontal: theme.space.md,
+          justifyContent: <span class="tk-str">&#39;center&#39;</span>,
+          borderRadius: <span class="tk-num">8</span>,
+          backgroundColor: primary ? theme.color.actionPrimary : <span class="tk-str">&#39;transparent&#39;</span>,
+          opacity: disabled ? <span class="tk-num">0.5</span> : <span class="tk-num">1</span>,
+        },
+        style,
+      ]}
+    &gt;
+      &lt;<span class="tk-type">Text</span> style={{ color: primary ? theme.color.onActionPrimary : theme.color.actionPrimary }}&gt;{label}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">Pressable</span>&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q44.html"><span class="muted small">← Câu trước</span><span>App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu khai báo &quot;r…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q46.html"><span class="muted small">Câu sau →</span><span>App bị khiếu nại không dùng được với VoiceOver/TalkBack và khi chỉnh cỡ chữ lớn…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Component &amp; Styling</h2><a class="section-sub" href="../phong-van/react-native/chu-de/components/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q32.html">Team chuyển danh sách từ FlatList sang FlashList để cuộn mượt hơn, nhưng sau đó có lỗi lạ: trạng thái như ô &#39;đã mở rộng&#39; hay nội dung ô nhập trong item hiện sai ở item khác sau khi cuộn nhanh. Giải thích cơ chế và cách xử lý?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q46.html">App bị khiếu nại không dùng được với VoiceOver/TalkBack và khi chỉnh cỡ chữ lớn; đội sửa lẻ từng màn nhưng lỗi lại tái phát ở màn khác. Bạn đưa accessibility vào quy trình của một đội 30 dev thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-fre-q14.html">View, Text, Image trong React Native được hiển thị ra sao trên máy? Vì sao ảnh tải từ URL không hiện dù link đúng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q15.html">ScrollView và FlatList khác nhau thế nào? Khi nào dùng cái nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q16.html">Style trong React Native khác CSS trên web ở điểm nào? Vì sao nên dùng StyleSheet.create thay vì viết style inline?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q17.html">Flexbox trong React Native khác Flexbox của CSS trên web ở những điểm nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

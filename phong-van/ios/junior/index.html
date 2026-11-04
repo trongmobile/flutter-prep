@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Junior (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
+<title>Câu hỏi phỏng vấn iOS Junior (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · ios · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Junior</h1>
-  <p class="subtitle">ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/ios/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -62,18 +62,19 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#swift">Swift</a> <span class="count">5</span></li>
+    <li><a href="#swift">Swift</a> <span class="count">7</span></li>
     <li><a href="#memory">Memory &amp; ARC</a> <span class="count">4</span></li>
-    <li><a href="#concurrency">Concurrency</a> <span class="count">6</span></li>
-    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">4</span></li>
-    <li><a href="#swiftui">SwiftUI</a> <span class="count">3</span></li>
+    <li><a href="#concurrency">Concurrency</a> <span class="count">7</span></li>
+    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">6</span></li>
+    <li><a href="#swiftui">SwiftUI</a> <span class="count">5</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
     <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
-    <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">3</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">6</span></li>
+    <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">4</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">1</span></li>
-    <li><a href="#security">Security</a> <span class="count">1</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">1</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
@@ -186,6 +187,53 @@ print(players.map(\.score)) <span class="tk-com">// [1, 1]</span></code></pre>
     <span class="tk-kw">self</span> = <span class="tk-type">OrderStatus</span>(rawValue: raw) ?? .unknown <span class="tk-com">// &quot;refunded&quot; -&gt; .unknown</span>
   }
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q38.html">Bạn dùng struct <code>Product</code> làm phần tử của <code>Set</code> và làm key của <code>Dictionary</code>, compiler báo <code>Type &#39;Product&#39; does not conform to protocol &#39;Hashable&#39;</code>. Khi nào compiler tự sinh <code>Equatable</code>/<code>Hashable</code>, khi nào phải tự viết, và <code>Comparable</code>, <code>Identifiable</code> liên quan thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với struct và enum, chỉ cần khai báo <code>: Hashable</code> (trong định nghĩa kiểu hoặc extension cùng file) là compiler tự sinh <code>==</code> và <code>hash(into:)</code>, miễn mọi stored property hay associated value đều đã <code>Hashable</code>; lỗi trên nghĩa là chưa khai báo, hoặc có một property không conform (như <code>[String: Any]</code>). Class thì không được sinh tự động. Phải tự viết khi &#39;cùng một đối tượng&#39; chỉ xét theo một phần dữ liệu, ví dụ <code>id</code>: để compiler sinh theo mọi field thì cùng sản phẩm mà đổi giá đã thành hai phần tử khác nhau trong <code>Set</code>. Luật cần nhớ: hai giá trị <code>==</code> thì phải có cùng hash, nên đã so theo <code>id</code> thì chỉ băm <code>id</code>, vi phạm sẽ làm <code>Set</code>/<code>Dictionary</code> tìm sai. <code>Hashable</code> cũng là điều kiện của item trong <code>UICollectionViewDiffableDataSource</code>: băm theo mọi field thì sửa một field là item bị coi như item mới (xoá rồi chèn, mất animation và vị trí cuộn), nên dùng <code>id</code> làm item identifier và <code>reconfigureItems</code> khi nội dung đổi. <code>Identifiable</code> chỉ cần <code>id: Hashable</code> cho <code>ForEach</code>/<code>List</code>, không kéo theo <code>Equatable</code>. <code>Comparable</code> chỉ cần tự viết <code>&lt;</code>, các toán tử còn lại có sẵn; enum không có raw value được sinh <code>&lt;</code> theo thứ tự khai báo case.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Product</span>: <span class="tk-type">Hashable</span>, <span class="tk-type">Identifiable</span> {
+  <span class="tk-kw">let</span> id: <span class="tk-type">Int</span>
+  <span class="tk-kw">var</span> name: <span class="tk-type">String</span>
+  <span class="tk-kw">var</span> price: <span class="tk-type">Int</span>
+
+  <span class="tk-com">// So sánh và băm theo id: đổi giá vẫn là cùng một sản phẩm</span>
+  <span class="tk-kw">static</span> <span class="tk-kw">func</span> == (lhs: <span class="tk-type">Product</span>, rhs: <span class="tk-type">Product</span>) -&gt; <span class="tk-type">Bool</span> { lhs.id == rhs.id }
+  <span class="tk-kw">func</span> hash(into hasher: <span class="tk-kw">inout</span> <span class="tk-type">Hasher</span>) { hasher.combine(id) }
+}
+
+<span class="tk-kw">enum</span> <span class="tk-type">Priority</span>: <span class="tk-type">Comparable</span> { <span class="tk-kw">case</span> low, medium, high } <span class="tk-com">// compiler sinh `&lt;` theo thứ tự case</span>
+
+<span class="tk-kw">var</span> cart: <span class="tk-type">Set</span>&lt;<span class="tk-type">Product</span>&gt; = [<span class="tk-type">Product</span>(id: <span class="tk-num">1</span>, name: <span class="tk-str">&quot;Áo&quot;</span>, price: <span class="tk-num">200</span>)]
+cart.insert(<span class="tk-type">Product</span>(id: <span class="tk-num">1</span>, name: <span class="tk-str">&quot;Áo&quot;</span>, price: <span class="tk-num">250</span>))  <span class="tk-com">// bị bỏ qua vì đã có id 1</span>
+print(cart.count, <span class="tk-type">Priority</span>.low &lt; .high)              <span class="tk-com">// 1 true</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q39.html">Review code thấy <code>orders.map { $0.items }.reduce([], +)</code>, <code>names.map { Int($0) }</code> rồi tự lọc <code>nil</code>, và một chuỗi <code>filter</code>/<code>map</code>/<code>sorted</code> chạy ngay trong <code>body</code> cho cả nghìn phần tử. <code>map</code>, <code>compactMap</code>, <code>flatMap</code>, <code>filter</code>, <code>reduce</code>, <code>sorted</code> khác nhau thế nào, và <code>lazy</code> có tác dụng gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>map</code> biến đổi từng phần tử và giữ nguyên số lượng; <code>filter</code> giữ phần tử thoả điều kiện; <code>compactMap</code> biến đổi rồi bỏ kết quả <code>nil</code>, thay cho <code>map</code> + lọc + force unwrap; <code>flatMap</code> biến mỗi phần tử thành một sequence rồi làm phẳng (<code>[[Item]]</code> thành <code>[Item]</code>), gọn hơn <code>map { $0.items }.reduce([], +)</code> và tránh copy mảng ở từng vòng. Bẫy lịch sử: trước Swift 4.1, <code>flatMap</code> với closure trả Optional cũng bỏ <code>nil</code>, giờ phải dùng <code>compactMap</code>; <code>flatMap</code> trên Optional vẫn còn, dùng để tránh <code>Optional&lt;Optional&gt;</code>. <code>reduce(_:_:)</code> gom về một giá trị; khi gom vào Array hay Dictionary nên dùng <code>reduce(into:)</code> để sửa tại chỗ, thay vì tạo bản copy mới mỗi vòng (O(n²)). <code>sorted(by:)</code> trả mảng mới, còn <code>sort(by:)</code> sắp xếp tại chỗ trên <code>var</code>. <code>lazy</code> trì hoãn tính toán: <code>array.lazy.map { }.filter { }.first</code> xử lý từng phần tử theo nhu cầu, không sinh mảng trung gian và dừng ngay khi có kết quả; đổi lại closure chạy lại mỗi lần duyệt, nên chỉ dùng khi chuỗi dài hoặc chỉ cần vài phần tử. Lọc/sắp xếp nặng thì tính một lần ở ViewModel, đừng để trong <code>body</code> hay <code>cellForRowAt</code> vì chúng chạy lại liên tục.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">Order</span> { <span class="tk-kw">let</span> items: [<span class="tk-type">String</span>] }
+<span class="tk-kw">let</span> orders = [<span class="tk-type">Order</span>(items: [<span class="tk-str">&quot;Áo&quot;</span>, <span class="tk-str">&quot;Mũ&quot;</span>]), <span class="tk-type">Order</span>(items: [<span class="tk-str">&quot;Giày&quot;</span>, <span class="tk-str">&quot;Áo&quot;</span>])]
+
+<span class="tk-kw">let</span> all = orders.flatMap(\.items)                     <span class="tk-com">// [&quot;Áo&quot;, &quot;Mũ&quot;, &quot;Giày&quot;, &quot;Áo&quot;]</span>
+<span class="tk-kw">let</span> numbers = [<span class="tk-str">&quot;1&quot;</span>, <span class="tk-str">&quot;x&quot;</span>, <span class="tk-str">&quot;3&quot;</span>].compactMap { <span class="tk-type">Int</span>($<span class="tk-num">0</span>) }  <span class="tk-com">// [1, 3], bỏ &quot;x&quot;</span>
+
+<span class="tk-com">// reduce(into:) sửa dictionary tại chỗ, không copy mỗi vòng</span>
+<span class="tk-kw">let</span> count = all.reduce(into: [<span class="tk-type">String</span>: <span class="tk-type">Int</span>]()) { $<span class="tk-num">0</span>[$<span class="tk-num">1</span>, <span class="tk-kw">default</span>: <span class="tk-num">0</span>] += <span class="tk-num">1</span> }
+print(count[<span class="tk-str">&quot;Áo&quot;</span>] ?? <span class="tk-num">0</span>)                               <span class="tk-com">// 2</span>
+
+<span class="tk-com">// lazy: dừng ngay khi tìm thấy, không tạo mảng một triệu phần tử</span>
+<span class="tk-kw">let</span> firstBig = (<span class="tk-num">1</span>...1_000_000).<span class="tk-kw">lazy</span>.map { $<span class="tk-num">0</span> * $<span class="tk-num">0</span> }.first { $<span class="tk-num">0</span> &gt; 1_000 } <span class="tk-com">// 1024</span></code></pre>
         
       </div>
     </details>
@@ -383,6 +431,39 @@ group.notify(queue: .main) { <span class="tk-kw">self</span>.render(banners, pro
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q40.html">Bộ đếm <code>var downloaded = 0</code> được tăng từ 100 task chạy song song bằng <code>DispatchQueue.concurrentPerform</code>; kết quả khi 97, khi 100, và thỉnh thoảng app crash ở chỗ <code>append</code> vào mảng dùng chung. Đây là lỗi gì, bạn chứng minh bằng công cụ nào và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đây là data race: nhiều thread cùng truy cập một vùng nhớ, có ít nhất một thread ghi, và không được đồng bộ. <code>downloaded += 1</code> thực chất là đọc, cộng rồi ghi: hai thread đọc cùng giá trị rồi ghi đè nhau nên mất lần tăng; còn <code>Array</code> bị <code>append</code> đồng thời có thể hỏng buffer và crash. Lỗi phụ thuộc thời điểm nên chạy bình thường rất khó tái hiện. Bật Thread Sanitizer (Edit Scheme, Run, Diagnostics, Thread Sanitizer; chạy trên simulator, không bật cùng Address Sanitizer) sẽ báo &#39;Data race detected&#39; kèm stack của hai thread. Cách sửa: đưa mọi truy cập qua một serial queue, hoặc dùng khoá (<code>NSLock</code>, <code>OSAllocatedUnfairLock</code>), hoặc gói state vào <code>actor</code> để compiler ép truy cập tuần tự; với code mới nên ưu tiên <code>actor</code>, và Swift 6 strict concurrency bắt được nhiều race ngay lúc compile. Lưu ý khoá phải bao trọn cả chuỗi đọc-sửa-ghi, &#39;đọc an toàn&#39; rồi &#39;ghi an toàn&#39; riêng lẻ vẫn race; và gọi <code>queue.sync</code> lồng trên chính queue đó sẽ deadlock.</div>
+        <pre class="code-block"><code><span class="tk-com">// SAI: += không nguyên tử, các lần ghi đè lên nhau</span>
+<span class="tk-kw">var</span> downloaded = <span class="tk-num">0</span>
+<span class="tk-type">DispatchQueue</span>.concurrentPerform(iterations: <span class="tk-num">100</span>) { _ <span class="tk-kw">in</span> downloaded += <span class="tk-num">1</span> }
+
+<span class="tk-com">// Cách 1: serial queue bảo vệ state</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Counter</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> queue = <span class="tk-type">DispatchQueue</span>(label: <span class="tk-str">&quot;counter&quot;</span>)
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> value = <span class="tk-num">0</span>
+  <span class="tk-kw">func</span> increment() { queue.sync { value += <span class="tk-num">1</span> } }
+  <span class="tk-kw">var</span> current: <span class="tk-type">Int</span> { queue.sync { value } }
+}
+
+<span class="tk-com">// Cách 2: actor, compiler ép truy cập tuần tự</span>
+<span class="tk-kw">actor</span> <span class="tk-type">DownloadCounter</span> {
+  <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> value = <span class="tk-num">0</span>
+  <span class="tk-kw">func</span> increment() { value += <span class="tk-num">1</span> }
+}
+
+<span class="tk-kw">let</span> counter = <span class="tk-type">DownloadCounter</span>()
+<span class="tk-kw">await</span> withTaskGroup(of: <span class="tk-type">Void</span>.<span class="tk-kw">self</span>) { group <span class="tk-kw">in</span>
+  <span class="tk-kw">for</span> _ <span class="tk-kw">in</span> <span class="tk-num">0</span>..&lt;<span class="tk-num">100</span> { group.addTask { <span class="tk-kw">await</span> counter.increment() } }
+}
+print(<span class="tk-kw">await</span> counter.value) <span class="tk-com">// luôn là 100</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="uikit">
@@ -443,6 +524,88 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q43.html">Màn danh sách sản phẩm tải 20 item mỗi trang. Bạn gọi trang tiếp theo trong <code>willDisplay</code> khi cell cuối xuất hiện, nhưng cuộn nhanh thì cùng một trang bị gọi 3 lần, danh sách có item trùng, và khi mạng lỗi thì spinner ở cuối quay mãi. Bạn làm load more đúng cách thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Giữ trạng thái phân trang trong ViewModel: trang hoặc cursor kế tiếp, <code>isLoading</code>, <code>hasMore</code>, lỗi. Điều kiện gọi là <code>guard !isLoading, hasMore</code>, và phải đặt <code>isLoading = true</code> đồng bộ ngay trước khi bắt đầu request: đặt sau <code>await</code> thì hai lần gọi liền nhau vẫn lọt qua. <code>willDisplay</code> được gọi lại mỗi lần cell hiện ra khi cuộn lên xuống nên bắt buộc chống gọi trùng; nên kích hoạt sớm (khi còn cách cuối vài dòng, ví dụ <code>row &gt;= count - 5</code>) để người dùng không phải chờ, hoặc dùng <code>UITableViewDataSourcePrefetching</code> (<code>prefetchRowsAt</code>), cơ chế hệ thống báo trước các dòng sắp hiện. Khi nhận trang mới: nối vào danh sách và loại item trùng theo <code>id</code>, vì phân trang bằng offset có thể lệch khi server thêm hoặc xoá dữ liệu giữa hai lần gọi (cursor ổn định hơn); <code>hasMore</code> lấy từ cursor kế tiếp hoặc từ việc trang trả về đủ <code>pageSize</code>. Footer thể hiện ba trạng thái: spinner khi đang tải, nút &#39;Thử lại&#39; khi lỗi (không tự lặp vô hạn), ẩn khi hết dữ liệu. Pull-to-refresh thì reset về trang đầu và bỏ qua response của lần gọi cũ về muộn, nếu không dữ liệu cũ sẽ đè dữ liệu mới.</div>
+        <pre class="code-block"><code><span class="tk-ann">@MainActor</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">ProductListViewModel</span> {
+  <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> items: [<span class="tk-type">Product</span>] = []
+  <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> loadError: <span class="tk-type">Error</span>?
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> nextPage = <span class="tk-num">1</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> isLoading = <span class="tk-kw">false</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> hasMore = <span class="tk-kw">true</span>
+  <span class="tk-kw">var</span> onChange: (() -&gt; <span class="tk-type">Void</span>)?
+
+  <span class="tk-kw">func</span> loadMoreIfNeeded(currentRow row: <span class="tk-type">Int</span>) <span class="tk-kw">async</span> {
+    <span class="tk-kw">guard</span> !isLoading, hasMore, row &gt;= items.count - <span class="tk-num">5</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    isLoading = <span class="tk-kw">true</span>                    <span class="tk-com">// đặt cờ đồng bộ, trước khi await</span>
+    <span class="tk-kw">defer</span> { isLoading = <span class="tk-kw">false</span> }
+    <span class="tk-kw">do</span> {
+      <span class="tk-kw">let</span> page = <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.products(page: nextPage, size: <span class="tk-num">20</span>)
+      <span class="tk-kw">let</span> known = <span class="tk-type">Set</span>(items.map(\.id))
+      items += page.filter { !known.contains($<span class="tk-num">0</span>.id) }  <span class="tk-com">// bỏ item trùng</span>
+      hasMore = page.count == <span class="tk-num">20</span>
+      nextPage += <span class="tk-num">1</span>
+      loadError = <span class="tk-kw">nil</span>
+    } <span class="tk-kw">catch</span> {
+      loadError = error                 <span class="tk-com">// footer hiện nút &quot;Thử lại&quot;</span>
+    }
+    onChange?()
+  }
+}
+
+<span class="tk-com">// Trong ViewController</span>
+<span class="tk-kw">func</span> tableView(_ tableView: <span class="tk-type">UITableView</span>, willDisplay cell: <span class="tk-type">UITableViewCell</span>,
+               forRowAt indexPath: <span class="tk-type">IndexPath</span>) {
+  <span class="tk-type">Task</span> { <span class="tk-kw">await</span> viewModel.loadMoreIfNeeded(currentRow: indexPath.row) }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q44.html">QA báo app bật Dark Mode thì chữ đen trên nền đen ở vài màn, viền vẽ bằng <code>layer.borderColor</code> không đổi màu theo chế độ, và khi chỉnh cỡ chữ lớn nhất trong Settings thì label bị cắt, các nút chồng lên nhau. Bạn sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Dark Mode: đừng hard-code <code>.white</code>/<code>.black</code>; dùng màu semantic của hệ thống (<code>.systemBackground</code>, <code>.label</code>, <code>.secondaryLabel</code>, <code>.separator</code>) hoặc Color Set trong asset catalog có biến thể Any/Dark rồi gọi <code>UIColor(named:)</code>. <code>UIColor</code> dynamic tự đổi theo <code>traitCollection</code>, nhưng <code>CGColor</code> là giá trị đã resolve: <code>layer.borderColor = color.cgColor</code> chỉ đúng với chế độ lúc gán, nên phải gán lại khi chế độ đổi, bằng <code>registerForTraitChanges</code> (iOS 17+) hoặc <code>traitCollectionDidChange</code> (đã deprecated từ iOS 17), và resolve rõ ràng bằng <code>color.resolvedColor(with: traitCollection).cgColor</code>. Dynamic Type: dùng font theo text style (<code>.preferredFont(forTextStyle: .body)</code>) kèm <code>adjustsFontForContentSizeCategory = true</code>; font cố định <code>systemFont(ofSize:)</code> thì không co giãn, còn font tuỳ chỉnh phải bọc bằng <code>UIFontMetrics(forTextStyle:).scaledFont(for:)</code>. Đặt <code>numberOfLines = 0</code>, không cố định chiều cao label hay cell (self-sizing), và khi chữ vào nhóm accessibility size (<code>preferredContentSizeCategory.isAccessibilityCategory</code>) thì đổi <code>UIStackView</code> ngang thành dọc. Kiểm tra bằng Environment Overrides trong Xcode hoặc Accessibility Inspector, thử ở cỡ chữ lớn nhất.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">BadgeView</span>: <span class="tk-type">UIView</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> stack = <span class="tk-type">UIStackView</span>()
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> titleLabel = <span class="tk-type">UILabel</span>()
+
+  <span class="tk-kw">override</span> <span class="tk-kw">init</span>(frame: <span class="tk-type">CGRect</span>) {
+    <span class="tk-kw">super</span>.<span class="tk-kw">init</span>(frame: frame)
+    backgroundColor = .secondarySystemBackground          <span class="tk-com">// màu semantic, tự đổi theo Dark Mode</span>
+    titleLabel.font = .preferredFont(forTextStyle: .headline)
+    titleLabel.adjustsFontForContentSizeCategory = <span class="tk-kw">true</span>   <span class="tk-com">// co giãn theo cỡ chữ người dùng chọn</span>
+    titleLabel.numberOfLines = <span class="tk-num">0</span>
+    stack.addArrangedSubview(titleLabel)
+    addSubview(stack)                                     <span class="tk-com">// ... thêm constraint cho stack</span>
+    applyAppearance()
+
+    <span class="tk-com">// iOS 17+: chạy lại khi đổi Dark Mode hoặc cỡ chữ</span>
+    registerForTraitChanges([<span class="tk-type">UITraitUserInterfaceStyle</span>.<span class="tk-kw">self</span>,
+                             <span class="tk-type">UITraitPreferredContentSizeCategory</span>.<span class="tk-kw">self</span>]) { (view: <span class="tk-type">BadgeView</span>, _) <span class="tk-kw">in</span>
+      view.applyAppearance()
+    }
+  }
+
+  <span class="tk-kw">private</span> <span class="tk-kw">func</span> applyAppearance() {
+    layer.borderWidth = <span class="tk-num">1</span>
+    <span class="tk-com">// CGColor đã resolve nên phải resolve theo trait hiện tại và gán lại mỗi khi đổi</span>
+    layer.borderColor = <span class="tk-type">UIColor</span>.separator.resolvedColor(with: traitCollection).cgColor
+    stack.axis = traitCollection.preferredContentSizeCategory.isAccessibilityCategory ? .vertical : .horizontal
+  }
+
+  <span class="tk-kw">required</span> <span class="tk-kw">init</span>?(coder: <span class="tk-type">NSCoder</span>) { fatalError(<span class="tk-str">&quot;init(coder:) has not been implemented&quot;</span>) }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="swiftui">
@@ -498,6 +661,86 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
 
 <span class="tk-com">// Đúng: id gắn với dữ liệu</span>
 <span class="tk-type">ForEach</span>(todos) { todo <span class="tk-kw">in</span> <span class="tk-type">TodoRow</span>(todo: todo) }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q45.html">App SwiftUI có <code>AuthService</code> cần dùng ở nhiều màn nằm sâu trong cây view; truyền qua từng <code>init</code> thì rườm rà, còn chuyển sang <code>@EnvironmentObject</code> thì có màn Preview crash với &#39;No ObservableObject of type AuthService found&#39;. <code>@EnvironmentObject</code>, <code>@Environment</code> với model <code>@Observable</code> và <code>EnvironmentKey</code> khác nhau thế nào, và khi nào nên truyền tham số trực tiếp?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Environment truyền giá trị xuống cây con một cách ngầm. <code>@EnvironmentObject</code> đọc một <code>ObservableObject</code> do view cha gọi <code>.environmentObject(_:)</code>; quên inject thì không có lỗi compile mà crash lúc chạy, thường lộ ra ở <code>#Preview</code>, hoặc ở view bọc trong <code>UIHostingController</code> tự tạo vì nó là gốc của một cây mới, không thừa hưởng environment. Từ iOS 17, model <code>@Observable</code> đưa vào bằng <code>.environment(model)</code> và đọc bằng <code>@Environment(AuthService.self)</code>; cũng crash nếu thiếu, trừ khi khai báo kiểu optional (<code>AuthService?</code>) thì nhận <code>nil</code>. Giá trị thông thường (cấu hình, theme, service qua protocol) dùng <code>EnvironmentKey</code> tự định nghĩa kèm <code>defaultValue</code> rồi mở rộng <code>EnvironmentValues</code>: không crash vì có sẵn giá trị mặc định, và ghi đè được trong preview hay test bằng <code>.environment(\.key, value)</code>; từ Xcode 16 macro <code>@Entry</code> viết gọn phần này. Chỉ nên đưa vào environment thứ thật sự cắt ngang nhiều tầng (người dùng hiện tại, theme, router); màn chỉ cần một hai dependency thì truyền qua <code>init</code> cho tường minh, test dễ và compiler bắt thiếu. Với <code>ObservableObject</code>, mọi thay đổi <code>@Published</code> đều làm view đọc nó vẽ lại, nên đừng nhét một &#39;god object&#39; vào environment.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Observable</span> <span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">AuthService</span> {
+  <span class="tk-kw">var</span> user: <span class="tk-type">User</span>?
+}
+
+<span class="tk-ann">@main</span>
+<span class="tk-kw">struct</span> <span class="tk-type">ShopApp</span>: <span class="tk-type">App</span> {
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> auth = <span class="tk-type">AuthService</span>()
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">Scene</span> {
+    <span class="tk-type">WindowGroup</span> { <span class="tk-type">RootView</span>().environment(auth) }
+  }
+}
+
+<span class="tk-kw">struct</span> <span class="tk-type">ProfileView</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@Environment</span>(<span class="tk-type">AuthService</span>.<span class="tk-kw">self</span>) <span class="tk-kw">private</span> <span class="tk-kw">var</span> auth   <span class="tk-com">// thiếu .environment(auth) ở trên thì crash</span>
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> { <span class="tk-type">Text</span>(auth.user?.name ?? <span class="tk-str">&quot;Khách&quot;</span>) }
+}
+
+<span class="tk-com">// Giá trị thường: custom key có defaultValue nên không crash</span>
+<span class="tk-kw">struct</span> <span class="tk-type">AppConfig</span>: <span class="tk-type">Sendable</span> { <span class="tk-kw">var</span> baseURL: <span class="tk-type">URL</span> }
+
+<span class="tk-kw">private</span> <span class="tk-kw">struct</span> <span class="tk-type">AppConfigKey</span>: <span class="tk-type">EnvironmentKey</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> defaultValue = <span class="tk-type">AppConfig</span>(baseURL: <span class="tk-type">URL</span>(string: <span class="tk-str">&quot;https://api.example.com&quot;</span>)!)
+}
+
+<span class="tk-kw">extension</span> <span class="tk-type">EnvironmentValues</span> {
+  <span class="tk-kw">var</span> appConfig: <span class="tk-type">AppConfig</span> {
+    <span class="tk-kw">get</span> { <span class="tk-kw">self</span>[<span class="tk-type">AppConfigKey</span>.<span class="tk-kw">self</span>] }
+    <span class="tk-kw">set</span> { <span class="tk-kw">self</span>[<span class="tk-type">AppConfigKey</span>.<span class="tk-kw">self</span>] = newValue }
+  }
+}
+<span class="tk-com">// Preview: ProfileView().environment(AuthService()).environment(\.appConfig, staging)</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q46.html">Màn danh sách đơn hàng SwiftUI cần kéo để làm mới, ô tìm kiếm trên thanh điều hướng và vuốt dòng để xoá. Bạn dùng <code>.refreshable</code>, <code>.searchable</code>, <code>.swipeActions</code> thế nào, và vì sao spinner của pull-to-refresh hay quay mãi hoặc biến mất quá sớm?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>.refreshable { await vm.reload() }</code> gắn vào <code>List</code> (hoặc <code>ScrollView</code>): closure là <code>async</code> và SwiftUI giữ spinner cho tới khi nó return, nên phải <code>await</code> đúng việc tải. Nếu bên trong chỉ <code>Task { await load() }</code> (fire-and-forget) thì closure return ngay và spinner tắt sớm; ngược lại hàm không có timeout mà treo thì spinner quay mãi. Task này bị huỷ khi view biến mất, nên <code>URLSession</code> có thể ném <code>URLError.cancelled</code>, hãy bỏ qua thay vì hiện lỗi. <code>.searchable(text: $query)</code> phải nằm trong <code>NavigationStack</code> (đặt ngoài thì không có ô tìm kiếm); đừng gọi API mỗi lần gõ, dùng <code>.task(id: query)</code> với <code>Task.sleep</code> ngắn làm debounce, vì task cũ tự bị huỷ khi <code>query</code> đổi; view con đọc <code>@Environment(\.isSearching)</code> để biết đang tìm. <code>.swipeActions</code> gắn lên từng dòng bên trong <code>List</code>, chứa các <code>Button</code>; <code>role: .destructive</code> cho màu đỏ và animation xoá, nhưng bạn vẫn phải xoá thật khỏi data source, nếu không dòng sẽ hiện lại. <code>.swipeActions</code> chỉ chạy trong <code>List</code>, không có tác dụng trong <code>LazyVStack</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">OrderListView</span>: <span class="tk-type">View</span> {
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> vm = <span class="tk-type">OrderListViewModel</span>()
+  <span class="tk-ann">@State</span> <span class="tk-kw">private</span> <span class="tk-kw">var</span> query = <span class="tk-str">&quot;&quot;</span>
+
+  <span class="tk-kw">var</span> body: <span class="tk-kw">some</span> <span class="tk-type">View</span> {
+    <span class="tk-type">NavigationStack</span> {
+      <span class="tk-type">List</span> {
+        <span class="tk-type">ForEach</span>(vm.orders) { order <span class="tk-kw">in</span>
+          <span class="tk-type">OrderRow</span>(order: order)
+            .swipeActions(edge: .trailing) {
+              <span class="tk-type">Button</span>(role: .destructive) { vm.delete(order) } label: {
+                <span class="tk-type">Label</span>(<span class="tk-str">&quot;Xoá&quot;</span>, systemImage: <span class="tk-str">&quot;trash&quot;</span>)
+              }
+            }
+        }
+      }
+      .navigationTitle(<span class="tk-str">&quot;Đơn hàng&quot;</span>)
+      .searchable(text: $query)                    <span class="tk-com">// nằm trong NavigationStack</span>
+      .refreshable { <span class="tk-kw">await</span> vm.reload() }           <span class="tk-com">// spinner chạy tới khi reload() xong</span>
+      .task(id: query) {                           <span class="tk-com">// task cũ tự bị huỷ khi query đổi</span>
+        <span class="tk-kw">try</span>? <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: .milliseconds(<span class="tk-num">300</span>))
+        <span class="tk-kw">guard</span> !<span class="tk-type">Task</span>.isCancelled <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+        <span class="tk-kw">await</span> vm.search(query)
+      }
+    }
+  }
+}</code></pre>
         
       </div>
     </details>
@@ -655,6 +898,79 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q41.html">Tải file PDF 80MB bằng <code>URLSession.shared.downloadTask(with:completionHandler:)</code> rồi mở file trong completion thì lúc được lúc báo file không tồn tại, không có thanh tiến độ, và khi người dùng chuyển sang app khác một lúc thì việc tải dừng luôn. Giải thích và sửa thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>downloadTask</code> ghi dữ liệu vào một file tạm do hệ thống quản lý rồi đưa URL tạm đó cho bạn; ngay khi completion (hoặc <code>urlSession(_:downloadTask:didFinishDownloadingTo:)</code>) return, hệ thống xoá file tạm. Vì vậy phải <code>moveItem</code> sang thư mục của app ngay trong hàm đó; chuyển sang <code>DispatchQueue.main.async</code> rồi mới di chuyển thì file đã mất. Bản completion-handler không báo tiến độ: muốn có thì tạo session với delegate và cài <code>urlSession(_:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)</code>, nhớ về main thread khi cập nhật UI và kiểm tra <code>totalBytesExpectedToWrite &gt; 0</code> vì server không gửi <code>Content-Length</code> thì giá trị là -1. Để tải tiếp khi app bị suspend hoặc bị hệ thống kill, dùng <code>URLSessionConfiguration.background(withIdentifier:)</code>: việc tải chạy ngoài process của app và bắt buộc dùng delegate (không dùng completion handler). Khi xong, hệ thống đánh thức app và gọi <code>application(_:handleEventsForBackgroundURLSession:completionHandler:)</code>; app tạo lại session cùng identifier và gọi completion handler đó trong <code>urlSessionDidFinishEvents(forBackgroundURLSession:)</code>. Cần biết thêm: nếu người dùng tự vuốt tắt app thì hệ thống huỷ các task nền.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">Downloader</span>: <span class="tk-type">NSObject</span>, <span class="tk-type">URLSessionDownloadDelegate</span> {
+  <span class="tk-kw">var</span> onProgress: ((<span class="tk-type">Double</span>) -&gt; <span class="tk-type">Void</span>)?
+  <span class="tk-kw">private</span> <span class="tk-kw">lazy</span> <span class="tk-kw">var</span> session = <span class="tk-type">URLSession</span>(configuration: .<span class="tk-kw">default</span>, delegate: <span class="tk-kw">self</span>, delegateQueue: <span class="tk-kw">nil</span>)
+
+  <span class="tk-kw">func</span> start(_ url: <span class="tk-type">URL</span>) { session.downloadTask(with: url).resume() }
+
+  <span class="tk-kw">func</span> urlSession(_ session: <span class="tk-type">URLSession</span>, downloadTask: <span class="tk-type">URLSessionDownloadTask</span>,
+                  didWriteData bytesWritten: <span class="tk-type">Int64</span>, totalBytesWritten: <span class="tk-type">Int64</span>,
+                  totalBytesExpectedToWrite: <span class="tk-type">Int64</span>) {
+    <span class="tk-kw">guard</span> totalBytesExpectedToWrite &gt; <span class="tk-num">0</span> <span class="tk-kw">else</span> { <span class="tk-kw">return</span> } <span class="tk-com">// -1 khi không có Content-Length</span>
+    <span class="tk-kw">let</span> progress = <span class="tk-type">Double</span>(totalBytesWritten) / <span class="tk-type">Double</span>(totalBytesExpectedToWrite)
+    <span class="tk-type">DispatchQueue</span>.main.<span class="tk-kw">async</span> { <span class="tk-kw">self</span>.onProgress?(progress) }
+  }
+
+  <span class="tk-kw">func</span> urlSession(_ session: <span class="tk-type">URLSession</span>, downloadTask: <span class="tk-type">URLSessionDownloadTask</span>,
+                  didFinishDownloadingTo location: <span class="tk-type">URL</span>) {
+    <span class="tk-com">// location bị xoá ngay khi hàm return: phải di chuyển ở đây, đồng bộ</span>
+    <span class="tk-kw">let</span> dest = <span class="tk-type">URL</span>.documentsDirectory.appending(path: <span class="tk-str">&quot;report.pdf&quot;</span>)
+    <span class="tk-kw">try</span>? <span class="tk-type">FileManager</span>.<span class="tk-kw">default</span>.removeItem(at: dest)
+    <span class="tk-kw">try</span>? <span class="tk-type">FileManager</span>.<span class="tk-kw">default</span>.moveItem(at: location, to: dest)
+  }
+}
+
+<span class="tk-com">// Tải khi app bị suspend: đổi configuration, vẫn dùng delegate như trên</span>
+<span class="tk-kw">let</span> config = <span class="tk-type">URLSessionConfiguration</span>.background(withIdentifier: <span class="tk-str">&quot;com.example.downloads&quot;</span>)</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q42.html">Mất mạng thì màn Home trắng trơn và báo lỗi, dù hôm qua người dùng vừa xem xong. Product muốn mở app là thấy ngay dữ liệu cũ rồi cập nhật khi có mạng. Bạn làm cache-then-network thế nào, và có nên dùng <code>NWPathMonitor</code> để chặn gọi API khi &#39;không có mạng&#39; không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">ViewModel làm theo thứ tự: đọc cache và hiển thị ngay (đánh dấu là dữ liệu cũ), gọi API, thành công thì cập nhật UI và ghi đè cache, thất bại thì giữ nguyên dữ liệu đang có và chỉ báo nhẹ bằng banner hoặc toast; chỉ hiện lỗi toàn màn khi cache cũng trống. Với model <code>Codable</code> nhỏ, cache đơn giản là encode JSON rồi ghi file (<code>write(to:options: .atomic)</code>) vào thư mục Caches; hệ thống có thể xoá thư mục này khi thiếu dung lượng nên dữ liệu bắt buộc phải giữ thì để Application Support, còn dữ liệu lớn cần truy vấn thì dùng Core Data hoặc SwiftData. <code>NWPathMonitor</code> hợp để hiện banner &#39;Đang offline&#39; và tự tải lại khi mạng trở lại (nhớ <code>start(queue:)</code> và về main thread khi đổi UI). Không nên dùng nó làm cổng chặn request: <code>.satisfied</code> chỉ nói có đường mạng, không đảm bảo tới được server (captive portal, Wi-Fi không ra internet), còn <code>.unsatisfied</code> có thể sai tạm thời lúc đổi mạng. Cách đúng là cứ gọi request rồi xử lý <code>URLError</code> (<code>.notConnectedToInternet</code>, <code>.timedOut</code>); nếu muốn request chờ có mạng thay vì lỗi ngay thì đặt <code>waitsForConnectivity = true</code> trong <code>URLSessionConfiguration</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">FeedCache</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">let</span> url = <span class="tk-type">URL</span>.cachesDirectory.appending(path: <span class="tk-str">&quot;feed.json&quot;</span>)
+
+  <span class="tk-kw">func</span> load() -&gt; [<span class="tk-type">Post</span>]? {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> data = <span class="tk-kw">try</span>? <span class="tk-type">Data</span>(contentsOf: url) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> <span class="tk-kw">nil</span> }
+    <span class="tk-kw">return</span> <span class="tk-kw">try</span>? <span class="tk-type">JSONDecoder</span>().decode([<span class="tk-type">Post</span>].<span class="tk-kw">self</span>, from: data)
+  }
+
+  <span class="tk-kw">func</span> save(_ posts: [<span class="tk-type">Post</span>]) {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> data = <span class="tk-kw">try</span>? <span class="tk-type">JSONEncoder</span>().encode(posts) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    <span class="tk-kw">try</span>? data.write(to: url, options: .atomic)
+  }
+}
+
+<span class="tk-com">// Trong ViewModel (@MainActor)</span>
+<span class="tk-kw">func</span> refresh() <span class="tk-kw">async</span> {
+  <span class="tk-kw">if</span> <span class="tk-kw">let</span> cached = cache.load() { posts = cached; isStale = <span class="tk-kw">true</span> } <span class="tk-com">// hiện dữ liệu cũ ngay</span>
+  <span class="tk-kw">do</span> {
+    <span class="tk-kw">let</span> fresh = <span class="tk-kw">try</span> <span class="tk-kw">await</span> api.fetchFeed()
+    posts = fresh
+    isStale = <span class="tk-kw">false</span>
+    cache.save(fresh)
+  } <span class="tk-kw">catch</span> <span class="tk-kw">where</span> posts.isEmpty {
+    errorMessage = <span class="tk-str">&quot;Không tải được dữ liệu&quot;</span>  <span class="tk-com">// không có gì để hiện mới báo lỗi toàn màn</span>
+  } <span class="tk-kw">catch</span> {
+    showOfflineBanner = <span class="tk-kw">true</span>                 <span class="tk-com">// đã có dữ liệu cũ thì chỉ báo nhẹ</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="platform">
@@ -689,6 +1005,40 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       <div class="model-answer">
         <div class="answer-text">Hộp thoại xin quyền chỉ hiện đúng một lần khi trạng thái còn <code>.notDetermined</code>; sau khi người dùng từ chối, các lần gọi <code>requestAccess</code> kế tiếp trả về <code>false</code> ngay mà không hiện gì, nên app phải tự xử lý. Trước khi dùng camera, đọc <code>AVCaptureDevice.authorizationStatus(for: .video)</code> rồi <code>switch</code>: <code>.notDetermined</code> thì gọi <code>requestAccess</code>, <code>.authorized</code> thì mở camera, <code>.denied</code> thì hiện màn giải thích kèm nút mở thẳng Settings của app bằng <code>UIApplication.openSettingsURLString</code>, còn <code>.restricted</code> (bị giới hạn bởi Screen Time hoặc quản trị thiết bị) thì người dùng không tự đổi được nên chỉ cần thông báo. Callback của <code>requestAccess</code> có thể chạy ở thread nền, phải về main trước khi đổi UI. Nên xin quyền đúng lúc người dùng bắt đầu dùng tính năng, và <code>NSCameraUsageDescription</code> cần nêu rõ lý do.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q47.html">Push hiện bình thường khi app ở background, nhưng khi app đang mở thì không thấy banner, và bấm vào thông báo chỉ mở app ở màn cũ chứ không vào đúng đơn hàng. Bạn cài <code>UNUserNotificationCenterDelegate</code> thế nào, và truyền payload để điều hướng ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi app ở foreground, hệ thống mặc định không hiện thông báo. Phải gán <code>UNUserNotificationCenter.current().delegate</code> và trả về tuỳ chọn hiển thị trong <code>userNotificationCenter(_:willPresent:)</code>: <code>[.banner, .list, .sound]</code> (<code>.alert</code> đã deprecated từ iOS 14); có thể trả <code>[]</code> khi người dùng đang ở đúng cuộc chat đó. Gán delegate sớm, trong <code>application(_:didFinishLaunchingWithOptions:)</code>, không phải trong một view hay VC: nếu app được mở từ thông báo lúc đang bị kill, delegate phải có sẵn trước khi launch xong thì mới nhận được <code>didReceive</code>. Khi người dùng bấm thông báo, <code>userNotificationCenter(_:didReceive:)</code> được gọi: đọc <code>response.notification.request.content.userInfo</code> (dữ liệu tuỳ chỉnh như <code>orderId</code> nằm ngoài khối <code>aps</code>) và xét <code>response.actionIdentifier</code> (<code>UNNotificationDefaultActionIdentifier</code> là bấm vào thân thông báo). Đừng push màn hình trực tiếp từ AppDelegate: lúc cold start UI có thể chưa dựng xong, nên lưu route chờ xử lý rồi để router hoặc coordinator mở khi sẵn sàng. Payload giới hạn 4KB, chỉ gửi ID rồi để màn hình tự tải chi tiết. Nếu bật Swift 6 language mode mà compiler báo lỗi Sendable ở các hàm delegate này, hãy khai báo conformance là <code>@preconcurrency UNUserNotificationCenterDelegate</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">AppDelegate</span>: <span class="tk-type">NSObject</span>, <span class="tk-type">UIApplicationDelegate</span>, <span class="tk-type">UNUserNotificationCenterDelegate</span> {
+  <span class="tk-kw">func</span> application(_ application: <span class="tk-type">UIApplication</span>,
+                   didFinishLaunchingWithOptions launchOptions: [<span class="tk-type">UIApplication</span>.<span class="tk-type">LaunchOptionsKey</span>: <span class="tk-type">Any</span>]? = <span class="tk-kw">nil</span>) -&gt; <span class="tk-type">Bool</span> {
+    <span class="tk-type">UNUserNotificationCenter</span>.current().delegate = <span class="tk-kw">self</span>  <span class="tk-com">// đặt sớm, trước khi launch xong</span>
+    <span class="tk-kw">return</span> <span class="tk-kw">true</span>
+  }
+
+  <span class="tk-com">// App đang mở: thiếu hàm này thì thông báo không hiện</span>
+  <span class="tk-kw">func</span> userNotificationCenter(_ center: <span class="tk-type">UNUserNotificationCenter</span>,
+                              willPresent notification: <span class="tk-type">UNNotification</span>) <span class="tk-kw">async</span> -&gt; <span class="tk-type">UNNotificationPresentationOptions</span> {
+    [.banner, .list, .sound]
+  }
+
+  <span class="tk-com">// Người dùng bấm vào thông báo</span>
+  <span class="tk-kw">func</span> userNotificationCenter(_ center: <span class="tk-type">UNUserNotificationCenter</span>,
+                              didReceive response: <span class="tk-type">UNNotificationResponse</span>) <span class="tk-kw">async</span> {
+    <span class="tk-kw">guard</span> response.actionIdentifier == <span class="tk-type">UNNotificationDefaultActionIdentifier</span>,
+          <span class="tk-kw">let</span> orderId = response.notification.request.content.userInfo[<span class="tk-str">&quot;orderId&quot;</span>] as? <span class="tk-type">String</span>
+    <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    <span class="tk-kw">await</span> <span class="tk-type">MainActor</span>.run {
+      <span class="tk-type">AppRouter</span>.shared.pendingRoute = .orderDetail(id: orderId) <span class="tk-com">// root view mở màn khi UI sẵn sàng</span>
+    }
+  }
+}</code></pre>
         
       </div>
     </details>
@@ -759,6 +1109,39 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q48.html">QA viết UI test đăng nhập bằng XCUITest với <code>app.buttons[&quot;Đăng nhập&quot;].tap()</code>: chạy trên máy dev thì pass, trên CI thì fail ngẫu nhiên, và đổi app sang tiếng Anh thì vỡ hết. Bạn viết UI test ổn định thế nào, và khi nào nên chọn UI test thay vì unit test?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">XCUITest chạy app thành một process riêng và tìm phần tử qua accessibility. Truy vấn theo chữ hiển thị (đã localize) rất dễ vỡ khi đổi ngôn ngữ hay sửa copy; hãy đặt <code>accessibilityIdentifier</code> (UIKit: <code>button.accessibilityIdentifier = &quot;login_button&quot;</code>, SwiftUI: <code>.accessibilityIdentifier(&quot;login_button&quot;)</code>) rồi query <code>app.buttons[&quot;login_button&quot;]</code>; identifier không được đọc ra cho người dùng, khác với <code>accessibilityLabel</code>. Nguyên nhân chập chờn chủ yếu là không chờ UI: bước tiếp theo chạy khi màn hình chưa kịp xuất hiện, nhất là trên CI chậm. Dùng <code>element.waitForExistence(timeout:)</code> hay expectation thay vì <code>sleep</code>. Các thực hành khác: <code>continueAfterFailure = false</code> để dừng ngay khi có lỗi đầu tiên; dùng launch arguments hay environment để app chạy với API giả và xoá phiên cũ, tránh phụ thuộc server thật; mỗi test độc lập, không dựa vào thứ tự chạy; tách locator ra Page Object. Chọn loại test: logic, ViewModel, parse JSON, tính toán thì unit test (nhanh, ổn định, viết nhiều); UI test chỉ dành cho vài luồng quan trọng chạy từ đầu đến cuối như đăng nhập, thanh toán, vì chậm, tốn CI và dễ flaky hơn.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">LoginUITests</span>: <span class="tk-type">XCTestCase</span> {
+  <span class="tk-kw">let</span> app = <span class="tk-type">XCUIApplication</span>()
+
+  <span class="tk-kw">override</span> <span class="tk-kw">func</span> setUpWithError() <span class="tk-kw">throws</span> {
+    continueAfterFailure = <span class="tk-kw">false</span>
+    app.launchArguments = [<span class="tk-str">&quot;-uiTesting&quot;</span>]   <span class="tk-com">// app đọc cờ này để dùng API giả, xoá phiên cũ</span>
+    app.launch()
+  }
+
+  <span class="tk-kw">func</span> testLoginSuccess() {
+    <span class="tk-kw">let</span> email = app.textFields[<span class="tk-str">&quot;login_email&quot;</span>]
+    <span class="tk-type">XCTAssertTrue</span>(email.waitForExistence(timeout: <span class="tk-num">5</span>))   <span class="tk-com">// chờ màn hình, không dùng sleep</span>
+    email.tap()
+    email.typeText(<span class="tk-str">&quot;an@example.com&quot;</span>)
+
+    <span class="tk-kw">let</span> password = app.secureTextFields[<span class="tk-str">&quot;login_password&quot;</span>]
+    password.tap()
+    password.typeText(<span class="tk-str">&quot;123456&quot;</span>)
+
+    app.buttons[<span class="tk-str">&quot;login_button&quot;</span>].tap()
+    <span class="tk-type">XCTAssertTrue</span>(app.staticTexts[<span class="tk-str">&quot;home_title&quot;</span>].waitForExistence(timeout: <span class="tk-num">10</span>))
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -770,6 +1153,62 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Keychain được hệ thống mã hoá và quản lý bên ngoài sandbox của app, nên là nơi đúng cho token và mật khẩu, nhưng hành vi của nó khác <code>UserDefaults</code> ở vài điểm. Thứ nhất, item trong Keychain thường vẫn còn sau khi người dùng xoá app rồi cài lại, nên app có thể tưởng người dùng vẫn đăng nhập; nhiều app dùng một cờ trong <code>UserDefaults</code> (bị xoá cùng app) để dọn Keychain ở lần chạy đầu tiên. Thứ hai, mức truy cập mặc định là <code>kSecAttrAccessibleWhenUnlocked</code>, nên tác vụ chạy nền lúc máy đang khoá sẽ không đọc được token; khi đó cần chọn mức phù hợp như <code>kSecAttrAccessibleAfterFirstUnlock</code>. API <code>SecItem...</code> khá thô, nên bọc trong một <code>TokenStore</code> nhỏ để cả app dùng chung.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q49.html">Security review của app ví điện tử chỉ ra: token bị <code>print</code> ra console (và vẫn nằm trong log ở bản release), số dư hiện nguyên trong ảnh chụp của App Switcher, và ô nhập mật khẩu cho phép copy-paste sang app khác. Bạn xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Log: <code>print</code> và <code>NSLog</code> không có mức độ lẫn quyền riêng tư, bản release vẫn ghi ra console nên cắm máy vào Mac là đọc được. Dùng <code>os.Logger</code> (<code>Logger(subsystem:category:)</code>): chuỗi động trong message mặc định bị che thành <code>&lt;private&gt;</code> khi không gắn debugger, còn số và bool mặc định là public; nên ghi rõ <code>privacy: .private</code>, hoặc <code>.private(mask: .hash)</code> để đối chiếu cùng một giá trị qua các dòng log mà không lộ nội dung. Tốt nhất là không log token, mật khẩu, số thẻ dù đã che, và để log chi tiết trong <code>#if DEBUG</code>. App Switcher: iOS chụp snapshot khi app vào background nên phải che nội dung nhạy cảm trước đó, bằng cách thêm một view mờ hoặc logo lên window trong <code>sceneWillResignActive</code> (SwiftUI: <code>scenePhase == .inactive</code>) và gỡ ra trong <code>sceneDidBecomeActive</code>. Ô mật khẩu/OTP: <code>isSecureTextEntry = true</code> (SwiftUI: <code>SecureField</code>) ẩn ký tự và không cho copy ra ngoài; thêm <code>textContentType</code> đúng (<code>.password</code>, <code>.oneTimeCode</code>) để dùng autofill hợp lệ. iOS không cho chặn chụp ảnh màn hình, chỉ phát hiện được qua <code>userDidTakeScreenshotNotification</code> và <code>UIScreen.isCaptured</code> (đang ghi hình), nên đừng hiển thị dữ liệu quá nhạy cảm nếu không cần.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> os
+
+<span class="tk-kw">let</span> log = <span class="tk-type">Logger</span>(subsystem: <span class="tk-str">&quot;com.example.wallet&quot;</span>, category: <span class="tk-str">&quot;auth&quot;</span>)
+
+<span class="tk-kw">func</span> didLogin(userId: <span class="tk-type">Int</span>, token: <span class="tk-type">String</span>) {
+  <span class="tk-com">// print(&quot;token = \(token)&quot;)  // SAI: lộ token ở cả bản release</span>
+  log.info(<span class="tk-str">&quot;login ok user=\(userId) token=\(token, privacy: .private(mask: .hash))&quot;</span>)
+}
+
+<span class="tk-com">// UIKit: che nội dung khi app vào App Switcher</span>
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">SceneDelegate</span>: <span class="tk-type">UIResponder</span>, <span class="tk-type">UIWindowSceneDelegate</span> {
+  <span class="tk-kw">var</span> window: <span class="tk-type">UIWindow</span>?
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> cover: <span class="tk-type">UIView</span>?
+
+  <span class="tk-kw">func</span> sceneWillResignActive(_ scene: <span class="tk-type">UIScene</span>) {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> window <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    <span class="tk-kw">let</span> blur = <span class="tk-type">UIVisualEffectView</span>(effect: <span class="tk-type">UIBlurEffect</span>(style: .systemThickMaterial))
+    blur.frame = window.bounds
+    window.addSubview(blur)
+    cover = blur
+  }
+
+  <span class="tk-kw">func</span> sceneDidBecomeActive(_ scene: <span class="tk-type">UIScene</span>) {
+    cover?.removeFromSuperview()
+    cover = <span class="tk-kw">nil</span>
+  }
+}
+
+passwordField.isSecureTextEntry = <span class="tk-kw">true</span>
+passwordField.textContentType = .password</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/ios/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q50.html">Thiết kế màn giỏ hàng: người dùng tăng giảm số lượng liên tục, có thể mất mạng giữa chừng, và sản phẩm có thể hết hàng khi đang nằm trong giỏ. Bạn tổ chức state, cập nhật lên server và xử lý lỗi thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chỉ có một nguồn sự thật là <code>CartStore</code> (hoặc ViewModel dùng chung) giữ danh sách dòng hàng và số lượng; tổng tiền tính ra từ các dòng chứ không lưu riêng để khỏi lệch, và badge trên tab hay màn chi tiết cùng quan sát store này. Cập nhật số lượng kiểu optimistic: đổi local ngay cho UI mượt, gửi request nền, thành công thì giữ, lỗi thì rollback về giá trị trước và báo người dùng. Không bắn request cho mỗi lần bấm <code>+</code>: debounce khoảng 300–500ms rồi gửi một lần với số lượng cuối cùng; API nên nhận &#39;đặt số lượng = n&#39; (idempotent) thay vì &#39;+1&#39; để retry không cộng đôi, và chỉ giữ một request đang bay cho mỗi dòng hoặc gắn version để bỏ qua response cũ về muộn. Server là trọng tài: response trả giỏ chuẩn (giá mới, tồn kho, mã giảm giá), client ghi đè lên local và hiện thay đổi rõ ràng: giá đổi, &#39;chỉ còn 2 sản phẩm&#39;, dòng hết hàng bị làm mờ và chặn nút thanh toán. Mất mạng: lưu giỏ xuống đĩa (file <code>Codable</code> hoặc Core Data/SwiftData) để mở app vẫn còn; giữ hàng đợi các thay đổi chưa gửi, tự gửi lại khi có mạng và hiện trạng thái &#39;đang đồng bộ&#39;. Trước khi thanh toán luôn đồng bộ lại và kiểm tra với server. Khách chưa đăng nhập dùng giỏ local, rồi gộp vào giỏ server sau khi đăng nhập. Mỗi trạng thái loading, rỗng, lỗi đều cần có UI riêng.</div>
         
         
       </div>

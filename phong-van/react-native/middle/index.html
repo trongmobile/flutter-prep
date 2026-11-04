@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Middle (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn React Native Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module,…">
+<title>Câu hỏi phỏng vấn React Native Middle (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn React Native Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module,…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn React Native Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module,…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Middle (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module,…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · react native · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Middle</h1>
-  <p class="subtitle">Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module, testing, Expo. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Redux Toolkit/Zustand, React Query, re-render, Reanimated, native module, testing, Expo. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/react-native/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -63,16 +63,19 @@
   <h2 class="side-title">Mục lục</h2>
   <ul>
     <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">2</span></li>
-    <li><a href="#react">React &amp; Hooks</a> <span class="count">5</span></li>
-    <li><a href="#components">Component &amp; Styling</a> <span class="count">2</span></li>
+    <li><a href="#react">React &amp; Hooks</a> <span class="count">6</span></li>
+    <li><a href="#components">Component &amp; Styling</a> <span class="count">3</span></li>
     <li><a href="#state">State Management</a> <span class="count">5</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
-    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">5</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">1</span></li>
-    <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">3</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
+    <li><a href="#native">Native &amp; New Architecture</a> <span class="count">6</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">4</span></li>
     <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">4</span></li>
     <li><a href="#perf">Performance</a> <span class="count">5</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">2</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -232,6 +235,57 @@ useLayoutEffect(() =&gt; {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q46.html">Bạn cần làm component <code>Tabs</code> dùng cho cả app. Phiên bản đầu nhận một mảng <code>tabs</code> cùng hàng chục prop (<code>renderHeader</code>, <code>tabBarStyle</code>, <code>showBadge</code>…), và team nào cần khác một chút lại xin thêm prop. Compound components, render props, custom hook và HOC khác nhau thế nào, và bạn thiết kế API này ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Compound components: nhiều component con chia sẻ state ngầm qua Context (<code>&lt;Tabs.Trigger&gt;</code>, <code>&lt;Tabs.Panel&gt;</code> đặt trong <code>&lt;Tabs&gt;</code>), người dùng tự sắp xếp và chèn phần tử tuỳ ý nên bỏ được phần lớn prop cấu hình; hợp với UI gồm nhiều phần tạo thành một khối (Tabs, Accordion, Menu). Cần ném lỗi rõ khi con dùng ngoài cha, và nhớ rằng Context đổi sẽ làm các con dùng nó render lại. Render props (như <code>renderItem</code> của <code>FlatList</code>): cha giữ logic, con quyết định vẽ gì ở một vị trí cụ thể; hợp khi cần tuỳ biến cách vẽ từng phần với dữ liệu của cha, nhưng khó đọc khi lồng nhiều tầng. Custom hook: tái dùng logic mà không kèm giao diện (<code>useDisclosure</code>, <code>useTabs</code>), là lựa chọn mặc định để chia sẻ logic và tách phần &quot;headless&quot; khỏi UI. HOC bọc component để thêm hành vi (<code>withAuth</code>…): ngày nay ít dùng cho logic mới vì hook thay được, nhược điểm là props ẩn, bọc nhiều tầng, kiểu TypeScript khó; vẫn gặp ở <code>memo</code> hay <code>forwardRef</code>. Nguyên tắc chọn: chia sẻ logic thì hook; UI nhiều phần cần linh hoạt thì compound; cần tuỳ biến một điểm vẽ thì render prop. Giữ API nhỏ, hỗ trợ cả controlled (<code>value</code>/<code>onValueChange</code>) lẫn uncontrolled (<code>defaultValue</code>). Ở React 19, <code>ref</code> là prop thường nên không cần <code>forwardRef</code> cho component mới.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { createContext, useContext, useMemo, useState, <span class="tk-kw">type</span> <span class="tk-type">ReactNode</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react&#39;</span>;
+
+<span class="tk-kw">const</span> <span class="tk-type">TabsContext</span> = createContext&lt;{ value: <span class="tk-kw">string</span>; setValue: (v: <span class="tk-kw">string</span>) =&gt; <span class="tk-kw">void</span> } | <span class="tk-kw">null</span>&gt;(<span class="tk-kw">null</span>);
+
+<span class="tk-kw">function</span> useTabs() {
+  <span class="tk-kw">const</span> ctx = useContext(<span class="tk-type">TabsContext</span>);
+  <span class="tk-kw">if</span> (!ctx) <span class="tk-kw">throw</span> <span class="tk-kw">new</span> <span class="tk-type">Error</span>(<span class="tk-str">&#39;Tabs.* phải nằm trong &lt;Tabs&gt;&#39;</span>);
+  <span class="tk-kw">return</span> ctx;
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">Tabs</span>({ defaultValue, children }: { defaultValue: <span class="tk-kw">string</span>; children: <span class="tk-type">ReactNode</span> }) {
+  <span class="tk-kw">const</span> [value, setValue] = useState(defaultValue);
+  <span class="tk-kw">const</span> ctx = useMemo(() =&gt; ({ value, setValue }), [value]);
+  <span class="tk-kw">return</span> &lt;<span class="tk-type">TabsContext</span>.<span class="tk-type">Provider</span> value={ctx}&gt;{children}&lt;/<span class="tk-type">TabsContext</span>.<span class="tk-type">Provider</span>&gt;;
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">Trigger</span>({ value, children }: { value: <span class="tk-kw">string</span>; children: <span class="tk-type">ReactNode</span> }) {
+  <span class="tk-kw">const</span> { value: active, setValue } = useTabs();
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Pressable</span> onPress={() =&gt; setValue(value)} accessibilityRole=<span class="tk-str">&quot;tab&quot;</span> accessibilityState={{ selected: active === value }}&gt;
+      &lt;<span class="tk-type">Text</span> style={active === value &amp;&amp; styles.active}&gt;{children}&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">Pressable</span>&gt;
+  );
+}
+
+<span class="tk-kw">function</span> <span class="tk-type">Panel</span>({ value, children }: { value: <span class="tk-kw">string</span>; children: <span class="tk-type">ReactNode</span> }) {
+  <span class="tk-kw">return</span> useTabs().value === value ? &lt;<span class="tk-type">View</span>&gt;{children}&lt;/<span class="tk-type">View</span>&gt; : <span class="tk-kw">null</span>;
+}
+
+<span class="tk-type">Tabs</span>.<span class="tk-type">Trigger</span> = <span class="tk-type">Trigger</span>;
+<span class="tk-type">Tabs</span>.<span class="tk-type">Panel</span> = <span class="tk-type">Panel</span>;
+
+<span class="tk-com">// Người dùng tự bố trí, thêm badge hay icon mà không cần thêm prop mới cho Tabs</span>
+&lt;<span class="tk-type">Tabs</span> defaultValue=<span class="tk-str">&quot;info&quot;</span>&gt;
+  &lt;<span class="tk-type">View</span> style={styles.row}&gt;
+    &lt;<span class="tk-type">Tabs</span>.<span class="tk-type">Trigger</span> value=<span class="tk-str">&quot;info&quot;</span>&gt;<span class="tk-type">Th</span>ông tin&lt;/<span class="tk-type">Tabs</span>.<span class="tk-type">Trigger</span>&gt;
+    &lt;<span class="tk-type">Tabs</span>.<span class="tk-type">Trigger</span> value=<span class="tk-str">&quot;reviews&quot;</span>&gt;Đánh giá &lt;<span class="tk-type">Badge</span> count={<span class="tk-num">3</span>} /&gt;&lt;/<span class="tk-type">Tabs</span>.<span class="tk-type">Trigger</span>&gt;
+  &lt;/<span class="tk-type">View</span>&gt;
+  &lt;<span class="tk-type">Tabs</span>.<span class="tk-type">Panel</span> value=<span class="tk-str">&quot;info&quot;</span>&gt;&lt;<span class="tk-type">Info</span> /&gt;&lt;/<span class="tk-type">Tabs</span>.<span class="tk-type">Panel</span>&gt;
+  &lt;<span class="tk-type">Tabs</span>.<span class="tk-type">Panel</span> value=<span class="tk-str">&quot;reviews&quot;</span>&gt;&lt;<span class="tk-type">Reviews</span> /&gt;&lt;/<span class="tk-type">Tabs</span>.<span class="tk-type">Panel</span>&gt;
+&lt;/<span class="tk-type">Tabs</span>&gt;;</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="components">
@@ -294,6 +348,39 @@ i18n.use(initReactI18next).init({
 <span class="tk-kw">function</span> <span class="tk-type">Inbox</span>({ count }: { count: <span class="tk-kw">number</span> }) {
   <span class="tk-kw">const</span> { t } = useTranslation(); <span class="tk-com">// component render lại khi đổi ngôn ngữ</span>
   <span class="tk-kw">return</span> &lt;<span class="tk-type">Text</span>&gt;{t(<span class="tk-str">&#39;inbox.unreadCount&#39;</span>, { count })}&lt;/<span class="tk-type">Text</span>&gt;; <span class="tk-com">// i18next chọn dạng số nhiều theo ngôn ngữ</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q47.html">Codebase có 200 component, mỗi dev tự viết <code>StyleSheet</code> với màu và khoảng cách rải rác, dark mode làm vá víu, và có người đề xuất đổi sang NativeWind (Tailwind) hoặc một thư viện theme như Restyle hay Unistyles. Bạn đánh giá và chọn thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vấn đề thật là thiếu design token và theming, không hẳn là công cụ. Dù chọn gì cũng cần một nơi định nghĩa token (màu theo ngữ nghĩa như <code>background</code>, <code>textPrimary</code>, khoảng cách, bo góc, typography) với hai bộ giá trị light và dark. <code>StyleSheet.create</code> thuần: không phụ thuộc thư viện, hiệu năng tốt, nhưng theming phải tự làm (hook <code>useTheme</code> và style tạo trong <code>useMemo</code>), dễ lệch giữa các dev. NativeWind: viết <code>className</code> kiểu Tailwind, build ra style lúc biên dịch, dark mode bằng <code>dark:</code>, thân thiện với team đến từ web; đánh đổi là thêm cấu hình build, phụ thuộc phiên bản NativeWind/Tailwind (có lần nâng bản lớn đổi nhiều thứ), khó debug hơn và style động phức tạp vẫn cần quay lại style thường. Thư viện theme/variant (Restyle, Unistyles…): style gắn với theme, breakpoint, variant và có kiểu TypeScript, ép dùng token; đánh đổi là API riêng, lock-in và ít người quen, cách hoạt động bên trong khác nhau theo thư viện nên cần đọc kỹ tài liệu bản đang dùng. Tiêu chí: kỹ năng và quy mô team, kiểu TS cho token, hỗ trợ dark mode, Dynamic Type, RTL, ảnh hưởng hiệu năng (đo trên máy yếu thay vì đoán), và chi phí migrate (chạy song song, đổi dần từng màn). Thực tế nên bắt đầu bằng token, <code>useTheme</code> và vài component nền (<code>Text</code>, <code>Button</code>, <code>Card</code>), rồi mới chốt công cụ; cấm màu hard-code bằng lint (<code>react-native/no-color-literals</code>).</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> palette = {
+  light: { background: <span class="tk-str">&#39;#FFFFFF&#39;</span>, textPrimary: <span class="tk-str">&#39;#111827&#39;</span>, primary: <span class="tk-str">&#39;#2563EB&#39;</span> },
+  dark: { background: <span class="tk-str">&#39;#0B0F19&#39;</span>, textPrimary: <span class="tk-str">&#39;#F9FAFB&#39;</span>, primary: <span class="tk-str">&#39;#60A5FA&#39;</span> },
+} <span class="tk-kw">as</span> <span class="tk-kw">const</span>;
+<span class="tk-kw">const</span> spacing = { xs: <span class="tk-num">4</span>, sm: <span class="tk-num">8</span>, md: <span class="tk-num">16</span>, lg: <span class="tk-num">24</span> } <span class="tk-kw">as</span> <span class="tk-kw">const</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> useTheme() {
+  <span class="tk-kw">const</span> scheme = useColorScheme(); <span class="tk-com">// &#39;light&#39; | &#39;dark&#39; | null, đổi theo cài đặt hệ thống</span>
+  <span class="tk-kw">return</span> { colors: palette[scheme === <span class="tk-str">&#39;dark&#39;</span> ? <span class="tk-str">&#39;dark&#39;</span> : <span class="tk-str">&#39;light&#39;</span>], spacing };
+}
+
+<span class="tk-com">// Component chỉ nói &quot;màu gì về mặt ngữ nghĩa&quot;, không biết hex hay dark mode</span>
+<span class="tk-kw">function</span> useCardStyles() {
+  <span class="tk-kw">const</span> { colors, spacing } = useTheme();
+  <span class="tk-kw">return</span> useMemo(
+    () =&gt;
+      <span class="tk-type">StyleSheet</span>.create({
+        card: { backgroundColor: colors.background, padding: spacing.md, borderRadius: spacing.sm },
+        title: { color: colors.textPrimary },
+      }),
+    [colors, spacing],
+  );
 }</code></pre>
         
       </div>
@@ -470,6 +557,40 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q48.html">Dự án Expo mới, team phân vân giữa Expo Router (file-based) và tự cấu hình React Navigation. Hai cách khác nhau ở đâu, Expo Router giải quyết được gì, và nếu migrate một dự án React Navigation đang chạy sang thì cần để ý bẫy nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Expo Router xây trên React Navigation: cấu trúc thư mục <code>app/</code> định nghĩa route (<code>app/index.tsx</code> là <code>/</code>, <code>app/orders/[id].tsx</code> là <code>/orders/123</code>, thư mục <code>(tabs)</code> là nhóm không vào URL), còn <code>_layout.tsx</code> khai báo navigator (Stack, Tabs) cho nhóm đó. Lợi ích: mỗi màn hình tự có URL nên deep link và universal link chạy mà không phải viết cấu hình <code>linking</code> thủ công; typed routes kiểm tra <code>href</code> lúc compile; tổ chức đồng nhất giữa các dev và dùng chung được với web. Đánh đổi: gắn với toolchain và quy ước file của Expo, ít linh hoạt với luồng điều hướng rất động (dù vẫn truy cập được API React Navigation bên dưới). React Navigation tự cấu hình: kiểm soát hoàn toàn, hợp dự án bare hay app lớn có luồng đặc thù, nhưng phải tự viết <code>linking</code> và khai báo kiểu tham số (<code>RootStackParamList</code>). Dự án mới dùng Expo thì Expo Router là mặc định hợp lý; app lớn đang chạy ổn thì đừng migrate chỉ vì xu hướng. Bẫy khi migrate: đổi entry sang <code>expo-router/entry</code>; provider toàn cục chuyển vào root <code>app/_layout.tsx</code>; tham số route đều là chuỗi (<code>useLocalSearchParams</code> trả <code>string</code> hoặc <code>string[]</code>) nên số hay object phải parse lại; <code>navigation.navigate(&#39;OrderDetail&#39;, { id })</code> thành <code>router.push(&#39;/orders/123&#39;)</code>; mọi file trong <code>app/</code> đều thành route nên component dùng chung phải để ngoài thư mục này; luồng đăng nhập dùng redirect trong layout hoặc cơ chế bảo vệ route của bản Expo Router bạn dùng. Nên chuyển dần từng nhóm màn hình.</div>
+        <pre class="code-block"><code><span class="tk-com">// app/_layout.tsx: khai báo navigator cho cả ứng dụng</span>
+<span class="tk-kw">import</span> { <span class="tk-type">Stack</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;expo-router&#39;</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-kw">function</span> <span class="tk-type">RootLayout</span>() {
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Stack</span>&gt;
+      &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span> name=<span class="tk-str">&quot;(tabs)&quot;</span> options={{ headerShown: <span class="tk-kw">false</span> }} /&gt;
+      &lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span> name=<span class="tk-str">&quot;orders/[id]&quot;</span> options={{ title: <span class="tk-str">&#39;Chi tiết đơn&#39;</span> }} /&gt;
+    &lt;/<span class="tk-type">Stack</span>&gt;
+  );
+}
+
+<span class="tk-com">// app/orders/[id].tsx -&gt; URL /orders/123, deep link myshop://orders/123 tự hoạt động</span>
+<span class="tk-kw">import</span> { router, useLocalSearchParams } <span class="tk-kw">from</span> <span class="tk-str">&#39;expo-router&#39;</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">default</span> <span class="tk-kw">function</span> <span class="tk-type">OrderDetail</span>() {
+  <span class="tk-kw">const</span> { id } = useLocalSearchParams&lt;{ id: <span class="tk-kw">string</span> }&gt;(); <span class="tk-com">// tham số luôn là chuỗi</span>
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">View</span>&gt;
+      &lt;<span class="tk-type">Text</span>&gt;Đơn #{id}&lt;/<span class="tk-type">Text</span>&gt;
+      &lt;<span class="tk-type">Button</span> title=<span class="tk-str">&quot;Về danh sách&quot;</span> onPress={() =&gt; router.push(<span class="tk-str">&#39;/orders&#39;</span>)} /&gt;
+    &lt;/<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/router/introduction/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="native">
@@ -597,6 +718,35 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q50.html">PM muốn app &quot;tự đồng bộ dữ liệu mỗi 15 phút kể cả khi người dùng đã tắt màn hình&quot; và &quot;hiện thông báo nhắc đúng 8h sáng&quot;. Bạn làm được gì trong React Native, giới hạn của iOS và Android là gì, và khi nào nên dùng push thay vì tác vụ nền?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">JS của RN chỉ chạy khi process app còn sống; ở nền thì hệ điều hành sớm muộn treo hoặc kill process, nên &quot;đúng mỗi 15 phút&quot; không thể bảo đảm. Tác vụ nền là cơ hội do OS cấp chứ không phải cron. iOS dùng BGTaskScheduler: app chỉ đề nghị thời điểm sớm nhất, hệ thống quyết định lúc chạy theo thói quen dùng app, pin và mạng, có thể không chạy, mỗi lần chỉ được một khoảng thời gian ngắn, và thường không chạy nếu người dùng đã vuốt tắt app. Android dùng WorkManager (chu kỳ tối thiểu 15 phút) và chịu ảnh hưởng của Doze, App Standby, tối ưu pin của từng hãng; cần chạy liên tục thì phải có foreground service kèm thông báo. Trong RN dùng thư viện bọc: <code>expo-background-task</code> (kèm <code>expo-task-manager</code>) hoặc <code>react-native-background-fetch</code>; Headless JS chỉ có trên Android. Task phải được định nghĩa ở top-level vì lúc OS đánh thức, component chưa mount, và nên ngắn, idempotent, không dựa vào state của React, lưu kết quả để UI đọc khi mở app. Chọn công cụ theo nhu cầu: nội dung do server quyết định thì dùng push (data/silent push cũng bị OS giới hạn nhưng đúng thời điểm hơn polling mù); nhắc giờ cố định như 8h sáng thì dùng local notification đặt lịch, OS tự hiện mà không cần app chạy; đồng bộ best-effort thì mới dùng tác vụ nền, và luôn đồng bộ lại khi app về <code>active</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> * <span class="tk-kw">as</span> <span class="tk-type">BackgroundTask</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;expo-background-task&#39;</span>;
+<span class="tk-kw">import</span> * <span class="tk-kw">as</span> <span class="tk-type">TaskManager</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;expo-task-manager&#39;</span>;
+
+<span class="tk-kw">const</span> <span class="tk-type">SYNC_TASK</span> = <span class="tk-str">&#39;sync-orders&#39;</span>;
+
+<span class="tk-com">// Định nghĩa ở top-level: khi OS đánh thức, không có component nào đang mount</span>
+<span class="tk-type">TaskManager</span>.defineTask(<span class="tk-type">SYNC_TASK</span>, <span class="tk-kw">async</span> () =&gt; {
+  <span class="tk-kw">try</span> {
+    <span class="tk-kw">await</span> syncPendingOrders(); <span class="tk-com">// ngắn, idempotent, không dùng state của React</span>
+    <span class="tk-kw">return</span> <span class="tk-type">BackgroundTask</span>.<span class="tk-type">BackgroundTaskResult</span>.<span class="tk-type">Success</span>;
+  } <span class="tk-kw">catch</span> {
+    <span class="tk-kw">return</span> <span class="tk-type">BackgroundTask</span>.<span class="tk-type">BackgroundTaskResult</span>.<span class="tk-type">Failed</span>;
+  }
+});
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> registerSync() {
+  <span class="tk-com">// minimumInterval tính bằng phút; OS vẫn là bên quyết định thời điểm chạy thật sự</span>
+  <span class="tk-kw">await</span> <span class="tk-type">BackgroundTask</span>.registerTaskAsync(<span class="tk-type">SYNC_TASK</span>, { minimumInterval: <span class="tk-num">15</span> });
+}</code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/versions/latest/sdk/background-task/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="data">
@@ -621,6 +771,86 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
   onError: (_err, id, ctx) =&gt; queryClient.setQueryData([<span class="tk-str">&#39;post&#39;</span>, id], ctx?.prev),
   onSettled: (_data, _err, id) =&gt; queryClient.invalidateQueries({ queryKey: [<span class="tk-str">&#39;post&#39;</span>, id] }),
 });</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q44.html">Danh sách sản phẩm dùng <code>useInfiniteQuery</code> + <code>FlatList</code>. Lỗi đang gặp: <code>onEndReached</code> bắn liên tục làm tải trùng trang, bản ghi bị lặp trong list (báo trùng key) khi server có dữ liệu mới chèn vào lúc đang cuộn, và kéo để làm mới thì cả 10 trang đã tải bị refetch lần lượt. Bạn cấu hình thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ở TanStack Query v5, <code>useInfiniteQuery</code> cần <code>initialPageParam</code> và <code>getNextPageParam</code>: hàm sau trả về param của trang kế (cursor hay số trang), trả <code>undefined</code> khi hết dữ liệu thì <code>hasNextPage</code> thành <code>false</code>. Cursor (id hoặc mốc thời gian của item cuối) an toàn hơn offset: nếu có item mới chèn vào đầu trong lúc người dùng cuộn, offset làm lệch trang nên trùng hoặc sót bản ghi. Tải trùng trang: <code>onEndReached</code> có thể bắn khi layout đổi hay nội dung chưa đủ cao, nên guard <code>if (hasNextPage &amp;&amp; !isFetchingNextPage) fetchNextPage()</code> và đặt <code>onEndReachedThreshold</code> vừa phải. Dù dùng cursor, vẫn nên gộp các trang rồi loại trùng theo id trong <code>select</code> (khai báo hàm ổn định bên ngoài component) và dùng <code>keyExtractor</code> theo id. Làm mới: <code>refetch</code> của infinite query chạy lại tất cả các trang đã tải theo thứ tự, danh sách càng dài càng chậm; với kéo-để-làm-mới thì nên reset về trang đầu (<code>resetQueries</code>, hoặc cắt <code>pages</code> còn trang đầu rồi refetch), và có thể đặt <code>maxPages</code> để giới hạn số trang giữ trong cache (khi đó cần cả <code>getPreviousPageParam</code>). Dùng <code>refreshing={isRefetching &amp;&amp; !isFetchingNextPage}</code> để vòng xoay kéo-làm-mới không bật lên mỗi lần tải thêm.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> dedupeById = (items: <span class="tk-type">Product</span>[]) =&gt; [...<span class="tk-kw">new</span> <span class="tk-type">Map</span>(items.map((p) =&gt; [p.id, p])).values()];
+<span class="tk-kw">const</span> selectProducts = (d: <span class="tk-type">InfiniteData</span>&lt;<span class="tk-type">ProductPage</span>&gt;) =&gt; dedupeById(d.pages.flatMap((p) =&gt; p.items));
+
+<span class="tk-kw">function</span> <span class="tk-type">ProductList</span>() {
+  <span class="tk-kw">const</span> { data, fetchNextPage, hasNextPage, isFetchingNextPage, refetch, isRefetching } =
+    useInfiniteQuery({
+      queryKey: [<span class="tk-str">&#39;products&#39;</span>],
+      queryFn: ({ pageParam }) =&gt; api.getProducts({ cursor: pageParam, limit: <span class="tk-num">20</span> }),
+      initialPageParam: <span class="tk-kw">undefined</span> <span class="tk-kw">as</span> <span class="tk-kw">string</span> | <span class="tk-kw">undefined</span>,
+      getNextPageParam: (last) =&gt; last.nextCursor ?? <span class="tk-kw">undefined</span>, <span class="tk-com">// undefined = hết dữ liệu</span>
+      select: selectProducts,
+    });
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">FlatList</span>
+      data={data}
+      keyExtractor={(p) =&gt; p.id}
+      renderItem={({ item }) =&gt; &lt;<span class="tk-type">ProductRow</span> product={item} /&gt;}
+      onEndReached={() =&gt; {
+        <span class="tk-kw">if</span> (hasNextPage &amp;&amp; !isFetchingNextPage) fetchNextPage();
+      }}
+      onEndReachedThreshold={<span class="tk-num">0.5</span>}
+      refreshing={isRefetching &amp;&amp; !isFetchingNextPage}
+      onRefresh={refetch}
+      <span class="tk-type">ListFooterComponent</span>={isFetchingNextPage ? &lt;<span class="tk-type">ActivityIndicator</span> /&gt; : <span class="tk-kw">null</span>}
+    /&gt;
+  );
+}</code></pre>
+        <p class="doc-link"><a href="https://tanstack.com/query/latest/docs/framework/react/guides/infinite-queries" target="_blank" rel="noopener">Đọc thêm trong tài liệu · tanstack.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q45.html">App lưu giỏ hàng và cài đặt bằng Zustand <code>persist</code> với AsyncStorage. Mỗi lần mở app, người dùng thấy giỏ hàng trống một nhịp rồi mới có dữ liệu, và sau khi bản mới đổi cấu trúc store thì máy đang chạy bản cũ lên bản mới bị crash. MMKV khác AsyncStorage ra sao, và bạn xử lý hai lỗi này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">AsyncStorage bất đồng bộ (đọc qua native module, trả Promise) nên rehydrate xong sau lần render đầu; lần render đầu dùng state mặc định nên giao diện nhấp nháy. Cách xử lý: giữ splash (<code>SplashScreen.preventAutoHideAsync</code>) hoặc hiện loading cho tới khi hydrate xong (<code>persist.hasHydrated()</code>, <code>onFinishHydration</code>; Redux Persist có <code>PersistGate</code>). MMKV (<code>react-native-mmkv</code>) đọc ghi đồng bộ qua JSI, rất nhanh, nên dùng làm storage cho <code>persist</code> thì state có sẵn ngay khi tạo store và không còn flicker. Đánh đổi: là native module (cần build lại hay dev client), đọc đồng bộ trên JS thread nên không hợp để nhét blob rất lớn, không phải database (không query), và dù có tuỳ chọn mã hoá thì vẫn không thay Keychain cho bí mật như token. Lỗi crash đến từ việc state cũ được merge vào store có cấu trúc mới: thiếu field hoặc sai kiểu. Dùng <code>version</code> và <code>migrate(persistedState, version)</code>, mỗi lần đổi cấu trúc thì tăng version và chuyển dữ liệu cũ sang dạng mới (đổi tên field, đặt giá trị mặc định). Chỉ persist phần cần thiết bằng <code>partialize</code> (không lưu dữ liệu từ server vì đã có TanStack Query, không lưu hàm hay dữ liệu dẫn xuất), và bọc việc đọc để dữ liệu hỏng rơi về giá trị mặc định thay vì làm app chết.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> { create } <span class="tk-kw">from</span> <span class="tk-str">&#39;zustand&#39;</span>;
+<span class="tk-kw">import</span> { createJSONStorage, persist } <span class="tk-kw">from</span> <span class="tk-str">&#39;zustand/middleware&#39;</span>;
+<span class="tk-kw">import</span> { <span class="tk-type">MMKV</span> } <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native-mmkv&#39;</span>;
+
+<span class="tk-kw">const</span> mmkv = <span class="tk-kw">new</span> <span class="tk-type">MMKV</span>(); <span class="tk-com">// API khác nhau giữa các phiên bản (bản mới hơn dùng createMMKV và remove)</span>
+<span class="tk-kw">const</span> mmkvStorage = {
+  getItem: (key: <span class="tk-kw">string</span>) =&gt; mmkv.getString(key) ?? <span class="tk-kw">null</span>, <span class="tk-com">// đồng bộ, không cần await</span>
+  setItem: (key: <span class="tk-kw">string</span>, value: <span class="tk-kw">string</span>) =&gt; mmkv.<span class="tk-kw">set</span>(key, value),
+  removeItem: (key: <span class="tk-kw">string</span>) =&gt; mmkv.<span class="tk-kw">delete</span>(key),
+};
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> useCart = create&lt;<span class="tk-type">CartState</span>&gt;()(
+  persist(
+    (<span class="tk-kw">set</span>) =&gt; ({
+      items: [],
+      add: (p: <span class="tk-type">Product</span>) =&gt; <span class="tk-kw">set</span>((s) =&gt; ({ items: [...s.items, { ...p, qty: <span class="tk-num">1</span> }] })),
+    }),
+    {
+      name: <span class="tk-str">&#39;cart&#39;</span>,
+      version: <span class="tk-num">2</span>,
+      storage: createJSONStorage(() =&gt; mmkvStorage),
+      partialize: (s) =&gt; ({ items: s.items }), <span class="tk-com">// chỉ lưu dữ liệu, không lưu hàm</span>
+      migrate: (persisted: <span class="tk-kw">any</span>, version) =&gt; {
+        <span class="tk-kw">if</span> (version &lt; <span class="tk-num">2</span>) {
+          <span class="tk-com">// v1 chưa có qty: bổ sung giá trị mặc định thay vì để undefined chạy vào UI</span>
+          <span class="tk-kw">return</span> { ...persisted, items: (persisted.items ?? []).map((i: <span class="tk-kw">any</span>) =&gt; ({ ...i, qty: i.qty ?? <span class="tk-num">1</span> })) };
+        }
+        <span class="tk-kw">return</span> persisted;
+      },
+    },
+  ),
+);</code></pre>
         
       </div>
     </details>
@@ -670,6 +900,52 @@ navigation.navigate(<span class="tk-str">&#39;Main&#39;</span>, { screen: <span 
         <div class="answer-text"><code>PanResponder</code> xử lý touch ở JS thread: mỗi lần ngón tay di chuyển, event phải đi sang JS rồi kết quả mới quay lại native, nên khi JS bận thì cử chỉ trễ và giật. Gesture Handler nhận diện cử chỉ bằng hệ thống gesture native; khi dùng cùng Reanimated, callback của <code>Gesture.Pan()</code> là worklet chạy thẳng trên UI thread và cập nhật shared value, nên view bám theo ngón tay mượt mà. Nó còn có API phối hợp cử chỉ như <code>Gesture.Simultaneous</code>, <code>Gesture.Exclusive</code>, <code>requireExternalGestureToFail</code> để xử lý xung đột với ScrollView, điều rất khó làm với <code>PanResponder</code>. Nhớ bọc gốc app trong <code>GestureHandlerRootView</code>, nếu không gesture sẽ không hoạt động.</div>
         
         
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q49.html">Header sản phẩm cần thu nhỏ và mờ dần theo vị trí cuộn của <code>FlatList</code>. Bạn viết <code>onScroll={(e) =&gt; setY(e.nativeEvent.contentOffset.y)}</code> rồi tính style từ <code>y</code>, và header bị giật. Vì sao, và làm bằng Reanimated thế nào để animation mượt kể cả khi JS thread đang bận?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>setY</code> mỗi sự kiện cuộn đẩy dữ liệu từ native sang JS rồi re-render cả component, vừa tốn vừa trễ, nên rớt frame ngay khi JS thread bận. Cách đúng là giữ vị trí cuộn trong shared value và tính style trên UI thread. Với Reanimated: <code>useSharedValue</code> cùng <code>useAnimatedScrollHandler</code> gắn vào <code>Animated.FlatList</code> hoặc <code>Animated.ScrollView</code> (handler là worklet chạy thẳng trên UI thread, không đi qua JS), rồi <code>useAnimatedStyle</code> dùng <code>interpolate(scrollY.value, inputRange, outputRange, Extrapolation.CLAMP)</code> để biến offset thành chiều cao hay độ mờ. <code>Extrapolation.CLAMP</code> giữ giá trị trong khoảng đã khai báo; thiếu nó thì khi kéo đàn hồi quá đầu trang trên iOS header sẽ bị nội suy vượt biên. Trên iOS nên đặt <code>scrollEventThrottle={16}</code> để nhận sự kiện mỗi frame. Với core <code>Animated</code>, <code>Animated.event</code> kết hợp <code>useNativeDriver: true</code> cũng chạy được trên native nhưng chỉ animate các thuộc tính hỗ trợ native driver (transform, opacity, không có <code>height</code>), không chạy được logic tuỳ ý như rẽ nhánh, snap hay haptic. Reanimated cho chạy code trong worklet và animate cả layout, nhưng đổi <code>height</code> mỗi frame buộc layout lại nên tốn hơn; nếu thiết kế cho phép, ưu tiên <code>transform</code> (<code>scale</code>, <code>translateY</code>) và <code>opacity</code>. Worklet không gọi được hàm JS thông thường, phải đưa qua cơ chế của thư viện (như <code>runOnJS</code>, tên có thể đổi ở bản mới). Đo trên bản release và theo dõi cả UI FPS lẫn JS FPS.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-type">Animated</span>, {
+  <span class="tk-type">Extrapolation</span>,
+  interpolate,
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  useSharedValue,
+} <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native-reanimated&#39;</span>;
+
+<span class="tk-kw">const</span> <span class="tk-type">HEADER_MAX</span> = <span class="tk-num">200</span>;
+<span class="tk-kw">const</span> <span class="tk-type">HEADER_MIN</span> = <span class="tk-num">80</span>;
+<span class="tk-kw">const</span> <span class="tk-type">RANGE</span> = <span class="tk-type">HEADER_MAX</span> - <span class="tk-type">HEADER_MIN</span>;
+
+<span class="tk-kw">export</span> <span class="tk-kw">function</span> <span class="tk-type">ProductScreen</span>() {
+  <span class="tk-kw">const</span> scrollY = useSharedValue(<span class="tk-num">0</span>);
+  <span class="tk-kw">const</span> onScroll = useAnimatedScrollHandler((e) =&gt; {
+    scrollY.value = e.contentOffset.y; <span class="tk-com">// worklet: chạy trên UI thread, không đi qua JS</span>
+  });
+
+  <span class="tk-kw">const</span> headerStyle = useAnimatedStyle(() =&gt; ({
+    height: interpolate(scrollY.value, [<span class="tk-num">0</span>, <span class="tk-type">RANGE</span>], [<span class="tk-type">HEADER_MAX</span>, <span class="tk-type">HEADER_MIN</span>], <span class="tk-type">Extrapolation</span>.<span class="tk-type">CLAMP</span>),
+    opacity: interpolate(scrollY.value, [<span class="tk-num">0</span>, <span class="tk-type">RANGE</span>], [<span class="tk-num">1</span>, <span class="tk-num">0.85</span>], <span class="tk-type">Extrapolation</span>.<span class="tk-type">CLAMP</span>),
+  }));
+
+  <span class="tk-kw">return</span> (
+    &lt;&gt;
+      &lt;<span class="tk-type">Animated</span>.<span class="tk-type">View</span> style={[styles.header, headerStyle]} /&gt;
+      &lt;<span class="tk-type">Animated</span>.<span class="tk-type">FlatList</span>
+        data={items}
+        renderItem={renderItem}
+        onScroll={onScroll}
+        scrollEventThrottle={<span class="tk-num">16</span>}
+        contentContainerStyle={{ paddingTop: <span class="tk-type">HEADER_MAX</span> }}
+      /&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+        <p class="doc-link"><a href="https://docs.swmansion.com/react-native-reanimated/docs/scroll/useAnimatedScrollHandler/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.swmansion.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -947,6 +1223,193 @@ test(<span class="tk-str">&#39;báo lỗi khi server trả 500&#39;</span>, <spa
   <span class="tk-kw">const</span> { result } = renderHook(() =&gt; useOrders(), { wrapper: createWrapper() });
   <span class="tk-kw">await</span> waitFor(() =&gt; expect(result.current.isError).toBe(<span class="tk-kw">true</span>));
 });</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q42.html">Đồng nghiệp làm đăng nhập vân tay/Face ID bằng <code>LocalAuthentication.authenticateAsync()</code> (<code>expo-local-authentication</code>): nếu <code>success</code> là <code>true</code> thì đọc token từ AsyncStorage và cho vào app. Reviewer cho rằng cách này yếu. Vì sao, và bạn gắn sinh trắc học với Keychain/Keystore thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>authenticateAsync</code> chỉ trả về một boolean cho code JS, tức là một &quot;cổng&quot; trong ứng dụng chứ không bảo vệ dữ liệu. Trên máy root/jailbreak, kẻ tấn công dùng công cụ hook (như Frida) để ép kết quả thành <code>true</code> hoặc bỏ qua bước này, rồi đọc thẳng token trong AsyncStorage (không mã hoá). Cách đúng là để hệ điều hành giữ bí mật: lưu token vào Keychain (iOS) hoặc Keystore (Android) với access control yêu cầu sinh trắc học; khi đọc, chính OS hiện hộp thoại và chỉ giải mã sau khi xác thực thành công, nên bỏ qua UI thì không lấy được dữ liệu. Với <code>react-native-keychain</code> dùng <code>accessControl</code> như <code>BIOMETRY_CURRENT_SET</code> (khoá mất hiệu lực khi người dùng thêm hoặc xoá vân tay) hay <code>BIOMETRY_ANY</code>, kèm <code>accessible: WHEN_UNLOCKED_THIS_DEVICE_ONLY</code> để không đi theo backup sang máy khác; <code>expo-secure-store</code> có <code>requireAuthentication</code> tương tự. Phải có đường lùi: máy không có hoặc chưa đăng ký sinh trắc học (<code>hasHardwareAsync</code>, <code>isEnrolledAsync</code>), người dùng huỷ, bị khoá sau nhiều lần sai, hoặc khoá bị vô hiệu vì đổi vân tay: bắt lỗi rồi quay về đăng nhập bằng mật khẩu và lưu lại bí mật mới. Đừng giữ một cờ &quot;đã xác thực&quot; lâu dài trong state. Phía server vẫn cần refresh token xoay vòng, thu hồi theo thiết bị và bắt xác thực lại với thao tác giá trị cao. Tên option khác nhau giữa các phiên bản thư viện, nên đối chiếu tài liệu bản đang dùng.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> * <span class="tk-kw">as</span> <span class="tk-type">Keychain</span> <span class="tk-kw">from</span> <span class="tk-str">&#39;react-native-keychain&#39;</span>;
+
+<span class="tk-com">// Lưu: bí mật bị khoá bởi hệ điều hành, đọc ra phải qua sinh trắc học</span>
+<span class="tk-kw">await</span> <span class="tk-type">Keychain</span>.setGenericPassword(<span class="tk-str">&#39;session&#39;</span>, refreshToken, {
+  accessControl: <span class="tk-type">Keychain</span>.<span class="tk-type">ACCESS_CONTROL</span>.<span class="tk-type">BIOMETRY_CURRENT_SET</span>, <span class="tk-com">// vô hiệu khi thay đổi vân tay đã đăng ký</span>
+  accessible: <span class="tk-type">Keychain</span>.<span class="tk-type">ACCESSIBLE</span>.<span class="tk-type">WHEN_UNLOCKED_THIS_DEVICE_ONLY</span>, <span class="tk-com">// không đi theo backup sang máy khác</span>
+});
+
+<span class="tk-kw">async</span> <span class="tk-kw">function</span> unlockWithBiometrics(): <span class="tk-type">Promise</span>&lt;<span class="tk-kw">string</span> | <span class="tk-kw">null</span>&gt; {
+  <span class="tk-kw">try</span> {
+    <span class="tk-com">// OS hiện hộp thoại sinh trắc học; thất bại hoặc huỷ thì không có dữ liệu trả về</span>
+    <span class="tk-kw">const</span> creds = <span class="tk-kw">await</span> <span class="tk-type">Keychain</span>.getGenericPassword({
+      authenticationPrompt: { title: <span class="tk-str">&#39;Đăng nhập nhanh&#39;</span> },
+    });
+    <span class="tk-kw">return</span> creds ? creds.password : <span class="tk-kw">null</span>;
+  } <span class="tk-kw">catch</span> {
+    <span class="tk-kw">return</span> <span class="tk-kw">null</span>; <span class="tk-com">// huỷ, bị khoá hoặc khoá bị vô hiệu: quay lại đăng nhập bằng mật khẩu</span>
+  }
+}</code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/versions/latest/sdk/local-authentication/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q43.html">App cần đăng nhập bằng Google hoặc Azure AD (OIDC). Một dev mở trang đăng nhập trong <code>react-native-webview</code> rồi bắt URL redirect để lấy token cho nhanh. Vì sao không nên làm vậy, và làm đúng với Authorization Code + PKCE thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">App di động là public client, không giữ được client secret (giải nén IPA hoặc APK là thấy), nên dùng Authorization Code flow kèm PKCE, không dùng implicit flow. PKCE: app sinh <code>code_verifier</code> ngẫu nhiên, gửi <code>code_challenge</code> (băm SHA-256 của verifier) khi xin code, rồi gửi <code>code_verifier</code> lúc đổi code lấy token; kẻ chặn được code (vd. một app độc hại đăng ký cùng URL scheme) cũng không đổi được vì thiếu verifier. Không nên dùng WebView vì app chủ đọc được những gì người dùng gõ và cookie, người dùng không kiểm chứng được mình đang nhập mật khẩu ở đâu, không tận dụng được phiên SSO, mật khẩu đã lưu hay passkey của trình duyệt, và nhiều nhà cung cấp (như Google) chặn đăng nhập trong WebView nhúng. Hãy dùng trình duyệt hệ thống: <code>ASWebAuthenticationSession</code> trên iOS, Custom Tabs trên Android, được bọc bởi <code>expo-auth-session</code> (kèm <code>expo-web-browser</code>) hoặc <code>react-native-app-auth</code>. Redirect URI phải đăng ký khớp chính xác với IdP; ưu tiên universal link/App Link (https) hơn custom scheme vì scheme có thể bị app khác đăng ký; kiểm tra tham số <code>state</code> chống CSRF. Có token rồi: access token ngắn hạn giữ trong bộ nhớ, refresh token lưu Keychain/Keystore, làm mới khi hết hạn (nên xoay vòng), và khi đăng xuất thì thu hồi token ở IdP.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> discovery = <span class="tk-type">AuthSession</span>.useAutoDiscovery(<span class="tk-str">&#39;https://login.example.com&#39;</span>);
+<span class="tk-kw">const</span> redirectUri = <span class="tk-type">AuthSession</span>.makeRedirectUri({ scheme: <span class="tk-str">&#39;myshop&#39;</span>, path: <span class="tk-str">&#39;auth&#39;</span> });
+
+<span class="tk-kw">const</span> [request, response, promptAsync] = <span class="tk-type">AuthSession</span>.useAuthRequest(
+  {
+    clientId: <span class="tk-str">&#39;myshop-mobile&#39;</span>, <span class="tk-com">// public client: không có client secret</span>
+    scopes: [<span class="tk-str">&#39;openid&#39;</span>, <span class="tk-str">&#39;profile&#39;</span>, <span class="tk-str">&#39;offline_access&#39;</span>],
+    redirectUri,
+    usePKCE: <span class="tk-kw">true</span>, <span class="tk-com">// thư viện tự sinh code_verifier và code_challenge</span>
+  },
+  discovery,
+);
+
+useEffect(() =&gt; {
+  <span class="tk-kw">if</span> (response?.<span class="tk-kw">type</span> !== <span class="tk-str">&#39;success&#39;</span> || !request || !discovery) <span class="tk-kw">return</span>;
+  <span class="tk-type">AuthSession</span>.exchangeCodeAsync(
+    {
+      clientId: <span class="tk-str">&#39;myshop-mobile&#39;</span>,
+      code: response.params.code,
+      redirectUri,
+      extraParams: { code_verifier: request.codeVerifier ?? <span class="tk-str">&#39;&#39;</span> }, <span class="tk-com">// chứng minh cùng một client đã xin code</span>
+    },
+    discovery,
+  ).then(saveTokensSecurely); <span class="tk-com">// refresh token vào Keychain/Keystore</span>
+}, [response]);
+
+<span class="tk-com">// Mở trình duyệt hệ thống (không phải WebView): &lt;Button title=&quot;Đăng nhập&quot; onPress={() =&gt; promptAsync()} /&gt;</span></code></pre>
+        <p class="doc-link"><a href="https://docs.expo.dev/versions/latest/sdk/auth-session/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.expo.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q38.html">Màn thanh toán: người dùng bấm &quot;Đặt hàng&quot; hai lần liên tiếp, hoặc bấm một lần nhưng mạng đứt đúng lúc request đã tới server rồi họ bấm lại. Kết quả là hai đơn trùng và bị trừ tiền hai lần. Bạn thiết kế phía app thế nào để không tạo đơn trùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cần hai lớp. Lớp UI chỉ giảm bớt: đổi sang trạng thái <code>submitting</code> và disable nút ngay khi bấm; nhưng <code>setState</code> chưa kịp render thì lần bấm thứ hai vẫn lọt vào, nên thêm một <code>useRef</code> làm khoá đồng bộ (<code>if (inFlight.current) return</code>). Lớp quyết định là idempotency key: app sinh một UUID cho mỗi &quot;ý định đặt hàng&quot; (một giỏ hàng ở màn thanh toán) và gửi trong header <code>Idempotency-Key</code>; server lưu key cùng kết quả, nên cùng key gửi lại thì trả đơn cũ chứ không tạo mới. Key phải giữ nguyên qua mọi lần retry và chỉ đổi khi người dùng sửa giỏ hàng; sinh key mới mỗi lần bấm là sai vì server không nhận ra đó là cùng một đơn. Khi timeout hoặc mất mạng, kết quả là &quot;chưa rõ&quot; chứ không phải &quot;thất bại&quot;: hiện trạng thái &quot;Đang xác nhận đơn hàng…&quot;, cho thử lại với cùng key hoặc hỏi server trạng thái đơn theo key, và chưa cho tạo đơn mới. Nếu app bị kill giữa chừng thì lưu key và trạng thái pending vào storage để lần mở sau kiểm tra lại. Chỉ retry lỗi mạng và 5xx, kèm backoff, không retry 4xx. Tính idempotent do server bảo đảm; app có nhiệm vụ gửi đúng key.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">CheckoutButton</span>({ cart }: { cart: <span class="tk-type">Cart</span> }) {
+  <span class="tk-kw">const</span> [status, setStatus] = useState&lt;<span class="tk-str">&#39;idle&#39;</span> | <span class="tk-str">&#39;submitting&#39;</span> | <span class="tk-str">&#39;unknown&#39;</span> | <span class="tk-str">&#39;done&#39;</span>&gt;(<span class="tk-str">&#39;idle&#39;</span>);
+  <span class="tk-kw">const</span> inFlight = useRef(<span class="tk-kw">false</span>); <span class="tk-com">// khoá đồng bộ: setState chưa kịp render thì lần bấm 2 vẫn lọt</span>
+  <span class="tk-com">// Một &quot;ý định đặt hàng&quot;: giữ nguyên qua các lần retry. Đổi giỏ hàng thì remount (key={cart.version}) để có key mới</span>
+  <span class="tk-kw">const</span> [idempotencyKey] = useState(() =&gt; uuid());
+
+  <span class="tk-kw">async</span> <span class="tk-kw">function</span> submit() {
+    <span class="tk-kw">if</span> (inFlight.current) <span class="tk-kw">return</span>;
+    inFlight.current = <span class="tk-kw">true</span>;
+    setStatus(<span class="tk-str">&#39;submitting&#39;</span>);
+    <span class="tk-kw">try</span> {
+      <span class="tk-kw">await</span> api.post(<span class="tk-str">&#39;/orders&#39;</span>, cart, { headers: { <span class="tk-str">&#39;Idempotency-Key&#39;</span>: idempotencyKey } });
+      setStatus(<span class="tk-str">&#39;done&#39;</span>);
+    } <span class="tk-kw">catch</span> (e) {
+      <span class="tk-com">// Timeout/mất mạng: chưa biết server đã tạo đơn hay chưa -&gt; &#39;unknown&#39;, thử lại dùng đúng key cũ</span>
+      setStatus(isNetworkError(e) ? <span class="tk-str">&#39;unknown&#39;</span> : <span class="tk-str">&#39;idle&#39;</span>);
+    } <span class="tk-kw">finally</span> {
+      inFlight.current = <span class="tk-kw">false</span>;
+    }
+  }
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Button</span>
+      title={status === <span class="tk-str">&#39;unknown&#39;</span> ? <span class="tk-str">&#39;Thử lại&#39;</span> : <span class="tk-str">&#39;Đặt hàng&#39;</span>}
+      onPress={submit}
+      disabled={status === <span class="tk-str">&#39;submitting&#39;</span> || status === <span class="tk-str">&#39;done&#39;</span>}
+    /&gt;
+  );
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q39.html">Màn theo dõi đơn hàng cần hiện trạng thái và vị trí tài xế gần realtime. Bạn chọn polling, WebSocket hay push? Cần xử lý gì khi app xuống nền, khi mạng chập chờn, và làm sao để không hao pin hay rò rỉ kết nối?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Polling (TanStack Query <code>refetchInterval</code>) đơn giản nhưng tốn request và có độ trễ; hợp khi cập nhật thưa hoặc chưa có kênh realtime. WebSocket (hoặc SSE) hợp khi người dùng đang nhìn màn hình và cần cập nhật liên tục: một kết nối giữ mở, server đẩy sự kiện. Push (FCM/APNs) dùng để báo khi app không ở foreground, không thay được realtime vì thời điểm giao không đảm bảo. Thường kết hợp: socket khi foreground, push khi ở nền. Với <code>AppState</code>: sang <code>background</code> thì đóng socket (OS sớm muộn cũng treo JS và kết nối chết, giữ lại chỉ tốn pin), quay về <code>active</code> thì gọi API lấy snapshot mới nhất rồi mới mở lại socket để không mất sự kiện trong lúc đóng. Mất kết nối thì reconnect với exponential backoff kèm jitter (1s, 2s, 4s… tối đa khoảng 30s, nhân một hệ số ngẫu nhiên) để hàng nghìn client không dồn vào server cùng lúc khi nó hồi phục; reset backoff khi kết nối đã ổn định, và có thể nghe NetInfo để thử lại ngay khi có mạng. Cleanup trong <code>useEffect</code> (đóng socket, <code>clearTimeout</code>, bỏ listener) khi rời màn hình, nếu không mỗi lần vào ra màn hình lại sinh thêm một kết nối; màn nằm trong stack nhưng không focus thì cân nhắc <code>useFocusEffect</code>. Sự kiện có thể đến lặp hoặc sai thứ tự, nên kèm version/sequence để bỏ qua bản cũ.</div>
+        <pre class="code-block"><code><span class="tk-kw">function</span> useOrderStream(orderId: <span class="tk-kw">string</span>, onEvent: (e: <span class="tk-type">OrderEvent</span>) =&gt; <span class="tk-kw">void</span>) {
+  <span class="tk-com">// giả định onEvent ổn định (vd. truyền thẳng setState) để effect không chạy lại</span>
+  useEffect(() =&gt; {
+    <span class="tk-kw">let</span> ws: <span class="tk-type">WebSocket</span> | <span class="tk-kw">null</span> = <span class="tk-kw">null</span>;
+    <span class="tk-kw">let</span> timer: <span class="tk-type">ReturnType</span>&lt;<span class="tk-kw">typeof</span> setTimeout&gt; | <span class="tk-kw">undefined</span>;
+    <span class="tk-kw">let</span> retry = <span class="tk-num">0</span>;
+    <span class="tk-kw">let</span> stopped = <span class="tk-kw">false</span>;
+
+    <span class="tk-kw">const</span> connect = () =&gt; {
+      ws = <span class="tk-kw">new</span> <span class="tk-type">WebSocket</span>(<span class="tk-str">&#39;wss://api.shop.vn/orders/&#39;</span> + orderId + <span class="tk-str">&#39;/stream&#39;</span>);
+      ws.onopen = () =&gt; { retry = <span class="tk-num">0</span>; };
+      ws.onmessage = (m) =&gt; onEvent(<span class="tk-type">JSON</span>.parse(m.data));
+      ws.onclose = () =&gt; {
+        <span class="tk-kw">if</span> (stopped) <span class="tk-kw">return</span>;
+        <span class="tk-com">// backoff luỹ thừa, trần 30s, nhân jitter 0.5–1 để các client không reconnect cùng lúc</span>
+        <span class="tk-kw">const</span> delay = <span class="tk-type">Math</span>.min(30_000, <span class="tk-num">1000</span> * <span class="tk-num">2</span> ** retry++) * (<span class="tk-num">0.5</span> + <span class="tk-type">Math</span>.random() / <span class="tk-num">2</span>);
+        timer = setTimeout(connect, delay);
+      };
+    };
+    <span class="tk-kw">const</span> stop = () =&gt; { stopped = <span class="tk-kw">true</span>; clearTimeout(timer); ws?.close(); };
+
+    <span class="tk-kw">const</span> sub = <span class="tk-type">AppState</span>.addEventListener(<span class="tk-str">&#39;change&#39;</span>, (state) =&gt; {
+      <span class="tk-kw">if</span> (state === <span class="tk-str">&#39;background&#39;</span>) stop();
+      <span class="tk-kw">else</span> <span class="tk-kw">if</span> (state === <span class="tk-str">&#39;active&#39;</span> &amp;&amp; stopped) {
+        stopped = <span class="tk-kw">false</span>;
+        retry = <span class="tk-num">0</span>;
+        refetchOrderSnapshot(orderId); <span class="tk-com">// lấy trạng thái hiện tại trước, rồi mới nghe tiếp sự kiện</span>
+        connect();
+      }
+    });
+
+    connect();
+    <span class="tk-kw">return</span> () =&gt; { stop(); sub.remove(); };
+  }, [orderId]);
+}</code></pre>
+        <p class="doc-link"><a href="https://reactnative.dev/docs/appstate" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q40.html">Bạn là middle được giao review PR của một bạn junior: PR 800 dòng, màn hình mới chạy được nhưng logic gọi API nằm lẫn trong component và các <code>useEffect</code> đầy lỗi. Bạn review thế nào, checklist riêng cho React Native gồm gì, và góp ý ra sao để bạn ấy tiến bộ mà không nản?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trước khi đọc code, đọc mô tả PR và chạy thử trên cả iOS lẫn Android; PR quá lớn thì đề nghị tách. Checklist hay gặp trong RN: (1) effect: dependency đầy đủ, có cleanup cho listener, timer, subscription, request (<code>AbortController</code>), và không dùng effect để tính dữ liệu dẫn xuất; (2) re-render: object hoặc hàm tạo mới mỗi lần render truyền xuống component <code>memo</code> hay <code>renderItem</code>, <code>key</code> không ổn định hoặc dùng index khi danh sách thay đổi; (3) danh sách dài dùng <code>FlatList</code> hoặc FlashList thay vì <code>ScrollView</code> + <code>map</code>; (4) khác biệt nền tảng: nút back và bàn phím trên Android, safe area trên iOS, cỡ chữ hệ thống; (5) server state để TanStack Query lo chứ không nhét vào Redux hay <code>useState</code>; (6) lộ secret, log token, <code>any</code> và ép kiểu trong TypeScript, import cả thư viện lớn làm phình bundle. Khi PR sai kiến trúc, đừng để lại 30 comment lẻ: gọi một buổi ngắn hoặc pair để giải thích &quot;vì sao&quot; kèm ví dụ rồi cùng chọn hướng sửa (tách hook và lớp dữ liệu khỏi UI); phân loại comment (chặn merge, gợi ý, <code>nit:</code>) và nêu cả điểm làm tốt. Điều lặp lại thì tự động hoá (ESLint <code>react-hooks/exhaustive-deps</code>, template PR, tài liệu quy ước) để review tập trung vào thiết kế. Mentor bằng việc giao việc vừa sức, để bạn ấy tự sửa, review nhanh trong ngày; số vòng review mỗi PR giảm dần là dấu hiệu đang đi đúng hướng.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-mid-q41.html">Sáng thứ Hai, Sentry cho thấy crash-free sessions tụt từ 99,5% xuống 96% sau bản phát hành hôm Chủ nhật (có cả một bản OTA đẩy cùng lúc). Bạn xử lý sự cố này thế nào từ phút đầu tới khi đóng sự cố?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ưu tiên giảm thiệt hại trước khi tìm nguyên nhân. Xác định nhanh phạm vi: crash tập trung ở phiên bản native nào, bản JS (OTA) nào, hệ điều hành và thiết bị nào, bắt đầu từ lúc nào, rồi đối chiếu với thời điểm release và OTA. Nếu do OTA thì rollback ngay bằng cách đưa lại bản update trước (EAS Update có thao tác rollback/republish), vài phút là xong mà không phải qua duyệt store. Nếu do bản native thì tạm dừng staged rollout (halt rollout trên Google Play, tạm dừng phased release trên App Store), tắt tính năng nghi vấn bằng feature flag hoặc remote config, và chuẩn bị hotfix; iOS không rollback được bản đã cài nên cần xin Expedited Review. Song song, dùng source map để đọc stack trace, tái hiện trên bản release (không phải bản debug) và sửa trong phạm vi nhỏ nhất. Giao tiếp: báo sớm trên kênh sự cố cho PM, QA, support (hiện tượng, ai bị ảnh hưởng, cách tạm thời, lúc cập nhật kế tiếp) và cập nhật đều đặn. Khi ổn, viết post-mortem ngắn không đổ lỗi: timeline, nguyên nhân gốc, vì sao lọt qua test, và việc phòng ngừa như staged rollout nhỏ dần (5% → 20% → 50%), OTA theo channel và tỉ lệ, ngưỡng crash tự động dừng rollout, smoke test trên bản release trước khi publish.</div>
+        
         
       </div>
     </details>

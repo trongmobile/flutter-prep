@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: Navigation — Mobile Interview</title>
-<meta name="description" content="6 câu hỏi phỏng vấn iOS về Navigation từ Fresher đến Senior, có đáp án mẫu và 7 câu quiz trắc nghiệm.">
+<meta name="description" content="9 câu hỏi phỏng vấn iOS về Navigation từ Fresher đến Senior, có đáp án mẫu và 7 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/navigation/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: Navigation — Mobile Interview">
-<meta property="og:description" content="6 câu hỏi phỏng vấn iOS về Navigation từ Fresher đến Senior, có đáp án mẫu và 7 câu quiz trắc nghiệm.">
+<meta property="og:description" content="9 câu hỏi phỏng vấn iOS về Navigation từ Fresher đến Senior, có đáp án mẫu và 7 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/navigation/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,13 +47,14 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: Navigation</h1>
-  <p class="subtitle">6 câu hỏi kèm đáp án mẫu và 7 câu quiz về Navigation, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 7 câu quiz về Navigation, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/ios-fre-q19.html">Trong UIKit, push một màn hình bằng UINavigationController và present modal khác nhau thế nào? Đóng mỗi loại ra sao?</a></li>
     <li><a href="../../../../s/ios-fre-q20.html">Muốn truyền productId sang màn hình chi tiết, rồi gửi kết quả chỉnh sửa ngược về màn hình trước, bạn làm thế nào?</a></li>
+    <li><a href="../../../../s/ios-fre-q45.html">Điều hướng cơ bản trong SwiftUI: NavigationStack với NavigationLink, .sheet và .fullScreenCover khác nhau thế nào, và đóng màn hình bằng code ra sao?</a></li>
     <li><a href="../../../../s/ios-fre-m27.html">Bấm nút chạy đoạn code sau nhưng không có màn hình nào hiện ra, cũng không crash. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m28.html">LoginViewController được mở bằng present(loginVC, animated: true). Trong LoginViewController, nút Đóng nên gọi gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m29.html">Đoạn code sau crash với lỗi Unexpectedly found nil while implicitly unwrapping an Optional value. Vì sao?</a> <span class="tag">Quiz</span></li>
@@ -73,12 +74,14 @@
   <div class="section-head"><h2><span class="rank-tag rank-amber">Middle</span> iOS Middle</h2><a class="section-sub" href="../../../../phong-van/ios/middle/">Mọi chủ đề Middle →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/ios-mid-q25.html">App SwiftUI cần mở thẳng màn chi tiết đơn hàng khi user bấm universal link https://shop.vn/orders/123, kể cả khi app đang ở tab khác hoặc đã push nhiều màn. Bạn tổ chức navigation thế nào?</a></li>
+    <li><a href="../../../../s/ios-mid-q44.html">App SwiftUI có luồng nhiều màn (danh sách → chi tiết → đánh giá) dùng NavigationStack(path:). Bạn cần nút &quot;Về trang chủ&quot; pop hết về root từ màn sâu và khôi phục đúng chồng màn khi app bị hệ thống kill. NavigationPath khác mảng [Route] ở điểm nào, và bẫy khi trộn nhiều kiểu destination là gì?</a></li>
     <li><a href="../../../../s/ios-mid-m40.html">Điều nào đúng về universal link so với custom URL scheme (myapp://)?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> iOS Senior</h2><a class="section-sub" href="../../../../phong-van/ios/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
+    <li><a href="../../../../s/ios-sen-q41.html">App có 15 module và mỗi team tự xử lý onOpenURL theo cách riêng nên cùng một link mở ra hành vi khác nhau; link khuyến mãi https://shop.vn/promo?next=... còn từng bị lợi dụng để mở trang lạ trong WebView. Bạn thiết kế hệ thống universal link và deep link ở quy mô này thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-m21.html">Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
