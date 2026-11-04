@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Fresher: Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataSt…</title>
+<meta name="description" content="Chọn theo hình dạng dữ liệu. Cặp key-value nhỏ như cài đặt, cờ đã xem onboarding, theme: dùng Preferences DataStore thay cho SharedPreferences, vì nó bất đồn…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-fre-q41.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher: Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataSt…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-fre-q41.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/"},{"@type":"ListItem","position":5,"name":"Android có những cách lưu dữ liệu cục bộ nào? B…","item":"https://trongmobile.github.io/flutter-prep/s/and-fre-q41.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Android có những cách lưu dữ liệu cục bộ nào? B…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataStore, file và Room (SQLite) cho ba trường hợp: cài đặt giao diện, ảnh/báo cáo tải về, danh sách đơn hàng?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chọn theo hình dạng dữ liệu. Cặp key-value nhỏ như cài đặt, cờ đã xem onboarding, theme: dùng Preferences DataStore thay cho SharedPreferences, vì nó bất đồng bộ, đọc bằng <code>Flow</code> và ghi trong transaction, không chặn main thread. Dữ liệu dạng file (ảnh, PDF, JSON lớn): ghi vào internal storage (<code>filesDir</code>) hoặc <code>cacheDir</code> cho dữ liệu có thể tải lại, vì hệ thống được phép xoá cache khi thiếu bộ nhớ. Dữ liệu có cấu trúc, nhiều bản ghi, cần lọc, sắp xếp, join, phân trang hoặc dùng offline: dùng Room (lớp trừu tượng trên SQLite) với SQL được kiểm tra lúc compile và trả về <code>Flow</code>. Bẫy thường gặp: nhét cả danh sách lớn vào SharedPreferences/DataStore dưới dạng chuỗi JSON (phải đọc và ghi lại cả khối, không truy vấn được), hoặc ngược lại dùng cả database chỉ để lưu một cờ true/false. Dữ liệu trong bộ nhớ trong của app bị xoá khi gỡ app hoặc Clear data, còn token và mật khẩu thì không lưu dạng plain text.</div>
+        <pre class="code-block"><code><span class="tk-com">// Top-level: một DataStore duy nhất cho mỗi file</span>
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> <span class="tk-type">Context</span>.dataStore <span class="tk-kw">by</span> preferencesDataStore(name = <span class="tk-str">&quot;settings&quot;</span>)
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> <span class="tk-type">DARK_MODE</span> = booleanPreferencesKey(<span class="tk-str">&quot;dark_mode&quot;</span>)
+
+<span class="tk-com">// 1) Cài đặt nhỏ -&gt; DataStore</span>
+<span class="tk-kw">fun</span> darkMode(context: <span class="tk-type">Context</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">Boolean</span>&gt; =
+  context.dataStore.<span class="tk-kw">data</span>.map { it[<span class="tk-type">DARK_MODE</span>] ?: <span class="tk-kw">false</span> }
+
+<span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> setDarkMode(context: <span class="tk-type">Context</span>, enabled: <span class="tk-type">Boolean</span>) {
+  context.dataStore.edit { it[<span class="tk-type">DARK_MODE</span>] = enabled }
+}
+
+<span class="tk-com">// 2) File lớn -&gt; thư mục riêng của app (gọi ngoài main thread)</span>
+<span class="tk-type">File</span>(context.filesDir, <span class="tk-str">&quot;report.json&quot;</span>).writeText(json)
+
+<span class="tk-com">// 3) Dữ liệu có cấu trúc, cần truy vấn -&gt; Room</span>
+<span class="tk-ann">@Entity</span>(tableName = <span class="tk-str">&quot;orders&quot;</span>)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">OrderEntity</span>(<span class="tk-ann">@PrimaryKey</span> <span class="tk-kw">val</span> id: <span class="tk-type">Long</span>, <span class="tk-kw">val</span> total: <span class="tk-type">Int</span>, <span class="tk-kw">val</span> status: <span class="tk-type">String</span>)
+
+<span class="tk-ann">@Dao</span>
+<span class="tk-kw">interface</span> <span class="tk-type">OrderDao</span> {
+  <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;SELECT * FROM orders WHERE status = :status ORDER BY id DESC&quot;</span>)
+  <span class="tk-kw">fun</span> observeByStatus(status: <span class="tk-type">String</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;&gt;
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-fre-q41">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-fre-q40.html"><span class="muted small">← Câu trước</span><span>Xoay màn hình thì Activity bị làm sao? Biến thường, nội dung EditText và ViewMo…</span></a>
+  <a class="pager-next" href="../s/and-fre-q42.html"><span class="muted small">Câu sau →</span><span>Khai báo một API bằng Retrofit thế nào (@GET, @Path, @Query, @POST với @Body)?…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/android/fresher/">Tất cả câu hỏi Android Fresher</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-fre-q24.html">SharedPreferences dùng để lưu gì? commit() và apply() khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q36.html">App Android gọi API REST cần chuẩn bị gì? Vì sao gọi http:// hoặc localhost của máy dev lại không được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q42.html">Khai báo một API bằng Retrofit thế nào (@GET, @Path, @Query, @POST với @Body)? Converter dùng để làm gì, và JSON được parse thành data class ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-m36.html">Với SharedPreferences.Editor, apply() và commit() khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-m37.html">Đoạn code sau chạy thế nào?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-q18.html">Dùng Retrofit với hàm suspend, khi server trả 401 hoặc 500 thì chuyện gì xảy ra? Bạn tổ chức xử lý lỗi mạng thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

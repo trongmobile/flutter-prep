@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Junior: QA báo nút &quot;Yêu thích&quot; chỉ có icon trái tim nên TalkBack đọc là &quot;nút không…</title>
+<meta name="description" content="Ba việc cơ bản. (1) Nhãn: icon hoặc ảnh có ý nghĩa cần mô tả để TalkBack đọc, View dùng android:contentDescription, Compose dùng tham số contentDescription;…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-q41.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior: QA báo nút &quot;Yêu thích&quot; chỉ có icon trái tim nên TalkBack đọc là &quot;nút không…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-jun-q41.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"QA báo nút \"Yêu thích\" chỉ có icon trái tim nên…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-q41.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">QA báo nút &quot;Yêu thích&quot; chỉ có icon trái tim nên…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">QA báo nút &quot;Yêu thích&quot; chỉ có icon trái tim nên TalkBack đọc là &quot;nút không có nhãn&quot;, người dùng ngón tay to khó bấm, và khi bật cỡ chữ lớn nhất thì chữ trong thẻ bị cắt. Bạn xử lý các vấn đề accessibility cơ bản này thế nào (View và Compose)?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ba việc cơ bản. (1) Nhãn: icon hoặc ảnh có ý nghĩa cần mô tả để TalkBack đọc, View dùng <code>android:contentDescription</code>, Compose dùng tham số <code>contentDescription</code>; ảnh chỉ để trang trí thì đặt <code>null</code> (hoặc <code>importantForAccessibility=&quot;no&quot;</code>) để bị bỏ qua. Mô tả nên nói chức năng (&quot;Thêm vào yêu thích&quot;) và không thêm chữ &quot;nút&quot;, vì TalkBack tự đọc theo role. (2) Vùng chạm tối thiểu 48dp × 48dp: icon 24dp thì mở rộng vùng bấm bằng padding hoặc <code>minWidth</code>/<code>minHeight</code> chứ không phải phóng to hình; <code>IconButton</code> và các component Material đã đảm bảo sẵn, còn <code>Modifier.clickable</code> trên composable nhỏ thì phải tự thêm padding. (3) Cỡ chữ: dùng <code>sp</code> để chữ theo cài đặt của người dùng (Android 14 cho phóng tới 200%), tránh đặt chiều cao cố định cho khối chứa chữ, dùng <code>wrap_content</code> hoặc <code>heightIn(min = ...)</code> và thử với cỡ chữ lớn nhất. Compose dùng <code>Modifier.semantics { }</code> để bổ sung thông tin cho TalkBack (<code>stateDescription</code>, <code>role</code>, <code>contentDescription</code>); <code>clickable</code> hoặc <code>semantics(mergeDescendants = true)</code> gộp icon cùng chữ thành một mục thay vì đọc rời. Kiểm tra bằng TalkBack thật và Accessibility Scanner; độ tương phản chữ nên đạt tối thiểu 4,5:1.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">FavoriteButton</span>(isFavorite: <span class="tk-type">Boolean</span>, onToggle: () -&gt; <span class="tk-type">Unit</span>) {
+    <span class="tk-type">IconButton</span>(onClick = onToggle) { <span class="tk-com">// vùng chạm đã đủ 48dp</span>
+        <span class="tk-type">Icon</span>(
+            imageVector = <span class="tk-kw">if</span> (isFavorite) <span class="tk-type">Icons</span>.<span class="tk-type">Filled</span>.<span class="tk-type">Favorite</span> <span class="tk-kw">else</span> <span class="tk-type">Icons</span>.<span class="tk-type">Outlined</span>.<span class="tk-type">FavoriteBorder</span>,
+            contentDescription = <span class="tk-kw">if</span> (isFavorite) <span class="tk-str">&quot;Bỏ khỏi yêu thích&quot;</span> <span class="tk-kw">else</span> <span class="tk-str">&quot;Thêm vào yêu thích&quot;</span>,
+        )
+    }
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">StockRow</span>(name: <span class="tk-type">String</span>, inStock: <span class="tk-type">Boolean</span>, onClick: () -&gt; <span class="tk-type">Unit</span>) {
+    <span class="tk-type">Row</span>(
+        modifier = <span class="tk-type">Modifier</span>
+            .clickable(onClick = onClick) <span class="tk-com">// gộp các phần tử con thành một mục cho TalkBack</span>
+            .semantics { stateDescription = <span class="tk-kw">if</span> (inStock) <span class="tk-str">&quot;Còn hàng&quot;</span> <span class="tk-kw">else</span> <span class="tk-str">&quot;Hết hàng&quot;</span> }
+            .padding(<span class="tk-num">16</span>.dp),
+    ) {
+        <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.<span class="tk-type">Default</span>.<span class="tk-type">ShoppingCart</span>, contentDescription = <span class="tk-kw">null</span>) <span class="tk-com">// trang trí, TalkBack bỏ qua</span>
+        <span class="tk-type">Spacer</span>(<span class="tk-type">Modifier</span>.width(<span class="tk-num">8</span>.dp))
+        <span class="tk-type">Text</span>(name, fontSize = <span class="tk-num">16</span>.sp) <span class="tk-com">// sp: chữ nở theo cỡ chữ hệ thống</span>
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-q41">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-q40.html"><span class="muted small">← Câu trước</span><span>Tính năng chụp ảnh đại diện: app tạo file trong thư mục ảnh rồi đưa Uri.fromFil…</span></a>
+  <a class="pager-next" href="../s/and-jun-q42.html"><span class="muted small">Câu sau →</span><span>Màn danh sách sản phẩm mở màn chi tiết bằng Navigation Compose, và một dev định…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-jun-q21.html">Vì sao nên dùng ListAdapter + DiffUtil.ItemCallback thay vì gọi notifyDataSetChanged() mỗi khi danh sách đổi? areItemsTheSame và areContentsTheSame khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q22.html">State hoisting trong Jetpack Compose là gì? Vì sao một composable SearchBar tự giữ remember { mutableStateOf(&quot;&quot;) } bên trong lại khó dùng lại và khó test?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q29.html">Danh sách có checkbox: tick một dòng rồi cuộn xuống thì thấy dòng khác cũng bị tick, bấm vài dòng thì xử lý nhầm item. Lỗi nằm ở đâu trong adapter và sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-m33.html">Sửa trực tiếp MutableList đã submit rồi gọi submitList lại với chính list đó. Điều gì xảy ra với RecyclerView?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m34.html">Trong DiffUtil.ItemCallback, areContentsTheSame() được gọi khi nào?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m35.html">Người dùng gõ vào TextField trong composable sau. Điều gì xảy ra?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

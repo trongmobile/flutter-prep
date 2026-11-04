@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Màn hình feed vẫn giật dù đã tối ưu layout; Memory Profiler cho thấy hàng c…</title>
+<meta name="description" content="Cú pháp gọn của Kotlin che nhiều allocation. (1) Lambda bắt biến (capture) tạo một object mới mỗi lần biểu thức được đánh giá nếu hàm nhận lambda không inlin…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q43.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Màn hình feed vẫn giật dù đã tối ưu layout; Memory Profiler cho thấy hàng c…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q43.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Màn hình feed vẫn giật dù đã tối ưu layout; Mem…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q43.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình feed vẫn giật dù đã tối ưu layout; Mem…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/kotlin/">Kotlin</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Màn hình feed vẫn giật dù đã tối ưu layout; Memory Profiler cho thấy hàng chục nghìn object ngắn hạn mỗi giây sinh ra trong <code>onBindViewHolder</code> và hàm <code>onDraw</code> tuỳ biến, trong khi code Kotlin nhìn rất gọn. Những allocation ẩn nào trong Kotlin hay gặp, và bạn kiểm tra thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cú pháp gọn của Kotlin che nhiều allocation. (1) Lambda bắt biến (capture) tạo một object mới mỗi lần biểu thức được đánh giá nếu hàm nhận lambda không <code>inline</code>; lambda không bắt gì thì chỉ tạo một lần. Hàm <code>inline</code> như <code>map</code>, <code>filter</code>, <code>forEach</code> không tạo object cho lambda nhưng <code>map</code>/<code>filter</code> vẫn tạo list trung gian. (2) Boxing: <code>Int?</code>, <code>List&lt;Int&gt;</code>, <code>Map&lt;String, Long&gt;</code> và mọi tham số kiểu generic đều dùng <code>Integer</code>/<code>Long</code>, ngoài vùng cache -128..127 là object mới; hot path nên dùng <code>IntArray</code>, <code>LongArray</code>, <code>SparseArray</code>. (3) <code>vararg</code> tạo mảng mới mỗi lần gọi, spread <code>*array</code> còn copy mảng. (4) <code>for (i in 0 until n)</code> hoặc <code>list.indices</code> được biên dịch thành vòng lặp thường, nhưng <code>for (x in list)</code> tạo <code>Iterator</code>. (5) <code>Sequence</code> tạo thêm object cho từng bước, đáng dùng cho dữ liệu lớn hoặc khi có <code>first</code>/<code>take</code> dừng sớm, còn list nhỏ thì thường chậm hơn. (6) String template, <code>Pair</code>/<code>Triple</code>, <code>copy()</code> của data class, <code>Regex(...)</code> trong vòng lặp. (7) <code>@JvmInline value class</code> không cấp phát khi dùng như kiểu non-null cụ thể, nhưng bị box khi là nullable, nằm trong generic (<code>List&lt;UserId&gt;</code>) hoặc dùng như kiểu interface. Kiểm tra: Tools &gt; Kotlin &gt; Show Kotlin Bytecode rồi Decompile để tìm <code>new</code>, <code>Integer.valueOf</code>, <code>iterator()</code>; dùng allocation tracking để biết object nào sinh ra nhiều nhất. Chỉ tối ưu hot path (<code>onDraw</code>, <code>onBindViewHolder</code>, measure/layout, code chạy mỗi frame) và đo lại sau khi sửa, đừng làm xấu code ở chỗ không nóng.</div>
+        <pre class="code-block"><code><span class="tk-ann">@JvmInline</span> <span class="tk-kw">value</span> <span class="tk-kw">class</span> <span class="tk-type">UserId</span>(<span class="tk-kw">val</span> <span class="tk-kw">value</span>: <span class="tk-type">Long</span>)
+
+<span class="tk-kw">fun</span> load(id: <span class="tk-type">UserId</span>) { }            <span class="tk-com">// biên dịch thành load(long): không tạo object</span>
+<span class="tk-kw">fun</span> loadAll(ids: <span class="tk-type">List</span>&lt;<span class="tk-type">UserId</span>&gt;) { }  <span class="tk-com">// nằm trong generic: mỗi phần tử bị box thành object UserId</span>
+
+<span class="tk-com">// Gọi mỗi lần bind một dòng danh sách</span>
+<span class="tk-kw">fun</span> bind(item: <span class="tk-type">Item</span>, itemView: <span class="tk-type">View</span>) {
+  <span class="tk-kw">val</span> title = <span class="tk-str">&quot;${item.name} (${item.tags.size})&quot;</span>          <span class="tk-com">// StringBuilder + String mới</span>
+  <span class="tk-kw">for</span> (tag <span class="tk-kw">in</span> item.tags) show(tag)                        <span class="tk-com">// List: tạo Iterator</span>
+  <span class="tk-kw">for</span> (i <span class="tk-kw">in</span> <span class="tk-num">0</span> until item.tags.size) show(item.tags[i])    <span class="tk-com">// vòng lặp thường, không tạo IntRange</span>
+  log(<span class="tk-str">&quot;bind&quot;</span>, item.id)                                    <span class="tk-com">// fun log(vararg parts: String): mảng mới mỗi lần gọi</span>
+  itemView.setOnClickListener { select(item) }            <span class="tk-com">// lambda bắt biến item: object mới mỗi lần bind</span>
+}
+<span class="tk-com">// Kiểm tra: Tools &gt; Kotlin &gt; Show Kotlin Bytecode &gt; Decompile, tìm new, Integer.valueOf, iterator()</span></code></pre>
+        <p class="doc-link"><a href="https://kotlinlang.org/docs/inline-classes.html" target="_blank" rel="noopener">Đọc thêm trong tài liệu · kotlinlang.org ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q43">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q42.html"><span class="muted small">← Câu trước</span><span>Ngành đã có những vụ thư viện phổ biến bị chiếm tài khoản publisher rồi phát hà…</span></a>
+  <a class="pager-next" href="../s/and-sen-q44.html"><span class="muted small">Câu sau →</span><span>Trong codebase có vài chỗ dùng GlobalScope.launch { } để lưu nháp hoặc gửi anal…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kotlin</h2><a class="section-sub" href="../phong-van/android/chu-de/kotlin/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q30.html">Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay lệch nhau (tính giá, validate, mô hình dữ liệu). CTO hỏi có nên dùng Kotlin Multiplatform (KMP). Bạn đánh giá và triển khai thử thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-fre-q01.html">val và var khác nhau thế nào? Khai báo val list = mutableListOf(1, 2) rồi gọi list.add(3) có được không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q02.html">Kotlin chống NullPointerException bằng cách nào? Giải thích ?., ?: và !! qua ví dụ.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q03.html">data class trong Kotlin tự sinh ra những gì? Khi nào nên dùng nó?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q04.html">when trong Kotlin khác switch của Java ở những điểm nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q05.html">List và MutableList trong Kotlin khác nhau thế nào? Các hàm như filter, map có sửa list gốc không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Codebase có khoảng 60 module, mỗi build.gradle.kts lặp lại cùng đoạn cấu hì…</title>
+<meta name="description" content="Tách logic build thành một included build build-logic (khai báo pluginManagement { includeBuild(&quot;build-logic&quot;) }), trong đó mỗi convention plugin lo một việc…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q40.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Codebase có khoảng 60 module, mỗi build.gradle.kts lặp lại cùng đoạn cấu hì…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q40.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Codebase có khoảng 60 module, mỗi build.gradle.…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q40.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Codebase có khoảng 60 module, mỗi build.gradle.…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/build/">Gradle &amp; Build</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Codebase có khoảng 60 module, mỗi <code>build.gradle.kts</code> lặp lại cùng đoạn cấu hình (compileSdk, Compose, Hilt, lint...), còn file gốc dùng <code>subprojects { }</code> để ép cấu hình chung. Mỗi lần nâng AGP hay Kotlin lại phải sửa nhiều nơi và luôn có module bị lệch. Bạn tổ chức lại bằng build-logic và convention plugin thế nào, và vì sao cách này tốt hơn <code>allprojects { }</code>/<code>subprojects { }</code>?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Tách logic build thành một included build <code>build-logic</code> (khai báo <code>pluginManagement { includeBuild(&quot;build-logic&quot;) }</code>), trong đó mỗi convention plugin lo một việc: <code>app.android.library</code>, <code>app.android.compose</code>, <code>app.hilt</code>...; module chỉ cần <code>plugins { id(&quot;app.android.library&quot;) }</code>. Phiên bản thư viện và plugin để ở một nơi là version catalog <code>gradle/libs.versions.toml</code> (các mục <code>[versions]</code>, <code>[libraries]</code>, <code>[plugins]</code>, <code>[bundles]</code>); build-logic dùng chung file này bằng cách khai báo catalog trong <code>settings.gradle.kts</code> của nó, và class plugin đọc catalog qua <code>VersionCatalogsExtension</code> vì accessor <code>libs</code> không có sẵn ở đó. So với <code>subprojects { }</code>/<code>allprojects { }</code>: đó là cross-project configuration ngầm, file gốc phải biết và chỉnh mọi module, kết quả phụ thuộc thứ tự đánh giá nên dễ phải <code>afterEvaluate</code>, khó thấy một module thực sự được cấu hình gì, và là rào cản của configuration cache lẫn Isolated Projects. Convention plugin thì tường minh (nhìn khối <code>plugins {}</code> là biết), ghép được như lego, là code Kotlin được type-check, được biên dịch và cache một lần, thậm chí viết test được. Lưu ý giữ mỗi plugin nhỏ và một mục đích, đừng gom thành &#39;god plugin&#39; đầy cờ bật tắt; và vì sửa build-logic làm mất configuration cache, nên giữ nó ổn định, đừng nhét logic hay đổi vào đó.</div>
+        <pre class="code-block"><code><span class="tk-com">// settings.gradle.kts (gốc)</span>
+pluginManagement { includeBuild(<span class="tk-str">&quot;build-logic&quot;</span>) }
+
+<span class="tk-com">// build-logic/convention/build.gradle.kts</span>
+plugins { <span class="tk-str">`kotlin-dsl`</span> }
+dependencies {
+  compileOnly(libs.android.gradlePlugin) <span class="tk-com">// khai báo trong libs.versions.toml, build-logic trỏ catalog về ../gradle/libs.versions.toml</span>
+  compileOnly(libs.kotlin.gradlePlugin)
+}
+gradlePlugin {
+  plugins {
+    register(<span class="tk-str">&quot;androidLibrary&quot;</span>) {
+      id = <span class="tk-str">&quot;app.android.library&quot;</span>
+      implementationClass = <span class="tk-str">&quot;AndroidLibraryConventionPlugin&quot;</span>
+    }
+  }
+}
+
+<span class="tk-com">// build-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt</span>
+<span class="tk-kw">class</span> <span class="tk-type">AndroidLibraryConventionPlugin</span> : <span class="tk-type">Plugin</span>&lt;<span class="tk-type">Project</span>&gt; {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> apply(target: <span class="tk-type">Project</span>) = with(target) {
+    pluginManager.apply(<span class="tk-str">&quot;com.android.library&quot;</span>)
+    pluginManager.apply(<span class="tk-str">&quot;org.jetbrains.kotlin.android&quot;</span>)
+    extensions.configure&lt;<span class="tk-type">LibraryExtension</span>&gt; {
+      compileSdk = <span class="tk-num">35</span>
+      defaultConfig.minSdk = <span class="tk-num">24</span>
+    }
+    <span class="tk-kw">val</span> libs = extensions.getByType&lt;<span class="tk-type">VersionCatalogsExtension</span>&gt;().named(<span class="tk-str">&quot;libs&quot;</span>)
+    dependencies { add(<span class="tk-str">&quot;implementation&quot;</span>, libs.findLibrary(<span class="tk-str">&quot;androidx-core-ktx&quot;</span>).<span class="tk-kw">get</span>()) }
+  }
+}
+
+<span class="tk-com">// feature/cart/build.gradle.kts: chỉ còn một dòng cấu hình chung</span>
+plugins { id(<span class="tk-str">&quot;app.android.library&quot;</span>) }</code></pre>
+        <p class="doc-link"><a href="https://docs.gradle.org/current/userguide/sharing_build_logic_between_subprojects.html" target="_blank" rel="noopener">Đọc thêm trong tài liệu · docs.gradle.org ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q40">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q39.html"><span class="muted small">← Câu trước</span><span>Sau mỗi bản phát hành, team chỉ biết app giật hoặc chậm hơn khi người dùng phàn…</span></a>
+  <a class="pager-next" href="../s/and-sen-q41.html"><span class="muted small">Câu sau →</span><span>Build debug của module :data tốn rất nhiều thời gian ở các task kaptGenerateStu…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Gradle &amp; Build</h2><a class="section-sub" href="../phong-van/android/chu-de/build/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q09.html">Trong dự án multi-module, api và implementation khác nhau thế nào? Vì sao lạm dụng api vừa làm build chậm vừa làm kiến trúc lỏng lẻo?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q10.html">CI build mất 15 phút, build incremental trên máy dev cũng chậm. Với codebase khoảng 50 module, bạn tối ưu Gradle theo hướng nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q11.html">Bản release parse JSON ra object toàn field null rồi crash, trong khi bản debug chạy bình thường. Bạn nghi R8 — điều tra và xử lý thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q41.html">Build debug của module :data tốn rất nhiều thời gian ở các task kaptGenerateStubs... và kapt...Kotlin; Hilt, Room và Moshi codegen đều đang chạy qua kapt. Bạn chuyển sang KSP thế nào, vì sao KSP nhanh hơn, và chứng minh được mức cải thiện ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m17.html">Với khai báo dependency sau, trong :feature:home có code import okhttp3.OkHttpClient. Kết quả build thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m18.html">Vì sao chuyển Room và Hilt từ kapt sang KSP thường giúp build nhanh hơn rõ rệt?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

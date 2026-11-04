@@ -88,11 +88,11 @@
   <div class="section-head"><h2>Cùng chủ đề Coroutines &amp; Flow</h2><a class="section-sub" href="../phong-van/android/chu-de/coroutines/">Xem tất cả →</a></div>
   <ul class="link-list">
     <li><a href="../s/and-sen-q27.html">Một dev viết flow { withContext(Dispatchers.IO) { emit(readConfig()) } } và app crash với IllegalStateException: Flow invariant is violated. Ngoài ra .catch { } đặt ở cuối pipeline không bắt được lỗi ném trong collect. Giải thích hai bất biến của Flow (context preservation, exception transparency) và cách viết đúng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q44.html">Trong codebase có vài chỗ dùng GlobalScope.launch { } để lưu nháp hoặc gửi analytics sau khi người dùng rời màn hình, vì viewModelScope bị huỷ ngay lúc đó; các test cho những hàm này lại hay flaky. Bạn thay bằng gì, khi nào việc đó phải là WorkManager, và inject dispatcher để test thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q45.html">Production có hai triệu chứng: một crash IllegalStateException mà stack trace trên Crashlytics chỉ toàn frame kotlinx.coroutines, không thấy dòng code nào của app; và thỉnh thoảng một màn hình &#39;quay mãi&#39; mà không có lỗi nào được ghi. Bạn debug và quan sát coroutine ở production thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-fre-q38.html">Coroutine là gì và khác Thread ở điểm nào? Từ khoá suspend nghĩa là gì, và viewModelScope.launch { ... } bắt đầu chạy ở thread nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
     <li><a href="../s/and-jun-q14.html">Màn hình chi tiết cần gọi hai API độc lập (thông tin sản phẩm và đánh giá). Bạn dùng launch hay async để gọi song song? Hai builder này khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-q15.html">Hàm suspend có tự chạy ở background thread không? Nên đặt withContext(Dispatchers.IO) ở tầng nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-jun-q16.html">viewModelScope, lifecycleScope và GlobalScope khác nhau thế nào? Vì sao không nên dùng GlobalScope để gọi API của một màn hình?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-jun-q17.html">Dự án đang chuyển từ LiveData sang StateFlow. Hai cái khác nhau ở những điểm nào cần lưu ý?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/and-mid-q01.html">Màn Home tải song song banner và danh sách gợi ý bằng hai async trong coroutineScope. Chỉ cần API gợi ý lỗi là cả màn hình báo lỗi, banner cũng mất. Vì sao, và sửa thế nào để khối nào lỗi thì chỉ khối đó lỗi?</a> <span class="rank-tag rank-amber">Middle</span></li>
   </ul>
 </section>
 </main>

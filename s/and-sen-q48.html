@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Play Console cảnh báo chất lượng trên màn hình lớn; review của người dùng t…</title>
+<meta name="description" content="Nguyên tắc là app phản ứng theo cửa sổ (window) chứ không theo thiết bị: Activity có thể đang ở chế độ chia đôi màn hình, freeform hay gập mở bất cứ lúc nào.…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q48.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Play Console cảnh báo chất lượng trên màn hình lớn; review của người dùng t…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q48.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Play Console cảnh báo chất lượng trên màn hình…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q48.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Play Console cảnh báo chất lượng trên màn hình…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Play Console cảnh báo chất lượng trên màn hình lớn; review của người dùng tablet và Pixel Fold than UI bị kéo giãn, bị khoá dọc, và nội dung đè dưới thanh trạng thái sau khi nâng <code>targetSdk</code> lên 35. Bạn làm app thích ứng cho foldable, tablet và ChromeOS thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nguyên tắc là app phản ứng theo cửa sổ (window) chứ không theo thiết bị: Activity có thể đang ở chế độ chia đôi màn hình, freeform hay gập mở bất cứ lúc nào. Chia layout theo <code>WindowSizeClass</code> (chiều rộng Compact dưới 600dp, Medium, Expanded từ 840dp; các bản thư viện mới còn thêm lớp lớn hơn) lấy từ <code>currentWindowAdaptiveInfo()</code>, đừng dùng kích thước màn hình vật lý hay <code>Display</code> để quyết định. Điều hướng đổi theo kích thước nhờ <code>NavigationSuiteScaffold</code> (bottom bar, rail, drawer), và dùng layout chuẩn như list-detail (<code>ListDetailPaneScaffold</code>) hoặc supporting pane thay vì kéo giãn một cột. Đừng khoá hướng màn hình hay đặt <code>resizeableActivity=&quot;false&quot;</code>: trên màn hình lớn hệ thống ngày càng bỏ qua các giới hạn này với app target SDK cao, và đó cũng là một tiêu chí chất lượng của Play. Từ Android 15, app target SDK 35 bị buộc vẽ edge-to-edge: gọi <code>enableEdgeToEdge()</code> rồi tự xử lý inset (<code>Scaffold</code> truyền <code>innerPadding</code>, <code>WindowInsets.safeDrawing</code>, <code>ime</code>), thay vì giả định nội dung nằm dưới thanh hệ thống; đó chính là lỗi đè thanh trạng thái bạn thấy. State phải nằm trong ViewModel hoặc <code>rememberSaveable</code> vì cấu hình đổi liên tục khi gập, xoay, đổi kích thước cửa sổ; foldable có thể đọc <code>FoldingFeature</code> qua <code>WindowInfoTracker</code> cho tư thế tabletop. Đừng quên bàn phím và chuột (hover, phím tắt) cho ChromeOS và tablet. Kiểm thử: resizable emulator (chuyển qua lại phone, foldable, tablet, desktop), <code>@PreviewScreenSizes</code> trong Compose preview, và test UI với nhiều kích thước cửa sổ.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">MainActivity</span> : <span class="tk-type">ComponentActivity</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate(savedInstanceState: <span class="tk-type">Bundle</span>?) {
+    enableEdgeToEdge()                 <span class="tk-com">// gọi trước super.onCreate: vẽ dưới thanh hệ thống</span>
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState)
+    setContent { <span class="tk-type">ShopApp</span>() }
+  }
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">ShopApp</span>() {
+  <span class="tk-kw">val</span> widthClass = currentWindowAdaptiveInfo().windowSizeClass.windowWidthSizeClass
+
+  <span class="tk-com">// Tự chọn bottom bar / navigation rail / drawer theo kích thước cửa sổ</span>
+  <span class="tk-type">NavigationSuiteScaffold</span>(
+    navigationSuiteItems = {
+      destinations.forEach { dest -&gt;
+        item(
+          selected = dest == current,
+          onClick = { navigate(dest) },
+          icon = { <span class="tk-type">Icon</span>(dest.icon, contentDescription = dest.label) },
+          label = { <span class="tk-type">Text</span>(dest.label) },
+        )
+      }
+    },
+  ) {
+    <span class="tk-kw">if</span> (widthClass == <span class="tk-type">WindowWidthSizeClass</span>.<span class="tk-type">COMPACT</span>) <span class="tk-type">ProductListScreen</span>()
+    <span class="tk-kw">else</span> <span class="tk-type">ProductListDetailScreen</span>() <span class="tk-com">// hai pane song song trên tablet / foldable mở</span>
+  }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/develop/ui/compose/layouts/adaptive/support-different-display-sizes" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q48">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q47.html"><span class="muted small">← Câu trước</span><span>Marketing gửi link https://shop.vn/orders/123 qua email, SMS và QR; app có 12 f…</span></a>
+  <a class="pager-next" href="../s/and-sen-q49.html"><span class="muted small">Câu sau →</span><span>Team tách trình phát nhạc vào process riêng bằng android:process=&quot;:player&quot; để c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q15.html">Bạn xây design system bằng Compose cho 5 team cùng dùng thế nào để UI nhất quán mà không làm chậm tốc độ phát triển?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q28.html">Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ, cùng một bố cục đặt vạch ngăn cao bằng item cao nhất trong hàng. Compose đo layout theo quy tắc nào, bạn viết Layout tuỳ biến thế nào, và intrinsic measurements dùng khi nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m23.html">Bạn viết AppButton cho design system mà 5 team dùng chung. Theo Compose API guidelines, component nên nhận Modifier thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m24.html">ViewModel sửa trực tiếp items rồi gán lại chính instance cũ vào MutableStateFlow. Điều gì có thể xảy ra trên UI Compose?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m25.html">Feed có nhiều RecyclerView ngang lồng trong một RecyclerView dọc; profiler cho thấy liên tục inflate ViewHolder mới khi cuộn. Cách cải thiện hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q18.html">dp, sp và px khác nhau thế nào? Vì sao cỡ chữ nên dùng sp?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

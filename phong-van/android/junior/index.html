@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Junior (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<title>Câu hỏi phỏng vấn Android Junior (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · android · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Junior</h1>
-  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/android/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -64,18 +64,19 @@
   <ul>
     <li><a href="#kotlin">Kotlin</a> <span class="count">5</span></li>
     <li><a href="#java">Java &amp; JVM</a> <span class="count">4</span></li>
-    <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">4</span></li>
-    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">7</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">3</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
+    <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">6</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">8</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">4</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">5</span></li>
     <li><a href="#background">Background &amp; Service</a> <span class="count">1</span></li>
-    <li><a href="#build">Gradle &amp; Build</a> <span class="count">1</span></li>
-    <li><a href="#perf">Performance</a> <span class="count">1</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
-    <li><a href="#security">Security</a> <span class="count">1</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
+    <li><a href="#build">Gradle &amp; Build</a> <span class="count">2</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">2</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">1</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -299,6 +300,65 @@ viewLifecycleOwner.lifecycleScope.launch {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q38.html">Màn danh sách đơn hàng dùng <code>suspend fun getOrders(): List&lt;Order&gt;</code>, nên sau khi thêm đơn ở màn khác, quay lại phải gọi tải lại thủ công. <code>Flow</code> giải quyết việc này thế nào, cold flow là gì, và nó khác hàm <code>suspend</code> trả <code>List</code> ở đâu?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hàm <code>suspend</code> trả <code>List</code> chỉ cho đúng một kết quả rồi kết thúc: dữ liệu đổi sau đó thì phải gọi lại. <code>Flow&lt;T&gt;</code> là luồng nhiều giá trị theo thời gian. Flow là cold: code trong <code>flow { }</code> không chạy cho tới khi có <code>collect</code>, và mỗi collector chạy lại từ đầu (khác <code>StateFlow</code> là hot, luôn giữ giá trị hiện tại dù không ai nghe). <code>collect</code> là hàm suspend nên phải gọi trong coroutine; các operator trung gian như <code>map</code>, <code>filter</code>, <code>onEach</code> chỉ dựng pipeline, đến khi có terminal operator (<code>collect</code>, <code>first</code>, <code>toList</code>) mới chạy. Với Room, DAO khai báo <code>fun observeOrders(): Flow&lt;List&lt;Order&gt;&gt;</code> (không cần <code>suspend</code>): Room chạy query ngoài main thread và phát lại danh sách mới mỗi khi bảng liên quan thay đổi, nên UI tự cập nhật mà không phải tải lại. Bẫy: <code>collect</code> trên Flow của Room không bao giờ kết thúc, nên code viết sau nó trong cùng coroutine không bao giờ chạy, muốn thu thập nhiều flow phải <code>launch</code> riêng từng cái; và Room phát lại khi bảng đổi dù kết quả query vẫn như cũ, thêm <code>distinctUntilChanged()</code> nếu UI không cần vẽ lại.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Dao</span>
+<span class="tk-kw">interface</span> <span class="tk-type">OrderDao</span> {
+    <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;SELECT * FROM orders ORDER BY created_at DESC&quot;</span>)
+    <span class="tk-kw">fun</span> observeOrders(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Order</span>&gt;&gt; <span class="tk-com">// không cần suspend, Room tự phát lại khi bảng đổi</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">OrderViewModel</span>(dao: <span class="tk-type">OrderDao</span>) : <span class="tk-type">ViewModel</span>() {
+    <span class="tk-kw">val</span> pendingOrders: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Order</span>&gt;&gt; = dao.observeOrders()
+        .map { orders -&gt; orders.filter { it.status == <span class="tk-type">Status</span>.<span class="tk-type">PENDING</span> } } <span class="tk-com">// chưa chạy gì cho tới khi có collector</span>
+        .distinctUntilChanged()
+        .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), emptyList())
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q39.html">Một dev bọc <code>try { viewModelScope.launch { api.load() } } catch (e: Exception) { ... }</code> nhưng khi API lỗi app vẫn crash. Vì sao <code>try/catch</code> bên ngoài <code>launch</code> không bắt được lỗi, nên đặt nó ở đâu, và <code>launch</code>, <code>async</code>, <code>CoroutineExceptionHandler</code> xử lý exception khác nhau thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>launch</code> chỉ khởi động coroutine rồi trả về <code>Job</code> ngay, nên khi khối <code>try</code> kết thúc thì coroutine còn chưa chạy tới <code>api.load()</code>; lỗi ném sau đó nằm ngoài <code>try</code>. Exception trong <code>launch</code> không được ném lại cho nơi gọi mà lan lên Job cha, rồi tới <code>CoroutineExceptionHandler</code> hoặc handler mặc định của thread, nên app crash. Cách đúng là đặt <code>try/catch</code> bên trong coroutine, quanh lời gọi suspend, và bắt đúng loại lỗi (<code>IOException</code>, <code>HttpException</code>); nếu bắt <code>Exception</code> rộng thì phải ném lại <code>CancellationException</code>, không thì tín hiệu huỷ bị nuốt. <code>async</code> khác <code>launch</code>: lỗi được giữ trong <code>Deferred</code> và ném ra ở <code>await()</code>. Nhưng <code>async</code> là con của scope nên lỗi vẫn huỷ scope cha ngay, chỉ bọc <code>await()</code> bằng <code>try/catch</code> thì chưa đủ; hãy bọc cả <code>coroutineScope { }</code> chứa <code>async</code>, vì <code>coroutineScope</code> ném lại lỗi cho nơi gọi. <code>CoroutineExceptionHandler</code> chỉ là lưới an toàn cuối cùng để log hoặc báo lỗi, không làm coroutine chạy tiếp, và chỉ có tác dụng khi gắn vào coroutine gốc (như <code>viewModelScope.launch(handler)</code>); gắn vào <code>launch</code> con hoặc vào <code>async</code> thì bị bỏ qua.</div>
+        <pre class="code-block"><code><span class="tk-com">// Sai: launch trả về ngay, lỗi ném sau đó nằm ngoài try nên không bị bắt</span>
+<span class="tk-kw">try</span> {
+    viewModelScope.launch { api.load() }
+} <span class="tk-kw">catch</span> (e: <span class="tk-type">IOException</span>) { <span class="tk-com">/* không bao giờ chạy */</span> }
+
+<span class="tk-com">// Đúng: try/catch nằm bên trong coroutine</span>
+viewModelScope.launch {
+    <span class="tk-kw">try</span> {
+        _state.<span class="tk-kw">value</span> = <span class="tk-type">UiState</span>.<span class="tk-type">Success</span>(api.load())
+    } <span class="tk-kw">catch</span> (e: <span class="tk-type">IOException</span>) {
+        _state.<span class="tk-kw">value</span> = <span class="tk-type">UiState</span>.<span class="tk-type">Error</span>(<span class="tk-str">&quot;Không có mạng&quot;</span>)
+    }
+}
+
+<span class="tk-com">// async: bọc cả coroutineScope để lỗi được ném lại cho try/catch bên ngoài</span>
+viewModelScope.launch {
+    <span class="tk-kw">try</span> {
+        <span class="tk-kw">val</span> (user, orders) = coroutineScope {
+            <span class="tk-kw">val</span> u = async { api.getUser() }
+            <span class="tk-kw">val</span> o = async { api.getOrders() }
+            u.await() to o.await()
+        }
+        showContent(user, orders)
+    } <span class="tk-kw">catch</span> (e: <span class="tk-type">IOException</span>) {
+        _state.<span class="tk-kw">value</span> = <span class="tk-type">UiState</span>.<span class="tk-type">Error</span>(<span class="tk-str">&quot;Không có mạng&quot;</span>)
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="components">
@@ -427,6 +487,46 @@ viewLifecycleOwner.lifecycleScope.launch {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q40.html">Tính năng chụp ảnh đại diện: app tạo file trong thư mục ảnh rồi đưa <code>Uri.fromFile(file)</code> cho app Camera thì crash <code>FileUriExposedException</code>. Vì sao, và bạn dùng <code>FileProvider</code> cùng <code>TakePicture</code> contract thế nào? Chia sẻ file cho app khác cần cấp quyền ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Từ Android 7.0 (API 24), đưa URI dạng <code>file://</code> cho app khác bị cấm vì lộ đường dẫn nội bộ, hệ thống ném <code>FileUriExposedException</code> ngay khi <code>startActivity</code>. Thay vào đó dùng <code>content://</code> URI do <code>FileProvider</code> cấp: khai báo <code>&lt;provider&gt;</code> trong Manifest với <code>android:authorities=&quot;${applicationId}.fileprovider&quot;</code>, <code>android:exported=&quot;false&quot;</code>, <code>android:grantUriPermissions=&quot;true&quot;</code>, kèm file <code>res/xml/file_paths.xml</code> liệt kê thư mục được chia sẻ (<code>&lt;cache-path&gt;</code>, <code>&lt;files-path&gt;</code>, <code>&lt;external-files-path&gt;</code>). File tạo trong bộ nhớ riêng của app nên không cần quyền lưu trữ; lấy URI bằng <code>FileProvider.getUriForFile(context, authority, file)</code> với authority khớp Manifest. <code>ActivityResultContracts.TakePicture()</code> nhận URI đích và trả <code>Boolean</code> báo chụp thành công, ảnh full-size được ghi vào URI đó (còn <code>TakePicturePreview()</code> chỉ trả thumbnail <code>Bitmap</code> nhỏ). Bẫy: nếu Manifest khai báo quyền <code>CAMERA</code> thì phải xin quyền runtime trước khi mở camera, không thì <code>SecurityException</code>; nhớ lưu URI vào <code>SavedStateHandle</code> hoặc <code>onSaveInstanceState</code> vì process có thể bị kill khi camera đang mở. Chia sẻ file cho app khác (<code>ACTION_SEND</code>) thì thêm <code>FLAG_GRANT_READ_URI_PERMISSION</code>, quyền đọc chỉ cấp tạm cho app nhận.</div>
+        <pre class="code-block"><code><span class="tk-com">// Manifest: &lt;provider android:name=&quot;androidx.core.content.FileProvider&quot;</span>
+<span class="tk-com">//   android:authorities=&quot;${applicationId}.fileprovider&quot; android:exported=&quot;false&quot;</span>
+<span class="tk-com">//   android:grantUriPermissions=&quot;true&quot;&gt; + &lt;meta-data&gt; trỏ tới @xml/file_paths</span>
+<span class="tk-com">// res/xml/file_paths.xml: &lt;paths&gt;&lt;cache-path name=&quot;photos&quot; path=&quot;photos/&quot; /&gt;&lt;/paths&gt;</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">ProfileFragment</span> : <span class="tk-type">Fragment</span>() {
+    <span class="tk-kw">private</span> <span class="tk-kw">var</span> photoUri: <span class="tk-type">Uri</span>? = <span class="tk-kw">null</span>
+
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> takePicture =
+        registerForActivityResult(<span class="tk-type">ActivityResultContracts</span>.<span class="tk-type">TakePicture</span>()) { success -&gt;
+            <span class="tk-kw">if</span> (success) showAvatar(photoUri!!) <span class="tk-kw">else</span> photoUri = <span class="tk-kw">null</span>
+        }
+
+    <span class="tk-kw">private</span> <span class="tk-kw">fun</span> launchCamera() {
+        <span class="tk-kw">val</span> dir = <span class="tk-type">File</span>(requireContext().cacheDir, <span class="tk-str">&quot;photos&quot;</span>).apply { mkdirs() }
+        <span class="tk-kw">val</span> file = <span class="tk-type">File</span>.createTempFile(<span class="tk-str">&quot;avatar_&quot;</span>, <span class="tk-str">&quot;.jpg&quot;</span>, dir)
+        <span class="tk-kw">val</span> authority = <span class="tk-str">&quot;${requireContext().packageName}.fileprovider&quot;</span>
+        photoUri = <span class="tk-type">FileProvider</span>.getUriForFile(requireContext(), authority, file)
+        takePicture.launch(photoUri!!)
+    }
+
+    <span class="tk-kw">private</span> <span class="tk-kw">fun</span> shareAvatar(uri: <span class="tk-type">Uri</span>) {
+        <span class="tk-kw">val</span> send = <span class="tk-type">Intent</span>(<span class="tk-type">Intent</span>.<span class="tk-type">ACTION_SEND</span>).apply {
+            type = <span class="tk-str">&quot;image/jpeg&quot;</span>
+            putExtra(<span class="tk-type">Intent</span>.<span class="tk-type">EXTRA_STREAM</span>, uri)
+            addFlags(<span class="tk-type">Intent</span>.<span class="tk-type">FLAG_GRANT_READ_URI_PERMISSION</span>) <span class="tk-com">// cấp quyền đọc tạm cho app nhận</span>
+        }
+        startActivity(<span class="tk-type">Intent</span>.createChooser(send, <span class="tk-str">&quot;Chia sẻ ảnh&quot;</span>))
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="ui">
@@ -511,6 +611,39 @@ adapter.submitList(products.map { <span class="tk-kw">if</span> (it.id == id) it
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q41.html">QA báo nút &quot;Yêu thích&quot; chỉ có icon trái tim nên TalkBack đọc là &quot;nút không có nhãn&quot;, người dùng ngón tay to khó bấm, và khi bật cỡ chữ lớn nhất thì chữ trong thẻ bị cắt. Bạn xử lý các vấn đề accessibility cơ bản này thế nào (View và Compose)?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Ba việc cơ bản. (1) Nhãn: icon hoặc ảnh có ý nghĩa cần mô tả để TalkBack đọc, View dùng <code>android:contentDescription</code>, Compose dùng tham số <code>contentDescription</code>; ảnh chỉ để trang trí thì đặt <code>null</code> (hoặc <code>importantForAccessibility=&quot;no&quot;</code>) để bị bỏ qua. Mô tả nên nói chức năng (&quot;Thêm vào yêu thích&quot;) và không thêm chữ &quot;nút&quot;, vì TalkBack tự đọc theo role. (2) Vùng chạm tối thiểu 48dp × 48dp: icon 24dp thì mở rộng vùng bấm bằng padding hoặc <code>minWidth</code>/<code>minHeight</code> chứ không phải phóng to hình; <code>IconButton</code> và các component Material đã đảm bảo sẵn, còn <code>Modifier.clickable</code> trên composable nhỏ thì phải tự thêm padding. (3) Cỡ chữ: dùng <code>sp</code> để chữ theo cài đặt của người dùng (Android 14 cho phóng tới 200%), tránh đặt chiều cao cố định cho khối chứa chữ, dùng <code>wrap_content</code> hoặc <code>heightIn(min = ...)</code> và thử với cỡ chữ lớn nhất. Compose dùng <code>Modifier.semantics { }</code> để bổ sung thông tin cho TalkBack (<code>stateDescription</code>, <code>role</code>, <code>contentDescription</code>); <code>clickable</code> hoặc <code>semantics(mergeDescendants = true)</code> gộp icon cùng chữ thành một mục thay vì đọc rời. Kiểm tra bằng TalkBack thật và Accessibility Scanner; độ tương phản chữ nên đạt tối thiểu 4,5:1.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">FavoriteButton</span>(isFavorite: <span class="tk-type">Boolean</span>, onToggle: () -&gt; <span class="tk-type">Unit</span>) {
+    <span class="tk-type">IconButton</span>(onClick = onToggle) { <span class="tk-com">// vùng chạm đã đủ 48dp</span>
+        <span class="tk-type">Icon</span>(
+            imageVector = <span class="tk-kw">if</span> (isFavorite) <span class="tk-type">Icons</span>.<span class="tk-type">Filled</span>.<span class="tk-type">Favorite</span> <span class="tk-kw">else</span> <span class="tk-type">Icons</span>.<span class="tk-type">Outlined</span>.<span class="tk-type">FavoriteBorder</span>,
+            contentDescription = <span class="tk-kw">if</span> (isFavorite) <span class="tk-str">&quot;Bỏ khỏi yêu thích&quot;</span> <span class="tk-kw">else</span> <span class="tk-str">&quot;Thêm vào yêu thích&quot;</span>,
+        )
+    }
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">StockRow</span>(name: <span class="tk-type">String</span>, inStock: <span class="tk-type">Boolean</span>, onClick: () -&gt; <span class="tk-type">Unit</span>) {
+    <span class="tk-type">Row</span>(
+        modifier = <span class="tk-type">Modifier</span>
+            .clickable(onClick = onClick) <span class="tk-com">// gộp các phần tử con thành một mục cho TalkBack</span>
+            .semantics { stateDescription = <span class="tk-kw">if</span> (inStock) <span class="tk-str">&quot;Còn hàng&quot;</span> <span class="tk-kw">else</span> <span class="tk-str">&quot;Hết hàng&quot;</span> }
+            .padding(<span class="tk-num">16</span>.dp),
+    ) {
+        <span class="tk-type">Icon</span>(<span class="tk-type">Icons</span>.<span class="tk-type">Default</span>.<span class="tk-type">ShoppingCart</span>, contentDescription = <span class="tk-kw">null</span>) <span class="tk-com">// trang trí, TalkBack bỏ qua</span>
+        <span class="tk-type">Spacer</span>(<span class="tk-type">Modifier</span>.width(<span class="tk-num">8</span>.dp))
+        <span class="tk-type">Text</span>(name, fontSize = <span class="tk-num">16</span>.sp) <span class="tk-com">// sp: chữ nở theo cỡ chữ hệ thống</span>
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -542,6 +675,37 @@ findNavController().currentBackStackEntry?.savedStateHandle
       <div class="model-answer">
         <div class="answer-text">Lần bấm đầu gọi <code>navigate(R.id.action_list_to_detail)</code>: NavController đổi ngay current destination thành <code>DetailFragment</code>, nhưng màn cũ còn trên giao diện thêm một lúc vì fragment transaction và animation chạy sau, nên lần bấm thứ hai vẫn vào được click listener và gọi lại action đó. Lúc này current destination là <code>DetailFragment</code>, không có action ấy nên NavController ném <code>IllegalArgumentException</code>. Cách chặn: kiểm tra <code>findNavController().currentDestination?.id == R.id.listFragment</code> trước khi <code>navigate</code> để bỏ qua lần bấm thừa, hoặc debounce/vô hiệu hoá nút ngay sau lần bấm đầu. Trong Navigation Compose, gọi <code>navigate(route)</code> hai lần không crash mà chồng hai màn giống nhau lên back stack; dùng <code>launchSingleTop = true</code>, hoặc chỉ điều hướng khi <code>backStackEntry.lifecycle.currentState == Lifecycle.State.RESUMED</code>.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q42.html">Màn danh sách sản phẩm mở màn chi tiết bằng Navigation Compose, và một dev định truyền cả object <code>Product</code> (kèm danh sách ảnh, mô tả dài) qua route. Bạn truyền argument thế nào cho đúng, vì sao chỉ nên truyền ID, và ViewModel của màn chi tiết đọc argument ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chỉ nên truyền định danh nhỏ (ID, từ khoá ngắn) rồi để màn đích tự lấy dữ liệu từ repository hoặc Room. Argument nằm trong back stack và được lưu cùng saved state, nên object lớn làm phình <code>Bundle</code> (giới hạn giao dịch khoảng 1MB, vượt thì <code>TransactionTooLargeException</code>), dễ lệch với dữ liệu thật khi nơi khác sửa sản phẩm, và nhét object vào route string còn phải encode ký tự đặc biệt. Navigation 2.8+ hỗ trợ type-safe route: khai báo <code>@Serializable data class ProductDetail(val id: Long)</code> (cần plugin kotlinx.serialization), gọi <code>navController.navigate(ProductDetail(42))</code> và <code>composable&lt;ProductDetail&gt; { }</code>. Kiểu cũ dùng route string <code>&quot;detail/{id}&quot;</code> với <code>navArgument(&quot;id&quot;) { type = NavType.LongType }</code>, dễ sai chính tả và sai kiểu (quên <code>NavType</code> thì nhận về <code>String</code>). ViewModel không cần ai truyền tay: argument tự có trong <code>SavedStateHandle</code>, đọc bằng <code>savedStateHandle.toRoute&lt;ProductDetail&gt;()</code> (hoặc <code>savedStateHandle.get&lt;Long&gt;(&quot;id&quot;)</code> với route string), và vẫn còn sau process death.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Serializable</span> <span class="tk-kw">object</span> <span class="tk-type">ProductList</span>
+<span class="tk-ann">@Serializable</span> <span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">ProductDetail</span>(<span class="tk-kw">val</span> id: <span class="tk-type">Long</span>) <span class="tk-com">// chỉ truyền ID</span>
+
+<span class="tk-type">NavHost</span>(navController, startDestination = <span class="tk-type">ProductList</span>) {
+    composable&lt;<span class="tk-type">ProductList</span>&gt; {
+        <span class="tk-type">ProductListScreen</span>(onProductClick = { id -&gt; navController.navigate(<span class="tk-type">ProductDetail</span>(id)) })
+    }
+    composable&lt;<span class="tk-type">ProductDetail</span>&gt; { <span class="tk-type">ProductDetailScreen</span>() }
+}
+
+<span class="tk-ann">@HiltViewModel</span>
+<span class="tk-kw">class</span> <span class="tk-type">ProductDetailViewModel</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+    savedStateHandle: <span class="tk-type">SavedStateHandle</span>,
+    repository: <span class="tk-type">ProductRepository</span>,
+) : <span class="tk-type">ViewModel</span>() {
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> route = savedStateHandle.toRoute&lt;<span class="tk-type">ProductDetail</span>&gt;()
+
+    <span class="tk-com">// Màn đích tự tải dữ liệu theo ID, luôn là bản mới nhất</span>
+    <span class="tk-kw">val</span> product: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">Product</span>?&gt; = repository.observeProduct(route.id)
+        .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), <span class="tk-kw">null</span>)
+}</code></pre>
         
       </div>
     </details>
@@ -579,6 +743,48 @@ findNavController().currentBackStackEntry?.savedStateHandle
 <span class="tk-ann">@AndroidEntryPoint</span>
 <span class="tk-kw">class</span> <span class="tk-type">ProfileFragment</span> : <span class="tk-type">Fragment</span>(<span class="tk-type">R</span>.layout.fragment_profile) {
     <span class="tk-kw">private</span> <span class="tk-kw">val</span> viewModel: <span class="tk-type">ProfileViewModel</span> <span class="tk-kw">by</span> viewModels()
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q44.html">Màn danh sách bài viết đang làm thế này: ViewModel gọi API rồi gán thẳng kết quả vào <code>StateFlow</code>. Người dùng mất mạng hoặc xoay máy thì mất danh sách, còn bài viết được &quot;thích&quot; ở màn chi tiết thì danh sách vẫn hiện bản cũ. Repository pattern và single source of truth giải quyết những vấn đề này thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Repository là lớp trung gian che nguồn dữ liệu (API, Room, DataStore) khỏi ViewModel, ViewModel chỉ gọi <code>repository.observePosts()</code>. Single source of truth (SSOT) nghĩa là mỗi loại dữ liệu chỉ có một nơi là bản chuẩn, thường là Room: mạng không đẩy thẳng ra UI mà chỉ ghi vào Room, UI chỉ quan sát Room qua <code>Flow</code>. Nhờ vậy offline vẫn có dữ liệu đã lưu; mọi màn cùng quan sát một bảng nên bấm thích ở màn chi tiết thì danh sách tự cập nhật; dữ liệu sống sót qua xoay máy và process death; luồng một chiều dễ đoán, không phải gộp &quot;cache&quot; với &quot;mạng&quot; ngay trong ViewModel. Cách làm: <code>observePosts()</code> trả <code>Flow</code> từ DAO, còn <code>refresh()</code> là hàm <code>suspend</code> gọi API rồi <code>upsert</code> vào Room; lỗi mạng chỉ báo bằng Snackbar chứ không xoá danh sách đang hiển thị. Bẫy: ghi đè cột chỉ có ở local (cờ đã đọc, bookmark) khi upsert dữ liệu server; trả Entity hay DTO thẳng ra UI thay vì map sang domain model; để Repository giữ <code>Context</code> hoặc <code>View</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">PostRepository</span>(
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> api: <span class="tk-type">PostApi</span>,
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> dao: <span class="tk-type">PostDao</span>,
+) {
+    <span class="tk-com">// UI chỉ quan sát Room: nguồn sự thật duy nhất</span>
+    <span class="tk-kw">fun</span> observePosts(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">Post</span>&gt;&gt; =
+        dao.observeAll().map { list -&gt; list.map { it.toDomain() } }
+
+    <span class="tk-com">// Làm mới: ghi kết quả mạng vào Room, không trả thẳng cho UI</span>
+    <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> refresh() {
+        <span class="tk-kw">val</span> remote = api.getPosts()
+        dao.upsertAll(remote.map { it.toEntity() })
+    }
+
+    <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> toggleLike(id: <span class="tk-type">Long</span>) = dao.toggleLike(id) <span class="tk-com">// mọi màn đang observe tự cập nhật</span>
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">PostsViewModel</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> repository: <span class="tk-type">PostRepository</span>) : <span class="tk-type">ViewModel</span>() {
+    <span class="tk-kw">val</span> posts = repository.observePosts()
+        .stateIn(viewModelScope, <span class="tk-type">SharingStarted</span>.<span class="tk-type">WhileSubscribed</span>(5_000), emptyList())
+
+    <span class="tk-kw">private</span> <span class="tk-kw">val</span> _message = <span class="tk-type">MutableStateFlow</span>&lt;<span class="tk-type">String</span>?&gt;(<span class="tk-kw">null</span>)
+    <span class="tk-kw">val</span> message: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">String</span>?&gt; = _message
+
+    <span class="tk-kw">fun</span> refresh() = viewModelScope.launch {
+        <span class="tk-kw">try</span> {
+            repository.refresh()
+        } <span class="tk-kw">catch</span> (e: <span class="tk-type">IOException</span>) {
+            _message.<span class="tk-kw">value</span> = <span class="tk-str">&quot;Không có mạng, đang hiển thị dữ liệu đã lưu&quot;</span> <span class="tk-com">// giữ nguyên danh sách</span>
+        }
+    }
 }</code></pre>
         
       </div>
@@ -691,6 +897,34 @@ findNavController().currentBackStackEntry?.savedStateHandle
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q43.html">Backend đổi API: field <code>avatar</code> lúc bị bỏ hẳn, lúc là <code>null</code>, còn <code>full_name</code> khác tên property <code>fullName</code> trong data class. Dùng Gson thì parse không báo lỗi nhưng app crash <code>NullPointerException</code> ở màn sau đó, còn dùng kotlinx.serialization thì crash <code>MissingFieldException</code>. Giải thích nguyên nhân và cách khai báo model cho đúng.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với kotlinx.serialization, property không có giá trị mặc định là bắt buộc: thiếu field thì <code>MissingFieldException</code>, gặp <code>null</code> cho property non-null thì <code>SerializationException</code>. Gson dùng reflection nên bỏ qua null-safety và giá trị mặc định của Kotlin: field thiếu hoặc <code>null</code> vẫn được gán <code>null</code> vào property non-null (<code>String</code>) mà không báo lỗi, đến khi dùng mới NPE ở chỗ khác, rất khó truy. Khai báo đúng: field có thể thiếu hoặc null thì để kiểu nullable kèm mặc định <code>val avatar: String? = null</code>; đổi tên bằng <code>@SerialName(&quot;full_name&quot;)</code> (kotlinx), <code>@SerializedName</code> (Gson) hay <code>@Json(name = ...)</code> (Moshi). Cấu hình <code>Json { ignoreUnknownKeys = true }</code> để backend thêm field mới không làm app crash (mặc định kotlinx ném lỗi khi gặp field lạ), và <code>coerceInputValues = true</code> để giá trị <code>null</code> hoặc enum lạ của property có mặc định rơi về mặc định. Nên tách DTO (khớp JSON) khỏi domain model rồi map bằng <code>toDomain()</code>, để chỗ xử lý dữ liệu server &quot;bẩn&quot; nằm ở một nơi, thay vì rải <code>!!</code> khắp app.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Serializable</span>
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">UserDto</span>(
+    <span class="tk-kw">val</span> id: <span class="tk-type">Long</span>,
+    <span class="tk-ann">@SerialName</span>(<span class="tk-str">&quot;full_name&quot;</span>) <span class="tk-kw">val</span> fullName: <span class="tk-type">String</span>,
+    <span class="tk-kw">val</span> avatar: <span class="tk-type">String</span>? = <span class="tk-kw">null</span>, <span class="tk-com">// thiếu field hoặc null đều an toàn</span>
+)
+
+<span class="tk-kw">val</span> json = <span class="tk-type">Json</span> {
+    ignoreUnknownKeys = <span class="tk-kw">true</span> <span class="tk-com">// backend thêm field mới không làm app crash</span>
+    coerceInputValues = <span class="tk-kw">true</span> <span class="tk-com">// null/enum lạ ở property có mặc định -&gt; dùng mặc định</span>
+}
+
+<span class="tk-kw">val</span> retrofit = <span class="tk-type">Retrofit</span>.<span class="tk-type">Builder</span>()
+    .baseUrl(<span class="tk-type">BASE_URL</span>)
+    .addConverterFactory(json.asConverterFactory(<span class="tk-str">&quot;application/json&quot;</span>.toMediaType()))
+    .build()
+
+<span class="tk-kw">fun</span> <span class="tk-type">UserDto</span>.toDomain() = <span class="tk-type">User</span>(id = id, name = fullName, avatarUrl = avatar.orEmpty())</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="background">
@@ -743,6 +977,40 @@ findNavController().currentBackStackEntry?.savedStateHandle
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q47.html">Bạn chuẩn bị build bản release đầu tiên đưa lên Google Play. Đồng nghiệp đã commit file <code>release.jks</code> cùng mật khẩu keystore ghi thẳng trong <code>build.gradle.kts</code> lên Git. Vì sao đó là vấn đề, cấu hình signing đúng thế nào, và <code>isMinifyEnabled</code>, <code>isShrinkResources</code>, Play App Signing có vai trò gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Keystore là danh tính của app: ai có file cùng mật khẩu thì ký được bản cập nhật giả mạo. Vì vậy <code>.jks</code> và mật khẩu không bao giờ vào Git (thêm vào <code>.gitignore</code>); lỡ commit rồi thì coi như đã lộ, phải đổi khoá chứ không chỉ xoá file vì lịch sử Git vẫn còn. Đọc thông tin ký từ <code>keystore.properties</code> nằm ngoài repo (hoặc biến môi trường và secret trên CI) trong <code>signingConfigs</code>. Với Play App Signing, bạn ký bằng upload key còn Google giữ khoá ký thật và ký lại bản phân phối: mất upload key vẫn xin Google đặt lại được, còn tự giữ khoá mà mất thì không cập nhật được app đã phát hành nữa. Trong build type <code>release</code>, <code>isMinifyEnabled = true</code> bật R8 (rút gọn, tối ưu, làm rối code) cùng <code>proguardFiles(...)</code>, còn <code>isShrinkResources = true</code> loại resource không dùng và chỉ hoạt động khi đã minify. Bẫy: sau khi bật R8 phải chạy thử bản release vì lỗi chỉ lộ ở đó (thường do thiếu keep rule với reflection/serialization); giữ <code>mapping.txt</code> của từng bản (Play Console tự nhận khi upload AAB) để giải mã stack trace; <code>versionCode</code> phải tăng ở mỗi lần phát hành.</div>
+        <pre class="code-block"><code><span class="tk-com">// app/build.gradle.kts</span>
+<span class="tk-kw">val</span> keystoreProps = <span class="tk-type">Properties</span>().apply {
+    <span class="tk-kw">val</span> file = rootProject.file(<span class="tk-str">&quot;keystore.properties&quot;</span>) <span class="tk-com">// nằm trong .gitignore</span>
+    <span class="tk-kw">if</span> (file.exists()) file.inputStream().use { load(it) }
+}
+
+android {
+    signingConfigs {
+        create(<span class="tk-str">&quot;release&quot;</span>) {
+            storeFile = (keystoreProps[<span class="tk-str">&quot;storeFile&quot;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>?)?.let { file(it) }
+            storePassword = keystoreProps[<span class="tk-str">&quot;storePassword&quot;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>?
+            keyAlias = keystoreProps[<span class="tk-str">&quot;keyAlias&quot;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>?
+            keyPassword = keystoreProps[<span class="tk-str">&quot;keyPassword&quot;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>?
+        }
+    }
+    buildTypes {
+        release {
+            isMinifyEnabled = <span class="tk-kw">true</span>    <span class="tk-com">// R8: rút gọn, tối ưu, làm rối code</span>
+            isShrinkResources = <span class="tk-kw">true</span>  <span class="tk-com">// bỏ resource không dùng (cần isMinifyEnabled)</span>
+            proguardFiles(getDefaultProguardFile(<span class="tk-str">&quot;proguard-android-optimize.txt&quot;</span>), <span class="tk-str">&quot;proguard-rules.pro&quot;</span>)
+            signingConfig = signingConfigs.getByName(<span class="tk-str">&quot;release&quot;</span>)
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="perf">
@@ -755,6 +1023,38 @@ findNavController().currentBackStackEntry?.savedStateHandle
       <div class="model-answer">
         <div class="answer-text">ANR (Application Not Responding) xảy ra khi main thread bị chặn quá lâu, điển hình là không phản hồi một input event (chạm, phím) trong khoảng 5 giây, hoặc <code>BroadcastReceiver</code>/Service không xử lý xong trong thời hạn hệ thống cho phép. Nguyên nhân hay gặp: I/O trên main thread (đọc file, query database, <code>SharedPreferences.commit()</code>), chờ kết quả bằng <code>runBlocking</code> hay <code>Future.get()</code>, tính toán nặng, và deadlock hoặc chờ một lock đang bị background thread giữ lâu. Khi điều tra, xem stack trace của main thread trong báo cáo ANR trên Android vitals để biết nó đang kẹt ở dòng nào; lúc phát triển bật <code>StrictMode</code> để phát hiện sớm I/O trên main thread. Cách sửa là đưa việc nặng sang coroutine với <code>Dispatchers.IO</code>/<code>Default</code> và chỉ quay về main để cập nhật UI.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q45.html">App tải ảnh bìa 4000×3000 từ server bằng <code>BitmapFactory.decodeStream</code> rồi gán vào <code>ImageView</code> nhỏ. Trên máy cấu hình thấp, cuộn danh sách vài chục ảnh thì crash <code>OutOfMemoryError</code>. Vì sao một file JPEG vài trăm KB lại ngốn nhiều RAM đến vậy, và bạn khắc phục thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">JPEG/PNG là dạng nén; để hiển thị phải giải mã thành bitmap không nén trong RAM, tốn khoảng <code>width × height × 4</code> byte (ARGB_8888): ảnh 4000×3000 chiếm 4000 × 3000 × 4 ≈ 48MB dù <code>ImageView</code> chỉ rộng vài trăm px, và vài chục ảnh như vậy vượt xa heap của app. Cách xử lý là downsample: chỉ giải mã ở kích thước cần hiển thị. Với <code>BitmapFactory</code>, đọc kích thước bằng <code>inJustDecodeBounds = true</code> (chưa cấp bộ nhớ cho pixel), tính <code>inSampleSize</code> (luỹ thừa của 2) rồi mới giải mã thật. Thực tế dùng Coil (<code>AsyncImage</code> trong Compose) hoặc Glide: chúng đo kích thước view để downsample, giải mã ngoài main thread, huỷ request khi view bị tái sử dụng, có memory cache (LRU) và disk cache, nên cuộn mượt mà không OOM. Bẫy: <code>ImageView</code> dùng <code>wrap_content</code> hoặc composable không có kích thước rõ ràng khiến loader không biết kích thước đích và có thể giải mã ở kích thước rất lớn (đặt kích thước cụ thể, hoặc <code>override(w, h)</code> của Glide, <code>size(w, h)</code> của Coil); giữ <code>Bitmap</code> trong biến static hay ViewModel gây leak. Phía server nên trả thumbnail đúng cỡ (CDN resize) để tiết kiệm cả mạng.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> decodeSampled(file: <span class="tk-type">File</span>, reqWidth: <span class="tk-type">Int</span>, reqHeight: <span class="tk-type">Int</span>): <span class="tk-type">Bitmap</span> {
+    <span class="tk-com">// Bước 1: chỉ đọc kích thước, chưa cấp bộ nhớ cho pixel</span>
+    <span class="tk-kw">val</span> bounds = <span class="tk-type">BitmapFactory</span>.<span class="tk-type">Options</span>().apply { inJustDecodeBounds = <span class="tk-kw">true</span> }
+    <span class="tk-type">BitmapFactory</span>.decodeFile(file.path, bounds)
+
+    <span class="tk-kw">var</span> sample = <span class="tk-num">1</span>
+    <span class="tk-kw">while</span> (bounds.outWidth / (sample * <span class="tk-num">2</span>) &gt;= reqWidth &amp;&amp; bounds.outHeight / (sample * <span class="tk-num">2</span>) &gt;= reqHeight) {
+        sample *= <span class="tk-num">2</span>
+    }
+
+    <span class="tk-com">// Bước 2: giải mã thật ở kích thước đã thu nhỏ</span>
+    <span class="tk-kw">val</span> options = <span class="tk-type">BitmapFactory</span>.<span class="tk-type">Options</span>().apply { inSampleSize = sample }
+    <span class="tk-kw">return</span> <span class="tk-type">BitmapFactory</span>.decodeFile(file.path, options) ?: error(<span class="tk-str">&quot;Không giải mã được ảnh&quot;</span>)
+}
+
+<span class="tk-com">// Thực tế: để Coil downsample, giải mã nền và cache</span>
+<span class="tk-type">AsyncImage</span>(
+    model = <span class="tk-type">ImageRequest</span>.<span class="tk-type">Builder</span>(<span class="tk-type">LocalContext</span>.current).<span class="tk-kw">data</span>(url).crossfade(<span class="tk-kw">true</span>).build(),
+    contentDescription = title,
+    modifier = <span class="tk-type">Modifier</span>.size(width = <span class="tk-num">160</span>.dp, height = <span class="tk-num">120</span>.dp), <span class="tk-com">// có kích thước rõ ràng để Coil thu nhỏ đúng</span>
+    contentScale = <span class="tk-type">ContentScale</span>.<span class="tk-type">Crop</span>,
+)</code></pre>
         
       </div>
     </details>
@@ -810,6 +1110,56 @@ findNavController().currentBackStackEntry?.savedStateHandle
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q46.html">Bạn viết <code>@Query</code> có <code>ORDER BY</code>, <code>LIKE</code> và một <code>@Transaction</code> xoá rồi chèn lại, nhưng chỉ phát hiện sai khi chạy app. Bạn test DAO của Room thế nào để chắc query và transaction đúng, và vì sao nên dùng in-memory database thay vì mock DAO?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mock DAO chỉ chứng minh bạn có gọi hàm; thứ dễ sai lại nằm ở câu SQL, ánh xạ cột-entity và transaction, những thứ chỉ kiểm được trên SQLite thật. Vì vậy test DAO là instrumented test (<code>src/androidTest</code>, <code>AndroidJUnit4</code>) hoặc Robolectric trong <code>src/test</code>, tạo database bằng <code>Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)</code>: database nằm trong RAM, mỗi test dựng cái mới nên không dính dữ liệu của test khác và biến mất sau <code>db.close()</code>; <code>allowMainThreadQueries()</code> chỉ nên dùng trong test cho gọn. Cách kiểm: insert dữ liệu mẫu rồi gọi query, so thứ tự <code>ORDER BY</code>, mẫu <code>LIKE</code> và trường hợp rỗng (SQLite chỉ coi <code>LIKE</code> là không phân biệt hoa thường với ký tự ASCII, nên chữ có dấu như <code>Á</code> và <code>á</code> bị coi là khác nhau, chạy test mới lộ ra). Hàm <code>suspend</code> dùng <code>runTest</code>; <code>Flow</code> dùng <code>first()</code> hoặc Turbine (<code>awaitItem()</code>), insert thêm rồi kiểm Flow phát lại; với <code>@Transaction</code> thì cố tình ném lỗi giữa chừng và kiểm dữ liệu cũ còn nguyên (rollback). Đừng dùng <code>Thread.sleep</code> để chờ Flow.</div>
+        <pre class="code-block"><code><span class="tk-ann">@RunWith</span>(<span class="tk-type">AndroidJUnit4</span>::<span class="tk-kw">class</span>)
+<span class="tk-kw">class</span> <span class="tk-type">OrderDaoTest</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">lateinit</span> <span class="tk-kw">var</span> db: <span class="tk-type">AppDatabase</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">lateinit</span> <span class="tk-kw">var</span> dao: <span class="tk-type">OrderDao</span>
+
+    <span class="tk-ann">@Before</span>
+    <span class="tk-kw">fun</span> setUp() {
+        db = <span class="tk-type">Room</span>.inMemoryDatabaseBuilder(
+            <span class="tk-type">ApplicationProvider</span>.getApplicationContext(),
+            <span class="tk-type">AppDatabase</span>::<span class="tk-kw">class</span>.java,
+        ).allowMainThreadQueries().build()
+        dao = db.orderDao()
+    }
+
+    <span class="tk-ann">@After</span>
+    <span class="tk-kw">fun</span> tearDown() = db.close()
+
+    <span class="tk-ann">@Test</span>
+    <span class="tk-kw">fun</span> search_returnsMatchingOrdersNewestFirst() = runTest {
+        dao.insertAll(
+            <span class="tk-type">Order</span>(id = <span class="tk-num">1</span>, title = <span class="tk-str">&quot;Áo thun&quot;</span>, createdAt = <span class="tk-num">100</span>),
+            <span class="tk-type">Order</span>(id = <span class="tk-num">2</span>, title = <span class="tk-str">&quot;Áo khoác&quot;</span>, createdAt = <span class="tk-num">200</span>),
+            <span class="tk-type">Order</span>(id = <span class="tk-num">3</span>, title = <span class="tk-str">&quot;Mũ&quot;</span>, createdAt = <span class="tk-num">300</span>),
+        )
+
+        <span class="tk-kw">val</span> result = dao.search(<span class="tk-str">&quot;%Áo%&quot;</span>)
+
+        assertEquals(listOf(2L, 1L), result.map { it.id })
+    }
+
+    <span class="tk-ann">@Test</span>
+    <span class="tk-kw">fun</span> observeAll_emitsAgainAfterInsert() = runTest {
+        dao.observeAll().test {
+            assertEquals(<span class="tk-num">0</span>, awaitItem().size)
+            dao.insertAll(<span class="tk-type">Order</span>(id = <span class="tk-num">1</span>, title = <span class="tk-str">&quot;Áo&quot;</span>, createdAt = <span class="tk-num">1</span>))
+            assertEquals(<span class="tk-num">1</span>, awaitItem().size)
+            cancelAndIgnoreRemainingEvents()
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -826,6 +1176,45 @@ findNavController().currentBackStackEntry?.savedStateHandle
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q48.html">Server staging dùng chứng chỉ tự ký nên OkHttp báo <code>SSLHandshakeException</code>. Một đồng nghiệp &quot;sửa&quot; bằng cách tạo <code>X509TrustManager</code> không kiểm tra gì và <code>hostnameVerifier { _, _ -&gt; true }</code>, app chạy ngay. Vì sao tuyệt đối không được làm vậy, và cách xử lý đúng khi cần gọi server staging?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Trust-all cộng với bỏ kiểm tra hostname tắt toàn bộ bảo vệ của HTTPS: kẻ cùng mạng Wi-Fi (MITM) đưa chứng chỉ giả vẫn được app chấp nhận, đọc và sửa được token, mật khẩu, dữ liệu cá nhân. Tệ hơn, đoạn &quot;tạm thời&quot; này rất hay lọt vào bản release; Google Play còn cảnh báo app có <code>TrustManager</code> không an toàn, và pentest sẽ ghi nhận là lỗi nghiêm trọng. Cách đúng là cho app biết CA đáng tin của staging thay vì tin tất cả: dùng Network Security Config (<code>res/xml/network_security_config.xml</code>) trỏ tới file CA trong <code>res/raw/</code>. Đặt trong <code>&lt;debug-overrides&gt;</code> thì chỉ có hiệu lực khi app <code>debuggable</code>, bản release vẫn chỉ tin CA hệ thống; nếu build staging không debuggable thì dùng <code>&lt;domain-config&gt;</code> riêng cho domain staging và để file cấu hình trong source set của staging (<code>src/staging</code>) để release không chứa ngoại lệ nào. Cách đỡ tốn công nhất là xin chứng chỉ hợp lệ (như Let&#39;s Encrypt) cho staging để khỏi phải cấu hình gì. Với proxy kiểu Charles hay Proxyman cũng dùng <code>&lt;debug-overrides&gt;</code> kèm <code>&lt;certificates src=&quot;user&quot; /&gt;</code>. Cuối cùng, thêm bước review hoặc lint chặn các từ khoá <code>TrustManager</code>, <code>hostnameVerifier</code> trong PR.</div>
+        <pre class="code-block" data-lang="XML"><code><span class="tk-com">&lt;!-- AndroidManifest.xml: android:networkSecurityConfig=&quot;@xml/network_security_config&quot; --&gt;</span>
+
+<span class="tk-com">&lt;!-- res/xml/network_security_config.xml --&gt;</span>
+<span class="tk-kw">&lt;network-security-config</span><span class="tk-kw">&gt;</span>
+    <span class="tk-com">&lt;!-- Chỉ có hiệu lực khi app debuggable, bản release vẫn dùng CA hệ thống --&gt;</span>
+    <span class="tk-kw">&lt;debug-overrides</span><span class="tk-kw">&gt;</span>
+        <span class="tk-kw">&lt;trust-anchors</span><span class="tk-kw">&gt;</span>
+            <span class="tk-kw">&lt;certificates</span> <span class="tk-type">src</span>=<span class="tk-str">&quot;@raw/staging_ca&quot;</span> <span class="tk-kw">/&gt;</span> <span class="tk-com">&lt;!-- CA riêng của staging --&gt;</span>
+            <span class="tk-kw">&lt;certificates</span> <span class="tk-type">src</span>=<span class="tk-str">&quot;user&quot;</span> <span class="tk-kw">/&gt;</span>            <span class="tk-com">&lt;!-- CA của proxy debug (Charles, Proxyman) --&gt;</span>
+            <span class="tk-kw">&lt;certificates</span> <span class="tk-type">src</span>=<span class="tk-str">&quot;system&quot;</span> <span class="tk-kw">/&gt;</span>
+        <span class="tk-kw">&lt;/trust-anchors</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;/debug-overrides</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/network-security-config</span><span class="tk-kw">&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/android/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q50.html">Thiết kế màn danh sách sản phẩm có ô tìm kiếm, phân trang (cuộn gần cuối thì tải tiếp) và pull-to-refresh. Màn hình cần xử lý những trạng thái nào, và bạn tổ chức state cùng dữ liệu thế nào để tránh các lỗi quen thuộc: gọi API mỗi lần gõ, trang bị trùng, mất vị trí cuộn, kết quả cũ đè kết quả mới?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nghĩ theo trạng thái trước. Màn cần phân biệt: loading lần đầu (skeleton hoặc progress), có dữ liệu, rỗng (hai thông điệp khác nhau: chưa có sản phẩm nào và không có kết quả cho từ khoá), lỗi lần đầu (kèm nút Thử lại), lỗi khi tải trang kế hay khi refresh (giữ nguyên danh sách, chỉ hiện footer Thử lại hoặc Snackbar), đang tải trang kế (footer loading) và offline (hiện dữ liệu đã lưu kèm banner). ViewModel giữ một <code>UiState</code> qua <code>StateFlow</code>, UI chỉ vẽ theo state. Dữ liệu dùng Paging 3: <code>Pager</code> với <code>PagingSource</code> (hoặc <code>RemoteMediator</code> kèm Room để có cache offline) và <code>cachedIn(viewModelScope)</code>; Paging tự tải trước khi gần cuối danh sách, chống tải trùng trang và cung cấp <code>LoadState</code> (refresh, append) cho các trạng thái trên. Nếu tự làm phân trang thì phải giữ số trang cùng cờ <code>isLoading</code>, <code>endReached</code> để chặn gọi lặp, và nối danh sách theo <code>id</code> để không trùng item. Tìm kiếm: query là <code>MutableStateFlow</code> đi qua <code>debounce</code>, <code>distinctUntilChanged</code> rồi <code>flatMapLatest</code> để không gọi API mỗi lần gõ và bỏ kết quả của từ khoá cũ; đổi từ khoá thì về trang đầu. Pull-to-refresh (<code>PullToRefreshBox</code> của Material 3, hoặc <code>SwipeRefreshLayout</code> với View) gọi <code>refresh()</code> và dùng cờ riêng để không nháy trắng danh sách như loading lần đầu. Vị trí cuộn được giữ bởi <code>LazyListState</code> (<code>rememberLazyListState</code> sống sót qua xoay máy) cùng <code>cachedIn</code>.</div>
+        
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="soft">
@@ -837,6 +1226,17 @@ findNavController().currentBackStackEntry?.savedStateHandle
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Không chọn bừa &quot;giữ bản của mình&quot; cho cả file. Mở từng vùng conflict, đọc cả hai phía để hiểu mỗi bên đang làm gì rồi ghép sao cho giữ được ý của cả hai; nếu không hiểu ý đồ bên kia (ví dụ họ đổi phiên bản dependency), xem <code>git blame</code> rồi nhắn hỏi tác giả. Giải quyết xong phải build, chạy test và mở thử màn hình bị ảnh hưởng, vì Git chỉ ghép văn bản chứ không đảm bảo code còn đúng. <code>merge</code> giữ nguyên lịch sử và tạo thêm merge commit; <code>rebase</code> viết lại commit của nhánh bạn lên đầu <code>main</code> mới, lịch sử tuyến tính nhưng commit đổi hash, nên chỉ rebase nhánh của riêng mình chưa ai dựa vào, và push lại cần <code>--force-with-lease</code> (không dùng <code>--force</code> trơn, không bao giờ force-push lên <code>main</code>). Để giảm conflict: chia PR nhỏ, cập nhật từ <code>main</code> thường xuyên, báo trong nhóm khi sửa file dùng chung.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q49.html">Ngay sau khi bản 2.4.0 ra mắt 30 phút, Crashlytics báo một crash mới tăng rất nhanh, tỉ lệ crash-free tụt từ 99,6% xuống 97%. Bạn là dev vừa merge tính năng liên quan. Bạn xử lý thế nào từ lúc nhận cảnh báo tới khi đóng sự việc?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đi theo thứ tự. (1) Đánh giá mức độ: bao nhiêu người dùng bị ảnh hưởng, crash chặn đăng nhập hay thanh toán hay chỉ một tính năng phụ, tập trung ở phiên bản, dòng máy, bản Android nào (Crashlytics lọc được theo các thuộc tính này). Báo ngay cho tech lead và PM thay vì lặng lẽ tự sửa. (2) Giảm thiệt hại trước khi tìm nguyên nhân: nếu tính năng nằm sau feature flag hoặc Remote Config thì tắt đi; nếu đang phát hành theo staged rollout thì tạm dừng (halt rollout) trên Play Console để không lan thêm. Android không thu hồi được bản đã cài, nên &quot;rollback&quot; thực chất là phát hành hotfix với <code>versionCode</code> cao hơn. (3) Tìm nguyên nhân: đọc stack trace (cần đã upload mapping R8 mới thấy tên thật), xem custom key và breadcrumb, đối chiếu với các commit của bản này, rồi tái hiện đúng trên bản release, đúng máy và đúng OS. (4) Sửa nhỏ nhất có thể, thêm test cho đúng ca này, nhờ review nhanh, đưa hotfix lên theo rollout từng phần và theo dõi crash-free. (5) Sau cùng cập nhật cho mọi người và viết postmortem không đổ lỗi: nguyên nhân gốc, vì sao test và review bỏ sót, việc cần làm (rollout 1–5% trước, feature flag, thêm test). Điều nên tránh là im lặng, đoán mò hay đổ lỗi cho cá nhân.</div>
         
         
       </div>

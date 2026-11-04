@@ -76,9 +76,9 @@
     <li><a href="../s/and-jun-q14.html">Màn hình chi tiết cần gọi hai API độc lập (thông tin sản phẩm và đánh giá). Bạn dùng launch hay async để gọi song song? Hai builder này khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-q16.html">viewModelScope, lifecycleScope và GlobalScope khác nhau thế nào? Vì sao không nên dùng GlobalScope để gọi API của một màn hình?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-q17.html">Dự án đang chuyển từ LiveData sang StateFlow. Hai cái khác nhau ở những điểm nào cần lưu ý?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q38.html">Màn danh sách đơn hàng dùng suspend fun getOrders(): List&lt;Order&gt;, nên sau khi thêm đơn ở màn khác, quay lại phải gọi tải lại thủ công. Flow giải quyết việc này thế nào, cold flow là gì, và nó khác hàm suspend trả List ở đâu?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q39.html">Một dev bọc try { viewModelScope.launch { api.load() } } catch (e: Exception) { ... } nhưng khi API lỗi app vẫn crash. Vì sao try/catch bên ngoài launch không bắt được lỗi, nên đặt nó ở đâu, và launch, async, CoroutineExceptionHandler xử lý exception khác nhau thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/and-jun-m22.html">Trong runBlocking, một coroutine con được launch với delay(100). Thứ tự in ra là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-jun-m23.html">Hai async được gọi await() ngay sau khi tạo. Kết quả và thời gian đo được là bao nhiêu?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-jun-m24.html">Tác vụ nào phù hợp với Dispatchers.Default hơn Dispatchers.IO?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

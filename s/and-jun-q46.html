@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Junior: Bạn viết @Query có ORDER BY, LIKE và một @Transaction xoá rồi chèn lại, như…</title>
+<meta name="description" content="Mock DAO chỉ chứng minh bạn có gọi hàm; thứ dễ sai lại nằm ở câu SQL, ánh xạ cột-entity và transaction, những thứ chỉ kiểm được trên SQLite thật. Vì vậy test…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-q46.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior: Bạn viết @Query có ORDER BY, LIKE và một @Transaction xoá rồi chèn lại, như…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-jun-q46.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"Bạn viết @Query có ORDER BY, LIKE và một @Trans…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-q46.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn viết @Query có ORDER BY, LIKE và một @Trans…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Bạn viết <code>@Query</code> có <code>ORDER BY</code>, <code>LIKE</code> và một <code>@Transaction</code> xoá rồi chèn lại, nhưng chỉ phát hiện sai khi chạy app. Bạn test DAO của Room thế nào để chắc query và transaction đúng, và vì sao nên dùng in-memory database thay vì mock DAO?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mock DAO chỉ chứng minh bạn có gọi hàm; thứ dễ sai lại nằm ở câu SQL, ánh xạ cột-entity và transaction, những thứ chỉ kiểm được trên SQLite thật. Vì vậy test DAO là instrumented test (<code>src/androidTest</code>, <code>AndroidJUnit4</code>) hoặc Robolectric trong <code>src/test</code>, tạo database bằng <code>Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)</code>: database nằm trong RAM, mỗi test dựng cái mới nên không dính dữ liệu của test khác và biến mất sau <code>db.close()</code>; <code>allowMainThreadQueries()</code> chỉ nên dùng trong test cho gọn. Cách kiểm: insert dữ liệu mẫu rồi gọi query, so thứ tự <code>ORDER BY</code>, mẫu <code>LIKE</code> và trường hợp rỗng (SQLite chỉ coi <code>LIKE</code> là không phân biệt hoa thường với ký tự ASCII, nên chữ có dấu như <code>Á</code> và <code>á</code> bị coi là khác nhau, chạy test mới lộ ra). Hàm <code>suspend</code> dùng <code>runTest</code>; <code>Flow</code> dùng <code>first()</code> hoặc Turbine (<code>awaitItem()</code>), insert thêm rồi kiểm Flow phát lại; với <code>@Transaction</code> thì cố tình ném lỗi giữa chừng và kiểm dữ liệu cũ còn nguyên (rollback). Đừng dùng <code>Thread.sleep</code> để chờ Flow.</div>
+        <pre class="code-block"><code><span class="tk-ann">@RunWith</span>(<span class="tk-type">AndroidJUnit4</span>::<span class="tk-kw">class</span>)
+<span class="tk-kw">class</span> <span class="tk-type">OrderDaoTest</span> {
+    <span class="tk-kw">private</span> <span class="tk-kw">lateinit</span> <span class="tk-kw">var</span> db: <span class="tk-type">AppDatabase</span>
+    <span class="tk-kw">private</span> <span class="tk-kw">lateinit</span> <span class="tk-kw">var</span> dao: <span class="tk-type">OrderDao</span>
+
+    <span class="tk-ann">@Before</span>
+    <span class="tk-kw">fun</span> setUp() {
+        db = <span class="tk-type">Room</span>.inMemoryDatabaseBuilder(
+            <span class="tk-type">ApplicationProvider</span>.getApplicationContext(),
+            <span class="tk-type">AppDatabase</span>::<span class="tk-kw">class</span>.java,
+        ).allowMainThreadQueries().build()
+        dao = db.orderDao()
+    }
+
+    <span class="tk-ann">@After</span>
+    <span class="tk-kw">fun</span> tearDown() = db.close()
+
+    <span class="tk-ann">@Test</span>
+    <span class="tk-kw">fun</span> search_returnsMatchingOrdersNewestFirst() = runTest {
+        dao.insertAll(
+            <span class="tk-type">Order</span>(id = <span class="tk-num">1</span>, title = <span class="tk-str">&quot;Áo thun&quot;</span>, createdAt = <span class="tk-num">100</span>),
+            <span class="tk-type">Order</span>(id = <span class="tk-num">2</span>, title = <span class="tk-str">&quot;Áo khoác&quot;</span>, createdAt = <span class="tk-num">200</span>),
+            <span class="tk-type">Order</span>(id = <span class="tk-num">3</span>, title = <span class="tk-str">&quot;Mũ&quot;</span>, createdAt = <span class="tk-num">300</span>),
+        )
+
+        <span class="tk-kw">val</span> result = dao.search(<span class="tk-str">&quot;%Áo%&quot;</span>)
+
+        assertEquals(listOf(2L, 1L), result.map { it.id })
+    }
+
+    <span class="tk-ann">@Test</span>
+    <span class="tk-kw">fun</span> observeAll_emitsAgainAfterInsert() = runTest {
+        dao.observeAll().test {
+            assertEquals(<span class="tk-num">0</span>, awaitItem().size)
+            dao.insertAll(<span class="tk-type">Order</span>(id = <span class="tk-num">1</span>, title = <span class="tk-str">&quot;Áo&quot;</span>, createdAt = <span class="tk-num">1</span>))
+            assertEquals(<span class="tk-num">1</span>, awaitItem().size)
+            cancelAndIgnoreRemainingEvents()
+        }
+    }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-q46">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-q45.html"><span class="muted small">← Câu trước</span><span>App tải ảnh bìa 4000×3000 từ server bằng BitmapFactory.decodeStream rồi gán vào…</span></a>
+  <a class="pager-next" href="../s/and-jun-q47.html"><span class="muted small">Câu sau →</span><span>Bạn chuẩn bị build bản release đầu tiên đưa lên Google Play. Đồng nghiệp đã com…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/android/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-jun-q25.html">Viết unit test JUnit cho class CheckoutCalculator phụ thuộc CouponRepository (đọc mã giảm giá từ server). Bạn cấu trúc test và thay thế dependency thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q35.html">Khi nào đặt test ở src/test, khi nào ở src/androidTest? Viết một UI test Compose cơ bản cho màn đăng nhập thế nào, và vì sao UI test hay chập chờn?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-m39.html">Trong JUnit 4, class test có 3 method @Test. Method gắn @Before chạy bao nhiêu lần?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-jun-m40.html">Unit test trong src/test (chạy trên JVM, không dùng Robolectric) gọi tới code có Log.d(). Với cấu hình Gradle mặc định, điều gì xảy ra?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q43.html">App crash trên máy test. Bạn đọc Logcat và stack trace để tìm nguyên nhân thế nào? Các mức log khác nhau ra sao và lọc log thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q44.html">Unit test là gì? Viết test JUnit cho một hàm tính tiền thế nào, và vì sao hàm thuần (pure function) dễ test hơn code gắn với Activity?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

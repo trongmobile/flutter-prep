@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Fresher: App crash trên máy test. Bạn đọc Logcat và stack trace để tìm nguyên nhân…</title>
+<meta name="description" content="Mở Logcat trong Android Studio, chọn đúng thiết bị và lọc theo app (package:mine), để mức level:error cho gọn. Tìm dòng FATAL EXCEPTION: ngay dưới là loại ex…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-fre-q43.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher: App crash trên máy test. Bạn đọc Logcat và stack trace để tìm nguyên nhân…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-fre-q43.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/"},{"@type":"ListItem","position":5,"name":"App crash trên máy test. Bạn đọc Logcat và stac…","item":"https://trongmobile.github.io/flutter-prep/s/and-fre-q43.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">App crash trên máy test. Bạn đọc Logcat và stac…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/android/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App crash trên máy test. Bạn đọc Logcat và stack trace để tìm nguyên nhân thế nào? Các mức log khác nhau ra sao và lọc log thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mở Logcat trong Android Studio, chọn đúng thiết bị và lọc theo app (<code>package:mine</code>), để mức <code>level:error</code> cho gọn. Tìm dòng <code>FATAL EXCEPTION</code>: ngay dưới là loại exception cùng message (<code>NullPointerException</code>, <code>IllegalStateException</code>...) rồi stack trace. Cách đọc: đi từ trên xuống, bỏ qua các dòng của framework (<code>android.*</code>, <code>androidx.*</code>, <code>kotlinx.*</code>) và tìm dòng đầu tiên thuộc package của mình (ví dụ <code>MainActivity.onCreate(MainActivity.kt:27)</code>): đó là chỗ cần mở. Luôn kéo xuống xem <code>Caused by:</code> cuối cùng vì nguyên nhân gốc thường nằm ở đó, exception ngoài cùng chỉ là lớp bọc (ví dụ <code>Unable to start activity</code>). Các mức log tăng dần: <code>Log.v</code> (Verbose), <code>d</code> (Debug), <code>i</code> (Info), <code>w</code> (Warn), <code>e</code> (Error); lọc thêm theo <code>tag:</code> hoặc từ khoá. Khi chỉ đọc log chưa đủ, đặt breakpoint ở lề dòng code, chạy bằng Debug, rồi xem giá trị biến, Step Over/Step Into và Evaluate Expression thay vì đoán. Bẫy: log token, mật khẩu hay dữ liệu cá nhân (log có thể lộ qua adb hoặc bug report), và nuốt exception bằng <code>catch</code> rỗng khiến không còn gì để đọc.</div>
+        <pre class="code-block"><code><span class="tk-com">// Stack trace trong Logcat (rút gọn):</span>
+<span class="tk-com">// FATAL EXCEPTION: main</span>
+<span class="tk-com">// java.lang.RuntimeException: Unable to start activity ComponentInfo{com.example.shop/com.example.shop.MainActivity}</span>
+<span class="tk-com">//     at android.app.ActivityThread.performLaunchActivity(...)      &lt;- framework, bỏ qua</span>
+<span class="tk-com">// Caused by: java.lang.NullPointerException: Attempt to invoke virtual method &#39;void android.widget.TextView.setText(...)&#39; on a null object reference</span>
+<span class="tk-com">//     at com.example.shop.MainActivity.onCreate(MainActivity.kt:27) &lt;- dòng đầu tiên của app: mở dòng này</span>
+
+<span class="tk-kw">private</span> <span class="tk-kw">const</span> <span class="tk-kw">val</span> <span class="tk-type">TAG</span> = <span class="tk-str">&quot;MainActivity&quot;</span>
+
+<span class="tk-type">Log</span>.d(<span class="tk-type">TAG</span>, <span class="tk-str">&quot;Đã tải ${items.size} sản phẩm&quot;</span>)       <span class="tk-com">// thông tin phục vụ debug</span>
+<span class="tk-type">Log</span>.e(<span class="tk-type">TAG</span>, <span class="tk-str">&quot;Tải đơn hàng thất bại&quot;</span>, exception)    <span class="tk-com">// truyền cả exception để in stack trace</span>
+<span class="tk-com">// Lọc trong Logcat: package:mine level:error   hoặc   tag:MainActivity</span></code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-fre-q43">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-fre-q42.html"><span class="muted small">← Câu trước</span><span>Khai báo một API bằng Retrofit thế nào (@GET, @Path, @Query, @POST với @Body)?…</span></a>
+  <a class="pager-next" href="../s/and-fre-q44.html"><span class="muted small">Câu sau →</span><span>Unit test là gì? Viết test JUnit cho một hàm tính tiền thế nào, và vì sao hàm t…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/android/fresher/">Tất cả câu hỏi Android Fresher</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/android/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-fre-q44.html">Unit test là gì? Viết test JUnit cho một hàm tính tiền thế nào, và vì sao hàm thuần (pure function) dễ test hơn code gắn với Activity?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-jun-q25.html">Viết unit test JUnit cho class CheckoutCalculator phụ thuộc CouponRepository (đọc mã giảm giá từ server). Bạn cấu trúc test và thay thế dependency thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q35.html">Khi nào đặt test ở src/test, khi nào ở src/androidTest? Viết một UI test Compose cơ bản cho màn đăng nhập thế nào, và vì sao UI test hay chập chờn?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q46.html">Bạn viết @Query có ORDER BY, LIKE và một @Transaction xoá rồi chèn lại, nhưng chỉ phát hiện sai khi chạy app. Bạn test DAO của Room thế nào để chắc query và transaction đúng, và vì sao nên dùng in-memory database thay vì mock DAO?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-mid-q19.html">Unit test cho ViewModel dùng viewModelScope.launch và repository chạy trên Dispatchers.IO hay lỗi liên quan tới Main dispatcher hoặc pass/fail chập chờn. Vì sao, và cách viết test đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q20.html">Khi test ViewModel, bạn dùng fake repository hay mock bằng MockK? Mỗi cách có đánh đổi gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

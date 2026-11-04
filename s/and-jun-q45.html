@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Junior: App tải ảnh bìa 4000×3000 từ server bằng BitmapFactory.decodeStream rồi gán…</title>
+<meta name="description" content="JPEG/PNG là dạng nén; để hiển thị phải giải mã thành bitmap không nén trong RAM, tốn khoảng width × height × 4 byte (ARGB_8888): ảnh 4000×3000 chiếm 4000 × 3…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-q45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior: App tải ảnh bìa 4000×3000 từ server bằng BitmapFactory.decodeStream rồi gán…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-jun-q45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"App tải ảnh bìa 4000×3000 từ server bằng Bitmap…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-q45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">App tải ảnh bìa 4000×3000 từ server bằng Bitmap…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/perf/">Performance</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App tải ảnh bìa 4000×3000 từ server bằng <code>BitmapFactory.decodeStream</code> rồi gán vào <code>ImageView</code> nhỏ. Trên máy cấu hình thấp, cuộn danh sách vài chục ảnh thì crash <code>OutOfMemoryError</code>. Vì sao một file JPEG vài trăm KB lại ngốn nhiều RAM đến vậy, và bạn khắc phục thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">JPEG/PNG là dạng nén; để hiển thị phải giải mã thành bitmap không nén trong RAM, tốn khoảng <code>width × height × 4</code> byte (ARGB_8888): ảnh 4000×3000 chiếm 4000 × 3000 × 4 ≈ 48MB dù <code>ImageView</code> chỉ rộng vài trăm px, và vài chục ảnh như vậy vượt xa heap của app. Cách xử lý là downsample: chỉ giải mã ở kích thước cần hiển thị. Với <code>BitmapFactory</code>, đọc kích thước bằng <code>inJustDecodeBounds = true</code> (chưa cấp bộ nhớ cho pixel), tính <code>inSampleSize</code> (luỹ thừa của 2) rồi mới giải mã thật. Thực tế dùng Coil (<code>AsyncImage</code> trong Compose) hoặc Glide: chúng đo kích thước view để downsample, giải mã ngoài main thread, huỷ request khi view bị tái sử dụng, có memory cache (LRU) và disk cache, nên cuộn mượt mà không OOM. Bẫy: <code>ImageView</code> dùng <code>wrap_content</code> hoặc composable không có kích thước rõ ràng khiến loader không biết kích thước đích và có thể giải mã ở kích thước rất lớn (đặt kích thước cụ thể, hoặc <code>override(w, h)</code> của Glide, <code>size(w, h)</code> của Coil); giữ <code>Bitmap</code> trong biến static hay ViewModel gây leak. Phía server nên trả thumbnail đúng cỡ (CDN resize) để tiết kiệm cả mạng.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> decodeSampled(file: <span class="tk-type">File</span>, reqWidth: <span class="tk-type">Int</span>, reqHeight: <span class="tk-type">Int</span>): <span class="tk-type">Bitmap</span> {
+    <span class="tk-com">// Bước 1: chỉ đọc kích thước, chưa cấp bộ nhớ cho pixel</span>
+    <span class="tk-kw">val</span> bounds = <span class="tk-type">BitmapFactory</span>.<span class="tk-type">Options</span>().apply { inJustDecodeBounds = <span class="tk-kw">true</span> }
+    <span class="tk-type">BitmapFactory</span>.decodeFile(file.path, bounds)
+
+    <span class="tk-kw">var</span> sample = <span class="tk-num">1</span>
+    <span class="tk-kw">while</span> (bounds.outWidth / (sample * <span class="tk-num">2</span>) &gt;= reqWidth &amp;&amp; bounds.outHeight / (sample * <span class="tk-num">2</span>) &gt;= reqHeight) {
+        sample *= <span class="tk-num">2</span>
+    }
+
+    <span class="tk-com">// Bước 2: giải mã thật ở kích thước đã thu nhỏ</span>
+    <span class="tk-kw">val</span> options = <span class="tk-type">BitmapFactory</span>.<span class="tk-type">Options</span>().apply { inSampleSize = sample }
+    <span class="tk-kw">return</span> <span class="tk-type">BitmapFactory</span>.decodeFile(file.path, options) ?: error(<span class="tk-str">&quot;Không giải mã được ảnh&quot;</span>)
+}
+
+<span class="tk-com">// Thực tế: để Coil downsample, giải mã nền và cache</span>
+<span class="tk-type">AsyncImage</span>(
+    model = <span class="tk-type">ImageRequest</span>.<span class="tk-type">Builder</span>(<span class="tk-type">LocalContext</span>.current).<span class="tk-kw">data</span>(url).crossfade(<span class="tk-kw">true</span>).build(),
+    contentDescription = title,
+    modifier = <span class="tk-type">Modifier</span>.size(width = <span class="tk-num">160</span>.dp, height = <span class="tk-num">120</span>.dp), <span class="tk-com">// có kích thước rõ ràng để Coil thu nhỏ đúng</span>
+    contentScale = <span class="tk-type">ContentScale</span>.<span class="tk-type">Crop</span>,
+)</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-q45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-q44.html"><span class="muted small">← Câu trước</span><span>Màn danh sách bài viết đang làm thế này: ViewModel gọi API rồi gán thẳng kết qu…</span></a>
+  <a class="pager-next" href="../s/and-jun-q46.html"><span class="muted small">Câu sau →</span><span>Bạn viết @Query có ORDER BY, LIKE và một @Transaction xoá rồi chèn lại, nhưng c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Performance</h2><a class="section-sub" href="../phong-van/android/chu-de/perf/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-jun-q24.html">ANR là gì và thường do đâu? Bạn điều tra một ANR được báo về từ Play Console thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-m38.html">Trường hợp nào sau đây có thể gây ANR thay vì làm app crash ngay lập tức?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-q38.html">App bản release nặng 85 MB, Play Console cảnh báo dung lượng tải xuống làm giảm tỉ lệ cài ở thị trường mạng yếu. Bạn phân tích và giảm kích thước app thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-sen-q01.html">App có cold start khoảng 2,5 giây trên máy tầm trung, trong Application.onCreate đang khởi tạo cả chục SDK. Bạn đo và tối ưu thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q02.html">QA báo màn hình feed giật khi cuộn nhanh trên máy tầm thấp, còn trên máy dev thì mượt. Bạn đo và khoanh vùng jank thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q03.html">LeakCanary báo MapActivity bị leak, retaining path đi qua một listener đăng ký vào singleton LocationRepository. Bạn phân tích và sửa thế nào? Còn những nguồn leak Context phổ biến nào khác?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Gradle &amp; Build — Mobile Interview</title>
-<meta name="description" content="7 câu hỏi phỏng vấn Android về Gradle &amp; Build từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta name="description" content="11 câu hỏi phỏng vấn Android về Gradle &amp; Build từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/build/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Gradle &amp; Build — Mobile Interview">
-<meta property="og:description" content="7 câu hỏi phỏng vấn Android về Gradle &amp; Build từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta property="og:description" content="11 câu hỏi phỏng vấn Android về Gradle &amp; Build từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/build/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,13 +47,14 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Gradle &amp; Build</h1>
-  <p class="subtitle">7 câu hỏi kèm đáp án mẫu và 9 câu quiz về Gradle &amp; Build, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">11 câu hỏi kèm đáp án mẫu và 9 câu quiz về Gradle &amp; Build, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/and-fre-q25.html">APK và AAB khác nhau thế nào? Vì sao Google Play yêu cầu AAB?</a></li>
     <li><a href="../../../../s/and-fre-q37.html">compileSdk, targetSdk và minSdk khác nhau thế nào? Mỗi giá trị ảnh hưởng gì đến app?</a></li>
+    <li><a href="../../../../s/and-fre-q46.html">Gradle làm gì trong một dự án Android? build.gradle.kts cấp project và cấp module khác nhau thế nào, implementation nghĩa là gì, và khi &quot;Gradle sync failed&quot; hoặc lỗi dependency thì bạn xem gì?</a></li>
     <li><a href="../../../../s/and-fre-m38.html">Phát biểu nào đúng về Android App Bundle (AAB)?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m39.html">Khác biệt nào giữa build type debug và release là đúng với cấu hình mặc định của project mới?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m40.html">Trong build.gradle.kts của module app, minSdk có ý nghĩa gì?</a> <span class="tag">Quiz</span></li>
@@ -63,6 +64,7 @@
   <div class="section-head"><h2><span class="rank-tag rank-blue">Junior</span> Android Junior</h2><a class="section-sub" href="../../../../phong-van/android/junior/">Mọi chủ đề Junior →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/and-jun-q33.html">Team cần ba môi trường dev, staging, prod với base URL khác nhau và muốn cài song song trên cùng một máy. buildTypes và productFlavors khác nhau thế nào, bạn cấu hình ra sao?</a></li>
+    <li><a href="../../../../s/and-jun-q47.html">Bạn chuẩn bị build bản release đầu tiên đưa lên Google Play. Đồng nghiệp đã commit file release.jks cùng mật khẩu keystore ghi thẳng trong build.gradle.kts lên Git. Vì sao đó là vấn đề, cấu hình signing đúng thế nào, và isMinifyEnabled, isShrinkResources, Play App Signing có vai trò gì?</a></li>
   </ul>
 </section>
 <section>
@@ -77,6 +79,8 @@
     <li><a href="../../../../s/and-sen-q09.html">Trong dự án multi-module, api và implementation khác nhau thế nào? Vì sao lạm dụng api vừa làm build chậm vừa làm kiến trúc lỏng lẻo?</a></li>
     <li><a href="../../../../s/and-sen-q10.html">CI build mất 15 phút, build incremental trên máy dev cũng chậm. Với codebase khoảng 50 module, bạn tối ưu Gradle theo hướng nào?</a></li>
     <li><a href="../../../../s/and-sen-q11.html">Bản release parse JSON ra object toàn field null rồi crash, trong khi bản debug chạy bình thường. Bạn nghi R8 — điều tra và xử lý thế nào?</a></li>
+    <li><a href="../../../../s/and-sen-q40.html">Codebase có khoảng 60 module, mỗi build.gradle.kts lặp lại cùng đoạn cấu hình (compileSdk, Compose, Hilt, lint...), còn file gốc dùng subprojects { } để ép cấu hình chung. Mỗi lần nâng AGP hay Kotlin lại phải sửa nhiều nơi và luôn có module bị lệch. Bạn tổ chức lại bằng build-logic và convention plugin thế nào, và vì sao cách này tốt hơn allprojects { }/subprojects { }?</a></li>
+    <li><a href="../../../../s/and-sen-q41.html">Build debug của module :data tốn rất nhiều thời gian ở các task kaptGenerateStubs... và kapt...Kotlin; Hilt, Room và Moshi codegen đều đang chạy qua kapt. Bạn chuyển sang KSP thế nào, vì sao KSP nhanh hơn, và chứng minh được mức cải thiện ra sao?</a></li>
     <li><a href="../../../../s/and-sen-m17.html">Với khai báo dependency sau, trong :feature:home có code import okhttp3.OkHttpClient. Kết quả build thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-sen-m18.html">Vì sao chuyển Room và Hilt từ kapt sang KSP thường giúp build nhanh hơn rõ rệt?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-sen-m19.html">Configuration cache của Gradle lưu lại gì và giúp ích khi nào?</a> <span class="tag">Quiz</span></li>

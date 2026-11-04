@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Fresher (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
+<title>Câu hỏi phỏng vấn Android Fresher (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · android · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Fresher</h1>
-  <p class="subtitle">Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/android/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -62,14 +62,19 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#kotlin">Kotlin</a> <span class="count">9</span></li>
+    <li><a href="#kotlin">Kotlin</a> <span class="count">10</span></li>
     <li><a href="#java">Java &amp; JVM</a> <span class="count">7</span></li>
-    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">6</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">8</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
+    <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">1</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">7</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">9</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
     <li><a href="#background">Background &amp; Service</a> <span class="count">2</span></li>
-    <li><a href="#build">Gradle &amp; Build</a> <span class="count">2</span></li>
+    <li><a href="#build">Gradle &amp; Build</a> <span class="count">3</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#security">Security</a> <span class="count">1</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -280,6 +285,35 @@ println(names) <span class="tk-com">// [Giày, Áo]</span></code></pre>
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q49.html">Hàm trong Kotlin có gì khác Java: tham số mặc định (default argument), tham số đặt tên (named argument) và hàm một biểu thức (single-expression function)? Gọi hàm có tham số mặc định từ Java thì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Default argument cho phép khai báo giá trị mặc định ngay ở tham số (<code>age: Int = 18</code>), người gọi bỏ qua thì dùng giá trị đó; nhờ vậy Kotlin gần như không cần viết nhiều overload như Java (kiểu constructor 3-4 phiên bản). Named argument cho gọi theo tên (<code>createUser(&quot;Bình&quot;, isAdmin = true)</code>): code tự giải thích, đổi được thứ tự và bỏ qua tham số ở giữa nếu nó có giá trị mặc định, rất hữu ích khi có nhiều tham số cùng kiểu như vài <code>Boolean</code> liền nhau. Single-expression function viết thân hàm là một biểu thức sau dấu <code>=</code> (<code>fun double(x: Int) = x * 2</code>), kiểu trả về được suy luận; với hàm public nên ghi rõ kiểu trả về để API không đổi ngầm khi sửa biểu thức. Lưu ý khi làm việc với Java: Java không có default argument, nên gọi từ Java phải truyền đủ mọi tham số, trừ khi hàm hoặc constructor Kotlin có <code>@JvmOverloads</code> để compiler sinh sẵn các overload ngắn hơn. Khi override một hàm có tham số mặc định, bản override không được khai báo lại giá trị mặc định mà dùng giá trị của hàm gốc.</div>
+        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">User</span>(<span class="tk-kw">val</span> name: <span class="tk-type">String</span>, <span class="tk-kw">val</span> age: <span class="tk-type">Int</span>, <span class="tk-kw">val</span> isAdmin: <span class="tk-type">Boolean</span>)
+
+<span class="tk-kw">fun</span> createUser(
+  name: <span class="tk-type">String</span>,
+  age: <span class="tk-type">Int</span> = <span class="tk-num">18</span>,
+  isAdmin: <span class="tk-type">Boolean</span> = <span class="tk-kw">false</span>,
+): <span class="tk-type">User</span> = <span class="tk-type">User</span>(name, age, isAdmin)          <span class="tk-com">// single-expression function</span>
+
+<span class="tk-kw">fun</span> main() {
+  createUser(<span class="tk-str">&quot;An&quot;</span>)                           <span class="tk-com">// dùng cả hai giá trị mặc định</span>
+  createUser(<span class="tk-str">&quot;Bình&quot;</span>, isAdmin = <span class="tk-kw">true</span>)         <span class="tk-com">// named argument, bỏ qua age</span>
+  createUser(age = <span class="tk-num">25</span>, name = <span class="tk-str">&quot;Chi&quot;</span>)         <span class="tk-com">// gọi theo tên nên đổi được thứ tự</span>
+}
+
+<span class="tk-com">// Từ Java: thêm @JvmOverloads để thấy các overload ngắn hơn</span>
+<span class="tk-kw">class</span> <span class="tk-type">Banner</span> <span class="tk-ann">@JvmOverloads</span> <span class="tk-kw">constructor</span>(
+  <span class="tk-kw">val</span> title: <span class="tk-type">String</span>,
+  <span class="tk-kw">val</span> durationMs: <span class="tk-type">Long</span> = 3_000L,
+)</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="java">
@@ -433,6 +467,38 @@ s = s.toUpperCase();      <span class="tk-com">// s trỏ tới object mới &qu
     </li>
   </ol>
 </section>
+<section id="coroutines">
+  <div class="section-head"><h2>Coroutines &amp; Flow</h2><a class="section-sub" href="../../../phong-van/android/chu-de/coroutines/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q38.html">Coroutine là gì và khác <code>Thread</code> ở điểm nào? Từ khoá <code>suspend</code> nghĩa là gì, và <code>viewModelScope.launch { ... }</code> bắt đầu chạy ở thread nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Coroutine là một tác vụ bất đồng bộ nhẹ: bạn viết code tuần tự nhưng nó có thể tạm dừng (suspend) ở chỗ phải chờ rồi chạy tiếp, mà không chặn thread đang chạy nó. Thread là đơn vị do hệ điều hành quản lý, mỗi cái tốn bộ nhớ stack và chi phí chuyển ngữ cảnh nên không tạo được quá nhiều; coroutine rẻ hơn hẳn, hàng nghìn coroutine có thể chia nhau vài thread vì coroutine đang chờ sẽ nhả thread cho việc khác. <code>suspend</code> đánh dấu một hàm có thể tạm dừng và chỉ được gọi từ coroutine hoặc từ hàm <code>suspend</code> khác; từ khoá này không tự chuyển thread, hàm vẫn chạy trên thread của nơi gọi cho tới khi bạn dùng <code>withContext</code>. <code>launch</code> khởi động coroutine kiểu bắn-và-quên và trả về <code>Job</code>. <code>viewModelScope</code> mặc định chạy trên <code>Dispatchers.Main.immediate</code> nên block bên trong bắt đầu ở main thread và tự bị huỷ khi ViewModel bị xoá. Bẫy hay gặp: tưởng <code>launch</code> là chạy nền, trong khi gọi một hàm chặn (blocking) ngay trong đó vẫn làm đứng UI.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">UserViewModel</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">UserRepository</span>) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> _name = <span class="tk-type">MutableStateFlow</span>(<span class="tk-str">&quot;&quot;</span>)
+  <span class="tk-kw">val</span> name: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">String</span>&gt; = _name
+
+  <span class="tk-kw">fun</span> load() {
+    viewModelScope.launch {          <span class="tk-com">// bắt đầu trên main thread</span>
+      <span class="tk-kw">val</span> user = repo.fetchUser()    <span class="tk-com">// hàm suspend: tạm dừng ở đây, main thread vẫn rảnh</span>
+      _name.<span class="tk-kw">value</span> = user.name        <span class="tk-com">// quay lại main để cập nhật state</span>
+    }
+  }
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">UserRepository</span>(<span class="tk-kw">private</span> <span class="tk-kw">val</span> api: <span class="tk-type">LegacyUserApi</span>) {
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> fetchUser(): <span class="tk-type">User</span> = withContext(<span class="tk-type">Dispatchers</span>.<span class="tk-type">IO</span>) {
+    api.getUserBlocking()            <span class="tk-com">// lời gọi chặn: chuyển sang thread IO</span>
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
 <section id="components">
   <div class="section-head"><h2>Activity, Fragment &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/android/chu-de/components/">Mọi rank →</a></div>
   <ol class="qa-list">
@@ -544,6 +610,32 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       .setMessage(<span class="tk-str">&quot;Xoá mục này?&quot;</span>)
       .setPositiveButton(<span class="tk-str">&quot;Xoá&quot;</span>, <span class="tk-kw">null</span>)
       .show()
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q40.html">Xoay màn hình thì <code>Activity</code> bị làm sao? Biến thường, nội dung <code>EditText</code> và <code>ViewModel</code> bị ảnh hưởng thế nào, và có nên khai báo <code>configChanges</code> để tránh chuyện đó không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Xoay màn hình là một configuration change: mặc định hệ thống huỷ Activity hiện tại (<code>onPause</code>, <code>onStop</code>, <code>onDestroy</code>) rồi tạo một instance mới (<code>onCreate</code>, <code>onStart</code>, <code>onResume</code>). Vì là object mới nên field thường trong Activity (biến đếm, list) mất hết. View có <code>android:id</code> thì được hệ thống tự lưu và khôi phục qua <code>onSaveInstanceState</code> (nên <code>EditText</code> giữ được chữ, còn View không có id thì không); trong Compose, <code>remember</code> mất còn <code>rememberSaveable</code> giữ. <code>ViewModel</code> được giữ nguyên qua lần tạo lại, nên đặt dữ liệu màn hình ở đó. Dữ liệu nhỏ cần sống cả khi process bị kill thì thêm <code>onSaveInstanceState</code> hoặc <code>SavedStateHandle</code>. Khai báo <code>android:configChanges=&quot;orientation|screenSize&quot;</code> khiến Activity không bị tạo lại (chỉ gọi <code>onConfigurationChanged</code>), nhưng chỉ là chữa cháy: đổi ngôn ngữ, dark mode, cỡ chữ hay chế độ nhiều cửa sổ vẫn có thể tạo lại Activity, và bạn phải tự xử lý layout theo hướng. Bẫy thường gặp: gọi API trong <code>onCreate</code> nên mỗi lần xoay máy lại tải lại từ đầu.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">FormActivity</span> : <span class="tk-type">AppCompatActivity</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> plainCount = <span class="tk-num">0</span>                            <span class="tk-com">// mất khi xoay máy</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> viewModel: <span class="tk-type">FormViewModel</span> <span class="tk-kw">by</span> viewModels()  <span class="tk-com">// sống sót khi xoay máy</span>
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate(savedInstanceState: <span class="tk-type">Bundle</span>?) {
+    <span class="tk-kw">super</span>.onCreate(savedInstanceState)
+    setContentView(<span class="tk-type">R</span>.layout.activity_form)
+    <span class="tk-com">// savedInstanceState != null nghĩa là Activity đang được tạo lại</span>
+    plainCount = savedInstanceState?.getInt(<span class="tk-str">&quot;plain_count&quot;</span>) ?: <span class="tk-num">0</span>
+  }
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onSaveInstanceState(outState: <span class="tk-type">Bundle</span>) {
+    <span class="tk-kw">super</span>.onSaveInstanceState(outState)
+    outState.putInt(<span class="tk-str">&quot;plain_count&quot;</span>, plainCount)          <span class="tk-com">// chỉ lưu dữ liệu nhỏ</span>
   }
 }</code></pre>
         
@@ -698,6 +790,49 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q48.html"><code>Toast</code>, <code>Snackbar</code> và <code>AlertDialog</code> khác nhau thế nào? Khi nào dùng cái nào, và vì sao dialog tạo thẳng trong Activity dễ gặp lỗi khi xoay máy?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>Toast</code> là thông báo ngắn tự biến mất, không có nút bấm, hợp cho phản hồi tức thì kiểu &quot;Đã sao chép&quot;; vì không gắn với layout của app nên người dùng dễ bỏ lỡ và không thể thao tác trên nó. <code>Snackbar</code> (Material) hiện ở đáy màn hình trong chính giao diện của app, có thể kèm một action như &quot;Hoàn tác&quot; hay &quot;Thử lại&quot;, tự ẩn sau một thời gian hoặc giữ tới khi người dùng xử lý. Trong Compose, đặt <code>SnackbarHost</code> vào <code>Scaffold</code> và gọi <code>snackbarHostState.showSnackbar(...)</code>, đây là hàm <code>suspend</code> nên gọi trong coroutine. <code>AlertDialog</code> chặn mọi tương tác phía sau và buộc người dùng quyết định, nên chỉ dùng cho việc quan trọng hoặc khó hoàn tác như xác nhận xoá; dùng bừa sẽ làm phiền. Compose hiển thị dialog theo state (<code>if (showDialog) AlertDialog(...)</code>) nên không cần nhớ gì thêm. Với View system, dialog dựng trực tiếp bằng <code>MaterialAlertDialogBuilder</code> trong Activity sẽ biến mất hoặc gây <code>WindowLeaked</code> khi Activity bị tạo lại lúc xoay máy, nên dùng <code>DialogFragment</code> vì FragmentManager tự khôi phục. Bẫy kinh điển: viết <code>Toast.makeText(...)</code> mà quên <code>.show()</code>.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">DeleteNoteScreen</span>(onDelete: <span class="tk-kw">suspend</span> () -&gt; <span class="tk-type">Unit</span>) {
+  <span class="tk-kw">val</span> snackbarHostState = remember { <span class="tk-type">SnackbarHostState</span>() }
+  <span class="tk-kw">val</span> scope = rememberCoroutineScope()
+  <span class="tk-kw">var</span> showConfirm <span class="tk-kw">by</span> remember { mutableStateOf(<span class="tk-kw">false</span>) }
+
+  <span class="tk-type">Scaffold</span>(snackbarHost = { <span class="tk-type">SnackbarHost</span>(snackbarHostState) }) { padding -&gt;
+    <span class="tk-type">Button</span>(onClick = { showConfirm = <span class="tk-kw">true</span> }, modifier = <span class="tk-type">Modifier</span>.padding(padding)) {
+      <span class="tk-type">Text</span>(<span class="tk-str">&quot;Xoá ghi chú&quot;</span>)
+    }
+  }
+
+  <span class="tk-kw">if</span> (showConfirm) {                                      <span class="tk-com">// dialog điều khiển bằng state</span>
+    <span class="tk-type">AlertDialog</span>(
+      onDismissRequest = { showConfirm = <span class="tk-kw">false</span> },
+      title = { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Xoá ghi chú?&quot;</span>) },
+      text = { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Hành động này không thể hoàn tác.&quot;</span>) },
+      confirmButton = {
+        <span class="tk-type">TextButton</span>(onClick = {
+          showConfirm = <span class="tk-kw">false</span>
+          scope.launch {
+            onDelete()
+            snackbarHostState.showSnackbar(<span class="tk-str">&quot;Đã xoá ghi chú&quot;</span>) <span class="tk-com">// phản hồi nằm trong giao diện app</span>
+          }
+        }) { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Xoá&quot;</span>) }
+      },
+      dismissButton = { <span class="tk-type">TextButton</span>(onClick = { showConfirm = <span class="tk-kw">false</span> }) { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Huỷ&quot;</span>) } },
+    )
+  }
+}
+
+<span class="tk-com">// View system: phản hồi cực ngắn, nhớ gọi show()</span>
+<span class="tk-type">Toast</span>.makeText(context, <span class="tk-str">&quot;Đã sao chép&quot;</span>, <span class="tk-type">Toast</span>.<span class="tk-type">LENGTH_SHORT</span>).show()</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -710,6 +845,69 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
       <div class="model-answer">
         <div class="answer-text">Ở màn gửi dùng <code>putExtra</code> với cặp key–value kiểu cơ bản (Int, String, Boolean…), ở màn nhận đọc lại bằng <code>intent.getIntExtra</code>, <code>getStringExtra</code>…; key nên là hằng số dùng chung để tránh gõ sai. Với object, cho class implement <code>Parcelable</code> (trong Kotlin dùng plugin <code>kotlin-parcelize</code> với <code>@Parcelize</code> cho gọn) rồi đọc bằng <code>IntentCompat.getParcelableExtra</code>, vì bản <code>getParcelableExtra(key)</code> cũ đã deprecated từ Android 13. <code>Serializable</code> cũng dùng được nhưng chậm hơn do dựa vào reflection. Chỉ nên truyền dữ liệu nhỏ như id: Intent đi qua Binder có giới hạn kích thước, nhét list lớn hay bitmap dễ gặp <code>TransactionTooLargeException</code>; màn chi tiết nên nhận id rồi tự tải dữ liệu.</div>
         
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q47.html">Trong Navigation Compose, <code>NavHost</code>, <code>NavController</code> và nav graph là gì? <code>navigate</code> và <code>popBackStack</code> làm việc với back stack thế nào, và làm sao để bấm Back sau khi đăng nhập không quay lại màn login?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Navigation Component quản lý việc chuyển màn trong app. Nav graph là tập các destination (màn hình) cùng đường đi giữa chúng: với Fragment là file XML, với Compose là các khối <code>composable(&quot;route&quot;) { ... }</code> khai báo trong <code>NavHost</code>. <code>NavHost</code> là vùng chứa hiển thị destination hiện tại và cần một <code>startDestination</code>; <code>NavController</code> (tạo bằng <code>rememberNavController()</code>) là bộ điều khiển. <code>navigate(&quot;detail/42&quot;)</code> đẩy một destination mới lên back stack; bấm Back hoặc gọi <code>popBackStack()</code> bỏ destination trên cùng để quay về màn trước (hàm trả về <code>false</code> nếu không còn gì để bỏ). Muốn bỏ luôn các màn phía sau khi đi tiếp, dùng <code>popUpTo(...)</code> trong <code>navigate</code>, với <code>inclusive = true</code> thì xoá cả điểm mốc: đây là cách chuẩn khi chuyển từ login sang home. Bẫy: truyền <code>NavController</code> xuống từng composable con làm khó test và dễ gọi sai chỗ, nên truyền callback như <code>onItemClick</code> và để chỉ <code>NavHost</code> biết tới controller; route chỉ nên mang id, rồi màn đích tự tải dữ liệu thay vì nhét cả object lớn vào route.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">AppNavHost</span>() {
+  <span class="tk-kw">val</span> navController = rememberNavController()
+
+  <span class="tk-type">NavHost</span>(navController = navController, startDestination = <span class="tk-str">&quot;login&quot;</span>) {
+    composable(<span class="tk-str">&quot;login&quot;</span>) {
+      <span class="tk-type">LoginScreen</span>(onLoggedIn = {
+        navController.navigate(<span class="tk-str">&quot;home&quot;</span>) {
+          popUpTo(<span class="tk-str">&quot;login&quot;</span>) { inclusive = <span class="tk-kw">true</span> }   <span class="tk-com">// xoá login khỏi back stack: Back không quay lại</span>
+        }
+      })
+    }
+    composable(<span class="tk-str">&quot;home&quot;</span>) {
+      <span class="tk-type">HomeScreen</span>(onOpenDetail = { id -&gt; navController.navigate(<span class="tk-str">&quot;detail/$id&quot;</span>) })
+    }
+    composable(
+      route = <span class="tk-str">&quot;detail/{id}&quot;</span>,
+      arguments = listOf(navArgument(<span class="tk-str">&quot;id&quot;</span>) { type = <span class="tk-type">NavType</span>.<span class="tk-type">IntType</span> }),
+    ) { entry -&gt;
+      <span class="tk-kw">val</span> id = entry.arguments?.getInt(<span class="tk-str">&quot;id&quot;</span>) ?: <span class="tk-kw">return</span><span class="tk-ann">@composable</span>
+      <span class="tk-type">DetailScreen</span>(id = id, onBack = { navController.popBackStack() })
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="arch">
+  <div class="section-head"><h2>Kiến trúc &amp; DI</h2><a class="section-sub" href="../../../phong-van/android/chu-de/arch/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q39.html">Vì sao không nên nhét hết logic vào <code>Activity</code>? MVC, MVP và MVVM khác nhau thế nào ở mức cơ bản, và <code>ViewModel</code> giữ vai trò gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Activity/Fragment là lớp UI do hệ thống tạo và huỷ (xoay màn hình, hết bộ nhớ), nên logic và dữ liệu nhét trong đó vừa mất theo vòng đời, vừa khó test vì phải có framework Android, và file nhanh chóng phình thành &quot;God Activity&quot;. Vì vậy UI chỉ nên hiển thị và bắt sự kiện, còn logic nằm ở lớp khác. MVC: Controller nhận thao tác rồi cập nhật Model, View đọc Model; trên Android Activity vừa là View vừa là Controller nên vẫn phình. MVP: Presenter chứa logic và gọi View qua một interface (<code>view.showUsers(...)</code>), Activity cài interface đó; dễ test hơn nhưng nhiều boilerplate và phải tự lo vòng đời. MVVM: ViewModel giữ UI state và phơi ra dạng quan sát được (<code>StateFlow</code>, <code>LiveData</code>), View chỉ quan sát và gửi sự kiện lên; ViewModel không biết View nên không leak Activity. <code>ViewModel</code> sống qua configuration change (xoay máy), bị huỷ khi màn hình thật sự kết thúc, nhưng không sống qua process death. Bẫy: không giữ <code>Context</code>, <code>Activity</code> hay <code>View</code> trong ViewModel.</div>
+        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">CounterUiState</span>(<span class="tk-kw">val</span> count: <span class="tk-type">Int</span> = <span class="tk-num">0</span>)
+
+<span class="tk-kw">class</span> <span class="tk-type">CounterViewModel</span> : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> _state = <span class="tk-type">MutableStateFlow</span>(<span class="tk-type">CounterUiState</span>())
+  <span class="tk-kw">val</span> state: <span class="tk-type">StateFlow</span>&lt;<span class="tk-type">CounterUiState</span>&gt; = _state.asStateFlow()
+
+  <span class="tk-kw">fun</span> onIncrement() = _state.update { it.copy(count = it.count + <span class="tk-num">1</span>) } <span class="tk-com">// logic nằm ở ViewModel</span>
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">CounterScreen</span>(viewModel: <span class="tk-type">CounterViewModel</span> = viewModel()) {
+  <span class="tk-kw">val</span> state <span class="tk-kw">by</span> viewModel.state.collectAsStateWithLifecycle()     <span class="tk-com">// View chỉ quan sát state</span>
+  <span class="tk-type">Button</span>(onClick = viewModel::onIncrement) { <span class="tk-type">Text</span>(<span class="tk-str">&quot;Đã bấm ${state.count} lần&quot;</span>) }
+}</code></pre>
         
       </div>
     </details>
@@ -752,6 +950,74 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
 <span class="tk-kw">&lt;/network-security-config</span><span class="tk-kw">&gt;</span>
 
 <span class="tk-com">&lt;!-- Retrofit.Builder().baseUrl(&quot;http://10.0.2.2:3000/&quot;) --&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q41.html">Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataStore, file và Room (SQLite) cho ba trường hợp: cài đặt giao diện, ảnh/báo cáo tải về, danh sách đơn hàng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chọn theo hình dạng dữ liệu. Cặp key-value nhỏ như cài đặt, cờ đã xem onboarding, theme: dùng Preferences DataStore thay cho SharedPreferences, vì nó bất đồng bộ, đọc bằng <code>Flow</code> và ghi trong transaction, không chặn main thread. Dữ liệu dạng file (ảnh, PDF, JSON lớn): ghi vào internal storage (<code>filesDir</code>) hoặc <code>cacheDir</code> cho dữ liệu có thể tải lại, vì hệ thống được phép xoá cache khi thiếu bộ nhớ. Dữ liệu có cấu trúc, nhiều bản ghi, cần lọc, sắp xếp, join, phân trang hoặc dùng offline: dùng Room (lớp trừu tượng trên SQLite) với SQL được kiểm tra lúc compile và trả về <code>Flow</code>. Bẫy thường gặp: nhét cả danh sách lớn vào SharedPreferences/DataStore dưới dạng chuỗi JSON (phải đọc và ghi lại cả khối, không truy vấn được), hoặc ngược lại dùng cả database chỉ để lưu một cờ true/false. Dữ liệu trong bộ nhớ trong của app bị xoá khi gỡ app hoặc Clear data, còn token và mật khẩu thì không lưu dạng plain text.</div>
+        <pre class="code-block"><code><span class="tk-com">// Top-level: một DataStore duy nhất cho mỗi file</span>
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> <span class="tk-type">Context</span>.dataStore <span class="tk-kw">by</span> preferencesDataStore(name = <span class="tk-str">&quot;settings&quot;</span>)
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> <span class="tk-type">DARK_MODE</span> = booleanPreferencesKey(<span class="tk-str">&quot;dark_mode&quot;</span>)
+
+<span class="tk-com">// 1) Cài đặt nhỏ -&gt; DataStore</span>
+<span class="tk-kw">fun</span> darkMode(context: <span class="tk-type">Context</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">Boolean</span>&gt; =
+  context.dataStore.<span class="tk-kw">data</span>.map { it[<span class="tk-type">DARK_MODE</span>] ?: <span class="tk-kw">false</span> }
+
+<span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> setDarkMode(context: <span class="tk-type">Context</span>, enabled: <span class="tk-type">Boolean</span>) {
+  context.dataStore.edit { it[<span class="tk-type">DARK_MODE</span>] = enabled }
+}
+
+<span class="tk-com">// 2) File lớn -&gt; thư mục riêng của app (gọi ngoài main thread)</span>
+<span class="tk-type">File</span>(context.filesDir, <span class="tk-str">&quot;report.json&quot;</span>).writeText(json)
+
+<span class="tk-com">// 3) Dữ liệu có cấu trúc, cần truy vấn -&gt; Room</span>
+<span class="tk-ann">@Entity</span>(tableName = <span class="tk-str">&quot;orders&quot;</span>)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">OrderEntity</span>(<span class="tk-ann">@PrimaryKey</span> <span class="tk-kw">val</span> id: <span class="tk-type">Long</span>, <span class="tk-kw">val</span> total: <span class="tk-type">Int</span>, <span class="tk-kw">val</span> status: <span class="tk-type">String</span>)
+
+<span class="tk-ann">@Dao</span>
+<span class="tk-kw">interface</span> <span class="tk-type">OrderDao</span> {
+  <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;SELECT * FROM orders WHERE status = :status ORDER BY id DESC&quot;</span>)
+  <span class="tk-kw">fun</span> observeByStatus(status: <span class="tk-type">String</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;&gt;
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q42.html">Khai báo một API bằng Retrofit thế nào (<code>@GET</code>, <code>@Path</code>, <code>@Query</code>, <code>@POST</code> với <code>@Body</code>)? Converter dùng để làm gì, và JSON được parse thành data class ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Retrofit biến một interface thành HTTP client: mỗi hàm là một endpoint. <code>@GET(&quot;users/{id}&quot;)</code> cho biết method HTTP và đường dẫn tương đối so với <code>baseUrl</code> (nên kết thúc bằng dấu <code>/</code>); <code>@Path</code> điền vào <code>{id}</code>, <code>@Query</code> thành <code>?page=1</code>, <code>@Body</code> gửi một object làm body cho <code>@POST</code>/<code>@PUT</code>, <code>@Header</code> thêm header. Retrofit chỉ lo phần gọi HTTP, việc đổi JSON thành object (và ngược lại) là của converter: <code>GsonConverterFactory</code>, Moshi hoặc kotlinx.serialization, và phải <code>addConverterFactory</code> khi build, thiếu thì báo lỗi không biết chuyển <code>@Body</code>/kiểu trả về. Tên field trong data class phải khớp key JSON, khác thì ánh xạ bằng <code>@SerializedName</code>, <code>@Json(name = ...)</code> hoặc <code>@SerialName</code>. Với hàm <code>suspend</code>, Retrofit trả thẳng body và ném <code>HttpException</code> khi server trả 4xx/5xx, <code>IOException</code> khi mất mạng. Lưu ý: Gson không biết null safety của Kotlin, field thiếu trong JSON có thể thành null dù khai báo non-null, trong khi Moshi và kotlinx.serialization chặt hơn.</div>
+        <pre class="code-block"><code><span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">UserDto</span>(
+  <span class="tk-kw">val</span> id: <span class="tk-type">Int</span>,
+  <span class="tk-kw">val</span> name: <span class="tk-type">String</span>,
+  <span class="tk-ann">@SerializedName</span>(<span class="tk-str">&quot;avatar_url&quot;</span>) <span class="tk-kw">val</span> avatarUrl: <span class="tk-type">String</span>?, <span class="tk-com">// key JSON khác tên field</span>
+)
+
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">CreateUserRequest</span>(<span class="tk-kw">val</span> name: <span class="tk-type">String</span>)
+
+<span class="tk-kw">interface</span> <span class="tk-type">UserApi</span> {
+  <span class="tk-ann">@GET</span>(<span class="tk-str">&quot;users/{id}&quot;</span>)
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> getUser(<span class="tk-ann">@Path</span>(<span class="tk-str">&quot;id&quot;</span>) id: <span class="tk-type">Int</span>): <span class="tk-type">UserDto</span>                        <span class="tk-com">// GET users/42</span>
+
+  <span class="tk-ann">@GET</span>(<span class="tk-str">&quot;users&quot;</span>)
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> searchUsers(<span class="tk-ann">@Query</span>(<span class="tk-str">&quot;q&quot;</span>) keyword: <span class="tk-type">String</span>): <span class="tk-type">List</span>&lt;<span class="tk-type">UserDto</span>&gt;      <span class="tk-com">// GET users?q=an</span>
+
+  <span class="tk-ann">@POST</span>(<span class="tk-str">&quot;users&quot;</span>)
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> createUser(<span class="tk-ann">@Body</span> request: <span class="tk-type">CreateUserRequest</span>): <span class="tk-type">UserDto</span>        <span class="tk-com">// body được converter đổi sang JSON</span>
+}
+
+<span class="tk-kw">val</span> api: <span class="tk-type">UserApi</span> = <span class="tk-type">Retrofit</span>.<span class="tk-type">Builder</span>()
+  .baseUrl(<span class="tk-str">&quot;https://api.example.com/&quot;</span>)                  <span class="tk-com">// phải kết thúc bằng &quot;/&quot;</span>
+  .addConverterFactory(<span class="tk-type">GsonConverterFactory</span>.create())   <span class="tk-com">// JSON &lt;-&gt; object</span>
+  .build()
+  .create(<span class="tk-type">UserApi</span>::<span class="tk-kw">class</span>.java)</code></pre>
         
       </div>
     </details>
@@ -831,6 +1097,147 @@ startActivity(<span class="tk-type">Intent</span>(<span class="tk-kw">this</span
 <span class="tk-kw">if</span> (<span class="tk-type">Build</span>.<span class="tk-type">VERSION</span>.<span class="tk-type">SDK_INT</span> &gt;= <span class="tk-type">Build</span>.<span class="tk-type">VERSION_CODES</span>.<span class="tk-type">TIRAMISU</span>) {
   requestPermissions(arrayOf(<span class="tk-type">Manifest</span>.permission.<span class="tk-type">POST_NOTIFICATIONS</span>), <span class="tk-num">0</span>)
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q46.html">Gradle làm gì trong một dự án Android? <code>build.gradle.kts</code> cấp project và cấp module khác nhau thế nào, <code>implementation</code> nghĩa là gì, và khi &quot;Gradle sync failed&quot; hoặc lỗi dependency thì bạn xem gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gradle là công cụ build: tải dependency, biên dịch, rồi đóng gói APK/AAB thông qua Android Gradle Plugin (AGP). <code>settings.gradle.kts</code> khai báo các module (<code>include(&quot;:app&quot;)</code>) và repository tải plugin/thư viện (<code>google()</code>, <code>mavenCentral()</code>). <code>build.gradle.kts</code> cấp project chủ yếu khai báo plugin dùng chung (thường kèm <code>apply false</code>); <code>app/build.gradle.kts</code> cấp module chứa khối <code>android { }</code> (namespace, compileSdk, buildTypes) và <code>dependencies { }</code>. <code>implementation(&quot;group:artifact:version&quot;)</code> thêm thư viện cho module hiện tại mà không lộ ra module khác phụ thuộc vào nó; <code>testImplementation</code> và <code>androidTestImplementation</code> chỉ dùng cho test. Version nên gom vào Version Catalog (<code>libs.versions.toml</code>). Gradle sync đọc các file cấu hình để IDE hiểu dự án nên phải sync lại sau mỗi lần sửa. Khi lỗi, đọc thông báo lỗi đầu tiên trong tab Build chứ không phải dòng cuối: <code>Could not resolve ...</code> thường do sai tên hoặc version, thiếu repository, mất mạng hay proxy; <code>Duplicate class</code> là hai thư viện kéo cùng một class; lỗi <code>Unsupported</code>/<code>requires Gradle ...</code> là Gradle, AGP và JDK không khớp. Thêm <code>--stacktrace</code> hoặc chạy <code>./gradlew app:dependencies</code> để xem cây phụ thuộc; xoá cache là biện pháp cuối cùng.</div>
+        <pre class="code-block"><code><span class="tk-com">// build.gradle.kts (cấp project): chỉ khai báo plugin, chưa áp dụng</span>
+plugins {
+  id(<span class="tk-str">&quot;com.android.application&quot;</span>) version <span class="tk-str">&quot;8.7.3&quot;</span> apply <span class="tk-kw">false</span>
+  id(<span class="tk-str">&quot;org.jetbrains.kotlin.android&quot;</span>) version <span class="tk-str">&quot;2.1.0&quot;</span> apply <span class="tk-kw">false</span>
+}
+
+<span class="tk-com">// settings.gradle.kts</span>
+dependencyResolutionManagement {
+  repositories { google(); mavenCentral() }   <span class="tk-com">// thiếu repository -&gt; &quot;Could not resolve&quot;</span>
+}
+include(<span class="tk-str">&quot;:app&quot;</span>)
+
+<span class="tk-com">// app/build.gradle.kts (cấp module)</span>
+plugins {
+  id(<span class="tk-str">&quot;com.android.application&quot;</span>)
+  id(<span class="tk-str">&quot;org.jetbrains.kotlin.android&quot;</span>)
+}
+
+dependencies {
+  implementation(<span class="tk-str">&quot;androidx.core:core-ktx:1.15.0&quot;</span>)  <span class="tk-com">// dùng trong module này, không lộ ra module khác</span>
+  testImplementation(<span class="tk-str">&quot;junit:junit:4.13.2&quot;</span>)         <span class="tk-com">// chỉ cho src/test</span>
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="testing">
+  <div class="section-head"><h2>Testing &amp; CI/CD</h2><a class="section-sub" href="../../../phong-van/android/chu-de/testing/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q43.html">App crash trên máy test. Bạn đọc Logcat và stack trace để tìm nguyên nhân thế nào? Các mức log khác nhau ra sao và lọc log thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mở Logcat trong Android Studio, chọn đúng thiết bị và lọc theo app (<code>package:mine</code>), để mức <code>level:error</code> cho gọn. Tìm dòng <code>FATAL EXCEPTION</code>: ngay dưới là loại exception cùng message (<code>NullPointerException</code>, <code>IllegalStateException</code>...) rồi stack trace. Cách đọc: đi từ trên xuống, bỏ qua các dòng của framework (<code>android.*</code>, <code>androidx.*</code>, <code>kotlinx.*</code>) và tìm dòng đầu tiên thuộc package của mình (ví dụ <code>MainActivity.onCreate(MainActivity.kt:27)</code>): đó là chỗ cần mở. Luôn kéo xuống xem <code>Caused by:</code> cuối cùng vì nguyên nhân gốc thường nằm ở đó, exception ngoài cùng chỉ là lớp bọc (ví dụ <code>Unable to start activity</code>). Các mức log tăng dần: <code>Log.v</code> (Verbose), <code>d</code> (Debug), <code>i</code> (Info), <code>w</code> (Warn), <code>e</code> (Error); lọc thêm theo <code>tag:</code> hoặc từ khoá. Khi chỉ đọc log chưa đủ, đặt breakpoint ở lề dòng code, chạy bằng Debug, rồi xem giá trị biến, Step Over/Step Into và Evaluate Expression thay vì đoán. Bẫy: log token, mật khẩu hay dữ liệu cá nhân (log có thể lộ qua adb hoặc bug report), và nuốt exception bằng <code>catch</code> rỗng khiến không còn gì để đọc.</div>
+        <pre class="code-block"><code><span class="tk-com">// Stack trace trong Logcat (rút gọn):</span>
+<span class="tk-com">// FATAL EXCEPTION: main</span>
+<span class="tk-com">// java.lang.RuntimeException: Unable to start activity ComponentInfo{com.example.shop/com.example.shop.MainActivity}</span>
+<span class="tk-com">//     at android.app.ActivityThread.performLaunchActivity(...)      &lt;- framework, bỏ qua</span>
+<span class="tk-com">// Caused by: java.lang.NullPointerException: Attempt to invoke virtual method &#39;void android.widget.TextView.setText(...)&#39; on a null object reference</span>
+<span class="tk-com">//     at com.example.shop.MainActivity.onCreate(MainActivity.kt:27) &lt;- dòng đầu tiên của app: mở dòng này</span>
+
+<span class="tk-kw">private</span> <span class="tk-kw">const</span> <span class="tk-kw">val</span> <span class="tk-type">TAG</span> = <span class="tk-str">&quot;MainActivity&quot;</span>
+
+<span class="tk-type">Log</span>.d(<span class="tk-type">TAG</span>, <span class="tk-str">&quot;Đã tải ${items.size} sản phẩm&quot;</span>)       <span class="tk-com">// thông tin phục vụ debug</span>
+<span class="tk-type">Log</span>.e(<span class="tk-type">TAG</span>, <span class="tk-str">&quot;Tải đơn hàng thất bại&quot;</span>, exception)    <span class="tk-com">// truyền cả exception để in stack trace</span>
+<span class="tk-com">// Lọc trong Logcat: package:mine level:error   hoặc   tag:MainActivity</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q44.html">Unit test là gì? Viết test JUnit cho một hàm tính tiền thế nào, và vì sao hàm thuần (pure function) dễ test hơn code gắn với <code>Activity</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Unit test kiểm tra một đơn vị nhỏ (một hàm, một class) một cách tự động, chạy nhanh và độc lập. Test đặt ở <code>src/test</code> chạy trực tiếp trên JVM của máy dev nên không cần máy ảo; còn <code>src/androidTest</code> (instrumented test) chạy trên thiết bị hoặc emulator, dùng cho thứ cần Android thật như UI hay database. Với JUnit, <code>@Test</code> đánh dấu một test, <code>assertEquals(expected, actual)</code> so sánh kết quả (giá trị mong đợi đứng trước), <code>@Before</code> chuẩn bị dữ liệu chung. Mỗi test nên theo mẫu Arrange–Act–Assert, kiểm một điều và đặt tên mô tả hành vi, đồng thời phải thử cả trường hợp biên (rỗng, 0, giá trị âm), không chỉ đường chạy đẹp. Hàm thuần có kết quả chỉ phụ thuộc đầu vào, không đụng <code>Context</code>, UI, mạng hay thời gian, nên chỉ cần gọi và so sánh; logic nằm trong Activity thì phải dựng cả framework mới test được, đó là lý do nên tách logic ra class riêng. Bẫy: test JVM mà gọi <code>Log.d</code> hay API của framework thường lỗi <code>Method ... not mocked</code>.</div>
+        <pre class="code-block"><code><span class="tk-com">// src/main: hàm thuần, kết quả chỉ phụ thuộc đầu vào</span>
+<span class="tk-kw">fun</span> calculateTotal(prices: <span class="tk-type">List</span>&lt;<span class="tk-type">Int</span>&gt;, discountPercent: <span class="tk-type">Int</span>): <span class="tk-type">Int</span> {
+  require(discountPercent <span class="tk-kw">in</span> <span class="tk-num">0</span>..<span class="tk-num">100</span>) { <span class="tk-str">&quot;Giảm giá phải từ 0 đến 100&quot;</span> }
+  <span class="tk-kw">val</span> sum = prices.sum()
+  <span class="tk-kw">return</span> sum - sum * discountPercent / <span class="tk-num">100</span>
+}
+
+<span class="tk-com">// src/test: chạy trên JVM của máy dev, không cần emulator</span>
+<span class="tk-kw">class</span> <span class="tk-type">PriceCalculatorTest</span> {
+  <span class="tk-ann">@Test</span>
+  <span class="tk-kw">fun</span> <span class="tk-str">`giảm 10 phần trăm cho đơn 200`</span>() {
+    assertEquals(<span class="tk-num">180</span>, calculateTotal(listOf(<span class="tk-num">100</span>, <span class="tk-num">100</span>), <span class="tk-num">10</span>))
+  }
+
+  <span class="tk-ann">@Test</span>
+  <span class="tk-kw">fun</span> <span class="tk-str">`giỏ rỗng thì tổng bằng 0`</span>() {
+    assertEquals(<span class="tk-num">0</span>, calculateTotal(emptyList(), <span class="tk-num">50</span>))
+  }
+
+  <span class="tk-ann">@Test</span>(expected = <span class="tk-type">IllegalArgumentException</span>::<span class="tk-kw">class</span>)
+  <span class="tk-kw">fun</span> <span class="tk-str">`giảm giá ngoài khoảng cho phép thì ném lỗi`</span>() {
+    calculateTotal(listOf(<span class="tk-num">100</span>), <span class="tk-num">120</span>)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="security">
+  <div class="section-head"><h2>Security</h2><a class="section-sub" href="../../../phong-van/android/chu-de/security/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q45.html">Sandbox của app Android là gì? Internal storage và external storage khác nhau thế nào, permission &quot;normal&quot; khác &quot;dangerous&quot; ra sao, và xin quyền lúc chạy cần lưu ý gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi app chạy trong process riêng với Linux user id riêng (sandbox), nên app khác không đọc được dữ liệu của bạn trừ khi bạn chủ động chia sẻ qua <code>ContentProvider</code> hay Intent. Internal storage (<code>filesDir</code>, <code>cacheDir</code>, database, DataStore) là riêng tư và bị xoá khi gỡ app. External storage thì người dùng hoặc app khác có thể truy cập: thư mục riêng của app trên external (<code>getExternalFilesDir</code>) không cần xin quyền, còn vùng chung như ảnh hay Downloads chịu scoped storage từ Android 10, nên dùng Photo Picker, MediaStore hoặc Storage Access Framework thay vì xin quyền đọc toàn bộ. Permission normal (<code>INTERNET</code>, <code>VIBRATE</code>...) tự được cấp khi cài, chỉ cần khai báo trong manifest. Permission dangerous (<code>CAMERA</code>, <code>ACCESS_FINE_LOCATION</code>, <code>READ_CONTACTS</code>, <code>POST_NOTIFICATIONS</code> từ API 33) phải khai báo và xin lúc chạy; người dùng có thể từ chối hoặc thu hồi bất cứ lúc nào, nên kiểm tra quyền trước mỗi lần dùng và xử lý trường hợp bị từ chối mà không crash. Chỉ xin quyền khi tính năng cần, kèm giải thích. Không lưu mật khẩu hay token dạng plain text và không log dữ liệu nhạy cảm.</div>
+        <pre class="code-block"><code><span class="tk-com">// Internal storage: riêng tư, app khác không đọc được</span>
+<span class="tk-kw">val</span> file = <span class="tk-type">File</span>(filesDir, <span class="tk-str">&quot;profile.json&quot;</span>)
+
+<span class="tk-com">// External riêng của app: không cần xin quyền, vẫn bị xoá khi gỡ app</span>
+<span class="tk-kw">val</span> photoDir = getExternalFilesDir(<span class="tk-type">Environment</span>.<span class="tk-type">DIRECTORY_PICTURES</span>)
+
+<span class="tk-com">// Quyền dangerous: khai báo trong manifest, rồi xin lúc chạy</span>
+<span class="tk-kw">private</span> <span class="tk-kw">val</span> requestCamera =
+  registerForActivityResult(<span class="tk-type">ActivityResultContracts</span>.<span class="tk-type">RequestPermission</span>()) { granted -&gt;
+    <span class="tk-kw">if</span> (granted) openCamera() <span class="tk-kw">else</span> showCameraDeniedMessage()   <span class="tk-com">// bị từ chối vẫn phải chạy được</span>
+  }
+
+<span class="tk-kw">fun</span> onTakePhotoClicked() {
+  <span class="tk-kw">val</span> granted = <span class="tk-type">ContextCompat</span>.checkSelfPermission(<span class="tk-kw">this</span>, <span class="tk-type">Manifest</span>.permission.<span class="tk-type">CAMERA</span>) ==
+    <span class="tk-type">PackageManager</span>.<span class="tk-type">PERMISSION_GRANTED</span>
+  <span class="tk-kw">if</span> (granted) openCamera() <span class="tk-kw">else</span> requestCamera.launch(<span class="tk-type">Manifest</span>.permission.<span class="tk-type">CAMERA</span>)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/android/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q50.html">Khi bạn kẹt với một bug mấy tiếng vẫn chưa ra nguyên nhân, bạn làm gì? Khi nào thì hỏi người khác, và hỏi thế nào cho đúng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Câu này nhà tuyển dụng muốn xem quy trình và thái độ, nên trả lời có thứ tự và nêu một ví dụ thật. Trước hết tái hiện lỗi ổn định rồi thu hẹp phạm vi: tắt bớt đoạn code, so với commit còn chạy tốt (<code>git bisect</code> hoặc <code>git stash</code>), dựng project nhỏ để cô lập. Tiếp theo đọc kỹ lỗi (Logcat, <code>Caused by</code>, dòng đầu tiên thuộc code của mình), dùng debugger hoặc log để kiểm tra giả định thay vì đoán, rồi tra tài liệu chính thức, issue tracker của thư viện hay Stack Overflow bằng đúng thông báo lỗi. Đặt mốc thời gian, ví dụ khoảng 30 đến 60 phút không tiến triển thì hỏi mentor hoặc đồng nghiệp, vì kẹt cả ngày trong im lặng tốn hơn nhiều so với việc hỏi. Câu hỏi tốt nêu mục tiêu, kết quả mong đợi so với thực tế, các bước đã thử, kèm stack trace và nhánh để họ chạy lại được; không chỉ nói &quot;app em bị lỗi&quot;. Có thể dùng AI để gợi ý, nhưng phải hiểu và kiểm chứng trước khi dán vào. Cuối cùng ghi lại nguyên nhân, thêm test hoặc ghi chú để lỗi không lặp lại và chia sẻ với team. Tránh: sửa mò, copy fix mà không hiểu, hoặc giấu việc đang bị kẹt.</div>
+        
         
       </div>
     </details>

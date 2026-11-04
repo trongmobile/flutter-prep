@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Middle (37 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="37 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
+<title>Câu hỏi phỏng vấn Android Middle (50 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle (37 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="37 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle (50 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · android · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Middle</h1>
-  <p class="subtitle">Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testing. Gồm 37 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/android/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -62,18 +62,21 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#kotlin">Kotlin</a> <span class="count">2</span></li>
+    <li><a href="#kotlin">Kotlin</a> <span class="count">3</span></li>
     <li><a href="#java">Java &amp; JVM</a> <span class="count">3</span></li>
     <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">7</span></li>
-    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">2</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">6</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
+    <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">3</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">7</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">4</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">6</span></li>
     <li><a href="#background">Background &amp; Service</a> <span class="count">3</span></li>
     <li><a href="#build">Gradle &amp; Build</a> <span class="count">1</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">1</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">4</span></li>
-    <li><a href="#security">Security</a> <span class="count">1</span></li>
+    <li><a href="#security">Security</a> <span class="count">2</span></li>
+    <li><a href="#design">System Design</a> <span class="count">2</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
     <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
   </ul>
 </nav>
@@ -106,6 +109,33 @@
         <div class="answer-text"><code>List&lt;out E&gt;</code> của Kotlin là covariant: nó chỉ trả <code>E</code> ra chứ không nhận <code>E</code> vào, nên coi <code>List&lt;Cat&gt;</code> là <code>List&lt;Animal&gt;</code> là an toàn. <code>MutableList&lt;E&gt;</code> là invariant vì vừa đọc vừa ghi: nếu cho phép, hàm nhận <code>MutableList&lt;Animal&gt;</code> có thể <code>add(Dog())</code> vào list mèo và phá vỡ type safety. Ở chỗ dùng có thể khai báo use-site variance: <code>MutableList&lt;out Animal&gt;</code> khi chỉ đọc (producer), <code>MutableList&lt;in Cat&gt;</code> khi chỉ ghi vào (consumer), tương ứng quy tắc PECS <code>? extends</code>/<code>? super</code> của Java. Khi tự viết class, khai báo <code>interface Source&lt;out T&gt;</code> ở declaration site, và compiler sẽ kiểm tra <code>T</code> không xuất hiện ở vị trí tham số đầu vào.</div>
         
         
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q44.html">Review code thấy <code>val formatter by lazy { ... }</code> được đọc từ nhiều thread, chỗ khác dùng <code>Delegates.observable</code>, và đồng nghiệp thắc mắc <code>by viewModels()</code> thực chất là gì. Hãy giải thích cơ chế property delegation <code>by</code>, các <code>LazyThreadSafetyMode</code> và cách tự viết một delegate.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>by</code> chuyển <code>get</code>/<code>set</code> của property sang một object delegate: compiler sinh accessor gọi <code>getValue(thisRef, property)</code> và <code>setValue(...)</code>, bạn cung cấp hai hàm <code>operator</code> này hoặc implement <code>ReadOnlyProperty</code>/<code>ReadWriteProperty</code>. <code>lazy</code> có ba chế độ: mặc định <code>SYNCHRONIZED</code> (có khoá, initializer chạy tối đa một lần dù nhiều thread, an toàn nhưng tốn chi phí khoá); <code>PUBLICATION</code> (nhiều thread có thể cùng chạy initializer, chỉ giá trị đầu tiên được giữ, nên initializer phải idempotent); <code>NONE</code> (không đồng bộ, nhanh nhất, chỉ dùng khi chắc chắn một thread, như trong Activity/Fragment trên main thread). Nếu initializer ném lỗi, lần truy cập sau chạy lại chứ không cache lỗi. <code>Delegates.observable</code> gọi callback sau khi đã gán giá trị mới; <code>Delegates.vetoable</code> gọi trước và trả <code>false</code> thì từ chối gán. <code>by viewModels()</code> là một hàm trả về <code>Lazy&lt;VM&gt;</code>, và <code>Lazy</code> có sẵn extension <code>getValue</code> nên dùng được với <code>by</code>; ViewModel chỉ được tạo ở lần truy cập đầu tiên, nên truy cập quá sớm (Fragment chưa attach) sẽ lỗi. Tự viết delegate rất hợp để gói việc đọc/ghi <code>SharedPreferences</code> hay lấy argument của Intent. Bẫy: delegate không tự thread-safe, và mỗi property dùng delegate là thêm một object giữ state.</div>
+        <pre class="code-block"><code><span class="tk-kw">private</span> <span class="tk-kw">val</span> formatter <span class="tk-kw">by</span> lazy(<span class="tk-type">LazyThreadSafetyMode</span>.<span class="tk-type">NONE</span>) {
+  <span class="tk-type">NumberFormat</span>.getCurrencyInstance(<span class="tk-type">Locale</span>(<span class="tk-str">&quot;vi&quot;</span>, <span class="tk-str">&quot;VN&quot;</span>)) <span class="tk-com">// chỉ dùng trên main thread</span>
+}
+
+<span class="tk-kw">var</span> retryCount <span class="tk-kw">by</span> <span class="tk-type">Delegates</span>.vetoable(<span class="tk-num">0</span>) { _, _, new -&gt; new <span class="tk-kw">in</span> <span class="tk-num">0</span>..<span class="tk-num">3</span> } <span class="tk-com">// gán 4 bị từ chối</span>
+
+<span class="tk-com">// Delegate tự viết: property đọc/ghi thẳng vào SharedPreferences</span>
+<span class="tk-kw">fun</span> <span class="tk-type">SharedPreferences</span>.boolean(key: <span class="tk-type">String</span>, default: <span class="tk-type">Boolean</span>) =
+  <span class="tk-kw">object</span> : <span class="tk-type">ReadWriteProperty</span>&lt;<span class="tk-type">Any</span>?, <span class="tk-type">Boolean</span>&gt; {
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> getValue(thisRef: <span class="tk-type">Any</span>?, property: <span class="tk-type">KProperty</span>&lt;*&gt;) = getBoolean(key, default)
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> setValue(thisRef: <span class="tk-type">Any</span>?, property: <span class="tk-type">KProperty</span>&lt;*&gt;, <span class="tk-kw">value</span>: <span class="tk-type">Boolean</span>) =
+      edit { putBoolean(key, <span class="tk-kw">value</span>) }
+  }
+
+<span class="tk-kw">class</span> <span class="tk-type">Settings</span>(prefs: <span class="tk-type">SharedPreferences</span>) {
+  <span class="tk-kw">var</span> darkMode <span class="tk-kw">by</span> prefs.boolean(<span class="tk-str">&quot;dark_mode&quot;</span>, <span class="tk-kw">false</span>)
+}</code></pre>
+        <p class="doc-link"><a href="https://kotlinlang.org/docs/delegated-properties.html" target="_blank" rel="noopener">Đọc thêm trong tài liệu · kotlinlang.org ↗</a></p>
       </div>
     </details>
     </li>
@@ -368,6 +398,41 @@
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q47.html">Bạn cần (1) tự dừng và chạy lại listener vị trí theo vòng đời màn hình mà không rải code vào <code>onStart</code>/<code>onStop</code> của từng Activity, và (2) biết cả app vừa vào nền hay vừa trở lại foreground để khoá app hoặc gửi analytics. Dùng <code>DefaultLifecycleObserver</code>, <code>LifecycleEventObserver</code> và <code>ProcessLifecycleOwner</code> thế nào, bẫy gì cần tránh?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với (1), đóng gói thành một class tự quản vòng đời: implement <code>DefaultLifecycleObserver</code> (ghi đè các callback cần như <code>onStart(owner)</code>, <code>onStop(owner)</code>; cách này thay thế <code>@OnLifecycleEvent</code> đã deprecated) rồi đăng ký bằng <code>lifecycle.addObserver(...)</code>. Activity chỉ việc tạo object. <code>LifecycleEventObserver</code> nhận một hàm <code>onStateChanged(source, event)</code>, tiện khi muốn xử lý bằng <code>when(event)</code>; trong Compose có <code>LifecycleEventEffect</code> và <code>LifecycleResumeEffect</code>. Chọn đúng cặp sự kiện: <code>STARTED/STOPPED</code> cho thứ cần khi màn hiển thị (location, listener UI), <code>RESUMED/PAUSED</code> cho thứ cần khi người dùng đang tương tác (camera). Observer được gỡ khi owner bị huỷ nên không leak owner, nhưng nếu observer giữ <code>Context</code> của Activity mà sống lâu hơn thì vẫn leak, nên dùng <code>applicationContext</code>. Với (2), <code>ProcessLifecycleOwner.get().lifecycle</code> là lifecycle của cả process: <code>ON_START</code> khi Activity đầu tiên started, còn <code>ON_STOP</code> chỉ phát sau khi Activity cuối cùng đã stop, kèm độ trễ khoảng 700ms để không nhấp nháy khi xoay màn hình hay chuyển Activity. <code>ON_CREATE</code> chỉ phát một lần và <code>ON_DESTROY</code> không bao giờ được phát. Đăng ký trong <code>Application.onCreate()</code>. Bẫy: <code>ON_STOP</code> không bảo đảm app còn sống để ghi dữ liệu, việc cần chắc chắn hãy lưu sớm hoặc giao cho WorkManager; và đừng dùng nó thay cho service để chạy nền.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">LocationTracker</span>(
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> client: <span class="tk-type">FusedLocationProviderClient</span>,
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> request: <span class="tk-type">LocationRequest</span>,
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> callback: <span class="tk-type">LocationCallback</span>,
+) : <span class="tk-type">DefaultLifecycleObserver</span> {
+  <span class="tk-com">// Đã kiểm tra quyền vị trí ở nơi khởi tạo</span>
+  <span class="tk-ann">@SuppressLint</span>(<span class="tk-str">&quot;MissingPermission&quot;</span>)
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStart(owner: <span class="tk-type">LifecycleOwner</span>) {
+    client.requestLocationUpdates(request, callback, <span class="tk-type">Looper</span>.getMainLooper())
+  }
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStop(owner: <span class="tk-type">LifecycleOwner</span>) {
+    client.removeLocationUpdates(callback)
+  }
+}
+<span class="tk-com">// Activity: lifecycle.addObserver(LocationTracker(client, request, callback))</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">App</span> : <span class="tk-type">Application</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreate() {
+    <span class="tk-kw">super</span>.onCreate()
+    <span class="tk-type">ProcessLifecycleOwner</span>.<span class="tk-kw">get</span>().lifecycle.addObserver(<span class="tk-kw">object</span> : <span class="tk-type">DefaultLifecycleObserver</span> {
+      <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStart(owner: <span class="tk-type">LifecycleOwner</span>) = sessionLock.onForeground()
+      <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onStop(owner: <span class="tk-type">LifecycleOwner</span>) = sessionLock.onBackground() <span class="tk-com">// sau Activity cuối + ~700ms</span>
+    })
+  }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/reference/androidx/lifecycle/ProcessLifecycleOwner" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="ui">
@@ -511,6 +576,36 @@
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q46.html">App có 40 màn XML, bạn muốn viết màn mới bằng Compose và nhúng dần: một Fragment XML chứa <code>ComposeView</code>, một item của RecyclerView là composable, và ngược lại một màn Compose cần nhúng <code>WebView</code>. Các cách interop là gì và có những bẫy nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Có hai chiều. View trong Compose: <code>AndroidView(factory, update, onRelease)</code>; <code>factory</code> chạy một lần để tạo view, <code>update</code> chạy lại khi state mà nó đọc đổi (nơi đẩy dữ liệu mới vào view mà không tạo lại view), <code>onRelease</code> để dọn tài nguyên như <code>WebView.destroy()</code>. View có vòng đời riêng nên MapView hay player phải tự nối lifecycle (<code>DisposableEffect</code> kèm <code>LifecycleEventObserver</code>). Compose trong View: <code>ComposeView</code> đặt trong XML hoặc tạo bằng code với <code>setContent</code>. Quan trọng nhất là <code>ViewCompositionStrategy</code>, quyết định khi nào composition bị huỷ. Mặc định là <code>DisposeOnDetachedFromWindowOrReleasedFromPool</code>, phù hợp cho item RecyclerView vì view bị tái sử dụng. Mặc định composition bị huỷ mỗi khi view detach khỏi window, nên khi nhúng dần vào app cũ có thể mất state <code>remember</code>; trong Fragment hãy dùng <code>DisposeOnViewTreeLifecycleDestroyed</code> để composition gắn với vòng đời view của Fragment. Các bẫy khác: mỗi <code>ComposeView</code> cần <code>android:id</code> duy nhất để <code>rememberSaveable</code> khôi phục đúng; theme XML và theme Compose là hai hệ thống nên phải bọc <code>AppTheme</code> trong từng <code>setContent</code>; đừng lồng <code>LazyColumn</code> vào view cuộn dọc cùng hướng (chiều cao vô hạn gây crash). Chiến lược migrate: bắt đầu từ các màn lá, giữ nguyên ViewModel và <code>StateFlow</code> để chỉ đổi lớp UI, giữ Navigation Fragment cho đến khi đa số màn đã là Compose rồi mới chuyển navigation.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ProfileFragment</span> : <span class="tk-type">Fragment</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> viewModel: <span class="tk-type">ProfileViewModel</span> <span class="tk-kw">by</span> viewModels()
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onCreateView(inflater: <span class="tk-type">LayoutInflater</span>, container: <span class="tk-type">ViewGroup</span>?, state: <span class="tk-type">Bundle</span>?) =
+    <span class="tk-type">ComposeView</span>(requireContext()).apply {
+      <span class="tk-com">// View của Fragment bị huỷ trước Fragment: gắn composition theo lifecycle của view</span>
+      setViewCompositionStrategy(<span class="tk-type">ViewCompositionStrategy</span>.<span class="tk-type">DisposeOnViewTreeLifecycleDestroyed</span>)
+      setContent { <span class="tk-type">AppTheme</span> { <span class="tk-type">ProfileScreen</span>(viewModel) } }
+    }
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">WebPage</span>(url: <span class="tk-type">String</span>, modifier: <span class="tk-type">Modifier</span> = <span class="tk-type">Modifier</span>) {
+  <span class="tk-type">AndroidView</span>(
+    modifier = modifier,
+    factory = { context -&gt; <span class="tk-type">WebView</span>(context) },   <span class="tk-com">// tạo một lần</span>
+    update = { webView -&gt; webView.loadUrl(url) }, <span class="tk-com">// chạy lại khi url đổi</span>
+    onRelease = { webView -&gt; webView.destroy() },
+  )
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/jetpack/compose/migrate/interoperability-apis/compose-in-views" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -531,6 +626,40 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
   <span class="tk-type">OrderDetailScreen</span>()
 }</code></pre>
         <p class="doc-link"><a href="https://developer.android.com/training/app-links" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q43.html">Luồng checkout có 3 màn (địa chỉ, vận chuyển, xác nhận) dùng Navigation Compose, cả ba cần chung một state, và khi thoát luồng (hoàn tất hoặc Back về giỏ hàng) thì state phải bị xoá. ViewModel dùng chung nên đặt scope ở đâu, và nó bị huỷ khi nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">ViewModel gắn với <code>ViewModelStoreOwner</code> mà bạn truyền vào. Mặc định <code>viewModel()</code>/<code>hiltViewModel()</code> trong một destination dùng <code>NavBackStackEntry</code> của chính destination đó: ViewModel được giữ qua xoay máy và chỉ bị huỷ khi entry bị pop khỏi back stack, chứ không phải khi composable rời composition. Vì thế mỗi màn sẽ có một ViewModel riêng, không chia sẻ được. Cách đúng là gom ba màn vào một nested graph rồi lấy ViewModel theo entry của graph cha: <code>navController.getBackStackEntry&lt;CheckoutGraph&gt;()</code> rồi <code>hiltViewModel(graphEntry)</code>. ViewModel này sống đến khi cả graph bị pop khỏi back stack, tức là đúng lúc kết thúc luồng; hoàn tất đơn thì <code>navigate(Done) { popUpTo&lt;CheckoutGraph&gt; { inclusive = true } }</code> để dọn state. Bẫy: bọc lời gọi <code>getBackStackEntry</code> trong <code>remember(entry)</code>, vì khi entry hiện tại đang chạy animation thoát và graph đã bị pop thì gọi trực tiếp sẽ ném <code>IllegalArgumentException</code>. Đừng dùng ViewModel scope theo Activity cho việc này: nó sống suốt Activity nên state cũ dính sang lần checkout kế tiếp. Chỉ những thứ cần chia sẻ trong luồng mới đặt ở đây; dữ liệu của riêng một màn vẫn dùng ViewModel của màn đó.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Serializable</span> <span class="tk-kw">object</span> <span class="tk-type">CheckoutGraph</span>
+<span class="tk-ann">@Serializable</span> <span class="tk-kw">object</span> <span class="tk-type">AddressStep</span>
+<span class="tk-ann">@Serializable</span> <span class="tk-kw">object</span> <span class="tk-type">ShippingStep</span>
+
+<span class="tk-type">NavHost</span>(navController, startDestination = <span class="tk-type">Cart</span>) {
+  navigation&lt;<span class="tk-type">CheckoutGraph</span>&gt;(startDestination = <span class="tk-type">AddressStep</span>) {
+    composable&lt;<span class="tk-type">AddressStep</span>&gt; { entry -&gt;
+      <span class="tk-type">AddressScreen</span>(
+        viewModel = checkoutViewModel(navController, entry),
+        onNext = { navController.navigate(<span class="tk-type">ShippingStep</span>) },
+      )
+    }
+    composable&lt;<span class="tk-type">ShippingStep</span>&gt; { entry -&gt;
+      <span class="tk-type">ShippingScreen</span>(viewModel = checkoutViewModel(navController, entry))
+    }
+  }
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">private</span> <span class="tk-kw">fun</span> checkoutViewModel(navController: <span class="tk-type">NavController</span>, entry: <span class="tk-type">NavBackStackEntry</span>): <span class="tk-type">CheckoutViewModel</span> {
+  <span class="tk-com">// remember(entry): tránh gọi getBackStackEntry khi graph đã bị pop (đang animation thoát)</span>
+  <span class="tk-kw">val</span> graphEntry = remember(entry) { navController.getBackStackEntry&lt;<span class="tk-type">CheckoutGraph</span>&gt;() }
+  <span class="tk-kw">return</span> hiltViewModel(graphEntry) <span class="tk-com">// sống đến khi cả CheckoutGraph bị pop</span>
+}</code></pre>
+        
       </div>
     </details>
     </li>
@@ -582,6 +711,48 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
   <span class="tk-kw">fun</span> provideOkHttp(): <span class="tk-type">OkHttpClient</span> = <span class="tk-type">OkHttpClient</span>.<span class="tk-type">Builder</span>().build()
 }</code></pre>
         <p class="doc-link"><a href="https://developer.android.com/training/dependency-injection/hilt-android" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q45.html"><code>OrderDetailViewModel</code> cần <code>orderId</code> (chỉ biết lúc chạy) cùng repository do Hilt cung cấp; ngoài ra dự án có hai <code>OkHttpClient</code> (một có interceptor auth, một cho CDN không auth). Hilt xử lý từng trường hợp thế nào, và khi nào nên dùng cách nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đây là hai bài toán khác nhau. Tham số chỉ biết lúc chạy thì Hilt không tự inject được. Với ViewModel, nếu giá trị đến từ argument của Navigation hoặc Intent extras thì cách đơn giản nhất là <code>SavedStateHandle</code>: Hilt tự inject nó và argument đã nằm sẵn bên trong. Khi giá trị không đến từ argument (như một object truyền vào từ danh sách) thì dùng <code>@AssistedInject</code>: tham số runtime đánh <code>@Assisted</code>, thêm một <code>@AssistedFactory</code> có hàm <code>create(...)</code>, và khai báo <code>@HiltViewModel(assistedFactory = ...)</code>; trong Compose lấy bằng <code>hiltViewModel</code> kèm <code>creationCallback</code>. Bẫy: ViewModel được cache theo key, tham số đổi mà key không đổi thì vẫn nhận ViewModel cũ, nên truyền <code>key</code> theo tham số. Với nhiều binding cùng kiểu, Dagger coi <code>OkHttpClient</code> là một key duy nhất nên hai <code>@Provides</code> cùng kiểu sẽ báo duplicate binding. Dùng <code>@Qualifier</code> tự định nghĩa (type-safe, đổi tên bằng IDE an toàn) hoặc <code>@Named(&quot;cdn&quot;)</code> (nhanh, nhưng là chuỗi nên gõ sai chỉ lộ lúc build). Qualifier phải có ở cả nơi provide lẫn nơi inject. Pattern này cũng dùng cho <code>CoroutineDispatcher</code> (<code>@IoDispatcher</code>) để test thay bằng test dispatcher. Nên ưu tiên <code>@Qualifier</code> cho thứ dùng lặp lại; <code>@Named</code> chỉ hợp cho trường hợp đơn lẻ.</div>
+        <pre class="code-block"><code><span class="tk-ann">@HiltViewModel</span>(assistedFactory = <span class="tk-type">OrderDetailViewModel</span>.<span class="tk-type">Factory</span>::<span class="tk-kw">class</span>)
+<span class="tk-kw">class</span> <span class="tk-type">OrderDetailViewModel</span> <span class="tk-ann">@AssistedInject</span> <span class="tk-kw">constructor</span>(
+  <span class="tk-ann">@Assisted</span> <span class="tk-kw">private</span> <span class="tk-kw">val</span> orderId: <span class="tk-type">String</span>,
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">OrderRepository</span>,
+) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-ann">@AssistedFactory</span>
+  <span class="tk-kw">interface</span> <span class="tk-type">Factory</span> { <span class="tk-kw">fun</span> create(orderId: <span class="tk-type">String</span>): <span class="tk-type">OrderDetailViewModel</span> }
+}
+
+<span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">OrderDetailRoute</span>(orderId: <span class="tk-type">String</span>) {
+  <span class="tk-kw">val</span> vm = hiltViewModel&lt;<span class="tk-type">OrderDetailViewModel</span>, <span class="tk-type">OrderDetailViewModel</span>.<span class="tk-type">Factory</span>&gt;(
+    key = orderId, <span class="tk-com">// key theo tham số: đổi orderId thì tạo ViewModel mới</span>
+    creationCallback = { factory -&gt; factory.create(orderId) },
+  )
+}
+
+<span class="tk-ann">@Qualifier</span> <span class="tk-ann">@Retention</span>(<span class="tk-type">AnnotationRetention</span>.<span class="tk-type">BINARY</span>) <span class="tk-kw">annotation</span> <span class="tk-kw">class</span> <span class="tk-type">AuthClient</span>
+<span class="tk-ann">@Qualifier</span> <span class="tk-ann">@Retention</span>(<span class="tk-type">AnnotationRetention</span>.<span class="tk-type">BINARY</span>) <span class="tk-kw">annotation</span> <span class="tk-kw">class</span> <span class="tk-type">CdnClient</span>
+
+<span class="tk-ann">@Module</span>
+<span class="tk-ann">@InstallIn</span>(<span class="tk-type">SingletonComponent</span>::<span class="tk-kw">class</span>)
+<span class="tk-kw">object</span> <span class="tk-type">NetworkModule</span> {
+  <span class="tk-ann">@Provides</span> <span class="tk-ann">@Singleton</span> <span class="tk-ann">@AuthClient</span>
+  <span class="tk-kw">fun</span> authClient(auth: <span class="tk-type">AuthInterceptor</span>): <span class="tk-type">OkHttpClient</span> =
+    <span class="tk-type">OkHttpClient</span>.<span class="tk-type">Builder</span>().addInterceptor(auth).build()
+
+  <span class="tk-ann">@Provides</span> <span class="tk-ann">@Singleton</span> <span class="tk-ann">@CdnClient</span>
+  <span class="tk-kw">fun</span> cdnClient(): <span class="tk-type">OkHttpClient</span> = <span class="tk-type">OkHttpClient</span>()
+}
+
+<span class="tk-com">// class ImageRepository @Inject constructor(@CdnClient private val client: OkHttpClient)</span></code></pre>
+        <p class="doc-link"><a href="https://dagger.dev/dev-guide/assisted-injection" target="_blank" rel="noopener">Đọc thêm trong tài liệu · dagger.dev ↗</a></p>
       </div>
     </details>
     </li>
@@ -688,6 +859,72 @@ composable&lt;<span class="tk-type">OrderDetail</span>&gt;(
     }
   }
   .build()</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q48.html">Màn danh sách bài viết gọi API mỗi lần mở dù dữ liệu hiếm khi đổi, tốn data và chậm trên mạng yếu. Backend có thể trả <code>ETag</code> và <code>Cache-Control</code>. OkHttp <code>Cache</code> hoạt động thế nào, và khi nào dùng cache HTTP thay vì tự cache bằng Room?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Gắn <code>Cache(directory, maxSize)</code> vào <code>OkHttpClient</code>, OkHttp sẽ làm theo header HTTP. <code>Cache-Control: max-age=60</code> cho phép dùng thẳng bản đã lưu trong 60 giây mà không gọi mạng. Hết hạn mà response có <code>ETag</code> hoặc <code>Last-Modified</code>, OkHttp tự gửi conditional request (<code>If-None-Match</code>/<code>If-Modified-Since</code>); server trả <code>304 Not Modified</code> (không có body) thì dùng lại body đã lưu: tiết kiệm băng thông nhưng vẫn mất một round trip. <code>no-cache</code> nghĩa là phải revalidate mỗi lần (vẫn được lưu), <code>no-store</code> là không được lưu. Chỉ cache GET; server không gửi header phù hợp thì không có gì để cache, và chèn header bằng network interceptor chỉ là cách chữa cháy khi không sửa được backend. Cache nằm trong <code>cacheDir</code> nên hệ thống hay người dùng có thể xoá, và xem offline phải ép <code>CacheControl.FORCE_CACHE</code> (chưa có thì nhận 504), nên không đủ đáng tin để làm tính năng offline. Chọn Room khi cần xem offline đáng tin, lọc/sắp xếp/phân trang cục bộ, gộp dữ liệu từ nhiều endpoint, sửa cục bộ (đánh dấu đã đọc, optimistic update) và quan sát bằng <code>Flow</code>: Room là single source of truth. Cache HTTP hợp với dữ liệu nguyên khối ít đổi, cấu hình công khai, ảnh; gần như không tốn code. Hai cách dùng chung được: Room để hiển thị, cache HTTP để lần refresh nhẹ hơn nhờ 304.</div>
+        <pre class="code-block"><code><span class="tk-kw">val</span> client = <span class="tk-type">OkHttpClient</span>.<span class="tk-type">Builder</span>()
+  .cache(<span class="tk-type">Cache</span>(<span class="tk-type">File</span>(context.cacheDir, <span class="tk-str">&quot;http&quot;</span>), 10L * <span class="tk-num">1024</span> * <span class="tk-num">1024</span>)) <span class="tk-com">// 10 MB</span>
+  .build()
+
+<span class="tk-com">// Server trả: Cache-Control: max-age=60, ETag: &quot;v42&quot;</span>
+<span class="tk-com">//  - trong 60 giây: dùng thẳng bản đã lưu, không gọi mạng</span>
+<span class="tk-com">//  - sau 60 giây: gửi If-None-Match: &quot;v42&quot; -&gt; 304 thì dùng lại body cũ</span>
+
+<span class="tk-com">// Offline: chỉ lấy từ cache, chưa có thì OkHttp trả 504 Unsatisfiable Request</span>
+<span class="tk-kw">val</span> offlineRequest = request.newBuilder()
+  .cacheControl(<span class="tk-type">CacheControl</span>.<span class="tk-type">FORCE_CACHE</span>)
+  .build()</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q49.html">Màn danh sách đơn hàng collect <code>dao.observeOrders()</code> (trả <code>Flow&lt;List&lt;OrderEntity&gt;&gt;</code>): mỗi lần sync cập nhật một dòng không liên quan thì UI lại nháy, và sync 5.000 dòng bằng vòng for gọi insert từng dòng mất vài giây. Giải thích cách Room phát lại Flow, và cách dùng <code>@Transaction</code>, <code>@Upsert</code>, <code>@Index</code>, <code>@RawQuery</code> cho đúng.</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flow của Room dựa trên InvalidationTracker, theo dõi theo bảng chứ không theo dòng hay điều kiện: bất kỳ ghi nào vào bảng mà query đọc, kể cả không đổi kết quả, đều chạy lại query và emit list mới, vì Room không so sánh kết quả. Vì vậy thêm <code>distinctUntilChanged()</code> (entity là <code>data class</code> nên <code>equals</code> đúng) để UI không nhận lại list y hệt, và dùng <code>key</code> trong <code>LazyColumn</code> để chỉ item đổi mới recompose. Insert hàng loạt: <code>@Insert</code>/<code>@Upsert</code> nhận <code>List&lt;T&gt;</code> chạy trong một transaction, nhanh hơn hẳn 5.000 lần gọi riêng (mỗi lần một transaction và một lần ghi đĩa). <code>@Upsert</code> (Room 2.5+) insert, trùng khoá chính thì update; khác <code>OnConflictStrategy.REPLACE</code> vốn là xoá rồi chèn lại, nên kích hoạt <code>ON DELETE CASCADE</code> của khoá ngoại và xoá luôn bản ghi con. <code>@Transaction</code> gom nhiều thao tác thành một khối atomic, ví dụ xoá cũ rồi chèn mới: observer chỉ được báo sau khi commit nên UI không thấy list rỗng giữa chừng. <code>@Index</code> đặt trên cột dùng trong <code>WHERE</code>, <code>ORDER BY</code>, <code>JOIN</code> và cột khoá ngoại để tránh quét toàn bảng; đánh đổi là insert/update chậm hơn và tốn dung lượng, kiểm chứng bằng <code>EXPLAIN QUERY PLAN</code>. <code>@RawQuery</code> cho câu SQL ghép động (bộ lọc tuỳ chọn): mất kiểm tra SQL lúc compile và phải khai báo <code>observedEntities</code> nếu muốn quan sát; nếu được thì dùng <code>@Query</code> với tham số nullable (<code>:status IS NULL OR status = :status</code>).</div>
+        <pre class="code-block"><code><span class="tk-ann">@Entity</span>(
+  tableName = <span class="tk-str">&quot;orders&quot;</span>,
+  indices = [<span class="tk-type">Index</span>(<span class="tk-str">&quot;user_id&quot;</span>), <span class="tk-type">Index</span>(<span class="tk-str">&quot;created_at&quot;</span>)], <span class="tk-com">// cột dùng để lọc và sắp xếp</span>
+)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">OrderEntity</span>(
+  <span class="tk-ann">@PrimaryKey</span> <span class="tk-kw">val</span> id: <span class="tk-type">String</span>,
+  <span class="tk-ann">@ColumnInfo</span>(name = <span class="tk-str">&quot;user_id&quot;</span>) <span class="tk-kw">val</span> userId: <span class="tk-type">String</span>,
+  <span class="tk-kw">val</span> status: <span class="tk-type">String</span>,
+  <span class="tk-ann">@ColumnInfo</span>(name = <span class="tk-str">&quot;created_at&quot;</span>) <span class="tk-kw">val</span> createdAt: <span class="tk-type">Long</span>,
+)
+
+<span class="tk-ann">@Dao</span>
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">OrderDao</span> {
+  <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;SELECT * FROM orders ORDER BY created_at DESC&quot;</span>)
+  <span class="tk-kw">abstract</span> <span class="tk-kw">fun</span> observeOrders(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;&gt;
+
+  <span class="tk-ann">@Upsert</span> <span class="tk-com">// một transaction, khác REPLACE: không xoá rồi chèn lại</span>
+  <span class="tk-kw">abstract</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> upsertAll(orders: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;)
+
+  <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;DELETE FROM orders&quot;</span>)
+  <span class="tk-kw">abstract</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> clear()
+
+  <span class="tk-ann">@Insert</span>
+  <span class="tk-kw">abstract</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> insertAll(orders: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;)
+
+  <span class="tk-ann">@Transaction</span> <span class="tk-com">// observer chỉ thấy trạng thái sau commit</span>
+  <span class="tk-kw">open</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> replaceAll(orders: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;) {
+    clear()
+    insertAll(orders)
+  }
+}
+
+<span class="tk-com">// Room phát lại mỗi khi bảng bị ghi, kể cả khi kết quả y hệt</span>
+<span class="tk-kw">val</span> orders = dao.observeOrders().distinctUntilChanged()</code></pre>
         
       </div>
     </details>
@@ -807,6 +1044,38 @@ dependencies {
 <span class="tk-com">// Xem ai yêu cầu phiên bản nào, và vì sao Gradle chọn phiên bản đang dùng:</span>
 <span class="tk-com">// ./gradlew :app:dependencyInsight --dependency okio --configuration releaseRuntimeClasspath</span></code></pre>
         
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="perf">
+  <div class="section-head"><h2>Performance</h2><a class="section-sub" href="../../../phong-van/android/chu-de/perf/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q38.html">App bản release nặng 85 MB, Play Console cảnh báo dung lượng tải xuống làm giảm tỉ lệ cài ở thị trường mạng yếu. Bạn phân tích và giảm kích thước app thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đo trước khi cắt: phân biệt download size (Play đã nén và chia split) với install size, rồi mở bản build bằng APK Analyzer (Build &gt; Analyze APK) để xem phần nào lớn nhất: <code>classes.dex</code>, <code>res/</code>, <code>lib/</code> (thư viện native <code>.so</code>), <code>assets/</code>. Cắt code và resource: bật R8 (<code>isMinifyEnabled = true</code>) cùng <code>isShrinkResources = true</code> (chỉ có tác dụng khi đã minify; resource được tham chiếu động qua <code>getIdentifier</code> cần <code>res/raw/keep.xml</code> để khỏi bị xoá nhầm). Ảnh: đổi PNG sang WebP, icon dùng vector drawable, ảnh lớn thì tải từ server thay vì đóng gói. Phát hành bằng AAB để Play tự tạo split theo ABI, density và ngôn ngữ, nên đừng tự đặt <code>abiFilters</code> trừ khi còn phát hành APK ngoài Play; có thể giới hạn ngôn ngữ do thư viện kéo vào (<code>androidResources.localeFilters</code>, trước đây là <code>resourceConfigurations</code>). Thư viện nặng: xem từng package trong dex và thư mục <code>lib/</code> để tìm thủ phạm (SDK kéo theo native lib cho cả 4 ABI, một thư viện lớn chỉ để dùng một hàm nhỏ), cân nhắc thay bằng bản nhẹ hơn hoặc tách tính năng ít dùng ra Play Feature Delivery (dynamic feature). Cuối cùng đưa kích thước vào CI, so với bản trước và báo khi tăng quá ngưỡng, vì dung lượng thường phình dần qua từng PR.</div>
+        <pre class="code-block"><code>android {
+  buildTypes {
+    release {
+      isMinifyEnabled = <span class="tk-kw">true</span>
+      isShrinkResources = <span class="tk-kw">true</span> <span class="tk-com">// chỉ có tác dụng khi isMinifyEnabled = true</span>
+      proguardFiles(
+        getDefaultProguardFile(<span class="tk-str">&quot;proguard-android-optimize.txt&quot;</span>),
+        <span class="tk-str">&quot;proguard-rules.pro&quot;</span>,
+      )
+    }
+  }
+  bundle {
+    language { enableSplit = <span class="tk-kw">true</span> } <span class="tk-com">// mặc định đã bật: user chỉ tải ngôn ngữ của máy</span>
+    density { enableSplit = <span class="tk-kw">true</span> }
+    abi { enableSplit = <span class="tk-kw">true</span> }
+  }
+}</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/topic/performance/reduce-apk-size" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
       </div>
     </details>
     </li>
@@ -962,6 +1231,146 @@ dependencies {
 <span class="tk-kw">&lt;application</span>
   <span class="tk-type">android:allowBackup</span>=<span class="tk-str">&quot;false&quot;</span>
   <span class="tk-type">android:usesCleartextTraffic</span>=<span class="tk-str">&quot;false&quot;</span> <span class="tk-kw">/&gt;</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q50.html">Bạn thêm đăng nhập bằng vân tay/khuôn mặt để mở app và xác nhận chuyển tiền. Bản đầu gọi <code>BiometricPrompt</code>, khi <code>onAuthenticationSucceeded</code> thì đặt <code>isAuthenticated = true</code> rồi gọi API. Security review chặn vì sao, và bạn làm đúng thế nào với <code>authenticators</code> và <code>CryptoObject</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cờ boolean là điểm yếu vì toàn bộ logic nằm trong process của app: trên máy root, chỉ cần hook <code>onAuthenticationSucceeded</code> hoặc gọi thẳng đường code thành công là qua mặt được mà chưa hề quét sinh trắc học. Cách đúng cho thao tác nhạy cảm là gắn khoá Android Keystore vào việc xác thực. Tạo khoá với <code>setUserAuthenticationRequired(true)</code> và (API 30+) <code>setUserAuthenticationParameters(0, KeyProperties.AUTH_BIOMETRIC_STRONG)</code> để mỗi lần dùng khoá đều phải xác thực, truyền <code>BiometricPrompt.CryptoObject(cipher)</code> vào <code>authenticate()</code>, và chỉ sau khi thành công mới dùng <code>result.cryptoObject?.cipher</code> để giải mã token hoặc ký challenge của server. Khoá chưa mở thì code app không dùng được nó. Bẫy: mặc định khoá bị vô hiệu khi người dùng thêm vân tay mới (<code>KeyPermanentlyInvalidatedException</code>), cần tạo khoá mới và bắt đăng nhập lại bằng mật khẩu. Về <code>authenticators</code>: <code>BIOMETRIC_STRONG</code> (Class 3) là mức cần cho <code>CryptoObject</code>; <code>BIOMETRIC_WEAK</code> thì không đủ. <code>DEVICE_CREDENTIAL</code> cho phép PIN/hình mở khoá làm đường lui, nhưng kết hợp với <code>CryptoObject</code> chỉ từ API 30, và khi cho phép nó thì không được gọi <code>setNegativeButtonText</code> (sẽ ném <code>IllegalArgumentException</code>). Trước khi hiện prompt, gọi <code>BiometricManager.canAuthenticate()</code> để xử lý chưa đăng ký sinh trắc (<code>BIOMETRIC_ERROR_NONE_ENROLLED</code>), không có phần cứng hay đang tạm không dùng được. Luôn có đường dự phòng (mật khẩu, OTP), xử lý <code>onAuthenticationError</code> như người dùng huỷ hay bị khoá (<code>ERROR_LOCKOUT</code>), và với giao dịch lớn thì để server xác minh chữ ký thay vì tin cờ từ client.</div>
+        <pre class="code-block"><code><span class="tk-kw">val</span> spec = <span class="tk-type">KeyGenParameterSpec</span>.<span class="tk-type">Builder</span>(
+  <span class="tk-str">&quot;login_key&quot;</span>,
+  <span class="tk-type">KeyProperties</span>.<span class="tk-type">PURPOSE_ENCRYPT</span> or <span class="tk-type">KeyProperties</span>.<span class="tk-type">PURPOSE_DECRYPT</span>,
+)
+  .setBlockModes(<span class="tk-type">KeyProperties</span>.<span class="tk-type">BLOCK_MODE_GCM</span>)
+  .setEncryptionPaddings(<span class="tk-type">KeyProperties</span>.<span class="tk-type">ENCRYPTION_PADDING_NONE</span>)
+  .setUserAuthenticationRequired(<span class="tk-kw">true</span>)
+  .setUserAuthenticationParameters(<span class="tk-num">0</span>, <span class="tk-type">KeyProperties</span>.<span class="tk-type">AUTH_BIOMETRIC_STRONG</span>) <span class="tk-com">// API 30+: mỗi lần dùng khoá đều phải xác thực</span>
+  .build()
+<span class="tk-type">KeyGenerator</span>.getInstance(<span class="tk-type">KeyProperties</span>.<span class="tk-type">KEY_ALGORITHM_AES</span>, <span class="tk-str">&quot;AndroidKeyStore&quot;</span>)
+  .apply { <span class="tk-kw">init</span>(spec) }
+  .generateKey()
+
+<span class="tk-kw">val</span> promptInfo = <span class="tk-type">BiometricPrompt</span>.<span class="tk-type">PromptInfo</span>.<span class="tk-type">Builder</span>()
+  .setTitle(<span class="tk-str">&quot;Xác nhận chuyển khoản&quot;</span>)
+  .setAllowedAuthenticators(<span class="tk-type">BiometricManager</span>.<span class="tk-type">Authenticators</span>.<span class="tk-type">BIOMETRIC_STRONG</span>)
+  .setNegativeButtonText(<span class="tk-str">&quot;Dùng mật khẩu&quot;</span>) <span class="tk-com">// bắt buộc khi không cho phép DEVICE_CREDENTIAL</span>
+  .build()
+
+<span class="tk-kw">val</span> cipher = createDecryptCipher() <span class="tk-com">// init DECRYPT_MODE với khoá Keystore và IV đã lưu</span>
+<span class="tk-kw">val</span> prompt = <span class="tk-type">BiometricPrompt</span>(activity, <span class="tk-type">ContextCompat</span>.getMainExecutor(activity),
+  <span class="tk-kw">object</span> : <span class="tk-type">BiometricPrompt</span>.<span class="tk-type">AuthenticationCallback</span>() {
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onAuthenticationSucceeded(result: <span class="tk-type">BiometricPrompt</span>.<span class="tk-type">AuthenticationResult</span>) {
+      <span class="tk-kw">val</span> unlocked = result.cryptoObject?.cipher ?: <span class="tk-kw">return</span>
+      <span class="tk-kw">val</span> token = unlocked.doFinal(encryptedToken) <span class="tk-com">// chỉ giải mã được sau khi quét thành công</span>
+      submit(token)
+    }
+  })
+prompt.authenticate(promptInfo, <span class="tk-type">BiometricPrompt</span>.<span class="tk-type">CryptoObject</span>(cipher))</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/identity/sign-in/biometric-auth" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="design">
+  <div class="section-head"><h2>System Design</h2><a class="section-sub" href="../../../phong-van/android/chu-de/design/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q39.html">Ở màn thanh toán, mạng chập chờn: người dùng bấm &#39;Đặt hàng&#39;, request treo 10 giây nên họ bấm lại, kết quả là hai đơn trùng. Có lúc app báo timeout nhưng server đã tạo đơn. Bạn thiết kế phía Android và API thế nào để không bao giờ tạo đơn trùng?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chỉ chặn ở UI là chưa đủ, vì phải xử lý cả trường hợp &#39;không rõ kết quả&#39;. Lớp UI: ViewModel giữ state <code>Idle → Submitting → Success/Failed</code> và bỏ qua lệnh đặt hàng khi đang <code>Submitting</code> (đừng chỉ dựa vào việc disable nút, vì hai lần bấm có thể tới trước khi UI kịp vẽ lại). Lớp API: dùng idempotency key. Client sinh một UUID cho mỗi ý định đặt hàng (không phải mỗi lần bấm hay mỗi lần retry), gửi qua header <code>Idempotency-Key</code>; server lưu key cùng kết quả, nhận lại cùng key thì trả về đúng đơn đã tạo thay vì tạo mới. Key phải sống qua xoay máy và process death nên lưu trong <code>SavedStateHandle</code> (hoặc Room nếu luồng kéo dài). Timeout không có nghĩa là thất bại: cho thử lại với cùng key, hoặc hỏi server trạng thái theo key trước khi cho đặt lại. Chỉ tự retry lỗi mạng và 5xx, kèm backoff có jitter; không retry 4xx. Nếu đơn phải được gửi đi kể cả khi người dùng tắt app thì đẩy vào WorkManager với unique work theo key. Với thanh toán thật, cổng thanh toán cũng cần idempotency key riêng. Nguyên tắc: client chỉ giảm khả năng trùng, server mới là nơi bảo đảm.</div>
+        <pre class="code-block"><code><span class="tk-kw">interface</span> <span class="tk-type">OrderApi</span> {
+  <span class="tk-ann">@POST</span>(<span class="tk-str">&quot;orders&quot;</span>)
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> place(<span class="tk-ann">@Header</span>(<span class="tk-str">&quot;Idempotency-Key&quot;</span>) key: <span class="tk-type">String</span>, <span class="tk-ann">@Body</span> body: <span class="tk-type">OrderRequest</span>): <span class="tk-type">OrderDto</span>
+}
+
+<span class="tk-ann">@HiltViewModel</span>
+<span class="tk-kw">class</span> <span class="tk-type">CheckoutViewModel</span> <span class="tk-ann">@Inject</span> <span class="tk-kw">constructor</span>(
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> repo: <span class="tk-type">OrderRepository</span>,
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> saved: <span class="tk-type">SavedStateHandle</span>,
+) : <span class="tk-type">ViewModel</span>() {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> _state = <span class="tk-type">MutableStateFlow</span>&lt;<span class="tk-type">CheckoutState</span>&gt;(<span class="tk-type">CheckoutState</span>.<span class="tk-type">Idle</span>)
+  <span class="tk-kw">val</span> state = _state.asStateFlow()
+
+  <span class="tk-com">// Sinh một lần cho mỗi ý định đặt hàng, sống sót qua process death</span>
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> key: <span class="tk-type">String</span> = saved[<span class="tk-str">&quot;key&quot;</span>] ?: <span class="tk-type">UUID</span>.randomUUID().toString().also { saved[<span class="tk-str">&quot;key&quot;</span>] = it }
+
+  <span class="tk-kw">fun</span> placeOrder(cart: <span class="tk-type">Cart</span>) {
+    <span class="tk-kw">if</span> (_state.<span class="tk-kw">value</span> <span class="tk-kw">is</span> <span class="tk-type">CheckoutState</span>.<span class="tk-type">Submitting</span>) <span class="tk-kw">return</span> <span class="tk-com">// bấm lần hai bị bỏ qua</span>
+    _state.<span class="tk-kw">value</span> = <span class="tk-type">CheckoutState</span>.<span class="tk-type">Submitting</span>
+    viewModelScope.launch {
+      _state.<span class="tk-kw">value</span> = repo.place(cart, key).fold(
+        onSuccess = { <span class="tk-type">CheckoutState</span>.<span class="tk-type">Success</span>(it.id) },
+        onFailure = { <span class="tk-type">CheckoutState</span>.<span class="tk-type">Failed</span>(it) }, <span class="tk-com">// cho thử lại với CÙNG key</span>
+      )
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q40.html">Màn theo dõi đơn hàng (đang chuẩn bị, đang giao, đã giao, kèm vị trí shipper) phải cập nhật realtime. Bạn chọn polling, WebSocket/SSE hay FCM, và thiết kế phía client thế nào để không hao pin và không rò kết nối?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Chọn theo trạng thái app. Khi màn đang mở: dùng kết nối stream. WebSocket (OkHttp <code>WebSocketListener</code>) hai chiều, SSE đủ cho luồng một chiều từ server; polling đơn giản nhưng độ trễ bằng chu kỳ và tốn request thừa, chỉ hợp làm phương án dự phòng. Khi app ở nền: không giữ socket (tốn pin, hệ thống cũng hạn chế), dùng FCM để báo &#39;trạng thái đổi&#39;, mở app thì mới tải lại. Mô hình lai là phổ biến: socket lúc foreground, FCM lúc nền, và luôn có REST lấy trạng thái hiện tại làm nguồn sự thật, vì socket có thể mất tin. Mỗi lần kết nối lại thì lấy snapshot rồi mới áp event tiếp theo, kèm số thứ tự để bỏ tin cũ hoặc trùng. Phía client, bọc socket thành <code>callbackFlow</code> và chỉ collect khi UI nhìn thấy (<code>collectAsStateWithLifecycle</code>, hoặc <code>stateIn(..., WhileSubscribed(5_000))</code>), để rời màn là <code>awaitClose</code> đóng socket. Reconnect bằng exponential backoff có jitter, chỉ thử khi có mạng, đặt <code>pingInterval</code> để phát hiện kết nối chết, gặp 401 thì refresh token thay vì lặp vô hạn. Đơn đã giao thì đóng stream, còn vị trí shipper nên để server giới hạn tần suất (vài giây một lần) để đỡ tốn pin và data.</div>
+        <pre class="code-block"><code><span class="tk-kw">fun</span> orderEvents(orderId: <span class="tk-type">String</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">OrderEvent</span>&gt; = callbackFlow {
+  <span class="tk-kw">val</span> request = <span class="tk-type">Request</span>.<span class="tk-type">Builder</span>().url(<span class="tk-str">&quot;wss://api.shop.vn/orders/$orderId/stream&quot;</span>).build()
+  <span class="tk-kw">val</span> socket = client.newWebSocket(request, <span class="tk-kw">object</span> : <span class="tk-type">WebSocketListener</span>() {
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onMessage(webSocket: <span class="tk-type">WebSocket</span>, text: <span class="tk-type">String</span>) {
+      trySend(json.decodeFromString&lt;<span class="tk-type">OrderEvent</span>&gt;(text))
+    }
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onFailure(webSocket: <span class="tk-type">WebSocket</span>, t: <span class="tk-type">Throwable</span>, response: <span class="tk-type">Response</span>?) {
+      close(t) <span class="tk-com">// để retryWhen phía dưới kết nối lại</span>
+    }
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onClosed(webSocket: <span class="tk-type">WebSocket</span>, code: <span class="tk-type">Int</span>, reason: <span class="tk-type">String</span>) = close()
+  })
+  awaitClose { socket.close(<span class="tk-num">1000</span>, <span class="tk-kw">null</span>) } <span class="tk-com">// rời màn là đóng socket</span>
+}
+
+<span class="tk-kw">fun</span> track(orderId: <span class="tk-type">String</span>): <span class="tk-type">Flow</span>&lt;<span class="tk-type">OrderStatus</span>&gt; = flow {
+  emit(api.getOrder(orderId).status)            <span class="tk-com">// snapshot hiện tại làm nguồn sự thật</span>
+  emitAll(orderEvents(orderId).map { it.status })
+}.retryWhen { cause, attempt -&gt;
+  <span class="tk-kw">val</span> retry = cause <span class="tk-kw">is</span> <span class="tk-type">IOException</span>
+  <span class="tk-kw">if</span> (retry) delay(minOf(30_000L, 1_000L shl minOf(attempt.toInt(), <span class="tk-num">5</span>))) <span class="tk-com">// backoff, tối đa 30 giây</span>
+  retry
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/android/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q41.html">Bạn được giao review PR đầu tiên của một bạn junior: màn danh sách mới dài 1.500 dòng, toàn bộ logic gọi API và xử lý dữ liệu nằm trong Fragment, không có test, tên biến khó hiểu. Bạn review thế nào để PR tốt lên mà bạn ấy không nản?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Về nội dung, đi theo thứ tự ưu tiên. Hiểu mục tiêu của ticket trước khi đọc code; PR quá lớn thì yêu cầu tách (mỗi PR một việc) hoặc review theo từng commit. Đúng đắn trước, hình thức sau: logic và edge case (danh sách rỗng, lỗi mạng, xoay máy, process death), lifecycle và leak, thread, quyền và bảo mật (log token, component <code>exported</code>). Rồi tới kiến trúc (ranh giới tầng, logic nằm ở đâu), test (có kiểm tra hành vi hay chỉ chạy qua code), cuối cùng mới tới đặt tên và style; những thứ máy bắt được (ktlint, detekt, lint) giao cho CI, đừng tranh luận trong PR. Về cách góp ý: phân biệt rõ điều bắt buộc sửa với gợi ý (<code>nit:</code>), hỏi thay vì phán (&#39;nếu API lỗi giữa chừng thì màn này hiện gì?&#39;), nêu lý do kèm ví dụ hoặc link, và khen điều làm tốt. Với lỗi kiến trúc như logic nằm trong Fragment, đừng viết lại hộ: chỉ ra vấn đề, gợi ý chuyển sang ViewModel, đề nghị pair 30 phút, rồi ghi pattern đó vào tài liệu của team để lần sau khỏi nhắc lại. Chọn 2–3 điểm quan trọng nhất cho mỗi lượt thay vì 40 comment, và phản hồi trong ngày để PR không bị treo. Mentoring là việc dài hơi: sau vài PR, tổng kết các lỗi lặp lại và cùng đặt mục tiêu cho lần sau.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-mid-q42.html">Sáng thứ Hai, bản 4.2 mới rollout 50% lên Google Play thì Crashlytics báo crash-free users tụt từ 99,6% xuống 97,8% và review 1 sao tăng. PM hỏi bao giờ xử lý xong. Bạn làm gì trong giờ đầu và sau đó?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Giờ đầu, việc đầu tiên là dừng lan rộng: halt rollout trên Play Console, để user chưa nhận bản này không bị ảnh hưởng. Lưu ý Play không hạ cấp được máy đã cập nhật, nên muốn sửa phải phát bản mới có <code>versionCode</code> cao hơn. Nếu lỗi nằm sau một feature flag hay remote config thì tắt flag là cách cứu nhanh nhất, không cần release. Song song, khoanh vùng bằng Crashlytics và Android vitals: crash nào tăng mạnh nhất, tập trung ở phiên bản OS, dòng máy hay màn hình nào, có bắt đầu cùng bản 4.2 không, đã upload mapping file R8 chưa để stack trace đọc được, rồi đối chiếu thay đổi giữa 4.1 và 4.2 (có thể <code>git bisect</code>). Giao tiếp: báo PM, QA, support sớm bằng một tin ngắn gồm tác động (bao nhiêu % user), giả thuyết nguyên nhân, bước tiếp theo và giờ cập nhật kế tiếp; chưa biết nguyên nhân thì đừng hứa ETA, hãy hứa mốc cập nhật. Sửa: tạo hotfix từ tag của bản 4.2 với thay đổi tối thiểu, có test tái hiện lỗi, QA chạy smoke test vùng bị ảnh hưởng, rồi phát 4.2.1 theo staged rollout (1% → 5% → 20% → 100%), chỉ tăng bước khi crash-free ổn. Nếu lỗi nặng (crash khi mở app, mất dữ liệu) có thể bật in-app update để kéo người dùng bản lỗi lên bản sửa. Sau đó viết post-mortem không đổ lỗi: timeline, nguyên nhân gốc, vì sao QA và CI không bắt được, và hành động cụ thể như thêm test, đặt ngưỡng crash-free làm chốt chặn giữa các bước rollout.</div>
+        
         
       </div>
     </details>

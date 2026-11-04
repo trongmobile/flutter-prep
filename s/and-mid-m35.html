@@ -81,8 +81,8 @@
     <li><a href="../s/and-mid-q18.html">Access token hết hạn, nhiều request song song cùng nhận 401. Bạn dùng OkHttp Interceptor hay Authenticator để refresh token, và làm sao để chỉ refresh một lần?</a> <span class="rank-tag rank-amber">Middle</span></li>
     <li><a href="../s/and-mid-q30.html">Màn danh sách có hàng chục nghìn sản phẩm tải theo trang, cần xem được khi offline và không mất vị trí cuộn khi xoay máy. Bạn dùng Paging 3 thế nào (PagingSource, cachedIn, LoadState, RemoteMediator)?</a> <span class="rank-tag rank-amber">Middle</span></li>
     <li><a href="../s/and-mid-q31.html">App báo &#39;request treo mãi&#39; trên mạng yếu, và HttpLoggingInterceptor mức BODY còn xuất hiện cả ở bản release, lộ token trong log. Bạn cấu hình OkHttp thế nào: các loại timeout, application interceptor và network interceptor, cache?</a> <span class="rank-tag rank-amber">Middle</span></li>
-    <li><a href="../s/and-mid-m36.html">Trong Paging 3 kiểu offline-first với RemoteMediator, UI thực sự đọc dữ liệu từ đâu?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
-    <li><a href="../s/and-mid-m37.html">DAO có @Query(&quot;SELECT * FROM users WHERE id = :id&quot;) fun observeUser(id: Long): Flow&lt;User?&gt;. Khi nào Flow này emit lại?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-q48.html">Màn danh sách bài viết gọi API mỗi lần mở dù dữ liệu hiếm khi đổi, tốn data và chậm trên mạng yếu. Backend có thể trả ETag và Cache-Control. OkHttp Cache hoạt động thế nào, và khi nào dùng cache HTTP thay vì tự cache bằng Room?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q49.html">Màn danh sách đơn hàng collect dao.observeOrders() (trả Flow&lt;List&lt;OrderEntity&gt;&gt;): mỗi lần sync cập nhật một dòng không liên quan thì UI lại nháy, và sync 5.000 dòng bằng vòng for gọi insert từng dòng mất vài giây. Giải thích cách Room phát lại Flow, và cách dùng @Transaction, @Upsert, @Index, @RawQuery cho đúng.</a> <span class="rank-tag rank-amber">Middle</span></li>
   </ul>
 </section>
 </main>

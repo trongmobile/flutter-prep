@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Sau mỗi bản phát hành, team chỉ biết app giật hoặc chậm hơn khi người dùng…</title>
+<meta name="description" content="Cần cả hai nguồn: lab (đo có kiểm soát, chạy trước khi ship) và field (dữ liệu người dùng thật trên đủ loại máy). Field: Android vitals trong Play Console ch…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q39.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Sau mỗi bản phát hành, team chỉ biết app giật hoặc chậm hơn khi người dùng…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q39.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Sau mỗi bản phát hành, team chỉ biết app giật h…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q39.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Sau mỗi bản phát hành, team chỉ biết app giật h…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/perf/">Performance</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Sau mỗi bản phát hành, team chỉ biết app giật hoặc chậm hơn khi người dùng phàn nàn trên store. Bạn xây hệ thống quan sát hiệu năng (observability) cho app thế nào để phát hiện regression trước khi bản mới lan tới 100% người dùng?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Cần cả hai nguồn: lab (đo có kiểm soát, chạy trước khi ship) và field (dữ liệu người dùng thật trên đủ loại máy). Field: Android vitals trong Play Console cho crash/ANR rate, slow cold start, slow/frozen frames, wake lock theo phiên bản và dòng máy (vượt ngưỡng &#39;bad behavior&#39; còn làm giảm khả năng hiển thị trên Play); Firebase Performance tự đo app start, màn hình, HTTP và cho custom trace (<code>newTrace</code>) cho luồng nghiệp vụ như checkout. Để biết giật ở đâu, dùng JankStats: gắn <code>PerformanceMetricsState</code> (tên màn hình, đang cuộn hay animation) rồi gửi frame jank kèm state lên analytics và gom theo màn hình, thay vì chỉ đếm số frame. Khi điều tra, thêm <code>trace(&quot;...&quot;)</code> của <code>androidx.tracing</code> (hoặc <code>Trace.beginSection</code>) quanh đoạn quan trọng để thấy trong Perfetto; section chỉ hợp với code đồng bộ trên một thread, đừng bọc qua điểm suspend (việc bất đồng bộ dùng <code>Trace.beginAsyncSection</code>). Lab: Macrobenchmark (<code>StartupTimingMetric</code>, <code>FrameTimingMetric</code>) chạy trên thiết bị thật cố định, mỗi lần nhiều vòng lặp, so median và p90 với baseline của nhánh main; vượt ngưỡng (ví dụ chậm hơn 10%) thì fail PR vì một lần đo trên máy ồn không đáng tin. Cuối cùng là phản ứng: dashboard theo phiên bản, cảnh báo velocity của Crashlytics, và staged rollout chỉ nới từ 5% lên 20% khi crash-free cùng chỉ số khởi động không xấu đi.</div>
+        <pre class="code-block"><code><span class="tk-com">// Gắn ngữ cảnh để biết jank xảy ra ở màn hình nào</span>
+<span class="tk-type">PerformanceMetricsState</span>.getHolderForHierarchy(window.decorView)
+  .state?.putState(<span class="tk-str">&quot;Screen&quot;</span>, <span class="tk-str">&quot;Feed&quot;</span>)
+
+<span class="tk-kw">val</span> jankStats = <span class="tk-type">JankStats</span>.createAndTrack(window, <span class="tk-type">Dispatchers</span>.<span class="tk-type">Default</span>.asExecutor()) { frame -&gt;
+  <span class="tk-kw">if</span> (frame.isJank) {
+    <span class="tk-kw">val</span> screen = frame.states.firstOrNull { it.key == <span class="tk-str">&quot;Screen&quot;</span> }?.<span class="tk-kw">value</span>
+    analytics.logJank(screen, frame.frameDurationUiNanos / 1_000_000)
+  }
+}
+
+<span class="tk-com">// Trace nghiệp vụ (code đồng bộ): hiện trong Perfetto và đo được bằng Macrobenchmark</span>
+<span class="tk-kw">fun</span> parseFeed(json: <span class="tk-type">String</span>): <span class="tk-type">Feed</span> = trace(<span class="tk-str">&quot;Feed.parse&quot;</span>) { parser.parse(json) }</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/topic/performance/jankstats" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q39">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q38.html"><span class="muted small">← Câu trước</span><span>Người dùng máy 3–4GB RAM phàn nàn app hay bị tải lại từ đầu khi quay lại sau kh…</span></a>
+  <a class="pager-next" href="../s/and-sen-q40.html"><span class="muted small">Câu sau →</span><span>Codebase có khoảng 60 module, mỗi build.gradle.kts lặp lại cùng đoạn cấu hình (…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Performance</h2><a class="section-sub" href="../phong-van/android/chu-de/perf/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q01.html">App có cold start khoảng 2,5 giây trên máy tầm trung, trong Application.onCreate đang khởi tạo cả chục SDK. Bạn đo và tối ưu thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q02.html">QA báo màn hình feed giật khi cuộn nhanh trên máy tầm thấp, còn trên máy dev thì mượt. Bạn đo và khoanh vùng jank thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q03.html">LeakCanary báo MapActivity bị leak, retaining path đi qua một listener đăng ký vào singleton LocationRepository. Bạn phân tích và sửa thế nào? Còn những nguồn leak Context phổ biến nào khác?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q04.html">Team vừa chuyển feed từ RecyclerView sang LazyColumn và thấy cuộn kém mượt hơn bản cũ trên máy tầm thấp. Bạn kiểm tra những nguyên nhân đặc thù của Compose nào và tối ưu ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q35.html">Android vitals báo app có &#39;excessive wakeups&#39; và &#39;stuck partial wake locks&#39;, và review than app hao pin dù user ít dùng. Bạn điều tra và giảm mức tiêu thụ pin thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q38.html">Người dùng máy 3–4GB RAM phàn nàn app hay bị tải lại từ đầu khi quay lại sau khi dùng app khác, dù không thấy crash nào trên Crashlytics. Một dev đề xuất bật android:largeHeap=&quot;true&quot; cho yên chuyện. Bạn nhìn vấn đề bộ nhớ ở quy mô lớn thế nào, và xử lý ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Middle: Màn danh sách đơn hàng collect dao.observeOrders() (trả Flow&lt;List&lt;OrderEnti…</title>
+<meta name="description" content="Flow của Room dựa trên InvalidationTracker, theo dõi theo bảng chứ không theo dòng hay điều kiện: bất kỳ ghi nào vào bảng mà query đọc, kể cả không đổi kết q…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-q49.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Middle: Màn danh sách đơn hàng collect dao.observeOrders() (trả Flow&lt;List&lt;OrderEnti…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-q49.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"Màn danh sách đơn hàng collect dao.observeOrder…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-q49.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn danh sách đơn hàng collect dao.observeOrder…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Màn danh sách đơn hàng collect <code>dao.observeOrders()</code> (trả <code>Flow&lt;List&lt;OrderEntity&gt;&gt;</code>): mỗi lần sync cập nhật một dòng không liên quan thì UI lại nháy, và sync 5.000 dòng bằng vòng for gọi insert từng dòng mất vài giây. Giải thích cách Room phát lại Flow, và cách dùng <code>@Transaction</code>, <code>@Upsert</code>, <code>@Index</code>, <code>@RawQuery</code> cho đúng.</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Flow của Room dựa trên InvalidationTracker, theo dõi theo bảng chứ không theo dòng hay điều kiện: bất kỳ ghi nào vào bảng mà query đọc, kể cả không đổi kết quả, đều chạy lại query và emit list mới, vì Room không so sánh kết quả. Vì vậy thêm <code>distinctUntilChanged()</code> (entity là <code>data class</code> nên <code>equals</code> đúng) để UI không nhận lại list y hệt, và dùng <code>key</code> trong <code>LazyColumn</code> để chỉ item đổi mới recompose. Insert hàng loạt: <code>@Insert</code>/<code>@Upsert</code> nhận <code>List&lt;T&gt;</code> chạy trong một transaction, nhanh hơn hẳn 5.000 lần gọi riêng (mỗi lần một transaction và một lần ghi đĩa). <code>@Upsert</code> (Room 2.5+) insert, trùng khoá chính thì update; khác <code>OnConflictStrategy.REPLACE</code> vốn là xoá rồi chèn lại, nên kích hoạt <code>ON DELETE CASCADE</code> của khoá ngoại và xoá luôn bản ghi con. <code>@Transaction</code> gom nhiều thao tác thành một khối atomic, ví dụ xoá cũ rồi chèn mới: observer chỉ được báo sau khi commit nên UI không thấy list rỗng giữa chừng. <code>@Index</code> đặt trên cột dùng trong <code>WHERE</code>, <code>ORDER BY</code>, <code>JOIN</code> và cột khoá ngoại để tránh quét toàn bảng; đánh đổi là insert/update chậm hơn và tốn dung lượng, kiểm chứng bằng <code>EXPLAIN QUERY PLAN</code>. <code>@RawQuery</code> cho câu SQL ghép động (bộ lọc tuỳ chọn): mất kiểm tra SQL lúc compile và phải khai báo <code>observedEntities</code> nếu muốn quan sát; nếu được thì dùng <code>@Query</code> với tham số nullable (<code>:status IS NULL OR status = :status</code>).</div>
+        <pre class="code-block"><code><span class="tk-ann">@Entity</span>(
+  tableName = <span class="tk-str">&quot;orders&quot;</span>,
+  indices = [<span class="tk-type">Index</span>(<span class="tk-str">&quot;user_id&quot;</span>), <span class="tk-type">Index</span>(<span class="tk-str">&quot;created_at&quot;</span>)], <span class="tk-com">// cột dùng để lọc và sắp xếp</span>
+)
+<span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">OrderEntity</span>(
+  <span class="tk-ann">@PrimaryKey</span> <span class="tk-kw">val</span> id: <span class="tk-type">String</span>,
+  <span class="tk-ann">@ColumnInfo</span>(name = <span class="tk-str">&quot;user_id&quot;</span>) <span class="tk-kw">val</span> userId: <span class="tk-type">String</span>,
+  <span class="tk-kw">val</span> status: <span class="tk-type">String</span>,
+  <span class="tk-ann">@ColumnInfo</span>(name = <span class="tk-str">&quot;created_at&quot;</span>) <span class="tk-kw">val</span> createdAt: <span class="tk-type">Long</span>,
+)
+
+<span class="tk-ann">@Dao</span>
+<span class="tk-kw">abstract</span> <span class="tk-kw">class</span> <span class="tk-type">OrderDao</span> {
+  <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;SELECT * FROM orders ORDER BY created_at DESC&quot;</span>)
+  <span class="tk-kw">abstract</span> <span class="tk-kw">fun</span> observeOrders(): <span class="tk-type">Flow</span>&lt;<span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;&gt;
+
+  <span class="tk-ann">@Upsert</span> <span class="tk-com">// một transaction, khác REPLACE: không xoá rồi chèn lại</span>
+  <span class="tk-kw">abstract</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> upsertAll(orders: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;)
+
+  <span class="tk-ann">@Query</span>(<span class="tk-str">&quot;DELETE FROM orders&quot;</span>)
+  <span class="tk-kw">abstract</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> clear()
+
+  <span class="tk-ann">@Insert</span>
+  <span class="tk-kw">abstract</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> insertAll(orders: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;)
+
+  <span class="tk-ann">@Transaction</span> <span class="tk-com">// observer chỉ thấy trạng thái sau commit</span>
+  <span class="tk-kw">open</span> <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> replaceAll(orders: <span class="tk-type">List</span>&lt;<span class="tk-type">OrderEntity</span>&gt;) {
+    clear()
+    insertAll(orders)
+  }
+}
+
+<span class="tk-com">// Room phát lại mỗi khi bảng bị ghi, kể cả khi kết quả y hệt</span>
+<span class="tk-kw">val</span> orders = dao.observeOrders().distinctUntilChanged()</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-q49">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-q48.html"><span class="muted small">← Câu trước</span><span>Màn danh sách bài viết gọi API mỗi lần mở dù dữ liệu hiếm khi đổi, tốn data và…</span></a>
+  <a class="pager-next" href="../s/and-mid-q50.html"><span class="muted small">Câu sau →</span><span>Bạn thêm đăng nhập bằng vân tay/khuôn mặt để mở app và xác nhận chuyển tiền. Bả…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q17.html">Bạn thêm cột avatar_url vào bảng users của Room và tăng version database. Bản release lên, một số người dùng bị crash ngay khi mở app. Vì sao, và quy trình migration đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q18.html">Access token hết hạn, nhiều request song song cùng nhận 401. Bạn dùng OkHttp Interceptor hay Authenticator để refresh token, và làm sao để chỉ refresh một lần?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q30.html">Màn danh sách có hàng chục nghìn sản phẩm tải theo trang, cần xem được khi offline và không mất vị trí cuộn khi xoay máy. Bạn dùng Paging 3 thế nào (PagingSource, cachedIn, LoadState, RemoteMediator)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q31.html">App báo &#39;request treo mãi&#39; trên mạng yếu, và HttpLoggingInterceptor mức BODY còn xuất hiện cả ở bản release, lộ token trong log. Bạn cấu hình OkHttp thế nào: các loại timeout, application interceptor và network interceptor, cache?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q48.html">Màn danh sách bài viết gọi API mỗi lần mở dù dữ liệu hiếm khi đổi, tốn data và chậm trên mạng yếu. Backend có thể trả ETag và Cache-Control. OkHttp Cache hoạt động thế nào, và khi nào dùng cache HTTP thay vì tự cache bằng Room?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-m35.html">Bạn muốn interceptor log thấy cả các request redirect và header Accept-Encoding: gzip mà OkHttp tự thêm vào. Đăng ký interceptor bằng cách nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Kotlin — Mobile Interview</title>
-<meta name="description" content="17 câu hỏi phỏng vấn Android về Kotlin từ Fresher đến Senior, có đáp án mẫu và 21 câu quiz trắc nghiệm.">
+<meta name="description" content="20 câu hỏi phỏng vấn Android về Kotlin từ Fresher đến Senior, có đáp án mẫu và 21 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/kotlin/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Kotlin — Mobile Interview">
-<meta property="og:description" content="17 câu hỏi phỏng vấn Android về Kotlin từ Fresher đến Senior, có đáp án mẫu và 21 câu quiz trắc nghiệm.">
+<meta property="og:description" content="20 câu hỏi phỏng vấn Android về Kotlin từ Fresher đến Senior, có đáp án mẫu và 21 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/kotlin/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Kotlin</h1>
-  <p class="subtitle">17 câu hỏi kèm đáp án mẫu và 21 câu quiz về Kotlin, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">20 câu hỏi kèm đáp án mẫu và 21 câu quiz về Kotlin, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -61,6 +61,7 @@
     <li><a href="../../../../s/and-fre-q26.html">Class trong Kotlin khác Java ở những điểm nào? Vì sao muốn kế thừa phải thêm open, và primary constructor cùng khối init hoạt động ra sao?</a></li>
     <li><a href="../../../../s/and-fre-q27.html">Kotlin không có từ khoá static, vậy object và companion object dùng để làm gì?</a></li>
     <li><a href="../../../../s/and-fre-q28.html">Lambda và higher-order function trong Kotlin là gì? Vì sao button.setOnClickListener { ... } viết được gọn như vậy?</a></li>
+    <li><a href="../../../../s/and-fre-q49.html">Hàm trong Kotlin có gì khác Java: tham số mặc định (default argument), tham số đặt tên (named argument) và hàm một biểu thức (single-expression function)? Gọi hàm có tham số mặc định từ Java thì sao?</a></li>
     <li><a href="../../../../s/and-fre-m01.html">Phép chia trong đoạn code Kotlin sau in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m02.html">Đoạn code dùng safe call và toán tử Elvis sau in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m03.html">Khai báo nào dưới đây gây lỗi compile?</a> <span class="tag">Quiz</span></li>
@@ -95,6 +96,7 @@
   <ul class="link-list">
     <li><a href="../../../../s/and-mid-q21.html">Vì sao reified chỉ dùng được trong hàm inline? Khi nào cần đánh dấu lambda là crossinline hoặc noinline?</a></li>
     <li><a href="../../../../s/and-mid-q22.html">Vì sao truyền List&lt;Cat&gt; vào hàm nhận List&lt;Animal&gt; thì được, còn MutableList&lt;Cat&gt; vào MutableList&lt;Animal&gt; lại lỗi compile? out và in giải quyết việc này thế nào?</a></li>
+    <li><a href="../../../../s/and-mid-q44.html">Review code thấy val formatter by lazy { ... } được đọc từ nhiều thread, chỗ khác dùng Delegates.observable, và đồng nghiệp thắc mắc by viewModels() thực chất là gì. Hãy giải thích cơ chế property delegation by, các LazyThreadSafetyMode và cách tự viết một delegate.</a></li>
     <li><a href="../../../../s/and-mid-m18.html">Hàm extension dưới đây không dùng inline lẫn reified. Nó có vấn đề gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m19.html">Lambda truyền vào hàm inline có lệnh return trần. Gọi main() in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m20.html">Với @JvmInline value class Cents(val value: Long), trường hợp nào giá trị Cents bị boxing thành object thật trên JVM?</a> <span class="tag">Quiz</span></li>
@@ -105,6 +107,7 @@
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> Android Senior</h2><a class="section-sub" href="../../../../phong-van/android/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/and-sen-q30.html">Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay lệch nhau (tính giá, validate, mô hình dữ liệu). CTO hỏi có nên dùng Kotlin Multiplatform (KMP). Bạn đánh giá và triển khai thử thế nào?</a></li>
+    <li><a href="../../../../s/and-sen-q43.html">Màn hình feed vẫn giật dù đã tối ưu layout; Memory Profiler cho thấy hàng chục nghìn object ngắn hạn mỗi giây sinh ra trong onBindViewHolder và hàm onDraw tuỳ biến, trong khi code Kotlin nhìn rất gọn. Những allocation ẩn nào trong Kotlin hay gặp, và bạn kiểm tra thế nào?</a></li>
   </ul>
 </section>
 <section>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Người dùng máy 3–4GB RAM phàn nàn app hay bị tải lại từ đầu khi quay lại sa…</title>
+<meta name="description" content="Android không cấp bộ nhớ cố định cho app: khi RAM thiếu, lmkd (low memory killer daemon) giết process theo độ ưu tiên, process nền (đã vào danh sách cached/L…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q38.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Người dùng máy 3–4GB RAM phàn nàn app hay bị tải lại từ đầu khi quay lại sa…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q38.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Người dùng máy 3–4GB RAM phàn nàn app hay bị tả…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q38.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Người dùng máy 3–4GB RAM phàn nàn app hay bị tả…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/perf/">Performance</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Người dùng máy 3–4GB RAM phàn nàn app hay bị tải lại từ đầu khi quay lại sau khi dùng app khác, dù không thấy crash nào trên Crashlytics. Một dev đề xuất bật <code>android:largeHeap=&quot;true&quot;</code> cho yên chuyện. Bạn nhìn vấn đề bộ nhớ ở quy mô lớn thế nào, và xử lý ra sao?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Android không cấp bộ nhớ cố định cho app: khi RAM thiếu, <code>lmkd</code> (low memory killer daemon) giết process theo độ ưu tiên, process nền (đã vào danh sách cached/LRU) bị giết trước và process càng nặng càng dễ bị chọn. Hậu quả không hiện thành crash mà là cold start thay cho warm start và mất state khi người dùng quay lại, nên &#39;ngân sách bộ nhớ&#39; phải tính cả heap Java, native, bitmap, graphics (đo bằng PSS/RSS chứ không chỉ Java heap). Hệ thống báo áp lực bộ nhớ qua <code>ComponentCallbacks2.onTrimMemory(level)</code> (Application, Activity, Service...): <code>TRIM_MEMORY_UI_HIDDEN</code> là lúc UI không còn hiển thị, nên nhả cache hình và tài nguyên chỉ phục vụ UI; các mức khác thay đổi theo phiên bản Android nên đừng dựa vào việc nhận đủ mọi mức. <code>largeHeap</code> chỉ nâng trần heap chứ không sửa leak, mà process to hơn lại dễ bị lmkd giết hơn, nên chỉ dùng cho tính năng thật sự cần (chỉnh ảnh, tài liệu lớn). Cache phải co giãn theo máy: <code>LruCache</code> tính bằng byte từ <code>Runtime.maxMemory()</code>, Coil dùng <code>maxSizePercent</code> và tự thu nhỏ khi nhận <code>onTrimMemory</code>, máy <code>isLowRamDevice</code> thì giảm độ phân giải ảnh và tắt prefetch. Đo: Memory Profiler (heap dump, allocation tracking quanh luồng nặng, tìm bitmap trùng kích thước), <code>adb shell dumpsys meminfo &lt;package&gt;</code> để xem PSS theo loại; ở production ghi lại <code>ApplicationExitInfo</code> có <code>REASON_LOW_MEMORY</code> để biết tỉ lệ bị giết thật.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ShopApp</span> : <span class="tk-type">Application</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onTrimMemory(level: <span class="tk-type">Int</span>) {
+    <span class="tk-kw">super</span>.onTrimMemory(level)
+    <span class="tk-kw">if</span> (level &gt;= <span class="tk-type">ComponentCallbacks2</span>.<span class="tk-type">TRIM_MEMORY_UI_HIDDEN</span>) {
+      thumbnailCache.trimToSize(thumbnailCache.size() / <span class="tk-num">2</span>) <span class="tk-com">// UI ẩn: nhả bớt cache hình</span>
+    }
+  }
+}
+
+<span class="tk-com">// LruCache tính theo KB và theo bộ nhớ của từng máy, không dùng con số cố định</span>
+<span class="tk-kw">val</span> maxKb = (<span class="tk-type">Runtime</span>.getRuntime().maxMemory() / <span class="tk-num">1024</span>).toInt()
+<span class="tk-kw">val</span> thumbnailCache = <span class="tk-kw">object</span> : <span class="tk-type">LruCache</span>&lt;<span class="tk-type">String</span>, <span class="tk-type">Bitmap</span>&gt;(maxKb / <span class="tk-num">8</span>) {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> sizeOf(key: <span class="tk-type">String</span>, <span class="tk-kw">value</span>: <span class="tk-type">Bitmap</span>): <span class="tk-type">Int</span> = <span class="tk-kw">value</span>.byteCount / <span class="tk-num">1024</span>
+}
+
+<span class="tk-com">// Coil 2: memory cache theo % bộ nhớ app, tự thu nhỏ khi hệ thống báo thiếu RAM</span>
+<span class="tk-kw">val</span> imageLoader = <span class="tk-type">ImageLoader</span>.<span class="tk-type">Builder</span>(context)
+  .memoryCache { <span class="tk-type">MemoryCache</span>.<span class="tk-type">Builder</span>(context).maxSizePercent(<span class="tk-num">0.15</span>).build() }
+  .build()
+
+<span class="tk-com">// Production: đếm số lần process bị lmkd giết (API 30+)</span>
+<span class="tk-kw">val</span> killedByLowMemory = context.getSystemService(<span class="tk-type">ActivityManager</span>::<span class="tk-kw">class</span>.java)
+  .getHistoricalProcessExitReasons(<span class="tk-kw">null</span>, <span class="tk-num">0</span>, <span class="tk-num">10</span>)
+  .count { it.reason == <span class="tk-type">ApplicationExitInfo</span>.<span class="tk-type">REASON_LOW_MEMORY</span> }</code></pre>
+        <p class="doc-link"><a href="https://developer.android.com/topic/performance/memory" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.android.com ↗</a></p>
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q38">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q37.html"><span class="muted small">← Câu trước</span><span>Đang ở giữa dự án 3 tháng (làm lại luồng thanh toán) thì bạn nhận ra tiến độ ch…</span></a>
+  <a class="pager-next" href="../s/and-sen-q39.html"><span class="muted small">Câu sau →</span><span>Sau mỗi bản phát hành, team chỉ biết app giật hoặc chậm hơn khi người dùng phàn…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Performance</h2><a class="section-sub" href="../phong-van/android/chu-de/perf/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q01.html">App có cold start khoảng 2,5 giây trên máy tầm trung, trong Application.onCreate đang khởi tạo cả chục SDK. Bạn đo và tối ưu thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q02.html">QA báo màn hình feed giật khi cuộn nhanh trên máy tầm thấp, còn trên máy dev thì mượt. Bạn đo và khoanh vùng jank thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q03.html">LeakCanary báo MapActivity bị leak, retaining path đi qua một listener đăng ký vào singleton LocationRepository. Bạn phân tích và sửa thế nào? Còn những nguồn leak Context phổ biến nào khác?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q04.html">Team vừa chuyển feed từ RecyclerView sang LazyColumn và thấy cuộn kém mượt hơn bản cũ trên máy tầm thấp. Bạn kiểm tra những nguyên nhân đặc thù của Compose nào và tối ưu ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q35.html">Android vitals báo app có &#39;excessive wakeups&#39; và &#39;stuck partial wake locks&#39;, và review than app hao pin dù user ít dùng. Bạn điều tra và giảm mức tiêu thụ pin thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q39.html">Sau mỗi bản phát hành, team chỉ biết app giật hoặc chậm hơn khi người dùng phàn nàn trên store. Bạn xây hệ thống quan sát hiệu năng (observability) cho app thế nào để phát hiện regression trước khi bản mới lan tới 100% người dùng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>
