@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Android Middle: SettingsRepository được khởi tạo mới trong mỗi ViewModel (không phải singleton), nên cùn…</title>
+<meta name="description" content="Mỗi file chỉ được có một DataStore hoạt động trong cùng process; nếu có nhiều instance cùng file thì khi đọc hoặc cập nhật dữ liệu DataStore ném IllegalState…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-mid-m45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Android Middle: SettingsRepository được khởi tạo mới trong mỗi ViewModel (không phải singleton), nên cùn…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-mid-m45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/middle/"},{"@type":"ListItem","position":5,"name":"SettingsRepository được khởi tạo mới trong mỗi…","item":"https://trongmobile.github.io/flutter-prep/s/and-mid-m45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">SettingsRepository được khởi tạo mới trong mỗi…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title"><code>SettingsRepository</code> được khởi tạo mới trong mỗi ViewModel (không phải singleton), nên cùng lúc có hai instance tạo DataStore trỏ tới file <code>settings</code>. Khi cả hai đọc hoặc ghi dữ liệu thì sao?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">SettingsRepository</span>(context: <span class="tk-type">Context</span>) {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> dataStore = <span class="tk-type">PreferenceDataStoreFactory</span>.create(
+    produceFile = { context.preferencesDataStoreFile(<span class="tk-str">&quot;settings&quot;</span>) }
+  )
+
+  <span class="tk-kw">val</span> darkMode: <span class="tk-type">Flow</span>&lt;<span class="tk-type">Boolean</span>&gt; = dataStore.<span class="tk-kw">data</span>.map { it[<span class="tk-type">DARK_MODE</span>] ?: <span class="tk-kw">false</span> }
+
+  <span class="tk-kw">suspend</span> <span class="tk-kw">fun</span> setDarkMode(on: <span class="tk-type">Boolean</span>) {
+    dataStore.edit { it[<span class="tk-type">DARK_MODE</span>] = on }
+  }
+
+  <span class="tk-kw">private</span> <span class="tk-kw">companion</span> <span class="tk-kw">object</span> {
+    <span class="tk-kw">val</span> <span class="tk-type">DARK_MODE</span> = booleanPreferencesKey(<span class="tk-str">&quot;dark_mode&quot;</span>)
+  }
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Hai DataStore tự đồng bộ với nhau qua file nên dữ liệu luôn nhất quán</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Ném <code>IllegalStateException</code> vì có nhiều DataStore cùng hoạt động trên một file</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Cả hai chạy bình thường, lần ghi sau cùng ghi đè lần trước như <code>SharedPreferences</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Instance tạo sau bị suspend cho tới khi instance trước bị đóng hoàn toàn</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>Mỗi file chỉ được có một DataStore hoạt động trong cùng process; nếu có nhiều instance cùng file thì khi đọc hoặc cập nhật dữ liệu DataStore ném <code>IllegalStateException</code> (multiple DataStores active for the same file). Cần giữ DataStore là singleton, ví dụ qua property delegate <code>preferencesDataStore</code> ở top level hoặc provide <code>@Singleton</code> bằng Hilt; chúng không tự đồng bộ và cũng không chặn nhau.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-mid-m45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-mid-m44.html"><span class="muted small">← Câu trước</span><span>Sau khi người dùng xoay màn hình vài lần, LeakCanary báo nhiều instance MapActi…</span></a>
+  <a class="pager-next" href="../s/and-mid-m46.html"><span class="muted small">Câu sau →</span><span>Server trả HTTP 404 cho users/{id}. Với Retrofit 2.6+ và đoạn code dưới đây, đi…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/android/middle/">Tất cả câu hỏi Android Middle</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-mid-q17.html">Bạn thêm cột avatar_url vào bảng users của Room và tăng version database. Bản release lên, một số người dùng bị crash ngay khi mở app. Vì sao, và quy trình migration đúng là gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q18.html">Access token hết hạn, nhiều request song song cùng nhận 401. Bạn dùng OkHttp Interceptor hay Authenticator để refresh token, và làm sao để chỉ refresh một lần?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q30.html">Màn danh sách có hàng chục nghìn sản phẩm tải theo trang, cần xem được khi offline và không mất vị trí cuộn khi xoay máy. Bạn dùng Paging 3 thế nào (PagingSource, cachedIn, LoadState, RemoteMediator)?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q31.html">App báo &#39;request treo mãi&#39; trên mạng yếu, và HttpLoggingInterceptor mức BODY còn xuất hiện cả ở bản release, lộ token trong log. Bạn cấu hình OkHttp thế nào: các loại timeout, application interceptor và network interceptor, cache?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q48.html">Màn danh sách bài viết gọi API mỗi lần mở dù dữ liệu hiếm khi đổi, tốn data và chậm trên mạng yếu. Backend có thể trả ETag và Cache-Control. OkHttp Cache hoạt động thế nào, và khi nào dùng cache HTTP thay vì tự cache bằng Room?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-mid-q49.html">Màn danh sách đơn hàng collect dao.observeOrders() (trả Flow&lt;List&lt;OrderEntity&gt;&gt;): mỗi lần sync cập nhật một dòng không liên quan thì UI lại nháy, và sync 5.000 dòng bằng vòng for gọi insert từng dòng mất vài giây. Giải thích cách Room phát lại Flow, và cách dùng @Transaction, @Upsert, @Index, @RawQuery cho đúng.</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

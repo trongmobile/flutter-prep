@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Junior: AuthProvider giữ state user và isOnline (chỉ để hiện banner mất mạng bên cạnh child…</title>
+<meta name="description" content="Provider so sánh value bằng Object.is; { user, setUser } là object literal nên mỗi lần AuthProvider render lại là một object mới, và mọi consumer bị buộc re-…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-m44.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Junior: AuthProvider giữ state user và isOnline (chỉ để hiện banner mất mạng bên cạnh child…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-jun-m44.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"AuthProvider giữ state user và isOnline (chỉ để…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-m44.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">AuthProvider giữ state user và isOnline (chỉ để…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/state/">State Management</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title"><code>AuthProvider</code> giữ state <code>user</code> và <code>isOnline</code> (chỉ để hiện banner mất mạng bên cạnh <code>children</code>), rồi truyền <code>value={{ user, setUser }}</code> cho <code>AuthContext.Provider</code>. Khi <code>isOnline</code> đổi nhưng <code>user</code> không đổi, các component dùng <code>useContext(AuthContext)</code> sẽ thế nào?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Không re-render, vì <code>user</code> không đổi nên context không thông báo gì</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Không re-render, vì <code>children</code> giữ nguyên nên React bỏ qua cây con</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Luôn re-render, kể cả khi <code>value</code> giữ nguyên cùng một tham chiếu</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Re-render, vì <code>value</code> là object mới; dùng <code>useMemo</code> theo <code>[user]</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div>Provider so sánh <code>value</code> bằng <code>Object.is</code>; <code>{ user, setUser }</code> là object literal nên mỗi lần <code>AuthProvider</code> render lại là một object mới, và mọi consumer bị buộc re-render dù <code>user</code> không đổi. Bọc <code>value</code> bằng <code>useMemo(() =&gt; ({ user, setUser }), [user])</code> (<code>setUser</code> vốn ổn định) để giữ nguyên tham chiếu. <code>children</code> giữ nguyên chỉ giúp các component trung gian không phải consumer khỏi render lại, còn consumer vẫn render vì context đã đổi.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-m44">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-m43.html"><span class="muted small">← Câu trước</span><span>Màn hình chat nằm trong Stack có header chuẩn của React Navigation. Trên iOS, k…</span></a>
+  <a class="pager-next" href="../s/rn-jun-m45.html"><span class="muted small">Câu sau →</span><span>Row đã bọc React.memo, nhưng mỗi khi Products re-render vì query đổi, mọi Row đ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề State Management</h2><a class="section-sub" href="../phong-van/react-native/chu-de/state/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q07.html">Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q26.html">Màn hình giỏ hàng đang có bốn useState riêng (items, coupon, loading, error), mỗi thao tác phải gọi 2–3 hàm set liền nhau và thỉnh thoảng quên reset error. Khi nào nên chuyển sang useReducer, và nó khác useState thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-m42.html">Cần đổi city sang &#39;Sài Gòn&#39; và giữ nguyên mọi trường còn lại của profile. Lời gọi setProfile nào cho kết quả đúng?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q34.html">Khi nào chỉ cần useState, khi nào nên dùng Context hoặc thư viện như Redux Toolkit, Zustand?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-mid-q01.html">Trong createSlice bạn viết state.items.push(...) ngay trong reducer. Vì sao như vậy không phá nguyên tắc immutable của Redux, và cách viết này có bẫy gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q02.html">Dự án đang gọi API bằng createAsyncThunk và tự lưu loading/error/data vào slice. Chuyển sang RTK Query được lợi gì, và làm sao để danh sách tự làm mới sau khi tạo bài viết mới?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Junior: Banner mờ dần hiện ra trong 500ms khi mount. Nếu người dùng bấm Text (gây re-render…</title>
+<meta name="description" content="new Animated.Value(0) trong thân component tạo một giá trị mới (đang ở 0) sau mỗi lần render: animation đang chạy vẫn cập nhật Value cũ, nhưng Animated.View…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-m46.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Junior: Banner mờ dần hiện ra trong 500ms khi mount. Nếu người dùng bấm Text (gây re-render…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-jun-m46.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Banner mờ dần hiện ra trong 500ms khi mount. Nế…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-m46.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Banner mờ dần hiện ra trong 500ms khi mount. Nế…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/animation/">Animation &amp; Gesture</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Banner mờ dần hiện ra trong 500ms khi mount. Nếu người dùng bấm <code>Text</code> (gây re-render) khi animation đang chạy giữa chừng, điều gì xảy ra?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">function</span> <span class="tk-type">Banner</span>() {
+  <span class="tk-kw">const</span> [count, setCount] = useState(<span class="tk-num">0</span>);
+  <span class="tk-kw">const</span> opacity = <span class="tk-kw">new</span> <span class="tk-type">Animated</span>.<span class="tk-type">Value</span>(<span class="tk-num">0</span>);
+
+  useEffect(() =&gt; {
+    <span class="tk-type">Animated</span>.timing(opacity, {
+      toValue: <span class="tk-num">1</span>,
+      duration: <span class="tk-num">500</span>,
+      useNativeDriver: <span class="tk-kw">true</span>,
+    }).start();
+  }, []);
+
+  <span class="tk-kw">return</span> (
+    &lt;<span class="tk-type">Animated</span>.<span class="tk-type">View</span> style={{ opacity }}&gt;
+      &lt;<span class="tk-type">Text</span> onPress={() =&gt; setCount(count + <span class="tk-num">1</span>)}&gt;Đã bấm {count} lần&lt;/<span class="tk-type">Text</span>&gt;
+    &lt;/<span class="tk-type">Animated</span>.<span class="tk-type">View</span>&gt;
+  );
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Animation chạy tiếp tới hết vì <code>useNativeDriver: true</code> chạy độc lập với React</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Animation khởi động lại từ đầu vì mỗi lần render effect chạy lại</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Banner nhảy về trong suốt vì mỗi lần render tạo một <code>Animated.Value</code> mới</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Animation dừng ở giá trị hiện tại vì re-render huỷ animation đang chạy</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div><code>new Animated.Value(0)</code> trong thân component tạo một giá trị mới (đang ở 0) sau mỗi lần render: animation đang chạy vẫn cập nhật <code>Value</code> cũ, nhưng <code>Animated.View</code> giờ gắn với <code>Value</code> mới, và effect với deps <code>[]</code> không chạy lại nên banner kẹt ở trạng thái trong suốt. Giữ cùng một đối tượng qua các lần render bằng <code>useRef(new Animated.Value(0)).current</code>, đúng như ví dụ trong tài liệu.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-m46">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-m45.html"><span class="muted small">← Câu trước</span><span>Row đã bọc React.memo, nhưng mỗi khi Products re-render vì query đổi, mọi Row đ…</span></a>
+  <a class="pager-next" href="../s/rn-jun-m47.html"><span class="muted small">Câu sau →</span><span>App dùng React Navigation, khai báo màn hình có điều kiện theo isSignedIn: Sign…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Animation &amp; Gesture</h2><a class="section-sub" href="../phong-van/react-native/chu-de/animation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q34.html">Làm hiệu ứng mờ dần (fade-in) cho thẻ khi màn hình mở. Bạn viết const opacity = new Animated.Value(0) thẳng trong thân component, nhưng mỗi lần state đổi thì thẻ lại nhấp nháy và chạy lại từ đầu. Vì sao, và viết thế nào cho đúng?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-mid-q15.html">Animated với useNativeDriver: true khác false thế nào? Vì sao animate height lại báo lỗi khi bật native driver?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q16.html">Reanimated chạy animation &#39;trên UI thread&#39; nghĩa là gì? Shared value và worklet khác useState và hàm JS thường ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q17.html">Làm swipe-to-delete hay bottom sheet kéo theo tay, vì sao nên dùng react-native-gesture-handler kết hợp Reanimated thay vì PanResponder?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q49.html">Header sản phẩm cần thu nhỏ và mờ dần theo vị trí cuộn của FlatList. Bạn viết onScroll={(e) =&gt; setY(e.nativeEvent.contentOffset.y)} rồi tính style từ y, và header bị giật. Vì sao, và làm bằng Reanimated thế nào để animation mượt kể cả khi JS thread đang bận?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-sen-q31.html">Bottom sheet kéo thả của bạn bị giật khi JS thread bận (ví dụ lúc list phía sau đang render), dù đã dùng Animated của core. Bạn dựng lại bằng Reanimated và Gesture Handler thế nào để animation chạy mượt, và những bẫy khi chuyển logic sang UI thread là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

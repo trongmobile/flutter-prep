@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<meta name="description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · android · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Junior</h1>
-  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/android/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -77,7 +77,7 @@
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">1</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -1287,6 +1287,16 @@ android {
     <li><a href="../../../s/and-jun-m38.html">Trường hợp nào sau đây có thể gây ANR thay vì làm app crash ngay lập tức?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-jun-m39.html">Trong JUnit 4, class test có 3 method @Test. Method gắn @Before chạy bao nhiêu lần?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-jun-m40.html">Unit test trong src/test (chạy trên JVM, không dùng Robolectric) gọi tới code có Log.d(). Với cấu hình Gradle mặc định, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m41.html">Bọc lời gọi launch trong try/catch như đoạn code sau. Chương trình in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m42.html">CartFragment lấy ViewModel như đoạn code sau, không cấu hình Factory hay DI nào khác. Điều gì xảy ra khi truy cập viewModel lần đầu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m43.html">Đăng ký PeriodicWorkRequestBuilder&lt;SyncWorker&gt;(5, TimeUnit.MINUTES) để đồng bộ dữ liệu định kỳ. Với WorkManager 2.x, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m44.html">Project khai báo buildTypes { debug; release } và productFlavors { free; paid } (cùng một flavorDimensions). Gradle tạo ra những build variant nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m45.html">Android Studio (Lint) cảnh báo onDraw của custom view dưới đây. Vấn đề hiệu năng chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m46.html">Dùng kotlinx-coroutines-test, runTest chạy đoạn test sau. Kết quả in ra và thời gian chạy thực của test là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m47.html">App có targetSdk 34 và không cấu hình Network Security Config. Request OkHttp gọi tới http://api.example.com/users (HTTP, không phải HTTPS) trên Android 14 sẽ thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m48.html">Thêm cột isPinned vào entity Note và tăng version của @Database từ 1 lên 2, nhưng không cung cấp Migration và không gọi fallbackToDestructiveMigration(). Khi app cập nhật mở database cũ của người dùng, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m49.html">SearchActivity khai báo android:launchMode=&quot;singleTop&quot; và đang hiển thị ở đỉnh back stack. Người dùng chọn một gợi ý, code gọi startActivity(Intent(this, SearchActivity::class.java).putExtra(&quot;query&quot;, q)). Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m50.html">Fragment collect StateFlow như đoạn code sau. Khi người dùng bấm Home đưa app xuống background (Fragment tới onStop), điều gì xảy ra với collector?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

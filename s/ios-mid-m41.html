@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Middle: Màn hình giữ PriceTicker đã đóng nhưng log vẫn tiếp tục in và deinit không bao giờ chạy (str…</title>
+<meta name="description" content="Closure của Task dùng self trực tiếp nên giữ self mạnh suốt lúc vòng for await còn chạy, trong khi self giữ task qua property: thành vòng tham chiếu. deinit…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-m41.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Middle: Màn hình giữ PriceTicker đã đóng nhưng log vẫn tiếp tục in và deinit không bao giờ chạy (str…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-m41.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Màn hình giữ PriceTicker đã đóng nhưng log vẫn…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-m41.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình giữ PriceTicker đã đóng nhưng log vẫn…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/memory/">Memory &amp; ARC</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Màn hình giữ <code>PriceTicker</code> đã đóng nhưng log vẫn tiếp tục in và <code>deinit</code> không bao giờ chạy (stream chưa kết thúc). Nguyên nhân là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">PriceTicker</span> {
+  <span class="tk-kw">private</span> <span class="tk-kw">var</span> task: <span class="tk-type">Task</span>&lt;<span class="tk-type">Void</span>, <span class="tk-type">Never</span>&gt;?
+
+  <span class="tk-kw">func</span> start(_ prices: <span class="tk-type">AsyncStream</span>&lt;<span class="tk-type">Double</span>&gt;) {
+    task = <span class="tk-type">Task</span> {
+      <span class="tk-kw">for</span> <span class="tk-kw">await</span> price <span class="tk-kw">in</span> prices {
+        <span class="tk-kw">self</span>.show(price)
+      }
+    }
+  }
+
+  <span class="tk-kw">func</span> show(_ price: <span class="tk-type">Double</span>) { print(<span class="tk-str">&quot;giá&quot;</span>, price) }
+
+  <span class="tk-kw">deinit</span> { task?.cancel() }
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>AsyncStream</code> giữ strong <code>PriceTicker</code> cho tới khi stream kết thúc</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>deinit</code> không chạy nổi với class có property kiểu <code>Task</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>self</code> giữ <code>task</code>, closure của <code>task</code> lại giữ <code>self</code> khi stream còn mở</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>for await</code> chạy trên main thread nên chặn ARC giải phóng object</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Closure của <code>Task</code> dùng <code>self</code> trực tiếp nên giữ <code>self</code> mạnh suốt lúc vòng <code>for await</code> còn chạy, trong khi <code>self</code> giữ <code>task</code> qua property: thành vòng tham chiếu. <code>deinit</code> lại là nơi duy nhất gọi <code>cancel()</code> nên nó không bao giờ được gọi. Sửa bằng <code>[weak self]</code> trong closure và huỷ task tường minh (vd. <code>stop()</code> hoặc <code>onDisappear</code>) thay vì dựa vào <code>deinit</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-m41">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-m40.html"><span class="muted small">← Câu trước</span><span>Điều nào đúng về universal link so với custom URL scheme (myapp://)?</span></a>
+  <a class="pager-next" href="../s/ios-mid-m42.html"><span class="muted small">Câu sau →</span><span>Time Profiler cho thấy vòng lặp xử lý hàng đợi dưới đây chiếm gần hết thời gian…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Memory &amp; ARC</h2><a class="section-sub" href="../phong-van/ios/chu-de/memory/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q08.html">ViewModel lắng nghe một AsyncStream bằng Task { for await event in stream { ... } }. Màn hình đã đóng nhưng deinit của ViewModel không bao giờ chạy. Vì sao, và thêm [weak self] có đủ không?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m11.html">ViewModel sau không bao giờ được giải phóng sau khi màn hình đóng. Nguyên nhân là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q08.html">ARC là gì? Khi nào một object bị giải phóng khỏi bộ nhớ?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q09.html">Strong reference và weak reference khác nhau thế nào? Vì sao biến weak luôn phải có kiểu Optional?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-jun-q04.html">Bạn pop màn hình chi tiết ra nhưng deinit của DetailViewController không bao giờ chạy. Trong code có đoạn gán callback cho ViewModel như dưới. Nguyên nhân và cách sửa?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q05.html">Vì sao property delegate thường được khai báo weak? Viết weak var delegate: PickerDelegate? mà compiler báo lỗi thì sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

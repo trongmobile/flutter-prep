@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Fresher (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · ios · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Fresher</h1>
-  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/ios/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -74,7 +74,7 @@
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -1365,6 +1365,16 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
     <li><a href="../../../s/ios-fre-m38.html">App đang có version 1.3.0 build 12 trên TestFlight. Bạn sửa một bug nhỏ và muốn upload lại cho tester, cần thay đổi gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-fre-m39.html">App UIKit tạo từ template mới (có SceneDelegate). Bạn muốn bỏ storyboard và tự tạo UIWindow cùng màn hình gốc bằng code. Đặt code đó ở đâu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-fre-m40.html">Phát biểu nào đúng về bundle identifier (ví dụ com.example.shopapp)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m41.html">Vòng lặp duyệt mảng bằng khoảng đóng 0...scores.count sau chạy thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m42.html">Hàm trả về closure đếm sau, print(a(), a(), b()) in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m43.html">Trong completion handler của URLSession.shared.dataTask(with:completionHandler:), bạn gán self.label.text = ... trực tiếp. Phát biểu nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m44.html">fetchName() được khai báo async. Gọi nó trực tiếp trong viewDidLoad như đoạn code sau thì kết quả thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m45.html">Đoạn code dùng delegate sau bị lỗi compile ở dòng weak var delegate. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m46.html">Test XCTAssertEqual(0.1 + 0.2, 0.3) với kiểu Double bị fail dù phép cộng nhìn có vẻ đúng. Nguyên nhân và cách sửa phù hợp là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m47.html">App gọi URLSession tới http://api.example.com/users và nhận lỗi App Transport Security policy requires the use of a secure connection. Với bản phát hành, cách xử lý nào đúng nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m48.html">Server trả JSON dùng key user_name trong khi model khai báo userName. Đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m49.html">Ô nhập liệu tự đặt backgroundColor = .white và textColor = .black, nên khi bật Dark Mode thì ô vẫn trắng chói. Muốn màu tự đổi theo chế độ Light/Dark của hệ thống thì làm thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m50.html">Bạn tô vàng row đầu tiên như đoạn code sau, nhưng khi cuộn danh sách dài thì một số row khác cũng bị vàng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

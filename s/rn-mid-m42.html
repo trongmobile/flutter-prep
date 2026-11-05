@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Middle: Màn Home điều hướng sang PickCity và truyền hàm onSelect qua params để nhận thành p…</title>
+<meta name="description" content="Hàm không serialize được nên state điều hướng không còn là dữ liệu thuần: không thể lưu để khôi phục sau khi app bị kill (state persistence) và màn hình khôn…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-mid-m42.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Middle: Màn Home điều hướng sang PickCity và truyền hàm onSelect qua params để nhận thành p…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-mid-m42.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/middle/"},{"@type":"ListItem","position":5,"name":"Màn Home điều hướng sang PickCity và truyền hàm…","item":"https://trongmobile.github.io/flutter-prep/s/rn-mid-m42.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn Home điều hướng sang PickCity và truyền hàm…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/react-native/chu-de/navigation/">Navigation</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Màn <code>Home</code> điều hướng sang <code>PickCity</code> và truyền hàm <code>onSelect</code> qua params để nhận thành phố được chọn, kiểu <code>navigation.navigate(&#39;PickCity&#39;, { onSelect })</code>. Ở bản dev, React Navigation cảnh báo &#39;Non-serializable values were found in the navigation state&#39;. Cảnh báo này nói lên điều gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">State điều hướng chứa hàm nên không lưu và khôi phục được; hãy truyền dữ liệu đơn giản, trả kết quả qua store chung</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Chỉ là cảnh báo riêng của bản dev, không liên quan gì tới việc lưu hay khôi phục state điều hướng sau này</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Hàm được tạo lại mỗi lần render nên reference đổi; bọc <code>onSelect</code> bằng <code>useCallback</code> là hết cảnh báo</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Params chỉ nhận chuỗi và số, nên phải <code>JSON.stringify</code> hàm trước khi truyền rồi <code>JSON.parse</code> lại ở màn <code>PickCity</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Hàm không serialize được nên state điều hướng không còn là dữ liệu thuần: không thể lưu để khôi phục sau khi app bị kill (state persistence) và màn hình không còn hợp đồng rõ ràng cho deep link. <code>useCallback</code> chỉ giữ reference chứ không làm hàm serializable, còn <code>JSON.stringify</code> sẽ bỏ mất hàm. Hãy truyền id hoặc giá trị đơn giản và để <code>PickCity</code> ghi kết quả vào store/context dùng chung (hoặc điều hướng ngược kèm params cho màn trước).</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-mid-m42">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-mid-m41.html"><span class="muted small">← Câu trước</span><span>Bấm nút một lần khi n đang là 0 (React 18 trở lên, các setN được batch trong ev…</span></a>
+  <a class="pager-next" href="../s/rn-mid-m43.html"><span class="muted small">Câu sau →</span><span>Feed dùng useInfiniteQuery (TanStack Query v5), mỗi trang API trả về { items: P…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/react-native/middle/">Tất cả câu hỏi React Native Middle</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/react-native/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-mid-q09.html">Sau khi đăng nhập, app gọi navigation.navigate(&#39;Home&#39;), nhưng bấm back trên Android lại quay về màn Login; đăng xuất xong cũng có thể back vào màn cần đăng nhập. Bạn tổ chức auth flow với React Navigation thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q34.html">App dùng React Navigation với TypeScript nhưng navigation.navigate(&#39;OrderDetail&#39;, { id }) hay bị sai tên màn hoặc thiếu params mà chỉ lỗi lúc chạy; điều hướng từ tab sang màn nằm sâu trong một stack khác thì báo The action &#39;NAVIGATE&#39; ... was not handled. Bạn định kiểu navigation và xử lý navigator lồng nhau thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q48.html">Dự án Expo mới, team phân vân giữa Expo Router (file-based) và tự cấu hình React Navigation. Hai cách khác nhau ở đâu, Expo Router giải quyết được gì, và nếu migrate một dự án React Navigation đang chạy sang thì cần để ý bẫy nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-m08.html">Stack gốc có màn Main chứa Bottom Tab, header hiển thị là header của stack. Trong màn Orders của tab, gọi navigation.setOptions({ title: &#39;Đơn hàng&#39; }) nhưng tiêu đề header không đổi. Vì sao?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q20.html">Trong stack navigator của React Navigation, navigate, push, goBack và popToTop khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q21.html">Truyền dữ liệu sang màn hình khác bằng params thế nào? Nên truyền cả object sản phẩm hay chỉ truyền id?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

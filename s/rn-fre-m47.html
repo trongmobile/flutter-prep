@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Fresher: Khi app React Native chạy trên điện thoại, &lt;View&gt; và &lt;Text&gt; được hiển thị bằng gì?</title>
+<meta name="description" content="React Native biến cây component thành các native view thật: View tương ứng UIView trên iOS và ViewGroup trên Android, Text tương ứng UITextView/TextView. Khô…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-m47.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Fresher: Khi app React Native chạy trên điện thoại, &lt;View&gt; và &lt;Text&gt; được hiển thị bằng gì?">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-m47.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Khi app React Native chạy trên điện thoại, \u003cVie…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-m47.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Khi app React Native chạy trên điện thoại, &lt;Vie…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/native/">Native &amp; New Architecture</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Khi app React Native chạy trên điện thoại, <code>&lt;View&gt;</code> và <code>&lt;Text&gt;</code> được hiển thị bằng gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Thẻ HTML như <code>div</code> và <code>p</code> chạy trong một WebView ẩn</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Native view thật của từng nền tảng (UIKit, Android View)</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Hình do một engine đồ hoạ riêng vẽ lên canvas của app</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Mã Swift và Kotlin sinh ra từ code JavaScript lúc build</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>React Native biến cây component thành các native view thật: <code>View</code> tương ứng <code>UIView</code> trên iOS và <code>ViewGroup</code> trên Android, <code>Text</code> tương ứng <code>UITextView</code>/<code>TextView</code>. Không dùng WebView (đó là hướng của app hybrid như Ionic, Cordova), không tự vẽ bằng engine riêng (đó là cách của Flutter), và JS cũng không được dịch sang Swift/Kotlin.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-m47">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-m46.html"><span class="muted small">← Câu trước</span><span>user lấy từ API ở màn hình gốc, phải truyền qua Layout → Header → Menu → Avatar…</span></a>
+  <a class="pager-next" href="../s/rn-fre-m48.html"><span class="muted small">Câu sau →</span><span>Màn Home là một FlatList sản phẩm; mỗi ô hiện ảnh vuông 100×100 nhưng ảnh tải v…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; New Architecture</h2><a class="section-sub" href="../phong-van/react-native/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q31.html">React Native là gì? Khác gì với app hybrid dùng WebView (Ionic, Cordova) và với Flutter?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q45.html">Bạn cài một thư viện có code native cho camera, chạy lại app thì màn hình đỏ báo ... could not be found. Verify that a module by this name is registered in the native binary. Khi nào phải chạm vào code native trong dự án React Native, autolinking là gì, sau khi cài thư viện native cần làm gì, và vì sao có thư viện không chạy được trong Expo Go?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q21.html">Dự án vừa nâng lên bản React Native chạy New Architecture mặc định. Giải thích ngắn gọn New Architecture khác kiến trúc cũ (bridge) ở đâu, và khi thêm một thư viện native mới bạn cần kiểm tra gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q22.html">README cũ của một thư viện native (ví dụ react-native-keychain) vẫn hướng dẫn chạy react-native link và sửa tay MainApplication, Podfile. Với React Native hiện tại, autolinking làm thay bạn những gì, và bạn vẫn phải tự làm bước nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q33.html">Product yêu cầu thêm thông báo đẩy (push notification). Bạn mô tả luồng từ lúc xin quyền đến khi máy nhận được thông báo, và vì sao test thấy thông báo hiện khi app ở nền nhưng không thấy gì khi app đang mở?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q47.html">Nút &quot;Gọi hotline&quot;, &quot;Mở app đối tác&quot; và &quot;Mở cài đặt để cấp quyền&quot; dùng Linking.openURL. Trên iOS Linking.canOpenURL(&#39;someapp://&#39;) luôn trả false dù máy đã cài app đó, còn trên Android 11+ thì bấm nút không có gì xảy ra. Vì sao, và bạn xử lý trường hợp không có app nào mở được link thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

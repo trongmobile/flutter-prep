@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Middle (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 50 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 50 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · ios · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Middle</h1>
-  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/ios/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">2</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -1547,6 +1547,16 @@ present(<span class="tk-type">PHPickerViewController</span>(configuration: confi
     <li><a href="../../../s/ios-mid-m38.html">Trong func testUpload() async, bạn cần đợi một XCTestExpectation được fulfill từ callback. Cách viết nào đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-mid-m39.html">Một suite Swift Testing dùng chung biến static var mockStore mà nhiều test cùng sửa. Chạy riêng từng test thì pass, chạy cả suite thì fail ngẫu nhiên. Nguyên nhân hợp lý nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-mid-m40.html">Điều nào đúng về universal link so với custom URL scheme (myapp://)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m41.html">Màn hình giữ PriceTicker đã đóng nhưng log vẫn tiếp tục in và deinit không bao giờ chạy (stream chưa kết thúc). Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m42.html">Time Profiler cho thấy vòng lặp xử lý hàng đợi dưới đây chiếm gần hết thời gian khi queue có vài trăm nghìn phần tử, dù mỗi vòng chỉ làm một phép cộng. Nguyên nhân chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m43.html">App dùng Face ID để bảo vệ token như đoạn dưới. Điểm yếu chính so với việc lưu token vào Keychain bằng SecAccessControl yêu cầu sinh trắc học là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m44.html">Widget extension luôn đọc ra 0 dù app chính vừa lưu 5 bằng đoạn dưới (hai target cùng team, cùng máy). Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m45.html">ProductDetail có print trong init. Khi danh sách vừa hiện, trước khi người dùng bấm dòng nào, điều gì xảy ra với ProductDetail của các dòng đang được render?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m46.html">Test dưới đây fail dù StubAPI trả về [&quot;Swift&quot;] ngay lập tức. Nguyên nhân và cách sửa phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m47.html">User rời màn hình khi request đang chạy, loadFeed() bị huỷ, nhưng app vẫn hiện alert &quot;Không tải được feed&quot;. Vì sao catch is CancellationError không bắt được?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m48.html">Trong một hàm, đoạn code hoán đổi hai phần tử của mảng dưới đây cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m49.html">Server sập 5 phút rồi hồi phục. Hàng trăm nghìn client cùng nhận lỗi 503 và đều retry sau đúng 2 giây cố định, khiến server vừa lên đã quá tải trở lại. Chiến lược retry nào đúng nhất ở phía client?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m50.html">Chỉ title của một Todo đổi (id giữ nguyên), rồi bạn apply snapshot mới. Diffable data source xử lý phần tử đó thế nào?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

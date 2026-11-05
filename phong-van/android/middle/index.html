@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Middle (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
+<meta name="description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Middle (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · android · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Middle</h1>
-  <p class="subtitle">Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/android/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -77,7 +77,7 @@
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">2</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -1420,6 +1420,16 @@ prompt.authenticate(promptInfo, <span class="tk-type">BiometricPrompt</span>.<sp
     <li><a href="../../../s/and-mid-m38.html">Test dưới đây chạy bằng runTest mặc định. Hai lệnh println in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-mid-m39.html">Đã cài MainDispatcherRule; state là StateFlow có giá trị ban đầu UiState.Idle. Test Turbine dưới đây pass hay fail?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-mid-m40.html">Test Espresso thỉnh thoảng fail vì dữ liệu tải bằng coroutine trên Dispatchers.IO chưa về lúc assert. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m41.html">Người dùng đang gõ dở ô tìm kiếm thì chuyển sang app khác; hệ thống kill process để lấy RAM, sau đó người dùng quay lại app. Nơi lưu query nào vẫn còn giá trị khi Activity được dựng lại?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m42.html">Khoá AES nằm trong Android Keystore, được tạo bằng KeyGenParameterSpec giữ cấu hình mặc định (yêu cầu mã hoá ngẫu nhiên). Đoạn mã hoá dưới đây truyền IV cố định FIXED_IV sẽ thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m43.html">Bản debug parse JSON đúng, nhưng bản release (isMinifyEnabled = true, chỉ dùng rule R8 mặc định của AGP, UserDto không có @SerializedName và không có keep rule) lại cho displayName là null dù JSON hợp lệ. Nguyên nhân gần nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m44.html">Sau khi người dùng xoay màn hình vài lần, LeakCanary báo nhiều instance MapActivity đã destroy vẫn bị giữ trong bộ nhớ. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m45.html">SettingsRepository được khởi tạo mới trong mỗi ViewModel (không phải singleton), nên cùng lúc có hai instance tạo DataStore trỏ tới file settings. Khi cả hai đọc hoặc ghi dữ liệu thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m46.html">Server trả HTTP 404 cho users/{id}. Với Retrofit 2.6+ và đoạn code dưới đây, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m47.html">Chuỗi thao tác dưới đây chạy trên Sequence, kết thúc bằng first(). Chương trình in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m48.html">Nhiều lớp instrumented test dùng Hilt cần thay NetworkModule thật bằng FakeNetworkModule. Bạn muốn thay một lần, áp dụng cho mọi test trong androidTest mà không khai báo lại ở từng lớp. Cách phù hợp là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m49.html">Người dùng nhấn Home, Activity chuyển sang onStop nhưng chưa bị destroy; observeNearby() vẫn tiếp tục đọc GPS trong nền. Muốn dừng upstream khi UI không còn hiển thị thì sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m50.html">App có targetSdk = 34 gọi startForeground(id, notification) trong một foreground service chưa khai báo android:foregroundServiceType trong manifest. Khi chạy trên Android 14, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

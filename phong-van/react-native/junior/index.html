@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
+<meta name="description" content="50 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
+<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · react native · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Junior</h1>
-  <p class="subtitle">Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Hooks, useEffect, React Navigation, gọi API, AsyncStorage, Context, debug. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/react-native/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">1</span></li>
     <li><a href="#design">System Design</a> <span class="count">1</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="js">
@@ -1232,6 +1232,16 @@ it(<span class="tk-str">&#39;format giá&#39;</span>, () =&gt; {
     <li><a href="../../../s/rn-jun-m38.html">Nơi nào phù hợp nhất để lưu refresh token trong app React Native?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-jun-m39.html">Với React Native Testing Library, cách nào khẳng định đúng rằng thông báo Lỗi không hiển thị?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-jun-m40.html">LoginForm gọi onSubmit(email) khi bấm nút. Sau đoạn test dưới đây, assertion nào kiểm tra đúng việc onSubmit được gọi với email đã nhập?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m41.html">Người dùng bấm Counter 3 lần khi mode là &#39;a&#39;, sau đó Screen render lại với mode là &#39;b&#39;. Text hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m42.html">Cần đổi city sang &#39;Sài Gòn&#39; và giữ nguyên mọi trường còn lại của profile. Lời gọi setProfile nào cho kết quả đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m43.html">Màn hình chat nằm trong Stack có header chuẩn của React Navigation. Trên iOS, khi bàn phím mở, TextInput ở đáy vẫn bị che một phần dù đã bọc bằng KeyboardAvoidingView. Cần chỉnh gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m44.html">AuthProvider giữ state user và isOnline (chỉ để hiện banner mất mạng bên cạnh children), rồi truyền value={{ user, setUser }} cho AuthContext.Provider. Khi isOnline đổi nhưng user không đổi, các component dùng useContext(AuthContext) sẽ thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m45.html">Row đã bọc React.memo, nhưng mỗi khi Products re-render vì query đổi, mọi Row đang hiển thị vẫn render lại dù item không đổi. Nguyên nhân chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m46.html">Banner mờ dần hiện ra trong 500ms khi mount. Nếu người dùng bấm Text (gây re-render) khi animation đang chạy giữa chừng, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m47.html">App dùng React Navigation, khai báo màn hình có điều kiện theo isSignedIn: SignIn khi chưa đăng nhập, Home và Settings khi đã đăng nhập. Sau khi đăng nhập thành công và isSignedIn thành true, cách chuyển sang Home nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m48.html">Người dùng gõ nhanh ab rồi abc; vì mạng không đảm bảo thứ tự nên response của ab về sau response của abc, danh sách hiển thị kết quả sai. Cách nào xử lý triệt để lỗi này?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m49.html">Lần đầu mở app, key settings chưa từng được ghi. Đoạn code sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-jun-m50.html">Trên iOS, app gọi Linking.canOpenURL(&#39;partner://&#39;) trước khi mở app đối tác, nhưng luôn nhận false dù app đối tác đã cài. Cần bổ sung cấu hình nào?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

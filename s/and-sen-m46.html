@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Android Senior: Màn hình mở lên bắn 8 request song song, access token vừa hết hạn nên cả 8 nhận 401. Ser…</title>
+<meta name="description" content="Các request song song cùng thấy 401 và cùng refresh bằng một refresh token đã bị rotate, nên chỉ lần đầu thành công. Cần cơ chế single-flight: trong Authenti…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-m46.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Android Senior: Màn hình mở lên bắn 8 request song song, access token vừa hết hạn nên cả 8 nhận 401. Ser…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-m46.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Màn hình mở lên bắn 8 request song song, access…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-m46.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình mở lên bắn 8 request song song, access…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Màn hình mở lên bắn 8 request song song, access token vừa hết hạn nên cả 8 nhận 401. Server dùng refresh token rotation (mỗi refresh token chỉ dùng được một lần). <code>Authenticator</code> của OkHttp đang gọi API refresh riêng cho từng request, kết quả 7 lần lỗi và user bị đăng xuất. Cách sửa đúng là gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Kéo dài hạn access token lên vài ngày để các request song song hiếm khi cùng gặp 401</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Chủ động refresh token ở <code>Interceptor</code> trước mỗi request để token luôn còn mới</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Serialize refresh bằng khoá; request đến sau thấy token đã đổi thì chỉ retry</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Retry API refresh tối đa ba lần với backoff để một trong các lần chắc chắn thành công</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Các request song song cùng thấy 401 và cùng refresh bằng một refresh token đã bị rotate, nên chỉ lần đầu thành công. Cần cơ chế single-flight: trong <code>Authenticator</code> lấy khoá (<code>synchronized</code> hoặc <code>Mutex</code>), rồi so token trong header của request lỗi với token đang lưu; đã khác thì dùng token mới để retry, chỉ khi còn giống mới gọi refresh. Kéo dài hạn token chỉ làm race hiếm đi, còn retry refresh vô ích vì refresh token cũ đã bị vô hiệu.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-m46">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-m45.html"><span class="muted small">← Câu trước</span><span>App phát hành qua Play với Play App Signing. File https://shop.example.com/.wel…</span></a>
+  <a class="pager-next" href="../s/and-sen-m47.html"><span class="muted small">Câu sau →</span><span>App dùng layout XML nâng targetSdk lên 35, rồi chạy trên Android 15 mà Activity…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q34.html">Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng mới) cho app có vài triệu user đang ở nhiều phiên bản cũ khác nhau. Bạn viết và kiểm thử migration thế nào, và vì sao fallbackToDestructiveMigration nguy hiểm?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q46.html">Màn Home của app thương mại điện tử phải gọi 6 endpoint REST (banner, giỏ hàng, gợi ý...), payload nặng, sang mạng yếu thì rất chậm và tốn pin. Backend đề xuất chuyển sang GraphQL, một team khác muốn gRPC. Dưới góc nhìn client, bạn so sánh REST, GraphQL và gRPC thế nào, và phân trang cùng versioning nên thiết kế ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-fre-q24.html">SharedPreferences dùng để lưu gì? commit() và apply() khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q36.html">App Android gọi API REST cần chuẩn bị gì? Vì sao gọi http:// hoặc localhost của máy dev lại không được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q41.html">Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataStore, file và Room (SQLite) cho ba trường hợp: cài đặt giao diện, ảnh/báo cáo tải về, danh sách đơn hàng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q42.html">Khai báo một API bằng Retrofit thế nào (@GET, @Path, @Query, @POST với @Body)? Converter dùng để làm gì, và JSON được parse thành data class ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

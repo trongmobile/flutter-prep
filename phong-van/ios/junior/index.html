@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · ios · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Junior</h1>
-  <p class="subtitle">ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/ios/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">1</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -1275,6 +1275,16 @@ passwordField.textContentType = .password</code></pre>
     <li><a href="../../../s/ios-jun-m38.html">Bấm vào các dòng của danh sách dưới đây không mở màn hình nào, cũng không crash. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-jun-m39.html">Trong một subclass XCTestCase, hàm func checkLoginWithWrongPassword() không bao giờ chạy khi bấm Cmd+U. Vì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-jun-m40.html">Hai test cùng tăng một stored property count của test case rồi kiểm tra bằng 1. Kết quả khi chạy cả hai là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m41.html">Time Profiler cho thấy bảng cuộn bị giật vì cellForRowAt tạo một DateFormatter() mới cho mỗi cell rồi mới gọi string(from:). Cách khắc phục đúng bản chất nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m42.html">Observer đăng ký qua addObserver(forName:object:queue:using:) với queue: nil, rồi code post notification ngay trên cùng thread. Thứ tự in ra là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m43.html">Property value có didSet, và init gán value = 5. Đoạn code in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m44.html">Hàm tải nhiều URL song song rồi gọi completion khi tất cả xong. Nếu một trong các request gặp lỗi mạng (data == nil) thì điều gì xảy ra với completion?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m45.html">Thiết bị có mạng bình thường, server trả 404 Not Found kèm body JSON 40 byte. Đoạn code in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m46.html">Sau lời gọi removeArrangedSubview(errorLabel) như đoạn code dưới, errorLabel ở trạng thái nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m47.html">Bấm nút con 3 lần (hiển thị Con: 3), rồi bấm nút cha một lần. Nút con hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m48.html">App đã được cấp quyền thông báo. Khi app đang mở ở foreground, server gửi push nhưng người dùng không thấy banner nào. Cần làm gì để hiển thị banner?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m49.html">App gọi dịch vụ bên thứ ba và dev để secret key ngay trong code Swift như private let apiSecret = &quot;sk_live_...&quot;, rồi build Release. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m50.html">LoginViewModel gọi thẳng AuthService.shared.login(...) nên unit test phải gọi server thật. Cách chỉnh nhỏ gọn nhất để test được mà không đổi hành vi app là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

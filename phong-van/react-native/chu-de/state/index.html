@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native: State Management — Mobile Interview</title>
-<meta name="description" content="9 câu hỏi phỏng vấn React Native về State Management từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta name="description" content="9 câu hỏi phỏng vấn React Native về State Management từ Fresher đến Senior, có đáp án mẫu và 13 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/state/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native: State Management — Mobile Interview">
-<meta property="og:description" content="9 câu hỏi phỏng vấn React Native về State Management từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta property="og:description" content="9 câu hỏi phỏng vấn React Native về State Management từ Fresher đến Senior, có đáp án mẫu và 13 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/state/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,12 +47,13 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · react native · chủ đề</div>
   <h1>Câu hỏi phỏng vấn React Native: State Management</h1>
-  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 9 câu quiz về State Management, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 13 câu quiz về State Management, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> React Native Fresher</h2><a class="section-sub" href="../../../../phong-van/react-native/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/rn-fre-q34.html">Khi nào chỉ cần useState, khi nào nên dùng Context hoặc thư viện như Redux Toolkit, Zustand?</a></li>
+    <li><a href="../../../../s/rn-fre-m46.html">user lấy từ API ở màn hình gốc, phải truyền qua Layout → Header → Menu → Avatar, nhưng chỉ Avatar dùng còn các tầng giữa chỉ chuyển tiếp prop (props drilling). Cách nào tránh được việc này mà UI vẫn tự cập nhật khi user đổi?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -60,6 +61,8 @@
   <ul class="link-list">
     <li><a href="../../../../s/rn-jun-q07.html">Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</a></li>
     <li><a href="../../../../s/rn-jun-q26.html">Màn hình giỏ hàng đang có bốn useState riêng (items, coupon, loading, error), mỗi thao tác phải gọi 2–3 hàm set liền nhau và thỉnh thoảng quên reset error. Khi nào nên chuyển sang useReducer, và nó khác useState thế nào?</a></li>
+    <li><a href="../../../../s/rn-jun-m42.html">Cần đổi city sang &#39;Sài Gòn&#39; và giữ nguyên mọi trường còn lại của profile. Lời gọi setProfile nào cho kết quả đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-jun-m44.html">AuthProvider giữ state user và isOnline (chỉ để hiện banner mất mạng bên cạnh children), rồi truyền value={{ user, setUser }} cho AuthContext.Provider. Khi isOnline đổi nhưng user không đổi, các component dùng useContext(AuthContext) sẽ thế nào?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -85,6 +88,7 @@
   <ul class="link-list">
     <li><a href="../../../../s/rn-sen-q37.html">App RN 5 năm tuổi dùng Redux cổ điển (connect, saga, hơn 200 reducer, dữ liệu API nằm chung với state UI). Team muốn chuyển sang RTK Query hoặc React Query kết hợp Zustand mà không viết lại cả app. Bạn lập lộ trình và chọn công cụ thế nào?</a></li>
     <li><a href="../../../../s/rn-sen-m14.html">App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài MB) xuống AsyncStorage. Thời gian từ lúc mở app tới màn đầu tiên tăng dần theo dung lượng dữ liệu. Hướng sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-sen-m44.html">App dùng Redux Toolkit với redux-persist (AsyncStorage, cấu hình mặc định, chưa đặt version). Bản 2.0 đổi slice cart từ { items } sang { lines, coupon }. Sau phát hành, user cập nhật từ 1.x crash ở cart.lines.map ngay khi mở app, còn user cài mới thì bình thường. Cách xử lý đúng để user cũ không crash mà vẫn giữ được giỏ hàng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

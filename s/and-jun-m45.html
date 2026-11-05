@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Android Junior: Android Studio (Lint) cảnh báo onDraw của custom view dưới đây. Vấn đề hiệu năng chính l…</title>
+<meta name="description" content="onDraw có thể chạy mỗi frame khi có animation hay cuộn, nên tạo Paint mới trong đó sinh ra rác liên tục, kích hoạt GC và có thể làm lỡ frame. Cách sửa là kha…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-jun-m45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Android Junior: Android Studio (Lint) cảnh báo onDraw của custom view dưới đây. Vấn đề hiệu năng chính l…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-jun-m45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/junior/"},{"@type":"ListItem","position":5,"name":"Android Studio (Lint) cảnh báo onDraw của custo…","item":"https://trongmobile.github.io/flutter-prep/s/and-jun-m45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Android Studio (Lint) cảnh báo onDraw của custo…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/android/chu-de/perf/">Performance</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Android Studio (Lint) cảnh báo <code>onDraw</code> của custom view dưới đây. Vấn đề hiệu năng chính là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">BadgeView</span>(context: <span class="tk-type">Context</span>) : <span class="tk-type">View</span>(context) {
+    <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onDraw(canvas: <span class="tk-type">Canvas</span>) {
+        <span class="tk-kw">super</span>.onDraw(canvas)
+        <span class="tk-kw">val</span> paint = <span class="tk-type">Paint</span>().apply { color = <span class="tk-type">Color</span>.<span class="tk-type">RED</span> }
+        canvas.drawCircle(width / 2f, height / 2f, 20f, paint)
+    }
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Kotlin cấm tạo object trong <code>onDraw</code>, nên đoạn code này không compile</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>Paint</code> giữ tham chiếu tới <code>Canvas</code> nên không bao giờ được thu hồi</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Tạo <code>Paint</code> mới ở mỗi frame làm tăng áp lực GC, dễ gây giật</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Mỗi lần vẽ đều kích hoạt <code>requestLayout()</code>, đo lại cả cây View</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div><code>onDraw</code> có thể chạy mỗi frame khi có animation hay cuộn, nên tạo <code>Paint</code> mới trong đó sinh ra rác liên tục, kích hoạt GC và có thể làm lỡ frame. Cách sửa là khai báo <code>Paint</code> thành property khởi tạo một lần, chỉ đổi thuộc tính khi cần. Đây chỉ là cảnh báo Lint (<code>DrawAllocation</code>) chứ không phải lỗi compile, và không phải leak vì object ngắn hạn vẫn được thu hồi bình thường.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-jun-m45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-jun-m44.html"><span class="muted small">← Câu trước</span><span>Project khai báo buildTypes { debug; release } và productFlavors { free; paid }…</span></a>
+  <a class="pager-next" href="../s/and-jun-m46.html"><span class="muted small">Câu sau →</span><span>Dùng kotlinx-coroutines-test, runTest chạy đoạn test sau. Kết quả in ra và thời…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/android/junior/">Tất cả câu hỏi Android Junior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Performance</h2><a class="section-sub" href="../phong-van/android/chu-de/perf/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-jun-q24.html">ANR là gì và thường do đâu? Bạn điều tra một ANR được báo về từ Play Console thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q45.html">App tải ảnh bìa 4000×3000 từ server bằng BitmapFactory.decodeStream rồi gán vào ImageView nhỏ. Trên máy cấu hình thấp, cuộn danh sách vài chục ảnh thì crash OutOfMemoryError. Vì sao một file JPEG vài trăm KB lại ngốn nhiều RAM đến vậy, và bạn khắc phục thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-m38.html">Trường hợp nào sau đây có thể gây ANR thay vì làm app crash ngay lập tức?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-mid-q38.html">App bản release nặng 85 MB, Play Console cảnh báo dung lượng tải xuống làm giảm tỉ lệ cài ở thị trường mạng yếu. Bạn phân tích và giảm kích thước app thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/and-sen-q01.html">App có cold start khoảng 2,5 giây trên máy tầm trung, trong Application.onCreate đang khởi tạo cả chục SDK. Bạn đo và tối ưu thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q02.html">QA báo màn hình feed giật khi cuộn nhanh trên máy tầm thấp, còn trên máy dev thì mượt. Bạn đo và khoanh vùng jank thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Networking &amp; Storage — Mobile Interview</title>
-<meta name="description" content="17 câu hỏi phỏng vấn Android về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 10 câu quiz trắc nghiệm.">
+<meta name="description" content="17 câu hỏi phỏng vấn Android về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/data/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Networking &amp; Storage — Mobile Interview">
-<meta property="og:description" content="17 câu hỏi phỏng vấn Android về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 10 câu quiz trắc nghiệm.">
+<meta property="og:description" content="17 câu hỏi phỏng vấn Android về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/data/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Networking &amp; Storage</h1>
-  <p class="subtitle">17 câu hỏi kèm đáp án mẫu và 10 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">17 câu hỏi kèm đáp án mẫu và 15 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -58,6 +58,7 @@
     <li><a href="../../../../s/and-fre-q42.html">Khai báo một API bằng Retrofit thế nào (@GET, @Path, @Query, @POST với @Body)? Converter dùng để làm gì, và JSON được parse thành data class ra sao?</a></li>
     <li><a href="../../../../s/and-fre-m36.html">Với SharedPreferences.Editor, apply() và commit() khác nhau thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m37.html">Đoạn code sau chạy thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m47.html">Ứng dụng ghi chú cần lưu bền vững hàng nghìn ghi chú (tiêu đề, nội dung, ngày tạo) và thường xuyên lọc, sắp xếp theo ngày. Cách lưu trữ nào phù hợp nhất?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -73,6 +74,7 @@
     <li><a href="../../../../s/and-jun-m30.html">DAO của Room khai báo @Insert suspend fun insert(note: Note), không chỉ định onConflict. Gọi insert với một Note có primary key đã tồn tại trong bảng thì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m31.html">Khởi tạo Retrofit với baseUrl(&quot;https://api.shop.vn/v1&quot;) (thiếu dấu / ở cuối). Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m32.html">Vì sao nên dùng chung một instance OkHttpClient cho toàn app thay vì tạo mới cho mỗi request?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m48.html">Thêm cột isPinned vào entity Note và tăng version của @Database từ 1 lên 2, nhưng không cung cấp Migration và không gọi fallbackToDestructiveMigration(). Khi app cập nhật mở database cũ của người dùng, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -87,6 +89,8 @@
     <li><a href="../../../../s/and-mid-m35.html">Bạn muốn interceptor log thấy cả các request redirect và header Accept-Encoding: gzip mà OkHttp tự thêm vào. Đăng ký interceptor bằng cách nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m36.html">Trong Paging 3 kiểu offline-first với RemoteMediator, UI thực sự đọc dữ liệu từ đâu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m37.html">DAO có @Query(&quot;SELECT * FROM users WHERE id = :id&quot;) fun observeUser(id: Long): Flow&lt;User?&gt;. Khi nào Flow này emit lại?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m45.html">SettingsRepository được khởi tạo mới trong mỗi ViewModel (không phải singleton), nên cùng lúc có hai instance tạo DataStore trỏ tới file settings. Khi cả hai đọc hoặc ghi dữ liệu thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m46.html">Server trả HTTP 404 cho users/{id}. Với Retrofit 2.6+ và đoạn code dưới đây, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -94,6 +98,7 @@
   <ul class="link-list">
     <li><a href="../../../../s/and-sen-q34.html">Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng mới) cho app có vài triệu user đang ở nhiều phiên bản cũ khác nhau. Bạn viết và kiểm thử migration thế nào, và vì sao fallbackToDestructiveMigration nguy hiểm?</a></li>
     <li><a href="../../../../s/and-sen-q46.html">Màn Home của app thương mại điện tử phải gọi 6 endpoint REST (banner, giỏ hàng, gợi ý...), payload nặng, sang mạng yếu thì rất chậm và tốn pin. Backend đề xuất chuyển sang GraphQL, một team khác muốn gRPC. Dưới góc nhìn client, bạn so sánh REST, GraphQL và gRPC thế nào, và phân trang cùng versioning nên thiết kế ra sao?</a></li>
+    <li><a href="../../../../s/and-sen-m46.html">Màn hình mở lên bắn 8 request song song, access token vừa hết hạn nên cả 8 nhận 401. Server dùng refresh token rotation (mỗi refresh token chỉ dùng được một lần). Authenticator của OkHttp đang gọi API refresh riêng cho từng request, kết quả 7 lần lỗi và user bị đăng xuất. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

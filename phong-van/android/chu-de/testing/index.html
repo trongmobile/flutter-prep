@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Testing &amp; CI/CD — Mobile Interview</title>
-<meta name="description" content="11 câu hỏi phỏng vấn Android về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 8 câu quiz trắc nghiệm.">
+<meta name="description" content="11 câu hỏi phỏng vấn Android về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/testing/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Testing &amp; CI/CD — Mobile Interview">
-<meta property="og:description" content="11 câu hỏi phỏng vấn Android về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 8 câu quiz trắc nghiệm.">
+<meta property="og:description" content="11 câu hỏi phỏng vấn Android về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/testing/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,13 +47,14 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Testing &amp; CI/CD</h1>
-  <p class="subtitle">11 câu hỏi kèm đáp án mẫu và 8 câu quiz về Testing &amp; CI/CD, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">11 câu hỏi kèm đáp án mẫu và 12 câu quiz về Testing &amp; CI/CD, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/and-fre-q43.html">App crash trên máy test. Bạn đọc Logcat và stack trace để tìm nguyên nhân thế nào? Các mức log khác nhau ra sao và lọc log thế nào?</a></li>
     <li><a href="../../../../s/and-fre-q44.html">Unit test là gì? Viết test JUnit cho một hàm tính tiền thế nào, và vì sao hàm thuần (pure function) dễ test hơn code gắn với Activity?</a></li>
+    <li><a href="../../../../s/and-fre-m49.html">Cần viết unit test bằng JUnit cho một hàm Kotlin thuần (không đụng API Android) và muốn chạy trực tiếp trên JVM của máy dev, không cần emulator. Đặt file test ở thư mục nào của module?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -64,6 +65,7 @@
     <li><a href="../../../../s/and-jun-q46.html">Bạn viết @Query có ORDER BY, LIKE và một @Transaction xoá rồi chèn lại, nhưng chỉ phát hiện sai khi chạy app. Bạn test DAO của Room thế nào để chắc query và transaction đúng, và vì sao nên dùng in-memory database thay vì mock DAO?</a></li>
     <li><a href="../../../../s/and-jun-m39.html">Trong JUnit 4, class test có 3 method @Test. Method gắn @Before chạy bao nhiêu lần?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m40.html">Unit test trong src/test (chạy trên JVM, không dùng Robolectric) gọi tới code có Log.d(). Với cấu hình Gradle mặc định, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m46.html">Dùng kotlinx-coroutines-test, runTest chạy đoạn test sau. Kết quả in ra và thời gian chạy thực của test là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -76,6 +78,7 @@
     <li><a href="../../../../s/and-mid-m38.html">Test dưới đây chạy bằng runTest mặc định. Hai lệnh println in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m39.html">Đã cài MainDispatcherRule; state là StateFlow có giá trị ban đầu UiState.Idle. Test Turbine dưới đây pass hay fail?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m40.html">Test Espresso thỉnh thoảng fail vì dữ liệu tải bằng coroutine trên Dispatchers.IO chưa về lúc assert. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m48.html">Nhiều lớp instrumented test dùng Hilt cần thay NetworkModule thật bằng FakeNetworkModule. Bạn muốn thay một lần, áp dụng cho mọi test trong androidTest mà không khai báo lại ở từng lớp. Cách phù hợp là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -86,6 +89,7 @@
     <li><a href="../../../../s/and-sen-m35.html">Bản 5.2.0 đang staged rollout 20% trên Play Console thì crash rate tăng vọt. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-sen-m36.html">Lợi ích chính của screenshot test chạy trên JVM (Paparazzi, Roborazzi) so với chụp màn hình bằng instrumented test trên emulator là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-sen-m37.html">Để đo lợi ích của Baseline Profile lên startup bằng Macrobenchmark, bạn nên so sánh hai cấu hình nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-sen-m48.html">Test dưới đây chạy trong runTest mà không thay dispatcher nào. Nó chạy mất bao lâu?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

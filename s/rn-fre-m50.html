@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Fresher: Dự án cần gọi API thanh toán đòi secret key. Một bạn viết const SECRET_KEY = &#39;sk_l…</title>
+<meta name="description" content="Mọi thứ nằm trong app đều nằm trên máy người dùng: họ giải nén file cài đặt, lấy bundle JS (Hermes bytecode vẫn lộ chuỗi và có thể decompile) và tìm ra key.…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-m50.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Fresher: Dự án cần gọi API thanh toán đòi secret key. Một bạn viết const SECRET_KEY = &#39;sk_l…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-m50.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Dự án cần gọi API thanh toán đòi secret key. Mộ…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-m50.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Dự án cần gọi API thanh toán đòi secret key. Mộ…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/security/">Security</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Dự án cần gọi API thanh toán đòi secret key. Một bạn viết <code>const SECRET_KEY = &#39;sk_live_abc&#39;</code> ngay trong code TypeScript của app rồi build bản release. Nhận định nào đúng?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Không an toàn: bundle JS lấy ra đọc được, secret phải ở backend</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">An toàn nếu đã bật Hermes, vì bytecode là mã nhị phân không đọc được</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">An toàn nếu đưa key vào file <code>.env</code> và không commit file đó lên Git</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">An toàn nếu cắt key thành nhiều đoạn rồi nối lại lúc app chạy</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Mọi thứ nằm trong app đều nằm trên máy người dùng: họ giải nén file cài đặt, lấy bundle JS (Hermes bytecode vẫn lộ chuỗi và có thể decompile) và tìm ra key. Biến <code>.env</code> thường được nhúng thẳng vào bundle lúc build, còn tách chuỗi chỉ là che mắt. Secret phải nằm ở server: app chỉ gọi backend của bạn (kèm xác thực người dùng), backend mới gọi bên thứ ba.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-m50">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-m49.html"><span class="muted small">← Câu trước</span><span>Chạy test Jest dưới đây cho kết quả gì?</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Security</h2><a class="section-sub" href="../phong-van/react-native/chu-de/security/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q20.html">Sau khi đăng nhập, bạn lưu access token và refresh token ở đâu? Đồng nghiệp bảo &quot;AsyncStorage nằm trong sandbox của app nên an toàn&quot;, bạn trả lời thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-mid-q42.html">Đồng nghiệp làm đăng nhập vân tay/Face ID bằng LocalAuthentication.authenticateAsync() (expo-local-authentication): nếu success là true thì đọc token từ AsyncStorage và cho vào app. Reviewer cho rằng cách này yếu. Vì sao, và bạn gắn sinh trắc học với Keychain/Keystore thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-mid-q43.html">App cần đăng nhập bằng Google hoặc Azure AD (OIDC). Một dev mở trang đăng nhập trong react-native-webview rồi bắt URL redirect để lấy token cho nhanh. Vì sao không nên làm vậy, và làm đúng với Authorization Code + PKCE thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/rn-sen-q16.html">Một dev đặt secret key của cổng thanh toán vào .env và đọc qua react-native-config, lập luận rằng Hermes đã biên dịch ra bytecode nên không ai đọc được. Bạn phản hồi thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q17.html">Bạn triển khai SSL pinning cho app RN thế nào, và cần chuẩn bị gì để pinning không &#39;khoá&#39; toàn bộ user khi server đổi chứng chỉ?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q18.html">Khách hàng (một ví điện tử) yêu cầu app RN phải &#39;chặn máy root/jailbreak và chống sửa app&#39;. Bạn thiết kế lớp bảo vệ này thế nào cho thực tế?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

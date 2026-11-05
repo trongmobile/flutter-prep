@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Android Senior: App phát hành qua Play với Play App Signing. File https://shop.example.com/.well-known/a…</title>
+<meta name="description" content="Từ Android 12, link web chỉ mở thẳng app nếu domain đã được xác minh, còn không sẽ mở trình duyệt mặc định. Việc xác minh so SHA-256 trong assetlinks.json vớ…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-m45.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Android Senior: App phát hành qua Play với Play App Signing. File https://shop.example.com/.well-known/a…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-m45.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"App phát hành qua Play với Play App Signing. Fi…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-m45.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App phát hành qua Play với Play App Signing. Fi…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/navigation/">Navigation</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">App phát hành qua Play với Play App Signing. File <code>https://shop.example.com/.well-known/assetlinks.json</code> truy cập được và đúng cú pháp, nhưng trên Android 12+ bấm link <code>https://shop.example.com/p/42</code> vẫn mở trình duyệt thay vì app. Nguyên nhân thường gặp nhất?</h1>
+  
+  <pre class="code-block" data-lang="XML"><code><span class="tk-kw">&lt;activity</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;.ProductActivity&quot;</span> <span class="tk-type">android:exported</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;intent-filter</span> <span class="tk-type">android:autoVerify</span>=<span class="tk-str">&quot;true&quot;</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;action</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.action.VIEW&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.DEFAULT&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;category</span> <span class="tk-type">android:name</span>=<span class="tk-str">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;data</span>
+      <span class="tk-type">android:scheme</span>=<span class="tk-str">&quot;https&quot;</span>
+      <span class="tk-type">android:host</span>=<span class="tk-str">&quot;shop.example.com&quot;</span>
+      <span class="tk-type">android:pathPrefix</span>=<span class="tk-str">&quot;/p/&quot;</span> <span class="tk-kw">/&gt;</span>
+  <span class="tk-kw">&lt;/intent-filter</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/activity</span><span class="tk-kw">&gt;</span></code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>assetlinks.json</code> chỉ có fingerprint của upload key, không có key ký APK</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Android 12 bỏ <code>autoVerify</code>, nên người dùng phải tự bật từng domain trong Settings</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Thiếu category <code>LAUNCHER</code> nên hệ thống không coi Activity này là đích của link</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>android:pathPrefix</code> không dùng được cùng scheme <code>https</code> khi đã bật <code>autoVerify</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Từ Android 12, link web chỉ mở thẳng app nếu domain đã được xác minh, còn không sẽ mở trình duyệt mặc định. Việc xác minh so SHA-256 trong <code>assetlinks.json</code> với chứng chỉ ký APK đang cài; với Play App Signing, APK người dùng nhận được ký bằng app signing key của Google, nên fingerprint phải lấy từ trang App signing trong Play Console (có thể thêm upload key để test bản local). Kiểm tra trạng thái bằng <code>adb shell pm get-app-links &lt;package&gt;</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-m45">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-m44.html"><span class="muted small">← Câu trước</span><span>Trên Android 12+ (API 31+), app đang ở background, không có UI nào hiển thị. Tr…</span></a>
+  <a class="pager-next" href="../s/and-sen-m46.html"><span class="muted small">Câu sau →</span><span>Màn hình mở lên bắn 8 request song song, access token vừa hết hạn nên cả 8 nhận…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/android/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q33.html">App có bottom navigation 4 tab, mỗi tab có back stack riêng. User mở chi tiết trong tab Feed, chuyển sang tab Profile rồi quay lại thì phải thấy đúng màn chi tiết cũ. Ngoài ra màn Chọn địa chỉ cần trả kết quả về màn Checkout. Bạn cấu hình Navigation Compose thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q47.html">Marketing gửi link https://shop.vn/orders/123 qua email, SMS và QR; app có 12 feature module và mỗi module muốn tự xử lý link của mình. Link đôi khi hiện hộp thoại &#39;Mở bằng...&#39; hoặc mở trình duyệt thay vì app, người chưa cài app thì mất ngữ cảnh, và security review lo link bị lợi dụng. Bạn thiết kế deep link ở quy mô lớn thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-fre-q23.html">Truyền dữ liệu từ màn danh sách sang màn chi tiết bằng Intent thế nào? Muốn truyền cả một object thì làm sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q47.html">Trong Navigation Compose, NavHost, NavController và nav graph là gì? navigate và popBackStack làm việc với back stack thế nào, và làm sao để bấm Back sau khi đăng nhập không quay lại màn login?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-jun-q23.html">Dùng Navigation Component, màn giỏ hàng mở màn chọn địa chỉ; chọn xong phải trả địa chỉ về giỏ hàng rồi quay lại. Bạn truyền kết quả ngược về màn trước thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/and-jun-q37.html">Người dùng bấm nhanh hai lần vào một item thì app crash IllegalArgumentException: Navigation action/destination ... cannot be found from the current destination. Vì sao, và bạn chặn lỗi này thế nào (Navigation XML và Navigation Compose)?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

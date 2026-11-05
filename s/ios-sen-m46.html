@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Senior: Hai task con chạy trong group: A ném lỗi sau 0,1 giây, còn B đang chờ 2 giây và bắt lỗi huỷ…</title>
+<meta name="description" content="Lỗi từ for try await thoát khỏi thân group nên group tự huỷ các task con còn lại; Task.sleep của B ném CancellationError ngay nên in B cancelled. Structured…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m46.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Senior: Hai task con chạy trong group: A ném lỗi sau 0,1 giây, còn B đang chờ 2 giây và bắt lỗi huỷ…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-m46.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Hai task con chạy trong group: A ném lỗi sau 0,…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m46.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Hai task con chạy trong group: A ném lỗi sau 0,…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/concurrency/">Concurrency</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Hai task con chạy trong group: A ném lỗi sau 0,1 giây, còn B đang chờ 2 giây và bắt lỗi huỷ để in log. Đoạn code sau in ra gì, và mất khoảng bao lâu?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">enum</span> <span class="tk-type">UploadError</span>: <span class="tk-type">Error</span> { <span class="tk-kw">case</span> failed }
+
+<span class="tk-kw">func</span> uploadAll() <span class="tk-kw">async</span> {
+  <span class="tk-kw">do</span> {
+    <span class="tk-kw">try</span> <span class="tk-kw">await</span> withThrowingTaskGroup(of: <span class="tk-type">Void</span>.<span class="tk-kw">self</span>) { group <span class="tk-kw">in</span>
+      group.addTask { <span class="tk-com">// A</span>
+        <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: .milliseconds(<span class="tk-num">100</span>))
+        <span class="tk-kw">throw</span> <span class="tk-type">UploadError</span>.failed
+      }
+      group.addTask { <span class="tk-com">// B</span>
+        <span class="tk-kw">do</span> {
+          <span class="tk-kw">try</span> <span class="tk-kw">await</span> <span class="tk-type">Task</span>.sleep(<span class="tk-kw">for</span>: .seconds(<span class="tk-num">2</span>))
+          print(<span class="tk-str">&quot;B done&quot;</span>)
+        } <span class="tk-kw">catch</span> {
+          print(<span class="tk-str">&quot;B cancelled&quot;</span>)
+        }
+      }
+      <span class="tk-kw">for</span> <span class="tk-kw">try</span> <span class="tk-kw">await</span> _ <span class="tk-kw">in</span> group {}
+    }
+    print(<span class="tk-str">&quot;all uploaded&quot;</span>)
+  } <span class="tk-kw">catch</span> {
+    print(<span class="tk-str">&quot;failed&quot;</span>)
+  }
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>B done</code> sau khoảng 2 giây rồi <code>failed</code>, vì group không huỷ task con khi task khác ném lỗi</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>failed</code> sau khoảng 0,1 giây, còn B bị bỏ lại chạy ngầm và vài giây sau mới in <code>B done</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>B cancelled</code> rồi <code>failed</code>, tổng khoảng 0,1 giây: lỗi huỷ task con, group chờ chúng xong</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>failed</code> rồi <code>B cancelled</code> sau khoảng 0,1 giây, vì lỗi được ném trước khi B kịp bị huỷ</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Lỗi từ <code>for try await</code> thoát khỏi thân group nên group tự huỷ các task con còn lại; <code>Task.sleep</code> của B ném <code>CancellationError</code> ngay nên in <code>B cancelled</code>. Structured concurrency còn bảo đảm <code>withThrowingTaskGroup</code> chỉ trả về hoặc ném lỗi sau khi mọi task con đã kết thúc, nên <code>failed</code> luôn in sau <code>B cancelled</code> và không có task nào bị bỏ lại chạy ngầm.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m46">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m45.html"><span class="muted small">← Câu trước</span><span>App lưu NavigationPath bằng path.codable để khôi phục stack điều hướng sau khi…</span></a>
+  <a class="pager-next" href="../s/ios-sen-m47.html"><span class="muted small">Câu sau →</span><span>Server vừa thêm trạng thái refunded mà enum trong app bản cũ chưa có. Dòng deco…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Concurrency</h2><a class="section-sub" href="../phong-van/ios/chu-de/concurrency/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q05.html">Bạn cần một ImageCache dùng chung cho cả app: đọc rất nhiều từ cellForRowAt trên main thread, thỉnh thoảng ghi từ background. Bạn bảo vệ state của nó bằng actor, @MainActor hay lock? Đánh đổi là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q06.html">Code cũ dùng DispatchSemaphore trên main thread để chờ kết quả từ một queue .utility, và Xcode báo cảnh báo priority inversion. Vấn đề là gì và sửa thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q07.html">Bạn được giao đưa một codebase UIKit lớn lên Swift 6 language mode. Lập kế hoạch thế nào để không &#39;đóng băng&#39; cả team hàng tháng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q26.html">Một service cũ dùng DispatchSemaphore.wait() bên trong hàm async để chờ callback, và app thỉnh thoảng treo hoàn toàn dù CPU rất rảnh. Thread pool của Swift Concurrency hoạt động thế nào, vì sao chặn thread trong code async nguy hiểm, và Task { } khác Task.detached ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q27.html">Bạn cần dùng CLLocationManager (callback qua delegate) trong code async/await, dưới dạng for await location in tracker.updates(). Bạn bọc bằng AsyncStream thế nào, và cần để ý gì về huỷ, buffer và vòng đời?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q43.html">Màn hình lưới ảnh tải 500 thumbnail bằng for id in ids { Task { await load(id) } }: app bắn hàng trăm request cùng lúc, rời màn hình vẫn tải tiếp, và lỗi của từng ảnh biến mất không dấu vết. Bạn thiết kế lại bằng structured concurrency thế nào và giới hạn số tác vụ chạy đồng thời ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

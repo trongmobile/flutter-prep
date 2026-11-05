@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle — Mobile Interview</title>
-<meta name="description" content="22 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta name="description" content="22 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 22 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle — Mobile Interview">
-<meta property="og:description" content="22 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
+<meta property="og:description" content="22 câu hỏi phỏng vấn iOS về UIKit &amp; Lifecycle từ Fresher đến Senior, có đáp án mẫu và 22 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/chu-de/uikit/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · ios · chủ đề</div>
   <h1>Câu hỏi phỏng vấn iOS: UIKit &amp; Lifecycle</h1>
-  <p class="subtitle">22 câu hỏi kèm đáp án mẫu và 18 câu quiz về UIKit &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">22 câu hỏi kèm đáp án mẫu và 22 câu quiz về UIKit &amp; Lifecycle, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> iOS Fresher</h2><a class="section-sub" href="../../../../phong-van/ios/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -69,6 +69,7 @@
     <li><a href="../../../../s/ios-fre-m17.html">Bảng hiển thị dữ liệu bình thường, nhưng chạm vào row thì tableView(_:didSelectRowAt:) không bao giờ được gọi. Nguyên nhân khả dĩ nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m18.html">Sau khi đổi tên một @IBOutlet trong code (không sửa storyboard), app crash khi mở màn hình với lỗi this class is not key value coding-compliant for the key titleLabel. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-fre-m19.html">Bạn neo topAnchor của một label vào view.topAnchor, và trên iPhone có notch/Dynamic Island thì phần trên của chữ bị che. Nên sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-fre-m50.html">Bạn tô vàng row đầu tiên như đoạn code sau, nhưng khi cuộn danh sách dài thì một số row khác cũng bị vàng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -85,6 +86,7 @@
     <li><a href="../../../../s/ios-jun-m26.html">Hàm thêm item dưới đây làm app crash với Invalid update: invalid number of rows in section 0. Vì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m27.html">ListViewController present AddItemViewController với modalPresentationStyle mặc định (dạng sheet từ iOS 13). Khi màn hình thêm mới bị dismiss, code reload trong viewWillAppear của màn hình danh sách không chạy. Vì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-jun-m28.html">Mỗi cell có một UISwitch. Bật switch ở hàng đầu rồi cuộn xuống, thấy vài hàng phía dưới cũng đang bật dù chưa ai chạm vào. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-jun-m46.html">Sau lời gọi removeArrangedSubview(errorLabel) như đoạn code dưới, errorLabel ở trạng thái nào?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -99,6 +101,7 @@
     <li><a href="../../../../s/ios-mid-m28.html">Đồng hồ đếm ngược tạo bằng Timer.scheduledTimer(withTimeInterval:repeats:block:) đứng yên mỗi khi user kéo UIScrollView, thả tay mới chạy tiếp. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m29.html">Một UIButton nằm lệch một nửa ra ngoài bounds của view cha, cha đặt clipsToBounds = false. Chạm vào phần nút nằm ngoài cha thì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/ios-mid-m30.html">Gọi UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) có tác dụng gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-mid-m50.html">Chỉ title của một Todo đổi (id giữ nguyên), rồi bạn apply snapshot mới. Diffable data source xử lý phần tử đó thế nào?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -107,6 +110,7 @@
     <li><a href="../../../../s/ios-sen-q30.html">Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn được sửa thì cell nhấp nháy và mất vị trí cuộn, và thỉnh thoảng crash vì identifier trùng. Identifier của snapshot nên là gì, và reloadItems khác reconfigureItems thế nào?</a></li>
     <li><a href="../../../../s/ios-sen-q31.html">App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tái dùng một MKMapView đã có trong màn SwiftUI. Bạn nhúng hai chiều thế nào, và những bẫy về vòng đời, kích thước và state là gì?</a></li>
     <li><a href="../../../../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/ios-sen-m43.html">BadgeView tự vẽ chữ trong draw(_:) và khai báo intrinsicContentSize; màn hình chỉ ràng buộc vị trí, không có constraint width hay height. Gán title bằng chuỗi dài hơn thì badge vẫn giữ kích thước cũ và chữ bị cắt. Cần bổ sung gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

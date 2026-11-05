@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Junior: Observer đăng ký qua addObserver(forName:object:queue:using:) với queue: nil, rồi code post…</title>
+<meta name="description" content="post(name:object:) là đồng bộ: nó gọi lần lượt các observer rồi mới return. Khi queue là nil, block chạy ngay trên thread đang post, nên nhận in trước sau. M…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-jun-m42.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Junior: Observer đăng ký qua addObserver(forName:object:queue:using:) với queue: nil, rồi code post…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-jun-m42.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/"},{"@type":"ListItem","position":5,"name":"Observer đăng ký qua addObserver(forName:object…","item":"https://trongmobile.github.io/flutter-prep/s/ios-jun-m42.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Observer đăng ký qua addObserver(forName:object…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/ios/chu-de/arch/">Kiến trúc &amp; DI</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Observer đăng ký qua <code>addObserver(forName:object:queue:using:)</code> với <code>queue: nil</code>, rồi code <code>post</code> notification ngay trên cùng thread. Thứ tự in ra là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">extension</span> <span class="tk-type">Notification</span>.<span class="tk-type">Name</span> {
+  <span class="tk-kw">static</span> <span class="tk-kw">let</span> ping = <span class="tk-type">Notification</span>.<span class="tk-type">Name</span>(<span class="tk-str">&quot;ping&quot;</span>)
+}
+
+<span class="tk-kw">let</span> token = <span class="tk-type">NotificationCenter</span>.<span class="tk-kw">default</span>.addObserver(forName: .ping, object: <span class="tk-kw">nil</span>, queue: <span class="tk-kw">nil</span>) { _ <span class="tk-kw">in</span>
+  print(<span class="tk-str">&quot;nhận&quot;</span>)
+}
+print(<span class="tk-str">&quot;trước&quot;</span>)
+<span class="tk-type">NotificationCenter</span>.<span class="tk-kw">default</span>.post(name: .ping, object: <span class="tk-kw">nil</span>)
+print(<span class="tk-str">&quot;sau&quot;</span>)</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>trước</code>, <code>nhận</code>, <code>sau</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>trước</code>, <code>sau</code>, <code>nhận</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>nhận</code>, <code>trước</code>, <code>sau</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Chỉ <code>trước</code> và <code>sau</code>, observer chưa chạy vì chưa có RunLoop</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div><code>post(name:object:)</code> là đồng bộ: nó gọi lần lượt các observer rồi mới return. Khi <code>queue</code> là <code>nil</code>, block chạy ngay trên thread đang post, nên <code>nhận</code> in trước <code>sau</code>. Muốn việc xử lý không chặn nơi post thì phải tự đẩy sang queue khác bên trong observer.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-jun-m42">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-jun-m41.html"><span class="muted small">← Câu trước</span><span>Time Profiler cho thấy bảng cuộn bị giật vì cellForRowAt tạo một DateFormatter(…</span></a>
+  <a class="pager-next" href="../s/ios-jun-m43.html"><span class="muted small">Câu sau →</span><span>Property value có didSet, và init gán value = 5. Đoạn code in ra gì?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/ios/junior/">Tất cả câu hỏi iOS Junior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kiến trúc &amp; DI</h2><a class="section-sub" href="../phong-van/ios/chu-de/arch/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-jun-q36.html">Team chuyển một màn từ MVC sang MVVM, nhưng ViewModel bạn viết lại import UIKit, giữ weak var viewController và tự gán label.text. Reviewer nói vậy chưa phải MVVM. ViewModel nên và không nên làm gì, và nó báo thay đổi ra View thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-fre-q37.html">MVC trong iOS là gì? Vì sao hay gặp &quot;Massive View Controller&quot; và cách giảm nhẹ ban đầu?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-mid-q15.html">ViewController của bạn tự push màn tiếp theo và biết quá nhiều về flow (login xong đi đâu, mở từ notification thì vào màn nào). Coordinator giải quyết việc này thế nào, và có bẫy gì về bộ nhớ?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q16.html">Mọi service trong app đều được truy cập qua singleton kiểu APIClient.shared, giờ viết unit test cho ViewModel thì không mock được. Bạn refactor theo hướng dependency injection thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q17.html">App bắt đầu lớn, build chậm và các feature import chéo nhau. Bạn chia thành các Swift Package local thế nào, và làm sao để feature Cart mở được màn Product Detail mà không import trực tiếp module của nó?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q46.html">ViewModel có isLoading, items, error là ba property riêng nên UI thỉnh thoảng hiện cả spinner lẫn thông báo lỗi, hoặc danh sách cũ cùng màn lỗi. Bạn tái cấu trúc thế nào, và xử lý sự kiện một lần như alert hay điều hướng ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

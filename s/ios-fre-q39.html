@@ -108,11 +108,11 @@
   <div class="section-head"><h2>Cùng chủ đề Concurrency</h2><a class="section-sub" href="../phong-van/ios/chu-de/concurrency/">Xem tất cả →</a></div>
   <ul class="link-list">
     <li><a href="../s/ios-fre-q38.html">Main thread là gì? Vì sao gọi mạng hay xử lý nặng ngay trên main thread làm giao diện đứng, và DispatchQueue.main.async dùng để làm gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-m43.html">Trong completion handler của URLSession.shared.dataTask(with:completionHandler:), bạn gán self.label.text = ... trực tiếp. Phát biểu nào đúng?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-m44.html">fetchName() được khai báo async. Gọi nó trực tiếp trong viewDidLoad như đoạn code sau thì kết quả thế nào?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/ios-jun-q07.html">Gọi API bằng URLSession rồi gán dữ liệu và tableView.reloadData() ngay trong completion; đôi khi UI không cập nhật, Xcode hiện cảnh báo tím của Main Thread Checker. Vì sao và sửa thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/ios-jun-q08.html">Phân biệt serial queue với concurrent queue, sync với async trong GCD. Cần một logger được gọi từ nhiều thread trong app thì bạn thiết kế thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
     <li><a href="../s/ios-jun-q09.html">Một bạn viết DispatchQueue.main.sync { ... } trong viewDidLoad để &quot;chắc chắn chạy trên main&quot; và app crash ngay khi mở màn hình. Giải thích vì sao.</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/ios-jun-q10.html">Màn hình Home cần gọi song song 3 API (banner, danh mục, sản phẩm) và chỉ tắt loading khi cả 3 xong. Bạn làm bằng GCD thế nào, cần tránh lỗi gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
-    <li><a href="../s/ios-jun-q29.html">Luồng tải ảnh gồm các bước tải về, áp filter rồi lưu cache, và phải huỷ được cả chuỗi khi người dùng rời màn hình. Khi nào bạn chọn OperationQueue thay vì GCD, và gọi cancel() lên một Operation có dừng ngay việc đang chạy không?</a> <span class="rank-tag rank-blue">Junior</span></li>
   </ul>
 </section>
 </main>

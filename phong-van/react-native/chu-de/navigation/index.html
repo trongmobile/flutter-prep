@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native: Navigation — Mobile Interview</title>
-<meta name="description" content="13 câu hỏi phỏng vấn React Native về Navigation từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta name="description" content="13 câu hỏi phỏng vấn React Native về Navigation từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/navigation/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native: Navigation — Mobile Interview">
-<meta property="og:description" content="13 câu hỏi phỏng vấn React Native về Navigation từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta property="og:description" content="13 câu hỏi phỏng vấn React Native về Navigation từ Fresher đến Senior, có đáp án mẫu và 12 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/navigation/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · react native · chủ đề</div>
   <h1>Câu hỏi phỏng vấn React Native: Navigation</h1>
-  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 9 câu quiz về Navigation, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">13 câu hỏi kèm đáp án mẫu và 12 câu quiz về Navigation, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> React Native Fresher</h2><a class="section-sub" href="../../../../phong-van/react-native/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -74,6 +74,7 @@
     <li><a href="../../../../s/rn-jun-m26.html">Stack gốc có màn hình Main chứa Bottom Tab (Home, Settings). Từ một màn hình khác của Stack gốc, lời gọi nào mở đúng tab Settings?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-jun-m27.html">Màn soạn bài viết cần hỏi xác nhận trước khi rời màn nếu còn nội dung chưa lưu, dù người dùng bấm back trên header hay nút back cứng của Android. Với React Navigation, cách nào phù hợp?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-jun-m28.html">Để link myshop://product/42 mở màn hình Product với id là &#39;42&#39; trong React Navigation, ngoài phần đăng ký scheme ở native, bạn cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-jun-m47.html">App dùng React Navigation, khai báo màn hình có điều kiện theo isSignedIn: SignIn khi chưa đăng nhập, Home và Settings khi đã đăng nhập. Sau khi đăng nhập thành công và isSignedIn thành true, cách chuyển sang Home nào đúng?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -83,12 +84,14 @@
     <li><a href="../../../../s/rn-mid-q34.html">App dùng React Navigation với TypeScript nhưng navigation.navigate(&#39;OrderDetail&#39;, { id }) hay bị sai tên màn hoặc thiếu params mà chỉ lỗi lúc chạy; điều hướng từ tab sang màn nằm sâu trong một stack khác thì báo The action &#39;NAVIGATE&#39; ... was not handled. Bạn định kiểu navigation và xử lý navigator lồng nhau thế nào?</a></li>
     <li><a href="../../../../s/rn-mid-q48.html">Dự án Expo mới, team phân vân giữa Expo Router (file-based) và tự cấu hình React Navigation. Hai cách khác nhau ở đâu, Expo Router giải quyết được gì, và nếu migrate một dự án React Navigation đang chạy sang thì cần để ý bẫy nào?</a></li>
     <li><a href="../../../../s/rn-mid-m08.html">Stack gốc có màn Main chứa Bottom Tab, header hiển thị là header của stack. Trong màn Orders của tab, gọi navigation.setOptions({ title: &#39;Đơn hàng&#39; }) nhưng tiêu đề header không đổi. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-mid-m42.html">Màn Home điều hướng sang PickCity và truyền hàm onSelect qua params để nhận thành phố được chọn, kiểu navigation.navigate(&#39;PickCity&#39;, { onSelect }). Ở bản dev, React Navigation cảnh báo &#39;Non-serializable values were found in the navigation state&#39;. Cảnh báo này nói lên điều gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-purple">Senior</span> React Native Senior</h2><a class="section-sub" href="../../../../phong-van/react-native/senior/">Mọi chủ đề Senior →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/rn-sen-q30.html">App RN dùng React Navigation, link shop://order/123 (hoặc universal link) cần mở màn chi tiết đơn khi app đang tắt, và nếu user chưa đăng nhập thì phải đăng nhập xong mới vào đúng màn đó. Bạn cấu hình deep link, luồng đăng nhập và back stack thế nào, và các bẫy chính là gì?</a></li>
+    <li><a href="../../../../s/rn-sen-m42.html">Luồng đặt xe đẩy dần 12 màn vào cùng một stack navigator; vài màn giữ bản đồ, video hoặc kết nối socket. Máy tầm thấp hết memory và nóng dù user chỉ đi tiến. Nguyên nhân chính và hướng xử lý hợp lý nhất là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native Senior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<meta name="description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · react native · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Senior</h1>
-  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/react-native/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">5</span></li>
     <li><a href="#design">System Design</a> <span class="count">7</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">5</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="js">
@@ -1343,6 +1343,16 @@ module.exports = config;</code></pre>
     <li><a href="../../../s/rn-sen-m38.html">Feed mới nhất phân trang bằng ?offset=20&amp;limit=20. Trong lúc user đang cuộn, có 5 bài mới được đăng. Hiện tượng ở trang kế tiếp và cách khắc phục?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-sen-m39.html">CI build lại app native cho mọi PR mất 25 phút, dù đa số PR chỉ sửa JS. Cách rút ngắn mà vẫn an toàn nhất là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-sen-m40.html">Giữa dự án, một dev giỏi đề xuất thay Redux bằng một thư viện state mới cho &#39;gọn hơn&#39;; nửa team ủng hộ, nửa kia lo rủi ro. Là tech lead, cách xử lý hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m41.html">Màn Home bắn 5 request song song đúng lúc access token vừa hết hạn. Server dùng refresh token rotation: mỗi refresh token chỉ dùng được một lần, bị dùng lại sẽ bị coi là đã lộ và thu hồi cả phiên đăng nhập. Với interceptor dưới đây, điều gì xảy ra và nên sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m42.html">Luồng đặt xe đẩy dần 12 màn vào cùng một stack navigator; vài màn giữ bản đồ, video hoặc kết nối socket. Máy tầm thấp hết memory và nóng dù user chỉ đi tiến. Nguyên nhân chính và hướng xử lý hợp lý nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m43.html">Màn Feed dưới đây mở chậm và tốn memory dù đã dùng FlatList có sẵn cơ chế ảo hoá. Với 5000 bài, vấn đề nằm ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m44.html">App dùng Redux Toolkit với redux-persist (AsyncStorage, cấu hình mặc định, chưa đặt version). Bản 2.0 đổi slice cart từ { items } sang { lines, coupon }. Sau phát hành, user cập nhật từ 1.x crash ở cart.lines.map ngay khi mở app, còn user cài mới thì bình thường. Cách xử lý đúng để user cũ không crash mà vẫn giữ được giỏ hàng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m45.html">Bộ E2E trên CI chạy 80 kịch bản; khoảng 8% lần chạy có vài test fail, chạy lại thì pass. Log cho thấy test thường fail khi bấm phần tử trước lúc màn hình nhận xong dữ liệu từ API staging. Cách khắc phục bền vững nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m46.html">Backend (ID kiểu Snowflake, số nguyên 64-bit) trả JSON như dưới. Lệnh console.log in ra gì, và cần xử lý ra sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m47.html">App chạy New Architecture với React 19. Profile của user &#39;a&#39; đã hiển thị xong, dữ liệu của &#39;b&#39; chưa có trong cache. Khi user bấm nút, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m48.html">Backend muốn đổi trường price trên endpoint đang dùng từ số (120000) sang object { amount, currency }. Số liệu cho thấy 12% user vẫn ở các bản app cũ và chưa thể bắt họ cập nhật ngay. Cách làm đúng nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m49.html">Một junior nộp PR lớn sau 3 ngày làm việc: chạy đúng nhưng đặt toàn bộ logic nghiệp vụ trong component và trộn với gọi API, trái với hướng tách lớp của team. Deadline còn rộng. Là senior review, bạn xử lý thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m50.html">Nút tim dùng optimistic update như dưới. QA thấy thỉnh thoảng nút bật đỏ rồi nháy về trạng thái cũ vài trăm ms mới đỏ lại, nhất là khi feed đang refetch (pull-to-refresh). Thiếu bước nào trong onMutate?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

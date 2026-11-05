@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Coroutines &amp; Flow — Mobile Interview</title>
-<meta name="description" content="18 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta name="description" content="18 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/coroutines/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Coroutines &amp; Flow — Mobile Interview">
-<meta property="og:description" content="18 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta property="og:description" content="18 câu hỏi phỏng vấn Android về Coroutines &amp; Flow từ Fresher đến Senior, có đáp án mẫu và 20 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/coroutines/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,12 +47,13 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Coroutines &amp; Flow</h1>
-  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 16 câu quiz về Coroutines &amp; Flow, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 20 câu quiz về Coroutines &amp; Flow, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/and-fre-q38.html">Coroutine là gì và khác Thread ở điểm nào? Từ khoá suspend nghĩa là gì, và viewModelScope.launch { ... } bắt đầu chạy ở thread nào?</a></li>
+    <li><a href="../../../../s/and-fre-m45.html">Đoạn code Kotlin sau có vấn đề gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -70,6 +71,7 @@
     <li><a href="../../../../s/and-jun-m25.html">Coroutine chạy trong viewModelScope bị huỷ khi nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m26.html">Gán giá trị 1 hai lần liên tiếp cho một MutableStateFlow. Collector in ra những giá trị nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m27.html">Gọi liveData.setValue(x) (hoặc gán liveData.value = x trong Kotlin) từ một background thread thì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m41.html">Bọc lời gọi launch trong try/catch như đoạn code sau. Chương trình in ra gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -101,6 +103,8 @@
     <li><a href="../../../../s/and-sen-q27.html">Một dev viết flow { withContext(Dispatchers.IO) { emit(readConfig()) } } và app crash với IllegalStateException: Flow invariant is violated. Ngoài ra .catch { } đặt ở cuối pipeline không bắt được lỗi ném trong collect. Giải thích hai bất biến của Flow (context preservation, exception transparency) và cách viết đúng?</a></li>
     <li><a href="../../../../s/and-sen-q44.html">Trong codebase có vài chỗ dùng GlobalScope.launch { } để lưu nháp hoặc gửi analytics sau khi người dùng rời màn hình, vì viewModelScope bị huỷ ngay lúc đó; các test cho những hàm này lại hay flaky. Bạn thay bằng gì, khi nào việc đó phải là WorkManager, và inject dispatcher để test thế nào?</a></li>
     <li><a href="../../../../s/and-sen-q45.html">Production có hai triệu chứng: một crash IllegalStateException mà stack trace trên Crashlytics chỉ toàn frame kotlinx.coroutines, không thấy dòng code nào của app; và thỉnh thoảng một màn hình &#39;quay mãi&#39; mà không có lỗi nào được ghi. Bạn debug và quan sát coroutine ở production thế nào?</a></li>
+    <li><a href="../../../../s/and-sen-m41.html">Operator catch được đặt trước collect, còn khối collect ném lỗi ở phần tử thứ hai. Chương trình in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-sen-m42.html">ViewModel expose state bằng stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), initial) thay vì WhileSubscribed() mặc định. Tham số 5_000 giải quyết vấn đề gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
