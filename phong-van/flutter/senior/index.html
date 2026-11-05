@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta name="description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · flutter · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Senior</h1>
-  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 100 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 100 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/flutter/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -74,7 +74,7 @@
     <li><a href="#security">Security</a> <span class="count">4</span></li>
     <li><a href="#design">System Design</a> <span class="count">11</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">10</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -1670,6 +1670,16 @@ firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span cl
     <li><a href="../../../s/sen-m38.html">Package core_network để API public ở lib/core_network.dart, phần nội bộ ở lib/src/. Một feature import thẳng package:core_network/src/dio_client.dart. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/sen-m39.html">feature_cart cần mở màn chi tiết sản phẩm của feature_product, nhưng rule kiến trúc cấm các feature phụ thuộc lẫn nhau. Cách làm phù hợp nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/sen-m40.html">Đội platform publish design_system lên private pub server; 6 app ở 6 repo riêng dùng nó theo semver. Sau một bản major có breaking change, vấn đề nào là cố hữu của mô hình này so với monorepo?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m41.html">Đoạn code sau in ra theo thứ tự nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m42.html">Extension dưới đây được khai báo trong cùng file. Chạy main cho kết quả nào (Dart 3.x)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m43.html">Đoạn code sau in ra những dòng nào, theo thứ tự?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m44.html">Đoạn code polling sau in ra theo thứ tự nào? (Timer chạy mỗi 100ms, mỗi callback await 250ms.)</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m45.html">Bottom navigation giữ state các tab bằng một Stack, mỗi tab bọc Offstage(offstage: index != i). Tab Home có AnimationController chạy repeat(). Khi người dùng đang ở tab khác, điều gì đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m46.html">Tab &#39;Đơn hàng&#39; có Navigator lồng riêng; OrderDetailPage là route thứ hai trong Navigator đó, và context bên dưới là context của trang này. Bấm &#39;Đóng&#39; thì chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m47.html">Widget cha là StatefulWidget dựng CounterScope(count: count, child: const CounterLabel()) và gọi setState(() =&gt; count++) khi bấm nút. CounterLabel.build trả Text(&#39;${CounterScope.of(context).count}&#39;). Sau lần bấm đầu tiên, label hiển thị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m48.html">Màn hình mở ra gọi song song 5 API và cả 5 cùng nhận 401 vì access token vừa hết hạn. Interceptor đang gọi /auth/refresh ở mỗi request lỗi; server dùng refresh token xoay vòng (mỗi token chỉ dùng được một lần) nên user thỉnh thoảng bị đăng xuất. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m49.html">Bản release mới làm crash rate tăng vọt do một PR đã qua review nhưng không có test, và mất 3 giờ mới rollback được. Bạn dẫn dắt buổi postmortem. Cách làm nào đúng tinh thần blameless?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m50.html">Module cũ khó sửa khiến mỗi tính năng mới tốn gấp đôi thời gian, nhưng PM chỉ muốn ưu tiên tính năng trong quý này. Với vai trò tech lead, bạn nên làm gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Fresher (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<meta name="description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · flutter · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Fresher</h1>
-  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/flutter/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -72,7 +72,7 @@
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
     <li><a href="#native">Native &amp; Platform</a> <span class="count">1</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -1057,6 +1057,16 @@ flutter clean &amp;&amp; flutter pub <span class="tk-kw">get</span>      # khi b
     <li><a href="../../../s/fre-m38.html">Bạn sửa giá trị khởi tạo trong initState() (ví dụ count = 10 thay vì 0) rồi hot reload, nhưng màn hình không đổi. Vì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/fre-m39.html">Muốn đo FPS và tìm nguyên nhân giật lag sát với trải nghiệm thật của người dùng, nên chạy app thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/fre-m40.html">Mới cài Flutter, muốn kiểm tra Android SDK, Xcode, thiết bị kết nối... đã sẵn sàng chưa thì chạy lệnh nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m41.html">Với Dart 3, khi gọi describe(1) thì đoạn code switch dưới đây (không có break) in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m42.html">Hàm fetchCount trả về Future&lt;int&gt;. Đoạn code dưới đây in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m43.html">Hai List có cùng nội dung được so sánh bằng == và bằng listEquals (từ foundation). Đoạn code in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m44.html">Trong onPressed, bạn gọi sleep(const Duration(seconds: 3)) (từ dart:io) để &quot;chờ&quot; trước khi làm bước tiếp theo. Điều gì xảy ra với UI trong 3 giây đó?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m45.html">CategoryFilter và ProductList là hai widget anh em, cùng cần giá trị selectedCategory. Khi chưa dùng package quản lý state nào, cách làm đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m46.html">Đoạn code sau (đã import &#39;dart:convert&#39;) cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m47.html">Màn hình hiển thị 10.000 sản phẩm bằng ListView(children: products.map(buildItem).toList()) và mở rất chậm. Cách cải thiện đúng nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m48.html">Đoạn code test dưới đây in ra những số nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m49.html">Khi chạy ở debug mode, Container dưới đây cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m50.html">Muốn đổi tên hiển thị dưới icon app trên màn hình chính của Android thì sửa ở đâu?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

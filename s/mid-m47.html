@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Middle: Dart gửi dữ liệu qua MethodChannel (StandardMethodCodec) như dưới. Phía Android (Kotlin)…</title>
+<meta name="description" content="Codec chuẩn mã hoá int vừa 32 bit thành Integer và số lớn hơn thành Long; millisecondsSinceEpoch (cỡ 1,7 nghìn tỷ) vượt 2^31. Vì vậy call.argument&lt;Int&gt;(&quot;at&quot;)…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-m47.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Middle: Dart gửi dữ liệu qua MethodChannel (StandardMethodCodec) như dưới. Phía Android (Kotlin)…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-m47.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Dart gửi dữ liệu qua MethodChannel (StandardMet…","item":"https://trongmobile.github.io/flutter-prep/s/mid-m47.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Dart gửi dữ liệu qua MethodChannel (StandardMet…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/native/">Native &amp; Platform</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Dart gửi dữ liệu qua <code>MethodChannel</code> (StandardMethodCodec) như dưới. Phía Android (Kotlin) nhận <code>level</code> và <code>at</code> với kiểu runtime nào?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">await</span> channel.invokeMethod(<span class="tk-str">&#39;log&#39;</span>, {
+  <span class="tk-str">&#39;level&#39;</span>: <span class="tk-num">2</span>,
+  <span class="tk-str">&#39;at&#39;</span>: <span class="tk-type">DateTime</span>.now().millisecondsSinceEpoch,
+});</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Cả hai đều là <code>Int</code>, riêng <code>at</code> bị tràn nên sai giá trị</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Cả hai đều là <code>Long</code>, vì <code>int</code> của Dart luôn là 64 bit</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>level</code> là <code>Int</code>, <code>at</code> là <code>Double</code> vì số lớn bị đổi sang số thực</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>level</code> là <code>Int</code>, <code>at</code> là <code>Long</code> vì vượt quá giới hạn 32 bit</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div>Codec chuẩn mã hoá <code>int</code> vừa 32 bit thành <code>Integer</code> và số lớn hơn thành <code>Long</code>; <code>millisecondsSinceEpoch</code> (cỡ 1,7 nghìn tỷ) vượt 2^31. Vì vậy <code>call.argument&lt;Int&gt;(&quot;at&quot;)</code> sẽ ném <code>ClassCastException</code>; hãy đọc bằng <code>call.argument&lt;Number&gt;(&quot;at&quot;)?.toLong()</code>. Số nguyên không bao giờ bị tự đổi sang <code>Double</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-m47">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-m46.html"><span class="muted small">← Câu trước</span><span>Widget test dùng ProviderScope với overrides như dưới để thay repository bằng b…</span></a>
+  <a class="pager-next" href="../s/mid-m48.html"><span class="muted small">Câu sau →</span><span>App Flutter đăng nhập OAuth2 qua trình duyệt hệ thống và nhận authorization cod…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; Platform</h2><a class="section-sub" href="../phong-van/flutter/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q33.html">Bạn tích hợp push bằng Firebase Cloud Messaging trong Flutter: hiện thông báo khi app đang mở, xử lý khi người dùng bấm thông báo lúc app đang chạy nền hoặc đã bị tắt, và xử lý tin nhắn khi app ở background. Những chỗ nào Android và iOS khác nhau?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-1.html">3 loại Channel (MethodChannel, EventChannel, BasicMessageChannel) khác nhau thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-2.html">Platform Channel giới hạn kiểu dữ liệu nào có thể truyền qua?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-3.html">Platform Channel hoạt động bất đồng bộ hay đồng bộ? Vì sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/d15-4.html">Vì sao mỗi channel cần một name duy nhất?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-m40.html">Native trả lỗi như comment bên dưới. Phía Dart in ra gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

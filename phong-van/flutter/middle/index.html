@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Middle (100 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<meta name="description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 50 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle (100 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 40 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 50 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · flutter · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Middle</h1>
-  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 100 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 100 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/flutter/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -74,7 +74,7 @@
     <li><a href="#perf">Performance</a> <span class="count">6</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">10</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -1965,6 +1965,16 @@ test(<span class="tk-str">&#39;load todos từ repository&#39;</span>, () <span 
     <li><a href="../../../s/mid-m38.html">Tách UI thành method Widget _buildHeader() thay vì class Header extends StatelessWidget. Nhược điểm chính của method là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/mid-m39.html">Vì sao truyền ExpensiveChart qua tham số child thay vì tạo nó bên trong builder?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/mid-m40.html">Native trả lỗi như comment bên dưới. Phía Dart in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m41.html">Mỗi State của Tile được gán một số thứ tự lúc tạo. Ban đầu items = [&#39;A&#39;, &#39;B&#39;] hiển thị A0 B1; sau đó setState đảo thành [&#39;B&#39;, &#39;A&#39;]. Row hiển thị gì (từ trái sang phải)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m42.html">Đoạn code dùng if-case với map pattern sau in ra gì (theo thứ tự từng dòng)?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m43.html">Khi khởi động app, dòng getIt&lt;AppDatabase&gt;() ở frame đầu chạy trước khi AppDatabase.open() hoàn thành. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m44.html">Bản 1.0 của app chưa có cột pinned. Dev thêm cột vào câu CREATE TABLE như dưới và giữ version: 1. Máy cài mới chạy tốt, nhưng user cập nhật từ bản 1.0 báo lỗi no such column: pinned. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m45.html">App dùng firebase_messaging. User bấm vào notification khi app đã bị kill hẳn, app khởi động nhưng không mở màn chi tiết đơn hàng dù đã lắng nghe FirebaseMessaging.onMessageOpenedApp. Cách xử lý đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m46.html">Widget test dùng ProviderScope với overrides như dưới để thay repository bằng bản giả. Khi ProfilePage đọc nameProvider, hàm tạo gốc của dioProvider (tạo Dio thật) có được chạy không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m47.html">Dart gửi dữ liệu qua MethodChannel (StandardMethodCodec) như dưới. Phía Android (Kotlin) nhận level và at với kiểu runtime nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m48.html">App Flutter đăng nhập OAuth2 qua trình duyệt hệ thống và nhận authorization code qua redirect myapp://callback. Một app độc hại cùng đăng ký scheme myapp:// có thể chặn redirect này. Cơ chế nào ngăn app đó đổi code lấy token?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m49.html">PR bị reviewer chặn vì file firebase_options.dart (do flutterfire configure sinh ra) chứa apiKey và sắp được commit lên repo công khai. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m50.html">Một đồng nghiệp ít kinh nghiệm gửi PR hơn 1.200 dòng gồm đổi tên hàng loạt, refactor và tính năng mới, trong khi hạn release còn 2 ngày. Cách phản hồi chuyên nghiệp nhất?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

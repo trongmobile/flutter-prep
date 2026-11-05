@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
+<meta name="description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 40 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · flutter · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Junior</h1>
-  <p class="subtitle">Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local. Gồm 50 câu hỏi kèm đáp án mẫu và 40 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/flutter/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -72,7 +72,7 @@
     <li><a href="#native">Native &amp; Platform</a> <span class="count">2</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">40</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -997,6 +997,16 @@ print(empty.first); <span class="tk-com">// StateError: Bad state: No element</s
     <li><a href="../../../s/jun-m38.html">Test sau fail ở expect cuối, dù bấm nút đúng là có tăng counter. Thiếu gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/jun-m39.html">pubspec.yaml khai báo asset là thư mục assets/images/. File assets/images/icons/home.png có được đóng gói vào app không?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/jun-m40.html">Phát biểu nào đúng về debugPrint trong Flutter?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m41.html">Người dùng tick Việc 0, một lúc sau cuộn xuống cuối danh sách 100 item rồi cuộn ngược lên đầu. Ô tick của Việc 0 lúc này thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m42.html">App chỉ phát hành trên Google Play. Bản flutter build apk --release (fat APK) chứa libflutter.so và libapp.so cho cả ba ABI (arm, arm64, x64) nên khá nặng. Cách nào giúp mỗi thiết bị chỉ tải phần mã native phù hợp với nó?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m43.html">await canLaunchUrl(Uri(scheme: &#39;tel&#39;, path: &#39;0901234567&#39;)) luôn trả về false trên điện thoại Android 11 trở lên dù máy có app gọi điện, nên nút gọi không bao giờ hiện. Cần cấu hình gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m44.html">Vừa chạy flutter pub add thêm một plugin có code native, bạn hot reload rồi gọi hàm của plugin thì gặp MissingPluginException(No implementation found for method ... on channel ...). Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m45.html">Người dùng nhập &#39; OR &#39;1&#39;=&#39;1 vào ô tìm kiếm rồi gọi findUser. Kết quả và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m46.html">Test sau fail ngay ở pumpWidget với lỗi No Directionality widget found. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m47.html">Widget test cho màn đang loading (đang hiển thị CircularProgressIndicator) gọi await tester.pumpAndSettle() rồi mới expect(find.byType(CircularProgressIndicator), findsOneWidget). Test fail với lỗi pumpAndSettle timed out. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m48.html">Bấm nút Mở thì app báo Navigator operation requested with a context that does not include a Navigator. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m49.html">Mở dialog rồi bấm vào Checkbox bên trong. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m50.html">Người dùng tìm rock &amp; roll. Server nhận tham số q thế nào và nên sửa ra sao?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>
