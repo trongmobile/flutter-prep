@@ -5,13 +5,11 @@
 //       node scripts/validate.mjs junior           (một rank của Flutter)
 import { RANKS } from "../data/meta.js";
 import { TRACKS, LANGS, COMMON_KEYWORDS, getTrack } from "../data/tracks.js";
+import { PREFIX, CROSS_REF, norm } from "./schema.mjs";
 
-const PREFIX = { fresher: "fre", junior: "jun", middle: "mid", senior: "sen" };
 const QUESTION_KEYS = new Set(["id", "topic", "q", "a", "code", "lang", "doc", "by", "issue"]);
 const QUIZ_KEYS = new Set(["id", "topic", "q", "code", "lang", "options", "answer", "explain", "doc", "by", "issue"]);
 const GITHUB_LOGIN = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/;
-// Đáp án tham chiếu đáp án khác sẽ sai nghĩa khi app xáo trộn thứ tự.
-const CROSS_REF = /(tất cả (các )?(đáp án|phương án|ý) trên|cả [A-D] và [A-D]|\b[A-D] và [A-D]\b|không (có )?(đáp án|phương án) nào|all of the above|none of the above|cả hai (đáp án|phương án))/i;
 
 const args = process.argv.slice(2);
 const onlyTrack = getTrack(args[0]) ? args[0] : RANKS.some((r) => r.id === args[0]) ? "flutter" : null;
@@ -24,7 +22,6 @@ const errors = [];
 const warnings = [];
 const seenIds = new Set();
 
-const norm = (s) => s.toLowerCase().replace(/[`'"?.,:;!()\-–—]/g, "").replace(/\s+/g, " ").trim();
 let seenText = new Map();
 
 const isStr = (v) => typeof v === "string" && v.trim().length > 0;
@@ -38,7 +35,7 @@ function checkCommon(item, where, keys, prefix, track, kind) {
     if (seenIds.has(item.id)) errors.push(`${where}: duplicate id ${item.id}`);
     seenIds.add(item.id);
     if (!item.id.startsWith(prefix + "-")) errors.push(`${where}: id must start with "${prefix}-"`);
-    else if (track.idPrefix && !new RegExp(`^${prefix}-${kind}\\d{2}$`).test(item.id)) errors.push(`${where}: id must look like "${prefix}-${kind}01"`);
+    else if (track.idPrefix && !new RegExp(`^${prefix}-${kind}\\d{2,}$`).test(item.id)) errors.push(`${where}: id must look like "${prefix}-${kind}01"`);
   }
   if (!(item.topic in track.topics)) errors.push(`${where}: invalid topic "${item.topic}" (track ${track.id}: ${Object.keys(track.topics).join(", ")})`);
   if (item.lang !== undefined && !LANGS.includes(item.lang)) errors.push(`${where}: lang must be one of ${LANGS.join(", ")}`);

@@ -6,6 +6,7 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "build:pages": "node scripts/build-pages.mjs",
+    "generate": "node scripts/generate.mjs",
     "serve": "python3 -m http.server 8000",
     "mkt:pick": "node scripts/mkt/pick.mjs",
     "mkt:stats": "node scripts/mkt/stats.mjs",

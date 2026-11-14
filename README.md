@@ -63,6 +63,8 @@ data/<track>/questions/<rank>.js  câu hỏi phỏng vấn theo rank
 data/<track>/quiz/<rank>.js       câu quiz trắc nghiệm theo rank
 data/flutter/roadmap.js lộ trình 35 ngày của Flutter (mỗi câu có rank + topic)
 scripts/validate.mjs    kiểm tra schema dữ liệu, danh sách cache offline, trang chia sẻ
+scripts/generate.mjs    sinh thêm câu hỏi/quiz bằng Gemini API (workflow generate-questions.yml chạy mỗi thứ Bảy)
+scripts/schema.mjs      quy ước dữ liệu dùng chung cho validate.mjs và generate.mjs
 scripts/mkt/            script cho agent marketing: chọn câu của ngày, số liệu, đăng X/Threads, dựng video
 ```
 
@@ -205,3 +207,35 @@ node scripts/validate.mjs android junior  # chỉ một rank của một track
 ```
 
 Thêm file JS/CSS mới thì nhớ thêm vào danh sách `PRECACHE` trong `sw.js` (validator sẽ báo nếu thiếu), và tăng `CACHE` (`interview-v2` → `interview-v3`) nếu muốn xoá cache cũ trên máy người dùng.
+
+## Tự sinh câu hỏi hằng tuần
+
+Workflow `.github/workflows/generate-questions.yml` chạy lúc 07:30 thứ Bảy (giờ Việt Nam). Nó gọi `scripts/generate.mjs` để viết câu mới bằng Gemini API (free tier của Google, không tốn phí), tạo lại trang tĩnh, chạy `validate.mjs`, rồi mở một pull request. Câu mới chỉ lên site sau khi bạn đọc và merge pull request đó.
+
+- Mỗi tuần một rank, xoay vòng Fresher → Junior → Middle → Senior. Mỗi nền tảng thêm 3 câu hỏi phỏng vấn và 3 câu quiz, tức 12 câu hỏi và 12 câu quiz mỗi tuần.
+- Mỗi lô (một nền tảng × một rank) gọi API hai lượt: lượt viết, rồi lượt thẩm định độc lập. Lượt thẩm định tự giải từng câu quiz khi không thấy đáp án (ra đáp án khác thì câu bị loại) và soát lỗi kỹ thuật trong đáp án mẫu.
+- Câu trùng với câu đã có hoặc sai định dạng bị loại. Link `doc` không mở được thì bị gỡ khỏi câu.
+- Mô tả pull request liệt kê các câu được thêm và các câu bị loại kèm lý do.
+- Nếu pull request của lần trước chưa merge, workflow bỏ qua lần chạy đó để không sinh trùng id.
+- Chạy tay: tab Actions → Generate questions → Run workflow, chọn nền tảng, rank và số câu.
+
+Cài đặt một lần:
+
+1. Tạo API key miễn phí tại https://aistudio.google.com/apikey rồi lưu vào secret `GEMINI_API_KEY` của repo (Settings → Secrets and variables → Actions). Không bật billing cho project của key thì key chạy ở free tier.
+2. Settings → Actions → General → Workflow permissions: bật **Allow GitHub Actions to create and approve pull requests**.
+
+Lưu ý về free tier:
+
+- Model mặc định là `gemini-4-hydrogen`. Giới hạn request theo phút và theo ngày tính theo project, xem tại https://aistudio.google.com/rate-limit. Một lần chạy theo lịch dùng 8 request (4 nền tảng × 2 lượt). Chạy tay với rank `all` dùng 32 request và có thể vượt quota ngày; khi đó script dừng, các lô đã xong vẫn vào pull request.
+- Nếu model mặc định không đủ quota, đặt variable `GEMINI_MODEL` của repo (Settings → Secrets and variables → Actions → Variables) thành một model khác có free tier, ví dụ `gemini-3.8-flash`.
+- Google dùng nội dung gửi qua free tier để cải thiện sản phẩm. Script chỉ gửi câu hỏi đã công khai trên site.
+
+Chạy trên máy (không cần cài gì thêm, script chỉ dùng `fetch` của Node):
+
+```bash
+node scripts/generate.mjs --dry-run    # in prompt, không gọi API, không ghi file
+GEMINI_API_KEY=... node scripts/generate.mjs --track android --rank senior --questions 5 --quiz 5
+node scripts/build-pages.mjs && node scripts/validate.mjs
+```
+
+Prompt và model mặc định nằm ở đầu file `scripts/generate.mjs`.

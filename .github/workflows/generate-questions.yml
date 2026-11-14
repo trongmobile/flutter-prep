@@ -1,0 +1,111 @@
+# Mỗi thứ Bảy: sinh thêm câu hỏi phỏng vấn và câu quiz bằng Gemini API free tier (scripts/generate.mjs),
+# dựng lại trang tĩnh, kiểm tra dữ liệu rồi mở pull request để duyệt trước khi nội dung lên site.
+# Cần cài một lần:
+#   - Secret GEMINI_API_KEY: key miễn phí tạo tại https://aistudio.google.com/apikey
+#     (Settings → Secrets and variables → Actions → Secrets).
+#   - Bật "Allow GitHub Actions to create and approve pull requests" (Settings → Actions → General).
+# Tuỳ chọn: variable GEMINI_MODEL để đổi model (mặc định xem đầu file scripts/generate.mjs).
+name: Generate questions
+
+on:
+  schedule:
+    - cron: "30 0 * * 6" # 07:30 thứ Bảy giờ Việt Nam (cron của GitHub tính theo UTC)
+  workflow_dispatch:
+    inputs:
+      track:
+        description: Nền tảng
+        type: choice
+        default: all
+        options: [all, flutter, android, ios, react-native]
+      rank:
+        description: "Rank (auto: mỗi tuần một rank, xoay vòng)"
+        type: choice
+        default: auto
+        options: [auto, all, fresher, junior, middle, senior]
+      questions:
+        description: Số câu hỏi phỏng vấn cho mỗi nền tảng × rank (0-10)
+        default: "3"
+      quiz:
+        description: Số câu quiz cho mỗi nền tảng × rank (0-10)
+        default: "3"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: generate-questions
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  # Pull request của lần trước chưa merge thì không sinh tiếp: lô mới sẽ trùng id với lô đang chờ duyệt.
+  pending:
+    runs-on: ubuntu-latest
+    outputs:
+      open: ${{ steps.count.outputs.open }}
+    steps:
+      - id: count
+        run: |
+          open=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --json headRefName \
+            --jq '[.[] | select(.headRefName | startswith("auto/questions-"))] | length')
+          echo "open=$open" >> "$GITHUB_OUTPUT"
+          if [ "$open" != "0" ]; then
+            echo "::warning::Còn pull request câu hỏi tự động chưa merge, bỏ qua lần chạy này."
+          fi
+
+  generate:
+    needs: pending
+    if: needs.pending.outputs.open == '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Generate questions and quiz
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          TRACK: ${{ inputs.track || 'all' }}
+          RANK: ${{ inputs.rank || 'auto' }}
+          QUESTIONS: ${{ inputs.questions || '3' }}
+          QUIZ: ${{ inputs.quiz || '3' }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Chưa có secret GEMINI_API_KEY (Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+          node scripts/generate.mjs --track "$TRACK" --rank "$RANK" --questions "$QUESTIONS" --quiz "$QUIZ" \
+            --summary "$RUNNER_TEMP/summary.md"
+          cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rebuild static pages
+        run: node scripts/build-pages.mjs
+
+      - name: Validate
+        run: node scripts/validate.mjs
+
+      - name: Open pull request
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "::warning::Không có câu nào được thêm, không mở pull request."
+            exit 0
+          fi
+          date=$(date -u +%F)
+          branch="auto/questions-$date"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add -A
+          git commit -m "Add generated questions and quiz ($date)"
+          git push --force origin "$branch"
+          if ! gh pr create --base "$GITHUB_REF_NAME" --head "$branch" \
+            --title "Add generated questions and quiz ($date)" --body-file "$RUNNER_TEMP/summary.md"; then
+            echo "::error::Không mở được pull request (nhánh $branch đã được push). Bật \"Allow GitHub Actions to create and approve pull requests\" trong Settings → Actions → General, rồi tự mở pull request từ nhánh đó."
+            exit 1
+          fi
