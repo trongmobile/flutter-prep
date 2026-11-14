@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: Sau khi tách codebase thành nhiều Swift Package local, bạn thấy nhiều hàm gener…</title>
+<meta name="description" content="Khi tách module, mỗi target thường được biên dịch độc lập: nếu một hàm generic public trong Core không lộ phần thân ra ngoài, compiler khi biên dịch Feature…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q52.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Sau khi tách codebase thành nhiều Swift Package local, bạn thấy nhiều hàm gener…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q52.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Sau khi tách codebase thành nhiều Swift Package…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q52.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Sau khi tách codebase thành nhiều Swift Package…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Sau khi tách codebase thành nhiều Swift Package local, bạn thấy nhiều hàm generic và protocol ở module <code>Core</code> khi gọi từ module <code>Feature</code> chạy chậm hơn trước, còn dùng <code>any Protocol</code> để giấu kiểu cụ thể lại làm tăng allocation. Cơ chế biên dịch nào gây ra điều này, và bạn dùng <code>some</code>, <code>any</code>, <code>@inlinable</code> hay <code>@usableFromInline</code> thế nào cho hợp lý?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi tách module, mỗi target thường được biên dịch độc lập: nếu một hàm generic <code>public</code> trong <code>Core</code> không lộ phần thân ra ngoài, compiler khi biên dịch <code>Feature</code> chỉ thấy chữ ký hàm chứ không thấy implementation để thực hiện generic specialization cho kiểu cụ thể. Kết quả là lời gọi phải chạy qua bản unspecialized dùng Value Witness Table và Protocol Witness Table để truyền kích thước, copy và gọi hàm gián tiếp thay vì tĩnh hoá và inline như lúc nằm chung một target. Trong khi đó, <code>any Protocol</code> đóng gói giá trị vào existential container có buffer nội tuyến 3 word: mọi struct lớn hơn kích thước này (chẳng hạn chứa nhiều property hoặc string) đều bị cấp phát động trên heap kèm chi phí retain/release khi truyền qua lại. Để khắc phục đúng chỗ, trước hết ưu tiên tham số generic hoặc <code>some Protocol</code> ở các API không cần lưu trữ nhiều kiểu khác nhau trong cùng một collection, tránh lạm dụng <code>any</code> trong vòng lặp hay đường nóng. Với các hàm generic thực sự nằm trên hot path ở <code>Core</code> (như parse dữ liệu, tính toán collection, helper toán học) đã được đo bằng Time Profiler và Allocations, gắn <code>@inlinable</code> để compiler xuất phần thân vào <code>.swiftmodule</code> cho phép module gọi inline và specialize, đồng thời chỉ đánh dấu <code>@usableFromInline</code> cho những helper <code>internal</code> tối thiểu mà phần thân đó cần chạm tới. Không rải <code>@inlinable</code> bừa bãi lên toàn bộ <code>Core</code>, vì nó làm phình kích thước <code>.swiftmodule</code> và binary do nhân bản code ở nơi gọi, kéo dài thời gian build tăng dần khi sửa phần thân, và trói chặt tương thích nhị phân nếu sau này phát hành framework dạng binary.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q52">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q51.html"><span class="muted small">← Câu trước</span><span>App UIKit lớn đang chuyển dần sang SwiftUI: luồng gốc do Coordinator và UINavig…</span></a>
+  <a class="pager-next" href="../s/ios-sen-q53.html"><span class="muted small">Câu sau →</span><span>Màn feed UICollectionView dùng cell self-sizing với nhiều UIStackView lồng nhau…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q28.html">Team phát hành SDK nội bộ dưới dạng XCFramework cho các app khác build bằng phiên bản Xcode khác nhau. Sau khi nâng Xcode, app tích hợp báo module được biên dịch bằng phiên bản Swift khác, và việc thêm một case vào enum public của SDK làm vỡ các app tích hợp. Bạn xử lý thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q42.html">Time Profiler cho thấy hàm parse tin nhắn và tính layout chạy hàng chục nghìn lần mỗi giây, còn swift_retain, swift_release và swift_beginAccess chiếm phần lớn thời gian. Bạn tối ưu code Swift ở hot path thế nào, và đo ra sao để biết chắc mình tối ưu đúng chỗ?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m41.html">Đoạn code tự cài copy-on-write sau in ra gì, và cách sửa đúng để Buffer thực sự có value semantics là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m42.html">Đoạn code sau in ra gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q01.html">Optional trong Swift là gì? Có những cách nào để lấy giá trị ra khỏi một Optional, và vì sao nên hạn chế force unwrap !?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q02.html">if let và guard let khác nhau thế nào? Khi nào bạn chọn guard let?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

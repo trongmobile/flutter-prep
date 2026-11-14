@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: App thương mại điện tử lưu catalog hàng chục nghìn sản phẩm và giỏ hàng tro…</title>
+<meta name="description" content="SQLite dùng hai cơ chế journal chính: chế độ rollback journal cũ (DELETE/TRUNCATE) khoá toàn bộ thao tác đọc khi có transaction ghi, còn chế độ Write-Ahead L…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q52.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: App thương mại điện tử lưu catalog hàng chục nghìn sản phẩm và giỏ hàng tro…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q52.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"App thương mại điện tử lưu catalog hàng chục ng…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q52.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App thương mại điện tử lưu catalog hàng chục ng…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/data/">Networking &amp; Storage</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">App thương mại điện tử lưu catalog hàng chục nghìn sản phẩm và giỏ hàng trong Room. Khi background worker đang sync catalog, thao tác thêm vào giỏ trên UI hay bị chậm rõ rệt; ngoài ra thỉnh thoảng app crash <code>SQLiteBlobTooBigException</code> khi query một bảng có cột lưu chuỗi JSON cấu hình lớn. Giải thích cơ chế locking của SQLite/Room và <code>CursorWindow</code>, và bạn thiết kế lại thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SQLite dùng hai cơ chế journal chính: chế độ rollback journal cũ (<code>DELETE</code>/<code>TRUNCATE</code>) khoá toàn bộ thao tác đọc khi có transaction ghi, còn chế độ Write-Ahead Logging (<code>WAL</code>, được Room bật mặc định qua <code>JournalMode.AUTOMATIC</code> trên các thiết bị hiện đại) ghi thay đổi vào file <code>-wal</code> riêng nên thao tác đọc và ghi có thể chạy song song mà không chặn nhau. Tuy vậy, kể cả trong WAL mode, SQLite tại một thời điểm vẫn chỉ cho phép một writer duy nhất và Room tuần tự hoá các transaction ghi trên transaction executor. Nếu sync catalog gộp hàng chục nghìn dòng vào một transaction quá lớn, hoặc tệ hơn là gọi mạng hay parse nặng bên trong <code>database.withTransaction</code>, lock ghi bị giữ quá lâu khiến thao tác ghi giỏ hàng của người dùng phải xếp hàng chờ và ngăn WAL checkpoint làm file <code>-wal</code> phình to. Cách xử lý là không bao giờ thực hiện network I/O hay xử lý nặng trong <code>withTransaction</code>, chia sync lớn thành các batch vừa phải (khoảng vài trăm đến một nghìn dòng mỗi transaction) để thao tác ghi từ UI xen vào được, và dùng <code>@Upsert</code> hoặc bulk insert thay vì query từng dòng; nếu dữ liệu cache biến động liên tục, có thể tách DB cache riêng khỏi DB dữ liệu người dùng. Với <code>SQLiteBlobTooBigException</code>, nguyên nhân đến từ <code>CursorWindow</code> của Android dùng để truyền dữ liệu từ SQLite lên tầng ứng dụng có kích thước đệm giới hạn khoảng 2 MB: chỉ cần một dòng có cột TEXT hoặc BLOB quá lớn làm dòng vượt ngưỡng <code>CursorWindow</code> là query sẽ crash, còn các cột kích thước lớn cũng làm mỗi cửa sổ chứa được ít dòng hơn và gây cấp phát bộ nhớ liên tục. Không nên lưu JSON khổng lồ hay dữ liệu nhị phân trong cột SQLite; hãy ghi payload lớn ra file trong internal storage rồi chỉ lưu đường dẫn hoặc hash vào Room, hoặc chuẩn hoá thành bảng con và dùng projection để chỉ SELECT những cột thực sự cần.</div>
+        <pre class="code-block"><code><span class="tk-com">// SAI: giữ transaction ghi suốt thời gian gọi mạng hoặc ghi một lần quá lớn</span>
+<span class="tk-com">// database.withTransaction { val items = api.fetchCatalog(); dao.upsertAll(items) }</span>
+
+<span class="tk-com">// ĐÚNG: tải và parse ngoài transaction, sau đó ghi theo batch để không nghẽn write từ UI</span>
+<span class="tk-kw">val</span> items = api.fetchCatalog()
+items.chunked(<span class="tk-num">500</span>).forEach { batch -&gt;
+  database.withTransaction {
+    dao.upsertAll(batch)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q52">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q51.html"><span class="muted small">← Câu trước</span><span>Module :core:model hoặc một SDK nội bộ được đóng gói thành AAR biên dịch sẵn ch…</span></a>
+  <a class="pager-next" href="../s/and-sen-q53.html"><span class="muted small">Câu sau →</span><span>Dự án multi-module dùng Hilt thêm @HiltWorker để đồng bộ nền với WorkManager, đ…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/android/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q34.html">Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng mới) cho app có vài triệu user đang ở nhiều phiên bản cũ khác nhau. Bạn viết và kiểm thử migration thế nào, và vì sao fallbackToDestructiveMigration nguy hiểm?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q46.html">Màn Home của app thương mại điện tử phải gọi 6 endpoint REST (banner, giỏ hàng, gợi ý...), payload nặng, sang mạng yếu thì rất chậm và tốn pin. Backend đề xuất chuyển sang GraphQL, một team khác muốn gRPC. Dưới góc nhìn client, bạn so sánh REST, GraphQL và gRPC thế nào, và phân trang cùng versioning nên thiết kế ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m46.html">Màn hình mở lên bắn 8 request song song, access token vừa hết hạn nên cả 8 nhận 401. Server dùng refresh token rotation (mỗi refresh token chỉ dùng được một lần). Authenticator của OkHttp đang gọi API refresh riêng cho từng request, kết quả 7 lần lỗi và user bị đăng xuất. Cách sửa đúng là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q24.html">SharedPreferences dùng để lưu gì? commit() và apply() khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q36.html">App Android gọi API REST cần chuẩn bị gì? Vì sao gọi http:// hoặc localhost của máy dev lại không được?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q41.html">Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataStore, file và Room (SQLite) cho ba trường hợp: cài đặt giao diện, ảnh/báo cáo tải về, danh sách đơn hàng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

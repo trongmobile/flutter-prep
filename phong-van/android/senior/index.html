@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Senior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<title>Câu hỏi phỏng vấn Android Senior (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · android · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Android Senior</h1>
-  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 53 câu hỏi kèm đáp án mẫu và 53 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/android/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -62,22 +62,22 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#kotlin">Kotlin</a> <span class="count">2</span></li>
+    <li><a href="#kotlin">Kotlin</a> <span class="count">3</span></li>
     <li><a href="#java">Java &amp; JVM</a> <span class="count">4</span></li>
     <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">4</span></li>
     <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">3</span></li>
     <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">3</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
     <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
-    <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
-    <li><a href="#background">Background &amp; Service</a> <span class="count">1</span></li>
+    <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
+    <li><a href="#background">Background &amp; Service</a> <span class="count">2</span></li>
     <li><a href="#build">Gradle &amp; Build</a> <span class="count">5</span></li>
     <li><a href="#perf">Performance</a> <span class="count">7</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#security">Security</a> <span class="count">4</span></li>
     <li><a href="#design">System Design</a> <span class="count">4</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">4</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">53</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -127,6 +127,24 @@
 }
 <span class="tk-com">// Kiểm tra: Tools &gt; Kotlin &gt; Show Kotlin Bytecode &gt; Decompile, tìm new, Integer.valueOf, iterator()</span></code></pre>
         <p class="doc-link"><a href="https://kotlinlang.org/docs/inline-classes.html" target="_blank" rel="noopener">Đọc thêm trong tài liệu · kotlinlang.org ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q51.html">Module <code>:core:model</code> hoặc một SDK nội bộ được đóng gói thành AAR biên dịch sẵn cho các team khác dùng. Sau khi bạn thêm một property mới có giá trị mặc định vào <code>data class</code> public hoặc sửa thân một hàm <code>public inline</code>, nhiều app vẫn compile qua nhờ build cache nhưng lại crash <code>NoSuchMethodError</code> hoặc chạy logic cũ lúc runtime. Giải thích nguyên nhân ở mức bytecode JVM và cách bạn kiểm soát binary compatibility trong Kotlin?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi thay đổi một <code>data class</code> public bằng cách thêm property mới dù có giá trị mặc định, compiler Kotlin thay đổi signature của primary constructor, hàm <code>copy()</code>, cũng như các hàm synthetic <code>$default</code> kèm bitmask và <code>DefaultConstructorMarker</code>, đồng thời làm lệch thứ tự <code>componentN()</code> nếu chèn vào giữa. Những caller đã compile từ trước vẫn gọi đúng descriptor constructor hoặc <code>copy$default</code> cũ nên lúc runtime JVM không tìm thấy method và ném <code>NoSuchMethodError</code>. Tương tự, một hàm <code>public inline</code> được copy trực tiếp bytecode vào nơi gọi lúc biên dịch; nếu bản AAR mới sửa thân hàm <code>inline</code> hoặc đổi signature một hàm <code>@PublishedApi internal</code> mà nó gọi, các module chưa compile lại vẫn chạy bytecode cũ hoặc crash <code>NoSuchMethodError</code> hay <code>IllegalAccessError</code> khi liên kết với helper mới. Ngay cả với hàm thường, thêm tham số có giá trị mặc định cũng làm đổi signature hàm <code>$default</code> cho caller Kotlin, còn <code>@JvmOverloads</code> chỉ tạo thêm các overload cho caller Java chứ không giữ được binary compatibility cho code Kotlin gọi bằng default argument. Để giữ ABI ổn định trong SDK hoặc core module dùng chung, hãy tránh dùng <code>data class</code> ở public API (dùng class thường tự cài <code>equals</code>, <code>hashCode</code>, <code>toString</code>), hạn chế <code>public inline</code> và giữ phần <code>@PublishedApi internal</code> tối giản. Khi cần thêm tham số mới, hãy giữ nguyên overload cũ và đánh dấu <code>@Deprecated(..., level = DeprecationLevel.HIDDEN)</code> để caller cũ vẫn liên kết được ở runtime trong khi code mới không gọi nhầm. Cuối cùng, tích hợp JetBrains Binary Compatibility Validator vào CI để đối chiếu file <code>.api</code> mỗi khi mở PR, phát hiện sớm mọi phá vỡ ABI trước khi phát hành.</div>
+        <pre class="code-block"><code><span class="tk-com">// Thay vì thêm tham số mặc định trực tiếp vào hàm cũ (làm đổi signature $default),</span>
+<span class="tk-com">// giữ overload cũ ở mức binary bằng DeprecationLevel.HIDDEN:</span>
+<span class="tk-ann">@Deprecated</span>(<span class="tk-str">&quot;Use overload with timeout&quot;</span>, level = <span class="tk-type">DeprecationLevel</span>.<span class="tk-type">HIDDEN</span>)
+<span class="tk-kw">fun</span> fetchConfig(url: <span class="tk-type">String</span>): <span class="tk-type">Config</span> = fetchConfig(url, timeoutMs = 5_000L)
+
+<span class="tk-kw">fun</span> fetchConfig(url: <span class="tk-type">String</span>, timeoutMs: <span class="tk-type">Long</span> = 5_000L): <span class="tk-type">Config</span> {
+  <span class="tk-kw">return</span> loadRemoteConfig(url, timeoutMs)
+}</code></pre>
+        
       </div>
     </details>
     </li>
@@ -773,6 +791,26 @@ composable&lt;<span class="tk-type">CheckoutRoute</span>&gt; { entry -&gt;
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q52.html">App thương mại điện tử lưu catalog hàng chục nghìn sản phẩm và giỏ hàng trong Room. Khi background worker đang sync catalog, thao tác thêm vào giỏ trên UI hay bị chậm rõ rệt; ngoài ra thỉnh thoảng app crash <code>SQLiteBlobTooBigException</code> khi query một bảng có cột lưu chuỗi JSON cấu hình lớn. Giải thích cơ chế locking của SQLite/Room và <code>CursorWindow</code>, và bạn thiết kế lại thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">SQLite dùng hai cơ chế journal chính: chế độ rollback journal cũ (<code>DELETE</code>/<code>TRUNCATE</code>) khoá toàn bộ thao tác đọc khi có transaction ghi, còn chế độ Write-Ahead Logging (<code>WAL</code>, được Room bật mặc định qua <code>JournalMode.AUTOMATIC</code> trên các thiết bị hiện đại) ghi thay đổi vào file <code>-wal</code> riêng nên thao tác đọc và ghi có thể chạy song song mà không chặn nhau. Tuy vậy, kể cả trong WAL mode, SQLite tại một thời điểm vẫn chỉ cho phép một writer duy nhất và Room tuần tự hoá các transaction ghi trên transaction executor. Nếu sync catalog gộp hàng chục nghìn dòng vào một transaction quá lớn, hoặc tệ hơn là gọi mạng hay parse nặng bên trong <code>database.withTransaction</code>, lock ghi bị giữ quá lâu khiến thao tác ghi giỏ hàng của người dùng phải xếp hàng chờ và ngăn WAL checkpoint làm file <code>-wal</code> phình to. Cách xử lý là không bao giờ thực hiện network I/O hay xử lý nặng trong <code>withTransaction</code>, chia sync lớn thành các batch vừa phải (khoảng vài trăm đến một nghìn dòng mỗi transaction) để thao tác ghi từ UI xen vào được, và dùng <code>@Upsert</code> hoặc bulk insert thay vì query từng dòng; nếu dữ liệu cache biến động liên tục, có thể tách DB cache riêng khỏi DB dữ liệu người dùng. Với <code>SQLiteBlobTooBigException</code>, nguyên nhân đến từ <code>CursorWindow</code> của Android dùng để truyền dữ liệu từ SQLite lên tầng ứng dụng có kích thước đệm giới hạn khoảng 2 MB: chỉ cần một dòng có cột TEXT hoặc BLOB quá lớn làm dòng vượt ngưỡng <code>CursorWindow</code> là query sẽ crash, còn các cột kích thước lớn cũng làm mỗi cửa sổ chứa được ít dòng hơn và gây cấp phát bộ nhớ liên tục. Không nên lưu JSON khổng lồ hay dữ liệu nhị phân trong cột SQLite; hãy ghi payload lớn ra file trong internal storage rồi chỉ lưu đường dẫn hoặc hash vào Room, hoặc chuẩn hoá thành bảng con và dùng projection để chỉ SELECT những cột thực sự cần.</div>
+        <pre class="code-block"><code><span class="tk-com">// SAI: giữ transaction ghi suốt thời gian gọi mạng hoặc ghi một lần quá lớn</span>
+<span class="tk-com">// database.withTransaction { val items = api.fetchCatalog(); dao.upsertAll(items) }</span>
+
+<span class="tk-com">// ĐÚNG: tải và parse ngoài transaction, sau đó ghi theo batch để không nghẽn write từ UI</span>
+<span class="tk-kw">val</span> items = api.fetchCatalog()
+items.chunked(<span class="tk-num">500</span>).forEach { batch -&gt;
+  database.withTransaction {
+    dao.upsertAll(batch)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="background">
@@ -800,6 +838,27 @@ composable&lt;<span class="tk-type">CheckoutRoute</span>&gt; { entry -&gt;
   .build()
 context.getSystemService(<span class="tk-type">JobScheduler</span>::<span class="tk-kw">class</span>.java).schedule(job)
 <span class="tk-com">// Trong DownloadJobService.onStartJob phải gọi setNotification(...) để hiện tiến độ</span></code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-sen-q53.html">Dự án multi-module dùng Hilt thêm <code>@HiltWorker</code> để đồng bộ nền với <code>WorkManager</code>, đồng thời app có một process phụ <code>:sync</code> để cô lập một SDK nặng. Sau khi tích hợp, app thỉnh thoảng crash <code>NoSuchMethodException</code> khi Worker chạy, báo lỗi <code>WorkManager is not initialized properly</code>, hoặc ném exception khi nhét dữ liệu vào <code>Data</code>. Giải thích cơ chế khởi tạo của <code>WorkManager</code>, cách cấu hình đúng với Hilt và nhiều process, cùng các giới hạn cần lưu ý?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mặc định <code>WorkManager</code> tự đăng ký <code>WorkManagerInitializer</code> qua Jetpack App Startup (<code>InitializationProvider</code>) trong <code>AndroidManifest.xml</code>, nên nó tự khởi tạo sớm lúc app mở với <code>WorkerFactory</code> mặc định dùng reflection tìm constructor <code>(Context, WorkerParameters)</code>. Vì <code>@HiltWorker</code> dùng <code>@AssistedInject</code> với các dependency bổ sung, factory mặc định không khởi tạo được và ném <code>NoSuchMethodException</code>. Để dùng Hilt, bạn phải gỡ node <code>WorkManagerInitializer</code> trong manifest bằng <code>tools:node=&quot;remove&quot;</code>, đồng thời cho <code>Application</code> triển khai <code>Configuration.Provider</code> để cung cấp <code>HiltWorkerFactory</code> qua cấu hình on-demand; nếu gọi <code>WorkManager.initialize()</code> thủ công khi initializer mặc định chưa bị gỡ hoặc gọi <code>WorkManager.getInstance()</code> trước khi cấu hình sẵn sàng sẽ gặp lỗi khởi tạo. Khi app có thêm process <code>:sync</code>, <code>Application.onCreate()</code> chạy ở mọi process và nếu nhiều process cùng tự vận hành <code>WorkManager</code> trên chung một database nội bộ sẽ gây tranh chấp lịch chạy. Bạn cần chỉ định một process phụ trách bằng <code>setDefaultProcessName()</code> trong <code>Configuration.Builder</code>, dùng <code>work-multiprocess</code> (<code>RemoteCoroutineWorker</code>) nếu thực sự cần chạy worker ở process khác, và kiểm tra <code>Application.getProcessName()</code> để tránh khởi tạo thừa các SDK chỉ dành cho process chính. Ngoài ra, đối tượng <code>Data</code> truyền vào hoặc trả ra từ Worker có giới hạn cứng 10 KB (<code>MAX_DATA_BYTES = 10240</code>) vì được lưu trong SQLite và truyền qua Binder, nên chỉ truyền ID hoặc URI file rồi đọc dữ liệu lớn từ Room hay bộ nhớ trong lúc <code>doWork()</code> chạy.</div>
+        <pre class="code-block"><code><span class="tk-com">// AndroidManifest.xml: gỡ WorkManagerInitializer trong InitializationProvider bằng tools:node=&quot;remove&quot;</span>
+<span class="tk-ann">@HiltAndroidApp</span>
+<span class="tk-kw">class</span> <span class="tk-type">MyApp</span> : <span class="tk-type">Application</span>(), <span class="tk-type">Configuration</span>.<span class="tk-type">Provider</span> {
+  <span class="tk-ann">@Inject</span> <span class="tk-kw">lateinit</span> <span class="tk-kw">var</span> workerFactory: <span class="tk-type">HiltWorkerFactory</span>
+
+  <span class="tk-kw">override</span> <span class="tk-kw">val</span> workManagerConfiguration: <span class="tk-type">Configuration</span>
+    <span class="tk-kw">get</span>() = <span class="tk-type">Configuration</span>.<span class="tk-type">Builder</span>()
+      .setWorkerFactory(workerFactory)
+      .setDefaultProcessName(packageName)
+      .build()
+}</code></pre>
         
       </div>
     </details>
@@ -1406,6 +1465,9 @@ dependencies {
     <li><a href="../../../s/and-sen-m48.html">Test dưới đây chạy trong runTest mà không thay dispatcher nào. Nó chạy mất bao lâu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-sen-m49.html">App cho user upload video khoảng 2GB lên server; mạng di động hay đứt và user có thể thoát app giữa chừng. Thiết kế nào hợp lý nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-sen-m50.html">Từ FeedFragment, app điều hướng sang DetailFragment bằng replace + addToBackStack, rồi người dùng bấm Back. Sau đó ViewModel phát thêm một giá trị mới vào items. render được gọi mấy lần cho giá trị đó?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m51.html">MainActivity khai báo android:launchMode=&quot;singleTop&quot; và dùng NavHost của Navigation Component. App đang mở sẵn ở màn Home, người dùng bấm một notification chứa deep link myapp://orders/99. MainActivity không override onNewIntent(). Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m52.html">Đoạn code dưới đây dùng NonCancellable trong launch thay vì withContext. Khi parentJob.cancel() được gọi sau delay(100), điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m53.html">Viết unit test cho ViewModel expose một StateFlow vô hạn bằng runTest. Đoạn test dưới đây gặp vấn đề gì khi chạy?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

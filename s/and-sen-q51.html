@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn Android Senior: Module :core:model hoặc một SDK nội bộ được đóng gói thành AAR biên dịch sẵ…</title>
+<meta name="description" content="Khi thay đổi một data class public bằng cách thêm property mới dù có giá trị mặc định, compiler Kotlin thay đổi signature của primary constructor, hàm copy()…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-q51.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Senior: Module :core:model hoặc một SDK nội bộ được đóng gói thành AAR biên dịch sẵ…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn Android theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-q51.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"Module :core:model hoặc một SDK nội bộ được đón…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-q51.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Module :core:model hoặc một SDK nội bộ được đón…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/kotlin/">Kotlin</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Module <code>:core:model</code> hoặc một SDK nội bộ được đóng gói thành AAR biên dịch sẵn cho các team khác dùng. Sau khi bạn thêm một property mới có giá trị mặc định vào <code>data class</code> public hoặc sửa thân một hàm <code>public inline</code>, nhiều app vẫn compile qua nhờ build cache nhưng lại crash <code>NoSuchMethodError</code> hoặc chạy logic cũ lúc runtime. Giải thích nguyên nhân ở mức bytecode JVM và cách bạn kiểm soát binary compatibility trong Kotlin?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi thay đổi một <code>data class</code> public bằng cách thêm property mới dù có giá trị mặc định, compiler Kotlin thay đổi signature của primary constructor, hàm <code>copy()</code>, cũng như các hàm synthetic <code>$default</code> kèm bitmask và <code>DefaultConstructorMarker</code>, đồng thời làm lệch thứ tự <code>componentN()</code> nếu chèn vào giữa. Những caller đã compile từ trước vẫn gọi đúng descriptor constructor hoặc <code>copy$default</code> cũ nên lúc runtime JVM không tìm thấy method và ném <code>NoSuchMethodError</code>. Tương tự, một hàm <code>public inline</code> được copy trực tiếp bytecode vào nơi gọi lúc biên dịch; nếu bản AAR mới sửa thân hàm <code>inline</code> hoặc đổi signature một hàm <code>@PublishedApi internal</code> mà nó gọi, các module chưa compile lại vẫn chạy bytecode cũ hoặc crash <code>NoSuchMethodError</code> hay <code>IllegalAccessError</code> khi liên kết với helper mới. Ngay cả với hàm thường, thêm tham số có giá trị mặc định cũng làm đổi signature hàm <code>$default</code> cho caller Kotlin, còn <code>@JvmOverloads</code> chỉ tạo thêm các overload cho caller Java chứ không giữ được binary compatibility cho code Kotlin gọi bằng default argument. Để giữ ABI ổn định trong SDK hoặc core module dùng chung, hãy tránh dùng <code>data class</code> ở public API (dùng class thường tự cài <code>equals</code>, <code>hashCode</code>, <code>toString</code>), hạn chế <code>public inline</code> và giữ phần <code>@PublishedApi internal</code> tối giản. Khi cần thêm tham số mới, hãy giữ nguyên overload cũ và đánh dấu <code>@Deprecated(..., level = DeprecationLevel.HIDDEN)</code> để caller cũ vẫn liên kết được ở runtime trong khi code mới không gọi nhầm. Cuối cùng, tích hợp JetBrains Binary Compatibility Validator vào CI để đối chiếu file <code>.api</code> mỗi khi mở PR, phát hiện sớm mọi phá vỡ ABI trước khi phát hành.</div>
+        <pre class="code-block"><code><span class="tk-com">// Thay vì thêm tham số mặc định trực tiếp vào hàm cũ (làm đổi signature $default),</span>
+<span class="tk-com">// giữ overload cũ ở mức binary bằng DeprecationLevel.HIDDEN:</span>
+<span class="tk-ann">@Deprecated</span>(<span class="tk-str">&quot;Use overload with timeout&quot;</span>, level = <span class="tk-type">DeprecationLevel</span>.<span class="tk-type">HIDDEN</span>)
+<span class="tk-kw">fun</span> fetchConfig(url: <span class="tk-type">String</span>): <span class="tk-type">Config</span> = fetchConfig(url, timeoutMs = 5_000L)
+
+<span class="tk-kw">fun</span> fetchConfig(url: <span class="tk-type">String</span>, timeoutMs: <span class="tk-type">Long</span> = 5_000L): <span class="tk-type">Config</span> {
+  <span class="tk-kw">return</span> loadRemoteConfig(url, timeoutMs)
+}</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-q51">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-q50.html"><span class="muted small">← Câu trước</span><span>Bản phát hành 5.12 vừa rollout 20% thì cảnh báo Crashlytics báo crash-free user…</span></a>
+  <a class="pager-next" href="../s/and-sen-q52.html"><span class="muted small">Câu sau →</span><span>App thương mại điện tử lưu catalog hàng chục nghìn sản phẩm và giỏ hàng trong R…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Kotlin</h2><a class="section-sub" href="../phong-van/android/chu-de/kotlin/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q30.html">Công ty có app Android (Kotlin) và iOS (Swift), logic nghiệp vụ hai bên hay lệch nhau (tính giá, validate, mô hình dữ liệu). CTO hỏi có nên dùng Kotlin Multiplatform (KMP). Bạn đánh giá và triển khai thử thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q43.html">Màn hình feed vẫn giật dù đã tối ưu layout; Memory Profiler cho thấy hàng chục nghìn object ngắn hạn mỗi giây sinh ra trong onBindViewHolder và hàm onDraw tuỳ biến, trong khi code Kotlin nhìn rất gọn. Những allocation ẩn nào trong Kotlin hay gặp, và bạn kiểm tra thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m43.html">Khi compile cho JVM, hàm suspend fun fetchUser(id: String): User thực chất được biến đổi thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q01.html">val và var khác nhau thế nào? Khai báo val list = mutableListOf(1, 2) rồi gọi list.add(3) có được không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q02.html">Kotlin chống NullPointerException bằng cách nào? Giải thích ?., ?: và !! qua ví dụ.</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q03.html">data class trong Kotlin tự sinh ra những gì? Khi nào nên dùng nó?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

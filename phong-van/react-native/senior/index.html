@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Senior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<title>Câu hỏi phỏng vấn React Native Senior (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn React Native Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến t…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · react native · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Senior</h1>
-  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">New Architecture (JSI, Fabric, TurboModules), Hermes, performance, kiến trúc lớn, release &amp; OTA, system design. Gồm 53 câu hỏi kèm đáp án mẫu và 53 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/react-native/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -65,18 +65,18 @@
     <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">1</span></li>
     <li><a href="#react">React &amp; Hooks</a> <span class="count">2</span></li>
     <li><a href="#components">Component &amp; Styling</a> <span class="count">3</span></li>
-    <li><a href="#state">State Management</a> <span class="count">1</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
+    <li><a href="#state">State Management</a> <span class="count">2</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
     <li><a href="#native">Native &amp; New Architecture</a> <span class="count">6</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
     <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">2</span></li>
     <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">5</span></li>
     <li><a href="#perf">Performance</a> <span class="count">9</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">1</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#security">Security</a> <span class="count">5</span></li>
     <li><a href="#design">System Design</a> <span class="count">7</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">5</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">53</span></li>
   </ul>
 </nav>
 <section id="js">
@@ -345,6 +345,32 @@ it(<span class="tk-str">&#39;nút Thanh toán đọc được và bấm được
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q52.html">Khi người dùng đăng xuất rồi đăng nhập tài khoản khác ngay trên cùng thiết bị (không tắt app), QA phát hiện người dùng mới thỉnh thoảng thấy thoáng dữ liệu, thông báo hoặc giỏ hàng của tài khoản trước. Bạn thiết kế cơ chế cô lập và dọn dẹp state khi đổi phiên thế nào cho triệt để?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lỗi này xảy ra vì dữ liệu phiên nằm rải rác ở nhiều tầng ngoài một store duy nhất: cache của TanStack Query hoặc RTK Query, các store bộ nhớ như Zustand/Redux, dữ liệu lưu đĩa ở MMKV/AsyncStorage, các request đang bay dở rồi trả về sau khi đã đăng xuất, socket và listener native. Giải pháp cần xử lý đồng bộ theo ba lớp. Lớp thứ nhất là bộ điều phối phiên khi đăng xuất: huỷ toàn bộ request đang bay bằng <code>AbortController</code> gắn theo phiên hiện tại (hoặc kiểm tra <code>sessionId</code> trước khi ghi response vào cache để tránh request chậm của user cũ ghi đè), ngắt kết nối WebSocket, gỡ user context trên Sentry/Analytics và huỷ đăng ký push token theo tài khoản cũ. Lớp thứ hai là cô lập dữ liệu lưu trữ: gọi <code>queryClient.clear()</code> để xoá sạch cache thay vì <code>invalidateQueries</code> (vốn có thể kích hoạt refetch ngầm), chạy danh sách <code>resetAllStores()</code> đã đăng ký ở các Zustand/Redux store, và tách namespace key lưu đĩa theo <code>userId</code> (hoặc tạo instance MMKV riêng theo user) để không bao giờ trộn lẫn với cài đặt chung của thiết bị như ngôn ngữ hay onboarding. Lớp thứ ba rất hiệu quả ở tầng UI là gắn <code>key={sessionId}</code> cho cây component sau đăng nhập; khi <code>sessionId</code> đổi, React tự động huỷ toàn bộ cây màn hình cũ, dọn sạch mọi <code>useState</code>, <code>useRef</code> và chạy cleanup của <code>useEffect</code> trước khi dựng phiên mới. Cuối cùng mình viết một integration test mô phỏng user A có request chậm đang chạy rồi chuyển sang user B để xác nhận dữ liệu cũ không bao giờ lọt sang.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> sessionAbort = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+<span class="tk-kw">const</span> storeResetters = <span class="tk-kw">new</span> <span class="tk-type">Set</span>&lt;() =&gt; <span class="tk-kw">void</span>&gt;();
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> registerStoreReset = (fn: () =&gt; <span class="tk-kw">void</span>) =&gt; storeResetters.add(fn);
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> switchSessionTeardown(queryClient: <span class="tk-type">QueryClient</span>) {
+  sessionAbort.abort();
+  sessionAbort = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+  socketClient.disconnect();
+  queryClient.clear();
+  storeResetters.forEach((reset) =&gt; reset());
+  <span class="tk-kw">await</span> storage.clearUserScopedKeys();
+}
+
+<span class="tk-com">// Tại Root: đổi key buộc React unmount sạch state cục bộ của phiên cũ</span>
+&lt;<span class="tk-type">AuthenticatedProviders</span> key={sessionId} /&gt;</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -385,6 +411,31 @@ it(<span class="tk-str">&#39;nút Thanh toán đọc được và bấm được
   }, [isLoggedIn, pendingUrl, linkTo, setPendingUrl]);
 }</code></pre>
         <p class="doc-link"><a href="https://reactnavigation.org/docs/deep-linking/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnavigation.org ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q51.html">Codebase có hơn 15 tính năng tách thành các feature package riêng, nhưng file navigator gốc đang import trực tiếp mọi màn hình nên vòng phụ thuộc ngày càng rối và sửa một màn hình kéo theo ảnh hưởng nhiều nơi. Bạn tổ chức kiến trúc điều hướng thế nào để các feature độc lập mà vẫn giữ TypeScript type-safe?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nguyên tắc cốt lõi là đảo ngược phụ thuộc: feature module không được import navigator gốc hay import chéo feature khác, chỉ có tầng app shell đóng vai trò composition root để lắp ghép các navigator lại. Mỗi feature tự xuất ra một sub-navigator khép kín kèm kiểu param list của riêng nó, và có thể dùng <code>getComponent</code> trên <code>Screen</code> kết hợp <code>inlineRequires</code> để trì hoãn việc nạp code màn hình cho tới khi người dùng thật sự điều hướng tới. Để giữ type-safe khi điều hướng xuyên feature mà không tạo vòng phụ thuộc, mình tách một package nhẹ tên kiểu <code>navigation-contracts</code> chỉ chứa tên route, interface param list (ghép bằng declaration merging qua <code>declare global</code> cho <code>ReactNavigation.RootParamList</code>) và các hàm điều phối trừu tượng, tuyệt đối không import UI hay thư viện nặng. Tránh việc rải lệnh <code>navigation.navigate</code> lồng 3-4 tầng tab và stack khắp các feature vì chỉ cần đổi một màn từ tab ra modal là phải sửa hàng loạt file; thay vào đó các feature nên gọi qua các semantic intent hoặc typed route path để mọi thay đổi cấu trúc cây điều hướng chỉ nằm gói gọn ở app shell. Cuối cùng dùng ESLint (<code>eslint-plugin-boundaries</code> hoặc <code>no-restricted-imports</code>) để chặn cứng việc feature A import trực tiếp màn hình của feature B ngay từ lúc viết code.</div>
+        <pre class="code-block"><code><span class="tk-com">// packages/navigation-contracts/src/index.ts (chỉ chứa types, không import UI)</span>
+<span class="tk-kw">export</span> <span class="tk-kw">type</span> <span class="tk-type">CheckoutParams</span> = { <span class="tk-type">CheckoutConfirm</span>: { orderId: <span class="tk-kw">string</span> } };
+<span class="tk-kw">export</span> <span class="tk-kw">type</span> <span class="tk-type">OrdersParams</span> = { <span class="tk-type">OrderList</span>: <span class="tk-kw">undefined</span>; <span class="tk-type">OrderDetail</span>: { id: <span class="tk-kw">string</span> } };
+
+<span class="tk-kw">declare</span> global {
+  <span class="tk-kw">namespace</span> <span class="tk-type">ReactNavigation</span> {
+    <span class="tk-kw">interface</span> <span class="tk-type">RootParamList</span> <span class="tk-kw">extends</span> <span class="tk-type">CheckoutParams</span>, <span class="tk-type">OrdersParams</span> {}
+  }
+}
+
+<span class="tk-com">// apps/mobile/src/RootNavigator.tsx (composition root lắp ghép các feature)</span>
+&lt;<span class="tk-type">Stack</span>.<span class="tk-type">Screen</span>
+  name=<span class="tk-str">&quot;OrderDetail&quot;</span>
+  getComponent={() =&gt; require(<span class="tk-str">&#39;@app/orders&#39;</span>).<span class="tk-type">OrderDetailScreen</span>}
+/&gt;</code></pre>
+        <p class="doc-link"><a href="https://reactnavigation.org/docs/typescript/" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnavigation.org ↗</a></p>
       </div>
     </details>
     </li>
@@ -977,6 +1028,27 @@ console.log(<span class="tk-str">`startup median: ${baseline}ms -&gt; ${current}
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-sen-q53.html">Dự án có độ phủ unit test trên 80%, nhưng đội test bằng cách <code>jest.mock</code> hầu hết hook, sub-component và helper nội bộ. Kết quả là mỗi lần refactor code không đổi hành vi thì hàng chục test gãy, còn lỗi tích hợp giữa màn hình với API hay navigation vẫn lọt lên production. Bạn tái cấu trúc chiến lược test ở tầng Jest/RNTL thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Vấn đề cốt lõi là bộ test đang kiểm tra chi tiết triển khai thay vì hành vi thực tế, nên mock quá sâu làm test vừa giòn khi refactor vừa che mất lỗi nối dây giữa component, hook và tầng dữ liệu. Cách sửa là kéo đường biên mock ra đúng rìa ngoài của hệ thống: chỉ mock mạng ở tầng HTTP bằng MSW (Mock Service Worker), mock các native module (storage, camera, quyền hệ thống), timer và đồng hồ; còn toàn bộ phần bên trong như màn hình, custom hook, store, validation và React Query phải chạy thật cùng nhau. Với React Native Testing Library, mình chuyển trọng tâm sang test tích hợp ở mức màn hình hoặc luồng tính năng: bọc màn hình bằng <code>TestProviders</code> (tạo mới <code>QueryClient</code> với <code>retry: false</code>, store sạch và navigator giả lập), tương tác bằng <code>userEvent</code> và truy vấn phần tử theo vai trò hoặc nhãn hiển thị (<code>getByRole</code>, <code>getByText</code>, <code>getByLabelText</code>) thay vì phụ thuộc vào <code>testID</code> hay kiểm tra hàm nội bộ được gọi mấy lần. Unit test thuần chỉ giữ lại cho các hàm nghiệp vụ phức tạp như tính giá, state machine hay parser nhiều nhánh biên. Để triển khai mà không làm đình trệ team, không nên dừng sprint để viết lại toàn bộ test cũ; thay vào đó mình đặt quy ước cho mọi PR mới và bug fix đều viết integration test theo rìa hệ thống, xoá dần các test mock nội bộ mỗi khi chạm tới file cũ, và đo hiệu quả bằng số lỗi hồi quy lọt ra thay vì chạy theo phần trăm coverage.</div>
+        <pre class="code-block"><code><span class="tk-com">// Đúng: chạy thật hook + React Query + UI, chỉ chặn HTTP ở rìa bằng MSW</span>
+server.use(
+  http.post(<span class="tk-str">&#39;/api/coupons/apply&#39;</span>, () =&gt; <span class="tk-type">HttpResponse</span>.json({ discount: <span class="tk-num">50000</span> })),
+);
+
+render(&lt;<span class="tk-type">CheckoutScreen</span> /&gt;, { wrapper: <span class="tk-type">TestProviders</span> });
+<span class="tk-kw">const</span> user = userEvent.setup();
+<span class="tk-kw">await</span> user.<span class="tk-kw">type</span>(screen.getByLabelText(<span class="tk-str">&#39;Mã giảm giá&#39;</span>), <span class="tk-str">&#39;SALE50&#39;</span>);
+<span class="tk-kw">await</span> user.press(screen.getByRole(<span class="tk-str">&#39;button&#39;</span>, { name: <span class="tk-str">&#39;Áp dụng&#39;</span> }));
+
+expect(<span class="tk-kw">await</span> screen.findByText(<span class="tk-str">&#39;Giảm 50.000đ&#39;</span>)).toBeOnTheScreen();</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -1353,6 +1425,9 @@ module.exports = config;</code></pre>
     <li><a href="../../../s/rn-sen-m48.html">Backend muốn đổi trường price trên endpoint đang dùng từ số (120000) sang object { amount, currency }. Số liệu cho thấy 12% user vẫn ở các bản app cũ và chưa thể bắt họ cập nhật ngay. Cách làm đúng nhất là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-sen-m49.html">Một junior nộp PR lớn sau 3 ngày làm việc: chạy đúng nhưng đặt toàn bộ logic nghiệp vụ trong component và trộn với gọi API, trái với hướng tách lớp của team. Deadline còn rộng. Là senior review, bạn xử lý thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-sen-m50.html">Nút tim dùng optimistic update như dưới. QA thấy thỉnh thoảng nút bật đỏ rồi nháy về trạng thái cũ vài trăm ms mới đỏ lại, nhất là khi feed đang refetch (pull-to-refresh). Thiếu bước nào trong onMutate?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m51.html">Màn hình dùng ref.current.measureInWindow(...) để đặt tooltip ngay dưới một icon bọc trong &lt;View ref={anchorRef}&gt; (không có style màu nền, viền hay bóng). Trên Android (và trên iOS khi bật Fabric), hàm measureInWindow không trả về toạ độ hoặc trả về giá trị rỗng. Nguyên nhân và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m52.html">Bottom sheet dùng Reanimated để trượt xuống và gọi onClose sau khi đóng xong. Khi người dùng kéo mở lại sheet đúng lúc animation đóng đang chạy dở (bắt đầu một withTiming(0) mới), onClose vẫn bị gọi và làm đóng sheet đột ngột. Lỗi nằm ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-sen-m53.html">Chức năng tải video lên server đọc file 250MB bằng đoạn code dưới đây; trên máy thật app thường bị hệ điều hành kill vì hết RAM (OOM). Nguyên nhân chính và hướng xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

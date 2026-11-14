@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Senior: Khi gọi ReportHelper().countItems(&#39;abc&#39;), Isolate.run ném lỗi object không thể gửi qua i…</title>
+<meta name="description" content="Vì _parse là instance method, () =&gt; _parse(raw) thực chất là () =&gt; this._parse(raw) nên closure ngầm capture cả instance this (ReportHelper), kéo theo field…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/sen-m53.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Senior: Khi gọi ReportHelper().countItems(&#39;abc&#39;), Isolate.run ném lỗi object không thể gửi qua i…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/sen-m53.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/"},{"@type":"ListItem","position":5,"name":"Khi gọi ReportHelper().countItems('abc'), Isola…","item":"https://trongmobile.github.io/flutter-prep/s/sen-m53.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Khi gọi ReportHelper().countItems(&#39;abc&#39;), Isola…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/flutter/chu-de/async/">Async &amp; Isolate</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Khi gọi <code>ReportHelper().countItems(&#39;abc&#39;)</code>, <code>Isolate.run</code> ném lỗi object không thể gửi qua isolate. Nguyên nhân và cách sửa đúng là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">ReportHelper</span> {
+  <span class="tk-kw">final</span> _port = <span class="tk-type">ReceivePort</span>();
+
+  <span class="tk-type">Future</span>&lt;int&gt; countItems(<span class="tk-type">String</span> raw) {
+    <span class="tk-kw">return</span> <span class="tk-type">Isolate</span>.run(() =&gt; _parse(raw));
+  }
+
+  int _parse(<span class="tk-type">String</span> s) =&gt; s.length;
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Closure <code>() =&gt; _parse(raw)</code> ngầm bắt <code>this</code> chứa <code>ReceivePort</code>; đổi <code>_parse</code> thành <code>static</code> hoặc hàm top-level.</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>Isolate.run</code> chỉ nhận hàm top-level làm đối số; bắt buộc tách hẳn cả phần gọi <code>Isolate.run</code> ra ngoài class.</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Biến <code>raw</code> bị giữ tham chiếu ở isolate chính nên không gửi được; cần chuyển <code>raw</code> sang <code>TransferableTypedData</code>.</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Hàm <code>_parse</code> là đồng bộ nên không chạy được trong <code>Isolate.run</code>; cần đổi kiểu trả về thành <code>Future&lt;int&gt;</code>.</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Vì <code>_parse</code> là instance method, <code>() =&gt; _parse(raw)</code> thực chất là <code>() =&gt; this._parse(raw)</code> nên closure ngầm capture cả instance <code>this</code> (<code>ReportHelper</code>), kéo theo field <code>_port</code> kiểu <code>ReceivePort</code> vốn không gửi được sang isolate khác. Đổi <code>_parse</code> thành <code>static</code> hoặc hàm top-level giúp closure không còn tham chiếu tới <code>this</code>. <code>Isolate.run</code> chấp nhận cả closure lẫn hàm đồng bộ (<code>FutureOr&lt;R&gt; Function()</code>) miễn là các giá trị bị capture gửi được qua isolate; còn <code>String</code> là immutable và gửi trực tiếp được nên không cần <code>TransferableTypedData</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/sen-m53">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/sen-m52.html"><span class="muted small">← Câu trước</span><span>Khi event WatchPrices được add và prices phát dữ liệu mới, đoạn code flutter_bl…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/flutter/senior/">Tất cả câu hỏi Flutter Senior</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Async &amp; Isolate</h2><a class="section-sub" href="../phong-van/flutter/chu-de/async/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/sen-q06.html">Thiết kế một worker isolate sống lâu để xử lý tác vụ nặng liên tục (mã hoá file, xử lý ảnh). Bạn lưu ý gì về giao tiếp và truyền dữ liệu lớn?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d03-5.html">Isolate.spawn khác compute() ở điểm nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d35-1.html">Phân biệt Future.microtask và Future.delayed(Duration.zero).</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/sen-m17.html">Một isolate tạo bằng Isolate.spawn cần đọc dữ liệu qua một plugin (platform channel) nhưng bị lỗi ngay khi gọi. Cách xử lý đúng từ Flutter 3.7 trở đi?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/sen-m18.html">Đoạn code sau (đã import &#39;dart:isolate&#39;) in ra gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/sen-m43.html">Đoạn code sau in ra những dòng nào, theo thứ tự?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<title>Câu hỏi phỏng vấn Flutter Senior (103 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="103 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (103 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="103 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · flutter · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Senior</h1>
-  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 100 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 103 câu hỏi kèm đáp án mẫu và 53 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/flutter/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -64,17 +64,19 @@
   <ul>
     <li><a href="#dart">Dart</a> <span class="count">2</span></li>
     <li><a href="#async">Async &amp; Isolate</a> <span class="count">3</span></li>
+    <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">1</span></li>
     <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">4</span></li>
     <li><a href="#state">State Management</a> <span class="count">4</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
     <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">16</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">6</span></li>
     <li><a href="#native">Native &amp; Platform</a> <span class="count">24</span></li>
     <li><a href="#perf">Performance</a> <span class="count">9</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">7</span></li>
-    <li><a href="#security">Security</a> <span class="count">4</span></li>
+    <li><a href="#security">Security</a> <span class="count">5</span></li>
     <li><a href="#design">System Design</a> <span class="count">11</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">10</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">53</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -184,6 +186,41 @@
       <div class="model-answer">
         <div class="answer-text"><code>Future.microtask</code> đưa task vào microtask queue, chạy trước mọi event tiếp theo; <code>Future.delayed(Duration.zero)</code> đưa vào event queue, chạy sau tất cả microtask hiện có dù delay bằng 0.</div>
         
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="widget">
+  <div class="section-head"><h2>Widget &amp; Lifecycle</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/widget/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q32.html">App có trình phát video đang chạy inline trong một card; khi người dùng xoay ngang hoặc bấm mở rộng, video phải chuyển sang bố cục toàn màn hình (hoặc sang một nhánh cây widget khác) mà không bị tải lại hay mất vị trí đang phát. <code>GlobalKey</code> reparenting giữ lại <code>State</code> trong tình huống này bằng cơ chế nào, những bẫy nào hay làm mất state, và khi nào <code>OverlayPortal</code> là lựa chọn sạch hơn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Bình thường, khi một <code>StatefulWidget</code> đổi sang widget cha khác trên cây, <code>Element</code> cũ bị huỷ và một <code>Element</code> cùng <code>State</code> mới được tạo lại, làm mất các controller đang giữ trạng thái như <code>VideoPlayerController</code>. Khi gắn cùng một <code>GlobalKey</code>, lúc nhánh cha cũ không còn chứa widget đó trong pha build, <code>Element</code> tương ứng (kéo theo <code>State</code> và nhánh <code>RenderObject</code> bên dưới) không bị <code>dispose</code> ngay mà được đưa vào danh sách inactive elements của <code>BuildOwner</code> và gọi <code>State.deactivate()</code>. Nếu trong chính frame đó nhánh cha mới build một widget có cùng <code>GlobalKey</code> và cùng <code>runtimeType</code>, <code>BuildOwner</code> sẽ lấy lại <code>Element</code> đang chờ đó gắn sang cha mới, gọi <code>State.activate()</code> rồi cập nhật cấu hình qua <code>didUpdateWidget</code>; vì <code>finalizeTree()</code> chỉ <code>dispose</code> các element còn sót lại ở cuối frame, <code>State</code> và luồng phát video được giữ nguyên. Bẫy hay gặp nhất là widget biến mất ở frame hiện tại rồi frame sau mới hiện lại (ví dụ qua một bước trung gian bất đồng bộ), khiến <code>finalizeTree()</code> chạy xong ở cuối frame đầu và gọi <code>dispose()</code> mất sạch state; thứ hai là dùng các widget chuyển cảnh như <code>AnimatedSwitcher</code> làm nhánh cũ và mới cùng tồn tại song song trong một frame, gây lỗi trùng <code>GlobalKey</code>; ngoài ra <code>GlobalKey</code> có chi phí tra cứu toàn cục và việc di chuyển <code>PlatformView</code> qua ancestor khác vẫn có thể kích hoạt gắn lại view phía native. Khi nhu cầu thực tế là nổi UI lên trên màn hình như mini-player picture-in-picture, dropdown hay tooltip thay vì di chuyển giữa hai slot layout, <code>OverlayPortal</code> với <code>OverlayPortalController</code> sạch hơn nhiều vì nó vẽ <code>overlayChildBuilder</code> lên <code>Overlay</code> gần nhất nhưng vẫn giữ nguyên vị trí logic của widget trên cây, nên vẫn tra cứu được <code>Theme.of(context)</code> hay <code>MediaQuery</code> mà không cần <code>GlobalKey</code> reparenting hay tự quản lý vòng đời <code>OverlayEntry</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">VideoSlot</span> <span class="tk-kw">extends</span> <span class="tk-type">StatefulWidget</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">VideoSlot</span>({<span class="tk-kw">super</span>.key, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.fullscreen});
+  <span class="tk-kw">final</span> bool fullscreen;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">State</span>&lt;<span class="tk-type">VideoSlot</span>&gt; createState() =&gt; _VideoSlotState();
+}
+
+<span class="tk-kw">class</span> _VideoSlotState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">VideoSlot</span>&gt; {
+  <span class="tk-com">// Giữ nguyên Element và State (cùng VideoPlayerController) khi chuyển nhánh trong cùng một frame</span>
+  <span class="tk-kw">final</span> _playerKey = <span class="tk-type">GlobalKey</span>();
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">final</span> player = <span class="tk-type">VideoPlayerBox</span>(key: _playerKey);
+    <span class="tk-kw">return</span> widget.fullscreen
+        ? <span class="tk-type">Scaffold</span>(body: <span class="tk-type">Center</span>(child: player))
+        : <span class="tk-type">Card</span>(child: <span class="tk-type">AspectRatio</span>(aspectRatio: <span class="tk-num">16</span> / <span class="tk-num">9</span>, child: player));
+  }
+}</code></pre>
         
       </div>
     </details>
@@ -310,6 +347,53 @@
       <div class="model-answer">
         <div class="answer-text">Code-gen giảm boilerplate và tự suy ra type nhưng cần thêm bước build_runner và code sinh ra khó đọc trực tiếp; khai báo thủ công tường minh hơn nhưng dài dòng hơn khi project lớn.</div>
         
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
+<section id="navigation">
+  <div class="section-head"><h2>Navigation</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/navigation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q33.html">App có nhiều tab, mỗi tab giữ một <code>Navigator</code> lồng riêng để giữ lịch sử màn hình, đồng thời cần hỗ trợ đúng Android Predictive Back khi người dùng vuốt cạnh màn hình. Vì sao <code>WillPopScope</code> làm hỏng Predictive Back so với <code>PopScope</code>, và bạn phối hợp <code>Router</code> với <code>BackButtonDispatcher</code> thế nào để nút back hệ thống luôn đi đúng vào tab đang mở?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Android Predictive Back (từ Android 13/14+) cần biết ngay tại thời điểm người dùng bắt đầu chạm mép màn hình để vuốt rằng app có tự xử lý back hay để hệ điều hành chạy hiệu ứng thu nhỏ thoát ra màn hình chính. <code>WillPopScope</code> dùng callback bất đồng bộ <code>Future&lt;bool&gt; Function()</code>, nên hệ điều hành không thể biết trước quyết định khi gesture mới bắt đầu, buộc phải tắt hiệu ứng Predictive Back. <code>PopScope</code> khắc phục bằng thuộc tính đồng bộ <code>canPop</code>: mỗi khi trạng thái route hoặc form thay đổi, Flutter báo trước cho nền tảng biết có được phép thoát thẳng hay không; khi <code>canPop</code> là <code>true</code> ở màn gốc, Android chạy đúng preview Predictive Back, còn khi <code>canPop</code> là <code>false</code> (như đang nhập dở form hoặc tab con vẫn còn trang để lùi), preview thoát app bị chặn và <code>onPopInvokedWithResult</code> được gọi sau khi người dùng hoàn tất thao tác để bạn mở dialog xác nhận hoặc tự pop. Với nhiều tab có ngăn xếp điều hướng lồng nhau, <code>RootBackButtonDispatcher</code> ở <code>MaterialApp.router</code> là nơi nhận sự kiện back từ hệ thống; mỗi <code>Router</code> con bên trong tab cần được truyền một <code>ChildBackButtonDispatcher</code> gắn với dispatcher cha thay vì dùng chung <code>RootBackButtonDispatcher</code>. Mỗi khi người dùng chuyển tab, bạn phải gọi <code>takePriority()</code> trên <code>ChildBackButtonDispatcher</code> của tab vừa được chọn để đưa nó lên đầu chuỗi xử lý: khi bấm back, dispatcher của tab đang active chạy trước để pop route bên trong nếu còn, và chỉ nhường lại cho dispatcher cha (hoặc thoát app) khi stack của tab đó đã về gốc. Nếu dùng <code>go_router</code> với <code>StatefulShellRoute</code>, framework đã bọc sẵn phần lớn cơ chế này, còn khi tự dựng <code>Router</code> hoặc lồng <code>Navigator</code> tuỳ biến thì vẫn phải quản lý <code>takePriority()</code> và <code>PopScope</code> tường minh.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">TabShell</span> <span class="tk-kw">extends</span> <span class="tk-type">StatefulWidget</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">TabShell</span>({<span class="tk-kw">super</span>.key, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.childDispatcher, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.delegate});
+  <span class="tk-kw">final</span> <span class="tk-type">ChildBackButtonDispatcher</span> childDispatcher;
+  <span class="tk-kw">final</span> <span class="tk-type">RouterDelegate</span>&lt;<span class="tk-type">Object</span>&gt; delegate;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">State</span>&lt;<span class="tk-type">TabShell</span>&gt; createState() =&gt; _TabShellState();
+}
+
+<span class="tk-kw">class</span> _TabShellState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">TabShell</span>&gt; {
+  bool _hasUnsavedDraft = <span class="tk-kw">false</span>;
+
+  <span class="tk-kw">void</span> _onTabActivated() {
+    <span class="tk-com">// Đưa tab đang hiển thị lên ưu tiên nhận sự kiện back từ hệ thống</span>
+    widget.childDispatcher.takePriority();
+  }
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">PopScope</span>(
+      <span class="tk-com">// Đồng bộ trước để Android Predictive Back quyết định ngay lúc bắt đầu vuốt</span>
+      canPop: !_hasUnsavedDraft,
+      onPopInvokedWithResult: (didPop, result) {
+        <span class="tk-kw">if</span> (!didPop) _showDiscardConfirmDialog();
+      },
+      child: <span class="tk-type">Router</span>(
+        routerDelegate: widget.delegate,
+        backButtonDispatcher: widget.childDispatcher,
+      ),
+    );
+  }
+}</code></pre>
         
       </div>
     </details>
@@ -1316,6 +1400,17 @@ firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span cl
     </details>
     </li>
     <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/sen-q34.html">App tài chính yêu cầu xác thực vân tay hoặc Face ID trước khi ký lệnh chuyển tiền. Vì sao chỉ gọi <code>local_auth</code> để kiểm tra kết quả <code>bool</code> phía Dart là chưa đủ cho giao dịch rủi ro cao, và bạn thiết kế cơ chế xác thực sinh trắc học gắn chặt phần cứng với Android Keystore và iOS Secure Enclave thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Package <code>local_auth</code> chỉ gọi hộp thoại sinh trắc học của hệ điều hành và trả về một <code>Future&lt;bool&gt;</code> qua <code>MethodChannel</code> cho Dart. Trên thiết bị đã root hoặc jailbreak, kẻ tấn công có thể dùng Frida hoặc method swizzling để hook hàm native hoặc phản hồi của channel sao cho luôn trả về <code>true</code> mà không cần vượt qua cảm biến, hoặc chỉnh sửa trực tiếp logic kiểm tra, nên cách này chỉ phù hợp cho việc khoá mở giao diện mang tính tiện lợi chứ không đủ bảo chứng cho giao dịch tiền bạc. Để xác thực có giá trị mật mã và gắn với phần cứng, khi kích hoạt sinh trắc học (sau khi đã xác minh OTP/mật khẩu), app cần tạo một cặp khoá bất đối xứng (như EC P-256) ngay trong phần cứng bảo mật: Android Keystore (ưu tiên StrongBox nếu máy có, bật <code>setUserAuthenticationRequired(true)</code> với mức sinh trắc học mạnh) và iOS Secure Enclave (tạo khoá qua <code>SecAccessControlCreateWithFlags</code> với cờ <code>.privateKeyUsage</code> và <code>.biometryCurrentSet</code>). Khoá bí mật không bao giờ rời khỏi vùng an toàn của chip, còn khoá công khai được gửi lên backend để gắn với tài khoản và thiết bị. Khi người dùng bấm chuyển tiền, backend cấp một challenge (nonce) ngắn hạn gắn với mã giao dịch, số tiền và người nhận. Phía Android, app khởi tạo đối tượng <code>Signature</code> từ khoá trong Keystore và bọc vào <code>BiometricPrompt.CryptoObject</code> để TEE/StrongBox chỉ mở quyền ký sau khi tự xác minh trực tiếp cảm biến; phía iOS, lời gọi <code>SecKeyCreateSignature</code> sẽ kích hoạt xác thực qua <code>LAContext</code> gắn với access control của khoá. Chữ ký trả về được gửi lên server để kiểm chứng bằng khoá công khai đã lưu, nhờ vậy dù client bị hook giao diện vẫn không thể giả mạo chữ ký hợp lệ. Thiết kế cũng cần xử lý việc khoá tự động bị vô hiệu hoá khi người dùng thêm dấu vân tay hoặc Face ID mới (nhờ <code>.biometryCurrentSet</code> trên iOS hay <code>setInvalidatedByBiometricEnrollment(true)</code> trên Android) bằng cách bắt lỗi invalidation và yêu cầu đăng ký lại qua PIN/OTP, đồng thời có phương án dự phòng cho máy không hỗ trợ StrongBox hoặc khi cảm biến bị khoá tạm thời.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
       <h3 class="qa-q"><a href="../../../s/d27-3.html">Certificate Pinning giải quyết vấn đề bảo mật gì?</a></h3>
       <details class="reveal">
       <summary>Xem đáp án mẫu</summary>
@@ -1680,6 +1775,9 @@ firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span cl
     <li><a href="../../../s/sen-m48.html">Màn hình mở ra gọi song song 5 API và cả 5 cùng nhận 401 vì access token vừa hết hạn. Interceptor đang gọi /auth/refresh ở mỗi request lỗi; server dùng refresh token xoay vòng (mỗi token chỉ dùng được một lần) nên user thỉnh thoảng bị đăng xuất. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/sen-m49.html">Bản release mới làm crash rate tăng vọt do một PR đã qua review nhưng không có test, và mất 3 giờ mới rollback được. Bạn dẫn dắt buổi postmortem. Cách làm nào đúng tinh thần blameless?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/sen-m50.html">Module cũ khó sửa khiến mỗi tính năng mới tốn gấp đôi thời gian, nhưng PM chỉ muốn ưu tiên tính năng trong quý này. Với vai trò tech lead, bạn nên làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m51.html">Một developer dùng Finalizer trong dart:core để tự động đóng RandomAccessFile và StreamController khi object bị thu hồi, thay vì yêu cầu caller gọi dispose(). Đánh giá nào đúng nhất về thiết kế này?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m52.html">Khi event WatchPrices được add và prices phát dữ liệu mới, đoạn code flutter_bloc (v8+) dưới đây gặp vấn đề gì và cách sửa chuẩn là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m53.html">Khi gọi ReportHelper().countItems(&#39;abc&#39;), Isolate.run ném lỗi object không thể gửi qua isolate. Nguyên nhân và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

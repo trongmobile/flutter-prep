@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn React Native Senior: Khi người dùng đăng xuất rồi đăng nhập tài khoản khác ngay trên cùng t…</title>
+<meta name="description" content="Lỗi này xảy ra vì dữ liệu phiên nằm rải rác ở nhiều tầng ngoài một store duy nhất: cache của TanStack Query hoặc RTK Query, các store bộ nhớ như Zustand/Redu…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-q52.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Senior: Khi người dùng đăng xuất rồi đăng nhập tài khoản khác ngay trên cùng t…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn React Native theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-q52.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Khi người dùng đăng xuất rồi đăng nhập tài khoả…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-q52.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Khi người dùng đăng xuất rồi đăng nhập tài khoả…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/state/">State Management</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Khi người dùng đăng xuất rồi đăng nhập tài khoản khác ngay trên cùng thiết bị (không tắt app), QA phát hiện người dùng mới thỉnh thoảng thấy thoáng dữ liệu, thông báo hoặc giỏ hàng của tài khoản trước. Bạn thiết kế cơ chế cô lập và dọn dẹp state khi đổi phiên thế nào cho triệt để?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Lỗi này xảy ra vì dữ liệu phiên nằm rải rác ở nhiều tầng ngoài một store duy nhất: cache của TanStack Query hoặc RTK Query, các store bộ nhớ như Zustand/Redux, dữ liệu lưu đĩa ở MMKV/AsyncStorage, các request đang bay dở rồi trả về sau khi đã đăng xuất, socket và listener native. Giải pháp cần xử lý đồng bộ theo ba lớp. Lớp thứ nhất là bộ điều phối phiên khi đăng xuất: huỷ toàn bộ request đang bay bằng <code>AbortController</code> gắn theo phiên hiện tại (hoặc kiểm tra <code>sessionId</code> trước khi ghi response vào cache để tránh request chậm của user cũ ghi đè), ngắt kết nối WebSocket, gỡ user context trên Sentry/Analytics và huỷ đăng ký push token theo tài khoản cũ. Lớp thứ hai là cô lập dữ liệu lưu trữ: gọi <code>queryClient.clear()</code> để xoá sạch cache thay vì <code>invalidateQueries</code> (vốn có thể kích hoạt refetch ngầm), chạy danh sách <code>resetAllStores()</code> đã đăng ký ở các Zustand/Redux store, và tách namespace key lưu đĩa theo <code>userId</code> (hoặc tạo instance MMKV riêng theo user) để không bao giờ trộn lẫn với cài đặt chung của thiết bị như ngôn ngữ hay onboarding. Lớp thứ ba rất hiệu quả ở tầng UI là gắn <code>key={sessionId}</code> cho cây component sau đăng nhập; khi <code>sessionId</code> đổi, React tự động huỷ toàn bộ cây màn hình cũ, dọn sạch mọi <code>useState</code>, <code>useRef</code> và chạy cleanup của <code>useEffect</code> trước khi dựng phiên mới. Cuối cùng mình viết một integration test mô phỏng user A có request chậm đang chạy rồi chuyển sang user B để xác nhận dữ liệu cũ không bao giờ lọt sang.</div>
+        <pre class="code-block"><code><span class="tk-kw">let</span> sessionAbort = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+<span class="tk-kw">const</span> storeResetters = <span class="tk-kw">new</span> <span class="tk-type">Set</span>&lt;() =&gt; <span class="tk-kw">void</span>&gt;();
+
+<span class="tk-kw">export</span> <span class="tk-kw">const</span> registerStoreReset = (fn: () =&gt; <span class="tk-kw">void</span>) =&gt; storeResetters.add(fn);
+
+<span class="tk-kw">export</span> <span class="tk-kw">async</span> <span class="tk-kw">function</span> switchSessionTeardown(queryClient: <span class="tk-type">QueryClient</span>) {
+  sessionAbort.abort();
+  sessionAbort = <span class="tk-kw">new</span> <span class="tk-type">AbortController</span>();
+  socketClient.disconnect();
+  queryClient.clear();
+  storeResetters.forEach((reset) =&gt; reset());
+  <span class="tk-kw">await</span> storage.clearUserScopedKeys();
+}
+
+<span class="tk-com">// Tại Root: đổi key buộc React unmount sạch state cục bộ của phiên cũ</span>
+&lt;<span class="tk-type">AuthenticatedProviders</span> key={sessionId} /&gt;</code></pre>
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-q52">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-q51.html"><span class="muted small">← Câu trước</span><span>Codebase có hơn 15 tính năng tách thành các feature package riêng, nhưng file n…</span></a>
+  <a class="pager-next" href="../s/rn-sen-q53.html"><span class="muted small">Câu sau →</span><span>Dự án có độ phủ unit test trên 80%, nhưng đội test bằng cách jest.mock hầu hết…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề State Management</h2><a class="section-sub" href="../phong-van/react-native/chu-de/state/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q37.html">App RN 5 năm tuổi dùng Redux cổ điển (connect, saga, hơn 200 reducer, dữ liệu API nằm chung với state UI). Team muốn chuyển sang RTK Query hoặc React Query kết hợp Zustand mà không viết lại cả app. Bạn lập lộ trình và chọn công cụ thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m14.html">App dùng redux-persist lưu toàn bộ Redux store (gồm cả cache danh sách sản phẩm vài MB) xuống AsyncStorage. Thời gian từ lúc mở app tới màn đầu tiên tăng dần theo dung lượng dữ liệu. Hướng sửa phù hợp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m44.html">App dùng Redux Toolkit với redux-persist (AsyncStorage, cấu hình mặc định, chưa đặt version). Bản 2.0 đổi slice cart từ { items } sang { lines, coupon }. Sau phát hành, user cập nhật từ 1.x crash ở cart.lines.map ngay khi mở app, còn user cài mới thì bình thường. Cách xử lý đúng để user cũ không crash mà vẫn giữ được giỏ hàng là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-fre-q34.html">Khi nào chỉ cần useState, khi nào nên dùng Context hoặc thư viện như Redux Toolkit, Zustand?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-jun-q07.html">Thông tin user đăng nhập đang được truyền qua props qua 4–5 tầng component chỉ để tới một nút ở sâu bên dưới. Khi nào lifting state và truyền props là đủ, khi nào nên chuyển sang Context, và Context có bẫy gì cần biết?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q26.html">Màn hình giỏ hàng đang có bốn useState riêng (items, coupon, loading, error), mỗi thao tác phải gọi 2–3 hàm set liền nhau và thỉnh thoảng quên reset error. Khi nào nên chuyển sang useReducer, và nó khác useState thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

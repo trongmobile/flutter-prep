@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Senior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
+<title>Câu hỏi phỏng vấn iOS Senior (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · ios · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Senior</h1>
-  <p class="subtitle">Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc lớn, system design, leadership. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc lớn, system design, leadership. Gồm 53 câu hỏi kèm đáp án mẫu và 53 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/ios/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -62,12 +62,12 @@
 <nav class="toc" aria-label="Mục lục">
   <h2 class="side-title">Mục lục</h2>
   <ul>
-    <li><a href="#swift">Swift</a> <span class="count">2</span></li>
+    <li><a href="#swift">Swift</a> <span class="count">3</span></li>
     <li><a href="#memory">Memory &amp; ARC</a> <span class="count">3</span></li>
     <li><a href="#concurrency">Concurrency</a> <span class="count">6</span></li>
-    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">2</span></li>
+    <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">3</span></li>
     <li><a href="#swiftui">SwiftUI</a> <span class="count">3</span></li>
-    <li><a href="#navigation">Navigation</a> <span class="count">1</span></li>
+    <li><a href="#navigation">Navigation</a> <span class="count">2</span></li>
     <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">4</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">3</span></li>
     <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">5</span></li>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">4</span></li>
     <li><a href="#design">System Design</a> <span class="count">4</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">4</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">53</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -136,6 +136,17 @@
 
   <span class="tk-kw">func</span> size(<span class="tk-kw">for</span> id: <span class="tk-type">Int</span>) -&gt; <span class="tk-type">CGSize</span> { cache[id, <span class="tk-kw">default</span>: .zero] }
 }</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q52.html">Sau khi tách codebase thành nhiều Swift Package local, bạn thấy nhiều hàm generic và protocol ở module <code>Core</code> khi gọi từ module <code>Feature</code> chạy chậm hơn trước, còn dùng <code>any Protocol</code> để giấu kiểu cụ thể lại làm tăng allocation. Cơ chế biên dịch nào gây ra điều này, và bạn dùng <code>some</code>, <code>any</code>, <code>@inlinable</code> hay <code>@usableFromInline</code> thế nào cho hợp lý?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi tách module, mỗi target thường được biên dịch độc lập: nếu một hàm generic <code>public</code> trong <code>Core</code> không lộ phần thân ra ngoài, compiler khi biên dịch <code>Feature</code> chỉ thấy chữ ký hàm chứ không thấy implementation để thực hiện generic specialization cho kiểu cụ thể. Kết quả là lời gọi phải chạy qua bản unspecialized dùng Value Witness Table và Protocol Witness Table để truyền kích thước, copy và gọi hàm gián tiếp thay vì tĩnh hoá và inline như lúc nằm chung một target. Trong khi đó, <code>any Protocol</code> đóng gói giá trị vào existential container có buffer nội tuyến 3 word: mọi struct lớn hơn kích thước này (chẳng hạn chứa nhiều property hoặc string) đều bị cấp phát động trên heap kèm chi phí retain/release khi truyền qua lại. Để khắc phục đúng chỗ, trước hết ưu tiên tham số generic hoặc <code>some Protocol</code> ở các API không cần lưu trữ nhiều kiểu khác nhau trong cùng một collection, tránh lạm dụng <code>any</code> trong vòng lặp hay đường nóng. Với các hàm generic thực sự nằm trên hot path ở <code>Core</code> (như parse dữ liệu, tính toán collection, helper toán học) đã được đo bằng Time Profiler và Allocations, gắn <code>@inlinable</code> để compiler xuất phần thân vào <code>.swiftmodule</code> cho phép module gọi inline và specialize, đồng thời chỉ đánh dấu <code>@usableFromInline</code> cho những helper <code>internal</code> tối thiểu mà phần thân đó cần chạm tới. Không rải <code>@inlinable</code> bừa bãi lên toàn bộ <code>Core</code>, vì nó làm phình kích thước <code>.swiftmodule</code> và binary do nhân bản code ở nơi gọi, kéo dài thời gian build tăng dần khi sửa phần thân, và trói chặt tương thích nhị phân nếu sau này phát hành framework dạng binary.</div>
+        
         
       </div>
     </details>
@@ -433,6 +444,17 @@ host.didMove(toParent: <span class="tk-kw">self</span>)
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q53.html">Màn feed <code>UICollectionView</code> dùng cell self-sizing với nhiều <code>UIStackView</code> lồng nhau gặp hai lỗi: cuộn nhanh bị khựng ở bước tính layout, còn khi cập nhật chiều cao một cell ở phía trên (như mở rộng bình luận) thì vị trí cuộn bị giật nhảy lung tung. Bạn phân tích nguyên nhân trong cơ chế layout của UIKit và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi <code>UIStackView</code> sinh thêm layout guide và các ràng buộc bất đẳng thức để quản lý khoảng cách, ẩn hiện, nên lồng nhiều stack tạo ra số lượng constraint tăng vọt cho bộ giải tuyến tính Cassowary của Auto Layout. Khi dùng cell self-sizing, mỗi lần dequeue và đo kích thước UIKit phải chạy <code>systemLayoutSizeFitting</code>, và nếu nhãn nhiều dòng hoặc <code>isHidden</code> trong stack thiếu ưu tiên <code>contentHugging</code>/<code>compressionResistance</code> rõ ràng thì solver có thể chạy lặp nhiều lượt hoặc xung đột ở lượt đo chiều rộng 0 ban đầu. Hiện tượng nhảy vị trí cuộn xảy ra vì <code>UICollectionView</code> dùng chiều cao ước lượng cho các cell chưa hiển thị để tính <code>contentSize</code>; khi một cell phía trên hoặc sát mép trên đổi chiều cao, <code>contentSize</code> thay đổi đột ngột và nếu dùng <code>reloadItems</code> thì cell còn bị tạo mới làm mất trạng thái và đặt lại cache kích thước. Để xử lý triệt để, với cell feed xuất hiện dày đặc nên làm phẳng cấu trúc view: bỏ các <code>UIStackView</code> lồng sâu, thay bằng constraint trực tiếp gọn nhẹ hoặc tính frame tường minh trong <code>layoutSubviews</code> và <code>sizeThatFits(_:)</code> để bỏ qua hoàn toàn Auto Layout trên đường nóng. Phía layout chuyển sang <code>UICollectionViewCompositionalLayout</code> với chiều cao <code>.estimated</code> sát với trung vị thực tế của feed, đồng thời cache chiều cao đã tính theo khóa gồm ID item, chiều rộng container và <code>preferredContentSizeCategory</code> để trả về nhanh ở <code>preferredLayoutAttributesFitting(_:)</code> hoặc cung cấp kích thước cố định khi đã biết. Khi người dùng mở rộng nội dung trong cell đang hiển thị, dùng <code>reconfigureItems</code> trong <code>performBatchUpdates</code> thay cho <code>reloadItems</code> để giữ nguyên cell và tránh nhấp nháy, kết hợp xác minh bằng Instruments Animation Hitches và Time Profiler rằng phần lớn thời gian layout đã rút khỏi main thread.</div>
+        
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="swiftui">
@@ -629,6 +651,17 @@ layout {
   }
 }</code></pre>
         <p class="doc-link"><a href="https://developer.apple.com/documentation/xcode/supporting-associated-domains" target="_blank" rel="noopener">Đọc thêm trong tài liệu · developer.apple.com ↗</a></p>
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-sen-q51.html">App UIKit lớn đang chuyển dần sang SwiftUI: luồng gốc do Coordinator và <code>UINavigationController</code> quản lý, nhưng bên trong có các màn hình SwiftUI cần push tiếp sang màn SwiftUI khác hoặc quay về root khi nhận deep link. Bạn thiết kế kiến trúc điều hướng lai này thế nào để tránh xung đột navigation bar, lệch trạng thái khi vuốt back và dễ bỏ dần UIKit về sau?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Nguyên tắc quan trọng nhất là tại mỗi ngăn xếp điều hướng chỉ có một chủ sở hữu duy nhất: không đặt <code>NavigationStack</code> bên trong <code>UIHostingController</code> đang nằm trong <code>UINavigationController</code>, vì lồng hai stack sẽ sinh hai navigation bar, hỏng cử chỉ vuốt back và lệch back stack. Khi UIKit vẫn nắm luồng ngoài, <code>UINavigationController</code> giữ quyền push/pop còn từng màn SwiftUI được bọc trong <code>UIHostingController</code>; phía SwiftUI không dùng <code>NavigationLink(destination:)</code> mà nhận một <code>Router</code> hoặc closure gửi intent điều hướng (dạng enum route) để về sau đổi Coordinator sang <code>NavigationStack(path:)</code> mà không phải sửa code giao diện. Nếu có một nhánh tính năng hoàn toàn mới bằng SwiftUI, nên tách bằng modal presentation (<code>present</code> hoặc <code>.sheet</code>) chứa <code>NavigationStack</code> riêng để cô lập hai thế giới. Để tránh lệch state của Coordinator khi người dùng vuốt back nửa chừng rồi thả tay huỷ, không dọn child coordinator ở <code>willShow</code> hay dựa vào <code>deinit</code> của view; thay vào đó dùng <code>UINavigationControllerDelegate</code> (<code>navigationController(_:didShow:animated:)</code>) kiểm tra <code>transitionCoordinator</code> và đối chiếu <code>viewControllers</code> xem màn nào đã thực sự rời khỏi stack mới giải phóng state tương ứng. Với navigation bar, gom cấu hình ẩn/hiện bar về một điểm qua <code>navigationController(_:willShow:animated:)</code> hoặc subclass <code>UIHostingController</code> đọc metadata từ màn hình thay vì trộn <code>setNavigationBarHidden</code> trong <code>viewWillAppear</code> với <code>.navigationBarHidden</code> trong <code>.onAppear</code>. Cuối cùng, deep link được giải mã tại tầng AppRouter thành danh sách route chuẩn rồi gọi <code>setViewControllers(_:animated:)</code> một lần để dựng lại đúng stack gồm cả UIKit lẫn <code>UIHostingController</code> thay vì chuỗi nhiều lệnh push bất đồng bộ.</div>
+        
+        
       </div>
     </details>
     </li>
@@ -1404,6 +1437,9 @@ layout {
     <li><a href="../../../s/ios-sen-m48.html">App chia nhiều feature module; Cart cần mở màn của Profile và Profile cũng cần mở màn của Cart. Cách tách nào tránh phụ thuộc vòng, giữ type-safety và giới hạn phạm vi phải compile lại khi đổi code nội bộ của một feature?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-sen-m49.html">Feed liên tục có bài mới chèn lên đầu và app phân trang bằng GET /feed?page=N&amp;limit=20. User thỉnh thoảng thấy bài bị lặp khi cuộn xuống, lúc khác lại bị sót bài do bài cũ bị xoá. Hướng sửa căn bản nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-sen-m50.html">Hai senior trong team bất đồng gay gắt về TCA hay MVVM + Coordinator cho dự án mới, ai cũng có lý lẽ hợp lý và cuộc họp đang đi vào ngõ cụt. Là tech lead, bước tiếp theo tốt nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m51.html">Đầu tiên hiển thị CheckoutView(discount: 10), sau đó view cha truyền lại CheckoutView(discount: 20). Người dùng bấm nút &quot;Áp dụng&quot;, kết quả thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m52.html">Màn hình đang hiển thị danh sách LogEntry đọc từ viewContext (qua NSFetchedResultsController hoặc @FetchRequest). Sau khi chạy đoạn code dưới đây, trạng thái của SQLite và viewContext ra sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m53.html">Sau khi loadLatest() chạy xong và biến allLines ra khỏi scope, nhận định nào đúng về lượng bộ nhớ mà LogCache đang giữ?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

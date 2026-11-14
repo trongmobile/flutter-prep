@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Câu hỏi phỏng vấn iOS Senior: Màn feed UICollectionView dùng cell self-sizing với nhiều UIStackView lồng nhau…</title>
+<meta name="description" content="Mỗi UIStackView sinh thêm layout guide và các ràng buộc bất đẳng thức để quản lý khoảng cách, ẩn hiện, nên lồng nhiều stack tạo ra số lượng constraint tăng v…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-q53.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior: Màn feed UICollectionView dùng cell self-sizing với nhiều UIStackView lồng nhau…">
+<meta property="og:description" content="Bạn trả lời được câu này không? Tự trả lời rồi xem đáp án mẫu, ôn thêm câu hỏi phỏng vấn iOS theo rank.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-q53.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Màn feed UICollectionView dùng cell self-sizing…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-q53.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn feed UICollectionView dùng cell self-sizing…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/uikit/">UIKit &amp; Lifecycle</a><span class="tag">Câu hỏi phỏng vấn</span></div>
+  <h1 class="question-title">Màn feed <code>UICollectionView</code> dùng cell self-sizing với nhiều <code>UIStackView</code> lồng nhau gặp hai lỗi: cuộn nhanh bị khựng ở bước tính layout, còn khi cập nhật chiều cao một cell ở phía trên (như mở rộng bình luận) thì vị trí cuộn bị giật nhảy lung tung. Bạn phân tích nguyên nhân trong cơ chế layout của UIKit và xử lý thế nào?</h1>
+  <p class="muted">Tự trả lời thành tiếng trước, rồi mới xem đáp án mẫu nhé.</p>
+  <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mỗi <code>UIStackView</code> sinh thêm layout guide và các ràng buộc bất đẳng thức để quản lý khoảng cách, ẩn hiện, nên lồng nhiều stack tạo ra số lượng constraint tăng vọt cho bộ giải tuyến tính Cassowary của Auto Layout. Khi dùng cell self-sizing, mỗi lần dequeue và đo kích thước UIKit phải chạy <code>systemLayoutSizeFitting</code>, và nếu nhãn nhiều dòng hoặc <code>isHidden</code> trong stack thiếu ưu tiên <code>contentHugging</code>/<code>compressionResistance</code> rõ ràng thì solver có thể chạy lặp nhiều lượt hoặc xung đột ở lượt đo chiều rộng 0 ban đầu. Hiện tượng nhảy vị trí cuộn xảy ra vì <code>UICollectionView</code> dùng chiều cao ước lượng cho các cell chưa hiển thị để tính <code>contentSize</code>; khi một cell phía trên hoặc sát mép trên đổi chiều cao, <code>contentSize</code> thay đổi đột ngột và nếu dùng <code>reloadItems</code> thì cell còn bị tạo mới làm mất trạng thái và đặt lại cache kích thước. Để xử lý triệt để, với cell feed xuất hiện dày đặc nên làm phẳng cấu trúc view: bỏ các <code>UIStackView</code> lồng sâu, thay bằng constraint trực tiếp gọn nhẹ hoặc tính frame tường minh trong <code>layoutSubviews</code> và <code>sizeThatFits(_:)</code> để bỏ qua hoàn toàn Auto Layout trên đường nóng. Phía layout chuyển sang <code>UICollectionViewCompositionalLayout</code> với chiều cao <code>.estimated</code> sát với trung vị thực tế của feed, đồng thời cache chiều cao đã tính theo khóa gồm ID item, chiều rộng container và <code>preferredContentSizeCategory</code> để trả về nhanh ở <code>preferredLayoutAttributesFitting(_:)</code> hoặc cung cấp kích thước cố định khi đã biết. Khi người dùng mở rộng nội dung trong cell đang hiển thị, dùng <code>reconfigureItems</code> trong <code>performBatchUpdates</code> thay cho <code>reloadItems</code> để giữ nguyên cell và tránh nhấp nháy, kết hợp xác minh bằng Instruments Animation Hitches và Time Profiler rằng phần lớn thời gian layout đã rút khỏi main thread.</div>
+        
+        
+      </div>
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-q53">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-q52.html"><span class="muted small">← Câu trước</span><span>Sau khi tách codebase thành nhiều Swift Package local, bạn thấy nhiều hàm gener…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề UIKit &amp; Lifecycle</h2><a class="section-sub" href="../phong-van/ios/chu-de/uikit/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q30.html">Màn chat đã dùng UICollectionViewDiffableDataSource, nhưng khi một tin nhắn được sửa thì cell nhấp nháy và mất vị trí cuộn, và thỉnh thoảng crash vì identifier trùng. Identifier của snapshot nên là gì, và reloadItems khác reconfigureItems thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q31.html">App UIKit lớn muốn viết màn mới bằng SwiftUI và chuyển dần màn cũ, đồng thời tái dùng một MKMapView đã có trong màn SwiftUI. Bạn nhúng hai chiều thế nào, và những bẫy về vòng đời, kích thước và state là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m39.html">Feed dùng UICollectionViewDiffableDataSource với identifier là id của post. Mỗi lần bấm thích, code dưới làm cell nháy và cuộn bị khựng. Cách sửa phù hợp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m43.html">BadgeView tự vẽ chữ trong draw(_:) và khai báo intrinsicContentSize; màn hình chỉ ràng buộc vị trí, không có constraint width hay height. Gán title bằng chuỗi dài hơn thì badge vẫn giữ kích thước cũ và chữ bị cắt. Cần bổ sung gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q10.html">Kể các method vòng đời chính của UIViewController. Gọi API lấy dữ liệu nên đặt ở viewDidLoad hay viewWillAppear?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q11.html">Auto Layout hoạt động thế nào? Tạo view bằng code, thêm constraint xong nhưng console báo &quot;Unable to simultaneously satisfy constraints&quot;, bạn kiểm tra gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>
