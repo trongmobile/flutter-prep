@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Fresher (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
+<title>Câu hỏi phỏng vấn Android Fresher (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Fresher (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn Android Fresher kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, Recyc…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · android · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Fresher</h1>
-  <p class="subtitle">Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Kotlin, OOP với Java, Activity/Fragment, Intent, layout cơ bản, RecyclerView. Gồm 53 câu hỏi kèm đáp án mẫu và 53 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/android/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -71,11 +71,11 @@
     <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
     <li><a href="#background">Background &amp; Service</a> <span class="count">2</span></li>
-    <li><a href="#build">Gradle &amp; Build</a> <span class="count">3</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#build">Gradle &amp; Build</a> <span class="count">4</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">53</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -1133,6 +1133,33 @@ dependencies {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q53.html">Trong <code>build.gradle.kts</code> của module app, <code>versionCode</code> khác <code>versionName</code> thế nào, và <code>applicationId</code> khác gì với <code>namespace</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>versionCode</code> là một số nguyên dương dùng nội bộ cho hệ thống Android và Google Play để so sánh phiên bản nào mới hơn; mỗi lần đưa bản cập nhật lên Play Store bắt buộc phải tăng <code>versionCode</code>, vì Android không cho cài đè một bản có <code>versionCode</code> nhỏ hơn bản đang có trên máy. Ngược lại, <code>versionName</code> là chuỗi hiển thị cho người dùng (như <code>&quot;1.3.0&quot;</code>) trong phần cài đặt ứng dụng hoặc trên Store, không dùng để kiểm tra nâng cấp. Còn <code>applicationId</code> là định danh duy nhất của ứng dụng trên thiết bị Android và trên Google Play; khi đã phát hành lên Store thì không thể đổi <code>applicationId</code> cho app đó, nhưng có thể gắn thêm <code>applicationIdSuffix</code> cho bản debug để cài song song cùng bản release trên một máy. Trong khi đó <code>namespace</code> là tên package Kotlin/Java dùng để sinh các class tự động như <code>R</code> hay <code>BuildConfig</code> và làm gốc cho tên class viết tắt trong <code>AndroidManifest.xml</code>; đổi <code>namespace</code> chỉ là đổi cấu trúc code nội bộ chứ không làm đổi danh tính của app đối với hệ điều hành hay Play Store.</div>
+        <pre class="code-block"><code>android {
+  namespace = <span class="tk-str">&quot;com.example.shop&quot;</span>
+
+  defaultConfig {
+    applicationId = <span class="tk-str">&quot;com.example.shop&quot;</span>
+    minSdk = <span class="tk-num">24</span>
+    targetSdk = <span class="tk-num">35</span>
+    versionCode = <span class="tk-num">12</span>
+    versionName = <span class="tk-str">&quot;1.3.0&quot;</span>
+  }
+
+  buildTypes {
+    debug {
+      applicationIdSuffix = <span class="tk-str">&quot;.debug&quot;</span>
+    }
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="testing">
@@ -1194,6 +1221,42 @@ dependencies {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q52.html">Khi viết unit test cho một hàm xử lý logic (như tính phí giao hàng hoặc kiểm tra dữ liệu nhập), bạn chọn các test case thế nào để tránh bỏ sót lỗi? Một hàm test thường có cấu trúc ra sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Để unit test có giá trị, cần bao phủ ba nhóm case chính: trường hợp hợp lệ điển hình (happy path), trường hợp dữ liệu không hợp lệ (như chuỗi rỗng, toàn khoảng trắng hoặc số âm) và các trường hợp biên (edge case như giá trị bằng 0, đúng ngưỡng chuyển mức phí hay độ dài tối đa). Mỗi hàm test chỉ nên kiểm tra một hành vi hoặc một điều kiện cụ thể, đặt tên mô tả rõ đầu vào và kết quả mong đợi để khi test fail nhìn vào tên là biết ngay lỗi ở đâu. Bên trong hàm test thường tổ chức theo mô hình Arrange–Act–Assert: chuẩn bị dữ liệu đầu vào ở phần Arrange, gọi hàm cần kiểm tra ở phần Act, rồi dùng các hàm kiểm chứng như <code>assertEquals</code>, <code>assertTrue</code> hay cơ chế bắt exception ở phần Assert. Ngoài ra các test phải độc lập với nhau, không chia sẻ trạng thái thay đổi qua lại để tránh kết quả phụ thuộc vào thứ tự chạy.</div>
+        <pre class="code-block"><code><span class="tk-kw">import</span> org.junit.<span class="tk-type">Assert</span>.assertEquals
+<span class="tk-kw">import</span> org.junit.<span class="tk-type">Test</span>
+
+<span class="tk-kw">fun</span> calcShippingFee(orderTotal: <span class="tk-type">Int</span>): <span class="tk-type">Int</span> {
+  require(orderTotal &gt;= <span class="tk-num">0</span>) { <span class="tk-str">&quot;Tổng đơn không được âm&quot;</span> }
+  <span class="tk-kw">return</span> <span class="tk-kw">if</span> (orderTotal &gt;= 500_000) <span class="tk-num">0</span> <span class="tk-kw">else</span> 30_000
+}
+
+<span class="tk-kw">class</span> <span class="tk-type">ShippingFeeTest</span> {
+  <span class="tk-ann">@Test</span>
+  <span class="tk-kw">fun</span> orderBelowFreeThreshold_returnsStandardFee() {
+    <span class="tk-kw">val</span> total = 499_999                                <span class="tk-com">// Arrange (edge case ngay dưới ngưỡng)</span>
+    <span class="tk-kw">val</span> fee = calcShippingFee(total)                   <span class="tk-com">// Act</span>
+    assertEquals(30_000, fee)                          <span class="tk-com">// Assert</span>
+  }
+
+  <span class="tk-ann">@Test</span>
+  <span class="tk-kw">fun</span> orderAtFreeThreshold_returnsZero() {
+    assertEquals(<span class="tk-num">0</span>, calcShippingFee(500_000))          <span class="tk-com">// Edge case đúng ngưỡng miễn phí</span>
+  }
+
+  <span class="tk-ann">@Test</span>(expected = <span class="tk-type">IllegalArgumentException</span>::<span class="tk-kw">class</span>)
+  <span class="tk-kw">fun</span> negativeOrderTotal_throwsException() {
+    calcShippingFee(-<span class="tk-num">1</span>)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -1237,6 +1300,17 @@ dependencies {
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Câu này nhà tuyển dụng muốn xem quy trình và thái độ, nên trả lời có thứ tự và nêu một ví dụ thật. Trước hết tái hiện lỗi ổn định rồi thu hẹp phạm vi: tắt bớt đoạn code, so với commit còn chạy tốt (<code>git bisect</code> hoặc <code>git stash</code>), dựng project nhỏ để cô lập. Tiếp theo đọc kỹ lỗi (Logcat, <code>Caused by</code>, dòng đầu tiên thuộc code của mình), dùng debugger hoặc log để kiểm tra giả định thay vì đoán, rồi tra tài liệu chính thức, issue tracker của thư viện hay Stack Overflow bằng đúng thông báo lỗi. Đặt mốc thời gian, ví dụ khoảng 30 đến 60 phút không tiến triển thì hỏi mentor hoặc đồng nghiệp, vì kẹt cả ngày trong im lặng tốn hơn nhiều so với việc hỏi. Câu hỏi tốt nêu mục tiêu, kết quả mong đợi so với thực tế, các bước đã thử, kèm stack trace và nhánh để họ chạy lại được; không chỉ nói &quot;app em bị lỗi&quot;. Có thể dùng AI để gợi ý, nhưng phải hiểu và kiểm chứng trước khi dán vào. Cuối cùng ghi lại nguyên nhân, thêm test hoặc ghi chú để lỗi không lặp lại và chia sẻ với team. Tránh: sửa mò, copy fix mà không hiểu, hoặc giấu việc đang bị kẹt.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-fre-q51.html">Khi nhận được một task mới nhưng mô tả còn thiếu thông tin (chưa có màn hình lỗi/rỗng, chưa chốt API hoặc chưa rõ trường hợp biên), bạn xử lý thế nào trước khi bắt đầu code?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi thấy yêu cầu chưa rõ, không nên tự đoán rồi code thẳng vì rất dễ phải làm lại khi QA hoặc PM kiểm tra. Trước hết cần đọc kỹ lại ticket, thiết kế và tài liệu API hiện có để tự trả lời những gì đã rõ, đồng thời liệt kê các điểm còn thiếu như trạng thái loading, màn hình khi danh sách rỗng hoặc mất mạng, giới hạn nhập liệu hay cách xử lý khi người dùng bấm liên tiếp. Sau đó chủ động trao đổi với PM, designer hoặc backend càng sớm càng tốt, ưu tiên hỏi theo hướng đề xuất sẵn phương án hợp lý để họ xác nhận nhanh thay vì phải nghĩ lại từ đầu. Nếu đang chờ backend hoàn thiện API, có thể thống nhất trước cấu trúc JSON rồi dùng dữ liệu giả tạm thời để làm phần giao diện và logic độc lập trước, tránh ngồi chờ thụ động. Cuối cùng ghi lại các điểm đã thống nhất vào phần bình luận hoặc mô tả task để cả team và QA dùng chung một chuẩn khi nghiệm thu.</div>
         
         
       </div>
@@ -1297,6 +1371,9 @@ dependencies {
     <li><a href="../../../s/and-fre-m48.html">Class UserRepository nhận ApiService qua constructor (class UserRepository(private val api: ApiService)) thay vì tự tạo ApiService() bên trong. Lợi ích trực tiếp nhất của cách này là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-fre-m49.html">Cần viết unit test bằng JUnit cho một hàm Kotlin thuần (không đụng API Android) và muốn chạy trực tiếp trên JVM của máy dev, không cần emulator. Đặt file test ở thư mục nào của module?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-fre-m50.html">Từ Android 6.0 (API 23), app có targetSdk từ 23 trở lên muốn dùng quyền nguy hiểm (dangerous) như CAMERA thì cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-fre-m51.html">Với app có targetSdk từ 31 (Android 12) trở lên, khi khai báo một Activity có &lt;intent-filter&gt; trong AndroidManifest.xml như sau nhưng thiếu thuộc tính android:exported, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-fre-m52.html">App phát nhạc cần tiếp tục phát khi người dùng bấm Home đưa app xuống nền. Vì sao nên dùng Foreground Service kèm một Notification đang hiển thị thay vì Service nền thông thường?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-fre-m53.html">Vì sao không nên truyền hoặc giữ tham chiếu tới Activity hay View bên trong ViewModel?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

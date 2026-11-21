@@ -643,4 +643,31 @@ export default [
     answer: 0,
     explain: "Mọi thứ nằm trong app đều nằm trên máy người dùng: họ giải nén file cài đặt, lấy bundle JS (Hermes bytecode vẫn lộ chuỗi và có thể decompile) và tìm ra key. Biến `.env` thường được nhúng thẳng vào bundle lúc build, còn tách chuỗi chỉ là che mắt. Secret phải nằm ở server: app chỉ gọi backend của bạn (kèm xác thực người dùng), backend mới gọi bên thứ ba.",
   },
+  {
+    id: "rn-fre-m51",
+    topic: "navigation",
+    q: "Màn `Login` tự vẽ thanh tiêu đề riêng, nhưng khi chạy vẫn thấy thêm thanh header mặc định có chữ `Login` ở trên cùng. Cách ẩn header mặc định cho riêng màn `Login` trong React Navigation là gì?",
+    options: [
+      "Truyền `screenOptions={{ headerShown: false }}` vào `<Stack.Navigator>`",
+      "Truyền `options={{ headerShown: false }}` vào `<Stack.Screen>` của `Login`",
+      "Truyền `options={{ title: '' }}` vào `<Stack.Screen>` của `Login`",
+      "Đặt `options={{ header: null }}` vào `<Stack.Screen>` của `Login`",
+    ],
+    answer: 1,
+    explain: "`options={{ headerShown: false }}` đặt trên `<Stack.Screen name=\"Login\" ... />` sẽ tắt hoàn toàn header mặc định cho riêng màn hình đó. Truyền `screenOptions={{ headerShown: false }}` lên `<Stack.Navigator>` sẽ ẩn header của tất cả màn hình trong stack chứ không riêng `Login`. Đặt `title: ''` chỉ xoá dòng chữ tiêu đề nhưng thanh header và khoảng trống của nó vẫn còn, còn `header: null` là cú pháp cũ không dùng trong các bản React Navigation hiện tại.",
+  },
+  {
+    id: "rn-fre-m52",
+    topic: "data",
+    q: "Giả sử API trả về HTTP 200 với JSON `{\"name\": \"An\"}`. Gọi hàm `loadUser()` dưới đây thì console in ra gì?",
+    code: "async function loadUser() {\n  const res = await fetch('https://api.example.com/user');\n  const user = res.json();\n  console.log(user.name);\n}",
+    options: [
+      "In ra `'An'` vì `await fetch(...)` đã chờ tải xong toàn bộ dữ liệu",
+      "Ném lỗi `SyntaxError` vì chưa gọi `JSON.parse` thủ công trên kết quả",
+      "In ra chuỗi JSON thô `'{\"name\":\"An\"}'` vì chưa chuyển thành object",
+      "In ra `undefined` vì `res.json()` trả về một `Promise` chưa `await`",
+    ],
+    answer: 3,
+    explain: "`await fetch(...)` mới chỉ chờ nhận được đối tượng `Response` (status, header), còn việc đọc và giải mã phần thân JSON là bất đồng bộ nên `res.json()` trả về một `Promise`. Vì thiếu `await` trước `res.json()`, biến `user` đang giữ một `Promise` chứ không phải object kết quả, nên `user.name` in ra `undefined`. Cách viết đúng là `const user = await res.json()`, và bạn không cần gọi `JSON.parse` thủ công vì `res.json()` đã tự phân tích chuỗi JSON.",
+  },
 ];

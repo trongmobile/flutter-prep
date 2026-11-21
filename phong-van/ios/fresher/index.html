@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Fresher (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<title>Câu hỏi phỏng vấn iOS Fresher (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 52 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Fresher (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn iOS Fresher kèm đáp án mẫu và 52 câu quiz trắc nghiệm: Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ b…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · ios · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Fresher</h1>
-  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Swift, optional, struct và class, UIKit cơ bản, Auto Layout, SwiftUI cơ bản. Gồm 53 câu hỏi kèm đáp án mẫu và 52 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/ios/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -68,13 +68,13 @@
     <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">9</span></li>
     <li><a href="#swiftui">SwiftUI</a> <span class="count">7</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
     <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">5</span></li>
-    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
+    <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">52</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -1026,6 +1026,29 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q51.html">Singleton (<code>shared</code>) trong iOS là gì và hoạt động ra sao? Vì sao Apple SDK dùng nhiều nhưng người ta lại khuyên không nên lạm dụng cho các class trong app?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Singleton là mẫu thiết kế đảm bảo một class chỉ có đúng một instance duy nhất trong suốt vòng đời ứng dụng và cung cấp điểm truy cập toàn cục tới instance đó. Trong Swift, ta thường tạo Singleton bằng một <code>static let shared</code> kết hợp <code>private init()</code> để chặn nơi khác tự khởi tạo thêm instance mới; bản thân Apple cũng dùng nhiều ở các tài nguyên dùng chung cấp hệ thống như <code>URLSession.shared</code>, <code>UserDefaults.standard</code> hay <code>FileManager.default</code>. Dù tiện vì màn hình nào cũng gọi thẳng được mà không cần truyền tham số qua lại, việc lạm dụng Singleton gây ra nhiều vấn đề khi app lớn dần. Thứ nhất, nó tạo ra trạng thái dùng chung toàn cục nên bất kỳ chỗ nào cũng có thể sửa dữ liệu đó, rất khó lần vết khi xảy ra bug. Thứ hai, các class gọi trực tiếp <code>APIClient.shared</code> bên trong bị gắn chặt vào implementation thật, khiến việc viết unit test bằng dữ liệu giả trở nên khó khăn vì không thay thế được dependency từ bên ngoài. Thứ ba, Singleton sống từ lúc được gọi lần đầu tới khi tắt app, nên nếu nó giữ cache lớn hay tham chiếu tới các object khác thì bộ nhớ không được giải phóng. Vì vậy với các service nghiệp vụ của app, ta thường ưu tiên khởi tạo bình thường rồi truyền vào qua <code>init</code> thay vì biến mọi thứ thành Singleton.</div>
+        <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">CartManager</span> {
+    <span class="tk-kw">static</span> <span class="tk-kw">let</span> shared = <span class="tk-type">CartManager</span>()
+    <span class="tk-kw">private</span> <span class="tk-kw">init</span>() {}
+
+    <span class="tk-kw">private</span>(<span class="tk-kw">set</span>) <span class="tk-kw">var</span> items: [<span class="tk-type">String</span>] = []
+
+    <span class="tk-kw">func</span> add(_ item: <span class="tk-type">String</span>) {
+        items.append(item)
+    }
+}
+
+<span class="tk-com">// Truy cập từ mọi nơi, nhưng không thể viết CartManager() để tạo bản mới</span>
+<span class="tk-type">CartManager</span>.shared.add(<span class="tk-str">&quot;Áo thun&quot;</span>)</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="data">
@@ -1271,6 +1294,23 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q52.html">Khi viết unit test bằng XCTest, vì sao nên dùng <code>XCTUnwrap</code> thay cho force unwrap <code>!</code>, và dùng <code>XCTAssertEqual(a, b)</code> thay cho <code>XCTAssertTrue(a == b)</code>?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hai lựa chọn này đều hướng tới việc làm cho bộ test chạy an toàn hơn và báo lỗi rõ ràng hơn khi có vấn đề. Với kiểu Optional trong test, nếu bạn dùng force unwrap <code>!</code> và giá trị vô tình bị <code>nil</code>, chương trình sẽ crash ngay tại dòng đó và làm cả quá trình chạy test dừng đột ngột, khiến các hàm test phía sau không được thực thi nữa. Ngược lại, khi đánh dấu hàm test là <code>throws</code> và dùng <code>try XCTUnwrap(value)</code>, nếu <code>value</code> là <code>nil</code> thì XCTest chỉ ghi nhận đúng test case đó bị fail kèm thông báo rõ ràng rồi vẫn tiếp tục chạy hết các test còn lại trong suite. Tương tự, <code>XCTAssertTrue(a == b)</code> và <code>XCTAssertEqual(a, b)</code> đều kiểm tra hai giá trị có bằng nhau không, nhưng khi fail thì <code>XCTAssertTrue</code> chỉ báo chung chung là điều kiện bị sai, bạn phải tự debug lại mới biết giá trị thực tế là gì. Trong khi đó <code>XCTAssertEqual</code> in ra cả hai vế thực tế và kỳ vọng trong log của Xcode, giúp bạn nhìn ra ngay sai lệch nằm ở đâu mà không tốn thời gian chạy lại.</div>
+        <pre class="code-block"><code><span class="tk-kw">func</span> testFirstProductName() <span class="tk-kw">throws</span> {
+    <span class="tk-kw">let</span> products = [<span class="tk-type">Product</span>(name: <span class="tk-str">&quot;Tai nghe&quot;</span>)]
+    <span class="tk-com">// Tốt: nếu nil chỉ fail test này, không crash cả suite</span>
+    <span class="tk-kw">let</span> first = <span class="tk-kw">try</span> <span class="tk-type">XCTUnwrap</span>(products.first)
+    <span class="tk-com">// Tốt: khi sai sẽ in rõ giá trị thực tế và giá trị kỳ vọng</span>
+    <span class="tk-type">XCTAssertEqual</span>(first.name, <span class="tk-str">&quot;Tai nghe&quot;</span>)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="security">
@@ -1315,6 +1355,17 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
       <summary>Xem đáp án mẫu</summary>
       <div class="model-answer">
         <div class="answer-text">Mình có quy trình để khỏi loay hoay. Một, tái hiện bug ổn định và thu hẹp phạm vi: lỗi xảy ra ở bước nào, trên simulator hay máy thật, bản iOS nào, có xảy ra với dữ liệu khác không; dùng breakpoint, log và <code>git bisect</code> hoặc <code>git stash</code> để xác định thay đổi nào làm hỏng. Hai, đọc kỹ thông báo lỗi và stack trace thay vì đoán, tra đúng message trong tài liệu Apple, Swift Forums hay Stack Overflow, thử một giả thuyết mỗi lần và ghi lại kết quả để không lặp lại. Ba, nếu sau khoảng 30–60 phút (tuỳ độ gấp) vẫn chưa có hướng thì mình hỏi người có kinh nghiệm hơn, không im lặng cả ngày vì vừa mất thời gian vừa làm trễ cả team. Khi hỏi mình chuẩn bị sẵn: mong đợi gì, thực tế thấy gì, đã thử gì, các bước tái hiện và đoạn code hoặc log liên quan, để người kia mất vài phút chứ không phải vài chục phút để hiểu. Bốn, giải xong thì ghi lại nguyên nhân và cách sửa (commit message, ghi chú hoặc một test) để lần sau mình và đồng nghiệp không mất công lại. Nhà tuyển dụng muốn thấy bạn chủ động, có phương pháp, biết dùng công cụ và biết nhờ giúp đúng lúc, chứ không cần người chưa bao giờ bí.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-fre-q53.html">Khi mở Pull Request đầu tiên ở công ty mới và nhận được rất nhiều comment yêu cầu sửa lại code, bạn phản ứng và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mình xem nhiều comment ở giai đoạn đầu là điều bình thường và là cơ hội học nhanh nhất về convention cũng như tiêu chuẩn chất lượng của team, chứ không coi đó là sự chê bai cá nhân. Việc đầu tiên là đọc hết toàn bộ comment một lượt để nắm bức tranh chung, phân loại đâu là lỗi logic hoặc bug tiềm ẩn, đâu là góp ý về đặt tên hay tách hàm. Với những chỗ mình đồng ý và hiểu rõ thì sửa lần lượt, còn chỗ nào chưa hiểu vì sao phải đổi hoặc thấy có phương án khác hợp lý hơn thì mình trả lời lại lịch sự trên PR để hỏi lý do, tránh sửa máy móc mà không hiểu bản chất. Trước khi push lại, mình tự đọc lại diff, chạy app và chạy test để chắc chắn không làm hỏng phần khác, rồi reply xác nhận ngắn gọn ở từng thread đã xử lý để reviewer dễ kiểm tra lại. Sau khi PR được merge, mình ghi chú lại những lỗi bản thân hay mắc như đặt tên chưa rõ, quên xử lý Optional hay viết hàm quá dài thành một checklist cá nhân để tự rà trước khi mở các PR sau, nhờ vậy số lượng comment lặp lại sẽ giảm đi rõ rệt.</div>
         
         
       </div>
@@ -1375,6 +1426,8 @@ navigationController?.pushViewController(editVC, animated: <span class="tk-kw">t
     <li><a href="../../../s/ios-fre-m48.html">Server trả JSON dùng key user_name trong khi model khai báo userName. Đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-fre-m49.html">Ô nhập liệu tự đặt backgroundColor = .white và textColor = .black, nên khi bật Dark Mode thì ô vẫn trắng chói. Muốn màu tự đổi theo chế độ Light/Dark của hệ thống thì làm thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-fre-m50.html">Bạn tô vàng row đầu tiên như đoạn code sau, nhưng khi cuộn danh sách dài thì một số row khác cũng bị vàng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m51.html">Khi viewDidLoad() chạy trên main thread, đoạn code sau in ra các số theo thứ tự nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-fre-m52.html">App dùng UITabBarController có 3 tab (Trang chủ, Tìm kiếm, Cá nhân) và mỗi tab cần push sang màn hình chi tiết độc lập, giữ nguyên lịch sử màn hình khi chuyển qua lại giữa các tab. Cách tổ chức nào đúng?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn React Native Fresher (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<title>Câu hỏi phỏng vấn React Native Fresher (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 52 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
+<meta property="og:title" content="Câu hỏi phỏng vấn React Native Fresher (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn React Native Fresher kèm đáp án mẫu và 52 câu quiz trắc nghiệm: JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleShee…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · react native · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn React Native Fresher</h1>
-  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">JavaScript/TypeScript cơ bản, component, props/state, Flexbox, StyleSheet, FlatList. Gồm 53 câu hỏi kèm đáp án mẫu và 52 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/react-native/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/react-native/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -65,16 +65,17 @@
     <li><a href="#js">JavaScript &amp; TypeScript</a> <span class="count">11</span></li>
     <li><a href="#react">React &amp; Hooks</a> <span class="count">10</span></li>
     <li><a href="#components">Component &amp; Styling</a> <span class="count">10</span></li>
-    <li><a href="#state">State Management</a> <span class="count">1</span></li>
+    <li><a href="#state">State Management</a> <span class="count">2</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">4</span></li>
     <li><a href="#native">Native &amp; New Architecture</a> <span class="count">2</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">4</span></li>
-    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">3</span></li>
+    <li><a href="#animation">Animation &amp; Gesture</a> <span class="count">1</span></li>
+    <li><a href="#tooling">Expo, Build &amp; Release</a> <span class="count">4</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">1</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">52</span></li>
   </ul>
 </nav>
 <section id="js">
@@ -808,6 +809,20 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q52.html">Trong màn hình giỏ hàng đã có <code>const [items, setItems] = useState&lt;CartItem[]&gt;([])</code>, bạn có nên tạo thêm <code>useState</code> cho <code>totalCount</code> và <code>totalPrice</code> rồi dùng <code>useEffect</code> để cập nhật theo <code>items</code> không? Vì sao?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Không nên tạo thêm state cho những giá trị có thể suy ra trực tiếp từ state đã có (gọi là derived state). Nếu tách riêng <code>totalCount</code> và <code>totalPrice</code> vào <code>useState</code> rồi đồng bộ bằng <code>useEffect</code>, code sẽ dài dòng hơn, dễ xảy ra tình trạng lệch dữ liệu khi quên cập nhật ở một thao tác nào đó, và còn gây thừa một nhịp render vì màn hình phải render với <code>items</code> mới và tổng tiền cũ trước khi <code>useEffect</code> chạy <code>setTotalPrice</code> để render lại lần nữa. Cách làm gọn và an toàn là giữ <code>items</code> làm nguồn dữ liệu duy nhất (single source of truth), rồi tính thẳng <code>totalCount</code> và <code>totalPrice</code> ngay trong thân component mỗi lần render. Với số lượng sản phẩm thông thường trong giỏ hàng, phép tính này rất nhẹ và đảm bảo giao diện luôn khớp với <code>items</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> [items, setItems] = useState&lt;<span class="tk-type">CartItem</span>[]&gt;([]);
+
+<span class="tk-kw">const</span> totalCount = items.reduce((sum, item) =&gt; sum + item.qty, <span class="tk-num">0</span>);
+<span class="tk-kw">const</span> totalPrice = items.reduce((sum, item) =&gt; sum + item.price * item.qty, <span class="tk-num">0</span>);</code></pre>
+        <p class="doc-link"><a href="https://react.dev/learn/choosing-the-state-structure" target="_blank" rel="noopener">Đọc thêm trong tài liệu · react.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -1037,6 +1052,32 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
     </li>
   </ol>
 </section>
+<section id="animation">
+  <div class="section-head"><h2>Animation &amp; Gesture</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/animation/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q51.html">Khi làm hiệu ứng cơ bản như hiện dần hoặc trượt nhẹ bằng <code>Animated</code> của React Native, vì sao không truyền thẳng <code>Animated.Value</code> vào <code>&lt;View&gt;</code> thường mà phải dùng <code>&lt;Animated.View&gt;</code>, và <code>Animated.timing</code> khác <code>Animated.spring</code> ở điểm nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>&lt;View&gt;</code> thông thường chỉ nhận các giá trị style tĩnh như số hay chuỗi nên không biết cách theo dõi sự thay đổi của <code>Animated.Value</code>. <code>&lt;Animated.View&gt;</code> (cùng các phiên bản tương tự như <code>Animated.Text</code>, <code>Animated.Image</code>) là wrapper biết lắng nghe trực tiếp <code>Animated.Value</code> để cập nhật giao diện theo từng khung hình mà không phải gọi <code>setState</code> làm component render lại liên tục; bản thân <code>Animated.Value</code> cũng thường được giữ qua <code>useRef</code> để không bị khởi tạo lại mỗi lần render. Về hai hàm điều khiển phổ biến, <code>Animated.timing</code> chạy theo một khoảng thời gian <code>duration</code> cố định kết hợp đường cong <code>easing</code> (như đều hoặc chậm dần), phù hợp cho hiệu ứng cần đúng nhịp như mờ dần trong 300ms; còn <code>Animated.spring</code> mô phỏng lực đàn hồi của lò xo (chỉnh qua độ nảy, độ cản) nên không đặt <code>duration</code>, tạo cảm giác bật nảy tự nhiên hơn. Lưu ý là cả hai hàm chỉ tạo cấu hình hiệu ứng nên bạn phải gọi thêm <code>.start()</code> thì animation mới chạy, và nên bật <code>useNativeDriver: true</code> khi chỉ thay đổi <code>opacity</code> hoặc <code>transform</code>.</div>
+        <pre class="code-block"><code><span class="tk-kw">const</span> opacity = useRef(<span class="tk-kw">new</span> <span class="tk-type">Animated</span>.<span class="tk-type">Value</span>(<span class="tk-num">0</span>)).current;
+
+useEffect(() =&gt; {
+  <span class="tk-type">Animated</span>.timing(opacity, {
+    toValue: <span class="tk-num">1</span>,
+    duration: <span class="tk-num">300</span>,
+    useNativeDriver: <span class="tk-kw">true</span>,
+  }).start();
+}, [opacity]);
+
+<span class="tk-kw">return</span> &lt;<span class="tk-type">Animated</span>.<span class="tk-type">View</span> style={{ opacity }} /&gt;;</code></pre>
+        <p class="doc-link"><a href="https://reactnative.dev/docs/animated" target="_blank" rel="noopener">Đọc thêm trong tài liệu · reactnative.dev ↗</a></p>
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
 <section id="tooling">
   <div class="section-head"><h2>Expo, Build &amp; Release</h2><a class="section-sub" href="../../../phong-van/react-native/chu-de/tooling/">Mọi rank →</a></div>
   <ol class="qa-list">
@@ -1075,6 +1116,17 @@ setCart((prev) =&gt; prev.map((i) =&gt; (i.id === <span class="tk-num">2</span> 
 
 <span class="tk-com">// Tên đăng ký phải khớp với tên mà phía native tìm khi khởi động</span>
 <span class="tk-type">AppRegistry</span>.registerComponent(appName, () =&gt; <span class="tk-type">App</span>);</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/rn-fre-q53.html">Trong dự án React Native, <code>package.json</code> và file lock (<code>package-lock.json</code> hoặc <code>yarn.lock</code>) khác nhau thế nào? Khi kéo code mới về hoặc gặp lỗi cài gói, có nên xoá file lock rồi chạy cài lại từ đầu không?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>package.json</code> khai báo thông tin dự án, các script và danh sách thư viện kèm dải phiên bản cho phép (ví dụ <code>^1.2.0</code> cho phép nhận các bản nhỏ và bản vá mới hơn). Trong khi đó, file lock (<code>package-lock.json</code> hoặc <code>yarn.lock</code>) ghi chính xác phiên bản cụ thể của từng thư viện lẫn toàn bộ gói phụ thuộc đi kèm đã được cài vào <code>node_modules</code>. Việc commit file lock lên Git giúp mọi thành viên trong nhóm và máy build CI cài đúng một bộ phiên bản giống hệt nhau, tránh lỗi chạy được trên máy này nhưng hỏng trên máy khác. Vì vậy khi kéo code mới hoặc gặp lỗi lặt vặt trong <code>node_modules</code>, bạn không nên tuỳ tiện xoá file lock rồi cài lại, vì làm thế có thể vô tình nâng phiên bản các gói phụ lên bản mới gây xung đột hoặc lệch giữa JS và native code của React Native; thay vào đó hãy giữ nguyên file lock và cài đúng theo nó (như <code>npm ci</code> hoặc xoá riêng <code>node_modules</code> rồi chạy <code>yarn install --frozen-lockfile</code>), chỉ cập nhật file lock khi bạn chủ đích thêm hoặc nâng cấp thư viện.</div>
+        
         
       </div>
     </details>
@@ -1298,6 +1350,8 @@ describe(<span class="tk-str">&#39;formatPrice&#39;</span>, () =&gt; {
     <li><a href="../../../s/rn-fre-m48.html">Màn Home là một FlatList sản phẩm; mỗi ô hiện ảnh vuông 100×100 nhưng ảnh tải về có kích thước gốc 4000×3000. Cuộn bị giật và máy nóng. Cách xử lý đúng nhất là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-fre-m49.html">Chạy test Jest dưới đây cho kết quả gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/rn-fre-m50.html">Dự án cần gọi API thanh toán đòi secret key. Một bạn viết const SECRET_KEY = &#39;sk_live_abc&#39; ngay trong code TypeScript của app rồi build bản release. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m51.html">Màn Login tự vẽ thanh tiêu đề riêng, nhưng khi chạy vẫn thấy thêm thanh header mặc định có chữ Login ở trên cùng. Cách ẩn header mặc định cho riêng màn Login trong React Navigation là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/rn-fre-m52.html">Giả sử API trả về HTTP 200 với JSON {&quot;name&quot;: &quot;An&quot;}. Gọi hàm loadUser() dưới đây thì console in ra gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

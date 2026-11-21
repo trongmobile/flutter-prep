@@ -673,4 +673,31 @@ export default [
     answer: 0,
     explain: "`UITableView` tái sử dụng cell vừa cuộn ra khỏi màn hình: cell của row 0 được đem dùng lại cho row khác nhưng vẫn giữ `backgroundColor` vàng. Luôn gán trạng thái cho cả hai nhánh (thêm `else` đặt lại màu mặc định) hoặc reset trong `prepareForReuse()`; `reloadData()` không giúp vì cell vẫn được tái sử dụng.",
   },
+  {
+    id: "ios-fre-m51",
+    topic: "concurrency",
+    q: "Khi `viewDidLoad()` chạy trên main thread, đoạn code sau in ra các số theo thứ tự nào?",
+    code: "override func viewDidLoad() {\n    super.viewDidLoad()\n    print(\"1\")\n    DispatchQueue.main.async {\n        print(\"2\")\n    }\n    print(\"3\")\n}",
+    options: [
+      "`1`, `2`, `3` vì đang ở sẵn main thread nên block trong `main.async` chạy ngay lập tức",
+      "`1`, `3`, `2` vì `async` xếp block vào hàng đợi để chạy sau khi hàm hiện tại xong",
+      "Thứ tự không cố định vì `DispatchQueue.main.async` có thể chạy trên background thread",
+      "App bị crash deadlock do gọi `DispatchQueue.main.async` ngay khi đang ở trên main thread",
+    ],
+    answer: 1,
+    explain: "`DispatchQueue.main.async` không chạy block ngay lập tức dù đang đứng trên main thread, mà đưa block vào cuối hàng đợi của main queue để thực thi ở lượt tiếp theo của run loop sau khi `viewDidLoad()` chạy xong. Vì vậy `1` và `3` in ra trước rồi mới tới `2`; `DispatchQueue.main` luôn chạy trên main thread chứ không sang background, và chỉ `DispatchQueue.main.sync` mới gây deadlock khi gọi từ main thread.",
+  },
+  {
+    id: "ios-fre-m52",
+    topic: "navigation",
+    q: "App dùng `UITabBarController` có 3 tab (Trang chủ, Tìm kiếm, Cá nhân) và mỗi tab cần push sang màn hình chi tiết độc lập, giữ nguyên lịch sử màn hình khi chuyển qua lại giữa các tab. Cách tổ chức nào đúng?",
+    options: [
+      "Đặt `UITabBarController` làm root bên trong một `UINavigationController` chung cho cả app",
+      "Gán cùng một instance `UINavigationController` vào cả 3 vị trí trong mảng `viewControllers`",
+      "Không dùng `UINavigationController` mà gọi `present(_:animated:)` để xếp chồng màn hình",
+      "Bọc màn hình gốc của từng tab bằng một `UINavigationController` riêng rồi đưa vào tab bar",
+    ],
+    answer: 3,
+    explain: "Mỗi tab cần một `UINavigationController` riêng làm root controller của tab đó để giữ stack push/pop độc lập và vẫn hiển thị thanh tab khi chuyển qua lại. Nếu bọc `UITabBarController` trong một `UINavigationController` chung thì các tab không có stack riêng và khi push sẽ che luôn thanh tab; gán cùng một instance vào 3 tab thì sai vì một view controller chỉ nằm tại một vị trí; còn `present` tạo luồng modal thay vì điều hướng theo stack trong tab.",
+  },
 ];

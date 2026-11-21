@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Flutter Fresher (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<title>Câu hỏi phỏng vấn Flutter Fresher (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
+<meta property="og:title" content="Câu hỏi phỏng vấn Flutter Fresher (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn Flutter Fresher kèm đáp án mẫu và 53 câu quiz trắc nghiệm: Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-green">
   <div class="eyebrow">phỏng vấn · flutter · fresher (0–1 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Fresher</h1>
-  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Cú pháp Dart, widget cơ bản, layout, setState, điều hướng đơn giản. Gồm 53 câu hỏi kèm đáp án mẫu và 53 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-green" href="../../../#/flutter/study/fresher">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=fresher&amp;start=1">Làm quiz Fresher</a>
@@ -66,13 +66,14 @@
     <li><a href="#async">Async &amp; Isolate</a> <span class="count">2</span></li>
     <li><a href="#widget">Widget &amp; Lifecycle</a> <span class="count">12</span></li>
     <li><a href="#layout">Layout &amp; Rendering</a> <span class="count">9</span></li>
-    <li><a href="#state">State Management</a> <span class="count">2</span></li>
+    <li><a href="#state">State Management</a> <span class="count">3</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">4</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">2</span></li>
     <li><a href="#native">Native &amp; Platform</a> <span class="count">1</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">53</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -831,6 +832,41 @@ flutter:
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q49.html">Khi tách một phần giao diện thành widget con (ví dụ thanh tìm kiếm hoặc nút lọc), làm sao để widget con gửi dữ liệu hoặc sự kiện ngược lên widget cha khi chưa dùng thư viện state management?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Khi state nằm ở widget cha để dùng chung hoặc xử lý logic, widget cha sẽ truyền giá trị hiện tại xuống widget con qua tham số constructor, đồng thời truyền kèm một hàm callback (như <code>VoidCallback</code> khi không có dữ liệu hoặc <code>ValueChanged&lt;T&gt;</code> / <code>void Function(T)</code> khi có dữ liệu). Ở widget con, khi người dùng thao tác (như bấm nút hay đổi nội dung), widget con chỉ gọi callback đó và truyền giá trị mới lên chứ không tự sửa state của cha. Widget cha nhận được callback thì gọi <code>setState</code> để cập nhật biến state của mình, khiến Flutter rebuild lại phần UI phụ thuộc với dữ liệu mới. Cách này gọi là lifting state up, giúp luồng dữ liệu đi một chiều rõ ràng và widget con vẫn giữ được dạng <code>StatelessWidget</code> gọn nhẹ, dễ tái sử dụng.</div>
+        <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">SearchBarWidget</span> <span class="tk-kw">extends</span> <span class="tk-type">StatelessWidget</span> {
+  <span class="tk-kw">const</span> <span class="tk-type">SearchBarWidget</span>({<span class="tk-kw">super</span>.key, <span class="tk-kw">required</span> <span class="tk-kw">this</span>.onSearch});
+  <span class="tk-kw">final</span> <span class="tk-type">ValueChanged</span>&lt;<span class="tk-type">String</span>&gt; onSearch;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">TextField</span>(onChanged: onSearch);
+  }
+}
+
+<span class="tk-kw">class</span> _ProductPageState <span class="tk-kw">extends</span> <span class="tk-type">State</span>&lt;<span class="tk-type">ProductPage</span>&gt; {
+  <span class="tk-type">String</span> _keyword = <span class="tk-str">&#39;&#39;</span>;
+
+  <span class="tk-ann">@override</span>
+  <span class="tk-type">Widget</span> build(<span class="tk-type">BuildContext</span> context) {
+    <span class="tk-kw">return</span> <span class="tk-type">Column</span>(
+      children: [
+        <span class="tk-type">SearchBarWidget</span>(
+          onSearch: (value) =&gt; setState(() =&gt; _keyword = value),
+        ),
+        <span class="tk-type">Text</span>(<span class="tk-str">&#39;Đang tìm: $_keyword&#39;</span>),
+      ],
+    );
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -931,6 +967,27 @@ flutter clean &amp;&amp; flutter pub <span class="tk-kw">get</span>      # khi b
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q50.html">Trong <code>pubspec.yaml</code>, <code>dependencies</code> khác gì <code>dev_dependencies</code>, và con số <code>1.0.0+1</code> ở dòng <code>version</code> có ý nghĩa gì?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>dependencies</code> là các package mà app cần dùng trực tiếp khi chạy trên máy người dùng (như <code>http</code>, <code>provider</code>, <code>shared_preferences</code>), nên code của chúng sẽ được đóng gói vào bản build release. Còn <code>dev_dependencies</code> chỉ phục vụ cho quá trình phát triển và kiểm thử trên máy lập trình viên (như <code>flutter_test</code>, <code>flutter_lints</code>, <code>build_runner</code>), nên không bị đóng gói vào app phát hành và giúp giữ dung lượng app gọn nhẹ. Với dòng <code>version: 1.0.0+1</code>, phần trước dấu <code>+</code> (<code>1.0.0</code>) là version name hiển thị cho người dùng và trên store (tương ứng <code>versionName</code> trên Android và <code>CFBundleShortVersionString</code> trên iOS), còn phần sau dấu <code>+</code> (<code>1</code>) là build number dạng số nguyên (tương ứng <code>versionCode</code> trên Android và <code>CFBundleVersion</code> trên iOS). Mỗi lần phát hành bản cập nhật lên Google Play hay App Store, build number bắt buộc phải tăng lên để store phân biệt được bản build mới hơn, ngay cả khi version name chưa đổi.</div>
+        <pre class="code-block"><code>version: <span class="tk-num">1.0</span>.<span class="tk-num">0</span>+<span class="tk-num">1</span>  # <span class="tk-num">1.0</span>.<span class="tk-num">0</span> là version name (hiển thị cho user), <span class="tk-num">1</span> là build number (tăng mỗi lần up store)
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^<span class="tk-num">1.2</span>.<span class="tk-num">0</span>     # được đóng gói vào bản release
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^<span class="tk-num">5.0</span>.<span class="tk-num">0</span>  # chỉ dùng khi dev/test, không vào bản release</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="data">
@@ -1014,6 +1071,22 @@ flutter clean &amp;&amp; flutter pub <span class="tk-kw">get</span>      # khi b
     </li>
   </ol>
 </section>
+<section id="soft">
+  <div class="section-head"><h2>Behavioral</h2><a class="section-sub" href="../../../phong-van/flutter/chu-de/soft/">Mọi rank →</a></div>
+  <ol class="qa-list">
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/fre-q51.html">Khi mới làm Flutter và gặp một lỗi build hoặc lỗi runtime lạ mà tự tìm khoảng 30 phút vẫn chưa ra, bạn thường xử lý theo các bước nào trước khi nhờ đồng đội hỗ trợ?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Đầu tiên mình sẽ đọc kỹ toàn bộ thông báo lỗi và stack trace từ đầu đến cuối thay vì chỉ nhìn dòng cuối, vì Flutter thường chỉ rõ tên file, dòng code và gợi ý nguyên nhân (như thiếu <code>Material</code>, lỗi overflow hoặc sai kiểu dữ liệu). Tiếp theo mình kiểm tra lại những gì vừa sửa gần nhất qua <code>git diff</code> hoặc thử tách vấn đề ra một đoạn code tối giản để xác định lỗi nằm ở code của mình hay do cấu hình hoặc package. Nếu vừa thay đổi <code>pubspec.yaml</code> hay cấu hình native mà gặp lỗi build lạ, mình kiểm tra <code>flutter doctor</code>, thử <code>flutter pub get</code> hoặc <code>flutter clean</code> rồi chạy lại. Sau đó mình tìm kiếm thông báo lỗi chính xác trên tài liệu chính thức hoặc GitHub issues. Khi đã thử khoảng 30 phút mà chưa ra và cần hỏi anh chị trong team, mình sẽ tóm tắt ngắn gọn bối cảnh, gửi kèm thông báo lỗi đầy đủ, đoạn code liên quan và liệt kê những cách mình đã thử để người hỗ trợ nắm nhanh vấn đề và không mất thời gian hỏi lại từ đầu.</div>
+        
+        
+      </div>
+    </details>
+    </li>
+  </ol>
+</section>
 <section id="quiz">
   <div class="section-head"><h2>Quiz trắc nghiệm Flutter Fresher</h2><a class="section-sub" href="../../../#/flutter/quiz?rank=fresher&amp;start=1">Làm quiz trong app →</a></div>
   <ul class="link-list">
@@ -1067,6 +1140,9 @@ flutter clean &amp;&amp; flutter pub <span class="tk-kw">get</span>      # khi b
     <li><a href="../../../s/fre-m48.html">Đoạn code test dưới đây in ra những số nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/fre-m49.html">Khi chạy ở debug mode, Container dưới đây cho kết quả gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/fre-m50.html">Muốn đổi tên hiển thị dưới icon app trên màn hình chính của Android thì sửa ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m51.html">Trong thư mục test/ đang có các file test chạy bình thường. Bạn thêm file test/cart_helper.dart chứa main() và các test(...), rồi chạy lệnh flutter test (không truyền đường dẫn). Kết quả là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m52.html">Đoạn code dưới đây trong main.dart dùng để khoá màn hình dọc trước khi mở app, nhưng bị lỗi runtime Binding has not yet been initialized. Cần sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/fre-m53.html">Bạn dùng package http gửi dữ liệu đăng nhập lên API bằng đoạn code sau, nhưng server báo lỗi không nhận được dữ liệu dạng JSON trong request body. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>
