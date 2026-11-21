@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Testing &amp; CI/CD — Mobile Interview</title>
-<meta name="description" content="20 câu hỏi phỏng vấn Flutter về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<meta name="description" content="20 câu hỏi phỏng vấn Flutter về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/testing/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Testing &amp; CI/CD — Mobile Interview">
-<meta property="og:description" content="20 câu hỏi phỏng vấn Flutter về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 14 câu quiz trắc nghiệm.">
+<meta property="og:description" content="20 câu hỏi phỏng vấn Flutter về Testing &amp; CI/CD từ Fresher đến Senior, có đáp án mẫu và 18 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/testing/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,12 +47,13 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Testing &amp; CI/CD</h1>
-  <p class="subtitle">20 câu hỏi kèm đáp án mẫu và 14 câu quiz về Testing &amp; CI/CD, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">20 câu hỏi kèm đáp án mẫu và 18 câu quiz về Testing &amp; CI/CD, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/fre-m48.html">Đoạn code test dưới đây in ra những số nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/fre-m51.html">Test dưới đây báo lỗi compile ở chỗ khai báo callback (tester) async {. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -65,6 +66,7 @@
     <li><a href="../../../../s/jun-m38.html">Test sau fail ở expect cuối, dù bấm nút đúng là có tăng counter. Thiếu gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m46.html">Test sau fail ngay ở pumpWidget với lỗi No Directionality widget found. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m47.html">Widget test cho màn đang loading (đang hiển thị CircularProgressIndicator) gọi await tester.pumpAndSettle() rồi mới expect(find.byType(CircularProgressIndicator), findsOneWidget). Test fail với lỗi pumpAndSettle timed out. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/jun-m54.html">Màn ItemsPage gọi http.get tới API thật trong initState. Khi chạy trong testWidgets mà không mock gì thêm, response.statusCode nhận được là bao nhiêu?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -85,6 +87,7 @@
     <li><a href="../../../../s/mid-m34.html">Với mocktail, stub hàm Future&lt;User&gt; getUser() bằng thenReturn(Future.value(user)) thì sao?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m35.html">Phát biểu nào đúng về golden test trong Flutter?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m46.html">Widget test dùng ProviderScope với overrides như dưới để thay repository bằng bản giả. Khi ProfilePage đọc nameProvider, hàm tạo gốc của dioProvider (tạo Dio thật) có được chạy không?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m56.html">Test dưới đây fail với lỗi A Timer is still pending even after the widget tree was disposed. Nguyên nhân gốc và cách sửa đúng nhất là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -101,6 +104,7 @@
     <li><a href="../../../../s/sen-m28.html">Team cân nhắc dùng code push (vd. Shorebird) để sửa lỗi nhanh. Phát biểu nào phù hợp với giới hạn kỹ thuật và chính sách của store?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/sen-m29.html">Backend đổi field user_name thành username; app production crash, dù toàn bộ unit/widget test (dùng JSON mock) vẫn pass. Loại test nào được thiết kế để chặn đúng lỗi này trước khi backend deploy?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/sen-m30.html">Crashlytics ghi nhận được lỗi trong build/layout, nhưng exception từ một Future không được await trong onPressed thì không thấy. App đã gán FlutterError.onError. Còn thiếu gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/sen-m55.html">Monorepo có 40 package Flutter/Dart, mỗi PR chạy toàn bộ test trên CI mất 45 phút. Cách giảm thời gian mà vẫn bắt lỗi đáng tin cậy nhất là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

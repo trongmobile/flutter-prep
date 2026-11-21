@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Middle: Hàm download gọi completion hai lần (một lần báo tiến độ, một lần báo xong). Test dưới đây f…</title>
+<meta name="description" content="XCTestExpectation có assertForOverFulfill mặc định true: gọi fulfill() nhiều hơn expectedFulfillmentCount (mặc định 1) bị báo API violation - multiple calls…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-m60.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Middle: Hàm download gọi completion hai lần (một lần báo tiến độ, một lần báo xong). Test dưới đây f…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-m60.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Hàm download gọi completion hai lần (một lần bá…","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-m60.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Hàm download gọi completion hai lần (một lần bá…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Hàm <code>download</code> gọi <code>completion</code> hai lần (một lần báo tiến độ, một lần báo xong). Test dưới đây fail dù logic đúng. Nguyên nhân là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">func</span> testDownload() {
+  <span class="tk-kw">let</span> done = expectation(description: <span class="tk-str">&quot;download&quot;</span>)
+  sut.download(url) { _ <span class="tk-kw">in</span>
+    done.fulfill() <span class="tk-com">// callback bị gọi 2 lần</span>
+  }
+  wait(<span class="tk-kw">for</span>: [done], timeout: <span class="tk-num">2</span>)
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>wait(for:timeout:)</code> chỉ cho phép callback chạy trên main thread, còn lần thứ hai chạy trên thread khác</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Mặc định XCTest coi <code>fulfill()</code> nhiều hơn dự kiến là lỗi (<code>assertForOverFulfill</code> là <code>true</code>)</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Một expectation chỉ dùng được một lần trong cả class test, nên lần thứ hai bị từ chối ngầm</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>wait(for:timeout:)</code> huỷ expectation ngay khi <code>fulfill()</code> đầu tiên được gọi, nên lần hai gặp đối tượng đã huỷ</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div><code>XCTestExpectation</code> có <code>assertForOverFulfill</code> mặc định <code>true</code>: gọi <code>fulfill()</code> nhiều hơn <code>expectedFulfillmentCount</code> (mặc định 1) bị báo <code>API violation - multiple calls made to -[XCTestExpectation fulfill]</code> và test fail. Sửa bằng <code>expectedFulfillmentCount = 2</code> nếu đúng là cần hai lần, <code>assertForOverFulfill = false</code> nếu số lần không quan trọng, hoặc chỉ fulfill ở lần báo xong. Callback chạy trên thread nào cũng được, và expectation không bị huỷ khi vừa fulfill.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-m60">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-m59.html"><span class="muted small">← Câu trước</span><span>Đoạn code sau in ra những gì trên console?</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/ios/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm load() async gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q24.html">Swift Testing (@Test, #expect) khác XCTest ở những điểm nào? Dự án đang có vài trăm test XCTest thì có nên chuyển hết không?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q35.html">Test cho tầng networking đang gọi server thật nên chậm và flaky; bạn muốn test cả URLSession thật (header, decode, retry) mà không chạm mạng. URLProtocol stub hoạt động thế nào, và nó khác mock bằng protocol ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q49.html">ViewModel có debounce 300ms cho ô search, logic &quot;mã giảm giá hết hạn cuối ngày&quot; và retry tối đa 3 lần với delay tăng dần. Test hiện dùng Thread.sleep hoặc expectation chờ vài giây nên chậm và đôi khi fail, còn test hết hạn pass ở máy dev nhưng fail ở CI đặt múi giờ khác. Bạn viết lại test thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-m37.html">Trong Swift Testing, #expect và #require khác nhau thế nào?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-mid-m38.html">Trong func testUpload() async, bạn cần đợi một XCTestExpectation được fulfill từ callback. Cách viết nào đúng?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

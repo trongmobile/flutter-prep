@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Middle: Đoạn code sau in ra những gì trên console?</title>
+<meta name="description" content="@autoclosure tự bọc đối số thành closure và chỉ chạy khi hàm gọi message(). Lần gọi enabled: false không gọi message() nên expensiveDump() không chạy; lần en…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-mid-m59.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Middle: Đoạn code sau in ra những gì trên console?">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-mid-m59.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/"},{"@type":"ListItem","position":5,"name":"Đoạn code sau in ra những gì trên console?","item":"https://trongmobile.github.io/flutter-prep/s/ios-mid-m59.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Đoạn code sau in ra những gì trên console?</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/ios/chu-de/swift/">Swift</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Đoạn code sau in ra những gì trên console?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">func</span> expensiveDump() -&gt; <span class="tk-type">String</span> {
+  print(<span class="tk-str">&quot;dump&quot;</span>)
+  <span class="tk-kw">return</span> <span class="tk-str">&quot;state&quot;</span>
+}
+
+<span class="tk-kw">func</span> log(_ message: <span class="tk-ann">@autoclosure</span> () -&gt; <span class="tk-type">String</span>, enabled: <span class="tk-type">Bool</span>) {
+  <span class="tk-kw">if</span> enabled { print(message()) }
+}
+
+log(expensiveDump(), enabled: <span class="tk-kw">false</span>)
+log(expensiveDump(), enabled: <span class="tk-kw">true</span>)</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>dump</code>, <code>dump</code> rồi <code>state</code>, vì đối số luôn được tính trước khi vào hàm <code>log</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Chỉ <code>state</code>, vì <code>print</code> bên trong <code>expensiveDump()</code> bị bỏ qua khi nằm trong autoclosure</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Lỗi compile vì phải viết <code>log({ expensiveDump() }, enabled: false)</code> mới truyền được closure</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>dump</code> rồi <code>state</code>, vì lần gọi đầu không bao giờ tính <code>expensiveDump()</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div><code>@autoclosure</code> tự bọc đối số thành closure và chỉ chạy khi hàm gọi <code>message()</code>. Lần gọi <code>enabled: false</code> không gọi <code>message()</code> nên <code>expensiveDump()</code> không chạy; lần <code>enabled: true</code> chạy đúng một lần nên in <code>dump</code> rồi <code>state</code>. Không có <code>@autoclosure</code>, đối số luôn được tính trước và sẽ in <code>dump</code> cả hai lần. Không cần viết <code>{ }</code> khi dùng <code>@autoclosure</code>, đó chính là mục đích của nó (cùng cơ chế với <code>&amp;&amp;</code> và <code>??</code>).</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-mid-m59">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-mid-m58.html"><span class="muted small">← Câu trước</span><span>Backend đổi tên nhiều field của JSON và 40 màn hình phải sửa theo, vì mọi nơi đ…</span></a>
+  <a class="pager-next" href="../s/ios-mid-m60.html"><span class="muted small">Câu sau →</span><span>Hàm download gọi completion hai lần (một lần báo tiến độ, một lần báo xong). Te…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/ios/middle/">Tất cả câu hỏi iOS Middle</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Swift</h2><a class="section-sub" href="../phong-van/ios/chu-de/swift/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-mid-q12.html">Trong code review bạn thấy func makeRepository() -&gt; any UserRepository ở chỗ này và func render(_ shape: some Shape) ở chỗ khác. some và any khác nhau thế nào, khi nào chọn cái nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q13.html">Array, Dictionary của Swift là value type nhưng gán qua lại rất rẻ nhờ copy-on-write. Nếu bạn tự viết một struct bọc storage là class (vd. một buffer lớn), làm sao để nó cũng có copy-on-write?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q14.html">Bạn muốn các property như volume, progress luôn bị giới hạn trong một khoảng giá trị mà không phải lặp code ở từng setter. Viết property wrapper thế nào, và projectedValue (truy cập qua $) dùng để làm gì?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q26.html">Codebase trộn nhiều kiểu xử lý lỗi: try? nuốt lỗi khắp nơi, hàm trả Optional để báo thất bại, completion (Result&lt;T, Error&gt;) -&gt; Void, và fatalError ở chỗ không chắc. Bạn chuẩn hoá xử lý lỗi trong Swift thế nào: throws, Result, typed throws, LocalizedError, và khi nào dùng try?, try!?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q29.html">App hiển thị giờ đặt hàng lệch 7 tiếng ở một số máy, DateFormatter tạo trong cellForRow làm cuộn chậm, và giá tiền hiện 1,000.00 thay vì 1.000 ₫ trên máy đặt ngôn ngữ khác. Bạn xử lý Date, DateFormatter, Locale và TimeZone đúng thế nào?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q30.html">Một protocol có extension cung cấp implementation mặc định. Struct conform ghi đè method đó, nhưng khi gọi qua biến kiểu protocol thì lại chạy bản mặc định trong extension chứ không phải bản của struct. Vì sao, và static dispatch khác dynamic dispatch thế nào trong Swift?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

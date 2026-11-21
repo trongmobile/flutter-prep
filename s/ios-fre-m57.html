@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Fresher: Test này thỉnh thoảng pass, thỉnh thoảng fail dù code không đổi. Nguyên nhân và cách sửa ph…</title>
+<meta name="description" content="JSONEncoder không đảm bảo thứ tự key trong object JSON và thứ tự có thể khác nhau giữa các lần chạy, nên so sánh chuỗi thô là test flaky. Đặt encoder.outputF…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-m57.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Fresher: Test này thỉnh thoảng pass, thỉnh thoảng fail dù code không đổi. Nguyên nhân và cách sửa ph…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-fre-m57.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Test này thỉnh thoảng pass, thỉnh thoảng fail d…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-m57.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Test này thỉnh thoảng pass, thỉnh thoảng fail d…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Test này thỉnh thoảng pass, thỉnh thoảng fail dù code không đổi. Nguyên nhân và cách sửa phù hợp nhất là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">struct</span> <span class="tk-type">User</span>: <span class="tk-type">Codable</span> {
+    <span class="tk-kw">let</span> id: <span class="tk-type">Int</span>
+    <span class="tk-kw">let</span> name: <span class="tk-type">String</span>
+    <span class="tk-kw">let</span> email: <span class="tk-type">String</span>
+}
+
+<span class="tk-kw">func</span> testEncodeUser() <span class="tk-kw">throws</span> {
+    <span class="tk-kw">let</span> user = <span class="tk-type">User</span>(id: <span class="tk-num">1</span>, name: <span class="tk-str">&quot;An&quot;</span>, email: <span class="tk-str">&quot;an@x.vn&quot;</span>)
+    <span class="tk-kw">let</span> data = <span class="tk-kw">try</span> <span class="tk-type">JSONEncoder</span>().encode(user)
+    <span class="tk-kw">let</span> json = <span class="tk-type">String</span>(data: data, encoding: .utf8)
+    <span class="tk-type">XCTAssertEqual</span>(json, #<span class="tk-str">&quot;{&quot;</span>id<span class="tk-str">&quot;:1,&quot;</span>name<span class="tk-str">&quot;:&quot;</span><span class="tk-type">An</span><span class="tk-str">&quot;,&quot;</span>email<span class="tk-str">&quot;:&quot;</span>an<span class="tk-ann">@x</span>.vn<span class="tk-str">&quot;}&quot;</span>#)
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>String(data:encoding:)</code> đôi khi trả về <code>nil</code>, nên phải unwrap bằng <code>XCTUnwrap</code> trước khi so sánh</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>XCTAssertEqual</code> không so sánh được <code>String?</code> nên đôi khi bỏ qua kiểm tra mà không báo lỗi</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Thứ tự key JSON không cố định giữa các lần chạy; đặt <code>.sortedKeys</code> hoặc decode lại rồi so sánh</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>JSONEncoder</code> thêm khoảng trắng ngẫu nhiên giữa các key, nên cần bật <code>.withoutEscapingSlashes</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div><code>JSONEncoder</code> không đảm bảo thứ tự key trong object JSON và thứ tự có thể khác nhau giữa các lần chạy, nên so sánh chuỗi thô là test flaky. Đặt <code>encoder.outputFormatting = .sortedKeys</code> để có thứ tự ổn định, hoặc tốt hơn là decode lại rồi so sánh model. <code>.prettyPrinted</code> chỉ đổi khoảng trắng, không cố định thứ tự; còn <code>XCTAssertEqual</code> so sánh được <code>String?</code> bình thường.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-m57">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-m56.html"><span class="muted small">← Câu trước</span><span>Bạn kéo file products.json vào Xcode, nhưng Bundle.main.url(forResource: &quot;produ…</span></a>
+  <a class="pager-next" href="../s/ios-fre-m58.html"><span class="muted small">Câu sau →</span><span>Hai Text dài ngắn khác nhau nằm trong VStack như sau. Muốn cả hai sát lề trái c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/ios/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q47.html">Cách debug cơ bản trong Xcode: breakpoint, po trong lldb, print khác os.Logger thế nào? Exception breakpoint dùng khi nào và đọc crash log đơn giản ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q48.html">Viết unit test cơ bản bằng XCTest thế nào? @testable import, setUp và các hàm XCTAssert... dùng ra sao, và vì sao test hàm thuần dễ hơn test cả ViewController?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-m46.html">Test XCTAssertEqual(0.1 + 0.2, 0.3) với kiểu Double bị fail dù phép cộng nhìn có vẻ đúng. Nguyên nhân và cách sửa phù hợp là gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-q25.html">Bạn viết unit test cho hàm fetchUser(completion:) chạy bất đồng bộ; test luôn pass dù cố tình sửa cho kết quả sai. Vì sao, và viết lại bằng XCTest thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q48.html">QA viết UI test đăng nhập bằng XCUITest với app.buttons[&quot;Đăng nhập&quot;].tap(): chạy trên máy dev thì pass, trên CI thì fail ngẫu nhiên, và đổi app sang tiếng Anh thì vỡ hết. Bạn viết UI test ổn định thế nào, và khi nào nên chọn UI test thay vì unit test?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-mid-q23.html">Viết unit test cho ViewModel có hàm load() async gọi API qua protocol. Bạn mock thế nào, và tránh những bẫy nào khiến test chậm hoặc flaky?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

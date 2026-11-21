@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Android Senior: CircleView tự vẽ hình tròn đường kính 48dp trong onDraw và không override onMeasure. Kha…</title>
+<meta name="description" content="View.onMeasure mặc định gọi getDefaultSize(): với EXACTLY và cả AT_MOST (chế độ ứng với wrap_content) nó trả luôn kích thước mà parent cho phép; chỉ UNSPECIF…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-m54.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Android Senior: CircleView tự vẽ hình tròn đường kính 48dp trong onDraw và không override onMeasure. Kha…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-m54.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"CircleView tự vẽ hình tròn đường kính 48dp tron…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-m54.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">CircleView tự vẽ hình tròn đường kính 48dp tron…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/ui/">Jetpack Compose &amp; View</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title"><code>CircleView</code> tự vẽ hình tròn đường kính 48dp trong <code>onDraw</code> và không override <code>onMeasure</code>. Khai báo <code>layout_width=&quot;wrap_content&quot;</code> trong một <code>LinearLayout</code> ngang thì view lại chiếm hết chiều rộng còn lại. Nguyên nhân là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">class</span> <span class="tk-type">CircleView</span> <span class="tk-ann">@JvmOverloads</span> <span class="tk-kw">constructor</span>(
+  context: <span class="tk-type">Context</span>,
+  attrs: <span class="tk-type">AttributeSet</span>? = <span class="tk-kw">null</span>,
+) : <span class="tk-type">View</span>(context, attrs) {
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> paint = <span class="tk-type">Paint</span>(<span class="tk-type">Paint</span>.<span class="tk-type">ANTI_ALIAS_FLAG</span>).apply { color = <span class="tk-type">Color</span>.<span class="tk-type">RED</span> }
+  <span class="tk-kw">private</span> <span class="tk-kw">val</span> radiusPx = 24f * resources.displayMetrics.density
+
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onDraw(canvas: <span class="tk-type">Canvas</span>) {
+    canvas.drawCircle(width / 2f, height / 2f, radiusPx, paint)
+  }
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Thiếu <code>requestLayout()</code> sau khi tạo <code>Paint</code>, nên kích thước view chưa được tính lại</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>LinearLayout</code> ngang tự gán <code>layout_weight</code> cho view không có con nên view bị kéo giãn</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>View.onMeasure</code> mặc định trả về kích thước tối đa parent cho phép khi gặp <code>wrap_content</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>onDraw</code> chạy trước <code>onMeasure</code> nên <code>width</code> còn bằng 0 và hệ thống bù bằng cỡ tối đa</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div><code>View.onMeasure</code> mặc định gọi <code>getDefaultSize()</code>: với <code>EXACTLY</code> và cả <code>AT_MOST</code> (chế độ ứng với <code>wrap_content</code>) nó trả luôn kích thước mà parent cho phép; chỉ <code>UNSPECIFIED</code> mới dùng <code>suggestedMinimumWidth</code>. Vì vậy view tự vẽ phải override <code>onMeasure</code>, tính cỡ mong muốn (48dp) rồi dùng <code>resolveSize(desired, widthMeasureSpec)</code> và <code>setMeasuredDimension(...)</code> để tôn trọng cả <code>AT_MOST</code> lẫn <code>EXACTLY</code>. Thứ tự luôn là measure, layout rồi draw nên <code>width</code> đã có giá trị khi <code>onDraw</code> chạy, <code>LinearLayout</code> không tự thêm weight cho view nào, và <code>requestLayout()</code> không liên quan tới lần đo đầu tiên.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-m54">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-m53.html"><span class="muted small">← Câu trước</span><span>Sau khi người dùng A đăng xuất và B đăng nhập (process vẫn sống), màn giỏ hàng…</span></a>
+  <a class="pager-next" href="../s/and-sen-m55.html"><span class="muted small">Câu sau →</span><span>Config là class bất biến (mọi property là val). Thread ghi gán nó vào một biến…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Jetpack Compose &amp; View</h2><a class="section-sub" href="../phong-van/android/chu-de/ui/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q15.html">Bạn xây design system bằng Compose cho 5 team cùng dùng thế nào để UI nhất quán mà không làm chậm tốc độ phát triển?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q28.html">Design system cần một TagFlow xếp các chip theo hàng và xuống dòng khi hết chỗ, cùng một bố cục đặt vạch ngăn cao bằng item cao nhất trong hàng. Compose đo layout theo quy tắc nào, bạn viết Layout tuỳ biến thế nào, và intrinsic measurements dùng khi nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-q48.html">Play Console cảnh báo chất lượng trên màn hình lớn; review của người dùng tablet và Pixel Fold than UI bị kéo giãn, bị khoá dọc, và nội dung đè dưới thanh trạng thái sau khi nâng targetSdk lên 35. Bạn làm app thích ứng cho foldable, tablet và ChromeOS thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m23.html">Bạn viết AppButton cho design system mà 5 team dùng chung. Theo Compose API guidelines, component nên nhận Modifier thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m24.html">ViewModel sửa trực tiếp items rồi gán lại chính instance cũ vào MutableStateFlow. Điều gì có thể xảy ra trên UI Compose?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m25.html">Feed có nhiều RecyclerView ngang lồng trong một RecyclerView dọc; profiler cho thấy liên tục inflate ViewHolder mới khi cuộn. Cách cải thiện hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Networking &amp; Storage — Mobile Interview</title>
-<meta name="description" content="18 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta name="description" content="18 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 19 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/data/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Networking &amp; Storage — Mobile Interview">
-<meta property="og:description" content="18 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 16 câu quiz trắc nghiệm.">
+<meta property="og:description" content="18 câu hỏi phỏng vấn Flutter về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 19 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/data/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Networking &amp; Storage</h1>
-  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 16 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">18 câu hỏi kèm đáp án mẫu và 19 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -57,6 +57,7 @@
     <li><a href="../../../../s/fre-m35.html">Với chuỗi JSON là một object ({&quot;name&quot;: &quot;An&quot;, &quot;age&quot;: 20}), jsonDecode trả về giá trị có kiểu runtime nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/fre-m36.html">App gọi API bình thường khi chạy debug trên Android, nhưng bản build release cài cho khách hàng thì không gọi được mạng. Nguyên nhân thường gặp nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/fre-m46.html">Đoạn code sau (đã import &#39;dart:convert&#39;) cho kết quả gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/fre-m55.html">API trả ngày dạng 25/12/2024 (ngày/tháng/năm). Gọi DateTime.parse(&#39;25/12/2024&#39;) cho kết quả gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -71,6 +72,7 @@
     <li><a href="../../../../s/jun-m35.html">Dùng dio với cấu hình mặc định, server trả về status 404. await dio.get(...) sẽ thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m36.html">Đã thêm @JsonSerializable() và part &#39;user.g.dart&#39;; vào model. Bước nào sinh ra file user.g.dart?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m50.html">Người dùng tìm rock &amp; roll. Server nhận tham số q thế nào và nên sửa ra sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/jun-m56.html">API trả về {&quot;name&quot;: &quot;Cà phê&quot;, &quot;price&quot;: 25000} và app chạy trên Android. Đoạn code sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -101,6 +103,7 @@
     <li><a href="../../../../s/sen-m21.html">Outbox của app offline-first retry POST /orders khi request bị timeout. Thực tế server đã xử lý request đầu tiên, nên user bị tạo 2 đơn. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/sen-m22.html">App chat nhận tin qua WebSocket. Khi mạng chập chờn, app reconnect thành công nhưng thiếu vài tin nhắn được gửi trong lúc mất kết nối. Thiết kế đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/sen-m48.html">Màn hình mở ra gọi song song 5 API và cả 5 cùng nhận 401 vì access token vừa hết hạn. Interceptor đang gọi /auth/refresh ở mỗi request lỗi; server dùng refresh token xoay vòng (mỗi token chỉ dùng được một lần) nên user thỉnh thoảng bị đăng xuất. Cách sửa đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/sen-m53.html">App ghi chú offline-first đồng bộ hai chiều: đẩy thay đổi cục bộ lên server và kéo về các bản ghi có updatedAt mới hơn lần sync trước. Người dùng xoá một ghi chú khi đang offline (dòng bị DELETE khỏi SQLite), nhưng sau lần sync tiếp theo ghi chú đó xuất hiện trở lại. Nguyên nhân và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

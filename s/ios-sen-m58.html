@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Senior: Helper này làm mọi test gọi nó đều fail dù FeedViewModel không leak. Vì sao?</title>
+<meta name="description" content="Closure của addTeardownBlock capture instance mặc định là strong, nên block (do test case giữ) giữ object sống cho tới lúc nó chạy và XCTAssertNil luôn fail.…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m58.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Senior: Helper này làm mọi test gọi nó đều fail dù FeedViewModel không leak. Vì sao?">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-m58.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Helper này làm mọi test gọi nó đều fail dù Feed…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m58.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Helper này làm mọi test gọi nó đều fail dù Feed…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/testing/">Testing &amp; CI/CD</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Helper này làm mọi test gọi nó đều fail dù <code>FeedViewModel</code> không leak. Vì sao?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">extension</span> <span class="tk-type">XCTestCase</span> {
+  <span class="tk-kw">func</span> trackForMemoryLeaks(_ instance: <span class="tk-type">AnyObject</span>,
+                           file: <span class="tk-type">StaticString</span> = #filePath, line: <span class="tk-type">UInt</span> = #line) {
+    addTeardownBlock {
+      <span class="tk-type">XCTAssertNil</span>(instance, <span class="tk-str">&quot;Có thể bị leak&quot;</span>, file: file, line: line)
+    }
+  }
+}
+
+<span class="tk-kw">func</span> test_load_deliversItems() {
+  <span class="tk-kw">let</span> sut = <span class="tk-type">FeedViewModel</span>(service: <span class="tk-type">ServiceStub</span>())
+  trackForMemoryLeaks(sut)
+  <span class="tk-com">// ... gọi sut rồi assert</span>
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>addTeardownBlock</code> chạy trước khi test method kết thúc nên object luôn còn sống; phải kiểm tra trong <code>tearDown()</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>XCTAssertNil</code> không nhận được <code>AnyObject</code> vì đây không phải Optional; phải đổi tham số thành <code>AnyObject?</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Object chỉ được giải phóng khi <code>XCTestCase</code> bị huỷ, nên việc kiểm tra leak phải đặt trong <code>deinit</code> của test case</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Teardown block capture <code>instance</code> mạnh nên chính nó giữ object sống; cần <code>[weak instance]</code> mới đúng</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div>Closure của <code>addTeardownBlock</code> capture <code>instance</code> mặc định là strong, nên block (do test case giữ) giữ object sống cho tới lúc nó chạy và <code>XCTAssertNil</code> luôn fail. Chỉ cần <code>{ [weak instance] in XCTAssertNil(instance, ...) }</code>: sau khi test method kết thúc, biến <code>sut</code> cục bộ được thả, nên <code>instance</code> chỉ còn khác <code>nil</code> khi có retain cycle thật. Teardown block chạy sau test method, và <code>XCTAssertNil</code> nhận <code>Any?</code> nên truyền <code>AnyObject</code> được.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m58">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m57.html"><span class="muted small">← Câu trước</span><span>Request id được lưu bằng @TaskLocal để gắn vào log. Đoạn code dưới in ra những…</span></a>
+  <a class="pager-next" href="../s/ios-sen-m59.html"><span class="muted small">Câu sau →</span><span>PM luôn ưu tiên feature còn module thanh toán đầy nợ kỹ thuật, mỗi sprint lại t…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Testing &amp; CI/CD</h2><a class="section-sub" href="../phong-van/ios/chu-de/testing/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q19.html">Codebase iOS lớn có bộ UI test chạy 40 phút và hay fail ngẫu nhiên, dev bắt đầu bấm retry cho qua. Bạn xây lại chiến lược test thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q20.html">Mô tả pipeline phát hành iOS bạn từng dựng: từ lúc merge code tới khi bản mới đến tay 100% user.</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q21.html">Crash report của bản production chỉ toàn địa chỉ hex, không có tên hàm. Quy trình symbolicate đúng là gì, và vì sao hay bị thiếu dSYM?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m33.html">Bản 3.2 đang phased release ở ngày thứ 2. Một user tự mở App Store và bấm Update thì sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m34.html">Đã upload dSYM của bản 2.4.0 (build 120), nhưng Crashlytics vẫn báo thiếu dSYM cho crash của đúng bản đó. Nguyên nhân hay gặp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m35.html">Snapshot test pass trên máy dev nhưng fail trên CI dù UI không hề đổi. Nguyên nhân hay gặp nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

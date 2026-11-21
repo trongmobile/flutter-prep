@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Fresher: Màn hình có nhiều icon local trong assets/icons, tên icon cần hiển thị nằm trong b…</title>
+<meta name="description" content="Ảnh local được Metro phân tích và đóng gói lúc bundle, nên require phải nhận chuỗi cố định để biết chính xác file nào cần đưa vào app; ghép chuỗi bằng biến s…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-fre-m56.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Fresher: Màn hình có nhiều icon local trong assets/icons, tên icon cần hiển thị nằm trong b…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-fre-m56.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/fresher/"},{"@type":"ListItem","position":5,"name":"Màn hình có nhiều icon local trong assets/icons…","item":"https://trongmobile.github.io/flutter-prep/s/rn-fre-m56.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Màn hình có nhiều icon local trong assets/icons…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/react-native/chu-de/components/">Component &amp; Styling</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Màn hình có nhiều icon local trong <code>assets/icons</code>, tên icon cần hiển thị nằm trong biến <code>name</code> (ví dụ <code>&#39;home&#39;</code>, <code>&#39;cart&#39;</code>). Cách nào chọn ảnh theo <code>name</code> đúng cách?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Lập bảng <code>{ home: require(&#39;./icons/home.png&#39;), cart: require(&#39;./icons/cart.png&#39;) }</code> rồi lấy <code>icons[name]</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Viết <code>source={require(&#39;./icons/&#39; + name + &#39;.png&#39;)}</code> vì Metro tự dò mọi file có thể khớp với đường dẫn lúc bundle app</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Viết <code>source={{ uri: &#39;./icons/&#39; + name + &#39;.png&#39; }}</code> vì <code>uri</code> nhận đường dẫn tương đối trong project</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Viết <code>import(&#39;./icons/&#39; + name + &#39;.png&#39;)</code> trong lúc render để nạp ảnh khi thực sự cần dùng đến</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Ảnh local được Metro phân tích và đóng gói lúc bundle, nên <code>require</code> phải nhận chuỗi cố định để biết chính xác file nào cần đưa vào app; ghép chuỗi bằng biến sẽ bị bundler từ chối. Bảng ánh xạ gồm các <code>require</code> tĩnh giải quyết gọn việc chọn theo tên. <code>uri</code> dành cho URL mạng hoặc đường dẫn file có thật trên máy, đường dẫn tương đối trong source thì không tồn tại lúc chạy; <code>import()</code> với đường dẫn ghép cũng không được Metro phân tích tĩnh, lại còn bất đồng bộ nên không đặt thẳng vào <code>source</code> được.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-fre-m56">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-fre-m55.html"><span class="muted small">← Câu trước</span><span>Khối đỏ 24×24 trong đoạn code dưới đây nằm ở đâu?</span></a>
+  <a class="pager-next" href="../s/rn-fre-m57.html"><span class="muted small">Câu sau →</span><span>Danh sách dưới đây hiển thị đúng nhưng console cảnh báo thiếu key cho các phần…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/react-native/fresher/">Tất cả câu hỏi React Native Fresher</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Component &amp; Styling</h2><a class="section-sub" href="../phong-van/react-native/chu-de/components/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-fre-q14.html">View, Text, Image trong React Native được hiển thị ra sao trên máy? Vì sao ảnh tải từ URL không hiện dù link đúng?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q15.html">ScrollView và FlatList khác nhau thế nào? Khi nào dùng cái nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q16.html">Style trong React Native khác CSS trên web ở điểm nào? Vì sao nên dùng StyleSheet.create thay vì viết style inline?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q17.html">Flexbox trong React Native khác Flexbox của CSS trên web ở những điểm nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q18.html">Button, TouchableOpacity và Pressable khác nhau thế nào? Làm nút bấm theo thiết kế riêng thì dùng gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/rn-fre-q19.html">Làm sao để nội dung không bị tai thỏ hay thanh trạng thái che? Khi cần style khác nhau cho iOS và Android thì viết thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

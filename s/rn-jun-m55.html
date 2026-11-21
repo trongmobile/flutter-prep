@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Junior: Bạn vừa thêm một plugin vào babel.config.js (ví dụ plugin của Reanimated) rồi lưu f…</title>
+<meta name="description" content="Metro lưu cache kết quả transform của từng file, và nội dung babel.config.js thường không được tính vào khoá cache, nên file đã transform trước đó vẫn được d…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-jun-m55.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Junior: Bạn vừa thêm một plugin vào babel.config.js (ví dụ plugin của Reanimated) rồi lưu f…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-jun-m55.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/junior/"},{"@type":"ListItem","position":5,"name":"Bạn vừa thêm một plugin vào babel.config.js (ví…","item":"https://trongmobile.github.io/flutter-prep/s/rn-jun-m55.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn vừa thêm một plugin vào babel.config.js (ví…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/react-native/chu-de/tooling/">Expo, Build &amp; Release</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Bạn vừa thêm một plugin vào <code>babel.config.js</code> (ví dụ plugin của Reanimated) rồi lưu file, nhưng app vẫn chạy như chưa có thay đổi. Bước nào thường xử lý được?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Khởi động lại Metro kèm xoá cache, ví dụ <code>npx react-native start --reset-cache</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Chạy <code>pod install</code> và <code>gradlew clean</code>, vì cấu hình Babel được biên dịch ở phía native</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Xoá thư mục <code>node_modules</code> rồi cài lại, vì Metro lưu cache transform bên trong đó</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Tắt Fast Refresh, vì nó giữ lại cấu hình Babel cũ cho tới khi được bật lại</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Metro lưu cache kết quả transform của từng file, và nội dung <code>babel.config.js</code> thường không được tính vào khoá cache, nên file đã transform trước đó vẫn được dùng lại. Khởi động lại với <code>--reset-cache</code> (Expo: <code>npx expo start -c</code>) buộc Metro transform lại toàn bộ. Babel chạy bên trong Metro chứ không phải ở phía native nên <code>pod install</code> hay <code>gradlew clean</code> không liên quan; cache của Metro nằm ở thư mục tạm của hệ thống chứ không phải trong <code>node_modules</code>; Fast Refresh không giữ lại cấu hình Babel.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-jun-m55">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-jun-m54.html"><span class="muted small">← Câu trước</span><span>Với cấu hình Jest mặc định, kết quả của hai test trong cùng một file dưới đây l…</span></a>
+  <a class="pager-next" href="../s/rn-jun-m56.html"><span class="muted small">Câu sau →</span><span>Đoạn useEffect dưới đây vi phạm điều gì?</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/react-native/junior/">Tất cả câu hỏi React Native Junior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Expo, Build &amp; Release</h2><a class="section-sub" href="../phong-van/react-native/chu-de/tooling/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-jun-q23.html">Bạn debug một lỗi logic JS và một màn hình re-render quá nhiều thế nào? Vì sao các hướng dẫn cũ dùng Flipper hay &quot;Debug JS Remotely&quot; trên Chrome không còn phù hợp?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q24.html">App cần trỏ tới API khác nhau cho dev, staging và production. Bạn cấu hình biến môi trường thế nào, và vì sao không được để secret trong .env của app?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q36.html">Kéo code mới về và chạy yarn install xong thì iOS không build được (The sandbox is not in sync with the Podfile.lock), còn Android báo lỗi liên quan tới phiên bản Java/Gradle. Bạn xử lý theo thứ tự nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-q49.html">Lần đầu bạn tự build bản release gửi QA: file Android vẫn ký bằng debug key nên không đưa lên Play Store được, iOS báo thiếu provisioning profile, và một đồng nghiệp lỡ commit file .keystore lên Git. Các bước build release cơ bản cho Android và iOS là gì, và xử lý keystore thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/rn-jun-m36.html">Trong app Expo, biến EXPO_PUBLIC_API_URL khai báo trong .env được xử lý thế nào?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-jun-m37.html">Với React Native bản mới chạy Hermes, công cụ debug JS mặc định là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

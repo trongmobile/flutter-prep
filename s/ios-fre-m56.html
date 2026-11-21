@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Fresher: Bạn kéo file products.json vào Xcode, nhưng Bundle.main.url(forResource: &quot;products&quot;, withEx…</title>
+<meta name="description" content="Chỉ những file nằm trong target (build phase Copy Bundle Resources) mới được đóng gói vào .app; kiểm tra bằng File Inspector, mục Target Membership. withExte…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-m56.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Fresher: Bạn kéo file products.json vào Xcode, nhưng Bundle.main.url(forResource: &quot;products&quot;, withEx…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-fre-m56.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Bạn kéo file products.json vào Xcode, nhưng Bun…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-m56.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Bạn kéo file products.json vào Xcode, nhưng Bun…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/data/">Networking &amp; Storage</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Bạn kéo file <code>products.json</code> vào Xcode, nhưng <code>Bundle.main.url(forResource: &quot;products&quot;, withExtension: &quot;json&quot;)</code> luôn trả về <code>nil</code> khi chạy app. Nguyên nhân hay gặp nhất là gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Tham số <code>withExtension</code> phải kèm dấu chấm, tức là <code>&quot;.json&quot;</code>, thì mới tìm được file</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">File chưa thuộc target của app (thiếu Target Membership) nên không vào bundle</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>Bundle.main</code> chỉ chứa ảnh và storyboard, còn file JSON phải đọc từ thư mục <code>Documents</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text"><code>url(forResource:)</code> chỉ chạy được trên máy thật, còn trên Simulator luôn trả về <code>nil</code></span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>Chỉ những file nằm trong target (build phase Copy Bundle Resources) mới được đóng gói vào <code>.app</code>; kiểm tra bằng File Inspector, mục Target Membership. <code>withExtension</code> nhận phần mở rộng không có dấu chấm; <code>Bundle.main</code> chứa mọi resource đã đóng gói chứ không riêng ảnh; <code>Documents</code> là thư mục lúc chạy, không chứa file có sẵn. Cũng đừng ép <code>url!</code>, hãy <code>guard let</code> để báo lỗi rõ ràng.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-m56">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-m55.html"><span class="muted small">← Câu trước</span><span>Sau chuỗi thao tác trên UINavigationController dưới đây, viewControllers chứa c…</span></a>
+  <a class="pager-next" href="../s/ios-fre-m57.html"><span class="muted small">Câu sau →</span><span>Test này thỉnh thoảng pass, thỉnh thoảng fail dù code không đổi. Nguyên nhân và…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/ios/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q21.html">UserDefaults phù hợp để lưu gì? Có nên lưu access token hay mật khẩu vào đó không?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q22.html">Muốn lưu một struct như UserSettings vào UserDefaults thì làm thế nào? Vì sao gán thẳng struct vào lại crash?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q34.html">Gọi API bằng URLSession và giải mã JSON bằng Codable thế nào? Vì sao gọi http:// lại bị chặn?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q46.html">FileManager dùng để làm gì? Documents, Caches và tmp khác nhau thế nào, bạn lưu file ở đâu, và khi nào nên dùng file thay vì UserDefaults?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-m34.html">Key launchCount và userName chưa từng được lưu. UserDefaults.standard.integer(forKey: &quot;launchCount&quot;) và UserDefaults.standard.string(forKey: &quot;userName&quot;) lần lượt trả về gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-m35.html">Sau khi đăng nhập, app nhận được access token. Nên lưu token này ở đâu?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

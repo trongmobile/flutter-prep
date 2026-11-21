@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Senior: Codebase RN của 60 dev tổ chức theo feature (cart, checkout, profile). Các feature…</title>
+<meta name="description" content="Ranh giới chỉ bền khi được máy kiểm tra: mỗi feature công bố một bề mặt công khai nhỏ (index.ts), phần còn lại là chi tiết nội bộ, và rule lint (no-restricte…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-m54.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Senior: Codebase RN của 60 dev tổ chức theo feature (cart, checkout, profile). Các feature…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-m54.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Codebase RN của 60 dev tổ chức theo feature (ca…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-m54.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Codebase RN của 60 dev tổ chức theo feature (ca…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/design/">System Design</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Codebase RN của 60 dev tổ chức theo feature (<code>cart</code>, <code>checkout</code>, <code>profile</code>). Các feature ngày càng import thẳng file nội bộ của nhau (ví dụ <code>../cart/hooks/useCartStore</code>), và một lần refactor <code>cart</code> làm vỡ ba feature khác. Biện pháp nào xử lý tận gốc và duy trì được lâu dài?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Gom mọi hook và store dùng chung vào thư mục <code>shared</code> để các feature đều import được từ một chỗ duy nhất</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Ghi quy ước vào wiki và nhắc nhau khi review PR, vì một quy tắc tốt cần dựa vào sự tự giác của toàn bộ đội ngũ phát triển</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Mỗi feature chỉ xuất public API qua <code>index.ts</code>, lint chặn import vào nội bộ feature khác, CI fail nếu vi phạm</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Tách mỗi feature thành một repo riêng có version độc lập, để mọi import chỉ còn đi qua package đã publish</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Ranh giới chỉ bền khi được máy kiểm tra: mỗi feature công bố một bề mặt công khai nhỏ (<code>index.ts</code>), phần còn lại là chi tiết nội bộ, và rule lint (<code>no-restricted-imports</code>, <code>eslint-plugin-boundaries</code> hay module boundaries của Nx) làm CI fail khi có import xuyên vào nội bộ. Khi đó refactor bên trong một feature không phá feature khác. Thư mục <code>shared</code> dễ phình thành nơi mọi thứ phụ thuộc lẫn nhau; quy ước trên giấy nhanh chóng bị bỏ quên ở quy mô 60 người; còn tách repo thêm chi phí phối hợp phiên bản, chỉ đáng khi các feature thật sự cần phát hành độc lập.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-m54">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-m53.html"><span class="muted small">← Câu trước</span><span>App Links https://shop.vn/product/42 mở đúng app với bản debug và bản release t…</span></a>
+  <a class="pager-next" href="../s/rn-sen-m55.html"><span class="muted small">Câu sau →</span><span>Bộ E2E chạy song song trên 4 máy ảo ở CI, mọi kịch bản dùng chung một tài khoản…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề System Design</h2><a class="section-sub" href="../phong-van/react-native/chu-de/design/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q19.html">Công ty có 3 app RN (khách hàng, tài xế, merchant) dùng chung nhiều UI và logic. Bạn tổ chức monorepo thế nào, và những bẫy riêng của RN trong monorepo là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q20.html">Bạn cần ship cùng một app cho 8 thương hiệu khác nhau (logo, màu, bundle id, vài tính năng riêng). Thiết kế codebase RN thế nào để không thành 8 nhánh git?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q21.html">Thiết kế phía client cho tính năng chat trong app RN: gửi được khi mất mạng, hiển thị tin ngay, không trùng tin, cuộn mượt với lịch sử dài.</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q22.html">Công ty đang có hai app native riêng (Kotlin và Swift), CTO hỏi có nên chuyển sang React Native không. Bạn đánh giá và đề xuất lộ trình thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q35.html">Công ty muốn biến app RN thành một &#39;super app&#39;: các nhóm khác nhau (ví, đặt xe, mua sắm) tự phát hành mini-app độc lập mà không phải chờ bản phát hành chung của app host. Bạn thiết kế kiến trúc thế nào (tải bundle động, cô lập, version) và rủi ro lớn nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q42.html">Team chuyển sang trunk-based và muốn mọi tính năng lớn nằm sau feature flag, kèm kill-switch tắt được trong vài phút mà không cần phát hành bản mới. Bạn thiết kế hệ thống flag/remote config phía app RN thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

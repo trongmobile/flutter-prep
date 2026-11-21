@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Senior: User ở vùng xa than tải ảnh chậm. Bạn muốn biết chậm ở DNS, TLS handshake hay chờ server phả…</title>
+<meta name="description" content="URLSessionTaskMetrics (delegate urlSession(_:task:didFinishCollecting:)) cung cấp mốc thời gian của từng giai đoạn trong transactionMetrics: domainLookupStar…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m54.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Senior: User ở vùng xa than tải ảnh chậm. Bạn muốn biết chậm ở DNS, TLS handshake hay chờ server phả…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-m54.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"User ở vùng xa than tải ảnh chậm. Bạn muốn biết…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m54.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">User ở vùng xa than tải ảnh chậm. Bạn muốn biết…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/perf/">Performance</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">User ở vùng xa than tải ảnh chậm. Bạn muốn biết chậm ở DNS, TLS handshake hay chờ server phản hồi, dựa trên số liệu từ máy thật của user. Cách nào phù hợp?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Chạy Time Profiler khi gọi mạng để xem hàm nào của app chiếm nhiều CPU nhất lúc tải ảnh</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Đo thời gian trước và sau <code>try await session.data(for:)</code>, vì hiệu số đã tách riêng từng giai đoạn</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Bật Network Link Conditioner trên máy của user để mô phỏng đường truyền kém rồi đo lại</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Thu <code>URLSessionTaskMetrics</code> trong delegate rồi gửi các mốc DNS, TLS, response lên backend</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div><code>URLSessionTaskMetrics</code> (delegate <code>urlSession(_:task:didFinishCollecting:)</code>) cung cấp mốc thời gian của từng giai đoạn trong <code>transactionMetrics</code>: <code>domainLookupStartDate</code> và <code>domainLookupEndDate</code>, <code>connectStartDate</code>, <code>secureConnectionStartDate</code>, <code>requestStartDate</code>, <code>responseStartDate</code>..., nên tách được DNS, TCP, TLS và thời gian chờ server, và thu được trên máy user thật. Time Profiler đo CPU của app, không đo thời gian chờ mạng, và chỉ chạy trên máy dev; bấm giờ quanh <code>data(for:)</code> chỉ cho tổng thời gian; Network Link Conditioner là công cụ phát triển, không bật được trên máy user.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m54">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m53.html"><span class="muted small">← Câu trước</span><span>Sau khi showDetail() kết thúc, màn con vẫn nằm trên màn hình nhưng deinit của D…</span></a>
+  <a class="pager-next" href="../s/ios-sen-m55.html"><span class="muted small">Câu sau →</span><span>Mỗi lần tải dữ liệu, code kiểm tra path.status == .satisfied từ NWPathMonitor;…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Performance</h2><a class="section-sub" href="../phong-van/ios/chu-de/perf/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q01.html">User báo feed cuộn giật trên iPhone đời cũ, còn máy của dev thì mượt. Bạn dùng Instruments để tìm nguyên nhân thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q02.html">App mất gần 3 giây cho cold launch và PM muốn giảm một nửa. Bạn phân tích và tối ưu thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q03.html">Màn hình gallery hiển thị lưới thumbnail từ ảnh chụp camera và app bị kill vì hết memory. Vì sao, và xử lý thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q34.html">Crash-free rate của app rất cao, nhưng review trên App Store than &#39;app đơ vài giây&#39; và Xcode Organizer báo hang rate tăng. Bạn tìm các hang xảy ra ở production mà không tái hiện được trên máy dev bằng cách nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q38.html">Mỗi lần phát hành bạn chỉ biết app chậm hơn khi review 1 sao xuất hiện. Bạn xây hệ thống quan sát hiệu năng thế nào để thấy regression về launch, hang và memory trước khi nó tới phần lớn user, và để PR làm chậm app bị chặn ngay trên CI?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q39.html">Build sạch của app mất 12 phút, build tăng dần vẫn vài chục giây và dev than Xcode đứng ở bước &quot;Compiling Swift source files&quot;. Với codebase Swift lớn, bạn đo, khoanh vùng và giảm thời gian build thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

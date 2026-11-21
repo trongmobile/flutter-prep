@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Senior: Một dev thêm cấu hình dưới đây để xem traffic HTTPS bằng Charles hoặc Proxyman trên…</title>
+<meta name="description" content="Từ Android 7 (API 24), app nhắm tới API 24 trở lên mặc định chỉ tin CA của hệ thống; &lt;certificates src=&quot;user&quot; /&gt; trong base-config bật lại việc tin CA do ngư…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-m56.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Senior: Một dev thêm cấu hình dưới đây để xem traffic HTTPS bằng Charles hoặc Proxyman trên…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-m56.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Một dev thêm cấu hình dưới đây để xem traffic H…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-m56.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Một dev thêm cấu hình dưới đây để xem traffic H…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/security/">Security</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Một dev thêm cấu hình dưới đây để xem traffic HTTPS bằng Charles hoặc Proxyman trên Android, rồi quên gỡ khi build release. Hệ quả và cách làm đúng là gì?</h1>
+  
+  <pre class="code-block" data-lang="XML"><code><span class="tk-com">&lt;!-- android/app/src/main/res/xml/network_security_config.xml --&gt;</span>
+<span class="tk-kw">&lt;network-security-config</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;base-config</span><span class="tk-kw">&gt;</span>
+    <span class="tk-kw">&lt;trust-anchors</span><span class="tk-kw">&gt;</span>
+      <span class="tk-kw">&lt;certificates</span> <span class="tk-type">src</span>=<span class="tk-str">&quot;system&quot;</span> <span class="tk-kw">/&gt;</span>
+      <span class="tk-kw">&lt;certificates</span> <span class="tk-type">src</span>=<span class="tk-str">&quot;user&quot;</span> <span class="tk-kw">/&gt;</span>
+    <span class="tk-kw">&lt;/trust-anchors</span><span class="tk-kw">&gt;</span>
+  <span class="tk-kw">&lt;/base-config</span><span class="tk-kw">&gt;</span>
+<span class="tk-kw">&lt;/network-security-config</span><span class="tk-kw">&gt;</span></code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Bản release cũng tin CA do người dùng cài nên có thể bị chặn đọc traffic; chỉ nên đặt CA <code>user</code> trong <code>&lt;debug-overrides&gt;</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Không ảnh hưởng gì, vì Android 7 trở lên luôn bỏ qua CA do người dùng cài, bất kể cấu hình của app khai báo thế nào đi nữa</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Chỉ ảnh hưởng tới kết nối HTTP không mã hoá, còn HTTPS vẫn kiểm tra chứng chỉ chặt chẽ như trước đây</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Google Play sẽ tự động quét và từ chối bản phát hành này nên không có rủi ro nào tới được người dùng cuối</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Từ Android 7 (API 24), app nhắm tới API 24 trở lên mặc định chỉ tin CA của hệ thống; <code>&lt;certificates src=&quot;user&quot; /&gt;</code> trong <code>base-config</code> bật lại việc tin CA do người dùng cài cho mọi build, kể cả release, mở đường cho tấn công man-in-the-middle trên máy bị cài CA lạ (người dùng bị dụ hoặc phần mềm độc hại). Để soi traffic khi phát triển, đặt CA <code>user</code> trong <code>&lt;debug-overrides&gt;</code>: khối này chỉ có hiệu lực khi app có <code>android:debuggable=&quot;true&quot;</code>. File được khai báo qua <code>android:networkSecurityConfig</code> trong manifest. Cấu hình này áp dụng cho kết nối HTTPS chứ không phải HTTP, và không nên trông chờ Google Play tự phát hiện lỗi cấu hình như vậy.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-m56">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-m55.html"><span class="muted small">← Câu trước</span><span>Bộ E2E chạy song song trên 4 máy ảo ở CI, mọi kịch bản dùng chung một tài khoản…</span></a>
+  <a class="pager-next" href="../s/rn-sen-m57.html"><span class="muted small">Câu sau →</span><span>Với kiểu có thương hiệu (branded type) như dưới đây, hai lời gọi cancelOrder ch…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Security</h2><a class="section-sub" href="../phong-van/react-native/chu-de/security/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q16.html">Một dev đặt secret key của cổng thanh toán vào .env và đọc qua react-native-config, lập luận rằng Hermes đã biên dịch ra bytecode nên không ai đọc được. Bạn phản hồi thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q17.html">Bạn triển khai SSL pinning cho app RN thế nào, và cần chuẩn bị gì để pinning không &#39;khoá&#39; toàn bộ user khi server đổi chứng chỉ?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q18.html">Khách hàng (một ví điện tử) yêu cầu app RN phải &#39;chặn máy root/jailbreak và chống sửa app&#39;. Bạn thiết kế lớp bảo vệ này thế nào cho thực tế?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q43.html">Một dev thêm thư viện mới chỉ vì thấy &quot;nhiều sao&quot; trên GitHub; tuần sau tin tức nói một package phổ biến trên npm vừa bị chèn mã độc vào bản phát hành mới. Bạn rà lại và thiết lập quy trình để chuỗi cung ứng dependency (npm lẫn native) của app RN an toàn hơn thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-q44.html">App RN sắp lên store thì bị Apple từ chối vì Privacy Manifest thiếu khai báo &quot;required reason API&quot;, còn Google Play nhắc form Data safety không khớp với hành vi thực tế của các SDK. Bạn xử lý và đưa quyền riêng tư vào quy trình phát triển thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m31.html">Một PR lưu refresh token bằng MMKV có bật mã hoá, với encryptionKey là một chuỗi hằng số viết thẳng trong code JS. Nhận xét nào chính xác nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

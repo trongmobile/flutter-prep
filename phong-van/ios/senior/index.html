@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Senior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Senior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 50 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Senior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc l…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · ios · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Senior</h1>
-  <p class="subtitle">Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc lớn, system design, leadership. Gồm 50 câu hỏi kèm đáp án mẫu và 50 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Swift Concurrency nâng cao, performance &amp; Instruments, modularization, kiến trúc lớn, system design, leadership. Gồm 50 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/ios/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">4</span></li>
     <li><a href="#design">System Design</a> <span class="count">4</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">4</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">50</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -1404,6 +1404,16 @@ layout {
     <li><a href="../../../s/ios-sen-m48.html">App chia nhiều feature module; Cart cần mở màn của Profile và Profile cũng cần mở màn của Cart. Cách tách nào tránh phụ thuộc vòng, giữ type-safety và giới hạn phạm vi phải compile lại khi đổi code nội bộ của một feature?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-sen-m49.html">Feed liên tục có bài mới chèn lên đầu và app phân trang bằng GET /feed?page=N&amp;limit=20. User thỉnh thoảng thấy bài bị lặp khi cuộn xuống, lúc khác lại bị sót bài do bài cũ bị xoá. Hướng sửa căn bản nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-sen-m50.html">Hai senior trong team bất đồng gay gắt về TCA hay MVVM + Coordinator cho dự án mới, ai cũng có lý lẽ hợp lý và cuộc họp đang đi vào ngõ cụt. Là tech lead, bước tiếp theo tốt nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m51.html">Trong một Swift package có hai target Networking và FeatureOrders; FeatureOrders cần gọi một API nội bộ của Networking, nhưng bạn không muốn lộ API này cho app hay package khác import Networking. Mức truy cập nào phù hợp?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m52.html">Navigation controller dùng animator tuỳ chỉnh để push. Màn mới hiện ra đúng animation nhưng sau đó giao diện kẹt, không điều hướng tiếp được. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m53.html">Sau khi showDetail() kết thúc, màn con vẫn nằm trên màn hình nhưng deinit của DetailViewController chạy ngay và viewWillAppear của nó không được gọi. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m54.html">User ở vùng xa than tải ảnh chậm. Bạn muốn biết chậm ở DNS, TLS handshake hay chờ server phản hồi, dựa trên số liệu từ máy thật của user. Cách nào phù hợp?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m55.html">Mỗi lần tải dữ liệu, code kiểm tra path.status == .satisfied từ NWPathMonitor; nếu không thì hiện &quot;Không có mạng&quot; mà không gọi API. Vẫn có user bị chặn dù mạng dùng được, và có request fail dù path báo satisfied. Cách tiếp cận nào bền hơn?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m56.html">[Flags1] và [Flags2] mỗi mảng có 1.000.000 phần tử; phần buffer lưu phần tử của mỗi mảng chiếm xấp xỉ bao nhiêu trên iOS 64-bit?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m57.html">Request id được lưu bằng @TaskLocal để gắn vào log. Đoạn code dưới in ra những dòng nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m58.html">Helper này làm mọi test gọi nó đều fail dù FeedViewModel không leak. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m59.html">PM luôn ưu tiên feature còn module thanh toán đầy nợ kỹ thuật, mỗi sprint lại thêm vài bug. Là senior, hướng nào thuyết phục và xử lý hiệu quả nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-sen-m60.html">Đoạn code dưới in ra các dòng nào, theo thứ tự?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

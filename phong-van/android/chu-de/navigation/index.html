@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Navigation — Mobile Interview</title>
-<meta name="description" content="9 câu hỏi phỏng vấn Android về Navigation từ Fresher đến Senior, có đáp án mẫu và 8 câu quiz trắc nghiệm.">
+<meta name="description" content="9 câu hỏi phỏng vấn Android về Navigation từ Fresher đến Senior, có đáp án mẫu và 11 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/navigation/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Navigation — Mobile Interview">
-<meta property="og:description" content="9 câu hỏi phỏng vấn Android về Navigation từ Fresher đến Senior, có đáp án mẫu và 8 câu quiz trắc nghiệm.">
+<meta property="og:description" content="9 câu hỏi phỏng vấn Android về Navigation từ Fresher đến Senior, có đáp án mẫu và 11 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/navigation/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Navigation</h1>
-  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 8 câu quiz về Navigation, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 11 câu quiz về Navigation, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -57,6 +57,7 @@
     <li><a href="../../../../s/and-fre-m33.html">ListActivity mở DetailActivity như sau. Giá trị id đọc được ở DetailActivity là bao nhiêu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m34.html">Từ MainActivity mở LoginActivity. Đăng nhập xong, LoginActivity mở HomeActivity rồi gọi finish(). Ở HomeActivity bấm Back sẽ về đâu (launch mode mặc định)?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-fre-m35.html">Muốn truyền cả object Product qua Intent sang màn khác, cách được khuyến nghị trên Android là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m55.html">Để chia sẻ một đoạn text sang app khác (Zalo, Gmail...), bạn gọi startActivity(Intent(Intent.ACTION_SEND).apply { putExtra(Intent.EXTRA_TEXT, &quot;Xem app này nhé!&quot;) }) mà không đặt type cho intent. Khi chạy, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -67,6 +68,7 @@
     <li><a href="../../../../s/and-jun-q42.html">Màn danh sách sản phẩm mở màn chi tiết bằng Navigation Compose, và một dev định truyền cả object Product (kèm danh sách ảnh, mô tả dài) qua route. Bạn truyền argument thế nào cho đúng, vì sao chỉ nên truyền ID, và ViewModel của màn chi tiết đọc argument ra sao?</a></li>
     <li><a href="../../../../s/and-jun-m37.html">Sau khi đăng nhập, app điều hướng từ loginFragment (start destination) sang homeFragment. Muốn bấm back ở Home thì thoát app thay vì quay về Login, action cần cấu hình thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m49.html">SearchActivity khai báo android:launchMode=&quot;singleTop&quot; và đang hiển thị ở đỉnh back stack. Người dùng chọn một gợi ý, code gọi startActivity(Intent(this, SearchActivity::class.java).putExtra(&quot;query&quot;, q)). Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m55.html">Back stack hiện là MainActivity → OrderListActivity → SettingsActivity. Khi bấm Đăng xuất, bạn muốn xoá toàn bộ stack và mở LoginActivity làm màn duy nhất (bấm Back sẽ thoát app). Intent flag nào đúng?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -76,6 +78,7 @@
     <li><a href="../../../../s/and-mid-q43.html">Luồng checkout có 3 màn (địa chỉ, vận chuyển, xác nhận) dùng Navigation Compose, cả ba cần chung một state, và khi thoát luồng (hoàn tất hoặc Back về giỏ hàng) thì state phải bị xoá. ViewModel dùng chung nên đặt scope ở đâu, và nó bị huỷ khi nào?</a></li>
     <li><a href="../../../../s/and-mid-m33.html">Người dùng bấm notification (PendingIntent tạo bằng NavDeepLinkBuilder) mở thẳng màn OrderDetail khi app đang tắt, rồi bấm Back. Điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m34.html">Với bottom navigation trong Navigation Compose, đoạn navigate(route) { popUpTo(startId) { saveState = true }; launchSingleTop = true; restoreState = true } dùng saveState/restoreState để làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m57.html">Activity đăng ký callback thứ nhất trong onCreate, còn Fragment đang hiển thị đăng ký callback thứ hai ở onViewCreated. Người dùng bấm Back. Dòng log nào xuất hiện?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

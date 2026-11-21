@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Middle: Từ danh sách, context.push(&#39;/product&#39;, extra: product) mở màn chi tiết bình thường. Nhưn…</title>
+<meta name="description" content="extra là đối tượng Dart truyền trong bộ nhớ cho lần điều hướng nội bộ đó, không được mã hoá vào URL, nên một deep link (vốn chỉ có URL) tới màn chi tiết khôn…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-m58.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Middle: Từ danh sách, context.push(&#39;/product&#39;, extra: product) mở màn chi tiết bình thường. Nhưn…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-m58.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"Từ danh sách, context.push('/product', extra: p…","item":"https://trongmobile.github.io/flutter-prep/s/mid-m58.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">Từ danh sách, context.push(&#39;/product&#39;, extra: p…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/navigation/">Navigation</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Từ danh sách, <code>context.push(&#39;/product&#39;, extra: product)</code> mở màn chi tiết bình thường. Nhưng khi người dùng bấm một link từ ngoài vào app (deep link tới <code>/product</code>) thì app crash ở <code>state.extra!</code>. Vì sao, và nên thiết kế lại thế nào?</h1>
+  
+  <pre class="code-block"><code><span class="tk-type">GoRoute</span>(
+  path: <span class="tk-str">&#39;/product&#39;</span>,
+  builder: (context, state) =&gt; <span class="tk-type">ProductPage</span>(product: state.extra! <span class="tk-kw">as</span> <span class="tk-type">Product</span>),
+),</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>extra</code> chỉ được go_router giữ trong bộ nhớ của lần <code>push</code> gần nhất, nên phải <code>push</code> lại từ danh sách trước khi mở link</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">go_router nối <code>extra</code> vào query của URL nhưng deep link từ ngoài thường bị cắt query dài; hãy rút gọn đối tượng <code>Product</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text"><code>extra</code> không nằm trong URL nên link ngoài không mang theo, <code>state.extra</code> là <code>null</code>; hãy đặt <code>id</code> vào path rồi tải theo id</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Chỉ cần đổi <code>push</code> thành <code>go</code>, vì <code>go</code> giữ <code>extra</code> trong stack điều hướng còn <code>push</code> thì không giữ lại</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div><code>extra</code> là đối tượng Dart truyền trong bộ nhớ cho lần điều hướng nội bộ đó, không được mã hoá vào URL, nên một deep link (vốn chỉ có URL) tới màn chi tiết không có <code>extra</code> và dấu <code>!</code> ném lỗi null. Thiết kế đúng là đưa định danh vào đường dẫn hoặc query (<code>/product/42</code>) rồi để màn đích tự tải dữ liệu theo id; vẫn có thể gửi kèm <code>extra</code> để hiển thị tức thì nhưng phải xử lý trường hợp <code>null</code>. Dùng <code>go</code> hay <code>push</code> không thay đổi việc <code>extra</code> có nằm trong URL hay không.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-m58">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-m57.html"><span class="muted small">← Câu trước</span><span>Ở debug mode, khi TickerService.ticks() phát dữ liệu, TickerBloc dưới đây ném a…</span></a>
+  <a class="pager-next" href="../s/mid-m59.html"><span class="muted small">Câu sau →</span><span>Backend sắp ngừng hỗ trợ các bản app cũ hơn 3.0 và sản phẩm muốn bắt buộc người…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/flutter/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-q11.html">Với go_router, làm sao xây bottom navigation mà mỗi tab giữ nguyên stack điều hướng và state khi chuyển tab?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q12.html">Làm auth guard với go_router như thế nào? Deep link vào một trang cần đăng nhập sẽ được xử lý ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-q34.html">Marketing gửi link https://shop.vn/orders/123 và muốn bấm vào là mở thẳng màn chi tiết đơn hàng trong app Flutter (dùng go_router), còn chưa cài app thì mở web. Cấu hình App Links (Android) và Universal Links (iOS) thế nào, và kiểm tra ra sao?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/mid-m18.html">Với cấu hình go_router sau, đang ở HomePage gọi context.go(&#39;/products/42&#39;) rồi nhấn back. Màn hình nào hiện ra?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/mid-m19.html">App dùng go_router với redirect kiểm tra đăng nhập. Khi token hết hạn và app gọi logout(), màn hình hiện tại không tự chuyển về /login. Nguyên nhân thường gặp là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/mid-m20.html">Trên Flutter 3.24+, cách khuyến nghị để chặn nút back và hỏi &#39;Bỏ thay đổi?&#39; trước khi rời form là gì?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

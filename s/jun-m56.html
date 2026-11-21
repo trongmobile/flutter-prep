@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Junior: API trả về {&quot;name&quot;: &quot;Cà phê&quot;, &quot;price&quot;: 25000} và app chạy trên Android. Đoạn code sau ch…</title>
+<meta name="description" content="jsonDecode trả int cho số không có phần thập phân hay số mũ (như 25000) và double cho số có (như 25000.5). int và double đều là kiểu con của num chứ không ph…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/jun-m56.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Junior: API trả về {&quot;name&quot;: &quot;Cà phê&quot;, &quot;price&quot;: 25000} và app chạy trên Android. Đoạn code sau ch…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/jun-m56.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/"},{"@type":"ListItem","position":5,"name":"API trả về {\"name\": \"Cà phê\", \"price\": 25000} v…","item":"https://trongmobile.github.io/flutter-prep/s/jun-m56.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">API trả về {&quot;name&quot;: &quot;Cà phê&quot;, &quot;price&quot;: 25000} v…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/flutter/chu-de/data/">Networking &amp; Storage</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">API trả về <code>{&quot;name&quot;: &quot;Cà phê&quot;, &quot;price&quot;: 25000}</code> và app chạy trên Android. Đoạn code sau cho kết quả gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">import</span> <span class="tk-str">&#39;dart:convert&#39;</span>;
+
+<span class="tk-kw">class</span> <span class="tk-type">Product</span> {
+  <span class="tk-type">Product</span>(<span class="tk-kw">this</span>.name, <span class="tk-kw">this</span>.price);
+  <span class="tk-kw">final</span> <span class="tk-type">String</span> name;
+  <span class="tk-kw">final</span> double price;
+
+  <span class="tk-kw">factory</span> <span class="tk-type">Product</span>.fromJson(<span class="tk-type">Map</span>&lt;<span class="tk-type">String</span>, <span class="tk-kw">dynamic</span>&gt; json) =&gt;
+      <span class="tk-type">Product</span>(json[<span class="tk-str">&#39;name&#39;</span>] <span class="tk-kw">as</span> <span class="tk-type">String</span>, json[<span class="tk-str">&#39;price&#39;</span>] <span class="tk-kw">as</span> double);
+}
+
+<span class="tk-kw">void</span> main() {
+  <span class="tk-kw">final</span> json = jsonDecode(<span class="tk-str">&#39;{&quot;name&quot;: &quot;Cà phê&quot;, &quot;price&quot;: 25000}&#39;</span>);
+  print(<span class="tk-type">Product</span>.fromJson(json).price);
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">In ra <code>25000.0</code>, vì <code>as double</code> tự đổi số nguyên thành số thực</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Ném <code>TypeError</code>, vì <code>25000</code> được <code>jsonDecode</code> đọc thành <code>int</code> chứ không phải <code>double</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Lỗi compile vì không thể ép giá trị <code>dynamic</code> sang <code>double</code> bằng <code>as</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">In ra <code>25000</code>, vì Dart coi <code>int</code> là kiểu con của <code>double</code> nên phép ép luôn thành công</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div><code>jsonDecode</code> trả <code>int</code> cho số không có phần thập phân hay số mũ (như <code>25000</code>) và <code>double</code> cho số có (như <code>25000.5</code>). <code>int</code> và <code>double</code> đều là kiểu con của <code>num</code> chứ không phải con của nhau, và <code>as double</code> chỉ kiểm tra kiểu chứ không chuyển đổi, nên ném lỗi <code>type &#39;int&#39; is not a subtype of type &#39;double&#39; in type cast</code> (trên Android/iOS). Lỗi này hay xuất hiện chập chờn khi server trả <code>25000</code> lúc này và <code>25000.5</code> lúc khác. Cách đúng là <code>(json[&#39;price&#39;] as num).toDouble()</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/jun-m56">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/jun-m55.html"><span class="muted small">← Câu trước</span><span>Huy hiệu đỏ đặt ở góc trên phải icon giỏ hàng bằng Positioned(top: -8, right: -…</span></a>
+  <a class="pager-next" href="../s/jun-m57.html"><span class="muted small">Câu sau →</span><span>Hàng Row gồm Icon, Spacer và Text được bọc trong GestureDetector(onTap: ...). C…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/flutter/junior/">Tất cả câu hỏi Flutter Junior</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Networking &amp; Storage</h2><a class="section-sub" href="../phong-van/flutter/chu-de/data/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/jun-q25.html">Khi nào nên dùng json_serializable thay vì tự viết fromJson/toJson? Cần thiết lập những gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/jun-q26.html">Dùng package http, khi server trả 404 hoặc 500 thì http.get có ném exception không? Nên xử lý thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/jun-q27.html">API trả về một mảng JSON. Parse thành List&lt;User&gt; thế nào cho đúng kiểu, và lỗi kiểu nào hay gặp?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/jun-q31.html">Khi nào dùng shared_preferences trong Flutter? Cách đọc, ghi thế nào, và những giới hạn cần nhớ (bất đồng bộ, kiểu dữ liệu, không dùng cho dữ liệu nhạy cảm hay dữ liệu lớn)?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/jun-m33.html">Gán thẳng một list lấy từ jsonDecode cho biến List&lt;String&gt;: đoạn code sau cho kết quả gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/jun-m34.html">Phát biểu nào SAI về shared_preferences?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

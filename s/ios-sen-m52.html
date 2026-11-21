@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Senior: Navigation controller dùng animator tuỳ chỉnh để push. Màn mới hiện ra đúng animation nhưng…</title>
+<meta name="description" content="UIKit không tự biết animation tuỳ chỉnh khi nào xong: animator phải gọi transitionContext.completeTransition(!transitionContext.transitionWasCancelled), tốt…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m52.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Senior: Navigation controller dùng animator tuỳ chỉnh để push. Màn mới hiện ra đúng animation nhưng…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-m52.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Navigation controller dùng animator tuỳ chỉnh đ…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m52.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Navigation controller dùng animator tuỳ chỉnh đ…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/navigation/">Navigation</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Navigation controller dùng animator tuỳ chỉnh để push. Màn mới hiện ra đúng animation nhưng sau đó giao diện kẹt, không điều hướng tiếp được. Nguyên nhân là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">FadePushAnimator</span>: <span class="tk-type">NSObject</span>, <span class="tk-type">UIViewControllerAnimatedTransitioning</span> {
+  <span class="tk-kw">func</span> transitionDuration(using ctx: <span class="tk-type">UIViewControllerContextTransitioning</span>?) -&gt; <span class="tk-type">TimeInterval</span> { <span class="tk-num">0.3</span> }
+
+  <span class="tk-kw">func</span> animateTransition(using ctx: <span class="tk-type">UIViewControllerContextTransitioning</span>) {
+    <span class="tk-kw">guard</span> <span class="tk-kw">let</span> toView = ctx.view(forKey: .to) <span class="tk-kw">else</span> { <span class="tk-kw">return</span> }
+    toView.alpha = <span class="tk-num">0</span>
+    ctx.containerView.addSubview(toView)
+    <span class="tk-type">UIView</span>.animate(withDuration: <span class="tk-num">0.3</span>) {
+      toView.alpha = <span class="tk-num">1</span>
+    }
+  }
+}
+
+<span class="tk-com">// UINavigationControllerDelegate</span>
+<span class="tk-kw">func</span> navigationController(_ nav: <span class="tk-type">UINavigationController</span>,
+                          animationControllerFor operation: <span class="tk-type">UINavigationController</span>.<span class="tk-type">Operation</span>,
+                          from fromVC: <span class="tk-type">UIViewController</span>,
+                          to toVC: <span class="tk-type">UIViewController</span>) -&gt; <span class="tk-type">UIViewControllerAnimatedTransitioning</span>? {
+  operation == .push ? <span class="tk-type">FadePushAnimator</span>() : <span class="tk-kw">nil</span>
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text"><code>toView</code> phải được thêm vào <code>containerView</code> sau khi animation xong chứ không phải trước đó</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>transitionDuration</code> phải bằng đúng thời lượng của <code>UIView.animate</code> thì UIKit mới nhả tương tác</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Chưa gọi <code>ctx.completeTransition(...)</code> khi animation xong nên UIKit coi transition vẫn đang chạy</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">UIKit tắt <code>isUserInteractionEnabled</code> của <code>toView</code> trong mọi transition tuỳ chỉnh, phải bật lại thủ công</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>UIKit không tự biết animation tuỳ chỉnh khi nào xong: animator phải gọi <code>transitionContext.completeTransition(!transitionContext.transitionWasCancelled)</code>, tốt nhất trong completion của animation. Thiếu lời gọi này, UIKit không nhận được thông báo transition đã kết thúc nên navigation controller coi như vẫn đang chuyển cảnh và không điều hướng tiếp được. Thứ tự thêm <code>toView</code> hay việc thời lượng có khớp hay không đều không phải nguyên nhân. Cách sửa: <code>UIView.animate(withDuration: 0.3, animations: { ... }, completion: { _ in ctx.completeTransition(!ctx.transitionWasCancelled) })</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m52">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m51.html"><span class="muted small">← Câu trước</span><span>Trong một Swift package có hai target Networking và FeatureOrders; FeatureOrder…</span></a>
+  <a class="pager-next" href="../s/ios-sen-m53.html"><span class="muted small">Câu sau →</span><span>Sau khi showDetail() kết thúc, màn con vẫn nằm trên màn hình nhưng deinit của D…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Navigation</h2><a class="section-sub" href="../phong-van/ios/chu-de/navigation/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q41.html">App có 15 module và mỗi team tự xử lý onOpenURL theo cách riêng nên cùng một link mở ra hành vi khác nhau; link khuyến mãi https://shop.vn/promo?next=... còn từng bị lợi dụng để mở trang lạ trong WebView. Bạn thiết kế hệ thống universal link và deep link ở quy mô này thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m21.html">Bấm push khi app đang chạy nền thì vào đúng màn chi tiết đơn, nhưng khi app đã tắt hẳn (cold start) thì chỉ mở ra Home. Với code sau, nguyên nhân hợp lý nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-sen-m45.html">App lưu NavigationPath bằng path.codable để khôi phục stack điều hướng sau khi bị kill. Sau hai lệnh append dưới đây, path.codable trả về gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-fre-q19.html">Trong UIKit, push một màn hình bằng UINavigationController và present modal khác nhau thế nào? Đóng mỗi loại ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q20.html">Muốn truyền productId sang màn hình chi tiết, rồi gửi kết quả chỉnh sửa ngược về màn hình trước, bạn làm thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-q45.html">Điều hướng cơ bản trong SwiftUI: NavigationStack với NavigationLink, .sheet và .fullScreenCover khác nhau thế nào, và đóng màn hình bằng code ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

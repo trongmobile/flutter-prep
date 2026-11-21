@@ -79,10 +79,10 @@
   <ul class="link-list">
     <li><a href="../s/and-sen-q34.html">Bạn cần đổi schema Room (thêm cột NOT NULL, tách dữ liệu một cột sang bảng mới) cho app có vài triệu user đang ở nhiều phiên bản cũ khác nhau. Bạn viết và kiểm thử migration thế nào, và vì sao fallbackToDestructiveMigration nguy hiểm?</a> <span class="rank-tag rank-purple">Senior</span></li>
     <li><a href="../s/and-sen-q46.html">Màn Home của app thương mại điện tử phải gọi 6 endpoint REST (banner, giỏ hàng, gợi ý...), payload nặng, sang mạng yếu thì rất chậm và tốn pin. Backend đề xuất chuyển sang GraphQL, một team khác muốn gRPC. Dưới góc nhìn client, bạn so sánh REST, GraphQL và gRPC thế nào, và phân trang cùng versioning nên thiết kế ra sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m51.html">Màn hình Home bắn 20 request song song (Retrofit suspend kết hợp async) tới cùng api.shop.vn qua HTTP/2, dùng OkHttpClient cấu hình mặc định. Network Profiler cho thấy chỉ 5 request chạy cùng lúc, các request còn lại phải chờ. Vì sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m52.html">Màn debug có nút &quot;Xuất database&quot; bằng cách copy file app.db sang thư mục chia sẻ. QA nhận file nhưng thiếu các dòng vừa ghi gần nhất dù app vẫn hiển thị đủ. Nguyên nhân khả dĩ nhất là gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m60.html">Màn tìm kiếm ghi chú offline có 300.000 dòng, dùng WHERE title LIKE &#39;%&#39; || :keyword || &#39;%&#39; và bị chậm khi gõ. Thêm @Index cho cột title vẫn không cải thiện. Hướng xử lý nào đúng?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
     <li><a href="../s/and-fre-q24.html">SharedPreferences dùng để lưu gì? commit() và apply() khác nhau thế nào?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/and-fre-q36.html">App Android gọi API REST cần chuẩn bị gì? Vì sao gọi http:// hoặc localhost của máy dev lại không được?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/and-fre-q41.html">Android có những cách lưu dữ liệu cục bộ nào? Bạn chọn thế nào giữa DataStore, file và Room (SQLite) cho ba trường hợp: cài đặt giao diện, ảnh/báo cáo tải về, danh sách đơn hàng?</a> <span class="rank-tag rank-green">Fresher</span></li>
-    <li><a href="../s/and-fre-q42.html">Khai báo một API bằng Retrofit thế nào (@GET, @Path, @Query, @POST với @Body)? Converter dùng để làm gì, và JSON được parse thành data class ra sao?</a> <span class="rank-tag rank-green">Fresher</span></li>
   </ul>
 </section>
 </main>
