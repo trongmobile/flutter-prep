@@ -80,9 +80,12 @@ jobs:
             echo "::error::Chưa có secret GEMINI_API_KEY (Settings → Secrets and variables → Actions)."
             exit 1
           fi
+          status=0
           node scripts/generate.mjs --track "$TRACK" --rank "$RANK" --questions "$QUESTIONS" --quiz "$QUIZ" \
-            --summary "$RUNNER_TEMP/summary.md"
-          cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+            --summary "$RUNNER_TEMP/summary.md" || status=$?
+          # Ghi summary cả khi script thất bại để thấy lô nào lỗi vì sao ngay trên trang run.
+          if [ -f "$RUNNER_TEMP/summary.md" ]; then cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          exit "$status"
 
       - name: Rebuild static pages
         run: node scripts/build-pages.mjs
@@ -106,6 +109,6 @@ jobs:
           git push --force origin "$branch"
           if ! gh pr create --base "$GITHUB_REF_NAME" --head "$branch" \
             --title "Add generated questions and quiz ($date)" --body-file "$RUNNER_TEMP/summary.md"; then
-            echo "::error::Không mở được pull request (nhánh $branch đã được push). Bật \"Allow GitHub Actions to create and approve pull requests\" trong Settings → Actions → General, rồi tự mở pull request từ nhánh đó."
+            echo "::error::Không mở được pull request (nhánh $branch đã được push). Bật \"Allow GitHub Actions to create and approve pull requests\" trong Settings → Actions → General, rồi mở pull request từ nhánh đó: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/compare/$GITHUB_REF_NAME...$branch?expand=1"
             exit 1
           fi

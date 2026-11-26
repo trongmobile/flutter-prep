@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Middle (100 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 60 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<meta name="description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 70 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Middle (100 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 60 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
+<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Middle kèm đáp án mẫu và 70 câu quiz trắc nghiệm: 3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · flutter · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Middle</h1>
-  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 100 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">3 cây widget, Key, Riverpod/Bloc, Clean Architecture, Isolate, testing. Gồm 100 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/flutter/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -74,7 +74,7 @@
     <li><a href="#perf">Performance</a> <span class="count">6</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">10</span></li>
     <li><a href="#security">Security</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -1985,6 +1985,16 @@ test(<span class="tk-str">&#39;load todos từ repository&#39;</span>, () <span 
     <li><a href="../../../s/mid-m58.html">Từ danh sách, context.push(&#39;/product&#39;, extra: product) mở màn chi tiết bình thường. Nhưng khi người dùng bấm một link từ ngoài vào app (deep link tới /product) thì app crash ở state.extra!. Vì sao, và nên thiết kế lại thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/mid-m59.html">Backend sắp ngừng hỗ trợ các bản app cũ hơn 3.0 và sản phẩm muốn bắt buộc người dùng cập nhật. Thiết kế nào phù hợp nhất?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/mid-m60.html">Hàm tải ảnh gọi await Future.wait(urls.map((u) =&gt; client.get(u))) với 500 URL. Trên điện thoại tầm trung, nhiều request bị timeout và bộ nhớ tăng vọt. Nguyên nhân và hướng sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m61.html">Form đăng ký dùng Spacer để đẩy nút &#39;Đăng ký&#39; xuống cuối màn hình và bọc cả Column trong SingleChildScrollView để cuộn được khi bàn phím mở. Chạy lên thì báo lỗi layout. Cách sửa phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m62.html">CustomPaint dưới đây vẽ một hình chữ nhật đỏ trong paint, nhưng chạy lên không thấy gì và cũng không có lỗi nào. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m63.html">App nhận trạng thái Bluetooth từ native qua EventChannel. Màn hình listen vào receiveBroadcastStream() trong initState nhưng không bao giờ cancel() khi rời màn hình. Điều gì xảy ra ở phía native?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m64.html">App bán gói Premium qua in-app purchase. Dev làm đơn giản: khi purchaseStream báo PurchaseStatus.purchased, app lưu isPremium = true vào SharedPreferences rồi mở khóa tính năng. Hạn chế lớn nhất của thiết kế này và cách cải thiện đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m65.html">App giải mã phần payload của access token JWT để đọc exp (biết khi nào cần refresh) và đọc role để bật nút &#39;Quản trị&#39;. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m66.html">Hai người quản lý (PM và trưởng nhóm kinh doanh) cùng nhờ bạn xong việc gấp trong tuần này, nhưng không thể hoàn thành cả hai. Cả hai đều nói việc của mình là ưu tiên cao nhất. Cách xử lý phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m67.html">Hai test dưới đây chạy riêng đều pass, nhưng chạy cả file thì test thứ hai ném ArgumentError. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m68.html">Class Debouncer chạy action sau 300ms kể từ lần gọi cuối. Cách viết unit test nào chạy gần như tức thì và ổn định, không phụ thuộc đồng hồ thật?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m69.html">Danh sách 100 đơn hàng đã được sắp theo thời gian tạo. Dev gọi orders.sort((a, b) =&gt; a.status.compareTo(b.status)) để nhóm theo trạng thái và muốn các đơn cùng trạng thái vẫn giữ thứ tự thời gian. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/mid-m70.html">Class User có field kiểu Address (cũng dùng @JsonSerializable()). print(user.toJson()) in ra {name: An, address: Instance of &#39;Address&#39;}. Nguyên nhân và cách sửa là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

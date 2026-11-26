@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Middle (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
+<meta name="description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Middle (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Middle kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testin…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · android · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Middle</h1>
-  <p class="subtitle">Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Coroutines/Flow nâng cao, Jetpack Compose, MVVM/MVI, Hilt, WorkManager, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/android/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -77,7 +77,7 @@
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">2</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -1440,6 +1440,16 @@ prompt.authenticate(promptInfo, <span class="tk-type">BiometricPrompt</span>.<sp
     <li><a href="../../../s/and-mid-m58.html">Activity đăng ký hai observer vào cùng một Lifecycle, theo thứ tự first rồi second. Người dùng bấm Home (Activity đi qua onStop) rồi mở lại app (đi qua onStart). Log của hai observer theo thứ tự nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-mid-m59.html">Retrofit interface DownloadApi khai báo @GET suspend fun download(@Url url: String): ResponseBody được dùng để tải file video khoảng 500MB. Trên máy cấu hình thấp app crash OutOfMemoryError ngay khi gọi. Thiếu gì trong khai báo?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-mid-m60.html">Chương trình dưới in ra những dòng nào, theo đúng thứ tự?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m61.html">Đoạn code dùng withTimeout bị catch như sau. Chương trình in ra những dòng nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m62.html">Danh sách có hai User trùng id. Đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m63.html">Thread bị interrupt() khi đang ngủ, và khối catch chỉ in cờ ngắt. Dòng log in ra giá trị nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m64.html">App tự sinh mã OTP đặt lại mật khẩu bằng java.util.Random như dòng code sau. Vấn đề bảo mật chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m65.html">Activity lưu cả danh sách ảnh vào outState. Thỉnh thoảng app crash với TransactionTooLargeException khi bị đưa xuống nền. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m66.html">Server vừa trả 503 cho hàng chục nghìn thiết bị cùng lúc. Client retry theo delay = 2^attempt giây, nhưng khi server hồi phục lại bị quá tải thêm một lần nữa. Bổ sung gì vào cơ chế retry là hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m67.html">Sprint đã full thì PM nhắn: &quot;Thêm giúp mình tính năng chia sẻ đơn hàng vào bản release tuần này nhé&quot;. Cách phản hồi nào tốt nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m68.html">App có minSdk = 24 dùng java.time.LocalDate (API 26). Lint báo NewApi, còn trên máy Android 7 app crash NoClassDefFoundError. Cách nào cho phép dùng java.time trên mọi phiên bản mà không nâng minSdk?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m69.html">SyncContentProvider (một ContentProvider) cần dùng SyncRepository do Hilt quản lý, mà Hilt không hỗ trợ @AndroidEntryPoint cho ContentProvider. Cách đúng để lấy dependency là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-mid-m70.html">Test dùng kotlinx-coroutines-test (bản 1.7 trở lên) chạy trong runTest như sau. Hai lệnh println in ra gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

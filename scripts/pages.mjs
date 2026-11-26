@@ -13,7 +13,13 @@ import { GITHUB_URL, SITE_URL } from "../js/config.js";
 import { escapeHtml as esc, fmt, codeOf, docHtml } from "../js/utils.js";
 
 const plain = (s) => String(s).replace(/`/g, "").replace(/\s+/g, " ").trim();
-const cut = (s, n) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s);
+// Không cắt giữa cặp surrogate (emoji): nửa cặp bị ghi ra file thành U+FFFD, làm hỏng title và khiến trang luôn bị coi là cũ.
+const cut = (s, n) => {
+  if (s.length <= n) return s;
+  let end = n - 1;
+  if (s.charCodeAt(end - 1) >= 0xd800 && s.charCodeAt(end - 1) <= 0xdbff) end--;
+  return s.slice(0, end).trimEnd() + "…";
+};
 const LETTERS = ["A", "B", "C", "D"];
 
 // Đường dẫn trong site (vd. "phong-van/flutter/") -> URL đầy đủ.

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android Senior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<meta name="description" content="50 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android Senior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Android Senior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, sys…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · android · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Android Senior</h1>
-  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 50 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Performance, memory leak, Gradle &amp; modularization, JVM/ART, kiến trúc lớn, system design, leadership. Gồm 50 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/android/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -77,7 +77,7 @@
     <li><a href="#security">Security</a> <span class="count">4</span></li>
     <li><a href="#design">System Design</a> <span class="count">4</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">4</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -1416,6 +1416,16 @@ dependencies {
     <li><a href="../../../s/and-sen-m58.html">App có targetSdk = 34. Nút hành động trong notification gắn PendingIntent.getBroadcast(...), và ActionReceiver.onReceive gọi startActivity để mở màn chi tiết. Trên Android 12 trở lên, bấm nút đó thì chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-sen-m59.html">Hai hàm top-level sau cùng nằm trong một file Kotlin. Kết quả build là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-sen-m60.html">Màn tìm kiếm ghi chú offline có 300.000 dòng, dùng WHERE title LIKE &#39;%&#39; || :keyword || &#39;%&#39; và bị chậm khi gõ. Thêm @Index cho cột title vẫn không cải thiện. Hướng xử lý nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m61.html">App targetSdk = 35 có receiver nhận BOOT_COMPLETED để mở lại việc đồng bộ. Chạy trên Android 15, điều gì xảy ra khi receiver khởi động service?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m62.html">Thư viện payments v1 có sealed interface PayResult gồm Success và Failed. AAR checkout-ui (đã biên dịch với v1) có when exhaustive, không có else. App nâng payments lên v2 có thêm Pending nhưng vẫn dùng bản checkout-ui cũ. Khi payments trả về Pending, điều gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m63.html">Một dev giỏi trong team thỉnh thoảng bỏ qua quy trình: merge thẳng vào main mà không qua review vì &quot;đang gấp&quot;. Là tech lead, bạn xử lý thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m64.html">Chương trình dưới đây in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m65.html">Trên Android 10 trở lên, app phát video gọi pause() trong onPause(). Người dùng chia đôi màn hình rồi chạm vào app ở cửa sổ bên kia để thao tác. Điều gì xảy ra với Activity của bạn?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m66.html">Backend thêm giá trị enum mới GOLD cho tier. App cũ dùng kotlinx.serialization với Json mặc định và crash khi parse cả danh sách. Cấu hình nào giúp app cũ không crash, rơi về giá trị mặc định cho tier?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m67.html">Bạn triển khai đăng nhập OAuth 2.0 (authorization code) với nhà cung cấp danh tính của công ty cho app Android. Cách làm nào đúng với khuyến nghị bảo mật cho native app?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m68.html">Bạn thiết kế SDK analytics nhận event từ app. Yêu cầu: không mất event khi process bị kill hoặc mất mạng, và không đánh thức radio liên tục. Thiết kế nào hợp lý nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m69.html">Pool dưới đây có corePoolSize = 2, maximumPoolSize = 8 và hàng đợi không giới hạn. Gửi 20 task chạy lâu cùng lúc. Pool tạo tối đa bao nhiêu thread worker?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-sen-m70.html">Test của TokenManager thỉnh thoảng fail vì phụ thuộc đồng hồ hệ thống. Cách thiết kế nào giúp test chạy ổn định mà không cần Thread.sleep?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

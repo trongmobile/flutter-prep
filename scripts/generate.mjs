@@ -379,6 +379,10 @@ function cut(s, n = 160) {
   const line = oneLine(s);
   return line.length > n ? line.slice(0, n - 1) + "…" : line;
 }
+// Trên GitHub Actions: hiện lỗi thành annotation ở đầu trang run, khỏi phải mở log của step.
+function annotate(title, message) {
+  if (process.env.GITHUB_ACTIONS) console.log(`::error title=${title.replace(/[%:,]/g, "")}::${cut(message, 500).replace(/%/g, "%25")}`);
+}
 const KIND = { questions: "câu hỏi", quiz: "quiz" };
 const total = { questions: 0, quiz: 0 };
 const sections = [];
@@ -410,6 +414,7 @@ async function main() {
       } catch (e) {
         console.error(`${label}: ${e instanceof GeminiError ? e.message : e.stack}`);
         failures.push(`- ${label}: ${cut(e.message, 300)}`);
+        annotate(label, e.message);
         if (e.fatal) break run; // key sai, request sai, hết quota ngày: các lô sau cũng hỏng
       }
     }
@@ -435,5 +440,6 @@ async function main() {
 
 main().catch((e) => {
   console.error(e);
+  annotate("generate.mjs", e.message);
   process.exit(1);
 });

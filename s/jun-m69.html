@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Junior: Thêm một plugin mới xong, build Android báo lỗi Manifest merger failed : uses-sdk:minSdk…</title>
+<meta name="description" content="Mỗi plugin khai báo minSdk thấp nhất mà code native của nó hỗ trợ; Gradle gộp manifest của app với các thư viện và báo lỗi khi minSdk của app thấp hơn yêu cầ…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/jun-m69.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Junior: Thêm một plugin mới xong, build Android báo lỗi Manifest merger failed : uses-sdk:minSdk…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/jun-m69.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Junior","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/"},{"@type":"ListItem","position":5,"name":"Thêm một plugin mới xong, build Android báo lỗi…","item":"https://trongmobile.github.io/flutter-prep/s/jun-m69.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/junior/">Junior</a> <span class="crumb-sep">›</span> <span aria-current="page">Thêm một plugin mới xong, build Android báo lỗi…</span>
+</nav>
+
+<article class="card question-page rank-blue">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-blue">Junior</span><a class="tag" href="../phong-van/flutter/chu-de/native/">Native &amp; Platform</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Thêm một plugin mới xong, build Android báo lỗi <code>Manifest merger failed : uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library</code>. Cách xử lý đúng là gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Hạ <code>minSdkVersion</code> của plugin xuống 21 bằng cách sửa trực tiếp <code>build.gradle</code> trong thư mục pub cache</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Chạy <code>flutter clean</code> rồi <code>flutter pub get</code> để Gradle tự chọn lại phiên bản SDK tối thiểu phù hợp</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Nâng <code>minSdk</code> trong <code>android/app/build.gradle</code> lên ít nhất 23, hoặc chọn plugin khác hỗ trợ SDK thấp hơn</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Thêm quyền <code>android.permission.INTERNET</code> vào <code>AndroidManifest.xml</code> để plugin được phép đọc phần khai báo SDK của app</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Mỗi plugin khai báo <code>minSdk</code> thấp nhất mà code native của nó hỗ trợ; Gradle gộp manifest của app với các thư viện và báo lỗi khi <code>minSdk</code> của app thấp hơn yêu cầu của thư viện, vì thư viện có thể gọi API không có trên máy cũ. Cách đúng là nâng <code>minSdk</code> của app (ví dụ <code>minSdk = 23</code> thay cho <code>flutter.minSdkVersion</code> trong <code>android/app/build.gradle</code>) và chấp nhận bỏ các máy cũ hơn, hoặc dùng plugin khác. Sửa file trong pub cache sẽ mất khi cập nhật package, <code>flutter clean</code> không đổi yêu cầu này, còn quyền <code>INTERNET</code> không liên quan. Dùng <code>tools:overrideLibrary</code> có thể làm hết lỗi nhưng app sẽ crash trên máy cũ.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/jun-m69">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/jun-m68.html"><span class="muted small">← Câu trước</span><span>Test dưới đây dùng mocktail và bị lỗi type &#39;Null&#39; is not a subtype of type &#39;Fut…</span></a>
+  <a class="pager-next" href="../s/jun-m70.html"><span class="muted small">Câu sau →</span><span>Màn hình có ô tìm kiếm và danh sách 5.000 sản phẩm; mỗi lần build đều chạy lọc…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Junior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-blue" href="../phong-van/flutter/junior/">Tất cả câu hỏi Flutter Junior</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=junior&amp;start=1">Quiz Junior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Native &amp; Platform</h2><a class="section-sub" href="../phong-van/flutter/chu-de/native/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/jun-q28.html">App cần dùng camera: các bước khai báo và xin quyền trên Android và iOS là gì?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/d15-5.html">MissingPluginException xảy ra khi nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/jun-m39.html">pubspec.yaml khai báo asset là thư mục assets/images/. File assets/images/icons/home.png có được đóng gói vào app không?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/jun-m43.html">await canLaunchUrl(Uri(scheme: &#39;tel&#39;, path: &#39;0901234567&#39;)) luôn trả về false trên điện thoại Android 11 trở lên dù máy có app gọi điện, nên nút gọi không bao giờ hiện. Cần cấu hình gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/jun-m44.html">Vừa chạy flutter pub add thêm một plugin có code native, bạn hot reload rồi gọi hàm của plugin thì gặp MissingPluginException(No implementation found for method ... on channel ...). Cách xử lý đúng là gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/jun-m53.html">Dự án mới tạo, chưa cấu hình ký. Bạn build flutter build appbundle và upload file .aab lên Google Play Console thì bị từ chối vì bản upload được ký ở chế độ debug. Vì sao, và cần làm gì?</a> <span class="rank-tag rank-blue">Junior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

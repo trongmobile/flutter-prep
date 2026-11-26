@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Fresher: Sandbox của iOS ảnh hưởng thế nào tới cách app truy cập dữ liệu?</title>
+<meta name="description" content="Mỗi app chạy trong một container riêng (Documents, Library, tmp) mà app khác không đọc được; muốn dùng tài nguyên bên ngoài như ảnh, danh bạ, camera thì phải…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-fre-m63.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Fresher: Sandbox của iOS ảnh hưởng thế nào tới cách app truy cập dữ liệu?">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-fre-m63.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/fresher/"},{"@type":"ListItem","position":5,"name":"Sandbox của iOS ảnh hưởng thế nào tới cách app…","item":"https://trongmobile.github.io/flutter-prep/s/ios-fre-m63.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Sandbox của iOS ảnh hưởng thế nào tới cách app…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/ios/chu-de/security/">Security</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Sandbox của iOS ảnh hưởng thế nào tới cách app truy cập dữ liệu?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">App chỉ truy cập được container riêng; ảnh, danh bạ, camera phải qua API hệ thống và được cấp quyền</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Các app cùng nhà phát triển tự động đọc được thư mục <code>Documents</code> của nhau mà không cần khai báo gì thêm</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Sandbox mã hoá toàn bộ file trong container nên lưu token vào file thường vẫn an toàn ngang Keychain</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Sandbox chỉ áp dụng khi chạy trên Simulator; trên máy thật app đọc được mọi file trong hệ thống</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Mỗi app chạy trong một container riêng (Documents, Library, tmp) mà app khác không đọc được; muốn dùng tài nguyên bên ngoài như ảnh, danh bạ, camera thì phải qua API hệ thống và được người dùng cấp quyền. Chia sẻ giữa các app cùng team chỉ có khi khai báo rõ như App Group hay Keychain access group. Sandbox là cơ chế cô lập chứ không phải Keychain, nên dữ liệu nhạy cảm như token vẫn nên lưu trong Keychain; và sandbox áp dụng cả trên máy thật.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-fre-m63">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-fre-m62.html"><span class="muted small">← Câu trước</span><span>Config được viết như một singleton, nhưng đoạn code sau lại in ra light dark. V…</span></a>
+  <a class="pager-next" href="../s/ios-fre-m64.html"><span class="muted small">Câu sau →</span><span>Trong viewDidLoad, bạn dùng Task { } để gọi hàm async rồi gán kết quả cho label…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/ios/fresher/">Tất cả câu hỏi iOS Fresher</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Security</h2><a class="section-sub" href="../phong-van/ios/chu-de/security/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-fre-q49.html">Vì sao không nên hardcode API key hoặc secret trong code app iOS? Người ta lấy ra bằng cách nào, và cách xử lý đúng là gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/ios-fre-m47.html">App gọi URLSession tới http://api.example.com/users và nhận lỗi App Transport Security policy requires the use of a secure connection. Với bản phát hành, cách xử lý nào đúng nhất?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/ios-jun-q24.html">Bạn chuyển access token từ UserDefaults sang Keychain. Ngoài chuyện an toàn hơn, khi làm việc với Keychain có những bẫy nào cần biết?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-jun-q49.html">Security review của app ví điện tử chỉ ra: token bị print ra console (và vẫn nằm trong log ở bản release), số dư hiện nguyên trong ảnh chụp của App Switcher, và ô nhập mật khẩu cho phép copy-paste sang app khác. Bạn xử lý thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+    <li><a href="../s/ios-mid-q37.html">Bạn thêm đăng nhập bằng Face ID/Touch ID: gọi LAContext.evaluatePolicy, thành công thì cho vào luôn. Reviewer phản đối cách làm này. Dùng LocalAuthentication đúng cách thế nào, các lỗi cần xử lý là gì, và vì sao nên gắn với Keychain?</a> <span class="rank-tag rank-amber">Middle</span></li>
+    <li><a href="../s/ios-mid-q50.html">App có đăng nhập Google và Facebook, bị App Review từ chối vì chưa có Sign in with Apple. Khi nào Apple bắt buộc, bạn tích hợp thế nào, xử lý email ẩn (relay) ra sao, và cần kiểm tra gì khi mở lại app hoặc khi user xoá tài khoản?</a> <span class="rank-tag rank-amber">Middle</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

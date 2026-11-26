@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Android Senior: App targetSdk = 35 có receiver nhận BOOT_COMPLETED để mở lại việc đồng bộ. Chạy trên And…</title>
+<meta name="description" content="Android 15 cấm receiver BOOT_COMPLETED khởi chạy foreground service thuộc các type dataSync, camera, mediaPlayback, phoneCall, mediaProjection và microphone…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/and-sen-m61.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Android Senior: App targetSdk = 35 có receiver nhận BOOT_COMPLETED để mở lại việc đồng bộ. Chạy trên And…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/and-sen-m61.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Android","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/android/senior/"},{"@type":"ListItem","position":5,"name":"App targetSdk = 35 có receiver nhận BOOT_COMPLE…","item":"https://trongmobile.github.io/flutter-prep/s/and-sen-m61.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/" class="active" aria-current="page">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/android">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/">Android</a> <span class="crumb-sep">›</span> <a href="../phong-van/android/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">App targetSdk = 35 có receiver nhận BOOT_COMPLE…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">Android</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/android/chu-de/background/">Background &amp; Service</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">App <code>targetSdk = 35</code> có receiver nhận <code>BOOT_COMPLETED</code> để mở lại việc đồng bộ. Chạy trên Android 15, điều gì xảy ra khi receiver khởi động service?</h1>
+  
+  <pre class="code-block"><code><span class="tk-com">// Manifest đã khai báo quyền FOREGROUND_SERVICE_DATA_SYNC</span>
+<span class="tk-com">// và &lt;service android:name=&quot;.SyncService&quot; android:foregroundServiceType=&quot;dataSync&quot; /&gt;</span>
+
+<span class="tk-kw">class</span> <span class="tk-type">BootReceiver</span> : <span class="tk-type">BroadcastReceiver</span>() {
+  <span class="tk-kw">override</span> <span class="tk-kw">fun</span> onReceive(context: <span class="tk-type">Context</span>, intent: <span class="tk-type">Intent</span>) {
+    <span class="tk-kw">if</span> (intent.action == <span class="tk-type">Intent</span>.<span class="tk-type">ACTION_BOOT_COMPLETED</span>) {
+      <span class="tk-type">ContextCompat</span>.startForegroundService(context, <span class="tk-type">Intent</span>(context, <span class="tk-type">SyncService</span>::<span class="tk-kw">class</span>.java))
+    }
+  }
+}</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Service chạy bình thường vì <code>BOOT_COMPLETED</code> vẫn nằm trong danh sách ngoại lệ được phép mở foreground service</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Ném <code>ForegroundServiceStartNotAllowedException</code>: receiver <code>BOOT_COMPLETED</code> không được mở FGS type <code>dataSync</code></span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Service chạy nhưng bị hệ thống dừng sau 6 giờ vì giới hạn thời gian của type <code>dataSync</code> trên Android 15</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Ném <code>SecurityException</code> vì thiếu quyền <code>FOREGROUND_SERVICE_DATA_SYNC</code> trong manifest của app</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>Android 15 cấm receiver <code>BOOT_COMPLETED</code> khởi chạy foreground service thuộc các type <code>dataSync</code>, <code>camera</code>, <code>mediaPlayback</code>, <code>phoneCall</code>, <code>mediaProjection</code> và <code>microphone</code> (riêng <code>microphone</code> đã bị từ Android 14); vi phạm thì <code>startForegroundService</code> ném <code>ForegroundServiceStartNotAllowedException</code>. Quyền và <code>foregroundServiceType</code> đã khai báo đầy đủ nên không phải nguyên nhân, còn giới hạn 6 giờ của <code>dataSync</code> chỉ áp dụng cho service đang chạy. Việc cần chạy lại sau khi khởi động nên lên lịch bằng WorkManager thay vì mở foreground service từ receiver.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/and-sen-m61">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/and-sen-m60.html"><span class="muted small">← Câu trước</span><span>Màn tìm kiếm ghi chú offline có 300.000 dòng, dùng WHERE title LIKE &#39;%&#39; || :key…</span></a>
+  <a class="pager-next" href="../s/and-sen-m62.html"><span class="muted small">Câu sau →</span><span>Thư viện payments v1 có sealed interface PayResult gồm Success và Failed. AAR c…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Android Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/android/senior/">Tất cả câu hỏi Android Senior</a>
+    <a class="btn btn-ghost" href="../#/android/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/android/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Background &amp; Service</h2><a class="section-sub" href="../phong-van/android/chu-de/background/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/and-sen-q31.html">App cần ba việc: đồng bộ dữ liệu định kỳ, nhắc lịch đúng giờ, và tải file lớn do user bấm. Với các giới hạn chạy nền của Android hiện nay, bạn chọn cơ chế nào cho từng việc và cần lưu ý gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/and-sen-m44.html">Trên Android 12+ (API 31+), app đang ở background, không có UI nào hiển thị. Trường hợp nào sau đây vẫn được phép gọi startForegroundService() mà không bị ForegroundServiceStartNotAllowedException?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-sen-m58.html">App có targetSdk = 34. Nút hành động trong notification gắn PendingIntent.getBroadcast(...), và ActionReceiver.onReceive gọi startActivity để mở màn chi tiết. Trên Android 12 trở lên, bấm nút đó thì chuyện gì xảy ra?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/and-fre-q17.html">Service có tự chạy trên background thread không? Viết code tải file ngay trong onStartCommand có vấn đề gì?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-fre-q35.html">Main thread (UI thread) là gì? Vì sao gọi mạng ngay trong onCreate thì crash, và vì sao cập nhật UI từ thread khác cũng báo lỗi?</a> <span class="rank-tag rank-green">Fresher</span></li>
+    <li><a href="../s/and-jun-q32.html">Gọi notify() trên máy Android 8 hoặc Android 13 thì không thấy thông báo hiện ra dù code chạy không lỗi. Nguyên nhân thường gặp là gì và xử lý thế nào?</a> <span class="rank-tag rank-blue">Junior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

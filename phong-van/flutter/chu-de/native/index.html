@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter: Native &amp; Platform — Mobile Interview</title>
-<meta name="description" content="32 câu hỏi phỏng vấn Flutter về Native &amp; Platform từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
+<meta name="description" content="32 câu hỏi phỏng vấn Flutter về Native &amp; Platform từ Fresher đến Senior, có đáp án mẫu và 19 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/native/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter: Native &amp; Platform — Mobile Interview">
-<meta property="og:description" content="32 câu hỏi phỏng vấn Flutter về Native &amp; Platform từ Fresher đến Senior, có đáp án mẫu và 15 câu quiz trắc nghiệm.">
+<meta property="og:description" content="32 câu hỏi phỏng vấn Flutter về Native &amp; Platform từ Fresher đến Senior, có đáp án mẫu và 19 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/chu-de/native/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · flutter · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Flutter: Native &amp; Platform</h1>
-  <p class="subtitle">32 câu hỏi kèm đáp án mẫu và 15 câu quiz về Native &amp; Platform, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">32 câu hỏi kèm đáp án mẫu và 19 câu quiz về Native &amp; Platform, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Flutter Fresher</h2><a class="section-sub" href="../../../../phong-van/flutter/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -56,6 +56,7 @@
     <li><a href="../../../../s/fre-m40.html">Mới cài Flutter, muốn kiểm tra Android SDK, Xcode, thiết bị kết nối... đã sẵn sàng chưa thì chạy lệnh nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/fre-m50.html">Muốn đổi tên hiển thị dưới icon app trên màn hình chính của Android thì sửa ở đâu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/fre-m52.html">Một widget chọn nội dung bằng Platform.isIOS (import từ dart:io). App chạy tốt trên Android và iOS, nhưng khi chạy bản web bằng flutter run -d chrome thì báo lỗi lúc chạy. Cách sửa phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/fre-m68.html">App gọi API của server chạy trên máy dev bằng http://localhost:3000/api. Chạy trên iOS Simulator thì ổn, nhưng trên Android Emulator bị từ chối kết nối. Nguyên nhân và cách sửa là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -67,6 +68,7 @@
     <li><a href="../../../../s/jun-m43.html">await canLaunchUrl(Uri(scheme: &#39;tel&#39;, path: &#39;0901234567&#39;)) luôn trả về false trên điện thoại Android 11 trở lên dù máy có app gọi điện, nên nút gọi không bao giờ hiện. Cần cấu hình gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m44.html">Vừa chạy flutter pub add thêm một plugin có code native, bạn hot reload rồi gọi hàm của plugin thì gặp MissingPluginException(No implementation found for method ... on channel ...). Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/jun-m53.html">Dự án mới tạo, chưa cấu hình ký. Bạn build flutter build appbundle và upload file .aab lên Google Play Console thì bị từ chối vì bản upload được ký ở chế độ debug. Vì sao, và cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/jun-m69.html">Thêm một plugin mới xong, build Android báo lỗi Manifest merger failed : uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -80,6 +82,7 @@
     <li><a href="../../../../s/mid-m40.html">Native trả lỗi như comment bên dưới. Phía Dart in ra gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m47.html">Dart gửi dữ liệu qua MethodChannel (StandardMethodCodec) như dưới. Phía Android (Kotlin) nhận level và at với kiểu runtime nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/mid-m52.html">Nút bấm gọi await channel.invokeMethod(&#39;getToken&#39;) quay loading mãi, không có exception, dù log native cho thấy fetch đã trả về null. Nguyên nhân nằm ở đâu?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/mid-m63.html">App nhận trạng thái Bluetooth từ native qua EventChannel. Màn hình listen vào receiveBroadcastStream() trong initState nhưng không bao giờ cancel() khi rời màn hình. Điều gì xảy ra ở phía native?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -114,6 +117,7 @@
     <li><a href="../../../../s/sen-m14.html">Một thư viện C nhận callback và gọi nó từ thread nền của chính thư viện khi tải xong dữ liệu. Phía Dart nên tạo callback này bằng cách nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/sen-m15.html">App native dùng add-to-app với 3 màn Flutter độc lập có thể mở cùng lúc, mỗi màn một FlutterEngine spawn từ cùng một FlutterEngineGroup. Phát biểu nào đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/sen-m16.html">Team cần gọi đồng bộ một số API của một SDK Java/Kotlin trên Android từ Dart mà không muốn viết MethodChannel thủ công. Công cụ phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/sen-m69.html">Product muốn thêm widget màn hình chính trên iPhone hiển thị số dư của app Flutter và cập nhật định kỳ. Cách tiếp cận phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

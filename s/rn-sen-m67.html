@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz React Native Senior: Ô nhập tên đăng nhập dùng regex dưới đây để kiểm tra (chỉ chữ và số). Người dùng dá…</title>
+<meta name="description" content="Nhóm lặp nằm trong một lặp khác ((x+)*) cho phép chia cùng một đoạn chữ và số thành các nhóm theo rất nhiều cách; với chuỗi không khớp (có !), engine backtra…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/rn-sen-m67.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz React Native Senior: Ô nhập tên đăng nhập dùng regex dưới đây để kiểm tra (chỉ chữ và số). Người dùng dá…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/rn-sen-m67.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"React Native","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/react-native/senior/"},{"@type":"ListItem","position":5,"name":"Ô nhập tên đăng nhập dùng regex dưới đây để kiể…","item":"https://trongmobile.github.io/flutter-prep/s/rn-sen-m67.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/" class="active" aria-current="page">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/react-native">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/">React Native</a> <span class="crumb-sep">›</span> <a href="../phong-van/react-native/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Ô nhập tên đăng nhập dùng regex dưới đây để kiể…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">React Native</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/react-native/chu-de/js/">JavaScript &amp; TypeScript</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Ô nhập tên đăng nhập dùng regex dưới đây để kiểm tra (chỉ chữ và số). Người dùng dán một chuỗi dài có dấu <code>!</code> ở cuối thì cả app đứng hình nhiều giây. Nguyên nhân hợp lý nhất là gì?</h1>
+  
+  <pre class="code-block"><code><span class="tk-kw">const</span> <span class="tk-type">USERNAME</span> = /^([a-z0-<span class="tk-num">9</span>]+)*$/i;
+
+<span class="tk-kw">function</span> isValidUsername(input: <span class="tk-kw">string</span>) {
+  <span class="tk-kw">return</span> <span class="tk-type">USERNAME</span>.test(input);
+}
+
+isValidUsername(<span class="tk-str">&#39;a&#39;</span>.repeat(<span class="tk-num">30</span>) + <span class="tk-str">&#39;!&#39;</span>);</code></pre>
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Hermes chạy regex ở thread nền nên kết quả trả về chậm, cần đặt <code>await</code> trước <code>test</code></span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text"><code>RegExp.test</code> luôn có độ phức tạp bậc hai theo độ dài chuỗi, nên phải giới hạn mọi regex</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Cờ <code>^</code> và <code>$</code> khiến engine quét lại cả chuỗi sau mỗi ký tự, nên cần bỏ chúng đi</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Lặp lồng <code>([a-z0-9]+)*</code> gây backtracking lũy thừa trên chuỗi không khớp, kẹt JS thread</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: D</strong><div>Nhóm lặp nằm trong một lặp khác (<code>(x+)*</code>) cho phép chia cùng một đoạn chữ và số thành các nhóm theo rất nhiều cách; với chuỗi không khớp (có <code>!</code>), engine backtracking phải thử hết, số khả năng tăng theo hàm mũ theo độ dài (ReDoS), và vì <code>test</code> chạy đồng bộ trên JS thread nên cả app đứng. Engine regex của Hermes cũng dựa trên backtracking. Cách sửa: bỏ lặp lồng (<code>/^[a-z0-9]+$/i</code>), giới hạn độ dài đầu vào trước khi kiểm tra và tránh tự viết regex phức tạp. <code>test</code> là đồng bộ chứ không chạy ở thread nền, regex thông thường không tự nhiên bậc hai, còn <code>^</code> và <code>$</code> chỉ neo vị trí.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/rn-sen-m67">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/rn-sen-m66.html"><span class="muted small">← Câu trước</span><span>App lưu refresh token trong Keychain với access control biometryCurrentSet. Sau…</span></a>
+  <a class="pager-next" href="../s/rn-sen-m68.html"><span class="muted small">Câu sau →</span><span>App offline-first đồng bộ ghi chú bằng GET /notes?updatedSince=&lt;mốc&gt; rồi cập nh…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp React Native Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/react-native/senior/">Tất cả câu hỏi React Native Senior</a>
+    <a class="btn btn-ghost" href="../#/react-native/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/react-native/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề JavaScript &amp; TypeScript</h2><a class="section-sub" href="../phong-van/react-native/chu-de/js/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/rn-sen-q28.html">Backend đổi trường price từ number sang string (&quot;199000.00&quot;) mà không báo, app RN crash ở price.toFixed(0) dù TypeScript build xanh với strict bật hết. Vì sao, và bạn thiết kế lớp dữ liệu từ API thế nào để không lặp lại?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/rn-sen-m11.html">Một thư viện cũ đọc source của hàm để suy ra tên tham số. Trên bản release chạy Hermes, lệnh console.log dưới đây in ra gì?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m12.html">Module dưới đây cache kết quả theo object product để khỏi tính lại. Sau vài giờ dùng app, memory tăng dần. Cách sửa hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m13.html">Lớp API client dùng withTimeout dưới đây để báo lỗi nếu server không trả lời sau 5 giây. Khi timeout xảy ra, request fetch ra sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m46.html">Backend (ID kiểu Snowflake, số nguyên 64-bit) trả JSON như dưới. Lệnh console.log in ra gì, và cần xử lý ra sao?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/rn-sen-m57.html">Với kiểu có thương hiệu (branded type) như dưới đây, hai lời gọi cancelOrder cho kết quả biên dịch thế nào?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

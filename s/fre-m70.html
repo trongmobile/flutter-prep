@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Fresher: Trong PR đầu tiên của bạn, reviewer comment rằng tên hàm doIt() không rõ nghĩa, nhưng b…</title>
+<meta name="description" content="Code review là trao đổi về chất lượng code chứ không phải phán xét cá nhân: hỏi lại khi chưa hiểu, giải thích lý do một cách tôn trọng và chốt theo quy ước c…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/fre-m70.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Fresher: Trong PR đầu tiên của bạn, reviewer comment rằng tên hàm doIt() không rõ nghĩa, nhưng b…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/fre-m70.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Fresher","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/fresher/"},{"@type":"ListItem","position":5,"name":"Trong PR đầu tiên của bạn, reviewer comment rằn…","item":"https://trongmobile.github.io/flutter-prep/s/fre-m70.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/fresher/">Fresher</a> <span class="crumb-sep">›</span> <span aria-current="page">Trong PR đầu tiên của bạn, reviewer comment rằn…</span>
+</nav>
+
+<article class="card question-page rank-green">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-green">Fresher</span><a class="tag" href="../phong-van/flutter/chu-de/soft/">Behavioral</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Trong PR đầu tiên của bạn, reviewer comment rằng tên hàm <code>doIt()</code> không rõ nghĩa, nhưng bạn thấy tên đó vẫn ổn. Cách phản hồi phù hợp nhất là gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Hỏi lại nếu chưa rõ ý; nếu không đồng ý thì nêu lý do và cùng thống nhất theo quy ước của team</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Giữ nguyên tên cũ và đánh dấu comment là đã xử lý, vì code chạy đúng thì tên hàm không quan trọng</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Đổi tên ngay mà không hỏi gì, vì ý kiến của reviewer luôn đúng và người mới không nên tranh luận</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Nhắn riêng cho quản lý để phàn nàn rằng reviewer quá khắt khe với người mới trong buổi review code</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: A</strong><div>Code review là trao đổi về chất lượng code chứ không phải phán xét cá nhân: hỏi lại khi chưa hiểu, giải thích lý do một cách tôn trọng và chốt theo quy ước chung của team (hoặc đổi tên nếu góp ý hợp lý) giúp bạn học nhanh và giữ quan hệ tốt. Bỏ qua comment làm PR bị chặn và mất lòng tin; im lặng đổi theo mọi ý kiến thì không rút ra được gì và có thể đổi sai; còn kêu ca với quản lý trước khi trao đổi trực tiếp là bỏ qua cách giải quyết đơn giản nhất.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/fre-m70">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/fre-m69.html"><span class="muted small">← Câu trước</span><span>Một team Flutter áp dụng mô hình MVVM: View là widget, ViewModel giữ state và l…</span></a>
+  
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Fresher</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-green" href="../phong-van/flutter/fresher/">Tất cả câu hỏi Flutter Fresher</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=fresher&amp;start=1">Quiz Fresher 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề Behavioral</h2><a class="section-sub" href="../phong-van/flutter/chu-de/soft/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/fre-m60.html">Bạn bị kẹt với một lỗi suốt 2 giờ mà chưa tìm ra nguyên nhân, trong khi người hướng dẫn đang bận. Cách xử lý phù hợp nhất là gì?</a> <span class="rank-tag rank-green">Fresher</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/sen-q15.html">Bản release mới đang staged rollout 10% thì crash-free rate tụt mạnh. Với vai trò senior/tech lead, bạn xử lý sự cố này thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d31-1.html">Kể về một lần bạn đưa ra quyết định kiến trúc quan trọng mà cả team chưa đồng thuận — bạn thuyết phục thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d31-2.html">Kể về một lần bạn mentor một dev junior đang gặp khó khăn.</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d31-3.html">Bạn xử lý thế nào khi phát hiện một quyết định kỹ thuật cũ đang là technical debt lớn?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/d31-4.html">Kể về một lần bạn phải phản đối một yêu cầu vì lý do kỹ thuật mà vẫn giữ mối quan hệ tốt.</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

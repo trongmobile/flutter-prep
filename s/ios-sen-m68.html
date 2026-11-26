@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz iOS Senior: Upload nền bằng background URLSession hoàn tất khi app đã bị hệ thống kill, và app được rela…</title>
+<meta name="description" content="Khi relaunch, hệ thống gọi application(_:handleEventsForBackgroundURLSession:completionHandler:): app phải tạo lại session với đúng identifier để các sự kiện…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/ios-sen-m68.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz iOS Senior: Upload nền bằng background URLSession hoàn tất khi app đã bị hệ thống kill, và app được rela…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/ios-sen-m68.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"iOS","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/"},{"@type":"ListItem","position":4,"name":"Senior","item":"https://trongmobile.github.io/flutter-prep/phong-van/ios/senior/"},{"@type":"ListItem","position":5,"name":"Upload nền bằng background URLSession hoàn tất…","item":"https://trongmobile.github.io/flutter-prep/s/ios-sen-m68.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/" class="active" aria-current="page">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/ios">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/">iOS</a> <span class="crumb-sep">›</span> <a href="../phong-van/ios/senior/">Senior</a> <span class="crumb-sep">›</span> <span aria-current="page">Upload nền bằng background URLSession hoàn tất…</span>
+</nav>
+
+<article class="card question-page rank-purple">
+  <div class="quiz-tags"><span class="tag">iOS</span><span class="rank-tag rank-purple">Senior</span><a class="tag" href="../phong-van/ios/chu-de/platform/">App lifecycle &amp; Platform</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">Upload nền bằng background <code>URLSession</code> hoàn tất khi app đã bị hệ thống kill, và app được relaunch ngầm để xử lý kết quả. Cách làm đúng là gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Không cần làm gì: hệ thống tự ghi kết quả upload vào <code>UserDefaults</code> và app chỉ việc đọc lại khi người dùng mở app lần sau</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Gọi ngay <code>completionHandler</code> nhận được trong <code>handleEventsForBackgroundURLSession</code> để hệ thống biết app đã sẵn sàng nhận kết quả</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Tạo lại session cùng identifier, lưu <code>completionHandler</code>, gọi nó trong <code>urlSessionDidFinishEvents(forBackgroundURLSession:)</code></span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Tạo <code>URLSession</code> mới với identifier ngẫu nhiên mỗi lần để tránh nhận lại các sự kiện còn tồn đọng của session cũ</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: C</strong><div>Khi relaunch, hệ thống gọi <code>application(_:handleEventsForBackgroundURLSession:completionHandler:)</code>: app phải tạo lại session với đúng identifier để các sự kiện được giao qua delegate, lưu <code>completionHandler</code>, và chỉ gọi nó (trên main queue) trong <code>urlSessionDidFinishEvents(forBackgroundURLSession:)</code> sau khi đã lưu kết quả và cập nhật UI. Gọi sớm thì hệ thống coi app đã xong và chụp snapshot, có thể suspend app trước khi xử lý xong; identifier khác thì không nhận được sự kiện của task cũ; còn kết quả không tự được ghi vào <code>UserDefaults</code>.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/ios-sen-m68">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/ios-sen-m67.html"><span class="muted small">← Câu trước</span><span>Gói dùng thử 7 ngày của app được tính bằng cách so Date() hiện tại với ngày bắt…</span></a>
+  <a class="pager-next" href="../s/ios-sen-m69.html"><span class="muted small">Câu sau →</span><span>App xử lý ảnh muốn tự giảm chất lượng khi sắp chạm giới hạn memory để tránh bị…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp iOS Senior</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-purple" href="../phong-van/ios/senior/">Tất cả câu hỏi iOS Senior</a>
+    <a class="btn btn-ghost" href="../#/ios/quiz?rank=senior&amp;start=1">Quiz Senior 10 câu</a>
+    <a class="btn btn-ghost" href="../#/ios/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề App lifecycle &amp; Platform</h2><a class="section-sub" href="../phong-van/ios/chu-de/platform/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/ios-sen-q14.html">App chính, widget và Notification Service Extension cần dùng chung trạng thái đăng nhập và database. Bạn tổ chức thế nào, cần lưu ý gì?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q15.html">App cần tự làm mới dữ liệu ở background vài giờ một lần và dọn database vào ban đêm. Bạn dùng BGTaskScheduler thế nào cho đúng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q16.html">App chat mã hoá đầu cuối cần hiện push có preview nội dung và ảnh. Bạn dùng silent push hay Notification Service Extension? Vì sao?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q33.html">Bạn xây luồng mua gói đăng ký (subscription) bằng StoreKit 2. Làm sao để không mất giao dịch khi app bị kill giữa lúc mua, chống gian lận, đồng bộ quyền lợi với server và xử lý hoàn tiền?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-q47.html">PM muốn hiện trạng thái giao hàng trên Lock Screen và Dynamic Island, cùng một widget &quot;đơn gần nhất&quot; trên Home Screen. Live Activity và widget cập nhật dữ liệu khác nhau thế nào, và bạn thiết kế kiến trúc ra sao để cập nhật kịp lúc mà không vượt giới hạn của hệ thống?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/ios-sen-m25.html">Server gửi silent push (content-available: 1) để app đồng bộ ngầm, nhưng với một số user app không bao giờ được đánh thức. Nguyên nhân hợp lý nhất?</a> <span class="rank-tag rank-purple">Senior</span> <span class="tag">Quiz</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

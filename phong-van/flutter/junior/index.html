@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
+<meta name="description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
+<meta property="og:description" content="50 câu hỏi phỏng vấn Flutter Junior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · flutter · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Junior</h1>
-  <p class="subtitle">Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local. Gồm 50 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, Future/Stream, lifecycle, Provider, gọi API, lưu trữ local. Gồm 50 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/flutter/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -72,7 +72,7 @@
     <li><a href="#native">Native &amp; Platform</a> <span class="count">2</span></li>
     <li><a href="#perf">Performance</a> <span class="count">1</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -1017,6 +1017,16 @@ print(empty.first); <span class="tk-com">// StateError: Bad state: No element</s
     <li><a href="../../../s/jun-m58.html">Mở app (đang ở HomePage, chưa bấm gì). Dòng CartModel created đã được in ra chưa?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/jun-m59.html">Stream phát một sự kiện lỗi xen giữa hai giá trị: đoạn code sau in ra những dòng nào, theo thứ tự?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/jun-m60.html">Null-aware spread với một list có thể null: đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m61.html">API trả thời gian 2024-05-01T10:00:00+07:00. Đoạn code sau in ra những giá trị nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m62.html">Hai hàm dưới đây cùng gọi fetch hai lần, mỗi lần mất khoảng 200ms. Phát biểu nào về thời gian chạy là đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m63.html">Hai ListView đặt cạnh nhau dùng chung một ScrollController. App vẫn dựng màn hình bình thường, nhưng khi đọc controller.offset thì chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m64.html">Một Container chỉ có color, không có child, width hay height, được đặt trong Column. Nó hiển thị thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m65.html">initState của ProductsPage gọi context.read&lt;ProductsModel&gt;().load(), và load() bắt đầu bằng isLoading = true; notifyListeners();. Khi mở màn hình, debug mode báo setState() or markNeedsBuild() called during build. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m66.html">Server chỉ nhận JSON nên từ chối request dưới đây (hoặc không đọc được các field). Điều gì xảy ra với phần body?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m67.html">Server staging dùng chứng chỉ SSL tự ký nên HttpClient báo CERTIFICATE_VERIFY_FAILED. Đồng nghiệp sửa bằng đoạn code dưới đây và commit thẳng vào main. Vấn đề lớn nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m68.html">Test dưới đây dùng mocktail và bị lỗi type &#39;Null&#39; is not a subtype of type &#39;Future&lt;String&gt;&#39;. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m69.html">Thêm một plugin mới xong, build Android báo lỗi Manifest merger failed : uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library. Cách xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/jun-m70.html">Màn hình có ô tìm kiếm và danh sách 5.000 sản phẩm; mỗi lần build đều chạy lọc và sắp xếp lại như dưới đây. Khi gõ chữ hoặc chạy animation, UI bị giật. Hướng xử lý đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

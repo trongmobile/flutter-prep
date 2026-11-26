@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn iOS Middle (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 60 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<meta name="description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 70 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn iOS Middle (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 60 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
+<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Middle kèm đáp án mẫu và 70 câu quiz trắc nghiệm: async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/Swif…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/middle/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-amber">
   <div class="eyebrow">phỏng vấn · ios · middle (2–4 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Middle</h1>
-  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">async/await, actor, state trong SwiftUI, Combine, MVVM/Coordinator, Core Data/SwiftData, testing. Gồm 50 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-amber" href="../../../#/ios/study/middle">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=middle&amp;start=1">Làm quiz Middle</a>
@@ -76,7 +76,7 @@
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">2</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -1567,6 +1567,16 @@ present(<span class="tk-type">PHPickerViewController</span>(configuration: confi
     <li><a href="../../../s/ios-mid-m58.html">Backend đổi tên nhiều field của JSON và 40 màn hình phải sửa theo, vì mọi nơi đều dùng chung struct UserResponse: Codable khớp từng field. Cách tổ chức nào giảm thiệt hại cho những lần đổi sau?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-mid-m59.html">Đoạn code sau in ra những gì trên console?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-mid-m60.html">Hàm download gọi completion hai lần (một lần báo tiến độ, một lần báo xong). Test dưới đây fail dù logic đúng. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m61.html">Hub lưu các listener vào một mảng như dưới. Sau khi screen = nil, điều gì đúng và nên sửa thế nào?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m62.html">Trong NavigationStack, bạn đặt .navigationDestination(for:) bên trong closure của từng row trong List. Có lúc bấm link không chuyển màn, console cảnh báo về &quot;lazy container&quot;. Khi vẫn dùng NavigationLink(value:), cách chuẩn là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m63.html">Label dùng font tuỳ chỉnh UIFont(name: &quot;Roboto-Regular&quot;, size: 16) và đã bật adjustsFontForContentSizeCategory = true, nhưng khi người dùng tăng cỡ chữ trong Cài đặt thì chữ không đổi. Cần bổ sung gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m64.html">Đoạn code sau mã hoá cùng một dữ liệu hai lần bằng cùng một khoá AES-GCM của CryptoKit. Nó in ra gì ở dòng đầu tiên?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m65.html">Đếm số lần xuất hiện của 30.000 từ bằng reduce như dưới mất khoảng nửa giây ở bản Release, trong khi bản reduce(into:) chỉ vài mili giây. Nguyên nhân chính là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m66.html">Màn danh mục tải file JSON khoảng 200KB, ít khi đổi nhưng phải luôn đúng dữ liệu mới nhất. Muốn giảm băng thông mỗi lần mở app, cách nào phù hợp nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m67.html">PM hỏi &quot;màn thanh toán mới mất bao lâu?&quot; khi yêu cầu còn mơ hồ và phải dùng một SDK bạn chưa từng tích hợp. Cách trả lời phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m68.html">Bạn chạy CABasicAnimation đổi position.x của layer từ 50 sang 250 trong 1 giây. Animation chạy mượt nhưng vừa xong là layer nhảy về vị trí cũ. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m69.html">User tự viết == chỉ so sánh id, còn Hashable để compiler tự sinh phần còn lại. Đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-mid-m70.html">JSON dùng snake_case và bạn đặt keyDecodingStrategy = .convertFromSnakeCase, nhưng model khai báo userID thì decode ném keyNotFound. Vì sao?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

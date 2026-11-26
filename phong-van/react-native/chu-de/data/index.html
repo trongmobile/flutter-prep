@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn React Native: Networking &amp; Storage — Mobile Interview</title>
-<meta name="description" content="14 câu hỏi phỏng vấn React Native về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 19 câu quiz trắc nghiệm.">
+<meta name="description" content="14 câu hỏi phỏng vấn React Native về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 24 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/data/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn React Native: Networking &amp; Storage — Mobile Interview">
-<meta property="og:description" content="14 câu hỏi phỏng vấn React Native về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 19 câu quiz trắc nghiệm.">
+<meta property="og:description" content="14 câu hỏi phỏng vấn React Native về Networking &amp; Storage từ Fresher đến Senior, có đáp án mẫu và 24 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/react-native/chu-de/data/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-react-native.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · react native · chủ đề</div>
   <h1>Câu hỏi phỏng vấn React Native: Networking &amp; Storage</h1>
-  <p class="subtitle">14 câu hỏi kèm đáp án mẫu và 19 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">14 câu hỏi kèm đáp án mẫu và 24 câu quiz về Networking &amp; Storage, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> React Native Fresher</h2><a class="section-sub" href="../../../../phong-van/react-native/fresher/">Mọi chủ đề Fresher →</a></div>
@@ -60,6 +60,7 @@
     <li><a href="../../../../s/rn-fre-m36.html">Cách đúng để lưu rồi đọc lại object user bằng AsyncStorage là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-fre-m37.html">await AsyncStorage.getItem(&#39;token&#39;) trả về gì khi key token chưa từng được lưu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-fre-m54.html">Key visits đang lưu số lần mở app, và const raw = await AsyncStorage.getItem(&#39;visits&#39;) cho &#39;5&#39;. Sau lệnh await AsyncStorage.setItem(&#39;visits&#39;, String(raw + 1)), giá trị lưu cho visits là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-fre-m66.html">Màn hình dưới đây gọi API ngay trong thân component. Sau khi màn hình mở, chuyện gì xảy ra?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -77,6 +78,7 @@
     <li><a href="../../../../s/rn-jun-m48.html">Người dùng gõ nhanh ab rồi abc; vì mạng không đảm bảo thứ tự nên response của ab về sau response của abc, danh sách hiển thị kết quả sai. Cách nào xử lý triệt để lỗi này?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-jun-m49.html">Lần đầu mở app, key settings chưa từng được ghi. Đoạn code sau cho kết quả gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-jun-m57.html">Ô tìm kiếm gọi API bằng chuỗi nối fetch(&#39;https://api.shop.vn/search?q=&#39; + keyword). Người dùng gõ cà phê &amp; trà, nhưng server chỉ nhận q chứa phần cà phê và thấy thêm một tham số lạ. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-jun-m67.html">Lưu bản nháp vào AsyncStorage rồi đọc lại như dưới đây. Dòng cuối in ra gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -89,6 +91,8 @@
     <li><a href="../../../../s/rn-mid-m43.html">Feed dùng useInfiniteQuery (TanStack Query v5), mỗi trang API trả về { items: Post[], nextCursor?: string }. Cách đúng để đưa dữ liệu vào FlatList là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-mid-m50.html">Theo cấu hình mặc định của TanStack Query v5 và giả sử máy có mạng, queryFn dưới đây luôn ném lỗi. queryFn được gọi tổng cộng bao nhiêu lần trước khi isError thành true?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-mid-m57.html">Màn Đơn hàng dùng Apollo Client với useQuery(ORDERS) và cấu hình mặc định. Trạng thái một đơn vừa đổi trên server, nhưng khi người dùng rời màn rồi mở lại thì vẫn thấy trạng thái cũ và không có request mạng nào được gửi. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-mid-m64.html">TanStack Query v5, userId chưa có nên query đang bị tắt. Với đoạn code dưới đây, isPending và isLoading lúc này có giá trị gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-mid-m70.html">Danh sách phân trang dùng TanStack Query v5: mỗi lần chuyển trang, data thành undefined trong lúc chờ nên danh sách nháy thành trống. Cách giữ dữ liệu trang trước cho tới khi trang mới tải xong là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -100,6 +104,7 @@
     <li><a href="../../../../s/rn-sen-m50.html">Nút tim dùng optimistic update như dưới. QA thấy thỉnh thoảng nút bật đỏ rồi nháy về trạng thái cũ vài trăm ms mới đỏ lại, nhất là khi feed đang refetch (pull-to-refresh). Thiếu bước nào trong onMutate?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-sen-m52.html">App gửi video 300MB bằng fetch với FormData từ code JS. Người dùng khoá màn hình hoặc chuyển sang app khác thì việc upload hay đứt giữa chừng. Hướng thiết kế đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/rn-sen-m59.html">QA chỉnh đồng hồ máy nhanh hơn thực tế hai ngày (access token sống 15 phút). App liên tục gọi refresh() trước mỗi request, vì token mới nhận về vẫn bị coi là hết hạn. Nguyên nhân gốc và cách xử lý hợp lý là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/rn-sen-m64.html">Người dùng vào thang máy hoặc đổi từ Wi-Fi sang 4G; WebSocket của màn theo dõi đơn hàng không báo onclose hay onerror nhưng cũng không nhận thêm tin nào, UI đứng yên mà vẫn hiện &quot;Đã kết nối&quot;. Cách thiết kế đúng để phát hiện tình huống này là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>

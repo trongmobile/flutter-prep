@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Flutter Middle: App bán gói Premium qua in-app purchase. Dev làm đơn giản: khi purchaseStream báo Purcha…</title>
+<meta name="description" content="Dữ liệu và code chạy trên thiết bị của người dùng luôn có thể bị sửa (root/jailbreak, chỉnh SharedPreferences, hook), và biên lai có thể bị giả hoặc dùng lại…">
+<link rel="canonical" href="https://trongmobile.github.io/flutter-prep/s/mid-m64.html">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mobile Interview">
+<meta property="og:title" content="Quiz Flutter Middle: App bán gói Premium qua in-app purchase. Dev làm đơn giản: khi purchaseStream báo Purcha…">
+<meta property="og:description" content="Câu trắc nghiệm 4 đáp án — bạn chọn đúng không? Làm thử và xem giải thích chi tiết.">
+<meta property="og:url" content="https://trongmobile.github.io/flutter-prep/s/mid-m64.html">
+<meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z' fill='%233fb8d6'/%3E%3Cpath d='M7.5 8l3 2.5-3 2.5M12.5 13h4' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<script>try{var p=JSON.parse(localStorage.getItem("fip.prefs.v1")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme}catch(e){}</script>
+<script data-goatcounter="https://interview.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://trongmobile.github.io/flutter-prep/"},{"@type":"ListItem","position":2,"name":"Câu hỏi phỏng vấn","item":"https://trongmobile.github.io/flutter-prep/phong-van/"},{"@type":"ListItem","position":3,"name":"Flutter","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/"},{"@type":"ListItem","position":4,"name":"Middle","item":"https://trongmobile.github.io/flutter-prep/phong-van/flutter/middle/"},{"@type":"ListItem","position":5,"name":"App bán gói Premium qua in-app purchase. Dev là…","item":"https://trongmobile.github.io/flutter-prep/s/mid-m64.html"}]}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path class="brand-mark-bubble" d="M7 3h10a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-7l-4.2 3.4a.6.6 0 0 1-1-.47V17.6A5 5 0 0 1 2 13V8a5 5 0 0 1 5-5z"/><path class="brand-mark-prompt" d="M7.5 8l3 2.5-3 2.5M12.5 13h4"/></svg>Interview</a>
+    <nav class="nav" aria-label="Câu hỏi phỏng vấn theo nền tảng">
+      <a href="../phong-van/flutter/" class="active" aria-current="page">Flutter</a>
+      <a href="../phong-van/android/">Android</a>
+      <a href="../phong-van/ios/">iOS</a>
+      <a href="../phong-van/react-native/">React Native</a>
+    </nav>
+    <div class="topbar-actions"><a class="btn btn-primary static-cta" href="../#/flutter">Mở app ôn luyện</a></div>
+  </div>
+</header>
+<main class="page static-page">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../">Trang chủ</a> <span class="crumb-sep">›</span> <a href="../phong-van/">Câu hỏi phỏng vấn</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/">Flutter</a> <span class="crumb-sep">›</span> <a href="../phong-van/flutter/middle/">Middle</a> <span class="crumb-sep">›</span> <span aria-current="page">App bán gói Premium qua in-app purchase. Dev là…</span>
+</nav>
+
+<article class="card question-page rank-amber">
+  <div class="quiz-tags"><span class="tag">Flutter</span><span class="rank-tag rank-amber">Middle</span><a class="tag" href="../phong-van/flutter/chu-de/design/">System Design</a><span class="tag">Quiz trắc nghiệm</span></div>
+  <h1 class="question-title">App bán gói Premium qua in-app purchase. Dev làm đơn giản: khi <code>purchaseStream</code> báo <code>PurchaseStatus.purchased</code>, app lưu <code>isPremium = true</code> vào <code>SharedPreferences</code> rồi mở khóa tính năng. Hạn chế lớn nhất của thiết kế này và cách cải thiện đúng là gì?</h1>
+  
+  
+    <ol class="options static-options">
+      <li class="opt"><span class="opt-key">A</span><span class="opt-text">Dữ liệu cục bộ bị xóa mỗi lần cập nhật app; cần giữ cờ trong biến toàn cục để quyền không bị mất</span></li>
+      <li class="opt"><span class="opt-key">B</span><span class="opt-text">Cờ nằm trên máy nên dễ bị sửa hoặc giả mạo; gửi biên lai lên server để xác minh với Apple/Google rồi cấp quyền</span></li>
+      <li class="opt"><span class="opt-key">C</span><span class="opt-text">Chỉ cần mã hóa giá trị cờ trước khi lưu vào <code>SharedPreferences</code>, khi đó người dùng không thể giả mạo quyền Premium</span></li>
+      <li class="opt"><span class="opt-key">D</span><span class="opt-text">Cần bắt người dùng đăng nhập lại mỗi lần mở app, vì quyền đã mua chỉ có hiệu lực trong phiên đăng nhập hiện tại</span></li>
+    </ol>
+    <details class="reveal">
+      <summary>Xem đáp án</summary>
+      <div class="explain ok"><strong>Đáp án đúng: B</strong><div>Dữ liệu và code chạy trên thiết bị của người dùng luôn có thể bị sửa (root/jailbreak, chỉnh <code>SharedPreferences</code>, hook), và biên lai có thể bị giả hoặc dùng lại. Thiết kế đúng là xác minh phía server: app gửi purchase token/biên lai (receipt) lên backend, backend gọi API của Google Play hoặc App Store để xác minh, lưu quyền theo tài khoản (nhờ đó đồng bộ nhiều thiết bị, xử lý hoàn tiền và hết hạn) rồi trả trạng thái về; client chỉ cache để hiển thị. Mã hóa cờ cục bộ không giải quyết được vì khóa nằm ngay trong app, còn <code>SharedPreferences</code> không bị xóa khi cập nhật app.</div></div>
+      
+    </details>
+  <div class="btn-row"><a class="btn btn-primary" href="../#/q/mid-m64">Luyện câu này trong app</a></div>
+</article>
+<nav class="pager" aria-label="Câu trước, câu sau">
+  <a href="../s/mid-m63.html"><span class="muted small">← Câu trước</span><span>App nhận trạng thái Bluetooth từ native qua EventChannel. Màn hình listen vào r…</span></a>
+  <a class="pager-next" href="../s/mid-m65.html"><span class="muted small">Câu sau →</span><span>App giải mã phần payload của access token JWT để đọc exp (biết khi nào cần refr…</span></a>
+</nav>
+<section class="card next-steps">
+  <h2>Ôn tiếp Flutter Middle</h2>
+  <div class="btn-row">
+    <a class="btn btn-rank rank-amber" href="../phong-van/flutter/middle/">Tất cả câu hỏi Flutter Middle</a>
+    <a class="btn btn-ghost" href="../#/flutter/quiz?rank=middle&amp;start=1">Quiz Middle 10 câu</a>
+    <a class="btn btn-ghost" href="../#/flutter/interview">Phỏng vấn thử</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>Cùng chủ đề System Design</h2><a class="section-sub" href="../phong-van/flutter/chu-de/design/">Xem tất cả →</a></div>
+  <ul class="link-list">
+    <li><a href="../s/mid-m45.html">App dùng firebase_messaging. User bấm vào notification khi app đã bị kill hẳn, app khởi động nhưng không mở màn chi tiết đơn hàng dù đã lắng nghe FirebaseMessaging.onMessageOpenedApp. Cách xử lý đúng?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/mid-m59.html">Backend sắp ngừng hỗ trợ các bản app cũ hơn 3.0 và sản phẩm muốn bắt buộc người dùng cập nhật. Thiết kế nào phù hợp nhất?</a> <span class="rank-tag rank-amber">Middle</span> <span class="tag">Quiz</span></li>
+    <li><a href="../s/sen-q12.html">Bạn thiết kế observability cho một app Flutter có hàng triệu user như thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/sen-q13.html">App cần đồng bộ dữ liệu và nhận thông báo khi đang ở background trên cả iOS và Android. Những giới hạn nào của hệ điều hành ảnh hưởng đến thiết kế?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/sen-q28.html">CTO hỏi có nên chuyển hai app native (Kotlin và Swift) đang có sang Flutter không. Bạn đánh giá và đề xuất thế nào, ngoài việc so sánh hiệu năng?</a> <span class="rank-tag rank-purple">Senior</span></li>
+    <li><a href="../s/sen-q29.html">Bạn thiết kế hệ thống ghi sự kiện analytics phía Flutter cho app triệu người dùng: không mất sự kiện khi mất mạng hoặc app bị kill, không làm chậm UI hay hao pin, và tuân thủ quyền riêng tư. Thiết kế thế nào?</a> <span class="rank-tag rank-purple">Senior</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">
+  <p>Flutter · Android · iOS · React Native — câu hỏi phỏng vấn, flashcard, quiz &amp; phỏng vấn thử theo rank</p>
+  <p><a href="../phong-van/">Câu hỏi phỏng vấn</a> · <a href="../#/">Ôn luyện miễn phí</a> · <a href="../#/community">Cộng đồng &amp; góp ý</a> · <a href="../quyen-rieng-tu/">Quyền riêng tư</a></p>
+</footer>
+</body>
+</html>

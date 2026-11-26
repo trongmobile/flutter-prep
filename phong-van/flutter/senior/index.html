@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta name="description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Flutter Senior (100 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 60 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
+<meta property="og:description" content="100 câu hỏi phỏng vấn Flutter Senior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/flutter/senior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-flutter.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-purple">
   <div class="eyebrow">phỏng vấn · flutter · senior (4+ năm)</div>
   <h1>Câu hỏi phỏng vấn Flutter Senior</h1>
-  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 100 câu hỏi kèm đáp án mẫu và 60 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Rendering, native/FFI, performance, kiến trúc lớn, system design, leadership. Gồm 100 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-purple" href="../../../#/flutter/study/senior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/flutter/quiz?rank=senior&amp;start=1">Làm quiz Senior</a>
@@ -74,7 +74,7 @@
     <li><a href="#security">Security</a> <span class="count">4</span></li>
     <li><a href="#design">System Design</a> <span class="count">11</span></li>
     <li><a href="#soft">Behavioral</a> <span class="count">10</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">60</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
   </ul>
 </nav>
 <section id="dart">
@@ -1690,6 +1690,16 @@ firebase crashlytics:symbols:upload --app=<span class="tk-num">1</span>:<span cl
     <li><a href="../../../s/sen-m58.html">App tải gói giao diện (file ZIP) từ server rồi giải nén vào thư mục tài liệu của app. Pentest cho thấy một file ZIP được tạo đặc biệt có thể ghi đè file nằm ngoài thư mục đích. Lỗi nằm ở đâu và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/sen-m59.html">Form chỉnh sửa hồ sơ dùng Notifier dưới đây. Khi currentUserProvider phát giá trị mới (ví dụ vừa đồng bộ từ server), nội dung người dùng đang gõ dở trong form bị reset về dữ liệu từ server. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/sen-m60.html">Constructor của lớp cha gọi một method bị lớp con override: đoạn code sau in ra gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m61.html">Widget Tile (một StatefulWidget đếm số lần bấm, có log trong initState, deactivate, activate, dispose) được tạo với một GlobalKey do State của cha giữ. Trong cùng một lần setState, cha đổi Column(children: [tile]) thành Row(children: [tile]). Điều gì xảy ra với State của Tile?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m62.html">App dùng go_router với ShellRoute có thanh điều hướng dưới. Route video là con của /home trong shell, nên khi mở /home/video trang video hiện bên trong shell và vẫn còn thanh dưới. Muốn trang video phủ toàn màn hình mà vẫn là một route của go_router (có URL, deep link), cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m63.html">Nút &#39;Đặt hàng&#39; gọi bloc.add(SubmitOrder()), handler await API tạo đơn rồi mới emit. Người dùng bấm hai lần liên tiếp rất nhanh và hệ thống tạo ra hai đơn. Giá trị transformer nào của bloc_concurrency xử lý đúng nhất?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m64.html">cast trả về một view lười, khác với List.from. Đoạn code sau in ra những gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m65.html">Để giới hạn tên hiển thị tối đa 4 ký tự, dev viết name.substring(0, 4). Với name = &#39;An 👍👍👍&#39;, kết quả có vấn đề gì và cách cắt an toàn là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m66.html">Đoạn code sau in ra theo thứ tự nào? (Từ đó suy ra vì sao vòng while (!ready) await Future&lt;void&gt;.value(); có thể làm đứng giao diện dù đã dùng await.)</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m67.html">Widget test đọc file thật bằng await File(...).readAsString() ngay trong testWidgets và test bị treo tới khi timeout dù file rất nhỏ. Nguyên nhân và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m68.html">Chỉ một dev duy nhất hiểu module thanh toán; anh ấy sắp nghỉ phép dài và mọi bug liên quan đều phải chờ anh ấy. Với vai trò tech lead, bạn xử lý lâu dài thế nào để giảm sự phụ thuộc vào một người?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m69.html">Product muốn thêm widget màn hình chính trên iPhone hiển thị số dư của app Flutter và cập nhật định kỳ. Cách tiếp cận phù hợp nhất là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/sen-m70.html">Màn hình flash sale đếm ngược tới endsAt và chỉ cho đặt hàng khi còn thời gian, tính bằng endsAt.difference(DateTime.now()). Người dùng chỉnh đồng hồ máy lùi lại thì đếm ngược kéo dài và vẫn mua được giá sale. Thiết kế đúng là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

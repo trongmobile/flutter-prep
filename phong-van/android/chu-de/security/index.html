@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Câu hỏi phỏng vấn Android: Security — Mobile Interview</title>
-<meta name="description" content="9 câu hỏi phỏng vấn Android về Security từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta name="description" content="9 câu hỏi phỏng vấn Android về Security từ Fresher đến Senior, có đáp án mẫu và 13 câu quiz trắc nghiệm.">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/security/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
 <meta property="og:title" content="Câu hỏi phỏng vấn Android: Security — Mobile Interview">
-<meta property="og:description" content="9 câu hỏi phỏng vấn Android về Security từ Fresher đến Senior, có đáp án mẫu và 9 câu quiz trắc nghiệm.">
+<meta property="og:description" content="9 câu hỏi phỏng vấn Android về Security từ Fresher đến Senior, có đáp án mẫu và 13 câu quiz trắc nghiệm.">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/chu-de/security/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,13 +47,14 @@
 <header class="view-head">
   <div class="eyebrow">phỏng vấn · android · chủ đề</div>
   <h1>Câu hỏi phỏng vấn Android: Security</h1>
-  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 9 câu quiz về Security, xếp theo rank từ Fresher đến Senior.</p>
+  <p class="subtitle">9 câu hỏi kèm đáp án mẫu và 13 câu quiz về Security, xếp theo rank từ Fresher đến Senior.</p>
 </header>
 <section>
   <div class="section-head"><h2><span class="rank-tag rank-green">Fresher</span> Android Fresher</h2><a class="section-sub" href="../../../../phong-van/android/fresher/">Mọi chủ đề Fresher →</a></div>
   <ul class="link-list">
     <li><a href="../../../../s/and-fre-q45.html">Sandbox của app Android là gì? Internal storage và external storage khác nhau thế nào, permission &quot;normal&quot; khác &quot;dangerous&quot; ra sao, và xin quyền lúc chạy cần lưu ý gì?</a></li>
     <li><a href="../../../../s/and-fre-m50.html">Từ Android 6.0 (API 23), app có targetSdk từ 23 trở lên muốn dùng quyền nguy hiểm (dangerous) như CAMERA thì cần làm gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-fre-m67.html">Bản release của app vẫn còn dòng Log.d(&quot;Auth&quot;, &quot;token=$token&quot;). Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -63,6 +64,7 @@
     <li><a href="../../../../s/and-jun-q48.html">Server staging dùng chứng chỉ tự ký nên OkHttp báo SSLHandshakeException. Một đồng nghiệp &quot;sửa&quot; bằng cách tạo X509TrustManager không kiểm tra gì và hostnameVerifier { _, _ -&gt; true }, app chạy ngay. Vì sao tuyệt đối không được làm vậy, và cách xử lý đúng khi cần gọi server staging?</a></li>
     <li><a href="../../../../s/and-jun-m47.html">App có targetSdk 34 và không cấu hình Network Security Config. Request OkHttp gọi tới http://api.example.com/users (HTTP, không phải HTTPS) trên Android 14 sẽ thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-jun-m54.html">Màn tìm kiếm dùng @RawQuery và dựng câu SQL như đoạn code dưới, trong đó input là chuỗi người dùng gõ. Rủi ro bảo mật của cách này và cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-jun-m64.html">Màn nhập mã OTP cần chặn chụp và quay màn hình, đồng thời ẩn nội dung trong danh sách Recent apps. Cách làm nào đúng?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -72,6 +74,7 @@
     <li><a href="../../../../s/and-mid-q50.html">Bạn thêm đăng nhập bằng vân tay/khuôn mặt để mở app và xác nhận chuyển tiền. Bản đầu gọi BiometricPrompt, khi onAuthenticationSucceeded thì đặt isAuthenticated = true rồi gọi API. Security review chặn vì sao, và bạn làm đúng thế nào với authenticators và CryptoObject?</a></li>
     <li><a href="../../../../s/and-mid-m42.html">Khoá AES nằm trong Android Keystore, được tạo bằng KeyGenParameterSpec giữ cấu hình mặc định (yêu cầu mã hoá ngẫu nhiên). Đoạn mã hoá dưới đây truyền IV cố định FIXED_IV sẽ thế nào?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-mid-m53.html">App tải một gói nội dung .zip từ server rồi giải nén bằng đoạn code dưới. Nếu file zip bị kẻ xấu chế tác, rủi ro bảo mật chính của đoạn code là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-mid-m64.html">App tự sinh mã OTP đặt lại mật khẩu bằng java.util.Random như dòng code sau. Vấn đề bảo mật chính là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
@@ -85,6 +88,7 @@
     <li><a href="../../../../s/and-sen-m32.html">Với Network Security Config sau, chuyện gì xảy ra khi app kết nối tới api.example.com sau ngày 2026-01-01?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-sen-m33.html">App vừa nhận integrity token từ Play Integrity API. Cách dùng token nào đúng?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../../s/and-sen-m34.html">API key bí mật được đưa vào BuildConfig và bản release đã bật R8. Nhận định nào đúng?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../../s/and-sen-m67.html">Bạn triển khai đăng nhập OAuth 2.0 (authorization code) với nhà cung cấp danh tính của công ty cho app Android. Cách làm nào đúng với khuyến nghị bảo mật cho native app?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 <section>
