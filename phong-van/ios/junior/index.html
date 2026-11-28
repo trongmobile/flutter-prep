@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn iOS Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
+<title>Câu hỏi phỏng vấn iOS Junior (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 73 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
+<meta property="og:title" content="Câu hỏi phỏng vấn iOS Junior (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn iOS Junior kèm đáp án mẫu và 73 câu quiz trắc nghiệm: ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đờ…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/ios/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-ios.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · ios · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn iOS Junior</h1>
-  <p class="subtitle">ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app. Gồm 50 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">ARC &amp; retain cycle, closure, protocol, delegate, GCD, URLSession, Codable, vòng đời app. Gồm 53 câu hỏi kèm đáp án mẫu và 73 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/ios/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/ios/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -68,15 +68,15 @@
     <li><a href="#uikit">UIKit &amp; Lifecycle</a> <span class="count">6</span></li>
     <li><a href="#swiftui">SwiftUI</a> <span class="count">5</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">1</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">6</span></li>
     <li><a href="#platform">App lifecycle &amp; Platform</a> <span class="count">4</span></li>
-    <li><a href="#perf">Performance</a> <span class="count">1</span></li>
+    <li><a href="#perf">Performance</a> <span class="count">2</span></li>
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">2</span></li>
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">1</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">1</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">73</span></li>
   </ul>
 </nav>
 <section id="swift">
@@ -823,6 +823,25 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q51.html">Màn hình Bộ lọc (<code>FilterViewController</code>) cần trả bộ lọc đã chọn về màn hình Danh sách. Trong codebase hiện tại có chỗ dùng delegate, chỗ dùng closure callback, chỗ lại bắn <code>NotificationCenter</code>. Bạn chọn cách nào cho tình huống này, và khi nào hai cách còn lại hợp lý hơn?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Với giao tiếp 1-1 trực tiếp giữa màn hình Danh sách và màn hình Bộ lọc, mình ưu tiên dùng delegate hoặc closure callback thay vì <code>NotificationCenter</code>, vì hai cách này tạo hợp đồng giao tiếp rõ ràng, được compiler kiểm tra kiểu dữ liệu và dễ truy vết luồng chạy. <code>delegate</code> (qua protocol kèm <code>weak var delegate</code>) rất hợp khi màn hình con có nhiều sự kiện khác nhau cần báo về như áp dụng lọc, đặt lại mặc định hay huỷ, hoặc khi màn hình đó được tái sử dụng ở nhiều nơi theo chuẩn quen thuộc của UIKit; điểm trừ là phải viết thêm protocol nên hơi dài dòng. Closure callback (ví dụ <code>var onApplyFilter: ((Filter) -&gt; Void)?</code>) gọn hơn khi chỉ có một hoặc hai hành động trả kết quả đơn giản, nhưng phía màn hình Danh sách phải nhớ dùng <code>[weak self]</code> trong closure vì màn hình Bộ lọc đang giữ strong reference tới closure đó. Còn <code>NotificationCenter</code> chỉ phù hợp cho mô hình phát sóng 1-nhiều tới các màn hình không liên quan trực tiếp (như sự kiện đăng xuất hay cập nhật giỏ hàng toàn app), không nên dùng cho cặp màn hình cha-con vì khó kiểm soát ai đang lắng nghe, dễ sai tên notification hoặc ép kiểu <code>userInfo</code> thủ công, và dễ sót việc gỡ observer.</div>
+        <pre class="code-block"><code><span class="tk-kw">protocol</span> <span class="tk-type">FilterViewControllerDelegate</span>: <span class="tk-type">AnyObject</span> {
+  <span class="tk-kw">func</span> filterViewController(_ vc: <span class="tk-type">FilterViewController</span>, didApply filter: <span class="tk-type">Filter</span>)
+}
+
+<span class="tk-kw">final</span> <span class="tk-kw">class</span> <span class="tk-type">FilterViewController</span>: <span class="tk-type">UIViewController</span> {
+  <span class="tk-kw">weak</span> <span class="tk-kw">var</span> delegate: <span class="tk-type">FilterViewControllerDelegate</span>?
+  <span class="tk-com">// Hoặc dùng closure nếu chỉ có một sự kiện đơn giản:</span>
+  <span class="tk-kw">var</span> onApplyFilter: ((<span class="tk-type">Filter</span>) -&gt; <span class="tk-type">Void</span>)?
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="data">
@@ -1083,6 +1102,19 @@ titleLabel.setContentCompressionResistancePriority(.defaultHigh, <span class="tk
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q52.html">Màn hình giới thiệu (onboarding) và banner quảng cáo dùng nhiều ảnh độ phân giải cao. Sau khi cuộn qua vài trang, lượng RAM của app tăng vọt và không giảm ngay dù đã đóng màn hình. Tìm hiểu thấy code đang dùng <code>UIImage(named:)</code> cho mọi ảnh; điều này khác gì với <code>UIImage(contentsOfFile:)</code>, và bạn xử lý bộ nhớ thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text"><code>UIImage(named:)</code> có cơ chế cache hệ thống nội bộ: UIKit giữ lại dữ liệu ảnh đã giải mã trong RAM để những lần gọi tiếp theo hiển thị nhanh hơn, và chỉ giải phóng khi hệ thống phát cảnh báo thiếu bộ nhớ. Cơ chế này rất hiệu quả cho các icon, nút bấm hoặc ảnh nhỏ lặp lại ở nhiều màn hình, nhưng nếu dùng cho ảnh banner hay onboarding kích thước lớn chỉ xem một vài lần thì ảnh vẫn nằm trong RAM khá lâu sau khi người dùng đã rời màn hình. Ngược lại, <code>UIImage(contentsOfFile:)</code> nạp ảnh trực tiếp từ đường dẫn file trong bundle hoặc sandbox mà không đưa vào cache toàn cục của <code>UIImage</code>, nên khi màn hình đóng và không còn biến nào giữ <code>UIImage</code> nữa thì bộ nhớ ảnh được giải phóng ngay. Với các màn hình dùng nhiều ảnh lớn không lặp lại, mình sẽ chuyển các ảnh đó ra khỏi Asset Catalog sang file tài nguyên trong bundle và nạp bằng <code>UIImage(contentsOfFile:)</code>, đồng thời kiểm tra lại kích thước ảnh đầu vào để vừa với độ phân giải cần hiển thị thay vì nhét ảnh gốc quá dư thừa.</div>
+        <pre class="code-block"><code><span class="tk-kw">if</span> <span class="tk-kw">let</span> path = <span class="tk-type">Bundle</span>.main.path(forResource: <span class="tk-str">&quot;onboarding_1&quot;</span>, ofType: <span class="tk-str">&quot;png&quot;</span>) {
+  imageView.image = <span class="tk-type">UIImage</span>(contentsOfFile: path)
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="testing">
@@ -1230,6 +1262,17 @@ passwordField.textContentType = .password</code></pre>
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/ios-jun-q53.html">Bạn được giao sửa một bug giao diện nhỏ trên màn hình thanh toán. Khi mở file ra, bạn thấy code cũ ở đó khá rối, hàm dài hàng trăm dòng và đặt tên khó hiểu, nhưng phần đó vẫn đang chạy ổn. Bạn có tiện tay refactor luôn không, và xử lý thế nào?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Mình sẽ không tự ý refactor diện rộng ngoài phạm vi task nếu chưa trao đổi với team và chưa có unit test bảo vệ, đặc biệt ở màn hình nhạy cảm như thanh toán vì rất dễ tạo ra lỗi hồi quy khó lường. Trước mắt, mình tập trung sửa đúng bug được giao với thay đổi gọn gàng nhất có thể để reviewer dễ kiểm tra và QA test tập trung đúng vùng ảnh hưởng. Nếu đoạn code rối chạm trực tiếp vào chỗ mình sửa, mình chỉ dọn nhẹ cục bộ như tách một hàm phụ rõ nghĩa kèm unit test cho phần logic mới sửa, rồi ghi chú phần nợ kỹ thuật còn lại để báo với tech lead và tạo một ticket refactor riêng có thời gian kiểm thử đầy đủ. Cách này giúp cải thiện chất lượng codebase từng bước an toàn mà không làm trễ tiến độ hay gây rủi ro cho bản phát hành.</div>
+        
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="quiz">
@@ -1305,6 +1348,9 @@ passwordField.textContentType = .password</code></pre>
     <li><a href="../../../s/ios-jun-m68.html">Cache dùng chung bên dưới đọc bằng sync và ghi bằng async(flags: .barrier) trên global queue, nhưng thỉnh thoảng vẫn xảy ra data race. Nguyên nhân là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-jun-m69.html">Người dùng thoát app khi đang lưu một lô dữ liệu cần thêm vài giây để hoàn tất. Cách đúng để xin thêm thời gian chạy ngắn ở background là gì?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/ios-jun-m70.html">Ô nhập số tiền chỉ cho phép ký tự số nhờ delegate dưới đây. Người dùng gõ số bình thường nhưng bấm xoá thì không xoá được. Vì sao?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m71.html">App có UITabBarController chứa UINavigationController. Bạn muốn ẩn thanh tab bar khi đẩy vào DetailViewController nên viết dòng sau trong viewDidLoad của DetailViewController, nhưng tab bar vẫn hiện ở màn chi tiết. Cách sửa đúng là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m72.html">App tài chính gọi API GET /user/profile bằng URLSession.shared trả về thông tin cá nhân nhạy cảm (CCCD, số dư). Nếu server trả về header cho phép cache, dữ liệu này có thể bị ghi xuống đĩa trong sandbox qua URLCache.shared. Cách cấu hình session nào ngăn lưu cache và cookie xuống đĩa?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/ios-jun-m73.html">Bạn viết unit test cho hàm decode JSON sau, nhưng khi cố tình sửa json thành dữ liệu hỏng khiến JSONDecoder ném lỗi, test vẫn báo pass. Nguyên nhân là gì và sửa thế nào cho gọn?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>

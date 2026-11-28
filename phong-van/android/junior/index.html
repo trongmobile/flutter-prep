@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Câu hỏi phỏng vấn Android Junior (50 câu có đáp án) — Mobile Interview</title>
-<meta name="description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<title>Câu hỏi phỏng vấn Android Junior (53 câu có đáp án) — Mobile Interview</title>
+<meta name="description" content="53 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 73 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <link rel="canonical" href="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Interview">
-<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (50 câu có đáp án) — Mobile Interview">
-<meta property="og:description" content="50 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 70 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
+<meta property="og:title" content="Câu hỏi phỏng vấn Android Junior (53 câu có đáp án) — Mobile Interview">
+<meta property="og:description" content="53 câu hỏi phỏng vấn Android Junior kèm đáp án mẫu và 73 câu quiz trắc nghiệm: Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retr…">
 <meta property="og:url" content="https://trongmobile.github.io/flutter-prep/phong-van/android/junior/">
 <meta property="og:image" content="https://trongmobile.github.io/flutter-prep/assets/og-android.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
 <header class="view-head rank-blue">
   <div class="eyebrow">phỏng vấn · android · junior (1–2 năm)</div>
   <h1>Câu hỏi phỏng vấn Android Junior</h1>
-  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 50 câu hỏi kèm đáp án mẫu và 70 câu quiz trắc nghiệm.</p>
+  <p class="subtitle">Null safety, lifecycle, ViewModel, StateFlow/LiveData, Coroutines cơ bản, Retrofit, Room. Gồm 53 câu hỏi kèm đáp án mẫu và 73 câu quiz trắc nghiệm.</p>
   <div class="btn-row">
     <a class="btn btn-rank rank-blue" href="../../../#/android/study/junior">Ôn bằng flashcard</a>
     <a class="btn btn-ghost" href="../../../#/android/quiz?rank=junior&amp;start=1">Làm quiz Junior</a>
@@ -66,9 +66,9 @@
     <li><a href="#java">Java &amp; JVM</a> <span class="count">4</span></li>
     <li><a href="#coroutines">Coroutines &amp; Flow</a> <span class="count">6</span></li>
     <li><a href="#components">Activity, Fragment &amp; Lifecycle</a> <span class="count">8</span></li>
-    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">4</span></li>
+    <li><a href="#ui">Jetpack Compose &amp; View</a> <span class="count">5</span></li>
     <li><a href="#navigation">Navigation</a> <span class="count">3</span></li>
-    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">2</span></li>
+    <li><a href="#arch">Kiến trúc &amp; DI</a> <span class="count">3</span></li>
     <li><a href="#data">Networking &amp; Storage</a> <span class="count">5</span></li>
     <li><a href="#background">Background &amp; Service</a> <span class="count">1</span></li>
     <li><a href="#build">Gradle &amp; Build</a> <span class="count">2</span></li>
@@ -76,8 +76,8 @@
     <li><a href="#testing">Testing &amp; CI/CD</a> <span class="count">3</span></li>
     <li><a href="#security">Security</a> <span class="count">2</span></li>
     <li><a href="#design">System Design</a> <span class="count">1</span></li>
-    <li><a href="#soft">Behavioral</a> <span class="count">2</span></li>
-    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">70</span></li>
+    <li><a href="#soft">Behavioral</a> <span class="count">3</span></li>
+    <li><a href="#quiz">Quiz trắc nghiệm</a> <span class="count">73</span></li>
   </ul>
 </nav>
 <section id="kotlin">
@@ -644,6 +644,28 @@ adapter.submitList(products.map { <span class="tk-kw">if</span> (it.id == id) it
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q52.html">Trong Jetpack Compose, vì sao không nên gọi API hay kích hoạt hiển thị <code>Snackbar</code> trực tiếp bên trong thân hàm <code>@Composable</code>? Bạn phân biệt và sử dụng <code>LaunchedEffect</code> với <code>rememberCoroutineScope</code> thế nào cho hai tình huống: tự động tải dữ liệu khi mở màn hình và hiện <code>Snackbar</code> khi người dùng bấm nút?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Hàm <code>@Composable</code> có thể chạy lại rất nhiều lần (recompose) mỗi khi state đổi, thậm chí chạy không theo thứ tự cố định hoặc bị huỷ giữa chừng, nên gọi API hay hiển thị <code>Snackbar</code> trực tiếp trong thân hàm sẽ gây gọi trùng lặp liên tục và hành vi giao diện khó kiểm soát. Các tác vụ phụ (side effect) cần đưa ra khỏi pha composition bằng API chuyên biệt. Với việc tự tải dữ liệu khi mở màn hình hoặc khi một tham số đầu vào thay đổi, bạn dùng <code>LaunchedEffect(key)</code>: coroutine bên trong chỉ chạy khi composable vào màn hình hoặc khi <code>key</code> đổi giá trị, và tự động bị huỷ nếu composable rời khỏi cây giao diện (trong thực tế nên gọi hàm của <code>ViewModel</code> bên trong <code>LaunchedEffect</code> hoặc <code>init</code> của <code>ViewModel</code> thay vì gọi thẳng network). Còn khi người dùng bấm nút để hiện <code>Snackbar</code> hoặc cuộn danh sách, hành động nằm trong callback <code>onClick</code> vốn không phải hàm <code>@Composable</code> nên không thể đặt <code>LaunchedEffect</code> vào đó; lúc này bạn tạo scope bằng <code>rememberCoroutineScope()</code> ở thân composable rồi gọi <code>scope.launch { snackbarHostState.showSnackbar(...) }</code> bên trong <code>onClick</code>, coroutine cũng sẽ tự huỷ khi màn hình biến mất.</div>
+        <pre class="code-block"><code><span class="tk-ann">@Composable</span>
+<span class="tk-kw">fun</span> <span class="tk-type">ProfileScreen</span>(userId: <span class="tk-type">String</span>, snackbarHostState: <span class="tk-type">SnackbarHostState</span>, vm: <span class="tk-type">ProfileViewModel</span>) {
+  <span class="tk-kw">val</span> scope = rememberCoroutineScope()
+  <span class="tk-type">LaunchedEffect</span>(userId) {
+    vm.loadUser(userId)
+  }
+  <span class="tk-type">Button</span>(onClick = {
+    scope.launch { snackbarHostState.showSnackbar(<span class="tk-str">&quot;Đã sao chép mã&quot;</span>) }
+  }) {
+    <span class="tk-type">Text</span>(<span class="tk-str">&quot;Sao chép&quot;</span>)
+  }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="navigation">
@@ -785,6 +807,20 @@ findNavController().currentBackStackEntry?.savedStateHandle
             _message.<span class="tk-kw">value</span> = <span class="tk-str">&quot;Không có mạng, đang hiển thị dữ liệu đã lưu&quot;</span> <span class="tk-com">// giữ nguyên danh sách</span>
         }
     }
+}</code></pre>
+        
+      </div>
+    </details>
+    </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q51.html">ViewModel cần lấy chuỗi thông báo lỗi từ <code>strings.xml</code> hoặc kiểm tra kết nối mạng, nên một dev truyền thẳng <code>Activity</code> hoặc <code>Application</code> <code>Context</code> vào constructor của ViewModel. Cách nào gây lỗi nghiêm trọng, cách nào có nhược điểm gì, và bạn thiết kế thế nào để ViewModel sạch và dễ unit test?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Truyền <code>Activity</code> vào <code>ViewModel</code> là lỗi nghiêm trọng vì <code>ViewModel</code> sống sót qua configuration change như xoay màn hình, giữ tham chiếu tới <code>Activity</code> đã bị destroy và toàn bộ cây view của nó, gây memory leak. Dùng <code>AndroidViewModel</code> với <code>Application</code> context thì tránh được leak do <code>Application</code> sống theo vòng đời process, nhưng vẫn có nhược điểm: <code>ViewModel</code> bị gắn chặt với lớp của Android nên khó viết unit test thuần trên JVM (phải mock <code>Application</code> hoặc dùng Robolectric), và <code>Application</code> context có thể không cập nhật cấu hình giao diện hoặc ngôn ngữ theo từng <code>Activity</code>. Cách sạch hơn là không để <code>ViewModel</code> chạm tới <code>Context</code>: với chuỗi hiển thị, <code>ViewModel</code> chỉ phát ra <code>@StringRes</code> hoặc một <code>sealed interface UiText</code> (phân biệt chuỗi động từ server và resource ID kèm tham số), rồi để tầng UI gọi <code>context.getString()</code> hoặc <code>stringResource()</code> để tự ăn đúng ngôn ngữ hiện tại. Còn với các dịch vụ hệ thống như kiểm tra mạng hay đọc cài đặt, hãy bọc sau một interface như <code>NetworkMonitor</code> hoặc <code>SettingsRepository</code> và inject vào <code>ViewModel</code> qua constructor; khi viết unit test chỉ cần truyền một bản fake là kiểm thử được ngay.</div>
+        <pre class="code-block"><code><span class="tk-kw">sealed</span> <span class="tk-kw">interface</span> <span class="tk-type">UiText</span> {
+  <span class="tk-kw">data</span> <span class="tk-kw">class</span> <span class="tk-type">DynamicString</span>(<span class="tk-kw">val</span> <span class="tk-kw">value</span>: <span class="tk-type">String</span>) : <span class="tk-type">UiText</span>
+  <span class="tk-kw">class</span> <span class="tk-type">StringResource</span>(<span class="tk-ann">@StringRes</span> <span class="tk-kw">val</span> resId: <span class="tk-type">Int</span>, <span class="tk-kw">vararg</span> <span class="tk-kw">val</span> args: <span class="tk-type">Any</span>) : <span class="tk-type">UiText</span>
 }</code></pre>
         
       </div>
@@ -1242,6 +1278,17 @@ android {
       </div>
     </details>
     </li>
+    <li class="qa-item">
+      <h3 class="qa-q"><a href="../../../s/and-jun-q53.html">Bạn được giao làm màn Lịch sử giao dịch trong sprint này, nhưng backend chưa làm xong API, còn designer mới có bản thiết kế nháp trên Figma. Bạn làm việc với team và tổ chức code thế nào để không phải ngồi chờ mà vẫn tránh làm lại nhiều khi API xong?</a></h3>
+      <details class="reveal">
+      <summary>Xem đáp án mẫu</summary>
+      <div class="model-answer">
+        <div class="answer-text">Thay vì đợi API và thiết kế hoàn thiện rồi mới bắt đầu, mình sẽ chủ động chốt sớm phần khung với các bên liên quan. Trước tiên, mình trao đổi với backend để thống nhất contract của API: đường dẫn, tham số phân trang hay lọc, cấu trúc JSON trả về và các mã lỗi dự kiến, đồng thời hỏi designer các trạng thái bắt buộc như đang tải, danh sách rỗng, lỗi mạng hay giao dịch bị huỷ để không sót màn hình phụ. Tiếp theo, mình tách biệt phần dữ liệu bằng một interface <code>TransactionRepository</code> và model domain riêng, tạo một <code>FakeTransactionRepository</code> trả về dữ liệu giả đủ các kịch bản (nhiều item, rỗng, lỗi) để dựng trước toàn bộ ViewModel, UI và viết unit test cho logic hiển thị. Nếu cần ghép thử phần networking, mình có thể dùng file JSON mẫu cục bộ hoặc mock server đơn giản để kiểm tra luôn phần parse DTO và mapping. Nhờ tách rõ tầng dữ liệu và chốt contract từ đầu, khi backend xong API mình chỉ cần viết implementation thật nối Retrofit hoặc Room vào interface sẵn có, còn giao diện từ bản Figma nháp thường chỉ cần chỉnh lại khoảng cách hoặc màu sắc mà không phải sửa lại luồng state.</div>
+        
+        
+      </div>
+    </details>
+    </li>
   </ol>
 </section>
 <section id="quiz">
@@ -1317,6 +1364,9 @@ android {
     <li><a href="../../../s/and-jun-m68.html">Màn hình dùng Scaffold với TopAppBar, nhưng vài item đầu của danh sách bị thanh tiêu đề che mất. Đoạn code sau sai ở đâu?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-jun-m69.html">numbers là một Flow thường được collect hai lần. Chương trình in ra những dòng nào, theo đúng thứ tự?</a> <span class="tag">Quiz</span></li>
     <li><a href="../../../s/and-jun-m70.html">Entity Task có field val tags: List&lt;String&gt;. Build báo lỗi Cannot figure out how to save this field into database. Cách xử lý nào cho phép lưu được cả danh sách tag?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m71.html">QA muốn cài song song bản debug và bản release của cùng một ứng dụng trên một chiếc điện thoại để đối chiếu giao diện mà không bị ghi đè lẫn nhau. Cần cấu hình gì trong build.gradle.kts của module :app?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m72.html">Màn chi tiết đơn hàng đặt một RecyclerView (layout_height=&quot;wrap_content&quot;) bên trong NestedScrollView để cuộn chung phần thông tin phía trên và danh sách 500 sản phẩm bên dưới. Vấn đề hiệu năng chính của cách bố trí này là gì?</a> <span class="tag">Quiz</span></li>
+    <li><a href="../../../s/and-jun-m73.html">Khi chạy unit test dưới đây trong src/test (JVM cục bộ, không dùng Robolectric), test báo lỗi Method getMainLooper in android.os.Looper not mocked. Cách sửa đúng để LiveData chạy được trong JVM test là gì?</a> <span class="tag">Quiz</span></li>
   </ul>
 </section>
 </main>
